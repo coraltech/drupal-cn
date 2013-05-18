@@ -166,3 +166,6 @@
 [submodule "sites/all/modules/contrib/ctools"]
 	path = sites/all/modules/contrib/ctools
 	url = http://git.drupal.org/project/ctools
+[submodule "sites/all/modules/contrib/transliteration"]
+	path = sites/all/modules/contrib/transliteration
+	url = http://git.drupal.org/project/transliteration
