@@ -175,3 +175,6 @@
 [submodule "sites/all/modules/contrib/auto_nodetitle"]
 	path = sites/all/modules/contrib/auto_nodetitle
 	url = http://git.drupal.org/project/auto_nodetitle
+[submodule "sites/all/modules/contrib/jquery_update"]
+	path = sites/all/modules/contrib/jquery_update
+	url = http://git.drupal.org/project/jquery_update
