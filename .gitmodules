@@ -133,3 +133,6 @@
 [submodule "sites/all/modules/contrib/panelizer"]
 	path = sites/all/modules/contrib/panelizer
 	url = http://git.drupal.org/project/panelizer
+[submodule "sites/all/modules/contrib/fieldable_panels_panes"]
+	path = sites/all/modules/contrib/fieldable_panels_panes
+	url = http://git.drupal.org/project/fieldable_panels_panes
