@@ -4,3 +4,6 @@
 [submodule "sites/all/modules/contrib/navbar"]
 	path = sites/all/modules/contrib/navbar
 	url = http://git.drupal.org/project/navbar
+[submodule "sites/all/modules/contrib/rules"]
+	path = sites/all/modules/contrib/rules
+	url = http://git.drupal.org/project/rules
