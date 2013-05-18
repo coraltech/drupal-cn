@@ -118,3 +118,6 @@
 [submodule "sites/all/modules/contrib/commerce_order_reference"]
 	path = sites/all/modules/contrib/commerce_order_reference
 	url = http://git.drupal.org/project/commerce_order_reference
+[submodule "sites/all/modules/contrib/views"]
+	path = sites/all/modules/contrib/views
+	url = http://git.drupal.org/project/views
