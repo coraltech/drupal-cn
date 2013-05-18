@@ -139,3 +139,6 @@
 [submodule "sites/all/modules/contrib/entity_view_mode"]
 	path = sites/all/modules/contrib/entity_view_mode
 	url = http://git.drupal.org/project/entity_view_mode
+[submodule "sites/all/modules/contrib/linkit"]
+	path = sites/all/modules/contrib/linkit
+	url = http://git.drupal.org/project/linkit
