@@ -121,3 +121,9 @@
 [submodule "sites/all/modules/contrib/views"]
 	path = sites/all/modules/contrib/views
 	url = http://git.drupal.org/project/views
+[submodule "sites/all/modules/contrib/token"]
+	path = sites/all/modules/contrib/token
+	url = http://git.drupal.org/project/token
+[submodule "sites/all/modules/contrib/panels"]
+	path = sites/all/modules/contrib/panels
+	url = http://git.drupal.org/project/panels
