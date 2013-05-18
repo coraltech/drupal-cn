@@ -142,3 +142,6 @@
 [submodule "sites/all/modules/contrib/linkit"]
 	path = sites/all/modules/contrib/linkit
 	url = http://git.drupal.org/project/linkit
+[submodule "sites/all/modules/contrib/timeago"]
+	path = sites/all/modules/contrib/timeago
+	url = http://git.drupal.org/project/timeago
