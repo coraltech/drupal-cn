@@ -64,3 +64,6 @@
 [submodule "sites/all/modules/contrib/interval"]
 	path = sites/all/modules/contrib/interval
 	url = http://git.drupal.org/project/interval
+[submodule "sites/all/modules/contrib/gigya"]
+	path = sites/all/modules/contrib/gigya
+	url = http://git.drupal.org/project/gigya
