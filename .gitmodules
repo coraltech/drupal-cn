@@ -91,3 +91,6 @@
 [submodule "sites/all/modules/contrib/superfish"]
 	path = sites/all/modules/contrib/superfish
 	url = http://git.drupal.org/project/superfish
+[submodule "sites/all/modules/contrib/insert"]
+	path = sites/all/modules/contrib/insert
+	url = http://git.drupal.org/project/insert
