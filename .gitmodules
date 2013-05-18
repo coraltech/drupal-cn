@@ -55,3 +55,6 @@
 [submodule "sites/all/modules/contrib/entityreference_prepopulate"]
 	path = sites/all/modules/contrib/entityreference_prepopulate
 	url = http://git.drupal.org/project/entityreference_prepopulate
+[submodule "sites/all/modules/contrib/field_group"]
+	path = sites/all/modules/contrib/field_group
+	url = http://git.drupal.org/project/field_group
