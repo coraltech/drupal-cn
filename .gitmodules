@@ -97,3 +97,6 @@
 [submodule "sites/all/modules/contrib/tagclouds"]
 	path = sites/all/modules/contrib/tagclouds
 	url = http://git.drupal.org/project/tagclouds
+[submodule "sites/all/modules/contrib/book_helper"]
+	path = sites/all/modules/contrib/book_helper
+	url = http://git.drupal.org/project/book_helper
