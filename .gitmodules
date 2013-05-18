@@ -103,3 +103,6 @@
 [submodule "sites/all/modules/contrib/commerce"]
 	path = sites/all/modules/contrib/commerce
 	url = http://git.drupal.org/project/commerce
+[submodule "sites/all/modules/contrib/commerce_sp"]
+	path = sites/all/modules/contrib/commerce_sp
+	url = http://git.drupal.org/project/commerce_sp
