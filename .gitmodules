@@ -88,3 +88,6 @@
 [submodule "sites/all/modules/contrib/media"]
 	path = sites/all/modules/contrib/media
 	url = http://git.drupal.org/project/media
+[submodule "sites/all/modules/contrib/superfish"]
+	path = sites/all/modules/contrib/superfish
+	url = http://git.drupal.org/project/superfish
