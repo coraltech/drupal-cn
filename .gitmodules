@@ -151,3 +151,6 @@
 [submodule "sites/all/modules/contrib/search_api"]
 	path = sites/all/modules/contrib/search_api
 	url = http://git.drupal.org/project/search_api
+[submodule "sites/all/modules/contrib/search_api_autocomplete"]
+	path = sites/all/modules/contrib/search_api_autocomplete
+	url = http://git.drupal.org/project/search_api_autocomplete
