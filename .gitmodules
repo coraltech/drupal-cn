@@ -199,3 +199,6 @@
 [submodule "sites/all/modules/contrib/services_views"]
 	path = sites/all/modules/contrib/services_views
 	url = http://git.drupal.org/project/services_views
+[submodule "sites/all/modules/contrib/oauth"]
+	path = sites/all/modules/contrib/oauth
+	url = http://git.drupal.org/project/oauth
