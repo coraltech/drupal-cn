@@ -130,3 +130,6 @@
 [submodule "sites/all/modules/contrib/panels_everywhere"]
 	path = sites/all/modules/contrib/panels_everywhere
 	url = http://git.drupal.org/project/panels_everywhere
+[submodule "sites/all/modules/contrib/panelizer"]
+	path = sites/all/modules/contrib/panelizer
+	url = http://git.drupal.org/project/panelizer
