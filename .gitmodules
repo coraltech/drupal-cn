@@ -82,3 +82,6 @@
 [submodule "sites/all/modules/contrib/wysiwyg"]
 	path = sites/all/modules/contrib/wysiwyg
 	url = http://git.drupal.org/project/wysiwyg
+[submodule "sites/all/modules/contrib/views_slideshow"]
+	path = sites/all/modules/contrib/views_slideshow
+	url = http://git.drupal.org/project/views_slideshow
