@@ -208,3 +208,6 @@
 [submodule "sites/all/modules/contrib/varnish"]
 	path = sites/all/modules/contrib/varnish
 	url = http://git.drupal.org/project/varnish
+[submodule "sites/all/modules/contrib/memcache"]
+	path = sites/all/modules/contrib/memcache
+	url = http://git.drupal.org/project/memcache
