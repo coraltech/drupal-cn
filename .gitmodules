@@ -58,3 +58,6 @@
 [submodule "sites/all/modules/contrib/field_group"]
 	path = sites/all/modules/contrib/field_group
 	url = http://git.drupal.org/project/field_group
+[submodule "sites/all/modules/contrib/field_permissions"]
+	path = sites/all/modules/contrib/field_permissions
+	url = http://git.drupal.org/project/field_permissions
