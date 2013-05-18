@@ -1,3 +1,6 @@
 [submodule "sites/all/modules/contrib/admin_views"]
 	path = sites/all/modules/contrib/admin_views
 	url = http://git.drupal.org/project/admin_views
+[submodule "sites/all/modules/contrib/navbar"]
+	path = sites/all/modules/contrib/navbar
+	url = http://git.drupal.org/project/navbar
