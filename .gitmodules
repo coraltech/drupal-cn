@@ -184,3 +184,6 @@
 [submodule "sites/all/modules/contrib/flag_abuse"]
 	path = sites/all/modules/contrib/flag_abuse
 	url = http://git.drupal.org/project/flag_abuse
+[submodule "sites/all/modules/contrib/git_wrapper"]
+	path = sites/all/modules/contrib/git_wrapper
+	url = http://git.drupal.org/project/git_wrapper
