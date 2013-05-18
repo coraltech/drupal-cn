@@ -85,3 +85,6 @@
 [submodule "sites/all/modules/contrib/views_slideshow"]
 	path = sites/all/modules/contrib/views_slideshow
 	url = http://git.drupal.org/project/views_slideshow
+[submodule "sites/all/modules/contrib/media"]
+	path = sites/all/modules/contrib/media
+	url = http://git.drupal.org/project/media
