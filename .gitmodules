@@ -106,3 +106,6 @@
 [submodule "sites/all/modules/contrib/commerce_sp"]
 	path = sites/all/modules/contrib/commerce_sp
 	url = http://git.drupal.org/project/commerce_sp
+[submodule "sites/all/modules/contrib/commerce_authnet"]
+	path = sites/all/modules/contrib/commerce_authnet
+	url = http://git.drupal.org/project/commerce_authnet
