@@ -34,3 +34,6 @@
 [submodule "sites/all/modules/contrib/diff"]
 	path = sites/all/modules/contrib/diff
 	url = http://git.drupal.org/project/diff
+[submodule "sites/all/modules/contrib/menu_attributes"]
+	path = sites/all/modules/contrib/menu_attributes
+	url = http://git.drupal.org/project/menu_attributes
