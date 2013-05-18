@@ -94,3 +94,6 @@
 [submodule "sites/all/modules/contrib/insert"]
 	path = sites/all/modules/contrib/insert
 	url = http://git.drupal.org/project/insert
+[submodule "sites/all/modules/contrib/tagclouds"]
+	path = sites/all/modules/contrib/tagclouds
+	url = http://git.drupal.org/project/tagclouds
