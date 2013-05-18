@@ -109,3 +109,6 @@
 [submodule "sites/all/modules/contrib/commerce_authnet"]
 	path = sites/all/modules/contrib/commerce_authnet
 	url = http://git.drupal.org/project/commerce_authnet
+[submodule "sites/all/modules/contrib/commerce_cardonfile"]
+	path = sites/all/modules/contrib/commerce_cardonfile
+	url = http://git.drupal.org/project/commerce_cardonfile
