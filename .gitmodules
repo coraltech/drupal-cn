@@ -196,3 +196,6 @@
 [submodule "sites/all/modules/contrib/services"]
 	path = sites/all/modules/contrib/services
 	url = http://git.drupal.org/project/services
+[submodule "sites/all/modules/contrib/services_views"]
+	path = sites/all/modules/contrib/services_views
+	url = http://git.drupal.org/project/services_views
