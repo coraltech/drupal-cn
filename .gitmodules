@@ -145,3 +145,6 @@
 [submodule "sites/all/modules/contrib/timeago"]
 	path = sites/all/modules/contrib/timeago
 	url = http://git.drupal.org/project/timeago
+[submodule "sites/all/modules/contrib/panels_breadcrumbs"]
+	path = sites/all/modules/contrib/panels_breadcrumbs
+	url = http://git.drupal.org/project/panels_breadcrumbs
