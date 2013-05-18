@@ -178,3 +178,6 @@
 [submodule "sites/all/modules/contrib/jquery_update"]
 	path = sites/all/modules/contrib/jquery_update
 	url = http://git.drupal.org/project/jquery_update
+[submodule "sites/all/modules/contrib/flag"]
+	path = sites/all/modules/contrib/flag
+	url = http://git.drupal.org/project/flag
