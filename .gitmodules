@@ -202,3 +202,6 @@
 [submodule "sites/all/modules/contrib/oauth"]
 	path = sites/all/modules/contrib/oauth
 	url = http://git.drupal.org/project/oauth
+[submodule "sites/all/modules/contrib/contentapi"]
+	path = sites/all/modules/contrib/contentapi
+	url = http://git.drupal.org/project/contentapi
