@@ -157,3 +157,6 @@
 [submodule "sites/all/modules/contrib/facetapi"]
 	path = sites/all/modules/contrib/facetapi
 	url = http://git.drupal.org/project/facetapi
+[submodule "sites/all/modules/contrib/entity"]
+	path = sites/all/modules/contrib/entity
+	url = http://git.drupal.org/project/entity
