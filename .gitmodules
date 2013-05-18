@@ -187,3 +187,6 @@
 [submodule "sites/all/modules/contrib/git_wrapper"]
 	path = sites/all/modules/contrib/git_wrapper
 	url = http://git.drupal.org/project/git_wrapper
+[submodule "sites/all/modules/contrib/badbehavior"]
+	path = sites/all/modules/contrib/badbehavior
+	url = http://git.drupal.org/project/badbehavior
