@@ -172,3 +172,6 @@
 [submodule "sites/all/modules/contrib/site_map"]
 	path = sites/all/modules/contrib/site_map
 	url = http://git.drupal.org/project/site_map
+[submodule "sites/all/modules/contrib/auto_nodetitle"]
+	path = sites/all/modules/contrib/auto_nodetitle
+	url = http://git.drupal.org/project/auto_nodetitle
