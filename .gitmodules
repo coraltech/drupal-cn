@@ -52,3 +52,6 @@
 [submodule "sites/all/modules/contrib/entityreference_views_formatter"]
 	path = sites/all/modules/contrib/entityreference_views_formatter
 	url = http://git.drupal.org/project/entityreference_views_formatter
+[submodule "sites/all/modules/contrib/entityreference_prepopulate"]
+	path = sites/all/modules/contrib/entityreference_prepopulate
+	url = http://git.drupal.org/project/entityreference_prepopulate
