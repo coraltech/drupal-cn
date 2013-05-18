@@ -67,3 +67,6 @@
 [submodule "sites/all/modules/contrib/gigya"]
 	path = sites/all/modules/contrib/gigya
 	url = http://git.drupal.org/project/gigya
+[submodule "sites/all/modules/contrib/achievements"]
+	path = sites/all/modules/contrib/achievements
+	url = http://git.drupal.org/project/achievements
