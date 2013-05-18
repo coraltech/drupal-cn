@@ -73,3 +73,6 @@
 [submodule "sites/all/modules/contrib/book_explorer"]
 	path = sites/all/modules/contrib/book_explorer
 	url = http://git.drupal.org/project/book_explorer
+[submodule "sites/all/modules/contrib/references_dialog"]
+	path = sites/all/modules/contrib/references_dialog
+	url = http://git.drupal.org/project/references_dialog
