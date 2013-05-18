@@ -190,3 +190,6 @@
 [submodule "sites/all/modules/contrib/badbehavior"]
 	path = sites/all/modules/contrib/badbehavior
 	url = http://git.drupal.org/project/badbehavior
+[submodule "sites/all/modules/contrib/antispam"]
+	path = sites/all/modules/contrib/antispam
+	url = http://git.drupal.org/project/antispam
