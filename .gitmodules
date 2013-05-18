@@ -46,3 +46,6 @@
 [submodule "sites/all/modules/contrib/link"]
 	path = sites/all/modules/contrib/link
 	url = http://git.drupal.org/project/link
+[submodule "sites/all/modules/contrib/entityreference"]
+	path = sites/all/modules/contrib/entityreference
+	url = http://git.drupal.org/project/entityreference
