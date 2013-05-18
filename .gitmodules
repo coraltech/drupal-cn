@@ -7,3 +7,6 @@
 [submodule "sites/all/modules/contrib/rules"]
 	path = sites/all/modules/contrib/rules
 	url = http://git.drupal.org/project/rules
+[submodule "sites/all/modules/contrib/fape"]
+	path = sites/all/modules/contrib/fape
+	url = http://git.drupal.org/project/fape
