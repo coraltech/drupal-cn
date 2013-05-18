@@ -49,3 +49,6 @@
 [submodule "sites/all/modules/contrib/entityreference"]
 	path = sites/all/modules/contrib/entityreference
 	url = http://git.drupal.org/project/entityreference
+[submodule "sites/all/modules/contrib/entityreference_views_formatter"]
+	path = sites/all/modules/contrib/entityreference_views_formatter
+	url = http://git.drupal.org/project/entityreference_views_formatter
