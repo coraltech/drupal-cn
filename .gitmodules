@@ -193,3 +193,6 @@
 [submodule "sites/all/modules/contrib/antispam"]
 	path = sites/all/modules/contrib/antispam
 	url = http://git.drupal.org/project/antispam
+[submodule "sites/all/modules/contrib/services"]
+	path = sites/all/modules/contrib/services
+	url = http://git.drupal.org/project/services
