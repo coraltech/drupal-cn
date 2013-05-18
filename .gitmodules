@@ -22,3 +22,6 @@
 [submodule "sites/all/modules/contrib/views_bulk_operations"]
 	path = sites/all/modules/contrib/views_bulk_operations
 	url = http://git.drupal.org/project/views_bulk_operations
+[submodule "sites/all/modules/contrib/module_filter"]
+	path = sites/all/modules/contrib/module_filter
+	url = http://git.drupal.org/project/module_filter
