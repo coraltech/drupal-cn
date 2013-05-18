@@ -13,3 +13,6 @@
 [submodule "sites/all/modules/contrib/features"]
 	path = sites/all/modules/contrib/features
 	url = http://git.drupal.org/project/features
+[submodule "sites/all/modules/contrib/strongarm"]
+	path = sites/all/modules/contrib/strongarm
+	url = http://git.drupal.org/project/strongarm
