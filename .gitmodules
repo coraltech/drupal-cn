@@ -127,3 +127,6 @@
 [submodule "sites/all/modules/contrib/panels"]
 	path = sites/all/modules/contrib/panels
 	url = http://git.drupal.org/project/panels
+[submodule "sites/all/modules/contrib/panels_everywhere"]
+	path = sites/all/modules/contrib/panels_everywhere
+	url = http://git.drupal.org/project/panels_everywhere
