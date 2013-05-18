@@ -19,3 +19,6 @@
 [submodule "sites/all/modules/contrib/devel"]
 	path = sites/all/modules/contrib/devel
 	url = http://git.drupal.org/project/devel
+[submodule "sites/all/modules/contrib/views_bulk_operations"]
+	path = sites/all/modules/contrib/views_bulk_operations
+	url = http://git.drupal.org/project/views_bulk_operations
