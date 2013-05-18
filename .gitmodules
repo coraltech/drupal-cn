@@ -61,3 +61,6 @@
 [submodule "sites/all/modules/contrib/field_permissions"]
 	path = sites/all/modules/contrib/field_permissions
 	url = http://git.drupal.org/project/field_permissions
+[submodule "sites/all/modules/contrib/interval"]
+	path = sites/all/modules/contrib/interval
+	url = http://git.drupal.org/project/interval
