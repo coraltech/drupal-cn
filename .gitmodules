@@ -28,3 +28,6 @@
 [submodule "sites/all/modules/contrib/better_formats"]
 	path = sites/all/modules/contrib/better_formats
 	url = http://git.drupal.org/project/better_formats
+[submodule "sites/all/modules/contrib/node_clone"]
+	path = sites/all/modules/contrib/node_clone
+	url = http://git.drupal.org/project/node_clone
