@@ -169,3 +169,6 @@
 [submodule "sites/all/modules/contrib/transliteration"]
 	path = sites/all/modules/contrib/transliteration
 	url = http://git.drupal.org/project/transliteration
+[submodule "sites/all/modules/contrib/site_map"]
+	path = sites/all/modules/contrib/site_map
+	url = http://git.drupal.org/project/site_map
