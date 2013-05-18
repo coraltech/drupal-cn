@@ -31,3 +31,6 @@
 [submodule "sites/all/modules/contrib/node_clone"]
 	path = sites/all/modules/contrib/node_clone
 	url = http://git.drupal.org/project/node_clone
+[submodule "sites/all/modules/contrib/diff"]
+	path = sites/all/modules/contrib/diff
+	url = http://git.drupal.org/project/diff
