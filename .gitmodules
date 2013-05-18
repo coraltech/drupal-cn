@@ -115,3 +115,6 @@
 [submodule "sites/all/modules/contrib/commerce_recurring"]
 	path = sites/all/modules/contrib/commerce_recurring
 	url = http://git.drupal.org/project/commerce_recurring
+[submodule "sites/all/modules/contrib/commerce_order_reference"]
+	path = sites/all/modules/contrib/commerce_order_reference
+	url = http://git.drupal.org/project/commerce_order_reference
