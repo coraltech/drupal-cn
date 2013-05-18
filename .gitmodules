@@ -16,3 +16,6 @@
 [submodule "sites/all/modules/contrib/strongarm"]
 	path = sites/all/modules/contrib/strongarm
 	url = http://git.drupal.org/project/strongarm
+[submodule "sites/all/modules/contrib/devel"]
+	path = sites/all/modules/contrib/devel
+	url = http://git.drupal.org/project/devel
