@@ -37,3 +37,6 @@
 [submodule "sites/all/modules/contrib/menu_attributes"]
 	path = sites/all/modules/contrib/menu_attributes
 	url = http://git.drupal.org/project/menu_attributes
+[submodule "sites/all/modules/contrib/taxonomy_manager"]
+	path = sites/all/modules/contrib/taxonomy_manager
+	url = http://git.drupal.org/project/taxonomy_manager
