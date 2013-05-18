@@ -79,3 +79,6 @@
 [submodule "sites/all/modules/contrib/views_autocomplete_filters"]
 	path = sites/all/modules/contrib/views_autocomplete_filters
 	url = http://git.drupal.org/project/views_autocomplete_filters
+[submodule "sites/all/modules/contrib/wysiwyg"]
+	path = sites/all/modules/contrib/wysiwyg
+	url = http://git.drupal.org/project/wysiwyg
