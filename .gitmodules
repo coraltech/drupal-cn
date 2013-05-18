@@ -25,3 +25,6 @@
 [submodule "sites/all/modules/contrib/module_filter"]
 	path = sites/all/modules/contrib/module_filter
 	url = http://git.drupal.org/project/module_filter
+[submodule "sites/all/modules/contrib/better_formats"]
+	path = sites/all/modules/contrib/better_formats
+	url = http://git.drupal.org/project/better_formats
