@@ -100,3 +100,6 @@
 [submodule "sites/all/modules/contrib/book_helper"]
 	path = sites/all/modules/contrib/book_helper
 	url = http://git.drupal.org/project/book_helper
+[submodule "sites/all/modules/contrib/commerce"]
+	path = sites/all/modules/contrib/commerce
+	url = http://git.drupal.org/project/commerce
