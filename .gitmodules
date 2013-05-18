@@ -163,3 +163,6 @@
 [submodule "sites/all/modules/contrib/libraries"]
 	path = sites/all/modules/contrib/libraries
 	url = http://git.drupal.org/project/libraries
+[submodule "sites/all/modules/contrib/ctools"]
+	path = sites/all/modules/contrib/ctools
+	url = http://git.drupal.org/project/ctools
