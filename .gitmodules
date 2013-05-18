@@ -10,3 +10,6 @@
 [submodule "sites/all/modules/contrib/fape"]
 	path = sites/all/modules/contrib/fape
 	url = http://git.drupal.org/project/fape
+[submodule "sites/all/modules/contrib/features"]
+	path = sites/all/modules/contrib/features
+	url = http://git.drupal.org/project/features
