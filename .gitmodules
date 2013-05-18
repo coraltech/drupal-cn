@@ -43,3 +43,6 @@
 [submodule "sites/all/modules/contrib/date"]
 	path = sites/all/modules/contrib/date
 	url = http://git.drupal.org/project/date
+[submodule "sites/all/modules/contrib/link"]
+	path = sites/all/modules/contrib/link
+	url = http://git.drupal.org/project/link
