@@ -205,3 +205,6 @@
 [submodule "sites/all/modules/contrib/contentapi"]
 	path = sites/all/modules/contrib/contentapi
 	url = http://git.drupal.org/project/contentapi
+[submodule "sites/all/modules/contrib/varnish"]
+	path = sites/all/modules/contrib/varnish
+	url = http://git.drupal.org/project/varnish
