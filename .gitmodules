@@ -40,3 +40,6 @@
 [submodule "sites/all/modules/contrib/taxonomy_manager"]
 	path = sites/all/modules/contrib/taxonomy_manager
 	url = http://git.drupal.org/project/taxonomy_manager
+[submodule "sites/all/modules/contrib/date"]
+	path = sites/all/modules/contrib/date
+	url = http://git.drupal.org/project/date
