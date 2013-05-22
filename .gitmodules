@@ -211,3 +211,6 @@
 [submodule "sites/all/modules/contrib/memcache"]
 	path = sites/all/modules/contrib/memcache
 	url = http://git.drupal.org/project/memcache
+[submodule "sites/all/modules/contrib/breakpoints"]
+	path = sites/all/modules/contrib/breakpoints
+	url = http://git.drupal.org/project/breakpoints
