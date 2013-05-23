@@ -1,0 +1,16 @@
+name = Coral core
+description = Provides a core framework and API for managing server stacks and clusters from Drupal.
+package = Coral
+core = 7.x
+configure = admin/config/content/coral
+files[] = classes/data.inc
+files[] = classes/core.inc
+files[] = classes/field.inc
+files[] = classes/property.inc
+files[] = classes/node.inc
+files[] = classes/config.inc
+files[] = includes/coral.form.inc
+files[] = includes/coral.field.inc
+files[] = includes/coral.node.inc
+files[] = includes/coral.admin.inc
+stylesheets[all][] = css/coral_core.css

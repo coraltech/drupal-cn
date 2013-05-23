@@ -1,0 +1,280 @@
+<?php
+
+coral_include(array(
+  'classes',
+  'classes/fields',
+  'classes/widgets',
+  'classes/formatters',
+  'classes/nodes',
+  'includes',
+  'includes/elements'
+));
+
+//------------------------------------------------------------------------------
+// Core hooks
+
+/**
+ * Implementation of hook_init().
+ */
+function coral_init() {
+  $module_path = drupal_get_path('module', 'coral');
+  $settings    = coral_settings(TRUE, TRUE);
+  
+  drupal_add_js(array('coralCore' => $settings), 'setting');
+  drupal_add_js($module_path . '/js/coral_core.js', array('weight' => -100));
+  
+  coral_execute('init');
+}
+
+/**
+ * Implements hook_permission().
+ */
+function coral_permission() {
+  return coral_execute('permission');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function coral_menu() {
+	return coral_execute('menu');
+}
+
+/**
+ * Implements hook_theme().
+ */
+function coral_theme() {
+  return coral_execute('theme');
+}
+
+/**
+ * Implements hook_element_info().
+ */
+function coral_element_info() {
+  return coral_execute('element_info');
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function coral_form_alter(&$form, &$form_state, $form_id) {
+  //dpm($form, 'coral_form_alter -> $form');
+  coral_execute('form_alter', array(&$form, &$form_state, $form_id));
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function coral_entity_info_alter(&$entity_info) {
+  coral_execute('entity_info_alter', array(&$entity_info));
+}
+
+//------------------------------------------------------------------------------
+// Configurations
+
+/**
+ * Retrieve the current state of all Coral settings.
+ */
+function coral_settings($reload = FALSE, $externalize = FALSE) {
+  $settings = &drupal_static('coral_settings', array('internal' => array(), 'external' => array()));
+  $key      = ($externalize ? 'external' : 'internal');
+  
+  if ($reload || empty($settings[$key])) {
+    $loaded_settings = array(
+      'types' => Coral::types(TRUE)
+    );
+    $loaded_settings += coral_execute('settings');
+    
+    // Give other modules a chance to add or change classes.
+    drupal_alter('coral_settings', $loaded_settings);
+    
+    if ($externalize) {
+      $settings[$key] = coral_externalize_settings($loaded_settings);  
+    }
+    else {
+      $settings[$key] = $loaded_settings;
+    }
+  }
+  return $settings[$key];
+}
+
+/**
+ * Replaces dashes with underscores in keys for use with JS.
+ */
+function coral_externalize_settings($settings) {
+  $results = array();
+  foreach($settings as $key => $value) {
+    if (Coral::isHash($value)) {
+     $value = coral_externalize_settings($value);  
+    }
+    $results[str_replace('-', '_', $key)] = Coral::externalize($value);
+  }
+  return $results;
+}
+
+//------------------------------------------------------------------------------
+// Utilities
+
+/**
+ * Include necessary resources.
+ */
+function coral_include($names, $type = 'inc', $options = array()) {
+  static $used = array();
+  
+  $module = NULL;
+  
+  if (is_string($options)) {
+    $module  = $options;
+    $options = array();
+  }
+  elseif (isset($options['module'])) {
+    $module = $options['module'];
+  }
+  
+  if (is_null($module)) {
+    $base_path = dirname(__FILE__);
+  }
+  elseif (function_exists('drupal_get_path') && !preg_match('/[\/\.]+/', $module)) {
+    $base_path = DRUPAL_ROOT . '/' . drupal_get_path('module', $module);
+  }
+  else {
+    $base_path = $module;
+  }
+  
+  if (!is_array($names)) {
+    $names = array($names);
+  }
+  foreach ($names as $name) {
+    if (!isset($used[$type][$base_path][$name])) {
+      $file_base = "${base_path}/${name}";
+      
+      if (is_dir($file_base)) {
+        $files = scandir($file_base);
+        if ($files && !empty($files)) {
+          foreach ($files as $file_name) {
+            if (!in_array($file_name, array('.', '..'))) {
+              if (preg_match("/\.${type}\$/", $file_name)) {
+                coral_add_resource("${file_base}/${file_name}", $type, $options);
+              }
+            }
+          }
+        }
+      }
+      else {
+        coral_add_resource("${file_base}.${type}", $type, $options);
+      }
+      $used[$type][$base_path][$name] = TRUE;
+    }
+  }
+}
+
+#---
+
+function coral_add_resource($data, $type, $options = array()) {
+  switch ($type) {
+    case 'inc' :
+    case 'php' :
+      require_once $data;
+      break;
+
+    case 'js' :
+      drupal_add_js($data, $options);
+      break;
+
+    case 'css' :
+      drupal_add_css($data, $options);
+      break;
+  }
+}
+
+#---
+
+function coral_execute($hook, $args = array(), $module = 'coral', $type = 'inc') {
+  $include_files = &drupal_static('coral_include_files');
+  
+  $lib_path = DRUPAL_ROOT . '/' . drupal_get_path('module', $module) . '/includes';
+  $results  = array();
+  
+  if (is_dir($lib_path) && !isset($include_files[$module][$type])) {
+    $include_files[$module][$type] = coral_hook_components($lib_path, $type);
+  }
+  
+  if (is_array($include_files[$module][$type])) {
+    foreach ($include_files[$module][$type] as $components) {
+      array_push($components, $hook);
+      
+      $function = implode('_', $components);
+      if (function_exists($function)) {
+        $result = call_user_func_array($function, $args);
+        if (is_array($result)) {
+          $results += $result;
+        }
+      }
+    }
+  }
+  return $results;
+}
+
+/**
+ * Return the file name components (less the file extension) of all files 
+ * within specified path that may contain hooks.
+ */
+function coral_hook_components($path, $type = 'inc') {
+  $results = array();
+  
+  if (is_dir($path)) {
+    $files = scandir($path);
+    if ($files && !empty($files)) {
+      foreach ($files as $file_name) {
+        if (!in_array($file_name, array('.', '..'))) {
+          $file_path = "${path}/${file_name}";
+          if (is_dir($file_path)) {
+            $results = array_merge($results, coral_hook_components($file_path, $type));
+          }
+          elseif (preg_match("/\.${type}\$/", $file_name)) {
+            $components = explode('.', $file_name);
+            array_pop($components); // Get rid of extension
+            $results[] = $components;
+          }
+        }
+      }
+    }
+  }
+  return $results;
+}
+
+/**
+ * Return a list of the Coral classes of a specific type.
+ */
+function coral_classes($type, $reload = FALSE, $core_only = FALSE) {
+  static $classes = array();
+  
+  if ($reload || $core_only || !isset($classes[$type])) {
+    $class_map = coral_execute('classes');
+    
+    if (!isset($class_map[$type])) {
+      $class_map[$type] = array();
+    }
+    
+    if ($core_only) {
+      return $class_map[$type];
+    }
+    else {
+      // Give other modules a chance to add or change classes.
+      drupal_alter('coral_classes', $type, $class_map[$type]);
+      $classes[$type] = $class_map[$type];
+    }
+  }
+  return $classes[$type];
+}
+
+/**
+ * Return an individual Coral class that maps to a object type.
+ */
+function coral_class($type, $name) {
+  $classes = coral_classes($type);
+  if (!array_key_exists($name, $classes)) {
+    return NULL;
+  }
+  return $classes[$name];
+}
