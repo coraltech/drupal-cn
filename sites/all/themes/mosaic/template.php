@@ -35,10 +35,6 @@ function mosaic_preprocess_panels_pane(&$vars) {
 
   //dpm($css_file);
   
-  // @TODO: find out a good way to pass in options
-  //  covering if the css/js should be on every
-  //  page or just some pages. For aggregation.
-
   // Add the css - basic type
   if (file_exists($path.'/css/panes/'.$base_css_file)) {
     drupal_add_css($path.'/css/panes/'.$base_css_file);  
