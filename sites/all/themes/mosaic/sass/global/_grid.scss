@@ -1,0 +1,50 @@
+// Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N  
+$width: 100%; // total width (%) of page 
+$columns: 12; // number of columns 
+$col_margin: 1.65%; // margin (%) between columns 
+
+// create row div
+@mixin row() { 
+  float: left; 
+  clear: both; 
+  width: $width; 
+} 
+
+// create a column div 
+@mixin col($n: 1) { 
+  float: left; @include span($n); 
+} 
+
+// make an element span n columns
+@mixin span($n: 1) {
+  width: percentage($n / $columns);
+} 
+
+// the last column in a row needs this 
+@mixin last() { 
+  margin-right: 0; 
+} 
+
+// prepend n blank columns 
+@mixin prepend($n: 1) { 
+  margin-left: $col_total_width * $n 
+} 
+
+// append n blank columns 
+@mixin append($n: 1) { 
+  margin-right: $col_total_width * $n + $col_margin
+}
+
+@for $i from 1 through $columns {
+  .grid-#{$i} { 
+    @include col($i); 
+    @if $i != $columns {
+      margin-right: $col_margin; 
+    }
+  }  
+}
+
+.grid-last {
+  @include last;
+} 
+

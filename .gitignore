@@ -7,3 +7,6 @@ sites/*/private
 
 # Project files and folders
 .project
+
+# Caches to ignore
+.sass-cache

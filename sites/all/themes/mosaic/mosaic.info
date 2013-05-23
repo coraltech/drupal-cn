@@ -1,0 +1,23 @@
+
+name        = Mosaic
+description = A fluid grid based theme for Coral Nexus.
+package     = Coral
+version     = VERSION
+core        = 7.x
+
+stylesheets[all][]   = css/screen.css
+stylesheets[print][] = css/print.css
+
+
+;----------// Panels
+plugins[panels][layouts]     = plugins/layouts
+plugins[panels][styles]      = plugins/styles
+api[panels][styles][version] = 2
+
+
+;----------// Page manager
+api[page_manager][pages_default][version] = 1
+api[page_manager][pages_default][path]    = pages
+
+;----------// Settings
+;settings[mosaic_setting] = "some setting"
