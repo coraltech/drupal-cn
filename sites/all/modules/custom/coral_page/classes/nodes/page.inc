@@ -2,7 +2,9 @@
 //------------------------------------------------------------------------------
 // Configuration core
 
-/**
+module_load_include('inc', 'coral_page', 'classes/nodes/page');
+
+/*
  * Coral configuration object.
  */
 class CoralPageNode extends CoralNode
