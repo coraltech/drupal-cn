@@ -67,90 +67,119 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 4, ../sass/global/_construct.scss */
+.hide {
+  position: absolute;
+  left: -9999em;
+}
+
+/* line 27, ../sass/global/_dom.scss */
+body.html {
+  font-size: 16px;
+  line-hight: 24px;
+  font-family: arial, helvetica, sans-serif;
+}
+
+/* line 34, ../sass/global/_dom.scss */
+a {
+  color: #446eac;
+}
+
+/* line 35, ../sass/global/_dom.scss */
+a:hover {
+  color: #2b486b;
+}
+
+/* line 37, ../sass/global/_dom.scss */
+a:active,
+a.active {
+  color: #515151;
+}
+
+/* line 39, ../sass/global/_grid.scss */
 .grid-1 {
   float: left;
   width: 8.33333%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-2 {
   float: left;
   width: 16.66667%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-3 {
   float: left;
   width: 25%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-4 {
   float: left;
   width: 33.33333%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-5 {
   float: left;
   width: 41.66667%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-6 {
   float: left;
   width: 50%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-7 {
   float: left;
   width: 58.33333%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-8 {
   float: left;
   width: 66.66667%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-9 {
   float: left;
   width: 75%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-10 {
   float: left;
   width: 83.33333%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-11 {
   float: left;
   width: 91.66667%;
   margin-right: 1.65%;
 }
 
-/* line 39, ../sass/global/grid.scss */
+/* line 39, ../sass/global/_grid.scss */
 .grid-12 {
   float: left;
   width: 100%;
 }
 
-/* line 47, ../sass/global/grid.scss */
+/* line 47, ../sass/global/_grid.scss */
 .grid-last {
   margin-right: 0;
 }

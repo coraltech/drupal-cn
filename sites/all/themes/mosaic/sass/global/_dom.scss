@@ -1,0 +1,37 @@
+// File should only contain default dom object styles for Coral Nexus
+@import "global/colors";
+
+// Font Size Reference (12px base)
+//------------------------------------------------------------------------------
+//    6px   |   0.5em     |   50%     |   5pt
+//    7px   |   0.583em   |   58.3%   |   5pt
+//    8px   |   0.667em   |   66.7%   |   6pt
+//    9px   |   0.75em    |   75%     |   7pt
+//    10px  |   0.833em   |   83.3%   |   8pt
+//    11px  |   0.917em   |   91.7%   |   8pt
+//    12px  |   1em       |   100%    |   9pt
+//    13px  |   1.083em   |   108.3%  |   10pt
+//    14px  |   1.167em   |   116.7%  |   11pt
+//    15px  |   1.25em    |   125%    |   11pt
+//    16px  |   1.333em   |   133.3%  |   12pt
+//    17px  |   1.417em   |   141.7%  |   13pt
+//    18px  |   1.5em     |   150%    |   14pt
+//    19px  |   1.583em   |   158.3%  |   14pt
+//    20px  |   1.667em   |   166.7%  |   15pt
+//    21px  |   1.75em    |   175%    |   16pt
+//    22px  |   1.833em   |   183.3%  |   17pt
+//    23px  |   1.917em   |   191.7%  |   17pt
+//    24px  |   2em       |   200%    |   18pt
+
+$sans_fonts: arial, helvetica, sans-serif;
+body.html {
+  font-size: 16px;
+  line-hight: 24px;
+  font-family: $sans_fonts; 
+}
+
+
+a { color: $mdblue; }
+a:hover { color: $dkblue; }
+a:active,
+a.active { color: $dkgray; } 
