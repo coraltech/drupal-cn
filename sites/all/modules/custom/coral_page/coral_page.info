@@ -1,4 +1,5 @@
 name = Coral page
 description = Provides a page node type and related functionality.
+dependencies[] = coral
 package = Coral
 core = 7.x

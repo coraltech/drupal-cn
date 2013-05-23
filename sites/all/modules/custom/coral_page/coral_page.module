@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 // Core hooks
 
-module_load_include('inc', 'coral', 'classes/node');
+module_load_include('inc', 'coral_page', 'classes/nodes/page');
 
 
 /**
