@@ -1,0 +1,34 @@
+/**
+ * Coral data element styles.
+ */
+.coral-data {
+  
+}
+
+.coral-data .coral-format {
+  
+}
+
+.coral-data .coral-value {
+  
+}
+
+.coral-data .coral-value-boolean {
+  
+}
+
+.coral-data .coral-value-string {
+  
+}
+
+.coral-data .coral-value-text {
+  
+}
+
+.coral-data div.value-hidden {
+  display: none;
+}
+
+.coral-data div.value-active {
+
+}

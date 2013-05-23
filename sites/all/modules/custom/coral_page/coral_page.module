@@ -1,0 +1,15 @@
+<?php
+
+//------------------------------------------------------------------------------
+// Core hooks
+
+/**
+ * Implementation of hook_init().
+ */
+function coral_page_init() {
+  $module_path = drupal_get_path('module', 'coral_page');
+
+	coral_include(array(
+		'classes/nodes'
+	));
+}

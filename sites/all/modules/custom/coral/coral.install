@@ -1,0 +1,76 @@
+<?php
+
+require_once(dirname(__FILE__) . '/coral.module');
+	
+/**
+ * Implements hook_install().
+ */
+function coral_install() {
+  // Set the defaults to basic Coral variables.
+  variable_set('coral_object_class_variables', array());
+}
+	
+/**
+ * Implements hook_uninstall().
+ */
+function coral_uninstall() {		
+  // Remove the associated variables.
+  foreach (variable_get('coral_object_class_variables', array()) as $variable) {
+    variable_del($variable);  
+  }
+  variable_del('coral_object_class_variables');
+  
+  // Delete nodes and node types.
+  foreach (coral_classes('node', TRUE, TRUE) as $type => $class) {
+    $result = db_select('node', 'n')
+          ->fields('n', array('nid'))
+          ->condition('type', $type, '=')
+          ->execute();
+
+    foreach ($result as $record) {
+      node_delete($record->nid);
+    }
+    node_type_delete($type);
+    Coral::exec($class, 'deleteType');
+  }
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function coral_schema() {
+  $schema = array();
+  
+  // This should always point to our 'current' node schema.
+  $version = 1;
+  
+  foreach (coral_classes('node', TRUE, TRUE) as $type => $class) {
+    $schema += $class::schema($version);
+  }
+  return $schema;
+}
+
+/**
+ * Implementation of hook_field_schema().
+ */
+function coral_field_schema() {
+  $schema = array();
+  
+  // This should always point to our 'current' field schema.
+  $version = 1;
+  
+  foreach (coral_classes('field', TRUE, TRUE) as $name => $class) {
+    $schema += $class::schema($version);
+  }
+  return $schema;
+}
+
+/**
+ * Install the database schema.
+ */
+//function coral_update_7001() {
+  
+//}
+
+
+	
