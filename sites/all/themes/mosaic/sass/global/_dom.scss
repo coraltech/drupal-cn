@@ -1,5 +1,6 @@
 // File should only contain default dom object styles for Coral Nexus
 @import "global/colors";
+@import "global/fonts";
 
 // Font Size Reference (12px base)
 //------------------------------------------------------------------------------
@@ -23,7 +24,6 @@
 //    23px  |   1.917em   |   191.7%  |   17pt
 //    24px  |   2em       |   200%    |   18pt
 
-$sans_fonts: arial, helvetica, sans-serif;
 body.html {
   font-size: 16px;
   line-hight: 24px;
