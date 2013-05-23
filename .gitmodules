@@ -217,3 +217,9 @@
 [submodule "sites/all/modules/contrib/git_deploy"]
 	path = sites/all/modules/contrib/git_deploy
 	url = http://git.drupal.org/project/git_deploy.git
+[submodule "sites/all/libraries/backbone"]
+	path = sites/all/libraries/backbone
+	url = https://github.com/documentcloud/backbone.git
+[submodule "sites/all/libraries/underscore"]
+	path = sites/all/libraries/underscore
+	url = https://github.com/documentcloud/underscore.git
