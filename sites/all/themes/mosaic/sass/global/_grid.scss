@@ -1,6 +1,6 @@
 // Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N  
 $width: 100%; // total width (%) of page 
-$columns: 12; // number of columns 
+$columns: 16; // number of columns 
 $col_margin: 1.65%; // margin (%) between columns 
 
 // create row div
@@ -11,13 +11,19 @@ $col_margin: 1.65%; // margin (%) between columns
 } 
 
 // create a column div 
-@mixin col($n: 1) { 
-  float: left; @include span($n); 
+@mixin col($n: 1, $last:'false') { 
+  float: left; 
+  @include span($n, $last); 
 } 
 
 // make an element span n columns
-@mixin span($n: 1) {
-  width: percentage($n / $columns);
+@mixin span($n: 1, $last:'false') {
+  @if $last == 'false' {
+    width: percentage($n / $columns) - $col_margin;
+  }
+  @else {
+    width: percentage($n / $columns);
+  }
 } 
 
 // the last column in a row needs this 
@@ -41,10 +47,19 @@ $col_margin: 1.65%; // margin (%) between columns
     @if $i != $columns {
       margin-right: $col_margin; 
     }
+  }
+  .grid-#{$i}-last { 
+    @include col($i, 'true'); 
   }  
 }
 
 .grid-last {
   @include last;
 } 
-
+.row {
+  @include row;
+}
+.page-wrapper {
+  width: 962px;
+  margin: 1em auto; 
+}
