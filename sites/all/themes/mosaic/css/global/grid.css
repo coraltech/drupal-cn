@@ -11,6 +11,16 @@
   width: 6.25%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-1 {
+  margin-left: 6.25%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-1 {
+  margin-right: 6.25%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-2 {
   float: left;
@@ -22,6 +32,16 @@
 .grid-2-last {
   float: left;
   width: 12.5%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-2 {
+  margin-left: 12.5%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-2 {
+  margin-right: 12.5%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -37,6 +57,16 @@
   width: 18.75%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-3 {
+  margin-left: 18.75%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-3 {
+  margin-right: 18.75%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-4 {
   float: left;
@@ -48,6 +78,16 @@
 .grid-4-last {
   float: left;
   width: 25%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-4 {
+  margin-left: 25%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-4 {
+  margin-right: 25%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -63,6 +103,16 @@
   width: 31.25%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-5 {
+  margin-left: 31.25%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-5 {
+  margin-right: 31.25%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-6 {
   float: left;
@@ -74,6 +124,16 @@
 .grid-6-last {
   float: left;
   width: 37.5%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-6 {
+  margin-left: 37.5%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-6 {
+  margin-right: 37.5%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -89,6 +149,16 @@
   width: 43.75%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-7 {
+  margin-left: 43.75%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-7 {
+  margin-right: 43.75%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-8 {
   float: left;
@@ -100,6 +170,16 @@
 .grid-8-last {
   float: left;
   width: 50%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-8 {
+  margin-left: 50%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-8 {
+  margin-right: 50%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -115,6 +195,16 @@
   width: 56.25%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-9 {
+  margin-left: 56.25%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-9 {
+  margin-right: 56.25%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-10 {
   float: left;
@@ -126,6 +216,16 @@
 .grid-10-last {
   float: left;
   width: 62.5%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-10 {
+  margin-left: 62.5%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-10 {
+  margin-right: 62.5%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -141,6 +241,16 @@
   width: 68.75%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-11 {
+  margin-left: 68.75%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-11 {
+  margin-right: 68.75%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-12 {
   float: left;
@@ -152,6 +262,16 @@
 .grid-12-last {
   float: left;
   width: 75%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-12 {
+  margin-left: 75%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-12 {
+  margin-right: 75%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -167,6 +287,16 @@
   width: 81.25%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-13 {
+  margin-left: 81.25%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-13 {
+  margin-right: 81.25%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-14 {
   float: left;
@@ -178,6 +308,16 @@
 .grid-14-last {
   float: left;
   width: 87.5%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-14 {
+  margin-left: 87.5%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-14 {
+  margin-right: 87.5%;
 }
 
 /* line 52, ../../sass/global/grid.scss */
@@ -193,6 +333,16 @@
   width: 93.75%;
 }
 
+/* line 59, ../../sass/global/grid.scss */
+.prepend-15 {
+  margin-left: 93.75%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-15 {
+  margin-right: 93.75%;
+}
+
 /* line 52, ../../sass/global/grid.scss */
 .grid-16 {
   float: left;
@@ -203,6 +353,16 @@
 .grid-16-last {
   float: left;
   width: 100%;
+}
+
+/* line 59, ../../sass/global/grid.scss */
+.prepend-16 {
+  margin-left: 100%;
+}
+
+/* line 60, ../../sass/global/grid.scss */
+.append-16 {
+  margin-right: 100%;
 }
 
 /* line 62, ../../sass/global/grid.scss */

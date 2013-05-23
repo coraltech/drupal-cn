@@ -39,12 +39,12 @@ $col_margin: 1.65%; // margin (%) between columns
 
 // prepend n blank columns 
 @mixin prepend($n: 1) { 
-  margin-left: $col_total_width * $n 
+  margin-left: percentage($n / $columns) 
 } 
 
 // append n blank columns 
 @mixin append($n: 1) { 
-  margin-right: $col_total_width * $n + $col_margin
+  margin-right: percentage($n / $columns)
 }
 
 // Here is where the css is generated
@@ -55,9 +55,9 @@ $col_margin: 1.65%; // margin (%) between columns
       margin-right: $col_margin; 
     }
   }
-  .grid-#{$i}-last { 
-    @include col($i, 'true'); 
-  }  
+  .grid-#{$i}-last { @include col($i, 'true'); }
+  .prepend-#{$i}   { @include prepend($i); }
+  .append-#{$i}    { @include append($i); }
 }
 .grid-last {
   @include last;
