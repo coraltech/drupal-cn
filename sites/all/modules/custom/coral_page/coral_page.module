@@ -13,3 +13,13 @@ function coral_page_init() {
 		'classes/nodes'
 	));
 }
+
+
+/**
+ * Return a list of the Coral node classes.
+ */
+function coral_page_coral_classes_alter($type, &$class_map) {
+  if ($type == 'node') {	
+  	$class_map[CoralPageNode::type()] = 'CoralPageNode';
+	}
+}

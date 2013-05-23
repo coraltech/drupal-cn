@@ -46,6 +46,9 @@ class CoralPageNode extends CoralNode
   //----------------------------------------------------------------------------
   // Display
   
+  public static function theme() {
+    return array();
+  }
    
   //----------------------------------------------------------------------------
   // Operations
