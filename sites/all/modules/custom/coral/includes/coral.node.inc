@@ -194,6 +194,7 @@ function coral_node_presave($node) {
     Coral::exec($node->coral, 'presave');
   }
 }
+
 /**
  * Implements hook_insert().
  */

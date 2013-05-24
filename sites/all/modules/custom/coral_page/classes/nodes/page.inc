@@ -51,6 +51,12 @@ class CoralPageNode extends CoralNode
   public static function theme() {
     return array();
   }
+  
+
+  public function view($view_mode) {
+    $node = $this->node;
+    # Form $node->content[] array properties.  
+  }
    
   //----------------------------------------------------------------------------
   // Operations
