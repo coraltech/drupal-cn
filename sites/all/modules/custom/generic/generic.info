@@ -1,0 +1,4 @@
+name = Generic pane
+description = Do not enable: Generic pane should be copied and re-named before use.  This is just a template for easily making new ctools content panes.
+package = " iVillage"
+core = 7.x 
