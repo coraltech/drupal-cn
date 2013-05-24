@@ -1,23 +1,23 @@
 <div class="layout-global page-wrapper">
   <div class="page-inner-wrapper">
     <?php if (!empty($content['header'])): ?>
-    <header class="container full-width" role="banner">
+    <header class="container" role="banner">
       <div class="limiter">
         <?php print render($content['header']); ?>
       </div>
     </header>
     <?php endif; ?>
-    
-    <?php if (!empty($content['main'])): ?>
-    <div class="container page" id="main-content">
-      <div class="limiter">
-        <?php print render($content['main']); ?>
+    <div class="mosaic-cont">
+      <?php if (!empty($content['main'])): ?>
+      <div class="container main-global clearfix" id="main-content">
+        <div class="limiter">
+          <?php print render($content['main']); ?>
+        </div>
       </div>
+      <?php endif; ?>
     </div>
-    <?php endif; ?>
-    
     <?php if (!empty($content['footer'])): ?>
-    <footer class="container full-width footer" role="contentinfo">
+    <footer class="container" role="contentinfo">
       <div class="limiter">
         <?php print render($content['footer']); ?>
       </div>
