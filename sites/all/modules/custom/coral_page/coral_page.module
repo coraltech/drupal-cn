@@ -3,9 +3,6 @@
 //------------------------------------------------------------------------------
 // Core hooks
 
-module_load_include('inc', 'coral_page', 'classes/nodes/page');
-
-
 /**
  * Implementation of hook_init().
  */
@@ -14,7 +11,7 @@ function coral_page_init() {
 
 	coral_include(array(
 		'classes/nodes'
-	));
+	), 'inc', array('module' => 'coral_page'));
 }
 
 
