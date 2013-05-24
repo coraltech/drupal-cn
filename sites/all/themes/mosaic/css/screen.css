@@ -101,26 +101,55 @@ body.html {
   font-family: arial, helvetica, sans-serif;
 }
 
-/* line 36, ../sass/global/_dom.scss */
+/* line 35, ../sass/global/_dom.scss */
 a {
   color: #446eac;
 }
 
-/* line 37, ../sass/global/_dom.scss */
+/* line 36, ../sass/global/_dom.scss */
 a:hover {
   color: #2b486b;
 }
 
-/* line 39, ../sass/global/_dom.scss */
+/* line 38, ../sass/global/_dom.scss */
 a:active,
 a.active {
   color: #515151;
 }
 
-/* line 6, ../sass/global/_global.scss */
-.page-wrapper {
+/* line 13, ../sass/global/_global.scss */
+.main-global,
+.pane-header,
+.pane-footer,
+.pane-top-menus #mini-panel-top_menus {
   width: 962px;
-  margin: 1em auto;
+  margin: 0 auto;
+}
+
+/* line 19, ../sass/global/_global.scss */
+.pane-header {
+  margin: 1em auto 0;
+}
+
+/* line 20, ../sass/global/_global.scss */
+.pane-footer {
+  margin: 0 auto 1em;
+}
+
+/* line 24, ../sass/global/_global.scss */
+body.html {
+  background: #515151;
+}
+
+/* line 27, ../sass/global/_global.scss */
+.pane-top-menus {
+  background: #2b486b;
+}
+
+/* line 31, ../sass/global/_global.scss */
+header,
+.mosaic-cont {
+  background: white;
 }
 
 /* line 52, ../sass/global/grid.scss */
@@ -843,4 +872,13 @@ a.active {
 .sf-arrows ul li:hover > .sf-with-ul:after,
 .sf-arrows ul .sfHover > .sf-with-ul:after {
   border-left-color: white;
+}
+
+/* line 1, ../sass/global/_tabs.scss */
+.pane-page-tabs {
+  padding: .5em 0;
+}
+/* line 3, ../sass/global/_tabs.scss */
+.pane-page-tabs ul {
+  margin: 0;
 }

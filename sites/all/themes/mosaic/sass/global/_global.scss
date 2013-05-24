@@ -2,8 +2,32 @@
 // Contains only globally needed scss declarations
 //  If it is not visible on EVERY page do not
 //  add it here!
+@import "global/colors";
 
-.page-wrapper {
-  width: 962px;
-  margin: 1em auto; 
+$site_width: 962px; 
+
+// Global container widths
+.main-global,
+.pane-header,
+.pane-footer,
+.pane-top-menus #mini-panel-top_menus {
+  width: $site_width;
+  margin: 0 auto;
+}
+
+// site margin top and bottom
+.pane-header { margin: 1em auto 0; }
+.pane-footer { margin: 0 auto 1em; }
+
+
+// Coloration globals
+body.html {
+  background: $dkgray; 
+}
+.pane-top-menus { 
+  background: $dkblue;
+}
+header,
+.mosaic-cont {
+  background: $white;
 }
