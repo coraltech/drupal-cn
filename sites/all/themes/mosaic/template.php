@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Theme includes
+ * Idealy, this file should contain only includes
  */
 $inc = DRUPAL_ROOT . '/' . drupal_get_path('theme', 'mosaic') . '/inc/';
 
