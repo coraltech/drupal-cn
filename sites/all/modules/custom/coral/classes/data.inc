@@ -24,9 +24,9 @@ class CoralData {
   public static function exists($data, $property, $check_empty = TRUE) {
     if (is_array($data)) {
       if ($check_empty) {
-        return (array_key_exists($data, $property) && !static::isUndef($data[$property]) && !empty($data[$property]));  
+        return (array_key_exists($property, $data) && !static::isUndef($data[$property]) && !empty($data[$property]));  
       }
-      return (array_key_exists($data, $property) && !static::isUndef($data[$property]));
+      return (array_key_exists($property, $data) && !static::isUndef($data[$property]));
     }
     return FALSE;
   }
