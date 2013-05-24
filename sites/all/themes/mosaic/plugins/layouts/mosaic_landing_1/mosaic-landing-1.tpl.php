@@ -10,7 +10,7 @@
     
     <div class='row'>
       <?php if (!empty($content['main'])): ?>
-      <div class="container main-content grid-11" id="main-content">
+      <div class="container main-content grid-11">
         <div class="limiter">
           <?php print render($content['main']); ?>
         </div>
@@ -18,7 +18,7 @@
       <?php endif; ?>
       
       <?php if (!empty($content['secondary'])): ?>
-      <div class="container secondary-content grid-13-last" id="secondary-content">
+      <div class="container secondary-content grid-13-last">
         <div class="limiter">
           <?php print render($content['secondary']); ?>
         </div>
