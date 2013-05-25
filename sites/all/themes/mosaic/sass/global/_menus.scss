@@ -1,0 +1,22 @@
+
+// -- Primary menu + user menu
+@import 'global/gradients';
+
+// Menu bg coloration
+.pane-top-menus { 
+  border-top: 1px solid lighten($mdgray, 10%);
+  border-bottom: 1px solid lighten($mdgray, 10%);
+  padding: 1px 0;
+  
+  & > .pane-content {
+    border-top: 1px solid $mdgray;
+    border-bottom: 1px solid $mdgray;
+    
+    @include linear-v-gradient(darken($dkblue, 10%), $dkblue);    
+  }
+}
+
+
+// Menu sizing
+#mini-panel-top_menus { height: 37px; }
+#mini-panel-top_menus .inside { margin: 0; }

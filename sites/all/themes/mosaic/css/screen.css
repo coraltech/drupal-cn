@@ -99,6 +99,7 @@ body.html {
   font-size: 16px;
   line-hight: 24px;
   font-family: arial, helvetica, sans-serif;
+  letter-spacing: 1px;
 }
 
 /* line 36, ../sass/global/_dom.scss */
@@ -117,376 +118,584 @@ a.active {
   color: #515151;
 }
 
-/* line 6, ../sass/global/_global.scss */
-.page-wrapper {
+/* line 13, ../sass/global/_global.scss */
+.main-global,
+.pane-header,
+.pane-footer,
+.pane-top-menus #mini-panel-top_menus {
   width: 962px;
-  margin: 1em auto;
+  margin: 0 auto;
+}
+
+/* line 19, ../sass/global/_global.scss */
+.pane-header {
+  margin: 0 auto;
+}
+
+/* line 20, ../sass/global/_global.scss */
+.pane-footer {
+  margin: 0 auto 1em;
+}
+
+/* line 26, ../sass/global/_global.scss */
+body.html {
+  background: #515151;
+}
+
+/* line 32, ../sass/global/_global.scss */
+header,
+.mosaic-cont {
+  background: white;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-1 {
   float: left;
-  width: 4.6%;
+  width: 2.51667%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-1-last {
   float: left;
-  width: 6.25%;
+  width: 4.16667%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-1 {
-  margin-left: 6.25%;
+  margin-left: 4.16667%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-1 {
-  margin-right: 6.25%;
+  margin-right: 4.16667%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-2 {
   float: left;
-  width: 10.85%;
+  width: 6.68333%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-2-last {
   float: left;
-  width: 12.5%;
+  width: 8.33333%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-2 {
-  margin-left: 12.5%;
+  margin-left: 8.33333%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-2 {
-  margin-right: 12.5%;
+  margin-right: 8.33333%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-3 {
   float: left;
-  width: 17.1%;
+  width: 10.85%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-3-last {
   float: left;
-  width: 18.75%;
+  width: 12.5%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-3 {
-  margin-left: 18.75%;
+  margin-left: 12.5%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-3 {
-  margin-right: 18.75%;
+  margin-right: 12.5%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-4 {
   float: left;
-  width: 23.35%;
+  width: 15.01667%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-4-last {
   float: left;
-  width: 25%;
+  width: 16.66667%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-4 {
-  margin-left: 25%;
+  margin-left: 16.66667%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-4 {
-  margin-right: 25%;
+  margin-right: 16.66667%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-5 {
   float: left;
-  width: 29.6%;
+  width: 19.18333%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-5-last {
   float: left;
-  width: 31.25%;
+  width: 20.83333%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-5 {
-  margin-left: 31.25%;
+  margin-left: 20.83333%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-5 {
-  margin-right: 31.25%;
+  margin-right: 20.83333%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-6 {
   float: left;
-  width: 35.85%;
+  width: 23.35%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-6-last {
   float: left;
-  width: 37.5%;
+  width: 25%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-6 {
-  margin-left: 37.5%;
+  margin-left: 25%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-6 {
-  margin-right: 37.5%;
+  margin-right: 25%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-7 {
   float: left;
-  width: 42.1%;
+  width: 27.51667%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-7-last {
   float: left;
-  width: 43.75%;
+  width: 29.16667%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-7 {
-  margin-left: 43.75%;
+  margin-left: 29.16667%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-7 {
-  margin-right: 43.75%;
+  margin-right: 29.16667%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-8 {
   float: left;
-  width: 48.35%;
+  width: 31.68333%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-8-last {
   float: left;
-  width: 50%;
+  width: 33.33333%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-8 {
-  margin-left: 50%;
+  margin-left: 33.33333%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-8 {
-  margin-right: 50%;
+  margin-right: 33.33333%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-9 {
   float: left;
-  width: 54.6%;
+  width: 35.85%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-9-last {
   float: left;
-  width: 56.25%;
+  width: 37.5%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-9 {
-  margin-left: 56.25%;
+  margin-left: 37.5%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-9 {
-  margin-right: 56.25%;
+  margin-right: 37.5%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-10 {
   float: left;
-  width: 60.85%;
+  width: 40.01667%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-10-last {
   float: left;
-  width: 62.5%;
+  width: 41.66667%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-10 {
-  margin-left: 62.5%;
+  margin-left: 41.66667%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-10 {
-  margin-right: 62.5%;
+  margin-right: 41.66667%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-11 {
   float: left;
-  width: 67.1%;
+  width: 44.18333%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-11-last {
   float: left;
-  width: 68.75%;
+  width: 45.83333%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-11 {
-  margin-left: 68.75%;
+  margin-left: 45.83333%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-11 {
-  margin-right: 68.75%;
+  margin-right: 45.83333%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-12 {
   float: left;
-  width: 73.35%;
+  width: 48.35%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-12-last {
   float: left;
-  width: 75%;
+  width: 50%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-12 {
-  margin-left: 75%;
+  margin-left: 50%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-12 {
-  margin-right: 75%;
+  margin-right: 50%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-13 {
   float: left;
-  width: 79.6%;
+  width: 52.51667%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-13-last {
   float: left;
-  width: 81.25%;
+  width: 54.16667%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-13 {
-  margin-left: 81.25%;
+  margin-left: 54.16667%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-13 {
-  margin-right: 81.25%;
+  margin-right: 54.16667%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-14 {
   float: left;
-  width: 85.85%;
+  width: 56.68333%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-14-last {
   float: left;
-  width: 87.5%;
+  width: 58.33333%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-14 {
-  margin-left: 87.5%;
+  margin-left: 58.33333%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-14 {
-  margin-right: 87.5%;
+  margin-right: 58.33333%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-15 {
   float: left;
-  width: 92.1%;
+  width: 60.85%;
   margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-15-last {
   float: left;
-  width: 93.75%;
+  width: 62.5%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-15 {
-  margin-left: 93.75%;
+  margin-left: 62.5%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-15 {
-  margin-right: 93.75%;
+  margin-right: 62.5%;
 }
 
 /* line 52, ../sass/global/grid.scss */
 .grid-16 {
   float: left;
-  width: 98.35%;
+  width: 65.01667%;
+  margin-right: 1.65%;
 }
 
 /* line 58, ../sass/global/grid.scss */
 .grid-16-last {
   float: left;
-  width: 100%;
+  width: 66.66667%;
 }
 
 /* line 59, ../sass/global/grid.scss */
 .prepend-16 {
-  margin-left: 100%;
+  margin-left: 66.66667%;
 }
 
 /* line 60, ../sass/global/grid.scss */
 .append-16 {
+  margin-right: 66.66667%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-17 {
+  float: left;
+  width: 69.18333%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-17-last {
+  float: left;
+  width: 70.83333%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-17 {
+  margin-left: 70.83333%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-17 {
+  margin-right: 70.83333%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-18 {
+  float: left;
+  width: 73.35%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-18-last {
+  float: left;
+  width: 75%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-18 {
+  margin-left: 75%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-18 {
+  margin-right: 75%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-19 {
+  float: left;
+  width: 77.51667%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-19-last {
+  float: left;
+  width: 79.16667%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-19 {
+  margin-left: 79.16667%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-19 {
+  margin-right: 79.16667%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-20 {
+  float: left;
+  width: 81.68333%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-20-last {
+  float: left;
+  width: 83.33333%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-20 {
+  margin-left: 83.33333%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-20 {
+  margin-right: 83.33333%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-21 {
+  float: left;
+  width: 85.85%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-21-last {
+  float: left;
+  width: 87.5%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-21 {
+  margin-left: 87.5%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-21 {
+  margin-right: 87.5%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-22 {
+  float: left;
+  width: 90.01667%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-22-last {
+  float: left;
+  width: 91.66667%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-22 {
+  margin-left: 91.66667%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-22 {
+  margin-right: 91.66667%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-23 {
+  float: left;
+  width: 94.18333%;
+  margin-right: 1.65%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-23-last {
+  float: left;
+  width: 95.83333%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-23 {
+  margin-left: 95.83333%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-23 {
+  margin-right: 95.83333%;
+}
+
+/* line 52, ../sass/global/grid.scss */
+.grid-24 {
+  float: left;
+  width: 98.35%;
+}
+
+/* line 58, ../sass/global/grid.scss */
+.grid-24-last {
+  float: left;
+  width: 100%;
+}
+
+/* line 59, ../sass/global/grid.scss */
+.prepend-24 {
+  margin-left: 100%;
+}
+
+/* line 60, ../sass/global/grid.scss */
+.append-24 {
   margin-right: 100%;
 }
 
@@ -502,161 +711,187 @@ a.active {
   width: 100%;
 }
 
-/*** ESSENTIAL STYLES ***/
-/* line 3, ../sass/global/_superfish.scss */
+/* line 6, ../sass/global/_menus.scss */
+.pane-top-menus {
+  border-top: 1px solid #919191;
+  border-bottom: 1px solid #919191;
+  padding: 1px 0;
+}
+/* line 11, ../sass/global/_menus.scss */
+.pane-top-menus > .pane-content {
+  border-top: 1px solid #777777;
+  border-bottom: 1px solid #777777;
+  background: #1c3047;
+  background: -moz-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c3047), color-stop(100%, #2b486b));
+  background: -webkit-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: -o-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: -ms-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: linear-gradient(to bottom, #1c3047 0%, #2b486b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+
+/* line 21, ../sass/global/_menus.scss */
+#mini-panel-top_menus {
+  height: 37px;
+}
+
+/* line 22, ../sass/global/_menus.scss */
+#mini-panel-top_menus .inside {
+  margin: 0;
+}
+
+/* line 13, ../sass/global/_superfish.scss */
 .sf-menu, .sf-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 8, ../sass/global/_superfish.scss */
-.sf-menu li {
+/* line 18, ../sass/global/_superfish.scss */
+.sf-menu {
+  float: left;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+}
+/* line 23, ../sass/global/_superfish.scss */
+.sf-menu a {
+  border-top: none;
+  color: white;
+  display: block;
+  height: 37px;
+  line-height: 37px;
+  padding: 0 .65em;
+  position: relative;
+  text-decoration: none;
+  zoom: 1;
+  font-size: 105%;
+  font-weight: bold;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
+}
+/* line 37, ../sass/global/_superfish.scss */
+.sf-menu ul {
+  border-style: none solid none solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: #9d9d9d;
+  background: #f7f7f7;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 99;
+  min-width: 12em;
+  *width: 12em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+/* line 53, ../sass/global/_superfish.scss */
+.sf-menu ul li {
   position: relative;
 }
-
-/* line 11, ../sass/global/_superfish.scss */
-.sf-menu ul {
-  position: absolute;
-  display: none;
-  top: 100%;
-  left: 0;
-  z-index: 99;
+/* line 56, ../sass/global/_superfish.scss */
+.sf-menu ul li a {
+  color: #515151;
+  border-bottom: 1px solid #9d9d9d;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
 }
-
-/* line 18, ../sass/global/_superfish.scss */
+/* line 62, ../sass/global/_superfish.scss */
+.sf-menu ul li a:hover, .sf-menu ul li a:active, .sf-menu ul li a.active {
+  color: black;
+}
+/* line 69, ../sass/global/_superfish.scss */
+.sf-menu ul ul {
+  left: 100%;
+}
+/* line 79, ../sass/global/_superfish.scss */
+.sf-menu a:hover, .sf-menu a:active, .sf-menu a.active, .sf-menu > .sfHover > a.menuparent {
+  color: #fff6b6;
+}
+/* line 83, ../sass/global/_superfish.scss */
 .sf-menu > li {
   float: left;
 }
-
-/* line 22, ../sass/global/_superfish.scss */
-.sf-menu li:hover > ul,
-.sf-menu li.sfHover > ul {
+/* line 87, ../sass/global/_superfish.scss */
+.sf-menu > li:hover > ul, .sf-menu > li.sfHover > ul {
+  top: 37px;
   display: block;
 }
-
-/* line 26, ../sass/global/_superfish.scss */
-.sf-menu a {
+/* line 94, ../sass/global/_superfish.scss */
+.sf-menu a.menuparent > .arrow {
   display: block;
-  position: relative;
-}
-
-/* line 30, ../sass/global/_superfish.scss */
-.sf-menu ul ul {
-  top: 0;
-  left: 100%;
-}
-
-/*** DEMO SKIN ***/
-/* line 37, ../sass/global/_superfish.scss */
-.sf-menu {
-  float: left;
-  margin-bottom: 1em;
-}
-
-/* line 41, ../sass/global/_superfish.scss */
-.sf-menu ul {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  min-width: 12em;
-  /* allow long menu items to determine submenu width */
-  *width: 12em;
-  /* no auto sub width for IE7, see white-space comment below */
-}
-
-/* line 46, ../sass/global/_superfish.scss */
-.sf-menu a {
-  border-left: 1px solid #fff;
-  border-top: 1px solid #dFeEFF;
-  /* fallback colour must use full shorthand */
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  padding: .75em 1em;
-  text-decoration: none;
-  zoom: 1;
-  /* IE7 */
-}
-
-/* line 54, ../sass/global/_superfish.scss */
-.sf-menu a {
-  color: #13a;
-}
-
-/* line 57, ../sass/global/_superfish.scss */
-.sf-menu li {
-  background: #BDD2FF;
-  white-space: nowrap;
-  /* no need for Supersubs plugin */
-  *white-space: normal;
-  /* ...unless you support IE7 (let it wrap) */
-  -webkit-transition: background .2s;
-  transition: background .2s;
-}
-
-/* line 64, ../sass/global/_superfish.scss */
-.sf-menu ul li {
-  background: #AABDE6;
-}
-
-/* line 67, ../sass/global/_superfish.scss */
-.sf-menu ul ul li {
-  background: #9AAEDB;
-}
-
-/* line 71, ../sass/global/_superfish.scss */
-.sf-menu li:hover,
-.sf-menu li.sfHover {
-  background: #CFDEFF;
-  /* only transition out, not in */
-  -webkit-transition: none;
-  transition: none;
-}
-
-/*** arrows (for all except IE7) **/
-/* line 79, ../sass/global/_superfish.scss */
-.sf-arrows .sf-with-ul {
-  padding-right: 2.5em;
-  *padding-right: 1em;
-  /* no CSS arrows for IE7 (lack pseudo-elements) */
-}
-
-/* styling for both css and generated arrows */
-/* line 84, ../sass/global/_superfish.scss */
-.sf-arrows .sf-with-ul:after {
-  content: '';
   position: absolute;
-  top: 50%;
-  right: 1em;
-  margin-top: -3px;
-  height: 0;
+  top: 14px;
+  right: -3px;
   width: 0;
-  /* order of following 3 rules important for fallbacks to work */
-  border: 5px solid transparent;
-  border-top-color: #dFeEFF;
-  /* edit this to suit design (no rgba in IE8) */
-  border-top-color: rgba(255, 255, 255, 0.5);
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #7496c8;
+}
+/* line 102, ../sass/global/_superfish.scss */
+.sf-menu .sfHover.sf-depth-1 > a.menuparent > .arrow {
+  top: 17px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #7496c8;
+}
+/* line 108, ../sass/global/_superfish.scss */
+.sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid black;
 }
 
-/* line 99, ../sass/global/_superfish.scss */
-.sf-arrows > li > .sf-with-ul:focus:after,
-.sf-arrows > li:hover > .sf-with-ul:after,
-.sf-arrows > .sfHover > .sf-with-ul:after {
-  border-top-color: white;
-  /* IE8 fallback colour */
+/* line 115, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu {
+  float: right;
+  letter-spacing: 1px;
+}
+/* line 119, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu a {
+  font-size: 100%;
+  font-weight: normal;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
+}
+/* line 125, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu a.menuparent > .arrow {
+  left: 3px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #7496c8;
+}
+/* line 131, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid black;
 }
 
-/* styling for right-facing arrows */
-/* line 103, ../sass/global/_superfish.scss */
-.sf-arrows ul .sf-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-  border-left-color: #dFeEFF;
-  /* edit this to suit design (no rgba in IE8) */
-  border-left-color: rgba(255, 255, 255, 0.5);
+/* line 1, ../sass/global/_tabs.scss */
+.pane-page-tabs {
+  padding: .5em 0;
 }
-
-/* line 112, ../sass/global/_superfish.scss */
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows ul .sfHover > .sf-with-ul:after {
-  border-left-color: white;
+/* line 3, ../sass/global/_tabs.scss */
+.pane-page-tabs ul {
+  margin: 0;
 }

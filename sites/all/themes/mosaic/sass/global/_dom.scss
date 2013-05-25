@@ -29,9 +29,9 @@
 body.html {
   font-size: 16px;
   line-hight: 24px;
-  font-family: $sans_fonts; 
+  font-family: $sans_fonts;
+  letter-spacing: 1px;
 }
-
 
 a { color: $mdblue; }
 a:hover { color: $dkblue; }
