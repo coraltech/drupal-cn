@@ -33,7 +33,12 @@ body.html {
   letter-spacing: 1px;
 }
 
-a { color: $mdblue; }
-a:hover { color: $dkblue; }
-a:active,
-a.active { color: $dkgray; } 
+a { 
+  color: $mdblue; 
+  font-weight: bold;
+  text-decoration: none;
+  
+  &:hover { color: $dkblue; }
+  &:active, &.active { color: $dkgray; }
+}
+

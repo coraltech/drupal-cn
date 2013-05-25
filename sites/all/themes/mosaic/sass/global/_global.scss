@@ -2,6 +2,7 @@
 // Contains only globally needed scss declarations
 //  If it is not visible on EVERY page do not
 //  add it here!
+
 @import "global/colors";
 
 $site_width: 962px; 
@@ -31,4 +32,18 @@ body.html {
 header,
 .mosaic-cont {
   background: $white;
+}
+.mosaic-cont {
+  padding: 1em 0;
+}
+
+// Footer
+.pane-coral-footer {
+  color: $white;
+  font-size: 90%;
+  text-align: right;
+  
+  .fde { // footer data element
+    margin: 0 0 8px;
+  }
 }

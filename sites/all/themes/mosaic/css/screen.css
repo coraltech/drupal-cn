@@ -105,20 +105,19 @@ body.html {
 /* line 36, ../sass/global/_dom.scss */
 a {
   color: #446eac;
+  font-weight: bold;
+  text-decoration: none;
 }
-
-/* line 37, ../sass/global/_dom.scss */
+/* line 41, ../sass/global/_dom.scss */
 a:hover {
   color: #2b486b;
 }
-
-/* line 39, ../sass/global/_dom.scss */
-a:active,
-a.active {
+/* line 42, ../sass/global/_dom.scss */
+a:active, a.active {
   color: #515151;
 }
 
-/* line 13, ../sass/global/_global.scss */
+/* line 14, ../sass/global/_global.scss */
 .main-global,
 .pane-header,
 .pane-footer,
@@ -127,25 +126,41 @@ a.active {
   margin: 0 auto;
 }
 
-/* line 19, ../sass/global/_global.scss */
+/* line 20, ../sass/global/_global.scss */
 .pane-header {
   margin: 0 auto;
 }
 
-/* line 20, ../sass/global/_global.scss */
+/* line 21, ../sass/global/_global.scss */
 .pane-footer {
   margin: 0 auto 1em;
 }
 
-/* line 26, ../sass/global/_global.scss */
+/* line 27, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 32, ../sass/global/_global.scss */
+/* line 33, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
+}
+
+/* line 36, ../sass/global/_global.scss */
+.mosaic-cont {
+  padding: 1em 0;
+}
+
+/* line 41, ../sass/global/_global.scss */
+.pane-coral-footer {
+  color: white;
+  font-size: 90%;
+  text-align: right;
+}
+/* line 46, ../sass/global/_global.scss */
+.pane-coral-footer .fde {
+  margin: 0 0 8px;
 }
 
 /* line 52, ../sass/global/grid.scss */
@@ -711,13 +726,13 @@ header,
   width: 100%;
 }
 
-/* line 6, ../sass/global/_menus.scss */
+/* line 20, ../sass/global/_menus.scss */
 .pane-top-menus {
   border-top: 1px solid #919191;
   border-bottom: 1px solid #919191;
   padding: 1px 0;
 }
-/* line 11, ../sass/global/_menus.scss */
+/* line 25, ../sass/global/_menus.scss */
 .pane-top-menus > .pane-content {
   border-top: 1px solid #777777;
   border-bottom: 1px solid #777777;
@@ -731,14 +746,57 @@ header,
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 21, ../sass/global/_menus.scss */
+/* line 35, ../sass/global/_menus.scss */
 #mini-panel-top_menus {
   height: 37px;
 }
 
-/* line 22, ../sass/global/_menus.scss */
+/* line 36, ../sass/global/_menus.scss */
 #mini-panel-top_menus .inside {
   margin: 0;
+}
+
+/* line 40, ../sass/global/_menus.scss */
+footer {
+  background: #313131;
+  background: -moz-linear-gradient(top, #313131 0%, #515151 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #313131), color-stop(100%, #515151));
+  background: -webkit-linear-gradient(top, #313131 0%, #515151 100%);
+  background: -o-linear-gradient(top, #313131 0%, #515151 100%);
+  background: -ms-linear-gradient(top, #313131 0%, #515151 100%);
+  background: linear-gradient(to bottom, #313131 0%, #515151 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+
+/* line 44, ../sass/global/_menus.scss */
+#mini-panel-footer {
+  font-size: 90%;
+  padding-top: 1.2em;
+}
+/* line 48, ../sass/global/_menus.scss */
+#mini-panel-footer .pane-title {
+  color: #fdaa68;
+  font-weight: bold;
+  margin-bottom: .75em;
+}
+/* line 54, ../sass/global/_menus.scss */
+#mini-panel-footer ul.menu {
+  margin: 0 0 1em;
+}
+/* line 57, ../sass/global/_menus.scss */
+#mini-panel-footer ul.menu li.leaf {
+  font-size: 90%;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 3px 0;
+}
+/* line 63, ../sass/global/_menus.scss */
+#mini-panel-footer ul.menu li.leaf a {
+  color: white;
+}
+/* line 67, ../sass/global/_menus.scss */
+#mini-panel-footer ul.menu li.leaf a:hover, #mini-panel-footer ul.menu li.leaf a:active, #mini-panel-footer ul.menu li.leaf a.active {
+  color: #fff6b6;
 }
 
 /* line 13, ../sass/global/_superfish.scss */
@@ -887,11 +945,11 @@ header,
   border-right: 5px solid black;
 }
 
-/* line 1, ../sass/global/_tabs.scss */
+/* line 4, ../sass/global/_tabs.scss */
 .pane-page-tabs {
-  padding: .5em 0;
+  padding: 0 0 1em;
 }
-/* line 3, ../sass/global/_tabs.scss */
+/* line 6, ../sass/global/_tabs.scss */
 .pane-page-tabs ul {
   margin: 0;
 }
