@@ -99,19 +99,20 @@ body.html {
   font-size: 16px;
   line-hight: 24px;
   font-family: arial, helvetica, sans-serif;
+  letter-spacing: 1px;
 }
 
-/* line 35, ../sass/global/_dom.scss */
+/* line 36, ../sass/global/_dom.scss */
 a {
   color: #446eac;
 }
 
-/* line 36, ../sass/global/_dom.scss */
+/* line 37, ../sass/global/_dom.scss */
 a:hover {
   color: #2b486b;
 }
 
-/* line 38, ../sass/global/_dom.scss */
+/* line 39, ../sass/global/_dom.scss */
 a:active,
 a.active {
   color: #515151;
@@ -128,7 +129,7 @@ a.active {
 
 /* line 19, ../sass/global/_global.scss */
 .pane-header {
-  margin: 1em auto 0;
+  margin: 0 auto;
 }
 
 /* line 20, ../sass/global/_global.scss */
@@ -136,17 +137,12 @@ a.active {
   margin: 0 auto 1em;
 }
 
-/* line 24, ../sass/global/_global.scss */
+/* line 26, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 27, ../sass/global/_global.scss */
-.pane-top-menus {
-  background: #2b486b;
-}
-
-/* line 31, ../sass/global/_global.scss */
+/* line 32, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
@@ -715,163 +711,180 @@ header,
   width: 100%;
 }
 
-/*** ESSENTIAL STYLES ***/
-/* line 3, ../sass/global/_superfish.scss */
+/* line 6, ../sass/global/_menus.scss */
+.pane-top-menus {
+  border-top: 1px solid #919191;
+  border-bottom: 1px solid #919191;
+  padding: 1px 0;
+}
+/* line 11, ../sass/global/_menus.scss */
+.pane-top-menus > .pane-content {
+  border-top: 1px solid #777777;
+  border-bottom: 1px solid #777777;
+  background: #1c3047;
+  background: -moz-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c3047), color-stop(100%, #2b486b));
+  background: -webkit-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: -o-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: -ms-linear-gradient(top, #1c3047 0%, #2b486b 100%);
+  background: linear-gradient(to bottom, #1c3047 0%, #2b486b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+
+/* line 21, ../sass/global/_menus.scss */
+#mini-panel-top_menus {
+  height: 37px;
+}
+
+/* line 22, ../sass/global/_menus.scss */
+#mini-panel-top_menus .inside {
+  margin: 0;
+}
+
+/* line 13, ../sass/global/_superfish.scss */
 .sf-menu, .sf-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 8, ../sass/global/_superfish.scss */
-.sf-menu li {
+/* line 18, ../sass/global/_superfish.scss */
+.sf-menu {
+  float: left;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+}
+/* line 23, ../sass/global/_superfish.scss */
+.sf-menu a {
+  border-top: none;
+  color: white;
+  display: block;
+  height: 37px;
+  line-height: 37px;
+  padding: 0 .65em;
+  position: relative;
+  text-decoration: none;
+  zoom: 1;
+  font-size: 105%;
+  font-weight: bold;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
+}
+/* line 37, ../sass/global/_superfish.scss */
+.sf-menu ul {
+  border-style: none solid none solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: #9d9d9d;
+  background: #f7f7f7;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 99;
+  min-width: 12em;
+  *width: 12em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+/* line 53, ../sass/global/_superfish.scss */
+.sf-menu ul li {
   position: relative;
 }
-
-/* line 11, ../sass/global/_superfish.scss */
-.sf-menu ul {
-  position: absolute;
-  display: none;
-  top: 100%;
-  left: 0;
-  z-index: 99;
+/* line 56, ../sass/global/_superfish.scss */
+.sf-menu ul li a {
+  color: #515151;
+  border-bottom: 1px solid #9d9d9d;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
 }
-
-/* line 18, ../sass/global/_superfish.scss */
+/* line 62, ../sass/global/_superfish.scss */
+.sf-menu ul li a:hover, .sf-menu ul li a:active, .sf-menu ul li a.active {
+  color: black;
+}
+/* line 69, ../sass/global/_superfish.scss */
+.sf-menu ul ul {
+  left: 100%;
+}
+/* line 79, ../sass/global/_superfish.scss */
+.sf-menu a:hover, .sf-menu a:active, .sf-menu a.active, .sf-menu > .sfHover > a.menuparent {
+  color: #fff6b6;
+}
+/* line 83, ../sass/global/_superfish.scss */
 .sf-menu > li {
   float: left;
 }
-
-/* line 22, ../sass/global/_superfish.scss */
-.sf-menu li:hover > ul,
-.sf-menu li.sfHover > ul {
+/* line 87, ../sass/global/_superfish.scss */
+.sf-menu > li:hover > ul, .sf-menu > li.sfHover > ul {
+  top: 37px;
   display: block;
 }
-
-/* line 26, ../sass/global/_superfish.scss */
-.sf-menu a {
+/* line 94, ../sass/global/_superfish.scss */
+.sf-menu a.menuparent > .arrow {
   display: block;
-  position: relative;
-}
-
-/* line 30, ../sass/global/_superfish.scss */
-.sf-menu ul ul {
-  top: 0;
-  left: 100%;
-}
-
-/*** DEMO SKIN ***/
-/* line 37, ../sass/global/_superfish.scss */
-.sf-menu {
-  float: left;
-  margin-bottom: 1em;
-}
-
-/* line 41, ../sass/global/_superfish.scss */
-.sf-menu ul {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  min-width: 12em;
-  /* allow long menu items to determine submenu width */
-  *width: 12em;
-  /* no auto sub width for IE7, see white-space comment below */
-}
-
-/* line 46, ../sass/global/_superfish.scss */
-.sf-menu a {
-  border-left: 1px solid #fff;
-  border-top: 1px solid #dFeEFF;
-  /* fallback colour must use full shorthand */
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  padding: .75em 1em;
-  text-decoration: none;
-  zoom: 1;
-  /* IE7 */
-}
-
-/* line 54, ../sass/global/_superfish.scss */
-.sf-menu a {
-  color: #13a;
-}
-
-/* line 57, ../sass/global/_superfish.scss */
-.sf-menu li {
-  background: #BDD2FF;
-  white-space: nowrap;
-  /* no need for Supersubs plugin */
-  *white-space: normal;
-  /* ...unless you support IE7 (let it wrap) */
-  -webkit-transition: background .2s;
-  transition: background .2s;
-}
-
-/* line 64, ../sass/global/_superfish.scss */
-.sf-menu ul li {
-  background: #AABDE6;
-}
-
-/* line 67, ../sass/global/_superfish.scss */
-.sf-menu ul ul li {
-  background: #9AAEDB;
-}
-
-/* line 71, ../sass/global/_superfish.scss */
-.sf-menu li:hover,
-.sf-menu li.sfHover {
-  background: #CFDEFF;
-  /* only transition out, not in */
-  -webkit-transition: none;
-  transition: none;
-}
-
-/*** arrows (for all except IE7) **/
-/* line 79, ../sass/global/_superfish.scss */
-.sf-arrows .sf-with-ul {
-  padding-right: 2.5em;
-  *padding-right: 1em;
-  /* no CSS arrows for IE7 (lack pseudo-elements) */
-}
-
-/* styling for both css and generated arrows */
-/* line 84, ../sass/global/_superfish.scss */
-.sf-arrows .sf-with-ul:after {
-  content: '';
   position: absolute;
-  top: 50%;
-  right: 1em;
-  margin-top: -3px;
-  height: 0;
+  top: 14px;
+  right: -3px;
   width: 0;
-  /* order of following 3 rules important for fallbacks to work */
-  border: 5px solid transparent;
-  border-top-color: #dFeEFF;
-  /* edit this to suit design (no rgba in IE8) */
-  border-top-color: rgba(255, 255, 255, 0.5);
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #7496c8;
+}
+/* line 102, ../sass/global/_superfish.scss */
+.sf-menu .sfHover.sf-depth-1 > a.menuparent > .arrow {
+  top: 17px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #7496c8;
+}
+/* line 108, ../sass/global/_superfish.scss */
+.sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid black;
 }
 
-/* line 99, ../sass/global/_superfish.scss */
-.sf-arrows > li > .sf-with-ul:focus:after,
-.sf-arrows > li:hover > .sf-with-ul:after,
-.sf-arrows > .sfHover > .sf-with-ul:after {
-  border-top-color: white;
-  /* IE8 fallback colour */
+/* line 115, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu {
+  float: right;
+  letter-spacing: 1px;
 }
-
-/* styling for right-facing arrows */
-/* line 103, ../sass/global/_superfish.scss */
-.sf-arrows ul .sf-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-  border-left-color: #dFeEFF;
-  /* edit this to suit design (no rgba in IE8) */
-  border-left-color: rgba(255, 255, 255, 0.5);
+/* line 119, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu a {
+  font-size: 100%;
+  font-weight: normal;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
 }
-
-/* line 112, ../sass/global/_superfish.scss */
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows ul .sfHover > .sf-with-ul:after {
-  border-left-color: white;
+/* line 125, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu a.menuparent > .arrow {
+  left: 3px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #7496c8;
+}
+/* line 131, ../sass/global/_superfish.scss */
+.pane-superfish-2 .sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid black;
 }
 
 /* line 1, ../sass/global/_tabs.scss */

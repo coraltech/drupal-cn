@@ -1,4 +1,30 @@
 
-// Should only contain collections of fonts
+// Should only contain collections of fonts and 
+//  font related mixins and styles.
 
 $sans_fonts: arial, helvetica, sans-serif;
+$serif_fonts: "Times New Roman", Times, serif;
+
+// Font sizes
+@mixin font(
+
+  $size:100%, 
+  $weight:'normal', 
+  $style:'default', 
+  $family: $sans_fonts, 
+  $ln-height-adj: 'false', 
+  $ln-height:125%
+
+) {
+
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  font-family: $family;
+  
+  @if $ln-height-adj != 'false' {
+    line-height: $ln-height;
+  }
+}
+
+

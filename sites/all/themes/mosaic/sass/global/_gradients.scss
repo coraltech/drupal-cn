@@ -1,0 +1,15 @@
+
+// File should contain only gradient definitions
+@import 'global/colors';
+
+@mixin linear-v-gradient($top:$dkblue, $bot:$mdblue) {
+  background: $top; // Old browsers
+  background: -moz-linear-gradient(top, $top 0%, $bot 100%); // FF3.6+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bot)); // Chrome,Safari4+
+  background: -webkit-linear-gradient(top, $top 0%,$bot 100%); // Chrome10+,Safari5.1+
+  background: -o-linear-gradient(top, $top 0%,$bot 100%); // Opera 11.10+
+  background: -ms-linear-gradient(top, $top 0%,$bot 100%); // IE10+
+  background: linear-gradient(to bottom, $top 0%,$bot 100%); // W3C
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$top, endColorstr=$bot,GradientType=0 ); // IE6-9
+}
+

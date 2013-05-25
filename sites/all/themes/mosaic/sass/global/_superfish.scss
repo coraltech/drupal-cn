@@ -1,116 +1,137 @@
-// Testing only!!! TO BE MOVED TO THE RELATED BLOCK!
-/*** ESSENTIAL STYLES ***/
+
+// Superfish definitions
+//  Only superfish related styles should be here!
+
+@import 'global/arrows';
+@import 'global/colors';
+@import 'global/fonts';
+
+// external imports
+@import 'compass/css3/opacity';
+
+// Primary styles
 .sf-menu, .sf-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.sf-menu li {
-  position: relative;
-}
-.sf-menu ul {
-  position: absolute;
-  display: none;
-  top: 100%;
-  left: 0;
-  z-index: 99;
-}
-.sf-menu > li {
+.sf-menu{
   float: left;
-}
-.sf-menu li:hover > ul,
-.sf-menu li.sfHover > ul {
-  display: block;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+  
+  a {
+    border-top: none;
+    color: $white;
+    display: block;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 .65em;
+    position: relative;
+    text-decoration: none;
+    zoom: 1; // IE7
+    
+    @include font(105%, bold);
+  }
+ 
+  ul {
+    border-style: none solid none solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: lighten($mdgray, 15%);
+    background: lighten($ltgray, 10%);
+    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 99;
+    min-width: 12em; // allow long menu items to determine submenu width 
+    *width: 12em;    // no auto sub width for IE7, see white-space comment below
+  
+    @include opacity(.9);
+    
+    li {
+      position: relative;
+      
+      a {
+        color: $dkgray;
+        border-bottom: 1px solid lighten($mdgray, 15%);
+  
+        &:hover,
+        &:active,
+        &.active {
+          color: $black;
+        }
+        @include font(100%, normal);
+      }
+    }
+    
+    ul {
+      left: 100%;
+      
+    }
+  }
+  
+  // self referencing
+  & a:hover,
+  & a:active,
+  & a.active,
+  & > .sfHover > a.menuparent {
+   color: $ltyellow;
+  }
+  
+  & > li {
+    float: left;
+    
+    &:hover > ul,
+    &.sfHover > ul { // second level ul's need to be 37px from the top
+      top: 37px;
+      display: block;
+    }    
+  }
+  
+  // Arrows
+  & a.menuparent > .arrow {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: -3px;
+    
+    @include arrow-right(5px, lighten($mdblue, 15%));
+  }
+  & .sfHover.sf-depth-1 > a.menuparent > .arrow {
+    top: 17px;
+    right: 0px;
+    
+    @include arrow-down(5px, lighten($mdblue, 15%));
+  }
+  & .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+    @include arrow-right(5px, $black);
+  }
 }
 
-.sf-menu a {
-  display: block;
-  position: relative;
-}
-.sf-menu ul ul {
-  top: 0;
-  left: 100%;
+
+// Secondary (User menu) superfish menu
+.pane-superfish-2 .sf-menu {
+  float: right;
+  letter-spacing: 1px;
+  
+  a {
+    @include font(100%, normal);
+  }
+  
+  // Secondary superfish menu dropdowns not working yet - though not needed either
+  // currently they pop out to the left 
+  a.menuparent > .arrow {
+    left: 3px;
+    
+    @include arrow-left(5px, lighten($mdblue, 15%));
+  }
+  
+  & .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+    @include arrow-left(5px, $black);
+  }
 }
 
-
-/*** DEMO SKIN ***/
-.sf-menu {
-  float: left;
-  margin-bottom: 1em;
-}
-.sf-menu ul {
-  box-shadow: 2px 2px 6px rgba(0,0,0,.2);
-  min-width: 12em; /* allow long menu items to determine submenu width */
-  *width: 12em; /* no auto sub width for IE7, see white-space comment below */
-}
-.sf-menu a {
-  border-left: 1px solid #fff;
-  border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
-  border-top: 1px solid rgba(255,255,255,.5);
-  padding: .75em 1em;
-  text-decoration: none;
-  zoom: 1; /* IE7 */
-}
-.sf-menu a {
-  color: #13a;
-}
-.sf-menu li {
-  background: #BDD2FF;
-  white-space: nowrap; /* no need for Supersubs plugin */
-  *white-space: normal; /* ...unless you support IE7 (let it wrap) */
-  -webkit-transition: background .2s;
-  transition: background .2s;
-}
-.sf-menu ul li {
-  background: #AABDE6;
-}
-.sf-menu ul ul li {
-  background: #9AAEDB;
-}
-.sf-menu li:hover,
-.sf-menu li.sfHover {
-  background: #CFDEFF;
-  /* only transition out, not in */
-  -webkit-transition: none;
-  transition: none;
-}
-
-/*** arrows (for all except IE7) **/
-.sf-arrows .sf-with-ul {
-  padding-right: 2.5em;
-  *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
-}
-/* styling for both css and generated arrows */
-.sf-arrows .sf-with-ul:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  margin-top: -3px;
-  height: 0;
-  width: 0;
-  /* order of following 3 rules important for fallbacks to work */
-  border: 5px solid transparent;
-  border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
-  border-top-color: rgba(255,255,255,.5);
-}
-.sf-arrows > li > .sf-with-ul:focus:after,
-.sf-arrows > li:hover > .sf-with-ul:after,
-.sf-arrows > .sfHover > .sf-with-ul:after {
-  border-top-color: white; /* IE8 fallback colour */
-}
-/* styling for right-facing arrows */
-.sf-arrows ul .sf-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-  border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
-  border-left-color: rgba(255,255,255,.5);
-}
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows ul .sfHover > .sf-with-ul:after {
-  border-left-color: white;
-}
 
 

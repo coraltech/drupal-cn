@@ -6,7 +6,7 @@
 
 $site_width: 962px; 
 
-// Global container widths
+// -- Global container widths
 .main-global,
 .pane-header,
 .pane-footer,
@@ -16,17 +16,18 @@ $site_width: 962px;
 }
 
 // site margin top and bottom
-.pane-header { margin: 1em auto 0; }
+.pane-header { margin: 0 auto; }
 .pane-footer { margin: 0 auto 1em; }
 
 
-// Coloration globals
+// -- Coloration globals
+
+// Site body
 body.html {
   background: $dkgray; 
 }
-.pane-top-menus { 
-  background: $dkblue;
-}
+// See _menus.scss for primary (main) menu 
+//  coloration settings.
 header,
 .mosaic-cont {
   background: $white;
