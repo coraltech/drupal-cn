@@ -3,7 +3,8 @@
 //  If it is not visible on EVERY page do not
 //  add it here!
 
-@import "global/colors";
+@import 'global/colors';
+@import 'global/gradients';
 
 $site_width: 962px; 
 
@@ -36,6 +37,45 @@ header,
 .mosaic-cont {
   padding: 1em 0;
 }
+
+
+// Search form
+header .pane-search-form {
+  background: url(../assets/images/search-bg.png) left top no-repeat;
+  height: 50px;
+  margin: 10px 0 0 10px;
+  padding: 10px 0 0 18px;
+  position: relative;
+  width: 275px;
+  
+  .form-text {
+    background: none;
+    border: none;
+    font-size: 100%;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 8px;
+    width: 185px;
+  }
+  .form-wrapper {
+    border: 1px solid $dkblue;
+    height: 27px;
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    width: 60px;
+    
+    .form-submit {
+      border: 1px solid $mdblue;
+      color: $white;
+      height: 27px;
+      width: 60px;
+    
+      @include linear-v-gradient(#0065a5, #2a4a70);
+    }
+  }
+}
+
 
 // Footer
 .pane-coral-footer {
