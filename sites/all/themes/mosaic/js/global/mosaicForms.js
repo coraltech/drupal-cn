@@ -1,33 +1,31 @@
 // Registers the Mosaic namespace
 Drupal.mosaic = Drupal.mosaic || {};
 
-// ---
-//
-// Mosaic forms will check to see if there are
-//  settings for any form's textfield defaults.
-//  Should only recieve requests for items that
-//  implement it. Only implement on pages where
-//  needed!
-//
-// These defaults are added via modules and 
-//  themes via whatever hooks they deem fit.
-//
-// Add new defaults to: Drupal.mosaic.forms.defaults
-//  key => value
-//  selector ('#form_id .form-text') => default  <-- real
-//  
-// ---
-
+/**
+ *
+ * Mosaic forms will check to see if there are
+ *  settings for any form's textfield defaults.
+ *  Should only recieve requests for items that
+ *  implement it. Only implement on pages where
+ *  needed!
+ *
+ * These defaults are added via modules and 
+ *  themes via whatever hooks they deem fit.
+ *
+ * Add new defaults to: 
+ * 
+ * Drupal.settings.mosaic.fieldDefaults:
+ * 
+ *  - fieldDefaults['.selector']['default'] = 'Default text';
+ *  
+*/
 // Document loaded!
 (function($) {
   
   Drupal.behaviors.mosaicFormsInit = {    
     attach : function(context, settings) {
-      //if (Drupal.settings.mosaic.fieldDefaults) {
-        var fieldDefaults = {};//Drupal.settings.mosaic.fieldDefaults;
-        
-        fieldDefaults['.form-text'] = {};
-        fieldDefaults['.form-text']['default'] = 'Search';
+      if (Drupal.settings.mosaic.fieldDefaults) {
+        var fieldDefaults = Drupal.settings.mosaic.fieldDefaults;
         
         for (selector in fieldDefaults) {      
           var $formElement = $(selector);
@@ -36,14 +34,14 @@ Drupal.mosaic = Drupal.mosaic || {};
             new Drupal.mosaic.forms($formElement[index], fieldDefaults[selector]);
           }
         }
-      //}
+      }
     }
   };
 
   // Mosaic process
   
   Drupal.mosaic.forms = function(formElement, fieldDefaults) {
-    //console.log(fieldDefaults);
+    console.log(fieldDefaults);
         
     this.$element = $(formElement);
     
@@ -82,14 +80,14 @@ Drupal.mosaic = Drupal.mosaic || {};
     
     if ($element.val() === '') {
       if (op === 'blur') {
-        $element.val(settings['default']);
+        $element.val(settings['default']).addClass('field-default');
       }
     }
       
     // Has contents
     if ($element.val() === settings['default']) {
       if (op === 'focus') {
-        $element.val('');
+        $element.val('').removeClass('field-default');
       }
     }
   }

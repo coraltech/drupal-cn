@@ -2,6 +2,8 @@
 // This file is used for global default classes and class sets.
 //  It should contain only helper type class definitions.
 
+@import 'global/colors';
+
 // hides
 .hide { position: absolute; left: -9999em; }
 
@@ -13,3 +15,8 @@
 .clear       { clear: both;  }
 .clear-right { clear: right; }
 .clear-left  { clear: left;  }
+
+// forms
+.field-default {
+  color: $mdgray; // default field text color - class applied in mosaicForms.js
+}
