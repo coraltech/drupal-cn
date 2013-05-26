@@ -21,7 +21,7 @@ function _mosaic_add_textfield_defaults($form_id) {
   $matrix = array(); // storage for selector statements
   
   // Search form keywords default options
-  $search_form_defaults = array(
+  $search_form_defaults = array( // @TODO this could be coming from top search terms!
     'e.g. Apache2 modules', 
     'e.g. Hadoop cluster', 
     'e.g. Including snippets', 

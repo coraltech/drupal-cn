@@ -41,8 +41,6 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Mosaic process
   
   Drupal.mosaic.forms = function(formElement, fieldDefaults) {
-    console.log(fieldDefaults);
-        
     this.$element = $(formElement);
     
     var forms     = this;
@@ -75,19 +73,19 @@ Drupal.mosaic = Drupal.mosaic || {};
   //---
   
   Drupal.mosaic.forms.prototype.process = function(settings, op) {
-    id       = this.$element.attr('id');
-    $element = this.$element;
+    id   = this.$element.attr('id');
+    $elm = this.$element;
     
-    if ($element.val() === '') {
+    if ($elm.val() === '') {
       if (op === 'blur') {
-        $element.val(settings['default']).addClass('field-default');
+        $elm.val(settings['default']).addClass('field-default');
       }
     }
       
     // Has contents
-    if ($element.val() === settings['default']) {
+    if ($elm.val() === settings['default']) {
       if (op === 'focus') {
-        $element.val('').removeClass('field-default');
+        $elm.val('').removeClass('field-default');
       }
     }
   }
