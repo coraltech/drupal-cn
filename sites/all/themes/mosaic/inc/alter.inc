@@ -4,7 +4,7 @@
 
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Add default textfield support
-  _mosaic_add_textfield_defaults($form_id);
+  _mosaic_add_textfield_defaults($form_id, $form);
 }
 
 
@@ -17,36 +17,55 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
  * Adds default text to text fields by adding settings
  *  to the Drupal.settings.mosaic.fieldDefaults array.
  */
-function _mosaic_add_textfield_defaults($form_id) {
+function _mosaic_add_textfield_defaults($form_id, $form) {
   $matrix = array(); // storage for selector statements
   
   // Search form keywords default options
-  $search_form_defaults = array( // @TODO this could be coming from top search terms!
+  $search_form_node_defaults = array( // @TODO this could be coming from top search terms!
     'e.g. Apache2 modules', 
     'e.g. Hadoop cluster', 
     'e.g. Including snippets', 
     'e.g. Using configurations', 
     'e.g. Coral cluster tutorial'
   );
-
+  
+  $search_form_user_defaults = array( // @TODO this could be coming from top search terms!
+    'e.g. Brian95', 
+    'e.g. Username...', 
+    'e.g. user5@example.com' 
+    //'e.g. Using configurations', 
+    //'e.g. Coral cluster tutorial'
+  );
+  
   switch ($form_id) {
     // NOTE: Put selectors in order from most to least specific.
+    
+    // --- Search form
     case 'search_form':
-      $matrix['search_form'] = array(
-        '#search-form .form-item-keys .form-text' => $search_form_defaults[array_rand($search_form_defaults)] // keywords
-      );
+      if ($form['#action'] == '/search/user') { // user search
+        $matrix['search_form'] = array(
+          '#search-form .form-item-keys .form-text' => $search_form_user_defaults[array_rand($search_form_user_defaults)] // keywords
+        );
+      }
+      else { // node search
+        $matrix['search_form'] = array(
+          '#search-form .form-item-keys .form-text' => $search_form_node_defaults[array_rand($search_form_node_defaults)] // keywords
+        );
+      }
       break;
-
+    
+    // --- Search block form (header)  
     case 'search_block_form':
       $matrix['search_block_form'] = array(
         '#search-block-form .form-text' => 'Search'
       );
       break;
+
     default: break; 
   }
   
   $field_defaults = array();
-  foreach ($matrix as $form => $selectors) {
+  foreach ($matrix as $frm => $selectors) {
     foreach ($selectors as $selector => $default) {
       $field_defaults[$selector]['default'] = $default;
     }
