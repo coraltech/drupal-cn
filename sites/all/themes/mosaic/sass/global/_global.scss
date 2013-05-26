@@ -6,6 +6,9 @@
 @import 'global/colors';
 @import 'global/gradients';
 
+// external imports
+@import 'compass/css3/opacity';
+
 $site_width: 962px; 
 
 // -- Global container widths
@@ -18,12 +21,15 @@ $site_width: 962px;
 }
 
 // site margin top and bottom
-.pane-header { margin: 0 auto; }
+.pane-header { margin: 0 auto; padding-top: .5em; }
 .pane-footer { margin: 0 auto 1em; }
 
+// Unset margin in the header
+#mini-panel-header { 
+  .inside, .panel-separator { margin: 0; }
+}
 
 // -- Coloration globals
-
 // Site body
 body.html {
   background: $dkgray; 
@@ -39,7 +45,7 @@ header,
 }
 
 
-// Search form
+// -- Search form
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -70,14 +76,36 @@ header .pane-search-form {
       color: $white;
       height: 27px;
       width: 60px;
-    
+      
+      @include font(80%);
       @include linear-v-gradient(#0065a5, #2a4a70);
     }
   }
 }
 
+// -- Gigya
+.pane-gigya-gigya-login {
+  float: right;
+  position: relative;
+  
+  .pane-title {
+    text-align: center;
+    color: $mdgray;
+    
+    @include font(70%, bold);
+  }
+  #divGigyaLogin_bottomLink {
+    margin-top: -21px;
+    
+    table td { text-align: center; }
+    
+    @include opacity(.85);
+  }
+}
+ 
 
-// Footer
+
+// -- Footer
 .pane-coral-footer {
   color: $white;
   font-size: 90%;

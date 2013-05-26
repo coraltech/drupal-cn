@@ -8,6 +8,7 @@
 
 // external imports
 @import 'compass/css3/opacity';
+@import 'compass/css3/text-shadow';
 
 // Primary styles
 .sf-menu, .sf-menu * {
@@ -30,6 +31,7 @@
     position: relative;
     text-decoration: none;
     zoom: 1; // IE7
+    text-shadow: 1.5px 1px 2px #222;
     
     @include font(105%, bold);
   }
@@ -48,7 +50,7 @@
     min-width: 12em; // allow long menu items to determine submenu width 
     *width: 12em;    // no auto sub width for IE7, see white-space comment below
   
-    @include opacity(.9);
+    @include opacity(.95);
     
     li {
       position: relative;
@@ -56,19 +58,19 @@
       a {
         color: $dkgray;
         border-bottom: 1px solid lighten($mdgray, 15%);
+        text-shadow: none;
   
         &:hover,
         &:active,
         &.active {
           color: $black;
         }
-        @include font(100%, normal);
+        @include font(95%, bold);
       }
     }
     
     ul {
       left: 100%;
-      
     }
   }
   

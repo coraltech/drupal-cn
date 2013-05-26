@@ -117,7 +117,7 @@ a:active, a.active {
   color: #515151;
 }
 
-/* line 15, ../sass/global/_global.scss */
+/* line 18, ../sass/global/_global.scss */
 .main-global,
 .pane-header,
 .pane-footer,
@@ -126,33 +126,39 @@ a:active, a.active {
   margin: 0 auto;
 }
 
-/* line 21, ../sass/global/_global.scss */
+/* line 24, ../sass/global/_global.scss */
 .pane-header {
   margin: 0 auto;
+  padding-top: .5em;
 }
 
-/* line 22, ../sass/global/_global.scss */
+/* line 25, ../sass/global/_global.scss */
 .pane-footer {
   margin: 0 auto 1em;
 }
 
-/* line 28, ../sass/global/_global.scss */
+/* line 29, ../sass/global/_global.scss */
+#mini-panel-header .inside, #mini-panel-header .panel-separator {
+  margin: 0;
+}
+
+/* line 34, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 34, ../sass/global/_global.scss */
+/* line 40, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
 }
 
-/* line 37, ../sass/global/_global.scss */
+/* line 43, ../sass/global/_global.scss */
 .mosaic-cont {
   padding: 1em 0;
 }
 
-/* line 43, ../sass/global/_global.scss */
+/* line 49, ../sass/global/_global.scss */
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -161,7 +167,7 @@ header .pane-search-form {
   position: relative;
   width: 275px;
 }
-/* line 51, ../sass/global/_global.scss */
+/* line 57, ../sass/global/_global.scss */
 header .pane-search-form .form-text {
   background: none;
   border: none;
@@ -171,7 +177,7 @@ header .pane-search-form .form-text {
   padding: 5px 8px;
   width: 185px;
 }
-/* line 60, ../sass/global/_global.scss */
+/* line 66, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
   border: 1px solid #2b486b;
   height: 27px;
@@ -180,12 +186,16 @@ header .pane-search-form .form-wrapper {
   top: 11px;
   width: 60px;
 }
-/* line 68, ../sass/global/_global.scss */
+/* line 74, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper .form-submit {
   border: 1px solid #446eac;
   color: white;
   height: 27px;
   width: 60px;
+  font-size: 80%;
+  font-weight: "normal";
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
   background: #0065a5;
   background: -moz-linear-gradient(top, #0065a5 0%, #2a4a70 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0065a5), color-stop(100%, #2a4a70));
@@ -196,13 +206,38 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 81, ../sass/global/_global.scss */
+/* line 87, ../sass/global/_global.scss */
+.pane-gigya-gigya-login {
+  float: right;
+  position: relative;
+}
+/* line 91, ../sass/global/_global.scss */
+.pane-gigya-gigya-login .pane-title {
+  text-align: center;
+  color: #777777;
+  font-size: 70%;
+  font-weight: bold;
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
+}
+/* line 97, ../sass/global/_global.scss */
+.pane-gigya-gigya-login #divGigyaLogin_bottomLink {
+  margin-top: -21px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+/* line 100, ../sass/global/_global.scss */
+.pane-gigya-gigya-login #divGigyaLogin_bottomLink table td {
+  text-align: center;
+}
+
+/* line 109, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
 }
-/* line 86, ../sass/global/_global.scss */
+/* line 114, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 8px;
 }
@@ -770,13 +805,133 @@ header .pane-search-form .form-wrapper .form-submit {
   width: 100%;
 }
 
-/* line 20, ../sass/global/_menus.scss */
+/* line 21, ../sass/global/_menus.scss */
+.pane-menu-menu-utility {
+  position: relative;
+}
+/* line 24, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu {
+  position: absolute;
+  top: -.5em;
+  right: 285px;
+}
+/* line 29, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf {
+  display: block;
+  float: left;
+  list-style-image: none;
+  list-style-type: none;
+  padding: 0 5px;
+  height: 15px;
+  width: 95px;
+  position: relative;
+}
+/* line 39, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf.first {
+  background: #36b048;
+}
+/* line 42, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf.first:before {
+  content: "";
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 25px;
+  border-radius: 20px;
+}
+/* line 46, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf.first:after {
+  content: "";
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 10px;
+  height: 25px;
+  border-radius: 20px;
+}
+/* line 51, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf.last {
+  background: #c63f26;
+  margin: 0;
+}
+/* line 55, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf.last:before {
+  content: "";
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 25px;
+  border-radius: 10px;
+}
+/* line 59, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf.last:after {
+  content: "";
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 10px;
+  height: 25px;
+  border-radius: 10px;
+}
+/* line 65, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf a {
+  border-radius: 0 0 7px 7px;
+  display: block;
+  height: 15px;
+  width: 95px;
+  color: white;
+  line-height: 8px;
+  text-shadow: 1px 1px 2px #222;
+  text-align: center;
+  position: relative;
+  top: 5px;
+  font-size: 75%;
+  font-weight: "normal";
+  font-style: "default";
+  font-family: arial, helvetica, sans-serif;
+}
+/* line 79, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf a.get-help-tab {
+  background: #36b048;
+  background: -moz-linear-gradient(top, #36b048 0%, #2a8938 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #36b048), color-stop(100%, #2a8938));
+  background: -webkit-linear-gradient(top, #36b048 0%, #2a8938 100%);
+  background: -o-linear-gradient(top, #36b048 0%, #2a8938 100%);
+  background: -ms-linear-gradient(top, #36b048 0%, #2a8938 100%);
+  background: linear-gradient(to bottom, #36b048 0%, #2a8938 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  border-bottom: 2px solid #20682a;
+}
+/* line 83, ../sass/global/_menus.scss */
+.pane-menu-menu-utility ul.menu li.leaf a.issues-tab {
+  background: #c63f26;
+  background: -moz-linear-gradient(top, #c63f26 0%, #9b311e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c63f26), color-stop(100%, #9b311e));
+  background: -webkit-linear-gradient(top, #c63f26 0%, #9b311e 100%);
+  background: -o-linear-gradient(top, #c63f26 0%, #9b311e 100%);
+  background: -ms-linear-gradient(top, #c63f26 0%, #9b311e 100%);
+  background: linear-gradient(to bottom, #c63f26 0%, #9b311e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  border-bottom: 2px solid #762921;
+}
+
+/* line 95, ../sass/global/_menus.scss */
 .pane-top-menus {
   border-top: 1px solid #919191;
   border-bottom: 1px solid #919191;
   padding: 1px 0;
 }
-/* line 25, ../sass/global/_menus.scss */
+/* line 100, ../sass/global/_menus.scss */
 .pane-top-menus > .pane-content {
   border-top: 1px solid #777777;
   border-bottom: 1px solid #777777;
@@ -790,17 +945,17 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 35, ../sass/global/_menus.scss */
+/* line 110, ../sass/global/_menus.scss */
 #mini-panel-top_menus {
   height: 37px;
 }
 
-/* line 36, ../sass/global/_menus.scss */
+/* line 111, ../sass/global/_menus.scss */
 #mini-panel-top_menus .inside {
   margin: 0;
 }
 
-/* line 40, ../sass/global/_menus.scss */
+/* line 115, ../sass/global/_menus.scss */
 footer {
   background: #313131;
   background: -moz-linear-gradient(top, #313131 0%, #515151 100%);
@@ -812,51 +967,51 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 44, ../sass/global/_menus.scss */
+/* line 119, ../sass/global/_menus.scss */
 #mini-panel-footer {
   font-size: 90%;
   padding-top: 1.2em;
 }
-/* line 48, ../sass/global/_menus.scss */
+/* line 123, ../sass/global/_menus.scss */
 #mini-panel-footer .pane-title {
   color: #fdaa68;
   font-weight: bold;
   margin-bottom: .75em;
 }
-/* line 54, ../sass/global/_menus.scss */
+/* line 129, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu {
   margin: 0 0 1em;
 }
-/* line 57, ../sass/global/_menus.scss */
+/* line 132, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf {
   font-size: 90%;
   list-style-image: none;
   list-style-type: none;
   margin: 3px 0;
 }
-/* line 63, ../sass/global/_menus.scss */
+/* line 138, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a {
   color: white;
 }
-/* line 67, ../sass/global/_menus.scss */
+/* line 142, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a:hover, #mini-panel-footer ul.menu li.leaf a:active, #mini-panel-footer ul.menu li.leaf a.active {
   color: #fff6b6;
 }
 
-/* line 13, ../sass/global/_superfish.scss */
+/* line 14, ../sass/global/_superfish.scss */
 .sf-menu, .sf-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 18, ../sass/global/_superfish.scss */
+/* line 19, ../sass/global/_superfish.scss */
 .sf-menu {
   float: left;
   margin-bottom: 0;
   letter-spacing: 2px;
 }
-/* line 23, ../sass/global/_superfish.scss */
+/* line 24, ../sass/global/_superfish.scss */
 .sf-menu a {
   border-top: none;
   color: white;
@@ -867,12 +1022,13 @@ footer {
   position: relative;
   text-decoration: none;
   zoom: 1;
+  text-shadow: 1.5px 1px 2px #222;
   font-size: 105%;
   font-weight: bold;
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 37, ../sass/global/_superfish.scss */
+/* line 39, ../sass/global/_superfish.scss */
 .sf-menu ul {
   border-style: none solid none solid;
   border-width: 0px 1px 1px 1px;
@@ -886,44 +1042,45 @@ footer {
   z-index: 99;
   min-width: 12em;
   *width: 12em;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
-  opacity: 0.9;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
 }
-/* line 53, ../sass/global/_superfish.scss */
+/* line 55, ../sass/global/_superfish.scss */
 .sf-menu ul li {
   position: relative;
 }
-/* line 56, ../sass/global/_superfish.scss */
+/* line 58, ../sass/global/_superfish.scss */
 .sf-menu ul li a {
   color: #515151;
   border-bottom: 1px solid #9d9d9d;
-  font-size: 100%;
-  font-weight: normal;
+  text-shadow: none;
+  font-size: 95%;
+  font-weight: bold;
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 62, ../sass/global/_superfish.scss */
+/* line 65, ../sass/global/_superfish.scss */
 .sf-menu ul li a:hover, .sf-menu ul li a:active, .sf-menu ul li a.active {
   color: black;
 }
-/* line 69, ../sass/global/_superfish.scss */
+/* line 72, ../sass/global/_superfish.scss */
 .sf-menu ul ul {
   left: 100%;
 }
-/* line 79, ../sass/global/_superfish.scss */
+/* line 81, ../sass/global/_superfish.scss */
 .sf-menu a:hover, .sf-menu a:active, .sf-menu a.active, .sf-menu > .sfHover > a.menuparent {
   color: #fff6b6;
 }
-/* line 83, ../sass/global/_superfish.scss */
+/* line 85, ../sass/global/_superfish.scss */
 .sf-menu > li {
   float: left;
 }
-/* line 87, ../sass/global/_superfish.scss */
+/* line 89, ../sass/global/_superfish.scss */
 .sf-menu > li:hover > ul, .sf-menu > li.sfHover > ul {
   top: 37px;
   display: block;
 }
-/* line 94, ../sass/global/_superfish.scss */
+/* line 96, ../sass/global/_superfish.scss */
 .sf-menu a.menuparent > .arrow {
   display: block;
   position: absolute;
@@ -936,7 +1093,7 @@ footer {
   border-bottom: 5px solid transparent;
   border-left: 5px solid #7496c8;
 }
-/* line 102, ../sass/global/_superfish.scss */
+/* line 104, ../sass/global/_superfish.scss */
 .sf-menu .sfHover.sf-depth-1 > a.menuparent > .arrow {
   top: 17px;
   right: 0px;
@@ -947,7 +1104,7 @@ footer {
   border-right: 5px solid transparent;
   border-top: 5px solid #7496c8;
 }
-/* line 108, ../sass/global/_superfish.scss */
+/* line 110, ../sass/global/_superfish.scss */
 .sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
   width: 0;
   height: 0;
@@ -957,19 +1114,19 @@ footer {
   border-left: 5px solid black;
 }
 
-/* line 115, ../sass/global/_superfish.scss */
+/* line 117, ../sass/global/_superfish.scss */
 .pane-superfish-2 .sf-menu {
   float: right;
   letter-spacing: 1px;
 }
-/* line 119, ../sass/global/_superfish.scss */
+/* line 121, ../sass/global/_superfish.scss */
 .pane-superfish-2 .sf-menu a {
   font-size: 100%;
   font-weight: normal;
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 125, ../sass/global/_superfish.scss */
+/* line 127, ../sass/global/_superfish.scss */
 .pane-superfish-2 .sf-menu a.menuparent > .arrow {
   left: 3px;
   width: 0;
@@ -979,7 +1136,7 @@ footer {
   border-bottom: 5px solid transparent;
   border-right: 5px solid #7496c8;
 }
-/* line 131, ../sass/global/_superfish.scss */
+/* line 133, ../sass/global/_superfish.scss */
 .pane-superfish-2 .sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
   width: 0;
   height: 0;

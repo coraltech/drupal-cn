@@ -5,19 +5,27 @@ package     = Coral
 version     = VERSION
 core        = 7.x
 
+; - Stylesheets
 stylesheets[all][]   = css/screen.css
 stylesheets[print][] = css/print.css
 
+; - Global scripts
+; -- Libraries
+scripts[] = js/lib/underscore/underscore.js
+scripts[] = js/lib/backbone/backbone.js
 
-;----------// Panels
+; -- Custom
+scripts[] = js/global/mosaicForms.js
+
+; - Panels
 plugins[panels][layouts]     = plugins/layouts
 plugins[panels][styles]      = plugins/styles
 api[panels][styles][version] = 2
 
 
-;----------// Page manager
+; - Page manager
 api[page_manager][pages_default][version] = 1
 api[page_manager][pages_default][path]    = pages
 
-;----------// Settings
+; - Settings
 ;settings[mosaic_setting] = "some setting"
