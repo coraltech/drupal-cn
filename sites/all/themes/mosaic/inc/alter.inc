@@ -3,7 +3,8 @@
 // --- Hooks ---
 
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
-  _mosaic_add_textfield_defaults($form_id); // Add default textfield support
+  // Add default textfield support
+  _mosaic_add_textfield_defaults($form_id);
 }
 
 
@@ -19,12 +20,20 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
 function _mosaic_add_textfield_defaults($form_id) {
   $matrix = array(); // storage for selector statements
   
+  // Search form keywords default options
+  $search_form_defaults = array(
+    'e.g. Apache2 modules', 
+    'e.g. Hadoop cluster', 
+    'e.g. Including snippets', 
+    'e.g. Using configurations', 
+    'e.g. Coral cluster tutorial'
+  );
+
   switch ($form_id) {
     // NOTE: Put selectors in order from most to least specific.
     case 'search_form':
       $matrix['search_form'] = array(
-        '#search-form .form-item-keys .form-text' => 'e.g. Apache2' // keywords
-        //'#search-form .form-text' => 'Search terms',
+        '#search-form .form-item-keys .form-text' => $search_form_defaults[array_rand($search_form_defaults)] // keywords
       );
       break;
 
