@@ -38,9 +38,9 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_footer_pane_content_type_render($subtype, $conf, $context = NULL) {
-  $server_time = '<div class="fde server-time">Server time: '.date('F j, g:i:sa').'</div>';
+  $server_time = '<div class="fde server-time">Generated: '.date('F j, g:i:sa').'</div>';
   $version     = '<div class="fde version">Coral Nexus version: 0.1.1</div>';
-  $copyright   = '<div class="fde copyright">&copy; 2013 Coral Nexus</div>'; 
+  $copyright   = '<div class="fde copyright">&copy; 2013 Coral Technology Group LLC</div>'; 
   $block->content = $server_time.$version.$copyright;
   return $block; 
 }
