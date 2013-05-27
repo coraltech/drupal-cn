@@ -63,35 +63,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 6, ../sass/global/_construct.scss */
+/* line 8, ../sass/global/_construct.scss */
 .hide {
   position: absolute;
   left: -9999em;
 }
 
-/* line 9, ../sass/global/_construct.scss */
+/* line 11, ../sass/global/_construct.scss */
 .left {
   float: left;
 }
 
-/* line 10, ../sass/global/_construct.scss */
+/* line 12, ../sass/global/_construct.scss */
 .right {
   float: right;
 }
 
-/* line 13, ../sass/global/_construct.scss */
+/* line 15, ../sass/global/_construct.scss */
 .clear {
   clear: both;
 }
 
-/* line 14, ../sass/global/_construct.scss */
+/* line 16, ../sass/global/_construct.scss */
 .clear-right {
   clear: right;
 }
 
-/* line 15, ../sass/global/_construct.scss */
+/* line 17, ../sass/global/_construct.scss */
 .clear-left {
   clear: left;
+}
+
+/* line 20, ../sass/global/_construct.scss */
+.field-default {
+  color: #777777;
 }
 
 /* line 29, ../sass/global/_dom.scss */

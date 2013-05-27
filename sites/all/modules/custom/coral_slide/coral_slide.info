@@ -1,0 +1,5 @@
+name = Coral slide
+description = Provides a slide node type and related functionality.
+dependencies[] = coral
+package = Coral
+core = 7.x
