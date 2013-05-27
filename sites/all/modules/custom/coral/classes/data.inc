@@ -301,7 +301,9 @@ class CoralData {
     $hashes  = func_get_args();
     $results = array_shift($hashes);
     foreach ($hashes as $data) {
-      $results = static::recursiveMerge($results, $data, TRUE);
+      if (!empty($data)) {
+        $results = static::recursiveMerge($results, $data, TRUE);
+      }
     }
     return $results;
   }
