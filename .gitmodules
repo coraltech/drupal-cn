@@ -223,3 +223,6 @@
 [submodule "sites/all/libraries/underscore"]
 	path = sites/all/libraries/underscore
 	url = https://github.com/documentcloud/underscore.git
+[submodule "sites/all/modules/contrib/wysiwyg_filter"]
+	path = sites/all/modules/contrib/wysiwyg_filter
+	url = http://git.drupal.org/project/wysiwyg_filter
