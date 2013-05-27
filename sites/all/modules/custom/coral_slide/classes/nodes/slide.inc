@@ -32,31 +32,48 @@ class CoralSlideNode extends CoralNode
   }
 	
 	public static function fields() {
-		return array(
-      'media' => array(
-        'type'         => 'media',
-        'settings'     => array(),
-        'cardinality'  => 1,
-        'locked'       => FALSE
-      ),
+	  $info = parent::fields();
+    $info['media'] = array(
+      'type'         => 'media',
+      'settings'     => array(),
+      'cardinality'  => 1,
+      'locked'       => FALSE
     );
+    return $info;
 	}
 		
 	public static function fieldInstances() {
-		return array(
-      'media' => array(
-        'label'    => t('Media'),
-        'required' => FALSE,
-        'widget'   => array('type' => 'media_generic'),
-        'display'  => array(
-          'default' => array(
-            'label' => 'hidden',
-            'type'  => 'media',
-          )
+    $info = parent::fieldInstances(); 
+    $info['media'] = array(
+      'label'    => t('Media'),
+      'required' => FALSE,
+      'widget'   => array('type' => 'media_generic'),
+      'display'  => array(
+        'default' => array(
+          'label' => 'hidden',
+          'type'  => 'media',
         )
-      ),
+      )
     );
+    return $info;
 	}
+  
+  /*
+   * 
+   * 'media_generic' => array(
+      'label' => t('Media file selector'),
+      'field types' => array('media', 'file', 'image'),
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+        'allowed_types' => array('image'),
+        'allowed_schemes' => array('public', 'private'),
+      ),
+      'behaviors' => array(
+        'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+        'default value' => FIELD_BEHAVIOR_NONE,
+      ),
+   * 
+   */
 
   
   //----------------------------------------------------------------------------
