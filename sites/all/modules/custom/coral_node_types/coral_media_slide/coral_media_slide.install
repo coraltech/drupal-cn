@@ -1,0 +1,18 @@
+<?php
+  
+/**
+ * Implements hook_uninstall().
+ */
+function coral_media_slide_uninstall() {      
+  // Delete nodes and node types.
+  $type   = 'media_slide';
+  $result = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->condition('type', $type, '=')
+        ->execute();
+
+  foreach ($result as $record) {
+    node_delete($record->nid);
+  }
+  node_type_delete($type);
+}

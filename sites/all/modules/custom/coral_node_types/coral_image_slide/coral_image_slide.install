@@ -3,9 +3,9 @@
 /**
  * Implements hook_uninstall().
  */
-function coral_slide_uninstall() {      
+function coral_image_slide_uninstall() {      
   // Delete nodes and node types.
-  $type   = 'slide';
+  $type   = 'image_slide';
   $result = db_select('node', 'n')
         ->fields('n', array('nid'))
         ->condition('type', $type, '=')

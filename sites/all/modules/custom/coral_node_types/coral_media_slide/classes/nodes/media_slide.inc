@@ -5,12 +5,12 @@
 /*
  * Coral configuration object.
  */
-class CoralSlideNode extends CoralNode
+class CoralMediaSlideNode extends CoralNode
 {
   //----------------------------------------------------------------------------
   // Properties
   
-  public static function type() {          return 'slide'; }
+  public static function type() {          return 'media_slide'; }
   public static function settingsTable() { return NULL; }
   
   //----------------------------------------------------------------------------
@@ -22,20 +22,24 @@ class CoralSlideNode extends CoralNode
   
   public static function info() {
     return array(
-      'name'        => t('Slide'),
-      'description' => t('A <em>%slide</em> is a media centric content type meant to be shown in groups (within views).',
-                          array('%slide' => static::type())),
-      'title_label' => t('Name'),
+      'name'        => t('Media slide'),
+      'description' => t('A <em>%media_slide</em> is a video centric content type meant to be shown in groups (within views).',
+                          array('%media_slide' => static::type())),
+      'title_label' => t('Slide name'),
       'has_body'    => TRUE,
       'locked'      => FALSE
     );
   }
-	
+  
 	public static function fields() {
 	  $info = parent::fields();
     $info['media'] = array(
-      'type'         => 'media',
-      'settings'     => array(),
+      'type'     => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+        'allowed_types'      => array('image', 'media'),
+        'allowed_schemes'    => array('public', 'private'),
+      ),
       'cardinality'  => 1,
       'locked'       => FALSE
     );
@@ -58,24 +62,7 @@ class CoralSlideNode extends CoralNode
     return $info;
 	}
   
-  /*
-   * 
-   * 'media_generic' => array(
-      'label' => t('Media file selector'),
-      'field types' => array('media', 'file', 'image'),
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-        'allowed_types' => array('image'),
-        'allowed_schemes' => array('public', 'private'),
-      ),
-      'behaviors' => array(
-        'multiple values' => FIELD_BEHAVIOR_DEFAULT,
-        'default value' => FIELD_BEHAVIOR_NONE,
-      ),
-   * 
-   */
 
-  
   //----------------------------------------------------------------------------
   // Tests
   

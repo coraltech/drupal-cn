@@ -1,0 +1,6 @@
+name = Coral media slide
+description = Provides a media slide (video) node type and related functionality.
+dependencies[] = coral
+dependencies[] = media
+package = Coral
+core = 7.x
