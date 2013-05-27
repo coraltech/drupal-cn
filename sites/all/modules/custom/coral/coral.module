@@ -20,8 +20,14 @@ function coral_init() {
   $module_path = drupal_get_path('module', 'coral');
   $settings    = coral_settings(TRUE, TRUE);
   
+  $settings['development'] = (variable_get('coral_development', 0) ? TRUE : FALSE);
+  
   drupal_add_js(array('coralCore' => $settings), 'setting');
   drupal_add_js($module_path . '/js/coral_core.js', array('weight' => -100));
+  
+  if ($settings['development']) {
+    coral_node_field_update();
+  }
   
   coral_execute('init');
 }

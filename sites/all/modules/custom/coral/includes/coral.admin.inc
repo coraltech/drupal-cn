@@ -23,6 +23,12 @@ function coral_admin_menu() {
  */
 function coral_settings_form($form, &$form_state) {
 	$form = array();
+  
+  $form['coral_development'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Development mode'),
+    '#default_value' => variable_get('coral_development', 0)
+  );
 
 	return system_settings_form($form);
 }

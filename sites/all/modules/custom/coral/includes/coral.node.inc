@@ -24,6 +24,39 @@ function coral_node_ensure(&$node) {
 }
 
 /**
+ * Syncronize all coralized node class fields.
+ */
+function coral_node_field_update($type = NULL) {
+  if (is_null($type)) {
+    $class_map = coral_classes('node');
+  }
+  else {
+    $class_map = array($type => coral_class('node', $type));
+  }
+  
+  foreach ($class_map as $node_type => $class) {
+    // Create all the fields we are adding to our content type.
+    foreach (Coral::exec($class, 'fields', array(), array()) as $name => $field) {
+      $field['field_name'] = $name;
+      $exists = field_info_field($name);
+      if (empty($exists)) {
+        field_create_field($field);
+      }
+    }
+    // Create all the instances for our fields.
+    foreach (Coral::exec($class, 'fieldInstances', array(), array()) as $name => $instance) {
+      $exists = field_info_instance('node', $name, $node_type);
+      if (empty($exists)) {
+        $instance['field_name']  = $name;
+        $instance['entity_type'] = 'node';
+        $instance['bundle']      = $node_type;
+        field_create_instance($instance);
+      }
+    }
+  }  
+}
+
+/**
  * Implements hook_permission().
  */
 function coral_node_permission() {
@@ -79,24 +112,7 @@ function coral_node_info() {
 function coral_node_type_insert($content_type) {
   $type = $content_type->type;
   if ($class = coral_class('node', $type)) {
-    // Create all the fields we are adding to our content type.
-    foreach (Coral::exec($class, 'fields', array(), array()) as $name => $field) {
-      $field['field_name'] = $name;
-      $exists = field_info_field($name);
-      if (empty($exists)) {
-        field_create_field($field);
-      }
-    }
-    // Create all the instances for our fields.
-    foreach (Coral::exec($class, 'fieldInstances', array(), array()) as $name => $instance) {
-      $exists = field_info_instance('node', $name, $type);
-      if (empty($exists)) {
-        $instance['field_name']  = $name;
-        $instance['entity_type'] = 'node';
-        $instance['bundle']      = $type;
-        field_create_instance($instance);
-      }
-    }
+    coral_node_field_update($type);
     Coral::exec($class, 'insertType', array($content_type));
   }
 }

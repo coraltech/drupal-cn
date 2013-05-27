@@ -19,6 +19,7 @@ function coral_uninstall() {
     variable_del($variable);  
   }
   variable_del('coral_object_class_variables');
+  variable_del('coral_development');
   
   // Delete nodes and node types.
   foreach (coral_classes('node', TRUE, TRUE) as $type => $class) {
