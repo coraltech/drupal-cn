@@ -166,7 +166,7 @@ abstract class CoralNode
     return array(
       'body' => array(
         'type'         => 'text_with_summary',
-        'entity_types' => array(static::type()),
+        'entity_types' => array('node'),
         'cardinality'  => 1,
         'locked'       => FALSE
       )

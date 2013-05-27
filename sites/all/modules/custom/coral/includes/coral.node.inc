@@ -86,9 +86,6 @@ function coral_node_type_insert($content_type) {
       if (empty($exists)) {
         field_create_field($field);
       }
-      else {
-        field_update_field($field);
-      }
     }
     // Create all the instances for our fields.
     foreach (Coral::exec($class, 'fieldInstances', array(), array()) as $name => $instance) {
