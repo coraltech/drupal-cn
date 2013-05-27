@@ -324,8 +324,8 @@ class CoralData {
    * Recursively merge associative arrays. (actual recursive function)
    */
   protected static function recursiveMerge($data, $overrides, $merge_arrays = TRUE) {
-    if (static::isUndef($overrides)) { return $data; }
-    if (static::isUndef($data)) {      return $overrides; }
+    if (static::isUndef($overrides) || empty($overrides)) { return $data; }
+    if (static::isUndef($data)      || empty($data))      { return $overrides; }
     
     if (static::isHash($overrides)) {
       if (static::isHash($data)) {
