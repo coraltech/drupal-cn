@@ -232,3 +232,9 @@
 [submodule "sites/all/modules/contrib/wysiwyg_filter"]
 	path = sites/all/modules/contrib/wysiwyg_filter
 	url = http://git.drupal.org/project/wysiwyg_filter
+[submodule "sites/all/modules/contrib/devel_themer"]
+	path = sites/all/modules/contrib/devel_themer
+	url = http://git.drupal.org/project/devel_themer
+[submodule "sites/all/modules/contrib/simplehtmldom"]
+	path = sites/all/modules/contrib/simplehtmldom
+	url = http://git.drupal.org/project/simplehtmldom
