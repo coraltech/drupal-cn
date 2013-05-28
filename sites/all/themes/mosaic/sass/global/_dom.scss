@@ -42,3 +42,9 @@ a {
   &:active, &.active { color: $dkgray; }
 }
 
+img, 
+object, 
+embed, 
+video {
+  max-width: 100%;
+}
