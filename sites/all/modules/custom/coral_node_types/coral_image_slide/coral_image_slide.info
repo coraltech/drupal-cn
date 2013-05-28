@@ -1,7 +1,0 @@
-name = Coral image slide
-description = Provides an image slide (and markup) node type and related functionality.
-dependencies[] = coral
-dependencies[] = file
-dependencies[] = image
-package = Coral
-core = 7.x

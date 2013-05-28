@@ -5,12 +5,12 @@
 /*
  * Coral configuration object.
  */
-class CoralImageSlideNode extends CoralNode
+class CoralMediaSlideNode extends CoralSlideNode
 {
   //----------------------------------------------------------------------------
   // Properties
   
-  public static function type() {          return 'image_slide'; }
+  public static function type() {          return 'media_slide'; }
   public static function settingsTable() { return NULL; }
   
   //----------------------------------------------------------------------------
@@ -22,9 +22,9 @@ class CoralImageSlideNode extends CoralNode
   
   public static function info() {
     return array(
-      'name'        => t('Image slide'),
-      'description' => t('A <em>%image_slide</em> is an image and markup centric content type meant to be shown in groups (within views).',
-                          array('%image_slide' => static::type())),
+      'name'        => t('Media slide'),
+      'description' => t('A <em>%media_slide</em> is a video centric content type meant to be shown in groups (within views).',
+                          array('%media_slide' => static::type())),
       'title_label' => t('Slide name'),
       'has_body'    => TRUE,
       'locked'      => FALSE
@@ -33,15 +33,13 @@ class CoralImageSlideNode extends CoralNode
   
 	public static function fields() {
 	  $info = parent::fields();
-    $info['file'] = array(
-      'type'         => 'file',
-      'settings'     => array(),
-      'cardinality'  => 1,
-      'locked'       => FALSE
-    );
-    $info['fe_attach'] = array(
-      'type'         => 'text',
-      'settings'     => array(),
+    $info['media'] = array(
+      'type'     => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+        'allowed_types'      => array('image', 'media'),
+        'allowed_schemes'    => array('public', 'private'),
+      ),
       'cardinality'  => 1,
       'locked'       => FALSE
     );
@@ -50,32 +48,21 @@ class CoralImageSlideNode extends CoralNode
 		
 	public static function fieldInstances() {
     $info = parent::fieldInstances(); 
-    $info['file'] = array(
-      'label'    => t('File'),
+    $info['media'] = array(
+      'label'    => t('Media'),
       'required' => FALSE,
-      'settings' => array(
-        'file_extensions'   => 'png jpg jpeg',
-        'file_directory'    => '',
-        'max_filesize'      => '',
-        'description_field' => 0
-      ),
-      'widget'   => array('type' => 'file_generic'),
+      'widget'   => array('type' => 'media_generic'),
       'display'  => array(
         'default' => array(
           'label' => 'hidden',
-          'type'  => 'file_default',
+          'type'  => 'media',
         )
       )
-    );
-    $info['fe_attach'] = array(
-      'label' => t('Fe attach'),
-      'required' => FALSE,
-      'description' => t('Some description'),
-      'widget'   => array('type' => 'text_textfield'),
     );
     return $info;
 	}
   
+
   //----------------------------------------------------------------------------
   // Tests
   

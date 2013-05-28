@@ -1,0 +1,19 @@
+<?php
+
+coral_include(array(
+  'classes',
+  'classes/nodes'
+), 'inc', array('module' => 'coral_slides'));
+
+//------------------------------------------------------------------------------
+// Core hooks
+
+/**
+ * Return a list of the Coral node classes.
+ */
+function coral_slides_coral_classes_alter($type, &$class_map) {
+  if ($type == 'node') {  
+    $class_map[CoralImageSlideNode::type()] = 'CoralImageSlideNode';
+    $class_map[CoralMediaSlideNode::type()] = 'CoralMediaSlideNode';
+  }
+}

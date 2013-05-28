@@ -1,0 +1,22 @@
+<?php
+  
+/**
+ * Implements hook_uninstall().
+ */
+function coral_slide_uninstall() {
+  // Set of types this module provides
+  $coral_slide_types = array('coral_image_slide', 'coral_media_slide');
+
+  foreach ($coral_slide_types as $type) {
+    // Delete nodes and node types.
+    $result = db_select('node', 'n')
+          ->fields('n', array('nid'))
+          ->condition('type', $type, '=')
+          ->execute();
+  
+    foreach ($result as $record) {
+      node_delete($record->nid);
+    }
+    node_type_delete($type);
+  }
+}
