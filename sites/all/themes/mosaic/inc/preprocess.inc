@@ -1,14 +1,15 @@
 <?php
+// Hooks we can preprocess
+function mosaic_preprocess (&$vars, $hook) {
+//  dpm($hook);
+}
 
 /**
- * Primary css and js file attachment hook.
+ * Pane css and js file attachment:
  * 
  * All panes must run through this function 
  *  so it should be able to capture the lions
  *  share of the attachment workload.
- * 
- * Common attachment types:
- *  - block
  * 
  * All css and js added by this function will 
  *  be seeking files in the following format:
@@ -23,11 +24,12 @@
  *  
  */
 function mosaic_preprocess_panels_pane(&$vars) {
+  global $base_path;
   $path     = drupal_get_path('theme', 'mosaic');  
   $join     = '_';  
   $root     = 'pane__';
-  $type     = str_replace('-', $join, $vars['pane']->type);
-  $subtype  = $join.str_replace('-', $join, $vars['pane']->subtype);
+  $type     = str_replace('-', $join, $vars['pane']->type);            // dpm($type);
+  $subtype  = $join.str_replace('-', $join, $vars['pane']->subtype);   // dpm($subtype);
   $base_css_file = $root.$type;
   $base_js_file  = $root.$type;
   $css_file = $root.$type.$subtype.'.css';
@@ -36,18 +38,33 @@ function mosaic_preprocess_panels_pane(&$vars) {
   //dpm($css_file);
   
   // Add the css - basic type
-  if (file_exists($path.'/css/panes/'.$base_css_file)) {
-    drupal_add_css($path.'/css/panes/'.$base_css_file);  
-  } // - targeted type
-  if (file_exists($path.'/css/panes/'.$css_file)) {
-    drupal_add_css($path.'/css/panes/'.$css_file);  
-  }
+  if (file_exists($path.'/css/panes/'.$base_css_file)) drupal_add_css($path.'/css/panes/'.$base_css_file, array('group' => CSS_THEME)); // - targeted type
+  if (file_exists($path.'/css/panes/'.$css_file))      drupal_add_css($path.'/css/panes/'.$css_file, array('group' => CSS_THEME));
   
   // Add the js - basic type
-  if (file_exists($path.'/js/panes/'.$base_js_file)) {
-    drupal_add_js($path.'/js/panes/'.$base_js_file);
-  } // - targeted type
-  if (file_exists($path.'/js/panes/'.$js_file)) {
-    drupal_add_js($path.'/js/panes/'.$js_file);
+  if (file_exists($path.'/js/panes/'.$base_js_file)) drupal_add_js($path.'/js/panes/'.$base_js_file, array('group' => JS_THEME)); // - targeted type
+  if (file_exists($path.'/js/panes/'.$js_file))      drupal_add_js($path.'/js/panes/'.$js_file, array('group' => JS_THEME));
+}
+
+
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function mosaic_preprocess_views_view(&$vars) {
+  $path = drupal_get_path('theme', 'mosaic');  
+  
+   if(isset($vars['view']->name)) {
+    $files = array(
+      'view__' . $vars['view']->name . '__' . $vars['view']->current_display,
+      'view__' . $vars['view']->name
+    );
+    foreach($files as $i => $file) {
+      if (function_exists('_preprocess_'.$file)) $func($file);
+      if (file_exists($path.'/css/views/'.$file.'.css')) drupal_add_css($path.'/css/views/'.$file.'.css', array('group' => CSS_THEME));  
+      if (file_exists($path.'/js/views/'.$file.'.js'))   drupal_add_js($path.'/js/views/'.$file.'.js', array('group' => JS_THEME));
+    }
   }
 }
+
+
