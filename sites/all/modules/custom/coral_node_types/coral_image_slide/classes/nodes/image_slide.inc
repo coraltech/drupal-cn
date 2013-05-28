@@ -39,6 +39,12 @@ class CoralImageSlideNode extends CoralNode
       'cardinality'  => 1,
       'locked'       => FALSE
     );
+    $info['fe_attach'] = array(
+      'type'         => 'text',
+      'settings'     => array(),
+      'cardinality'  => 1,
+      'locked'       => FALSE
+    );
     return $info;
 	}
 		
@@ -60,6 +66,12 @@ class CoralImageSlideNode extends CoralNode
           'type'  => 'file_default',
         )
       )
+    );
+    $info['fe_attach'] = array(
+      'label' => t('Fe attach'),
+      'required' => FALSE,
+      'description' => t('Some description'),
+      'widget'   => array('type' => 'text_textfield'),
     );
     return $info;
 	}
