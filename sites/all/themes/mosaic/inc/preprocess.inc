@@ -1,7 +1,7 @@
 <?php
 // Hooks we can preprocess
 function mosaic_preprocess (&$vars, $hook) {
-//  dpm($hook);
+//dpm($hook);
 }
 
 /**
@@ -71,4 +71,9 @@ function mosaic_preprocess_views_view(&$vars) {
 // Ensure entity|node.tpl.php is in place: use if needed (e.g: submitted by...)
 function mosaic_preprocess_entity(&$vars) {}
 function mosaic_preprocess_node(&$vars) {}
+
+
+
+
+
 
