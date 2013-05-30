@@ -238,3 +238,6 @@
 [submodule "sites/all/modules/contrib/simplehtmldom"]
 	path = sites/all/modules/contrib/simplehtmldom
 	url = http://git.drupal.org/project/simplehtmldom
+[submodule "sites/all/libraries/json2"]
+	path = sites/all/libraries/json2
+	url = https://github.com/douglascrockford/JSON-js
