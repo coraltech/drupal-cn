@@ -2,8 +2,9 @@
 
 coral_include('includes', 'inc', 'coral_menus');
 
-define('MENU_PREFIX', 'Coral menus: ');
-
+define('CORAL_MENUS_PREFIX', 'Coral menus: ');
+define('CORAL_MENUS_REGENERATE', TRUE);
+ 
 /**
  * Implementation of hook_init()
  */
@@ -20,19 +21,22 @@ function coral_menus_init() {
 //  repo vs how they exist in the db. Update all relevant db items
 //  to reflect the definition.
 function coral_menus_run_updates() {
-  static $intx = 1;
   $path = drupal_get_path('module', 'coral_menus');  // This module path 
   $menus = coral_menus_read_dir($path.'/includes');  // Load menus + links
   
   // Are these menus in the db?
   foreach ($menus as $i => $menu) {
-    $intx++;
     $mname = str_replace('.inc', '', $menus[$i]);    // menu name
     $mfunc = 'coral_menus_'.$mname.'_menu_loader';   // menu func
     $lfunc = 'coral_menus_'.$mname.'_links_loader';  // menu links func
+    
+    // Development regeneration - enable above
+    coral_menu_regenerate($mname, $mfunc);           // Regenerate if necc.
+    
     $in_db = menu_load($mname);                      // load from db
     $mfile = file($path.'/includes/'.$mname.'.inc'); //file_get_contents($path.'/includes/'.$mname.'.inc'); // actual file
     $xfile = coral_menus_file_links_extract($mfile, $lfunc); // the inc file as an array (1 line = 1 row)
+    
     
     // Initialize and create new menu + links
     //  if they didn't already exist.
@@ -49,7 +53,7 @@ function coral_menus_run_updates() {
             
             // Save each link - it's a miracle!
             foreach ($l as $name => $link) {
-              
+
               // will write the mlid back to the file if it does not already exist there
               coral_menus_save_link($link, $xfile, TRUE);
             }
@@ -106,9 +110,8 @@ function coral_menus_save_link($link, &$xfile, $new = FALSE) {
     // Be sure to save the mlid for later ref.
     //  the part of the file we are interested in looks like
     //  function coral_menus_{$mname}_links_loader() {
-    $mlid = menu_link_save($link);
-		coral_menus_file_link_update($link, $xfile);
-    
+
+		coral_menus_file_link_update($link, $xfile, menu_link_save($link));
   }
   else {
     // mlid does not need to be resaved - file writing probably not in the cards here.
@@ -116,6 +119,26 @@ function coral_menus_save_link($link, &$xfile, $new = FALSE) {
   }
   
   //$file = file_get_contents()
+  
+}
+
+// Updates menu include file when a new link is saved. The sole pupose
+//  of this function is to add an mlid to the coral_menus menu include.
+function coral_menus_file_link_update($link, &$xfile, $mlid) {
+  dpm($link);  
+  dpm($xfile);
+  dpm($mlid);
+  $start = $end = 0;
+  $link_orig_def = array();
+  $found = FALSE;
+  
+  foreach ($xfile as $line => $text) {
+    
+    if (strpos($text, $link['link_title'])) {
+      $found = TRUE;  
+      $orig_link_def[] = $xfile[$line - 1]; 
+    }
+  }
   
 }
 
@@ -151,12 +174,6 @@ function coral_menus_file_links_extract($mfile, $lfunc) {
 	// Getting func(ky) 
   return $func;
 }
-
-// Updates menu include file when a new link is saved. The sole pupose
-//  of this function is to add an mlid to the coral_menus menu include.
-function coral_menus_file_link_update($mfile, &$xfile) {
-	
-}
  
 // -- Check if a menu definition is eq to the instance in the db
 function coral_menus_menus_eq($m) {
@@ -171,18 +188,25 @@ function coral_menus_link_eq($keys, $l, $ldb) {
 }
 
 // -- Read in the files and directory structure
-function coral_menus_read_dir($dir) { 
-   $result = array(); 
-   $cdir = scandir($dir); 
-   foreach ($cdir as $key => $value) { 
-      if (!in_array($value,array(".",".."))) { 
-         if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
-           $result[$value] = coral_menus_read_dir($dir . DIRECTORY_SEPARATOR . $value); 
-         } 
-         else {
-           $result[] = $value; 
-         } 
-      } 
-   } 
-   return $result; 
+function coral_menus_read_dir($dir) {
+  $result = array(); 
+  $cdir = scandir($dir); 
+  foreach ($cdir as $key => $value) {
+    if (!in_array($value,array(".",".."))) {
+      if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) 
+        $result[$value] = coral_menus_read_dir($dir . DIRECTORY_SEPARATOR . $value); 
+      else $result[]  = $value; 
+  }} return $result;
+}
+
+// Optionaly clear all menus and regenerate from scratch
+function coral_menu_regenerate($menu, $mfunc) {
+  if (CORAL_MENUS_REGENERATE) {
+    
+    // call the menu definition    
+    $m_def = $mfunc();
+    
+    // Only delete if it has definition
+    if ($m_def) menu_delete($m_def);
+  }
 }
