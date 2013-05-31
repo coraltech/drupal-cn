@@ -1,0 +1,210 @@
+<?php
+
+coral_include('includes', 'inc', 'coral_menus');
+
+define('MENU_PREFIX', 'Coral menus: ');
+
+/**
+ * Implementation of hook_init()
+ */
+function coral_menus_init() {
+  coral_menus_run_updates();  
+}
+
+
+/**
+ * Core menu initialization! zaap!
+ */
+// ----------------------------------------------------------------------
+// Check the status of the menu definitions as they exist in the
+//  repo vs how they exist in the db. Update all relevant db items
+//  to reflect the definition.
+function coral_menus_run_updates() {
+  static $intx = 1;
+  $path = drupal_get_path('module', 'coral_menus'); // This module path 
+  $menus = coral_menus_read_dir($path.'/includes'); // Load menus + links
+  
+  // Are these menus in the db?
+  foreach ($menus as $i => $menu) {
+    $intx++;
+    $mname = str_replace('.inc', '', $menus[$i]);   // menu name
+    $mfunc = 'coral_menus_'.$mname.'_menu_loader';  // menu func
+    $lfunc = 'coral_menus_'.$mname.'_links_loader'; // menu links func
+    $in_db = menu_load($mname);                     // load from db
+    $mfile = file($path.'/includes/'.$mname.'.inc'); //file_get_contents($path.'/includes/'.$mname.'.inc'); // actual file
+    
+    // Initialize and create new menu + links
+    //  if they didn't already exist.
+    if (!$in_db) { // not in db yet
+      
+      // Check if the menu function is callable
+      if (function_exists($mfunc)) { $m = $mfunc();     // Load definition
+        
+        // If we have a defined menu, proceed
+        if (!empty($m)) { menu_save($m);                // Save new menu
+          
+          // Do we have any links to add?
+          if (function_exists($lfunc)) { $l = $lfunc(); // Load links
+            
+            // Save each link - it's a miracle!
+            foreach ($l as $name => $link) {
+              
+              // will write the mlid back to the file if it does not already exist there
+              coral_menus_save_link($link, $lfunc, $mname, $mfile, TRUE);
+            }
+          }
+        } 
+      }
+    }
+    
+    // menu already in the db
+    else {
+      // Load the menu and it's links and check against the 
+      //  currently defined defaults. If there are discrepancies,
+      //  use the defaults.
+      
+      // Check if the menu function is callable
+      /*if (function_exists($mfunc)) { $m = $mfunc(); // call this menu.
+        
+        // the menu is defined in code
+        if (!empty($m)) {
+           
+          // If we have a defined menu, proceed
+          if (coral_menus_menus_eq($m)) { // Menus are equal; check links
+          dpm('eq menu');
+            // Check links
+            coral_menus_manage_links($m, $lfunc);
+          }
+          else { // Menus differ
+          dpm('!eq menu');  
+            menu_save($m); // Save menu
+            
+            // Check links
+            coral_menus_manage_links($m, $lfunc);
+          }
+        }
+        
+        // Odd ball! The menu exists in the db but not in files!
+        else {
+          // delete - or obsolete?
+        }
+      }*/
+    }
+  }
+}
+
+
+/**
+ * Helper functions
+ */
+// Saves one menu link
+function coral_menus_save_link($link, $lfunc, $mname, $mfile, $new = FALSE) {
+  
+  // Are we saving a new link (no mlid defined)?
+  if ($new) {
+    // Be sure to save the mlid for later ref.
+    //  the part of the file we are interested in looks like
+    //  function coral_menus_{$mname}_links_loader() {
+    $found = FALSE;
+    $new_func = array();
+    $func_search = 'function '.$lfunc.'() {';   
+    dpm($func_search);
+    // Iterate through the file lines  
+    foreach ($mfile as $line => $text) {
+      // Seeking a nice function definition that likes long walks on the beach
+      if (trim($text) == $func_search) $found = TRUE;
+      
+      // Start writing to new array
+      if ($found) {
+        if (trim($text) == ');' && trim($mfile[$line + 1]) == '}') {
+          $new_func[] = $text;
+          $new_func[] = $mfile[$line + 1];
+          break;
+        }
+        $new_func[] = $text;
+      }
+    }
+    dpm($new_func);  
+    
+  }
+  else {
+    // mlid does not need to be resaved - file writing probably not in the cards here.
+    
+  }
+  
+  //$file = file_get_contents()
+  
+} 
+ 
+// -- Check if a menu definition is eq to the instance in the db
+function coral_menus_menus_eq($m) {
+  $mdb = menu_load($m['menu_name']); // load this menu from db too  
+  $compm = sha1(serialize($m));      // get the sha1 hash of this menu definition
+  $compmdb = sha1(serialize($mdb));  // get the sha1 hash of this menu row
+  if ($compm === $compmdb) return TRUE; return FALSE;
+}
+
+// -- Check if a link's definition is eq to the instance in the db
+function coral_menus_manage_links($menu, $lfunc) {
+  
+  $def_links      = $lfunc(); // code defined menu links
+  $def_processed  = array();
+  $orig_processed = array();
+  
+  
+  if (!empty($menu) && function_exists($lfunc)) {
+    
+    // load the links from the db
+    $db_links  = menu_load_links($menu['menu_name']);
+
+    // Sift through the defined links - compare to db links
+    foreach ($def_links as $i => $link) {
+      // Get the defined link keys  
+      $link_keys = array_keys($link);
+      
+      // Find this link in the db links - 2 comparison modes  
+      foreach($db_links as $i => $db_link) {
+        
+        $db_link_keys = array_keys($db_link);  
+
+        foreach ($link_keys as $key) {
+          //dpm($key);
+          dpm($link);
+          dpm($db_link);
+          //dpm('-----------');
+          //if ($link[''])
+          //if ($link[$key] != $db_link[$key]) {
+          //  dpm('Whoa!');
+          //}  
+        }
+      }
+      //coral_menus_link_eq($m, $link);
+    }
+  }
+    
+  //$mdb = menu_load($m['menu_name']); // load this menu from db too  
+  //$comp_m = sha1(serialize($m));     // get the sha1 hash of this menu definition
+  //$comp_mdb = sha1(serialize($mdb)); // get the sha1 hash of this menu row
+  //if ($comp_m === $comp_mdb) return TRUE; return FALSE;
+}
+
+function coral_menus_link_eq($keys, $l, $ldb) {
+
+}
+
+// -- Read in the files and directory structure
+function coral_menus_read_dir($dir) { 
+   $result = array(); 
+   $cdir = scandir($dir); 
+   foreach ($cdir as $key => $value) { 
+      if (!in_array($value,array(".",".."))) { 
+         if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
+           $result[$value] = coral_menus_read_dir($dir . DIRECTORY_SEPARATOR . $value); 
+         } 
+         else {
+           $result[] = $value; 
+         } 
+      } 
+   } 
+   return $result; 
+}

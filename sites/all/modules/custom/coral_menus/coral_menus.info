@@ -1,0 +1,4 @@
+name = Coral menus
+description = Provides menus and links for Coral Nexus.
+core = 7.x
+package = Coral
