@@ -18,6 +18,7 @@ dependencies[] = contentapi_taxonomy_term
 dependencies[] = contentapi_taxonomy_vocab
 dependencies[] = coral
 dependencies[] = coral_footer
+dependencies[] = coral_menus
 dependencies[] = coral_page
 dependencies[] = coral_slides
 dependencies[] = ctools
