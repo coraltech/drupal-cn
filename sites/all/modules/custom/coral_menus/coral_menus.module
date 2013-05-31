@@ -21,17 +21,18 @@ function coral_menus_init() {
 //  to reflect the definition.
 function coral_menus_run_updates() {
   static $intx = 1;
-  $path = drupal_get_path('module', 'coral_menus'); // This module path 
-  $menus = coral_menus_read_dir($path.'/includes'); // Load menus + links
+  $path = drupal_get_path('module', 'coral_menus');  // This module path 
+  $menus = coral_menus_read_dir($path.'/includes');  // Load menus + links
   
   // Are these menus in the db?
   foreach ($menus as $i => $menu) {
     $intx++;
-    $mname = str_replace('.inc', '', $menus[$i]);   // menu name
-    $mfunc = 'coral_menus_'.$mname.'_menu_loader';  // menu func
-    $lfunc = 'coral_menus_'.$mname.'_links_loader'; // menu links func
-    $in_db = menu_load($mname);                     // load from db
+    $mname = str_replace('.inc', '', $menus[$i]);    // menu name
+    $mfunc = 'coral_menus_'.$mname.'_menu_loader';   // menu func
+    $lfunc = 'coral_menus_'.$mname.'_links_loader';  // menu links func
+    $in_db = menu_load($mname);                      // load from db
     $mfile = file($path.'/includes/'.$mname.'.inc'); //file_get_contents($path.'/includes/'.$mname.'.inc'); // actual file
+    $xfile = coral_menus_file_links_extract($mfile, $lfunc); // the inc file as an array (1 line = 1 row)
     
     // Initialize and create new menu + links
     //  if they didn't already exist.
@@ -50,7 +51,7 @@ function coral_menus_run_updates() {
             foreach ($l as $name => $link) {
               
               // will write the mlid back to the file if it does not already exist there
-              coral_menus_save_link($link, $lfunc, $mname, $mfile, TRUE);
+              coral_menus_save_link($link, $xfile, TRUE);
             }
           }
         } 
@@ -98,33 +99,15 @@ function coral_menus_run_updates() {
  * Helper functions
  */
 // Saves one menu link
-function coral_menus_save_link($link, $lfunc, $mname, $mfile, $new = FALSE) {
+function coral_menus_save_link($link, &$xfile, $new = FALSE) {
   
   // Are we saving a new link (no mlid defined)?
   if ($new) {
     // Be sure to save the mlid for later ref.
     //  the part of the file we are interested in looks like
     //  function coral_menus_{$mname}_links_loader() {
-    $found = FALSE;
-    $new_func = array();
-    $func_search = 'function '.$lfunc.'() {';   
-    dpm($func_search);
-    // Iterate through the file lines  
-    foreach ($mfile as $line => $text) {
-      // Seeking a nice function definition that likes long walks on the beach
-      if (trim($text) == $func_search) $found = TRUE;
-      
-      // Start writing to new array
-      if ($found) {
-        if (trim($text) == ');' && trim($mfile[$line + 1]) == '}') {
-          $new_func[] = $text;
-          $new_func[] = $mfile[$line + 1];
-          break;
-        }
-        $new_func[] = $text;
-      }
-    }
-    dpm($new_func);  
+    $mlid = menu_link_save($link);
+		coral_menus_file_link_update($link, $xfile);
     
   }
   else {
@@ -134,7 +117,46 @@ function coral_menus_save_link($link, $lfunc, $mname, $mfile, $new = FALSE) {
   
   //$file = file_get_contents()
   
-} 
+}
+
+// Extract the appropriate function from the include file
+//  We may later have to add the mlid if it's not there 
+//   See coral_menus_file_links_update(...)
+function coral_menus_file_links_extract($mfile, $lfunc) {
+	// We MUST find!	
+	$found = FALSE;
+  
+	// Array to hold the read in func
+  $func = array();
+  $func_search = 'function '.$lfunc.'() {'; // real search string
+  
+  // Iterate through the file lines  
+  foreach ($mfile as $line => $text) {
+    // Seeking a nice function definition that likes long walks on the beach
+    if (trim($text) == $func_search) $found = TRUE;
+      
+    // Start writing to new array
+    if ($found) {
+      if (trim($text) == ');' && trim($mfile[$line + 1]) == '}') {
+        $func[] = $text;
+        $unc[] = $mfile[$line + 1];
+				break; // good times...
+      }
+			
+			// Add what we got!
+      $func[] = $text;
+    }
+  }
+	
+	// Getting func(ky) 
+  return $func;
+}
+
+// Updates menu include file when a new link is saved. The sole pupose
+//  of this function is to add an mlid to the coral_menus menu include.
+function coral_menus_file_link_update($mfile, &$xfile) {
+	
+}
  
 // -- Check if a menu definition is eq to the instance in the db
 function coral_menus_menus_eq($m) {
@@ -142,50 +164,6 @@ function coral_menus_menus_eq($m) {
   $compm = sha1(serialize($m));      // get the sha1 hash of this menu definition
   $compmdb = sha1(serialize($mdb));  // get the sha1 hash of this menu row
   if ($compm === $compmdb) return TRUE; return FALSE;
-}
-
-// -- Check if a link's definition is eq to the instance in the db
-function coral_menus_manage_links($menu, $lfunc) {
-  
-  $def_links      = $lfunc(); // code defined menu links
-  $def_processed  = array();
-  $orig_processed = array();
-  
-  
-  if (!empty($menu) && function_exists($lfunc)) {
-    
-    // load the links from the db
-    $db_links  = menu_load_links($menu['menu_name']);
-
-    // Sift through the defined links - compare to db links
-    foreach ($def_links as $i => $link) {
-      // Get the defined link keys  
-      $link_keys = array_keys($link);
-      
-      // Find this link in the db links - 2 comparison modes  
-      foreach($db_links as $i => $db_link) {
-        
-        $db_link_keys = array_keys($db_link);  
-
-        foreach ($link_keys as $key) {
-          //dpm($key);
-          dpm($link);
-          dpm($db_link);
-          //dpm('-----------');
-          //if ($link[''])
-          //if ($link[$key] != $db_link[$key]) {
-          //  dpm('Whoa!');
-          //}  
-        }
-      }
-      //coral_menus_link_eq($m, $link);
-    }
-  }
-    
-  //$mdb = menu_load($m['menu_name']); // load this menu from db too  
-  //$comp_m = sha1(serialize($m));     // get the sha1 hash of this menu definition
-  //$comp_mdb = sha1(serialize($mdb)); // get the sha1 hash of this menu row
-  //if ($comp_m === $comp_mdb) return TRUE; return FALSE;
 }
 
 function coral_menus_link_eq($keys, $l, $ldb) {
