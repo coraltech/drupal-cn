@@ -289,7 +289,7 @@ function coral_menu_regenerate($menu, $mfunc, &$current_state, $del_storage = FA
 //  definitions map to Drupal link and urls exactly.
 function coral_menus_link_set_attributes($attr = array()) {
 	$attributes = array();
-	if ($opts) {
+	if ($attr) {
 		foreach ($attr as $attribute => $value) {
 			$attributes[] = array('attributes' => array($attribute => $value));
 		}
