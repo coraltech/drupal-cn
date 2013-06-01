@@ -43,28 +43,25 @@ function coral_menus_run_updates() {
     $in_state = (!empty($current_state[$mname])) ? $current_state[$mname] : FALSE; // load from db variable
     $in_db    = menu_load($mname); // menu as it is from the db
     
-    // --- Sync
+    // --- Syncronize
     // Syncronize data objects from db and state
     if (!($in_state && $in_db)) { // Are we missing anything?
-      if ($in_state && !$in_db) { // Load to state
-        dpm('in state, not db');
-        // re-add menu and it's links to db
-        coral_menus_load_to_db($mfunc, $current_state);
-      }
-      elseif($in_db && !$in_state) { // Load to db
-        dpm('in db, not state');
+      
+      // Load to state - note we need links to have the id = machine name to do this!
+      if($in_db && !$in_state) {
+        
         // Load the db into state
         coral_menus_load_to_state($mfunc, $current_state);
       }
-      else { dpm('Menus not in state or db!'); } // Menus are not in state or db!  
+      else { /*dpm('Menus not in state or db!');*/ } // Menus are not in state or db!  
     } 
-    else { dpm('Menus in both state and db.'); } // Menus in both db and state...nothing to do here.
+    else { /*dpm('Menus in both state and db.');*/ } // Menus in both db and state...nothing to do here.
     
     // --- Init
     // Initialize and create new menu + links
     //  if they didn't already exist.
     if (!$in_db) { // not in db yet
-      //dpm(1);
+
       // Check if the menu function is callable
       if (function_exists($mfunc)) { $m = $mfunc(); // Load definition
         
@@ -87,7 +84,7 @@ function coral_menus_run_updates() {
     
     // menu already in the db
     else {
-      //dpm(2);
+
       // Check if the menu function is callable
       if (function_exists($mfunc)) { $m = $mfunc(); // call this menu.
         
@@ -109,12 +106,6 @@ function coral_menus_run_updates() {
             coral_menus_manage_links($lfunc, $m, $current_state);
           }
         }
-        
-        // Odd ball! The menu exists in the db but not files!
-        else {
-          // delete - or obsolete?
-          dpm('oddball');
-        }
       }
     }
   }
@@ -123,10 +114,8 @@ function coral_menus_run_updates() {
   $orig_state_sha      = sha1(serialize($orig_state));
   $current_state_sha   = sha1(serialize($current_state));
   if ($orig_state_sha != $current_state_sha) {
-    // If there were changes...
     variable_set('coral_menus_menu_state', $current_state);  
   }
-  dpm($current_state);  
 }
 
 
@@ -138,32 +127,33 @@ function coral_menus_run_updates() {
 //  and check if the state needs updating (file change)
 function coral_menus_manage_links($lfunc, $menu, &$state) {
   $links = $lfunc();
-  $changes = array();
   $updated = 0;
+  
+  // Cycle through the links and update the necc. fields
   foreach ($links as $name => $link) {
-    
+
+    // Holds this link's changes
+    $changes = array();  
+
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
-      
-      //dpm($name);
-      //dpm($link);
-      //dpm($menu);
-      //dpm($state);
-      //dpm($changes);
-      //dpm($changes);
-      foreach ($changes as $menu => $changeset) {
+
+      // Loop through the changeset returned by the equality measurer
+      foreach ($changes as $linkid => $changeset) {
+        
+        // Update the state and db with new values from file.
         foreach($changeset as $key => $change) {
-          dpm($key.': '.$change);  
-          //$state[$menu['menu_name']]['links'][$name][$key] = $change;
-          //dpm($state[$menu['menu_name']]['links'][$name]);
-          //menu_link_save($state[$menu['menu_name']]['links'][$name]);
-          //dpm('changed');
-          $updated++;  
+          $state[$menu['menu_name']]['links'][$linkid][$key] = $change;
+          menu_link_save($state[$menu['menu_name']]['links'][$linkid]);
         }
+
+        $updated++;
       }
     }
   }
-  //dpm('Updated '.$updated.' links');
+  if ($updated) { 
+    watchdog('Coral Menus', 'Updated '.format_plural($updated, '1 link', '@count links'), NULL, WATCHDOG_NOTICE);
+  }
 } 
 
 
@@ -175,6 +165,8 @@ function coral_menus_menu_save($menu, &$state, $to_db = TRUE, $to_state = TRUE) 
 
   // add this menu's distinctiveness to it's own
   if ($to_state) $state[$menu['menu_name']]['menu'] = $menu;
+  
+  watchdog('Coral Menus', 'Updated menu '.$menu['menu_name'], NULL, WATCHDOG_NOTICE);
 } 
 
 
@@ -241,15 +233,6 @@ function coral_menus_load_to_state($mfunc, &$state) {
   }
 }
 
-// --- Push to DB if state is active and db is not
-function coral_menus_load_to_db($mfunc, &$state) {
-  $menu = $mfunc();
-  $links = menu_load_links($menu['menu_name']);
-  
-  dpm($links);
-  dpm('state: '.$state);
-}
- 
 // --- Read in the files and directory structure
 function coral_menus_read_dir($dir) {
   $result = array(); 
