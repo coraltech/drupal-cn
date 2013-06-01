@@ -55,10 +55,9 @@ function coral_menus_run_updates() {
         // Load the db into state
         coral_menus_load_to_state($mfunc, $current_state);
       }
-      else {
-        dpm('Not in either!');
-      }  
-    } else {} // in both db and state...nothing to do here.
+      else {} // Menus are not in state or db!  
+    } 
+    else {} // Menus in both db and state...nothing to do here.
     
     // Initialize and create new menu + links
     //  if they didn't already exist.
@@ -152,7 +151,7 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
       //dpm($changes);
       foreach ($changes as $menu => $changeset) {
         foreach($changeset as $key => $change) {
-          //dpm($key.': '.$change);  
+          dpm($key.': '.$change);  
           //$state[$menu['menu_name']]['links'][$name][$key] = $change;
           //dpm($state[$menu['menu_name']]['links'][$name]);
           //menu_link_save($state[$menu['menu_name']]['links'][$name]);
