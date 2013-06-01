@@ -3,7 +3,7 @@
 coral_include('includes', 'inc', 'coral_menus');
 
 define('CORAL_MENUS_PREFIX', 'Coral menus: ');
-define('CORAL_MENUS_REGENERATE', TRUE);
+define('CORAL_MENUS_REGENERATE', FALSE);
  
 /**
  * Implementation of hook_init()
@@ -21,8 +21,15 @@ function coral_menus_init() {
 //  repo vs how they exist in the db. Update all relevant db items
 //  to reflect the definition.
 function coral_menus_run_updates() {
+  
+  // load the menu state from db (contains links mlid's)
+  $orig_state = $current_state = variable_get('coral_menus_menu_state', array());
+
   $path = drupal_get_path('module', 'coral_menus');  // This module path 
   $menus = coral_menus_read_dir($path.'/includes');  // Load menus + links
+  
+  //dpm('orig:');
+  //dpm($orig_state);
   
   // Are these menus in the db?
   foreach ($menus as $i => $menu) {
@@ -31,31 +38,46 @@ function coral_menus_run_updates() {
     $lfunc = 'coral_menus_'.$mname.'_links_loader';  // menu links func
     
     // Development regeneration - enable above
-    coral_menu_regenerate($mname, $mfunc);           // Regenerate if necc.
+    coral_menu_regenerate($mname, $mfunc, $current_state, CORAL_MENUS_REGENERATE); // Regenerate if necc.
     
-    $in_db = menu_load($mname);                      // load from db
-    $mfile = file($path.'/includes/'.$mname.'.inc'); //file_get_contents($path.'/includes/'.$mname.'.inc'); // actual file
-    $xfile = coral_menus_file_links_extract($mfile, $lfunc); // the inc file as an array (1 line = 1 row)
+    $in_state = (!empty($current_state[$mname])) ? $current_state[$mname] : FALSE;    // load from db variable
+    $in_db    = menu_load($mname);
     
+    // Get the two data objects in order
+    if (!($in_state && $in_db)) { // Are we missing anything?
+      if ($in_state && !$in_db) { // Load to state
+        dpm('in state, not db');
+        // re-add menu and it's links to db
+        coral_menus_load_to_db($mfunc, $current_state);
+      }
+      elseif($in_db && !$in_state) { // Load to db
+        dpm('in db, not state');
+        // Load the db into state
+        coral_menus_load_to_state($mfunc, $current_state);
+      }
+      else {
+        dpm('Not in either!');
+      }  
+    } else {} // in both db and state...nothing to do here.
     
     // Initialize and create new menu + links
     //  if they didn't already exist.
     if (!$in_db) { // not in db yet
-      
+      //dpm(1);
       // Check if the menu function is callable
-      if (function_exists($mfunc)) { $m = $mfunc();     // Load definition
+      if (function_exists($mfunc)) { $m = $mfunc(); // Load definition
         
         // If we have a defined menu, proceed
-        if (!empty($m)) { menu_save($m);                // Save new menu
-          
+        if (!empty($m)) { coral_menus_menu_save($m, $current_state); // Save new menu
+
           // Do we have any links to add?
           if (function_exists($lfunc)) { $l = $lfunc(); // Load links
             
             // Save each link - it's a miracle!
-            foreach ($l as $name => $link) {
+            foreach ($l as $link_name => $link) {
 
               // will write the mlid back to the file if it does not already exist there
-              coral_menus_save_link($link, $xfile, TRUE);
+              coral_menus_link_save($m, $link_name, $link, $current_state);
             }
           }
         } 
@@ -64,118 +86,112 @@ function coral_menus_run_updates() {
     
     // menu already in the db
     else {
-      // Load the menu and it's links and check against the 
-      //  currently defined defaults. If there are discrepancies,
-      //  use the defaults.
-      
+      //dpm(2);
       // Check if the menu function is callable
-      /*if (function_exists($mfunc)) { $m = $mfunc(); // call this menu.
+      if (function_exists($mfunc)) { $m = $mfunc(); // call this menu.
         
         // the menu is defined in code
         if (!empty($m)) {
            
           // If we have a defined menu, proceed
           if (coral_menus_menus_eq($m)) { // Menus are equal; check links
-          dpm('eq menu');
+
             // Check links
-            coral_menus_manage_links($m, $lfunc);
+            coral_menus_manage_links($lfunc, $m, $current_state);
           }
           else { // Menus differ
-          dpm('!eq menu');  
-            menu_save($m); // Save menu
+  
+            // Update the menu in the state according to the definition
+            coral_menus_menu_save($m, $current_state);
             
             // Check links
-            coral_menus_manage_links($m, $lfunc);
+            //coral_menus_manage_links($m, $lfunc);
           }
         }
         
-        // Odd ball! The menu exists in the db but not in files!
+        // Odd ball! The menu exists in the db but not files!
         else {
           // delete - or obsolete?
+          dpm('oddball');
         }
-      }*/
+      }
     }
   }
+
+  //Did the states change on this process?
+  $orig_state_sha      = sha1(serialize($orig_state));
+  $current_state_sha   = sha1(serialize($current_state));
+  if ($orig_state_sha != $current_state_sha) {
+    // If there were changes...
+    variable_set('coral_menus_menu_state', $current_state);  
+  }
+  dpm($current_state);  
 }
 
 
 /**
  * Helper functions
  */
-// Saves one menu link
-function coral_menus_save_link($link, &$xfile, $new = FALSE) {
-  
-  // Are we saving a new link (no mlid defined)?
-  if ($new) {
-    // Be sure to save the mlid for later ref.
-    //  the part of the file we are interested in looks like
-    //  function coral_menus_{$mname}_links_loader() {
-
-		coral_menus_file_link_update($link, $xfile, menu_link_save($link));
-  }
-  else {
-    // mlid does not need to be resaved - file writing probably not in the cards here.
+// --- Manages updating already created link sets
+//  Needs to loop through all the links in this menu
+//  and check if the state needs updating (file change)
+function coral_menus_manage_links($lfunc, $menu, &$state) {
+  $links = $lfunc();
+  $changes = array();
+  $updated = 0;
+  foreach ($links as $name => $link) {
     
-  }
-  
-  //$file = file_get_contents()
-  
-}
-
-// Updates menu include file when a new link is saved. The sole pupose
-//  of this function is to add an mlid to the coral_menus menu include.
-function coral_menus_file_link_update($link, &$xfile, $mlid) {
-  dpm($link);  
-  dpm($xfile);
-  dpm($mlid);
-  $start = $end = 0;
-  $link_orig_def = array();
-  $found = FALSE;
-  
-  foreach ($xfile as $line => $text) {
-    
-    if (strpos($text, $link['link_title'])) {
-      $found = TRUE;  
-      $orig_link_def[] = $xfile[$line - 1]; 
-    }
-  }
-  
-}
-
-// Extract the appropriate function from the include file
-//  We may later have to add the mlid if it's not there 
-//   See coral_menus_file_links_update(...)
-function coral_menus_file_links_extract($mfile, $lfunc) {
-	// We MUST find!	
-	$found = FALSE;
-  
-	// Array to hold the read in func
-  $func = array();
-  $func_search = 'function '.$lfunc.'() {'; // real search string
-  
-  // Iterate through the file lines  
-  foreach ($mfile as $line => $text) {
-    // Seeking a nice function definition that likes long walks on the beach
-    if (trim($text) == $func_search) $found = TRUE;
+    // Do we need to update the link in the state and db?
+    if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
       
-    // Start writing to new array
-    if ($found) {
-      if (trim($text) == ');' && trim($mfile[$line + 1]) == '}') {
-        $func[] = $text;
-        $unc[] = $mfile[$line + 1];
-				break; // good times...
+      //dpm($name);
+      //dpm($link);
+      //dpm($menu);
+      //dpm($state);
+      //dpm($changes);
+      //dpm($changes);
+      foreach ($changes as $menu => $changeset) {
+        foreach($changeset as $key => $change) {
+          //dpm($key.': '.$change);  
+          //$state[$menu['menu_name']]['links'][$name][$key] = $change;
+          //dpm($state[$menu['menu_name']]['links'][$name]);
+          //menu_link_save($state[$menu['menu_name']]['links'][$name]);
+          //dpm('changed');
+          $updated++;  
+        }
       }
-			
-			// Add what we got!
-      $func[] = $text;
     }
   }
-	
-	// Getting func(ky) 
-  return $func;
+  //dpm('Updated '.$updated.' links');
+} 
+
+
+// --- Save a menu now! Tomorrow could be too late
+function coral_menus_menu_save($menu, &$state, $to_db = TRUE, $to_state = TRUE) {
+
+  // Save to the db
+  if ($to_db) menu_save($menu);
+
+  // add this menu's distinctiveness to it's own
+  if ($to_state) $state[$menu['menu_name']]['menu'] = $menu;
+} 
+
+
+// --- Saves one menu link
+function coral_menus_link_save($menu, $name, $link, &$state, $to_db = TRUE, $to_state = TRUE) {
+
+  // Is the module defined?
+  $link['module'] = (!empty($link['module'])) ? $link['module'] : 'coral_menus';
+  
+  // Save the link to the db
+  if ($to_db) menu_link_save($link);
+  
+  // Save the link to state
+  if ($to_state) $state[$menu['menu_name']]['links'][$name] = $link;
 }
+
  
-// -- Check if a menu definition is eq to the instance in the db
+// --- Check if a menu definition is eq to the instance in the db
 function coral_menus_menus_eq($m) {
   $mdb = menu_load($m['menu_name']); // load this menu from db too  
   $compm = sha1(serialize($m));      // get the sha1 hash of this menu definition
@@ -183,11 +199,57 @@ function coral_menus_menus_eq($m) {
   if ($compm === $compmdb) return TRUE; return FALSE;
 }
 
-function coral_menus_link_eq($keys, $l, $ldb) {
 
+// --- Test the equality of the current state vs the state in db
+function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
+  $eq = TRUE; // Help determine if we need to regenerate this link
+  $check_keys = array_keys($link_def); // The keys that we have defined in the file definition
+  
+  // Go through the defined keys
+  foreach($check_keys as $key) {
+    $def_hash   = sha1(serialize($link_def[$key])); // defined has values
+    $state_hash = ''; // Empty container for the state hash
+    if (!empty($state[$menu['menu_name']]['links'][$link_name][$key])) {
+      $state_hash = sha1(serialize($state[$menu['menu_name']]['links'][$link_name][$key])); // state hash value
+    }
+    if ($def_hash != $state_hash) {
+      $changes[$link_name] = array($key => $link_def[$key]);  
+      $eq = FALSE; // who moved my cheese?!
+    }
+  }
+  return $eq;
 }
 
-// -- Read in the files and directory structure
+
+// --- Push to state variable if it is lost
+function coral_menus_load_to_state($mfunc, &$state) {
+
+  // Call up the menu definition  
+  $menu = $mfunc();
+
+  // Save the menu to state  
+  coral_menus_menu_save($menu, $state, FALSE, TRUE);
+  $links = menu_load_links($menu['menu_name']); // load the menu links
+
+  // Process the links one by one
+  foreach ($links as $link) {
+    if (!empty($link['options']['attributes']['id'])) {
+      $name = $link['options']['attributes']['id'];
+      coral_menus_link_save($menu, $name, $link, $state, FALSE, TRUE);
+    }
+  }
+}
+
+// --- Push to DB if state is active and db is not
+function coral_menus_load_to_db($mfunc, &$state) {
+  $menu = $mfunc();
+  $links = menu_load_links($menu['menu_name']);
+  
+  dpm($links);
+  dpm('state: '.$state);
+}
+ 
+// --- Read in the files and directory structure
 function coral_menus_read_dir($dir) {
   $result = array(); 
   $cdir = scandir($dir); 
@@ -199,8 +261,9 @@ function coral_menus_read_dir($dir) {
   }} return $result;
 }
 
-// Optionaly clear all menus and regenerate from scratch
-function coral_menu_regenerate($menu, $mfunc) {
+
+// --- Optionaly clear all menus and regenerate from scratch
+function coral_menu_regenerate($menu, $mfunc, &$current_state, $del_storage = FALSE) {
   if (CORAL_MENUS_REGENERATE) {
     
     // call the menu definition    
@@ -208,5 +271,11 @@ function coral_menu_regenerate($menu, $mfunc) {
     
     // Only delete if it has definition
     if ($m_def) menu_delete($m_def);
+    
+    // Delete the storage variable
+    if ($del_storage) {
+      $current_state = array();
+      variable_del('coral_menus_menu_state');
+    }
   }
 }
