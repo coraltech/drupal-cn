@@ -13,23 +13,13 @@ function coral_menus_main_links_loader() {
   return array(
     'about'=> array(
       'link_title' => t('About'),
-      'menu_name'  => 'main',
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => array(
-        'attributes' => array(
-          'id' => 'about'
-        )
-      )
+      'options' => coral_menus_link_set_attributes(array('id'=>'about'))
     ),
     'community' => array(
       'link_title' => t('Community'),
-      'menu_name'  => 'main',
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => array(
-        'attributes' => array(
-          'id' => 'community'
-        )
-      )
+      'options' => coral_menus_link_set_attributes(array('id'=>'community'))
     )
   );
 }
