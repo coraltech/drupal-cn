@@ -40,10 +40,11 @@ function coral_menus_run_updates() {
     // Development regeneration - enable above
     coral_menu_regenerate($mname, $mfunc, $current_state, CORAL_MENUS_REGENERATE); // Regenerate if necc.
     
-    $in_state = (!empty($current_state[$mname])) ? $current_state[$mname] : FALSE;    // load from db variable
-    $in_db    = menu_load($mname);
+    $in_state = (!empty($current_state[$mname])) ? $current_state[$mname] : FALSE; // load from db variable
+    $in_db    = menu_load($mname); // menu as it is from the db
     
-    // Get the two data objects in order
+    // --- Sync
+    // Syncronize data objects from db and state
     if (!($in_state && $in_db)) { // Are we missing anything?
       if ($in_state && !$in_db) { // Load to state
         dpm('in state, not db');
@@ -55,10 +56,11 @@ function coral_menus_run_updates() {
         // Load the db into state
         coral_menus_load_to_state($mfunc, $current_state);
       }
-      else {} // Menus are not in state or db!  
+      else { dpm('Menus not in state or db!'); } // Menus are not in state or db!  
     } 
-    else {} // Menus in both db and state...nothing to do here.
+    else { dpm('Menus in both state and db.'); } // Menus in both db and state...nothing to do here.
     
+    // --- Init
     // Initialize and create new menu + links
     //  if they didn't already exist.
     if (!$in_db) { // not in db yet
@@ -104,7 +106,7 @@ function coral_menus_run_updates() {
             coral_menus_menu_save($m, $current_state);
             
             // Check links
-            //coral_menus_manage_links($m, $lfunc);
+            coral_menus_manage_links($lfunc, $m, $current_state);
           }
         }
         
