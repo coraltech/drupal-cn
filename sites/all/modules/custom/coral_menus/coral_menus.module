@@ -18,6 +18,11 @@ function coral_menus_init() {
   coral_menus_run_updates();  
 }
 
+function coral_menus_menu_alter(&$items) {
+  //dpm($items);
+  //return $items;
+}
+
 
 /**
  * Core menu initialization! zaap!
@@ -127,35 +132,39 @@ function coral_menus_run_updates() {
 
 // --- Manages updating already created link sets
 //  Needs to loop through all the links in this menu
-//  and check if the state needs updating (file change)
+//  and check if the state needs updating (db & state change)
 function coral_menus_manage_links($lfunc, $menu, &$state) {
+    
   $links = $lfunc();
+  $db_links = menu_load_links($menu['menu_name']);
   $updated = 0;
+
   
   // Cycle through the links and update the necc. fields
   foreach ($links as $name => $link) {
-
     // Holds this link's changes
     $changes = array();  
-
+    
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
-
+      
       // Loop through the changeset returned by the equality measurer
       foreach ($changes as $linkid => $changeset) {
-        
+
         // Update the state and db with new values from file.
         foreach($changeset as $key => $change) {
-        	
+
 					// Apply this change to the state variable
           $state[$menu['menu_name']]['links'][$linkid][$key] = $change;
         }
 
 				// Update the link in the db
 				menu_link_save($state[$menu['menu_name']]['links'][$linkid]);
+        dpm('Updated '.$updated.' links...');
         $updated++;
       }
     }
+    else { } // Link equals definition... nothing to do here.
   }
   if ($updated) {
   	// Woof!
@@ -208,6 +217,7 @@ function coral_menus_menus_eq($m) {
 
 // --- Link equality: current state vs the state in db
 function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
+    
   $eq = TRUE; // Help determine if we need to regenerate this link
   $check_keys = array_keys($link_def); // The keys that we have defined in the file definition
   
@@ -218,11 +228,12 @@ function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
     if (!empty($state[$menu['menu_name']]['links'][$link_name][$key])) {
       $state_hash = sha1(serialize($state[$menu['menu_name']]['links'][$link_name][$key])); // state hash value
     }
+
     if ($def_hash != $state_hash) {
-      $changes[$link_name] = array($key => $link_def[$key]);  
+      $changes[$link_name][$key] = $link_def[$key];  
       $eq = FALSE; // Who moved my cheese?!
     }
-  }
+  } //dpm($eq);
   return $eq;
 }
 
@@ -289,7 +300,7 @@ function coral_menu_regenerate($menu, $mfunc, &$current_state, $del_storage = FA
 //  definitions map to Drupal link and urls exactly.
 function coral_menus_link_set_attributes($attr = array()) {
 	$attributes = array();
-	if ($attr) {
+  if ($attr) {
 		foreach ($attr as $attribute => $value) {
 			$attributes[] = array('attributes' => array($attribute => $value));
 		}
