@@ -172,42 +172,42 @@ abstract class CoralField
   // CRUD
   
   public function load($langcode, $age) {
-    dpm($this->entity, 'load -> $this->entity');
+    /*dpm($this->entity, 'load -> $this->entity');
     dpm($this->field, 'load -> $this->field');
     dpm($this->instance, 'load -> $this->instance');
     dpm($this->items, 'load -> $this->items');
     dpm($langcode, 'load -> $langcode');
-    dpm($age, 'load -> $age');
+    dpm($age, 'load -> $age');*/
   }
   
   #---
   
   public function presave($langcode) {
-    dpm($this->entity, 'presave -> $this->entity');
+    /*dpm($this->entity, 'presave -> $this->entity');
     dpm($this->field, 'presave -> $this->field');
     dpm($this->instance, 'presave -> $this->instance');
     dpm($this->items, 'presave -> $this->items');
-    dpm($langcode, 'presave -> $langcode');
+    dpm($langcode, 'presave -> $langcode');*/
   }
   
   #---
   
   public function insert($langcode) {
-    dpm($this->entity, 'insert -> $this->entity');
+    /*dpm($this->entity, 'insert -> $this->entity');
     dpm($this->field, 'insert -> $this->field');
     dpm($this->instance, 'insert -> $this->instance');
     dpm($this->items, 'insert -> $this->items');
-    dpm($langcode, 'insert -> $langcode');  
+    dpm($langcode, 'insert -> $langcode');*/
   }
   
   #---
   
   public function update($langcode) {
-    dpm($this->entity, 'update -> $this->entity');
+    /*dpm($this->entity, 'update -> $this->entity');
     dpm($this->field, 'update -> $this->field');
     dpm($this->instance, 'update -> $this->instance');
     dpm($this->items, 'update -> $this->items');
-    dpm($langcode, 'update -> $langcode'); 
+    dpm($langcode, 'update -> $langcode');*/
   }
   
   //----------------------------------------------------------------------------

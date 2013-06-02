@@ -77,10 +77,10 @@ function coral_field_instance_settings_form($field, $instance) {
  */
 function coral_field_load($entity_type, $entities, $field, $instances, $langcode, &$items, $age) {
   if ($class = coral_class('field', $field['type'])) {
-    dpm($items, 'coral_field_load -> $items');
+    //dpm($items, 'coral_field_load -> $items');
     foreach ($entities as $id => $entity) {
-      dpm($id, 'coral_field_load -> $id');
-      dpm($entity, 'coral_field_load -> $entity');
+      //dpm($id, 'coral_field_load -> $id');
+      //dpm($entity, 'coral_field_load -> $entity');
       if (isset($items[$id])) {
         $coral_field = Coral::create($class, array(
           'entity'   => $entity,
@@ -89,7 +89,7 @@ function coral_field_load($entity_type, $entities, $field, $instances, $langcode
           'items'    => &$items[$id]
         ));
         Coral::exec($coral_field, 'load', array($langcode, $age));
-        dpm($items[$id], 'coral_field_load -> $items[$id]');
+        //dpm($items[$id], 'coral_field_load -> $items[$id]');
       }
     }
   }
@@ -99,7 +99,7 @@ function coral_field_load($entity_type, $entities, $field, $instances, $langcode
  * Implements hook_field_validate().
  */
 function coral_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
-  dpm($items, 'coral_field_validate -> $items');
+  //dpm($items, 'coral_field_validate -> $items');
   if ($class = coral_class('field', $field['type'])) {
     $coral_field = Coral::create($class, array(
       'entity'   => $entity,
@@ -115,7 +115,7 @@ function coral_field_validate($entity_type, $entity, $field, $instance, $langcod
  * Implements hook_field_presave().
  */
 function coral_field_presave($entity_type, $entity, $field, $instance, $langcode, &$items) {
-  dpm($items, 'coral_field_presave -> $items');
+  //dpm($items, 'coral_field_presave -> $items');
   if ($class = coral_class('field', $field['type'])) {
     $coral_field = Coral::create($class, array(
       'entity'   => $entity,
@@ -125,7 +125,7 @@ function coral_field_presave($entity_type, $entity, $field, $instance, $langcode
     ));
     Coral::exec($coral_field, 'presave', array($langcode));
     $entity->{$field['field_name']}[$langcode] = $items;
-    dpm($items, 'coral_field_presave -> $items');
+    //dpm($items, 'coral_field_presave -> $items');
   }
 }
 
@@ -133,7 +133,7 @@ function coral_field_presave($entity_type, $entity, $field, $instance, $langcode
  * Implements hook_field_insert().
  */
 function coral_field_insert($entity_type, $entity, $field, $instance, $langcode, &$items) {
-  dpm($items, 'coral_field_insert -> $items');
+  //dpm($items, 'coral_field_insert -> $items');
   if ($class = coral_class('field', $field['type'])) {
     $coral_field = Coral::create($class, array(
       'entity'   => $entity,
@@ -157,7 +157,7 @@ function coral_field_insert($entity_type, $entity, $field, $instance, $langcode,
  * Implements hook_field_update().
  */
 function coral_field_update($entity_type, $entity, $field, $instance, $langcode, &$items) {
-  dpm($items, 'coral_field_update -> $items');
+  //dpm($items, 'coral_field_update -> $items');
   if ($class = coral_class('field', $field['type'])) {
     $coral_field = Coral::create($class, array(
       'entity'   => $entity,
