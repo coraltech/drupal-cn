@@ -25,27 +25,22 @@ function coral_menus_main_links_loader() {
     'about'=> array(
       'link_title' => t('About'),
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => coral_menus_link_set_attributes(array('id'=>'about'))
     ),
     'community' => array(
       'link_title' => t('Community'),
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => coral_menus_link_set_attributes(array('id'=>'community'))
     ),
     'find' => array(
       'link_title' => t('Find'),
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => coral_menus_link_set_attributes(array('id'=>'find'))
     ),
     'build' => array(
       'link_title' => t('Build'),
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => coral_menus_link_set_attributes(array('id'=>'build'))
     ),
     'test' => array(
       'link_title' => t('Test'),
       'link_path'  => drupal_get_normal_path('<front>'),
-      'options' => coral_menus_link_set_attributes(array('id'=>'test'))
     )
   );
 }

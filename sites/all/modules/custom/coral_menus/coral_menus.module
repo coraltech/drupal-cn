@@ -8,7 +8,7 @@ coral_include('includes', 'inc', 'coral_menus');
 define('CORAL_MENUS_PREFIX', 'Coral menus: ');
 
 // Set to TRUE to regenerate menus and links from scratch on next load. Useful for debugging.
-define('CORAL_MENUS_REGENERATE', FALSE); 
+define('CORAL_MENUS_RESET', FALSE); 
 
 
 /**
@@ -46,25 +46,16 @@ function coral_menus_run_updates() {
     $lfunc = 'coral_menus_'.$mname.'_links_loader';  // menu links func
     
     // Development regeneration - enable above
-    coral_menu_regenerate($mname, $mfunc, $current_state, FALSE); // Regenerate if necc.
+    coral_menu_reset($mname, $mfunc, $current_state); // Reset if necc.
     
-    $in_state = (!empty($current_state[$mname])) ? $current_state[$mname] : FALSE; // load from state variable
+    if (!empty($current_state[$mname])) {
+      $in_state = $current_state[$mname]; // load from state variable
+    }
+    else { // state not found... reset menus and reset state
+      coral_menu_reset($mname, $mfunc, $current_state, TRUE); // Reset if necc.
+    }
     $in_db    = menu_load($mname); // menu as it is from the db
-    
-    // --- Syncronize
-    // Syncronize data objects from db and state
-    if (!$in_state || !($in_state && $in_db)) { // Are we missing anything?
-      dpm(1);
-      // Load to state - note we need links to have the id = machine name to do this!
-      if($in_db && !$in_state) {
-        
-        // Load the db into state
-        coral_menus_load_to_state($mfunc, $current_state);
-      }
-      else { } // Menus are not in state or db!  
-    } 
-    else { } // Menus in both db and state...nothing to do here.
-    
+     
     // --- Initialize and create new menu + links
     if (!$in_db) { // not in db yet - time to import from the files!
 
@@ -88,7 +79,7 @@ function coral_menus_run_updates() {
       }
     }
     
-    // menu already in the db
+    // menu already in the db - updates
     else {
 
       // Check if the menu function is callable
@@ -97,17 +88,14 @@ function coral_menus_run_updates() {
         // the menu is defined in code
         if (!empty($m)) {
           
-          // Check what condition my condition is in
-          //dpm($state);
-           
           // If we have a defined menu, proceed
           if (coral_menus_menus_eq($m)) { // Menus are equal; check links
-//dpm(1);
+
             // Check links
             coral_menus_manage_links($lfunc, $m, $current_state);
           }
           else { // Menus differ
-//dpm(2);
+
             // Update the menu in the state according to the definition
             coral_menus_menu_save($m, $current_state);
             
@@ -125,8 +113,6 @@ function coral_menus_run_updates() {
   if ($orig_state_sha != $current_state_sha) {
     variable_set('coral_menus_menu_state', $current_state);  
   }
-  dpm('CURRENT STATE:');
-  dpm($current_state);
 }
 
 
@@ -150,16 +136,15 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
   foreach ($links as $name => $link) {
     // Holds this link's changes
     $changes = array();  
-    //dpm($link);
-    
-    // Get this db link
     
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
       // Loop through the changeset returned by the equality measurer
       foreach ($changes as $linkid => $changeset) {
 
+        // Number of links updated
         $updated++;
+
         // Update the state and db with new values from file.
         foreach($changeset as $key => $change) {
 
@@ -228,18 +213,14 @@ function coral_menus_menus_eq($m) {
 // --- Link equality: current state vs the state in db
 function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
   
-  //dpm($link_def);
-  
   $eq = TRUE; // Help determine if we need to regenerate this link
   $check_keys = array_keys($link_def); // The keys that we have defined in the file definition
   
   // Go through the defined keys
   foreach($check_keys as $key) {
-    //dpm('DEF KEY: '.$link_def[$key]);  
     $def_hash   = sha1(serialize($link_def[$key])); // defined has values
     $state_hash = ''; // Empty container for the state hash
     if (!empty($state[$menu['menu_name']]['links'][$link_name][$key])) {
-      //dpm('STATE KEY: '.$state[$menu['menu_name']]['links'][$link_name][$key]);  
       $state_hash = sha1(serialize($state[$menu['menu_name']]['links'][$link_name][$key])); // state hash value
     }
 
@@ -258,26 +239,6 @@ function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
 }
 
 
-// --- Push to state variable if it is lost... poor thing -_-
-function coral_menus_load_to_state($mfunc, &$state) {
-
-  // Call up the menu definition  
-  $menu = $mfunc();
-
-  // Save the menu to state  
-  coral_menus_menu_save($menu, $state, FALSE, TRUE);
-  $links = menu_load_links($menu['menu_name']); // load the menu links
-
-  // Process the links one by one
-  foreach ($links as $link) {
-    if (!empty($link['options']['attributes']['id'])) {
-      $name = $link['options']['attributes']['id'];
-      coral_menus_link_save($menu, $name, $link, $state, FALSE, TRUE);
-    }
-  }
-}
-
-
 // --- Read in the files and directory structure
 function coral_menus_read_dir($dir) {
   $result = array(); 
@@ -292,8 +253,8 @@ function coral_menus_read_dir($dir) {
 
 
 // --- Optionaly clear all menus and regenerate from scratch
-function coral_menu_regenerate($menu, $mfunc, &$current_state, $del_storage = FALSE) {
-  if (CORAL_MENUS_REGENERATE) {
+function coral_menu_reset($menu, $mfunc, &$current_state, $reset = FALSE) {
+  if (CORAL_MENUS_RESET || $reset) {
     
     // call the menu definition    
     $m_def = $mfunc();
@@ -301,12 +262,6 @@ function coral_menu_regenerate($menu, $mfunc, &$current_state, $del_storage = FA
     // Only delete if it has definition
     if ($m_def) menu_delete($m_def);
     
-    // Delete the storage variable
-    if ($del_storage) {
-      $current_state = array();
-      variable_del('coral_menus_menu_state');
-    }
-
 		// Lets keep a record, eh?
   	watchdog('Coral Menus', 'Regenerating all menus! Set the "CORAL_MENUS_REGENERATE" definition in coral_menus.module to FALSE to disable regeneration.', NULL, WATCHDOG_WARNING);
   }
