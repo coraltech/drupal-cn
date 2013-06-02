@@ -46,15 +46,15 @@ function coral_menus_run_updates() {
     $lfunc = 'coral_menus_'.$mname.'_links_loader';  // menu links func
     
     // Development regeneration - enable above
-    coral_menu_regenerate($mname, $mfunc, $current_state, CORAL_MENUS_REGENERATE); // Regenerate if necc.
+    coral_menu_regenerate($mname, $mfunc, $current_state, FALSE); // Regenerate if necc.
     
     $in_state = (!empty($current_state[$mname])) ? $current_state[$mname] : FALSE; // load from state variable
     $in_db    = menu_load($mname); // menu as it is from the db
     
     // --- Syncronize
     // Syncronize data objects from db and state
-    if (!($in_state && $in_db)) { // Are we missing anything?
-      
+    if (!$in_state || !($in_state && $in_db)) { // Are we missing anything?
+      dpm(1);
       // Load to state - note we need links to have the id = machine name to do this!
       if($in_db && !$in_state) {
         
@@ -96,15 +96,18 @@ function coral_menus_run_updates() {
         
         // the menu is defined in code
         if (!empty($m)) {
+          
+          // Check what condition my condition is in
+          //dpm($state);
            
           // If we have a defined menu, proceed
           if (coral_menus_menus_eq($m)) { // Menus are equal; check links
-
+//dpm(1);
             // Check links
             coral_menus_manage_links($lfunc, $m, $current_state);
           }
           else { // Menus differ
-  
+//dpm(2);
             // Update the menu in the state according to the definition
             coral_menus_menu_save($m, $current_state);
             
@@ -122,6 +125,8 @@ function coral_menus_run_updates() {
   if ($orig_state_sha != $current_state_sha) {
     variable_set('coral_menus_menu_state', $current_state);  
   }
+  dpm('CURRENT STATE:');
+  dpm($current_state);
 }
 
 
@@ -139,18 +144,22 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
   $db_links = menu_load_links($menu['menu_name']);
   $updated = 0;
 
+  $orig_state = $state;
   
   // Cycle through the links and update the necc. fields
   foreach ($links as $name => $link) {
     // Holds this link's changes
     $changes = array();  
+    //dpm($link);
+    
+    // Get this db link
     
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
-      
       // Loop through the changeset returned by the equality measurer
       foreach ($changes as $linkid => $changeset) {
 
+        $updated++;
         // Update the state and db with new values from file.
         foreach($changeset as $key => $change) {
 
@@ -158,10 +167,10 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
           $state[$menu['menu_name']]['links'][$linkid][$key] = $change;
         }
 
-				// Update the link in the db
-				menu_link_save($state[$menu['menu_name']]['links'][$linkid]);
-        dpm('Updated '.$updated.' links...');
-        $updated++;
+
+        // Update the link in the db
+				coral_menus_link_save($menu, $linkid, $state[$menu['menu_name']]['links'][$linkid], $state);
+        
       }
     }
     else { } // Link equals definition... nothing to do here.
@@ -170,6 +179,7 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
   	// Woof!
     watchdog('Coral Menus', 'Updated '.format_plural($updated, '1 link', '@count links'), NULL, WATCHDOG_NOTICE);
   }
+  menu_cache_clear_all();
 } 
 
 
@@ -217,23 +227,33 @@ function coral_menus_menus_eq($m) {
 
 // --- Link equality: current state vs the state in db
 function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
-    
+  
+  //dpm($link_def);
+  
   $eq = TRUE; // Help determine if we need to regenerate this link
   $check_keys = array_keys($link_def); // The keys that we have defined in the file definition
   
   // Go through the defined keys
   foreach($check_keys as $key) {
+    //dpm('DEF KEY: '.$link_def[$key]);  
     $def_hash   = sha1(serialize($link_def[$key])); // defined has values
     $state_hash = ''; // Empty container for the state hash
     if (!empty($state[$menu['menu_name']]['links'][$link_name][$key])) {
+      //dpm('STATE KEY: '.$state[$menu['menu_name']]['links'][$link_name][$key]);  
       $state_hash = sha1(serialize($state[$menu['menu_name']]['links'][$link_name][$key])); // state hash value
     }
 
     if ($def_hash != $state_hash) {
+        
+      // Data different  
       $changes[$link_name][$key] = $link_def[$key];  
       $eq = FALSE; // Who moved my cheese?!
+      
     }
-  } //dpm($eq);
+    else { } // Data same
+  }
+  
+  // boolean
   return $eq;
 }
 
