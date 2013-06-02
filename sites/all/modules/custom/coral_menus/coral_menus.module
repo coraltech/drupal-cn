@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Coral Menus is fresh off the press so it's going to be buggy! But at the moment
+ *  it will keep your menus, as defined in the coral_menu includes folder, synced
+ *  with actual system menus. 
+ */
 // Get the menus defined by this module 
 //  @TODO make this hookable - reach into other modules to get definitions!
 coral_include('includes', 'inc', 'coral_menus');
@@ -16,11 +20,6 @@ define('CORAL_MENUS_RESET', FALSE);
  */
 function coral_menus_init() {
   coral_menus_run_updates();  
-}
-
-function coral_menus_menu_alter(&$items) {
-  //dpm($items);
-  //return $items;
 }
 
 
@@ -133,12 +132,13 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
   $orig_state = $state;
   
   // Cycle through the links and update the necc. fields
-  foreach ($links as $name => $link) {
+  foreach ($links as $name => $link) { //dpm($link);
     // Holds this link's changes
     $changes = array();  
-    
+  
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
+
       // Loop through the changeset returned by the equality measurer
       foreach ($changes as $linkid => $changeset) {
 
@@ -152,10 +152,8 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
           $state[$menu['menu_name']]['links'][$linkid][$key] = $change;
         }
 
-
         // Update the link in the db
 				coral_menus_link_save($menu, $linkid, $state[$menu['menu_name']]['links'][$linkid], $state);
-        
       }
     }
     else { } // Link equals definition... nothing to do here.
@@ -164,7 +162,8 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
   	// Woof!
     watchdog('Coral Menus', 'Updated '.format_plural($updated, '1 link', '@count links'), NULL, WATCHDOG_NOTICE);
   }
-  menu_cache_clear_all();
+  
+  //menu_cache_clear_all();
 } 
 
 
@@ -190,8 +189,8 @@ function coral_menus_link_save($menu, $name, $link, &$state, $to_db = TRUE, $to_
 	//  Don't like it? Move that link definition to the right file. 
 	$link['menu_name'] = $menu['menu_name'];
 
-  // Is the module defined?
-  $link['module'] = (!empty($link['module'])) ? $link['module'] : 'coral_menus';
+  // Is the module defined - set to 'menu' so we can get the menu ops!
+  $link['module'] = (!empty($link['module'])) ? $link['module'] : 'menu';
   
   // Save the link to the db
   if ($to_db) menu_link_save($link);
@@ -263,7 +262,7 @@ function coral_menu_reset($menu, $mfunc, &$current_state, $reset = FALSE) {
     if ($m_def) menu_delete($m_def);
     
 		// Lets keep a record, eh?
-  	watchdog('Coral Menus', 'Regenerating all menus! Set the "CORAL_MENUS_REGENERATE" definition in coral_menus.module to FALSE to disable regeneration.', NULL, WATCHDOG_WARNING);
+  	watchdog('Coral Menus', 'Regenerating all menus! Set the "CORAL_MENUS_RESET" definition in coral_menus.module to FALSE to disable regeneration.', NULL, WATCHDOG_WARNING);
   }
 }
 
