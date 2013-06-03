@@ -1,0 +1,21 @@
+/* line 5, ../../../sass/nodes/fe_attach/cn_slideshow.scss */
+.pip-cont .pip {
+  border: 6px solid #777777;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 0px;
+  width: 0px;
+  margin: 2px 15px 2px 2px;
+  -webkit-border-radius: 6px 6px;
+  -moz-border-radius: 6px / 6px;
+  border-radius: 6px / 6px;
+}
+/* line 16, ../../../sass/nodes/fe_attach/cn_slideshow.scss */
+.pip-cont .pip.active-pip {
+  margin: 0 12px 0 0;
+  border: 8px solid #777777;
+  -webkit-border-radius: 8px 8px;
+  -moz-border-radius: 8px / 8px;
+  border-radius: 8px / 8px;
+}
