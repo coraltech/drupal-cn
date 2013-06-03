@@ -11,9 +11,6 @@ coral_include('includes', 'inc', 'coral_menus');
 // Prefix that will be appended to Coral menu's menus - see menu admin page.
 define('CORAL_MENUS_PREFIX', 'Coral menus: ');
 
-// Set to TRUE to regenerate menus and links from scratch on next load. Useful for debugging.
-define('CORAL_MENUS_RESET', FALSE); 
-
 
 /**
  * Implementation of hook_init()
@@ -287,7 +284,7 @@ function coral_menus_read_dir($dir) {
 
 // --- Optionaly clear all menus and regenerate from scratch
 function coral_menu_reset($menu, $mfunc, &$current_state, $reset = FALSE) {
-  if (CORAL_MENUS_RESET || $reset) {
+  if (variable_get('coral_menus_reset', FALSE) || $reset) {
     
     // call the menu definition    
     $m_def = $mfunc();
