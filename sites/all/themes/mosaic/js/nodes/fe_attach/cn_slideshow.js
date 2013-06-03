@@ -11,13 +11,19 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   Drupal.behaviors.mosaicSlideshowInit = {    
     attach : function(context, settings) {
-      // gather slideshows
-      if ($('.views_slideshow_cycle_main').length > 0) {
-        $slideshows = $('.views_slideshow_cycle_main');
-        $slideshows.each(function(i) {
-          $container = $(this).parent();
-          new Drupal.mosaic.slideshow($(this), $container);
-        });
+      
+      try { // Use try to prevent systemic failure
+        // gather slideshows
+        if ($('.views_slideshow_cycle_main').length > 0) {
+          $slideshows = $('.views_slideshow_cycle_main');
+          $slideshows.each(function(i) {
+            $container = $(this).parent();
+            new Drupal.mosaic.slideshow($(this), $container);
+          });
+        }
+      }
+      catch(err) {
+        console.log('mosaicSlideshowInit reported errors! Error: '+err);
       }
     }
   };
@@ -28,10 +34,9 @@ Drupal.mosaic = Drupal.mosaic || {};
     // jQuery objects of note
     this.$slideshow = $slideshow; // the slideshow
     this.$container = $container; // slideshow container
-    this.$imgs      = $slideshow.find('img');
     
     // Identification and settings
-    this.id         = '#'+this.$slideshow.attr('id');
+    this.id         = '#'+$slideshow.attr('id'); //'#'+this.$slideshow.attr('id');
     this.settings   = Drupal.settings.viewsSlideshowCycle[this.id];
         
     //console.log(this.settings);
@@ -44,13 +49,14 @@ Drupal.mosaic = Drupal.mosaic || {};
       el: this.$container,
       
       // Slideshow settings
-      settings: this.settings,
+      slideshow:  slideshow,
+      settings:   this.settings,
       $slideshow: this.$slideshow,
       $container: this.$container,
 
       // Events
       events: {
-        'click span.pip'     : 'clickPip',  // click on a pip
+        'click span.pip': 'clickPip',  // click on a pip
         'hover span.pip': 'hoverPip'   // mouseover a pip
       },
       
@@ -58,7 +64,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       initialize: function() {
         slideshow.startup();     // Do a little init work
         slideshow.addPips(this.settings, this.$container); // Set up the nav pips
-        slideshow.updatePips(this.settings, this.$container, this.$slideshow);
+        slideshow.updatePips(this.settings, this.$container, this.slideshow);
         _.bindAll(this, 'clickPip', 'hoverPip');           // Bind the actions         
       },
       
@@ -107,27 +113,50 @@ Drupal.mosaic = Drupal.mosaic || {};
     if (settings.totalImages > 1) {
       var pips = '<div class="pip-cont">'; // open the container
       for (var i = 0; i < settings.totalImages; i++) {
-        pips += '<span class="pip" id="pip-'+i+'">o</span>';
+        pips += '<span class="pip" id="pip-'+i+'"></span>';
       }
       $container.append(pips);
     }
   }
   
   // Update pips based on the current slide
-  Drupal.mosaic.slideshow.prototype.updatePips = function(settings, $container, $slideshow) {
-    //this.currentSlide = 
-    this.num = 0;
-    //console.log(this.num < 3);
-    console.log(settings);
-    console.log($container);
-    console.log($slideshow);
+  Drupal.mosaic.slideshow.prototype.updatePips = function(settings, $container, slideshow) {
 
-    var check = setInterval(function() { //setInterval  
-      //if (this.num < 3) {
-        //console.log(settings);
-      //}
-    }, 10000);  
+    // Round up the pips
+    var $pips = $container.find('.pip');
+
+    // get the current number counter provided by views slideshow -_-
+    var $counter = $container.find('.views-slideshow-slide-counter .num');
+    
+    // Hide counters
+    $container.find('.views-slideshow-slide-counter').addClass('hide');
+    
+    // Getting the current slide #
+    var currentSlide = Number($counter.text()) - 1;
+    if (currentSlide >= 0 && currentSlide != NaN) {
+      
+      // First call
+      slideshow.syncPips($pips, $counter);
+      
+      // start the timeout which starts the interval
+      setTimeout(function() {
+        setInterval(function() { 
+          slideshow.syncPips($pips, $counter); // Check state 
+        }, 500); 
+      }, 100);
+    }
   }
   
+  // Syncronizes pip classes with the built-in counter
+  Drupal.mosaic.slideshow.prototype.syncPips = function ($pips, $counter) {
+    // Reget the current slide
+    curr = Number($counter.text()) - 1;
+
+    // set the active pip
+    if (!$pips.eq(curr).hasClass('active-pip')) { 
+      $pips.each(function() { $(this).removeClass('active-pip'); });
+      $pips.eq(curr).addClass('active-pip');
+    }
+  }
   
 })(jQuery); 
