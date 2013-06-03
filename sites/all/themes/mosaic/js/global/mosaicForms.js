@@ -24,16 +24,21 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   Drupal.behaviors.mosaicFormsInit = {    
     attach : function(context, settings) {
-      if (Drupal.settings.mosaic.fieldDefaults) {
-        var fieldDefaults = Drupal.settings.mosaic.fieldDefaults;
+      try { // use try to ensure that if this breaks/fails, it won't break other stuff.
+        if (Drupal.settings.mosaic.fieldDefaults) {
+          var fieldDefaults = Drupal.settings.mosaic.fieldDefaults;
         
-        for (selector in fieldDefaults) {      
-          var $formElement = $(selector);
+          for (selector in fieldDefaults) {      
+            var $formElement = $(selector);
         
-          for (var index = 0; index < $formElement.length; index++) {
-            new Drupal.mosaic.forms($formElement[index], fieldDefaults[selector]);
+            for (var index = 0; index < $formElement.length; index++) {
+              new Drupal.mosaic.forms($formElement[index], fieldDefaults[selector]);
+            }
           }
         }
+      }
+      catch (err) {
+        console.log('mosaicFormsInit() reported errors... Any forms on the page? Error: '+err);
       }
     }
   };
