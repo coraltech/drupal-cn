@@ -16,7 +16,22 @@
   padding: 0;
   list-style: none;
 }
-.sf-menu{
+
+// Reset unneeded superfish styles
+.sf-menu.sf-horizontal.sf-shadow ul, 
+.sf-menu.sf-vertical.sf-shadow ul, 
+.sf-menu.sf-navbar.sf-shadow ul ul {
+  background: transparent;
+  padding: 0 !important;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#mini-panel-top_menus .sf-menu {
   float: left;
   margin-bottom: 0;
   letter-spacing: 2px;
@@ -44,17 +59,19 @@
     box-shadow: 2px 2px 6px rgba(0,0,0,.2);
     display: none;
     left: 0;
+    padding: 0;
+    margin: 0;
     position: absolute;
     top: 100%;
     z-index: 99;
     min-width: 12em; // allow long menu items to determine submenu width 
     *width: 12em;    // no auto sub width for IE7, see white-space comment below
   
-    @include opacity(.95);
+    @include opacity(1);
     
     li {
       position: relative;
-      
+        
       a {
         color: $dkgray;
         border-bottom: 1px solid lighten($mdgray, 15%);
@@ -114,7 +131,7 @@
 
 
 // Secondary (User menu) superfish menu
-.pane-superfish-2 .sf-menu {
+#mini-panel-top_menus .pane-superfish-2 .sf-menu {
   float: right;
   letter-spacing: 1px;
   
