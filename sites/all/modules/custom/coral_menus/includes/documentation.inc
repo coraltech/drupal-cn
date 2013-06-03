@@ -24,22 +24,22 @@ function coral_menus_documentation_links_loader() {
   return array(
     'command_line'=> array(
       'link_title' => t('Command line'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 1,
     ),
     'web_portal' => array(
       'link_title' => t('Web portal'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 2,
     ),
     'restful_api' => array(
       'link_title' => t('Restful API'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 3,
     ),
     'ruby_api' => array(
       'link_title' => t('Ruby API'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 4,
     )
   );

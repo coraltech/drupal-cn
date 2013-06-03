@@ -24,42 +24,42 @@ function coral_menus_general_links_loader() {
   return array(
     'about_us'=> array(
       'link_title' => t('About us'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 1,
     ),
     'contact_us' => array(
       'link_title' => t('Contact us'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 2,
     ),
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 3,
     ),
     'sponsors' => array(
       'link_title' => t('Sponsors'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 4,
     ),
     'qa' => array(
       'link_title' => t('Q&A'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 5,
     ),
     'sitemap' => array(
       'link_title' => t('Sitemap'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 6,
     ),
     'getting_help' => array(
       'link_title' => t('Getting help'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 7,
     ),
     'ssh_keys' => array(
       'link_title' => t('Using SSH keys'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 8,
     )
   );

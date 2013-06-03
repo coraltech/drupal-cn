@@ -24,17 +24,17 @@ function coral_menus_account_links_loader() {
   return array(
     'manage_account'=> array(
       'link_title' => t('Manage account'),
-      'link_path'  => drupal_get_normal_path('user'),
+      'link_path'  => 'user',
       'weight'     => 1,
     ),
     'manage_projects' => array(
       'link_title' => t('Manage projects'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 2,
     ),
     'upgrade_account' => array(
       'link_title' => t('Upgrade account'),
-      'link_path'  => drupal_get_normal_path('<front>'),
+      'link_path'  => 'node/8',
       'weight'     => 3,
     )
   );

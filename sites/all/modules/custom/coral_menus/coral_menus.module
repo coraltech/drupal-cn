@@ -89,15 +89,15 @@ function coral_menus_run_updates() {
         
         // the menu is defined in code
         if (!empty($m)) {
-          
+
           // If we have a defined menu, proceed
           if (coral_menus_menus_eq($m)) { // Menus are equal; check links
-
+          
             // Check links
             coral_menus_manage_links($lfunc, $m, $current_state);
           }
           else { // Menus differ
-
+          
             // Update the menu in the state according to the definition
             coral_menus_menu_save($m, $current_state);
             
@@ -115,6 +115,7 @@ function coral_menus_run_updates() {
   if ($orig_state_sha != $current_state_sha) {
     variable_set('coral_menus_menu_state', $current_state);  
   }
+  //dpm($current_state);
 }
 
 
@@ -129,19 +130,17 @@ function coral_menus_run_updates() {
 function coral_menus_manage_links($lfunc, $menu, &$state) {
     
   $links = $lfunc();
-  $db_links = menu_load_links($menu['menu_name']);
   $updated = 0;
-
   $orig_state = $state;
   
   // Cycle through the links and update the necc. fields
   foreach ($links as $name => $link) { //dpm($link);
     // Holds this link's changes
-    $changes = array();  
-  
+    $changes = array();
+
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
-
+      
       // Loop through the changeset returned by the equality measurer
       foreach ($changes as $linkid => $changeset) {
 
@@ -165,17 +164,17 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
   	// Woof!
     watchdog('Coral Menus', 'Updated '.format_plural($updated, '1 link', '@count links'), NULL, WATCHDOG_NOTICE);
   }
-} 
+}
 
 
 // --- Save a menu now! Tomorrow could be too late
-function coral_menus_menu_save($menu, &$state, $to_db = TRUE, $to_state = TRUE) {
+function coral_menus_menu_save($menu, &$state) {
 
   // Save to the db
-  if ($to_db) menu_save($menu);
+  menu_save($menu);
 
   // add this menu's distinctiveness to it's own
-  if ($to_state) $state[$menu['menu_name']]['menu'] = $menu;
+  $state[$menu['menu_name']]['menu'] = $menu;
   
 	// Lets keep a record, eh?
   watchdog('Coral Menus', 'Updated menu '.$menu['menu_name'], NULL, WATCHDOG_NOTICE);
@@ -193,33 +192,38 @@ function coral_menus_link_save($menu, $name, $link, &$state) {
   // Is the module defined - set to 'menu' so we can get the menu ops! e.g. (delete)
   $link['module'] = (!empty($link['module'])) ? $link['module'] : 'menu';
   
-  //dpm($link);
-  
-  if ($link['plid'] && !is_numeric($link['plid'])) {
-    // A parent exists and translation is needed
-    dpm($link['plid']);
-    //dpm($state);
-    
-    $parent = 0;
-    foreach ($state[$menu['menu_name']]['links'] as $name => $parent_candidate) {
-      dpm(1);
-      if ($name == $link['plid']) {
-       // dpm($parent_candidate['plid']);
-       dpm(2);
-        $link['plid'] = $parent_candidate['plid'];
-      }
-    }
-    
-  }
-  else {
-    // No parents
-  }
+  // Do we need to translate any plid's?
+  coral_menus_translate_link_parent($link, $menu, $state);
   
   // Save the link to the db
   menu_link_save($link);
   
   // Save the link to state
   $state[$menu['menu_name']]['links'][$name] = $link;
+}
+
+
+// --- Translate a menu link's id plid to a real plid
+function coral_menus_translate_link_parent(&$link, $menu, &$state) {
+
+  // A parent exists and translation is needed
+  if (!empty($link['plid']) && !is_numeric($link['plid'])) {
+
+    // Cycle through the items in this menu's state
+    foreach ($state[$menu['menu_name']]['links'] as $name => $parent_candidate) {
+
+      // Found a match for the plid that translates?  
+      if ($name == $link['plid']) {
+        
+        // Save the parent's plid to the plid.
+        $link['plid'] = $parent_candidate['mlid'];
+        return $link['plid']; // return it...       
+      }
+    }
+  }
+  else { } // No parents
+  
+  return FALSE;
 }
 
  
@@ -232,6 +236,9 @@ function coral_menus_menus_eq($m) {
 }
 
 
+/**
+ * @TODO: We need a way to detect when link values are removed...
+ */
 // --- Link equality: current state vs the state in db
 function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
   
@@ -240,8 +247,11 @@ function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
   
   // Go through the defined keys
   foreach($check_keys as $key) {
-    //dpm($key);
-    if ($key != 'plid') {
+    
+    if ($key == 'plid' && !is_numeric($link_def[$key])) {
+      $link_def[$key] = coral_menus_translate_link_parent($link_def, $menu, $state);
+    }
+    
     $def_hash   = sha1(serialize($link_def[$key])); // defined has values
     $state_hash = ''; // Empty container for the state hash
     if (!empty($state[$menu['menu_name']]['links'][$link_name][$key])) {
@@ -249,14 +259,12 @@ function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
     }
 
     if ($def_hash != $state_hash) {
-        
       // Data different  
       $changes[$link_name][$key] = $link_def[$key];  
       $eq = FALSE; // Who moved my cheese?!
       
     }
     else { } // Data same
-    }
   }
   
   // boolean
@@ -302,7 +310,7 @@ function coral_menus_link_set_attributes($attr = array()) {
 	$attributes = array();
   if ($attr) {
 		foreach ($attr as $attribute => $value) {
-			$attributes[] = array('attributes' => array($attribute => $value));
+			$attributes['attributes'][$attribute] = $value;
 		}
 	}
 	return $attributes;
