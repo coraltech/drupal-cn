@@ -1,5 +1,5 @@
 name = Coral slides
-description = Provides an slide node types and related functionality.
+description = Provides a slide node type and related functionality.
 dependencies[] = coral
 dependencies[] = file
 dependencies[] = image
