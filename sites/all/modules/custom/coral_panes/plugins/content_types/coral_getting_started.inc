@@ -48,7 +48,7 @@ function coral_getting_started_pane_content_type_render($subtype, $conf, $contex
   </div>
   <div class="msg">You now have a local cluster runnung that includes ssh access and an online dashboard!</div>
   <h4 class="header web-portal">In-site development:</h4>
-  <p>Login or register to get started. It's free for all open source procets and makes creating, configuring, and sharing technology clusters easy!</p>
+  <p>Login or register to get started. It's free for all open source projects and makes creating, configuring, and sharing technology clusters easy!</p>
   <p>Need private projects? No problem. Sign up for a premium account and help support our growth.</p>
   <span class="pricing">* Pricing options</span>
   <span class="more">All the facts</span>
