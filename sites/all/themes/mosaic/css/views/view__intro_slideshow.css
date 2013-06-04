@@ -1,0 +1,8 @@
+/* line 1, ../../sass/views/view__intro_slideshow.scss */
+.pip-cont {
+  margin: 0 auto;
+  position: relative;
+  z-index: 15;
+  top: -9px;
+  width: 88px;
+}

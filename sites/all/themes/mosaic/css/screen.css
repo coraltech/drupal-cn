@@ -107,27 +107,52 @@ body.html {
   letter-spacing: 1px;
 }
 
-/* line 36, ../sass/global/_dom.scss */
-a {
-  color: #446eac;
-  font-weight: bold;
-  text-decoration: none;
-}
-/* line 41, ../sass/global/_dom.scss */
-a:hover {
-  color: #2b486b;
-}
-/* line 42, ../sass/global/_dom.scss */
-a:active, a.active {
-  color: #515151;
+/* line 38, ../sass/global/_dom.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1em;
 }
 
-/* line 48, ../sass/global/_dom.scss */
+/* line 41, ../sass/global/_dom.scss */
+h1 {
+  font-size: 1.5em;
+}
+
+/* line 42, ../sass/global/_dom.scss */
+h2 {
+  font-size: 1.2em;
+}
+
+/* line 43, ../sass/global/_dom.scss */
+h3 {
+  font-size: 1.1em;
+}
+
+/* line 44, ../sass/global/_dom.scss */
+h4 {
+  font-size: 1em;
+}
+
+/* line 51, ../sass/global/_dom.scss */
 img,
 object,
 embed,
 video {
   max-width: 100%;
+}
+
+/* line 57, ../sass/global/_dom.scss */
+a {
+  color: #446eac;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 62, ../sass/global/_dom.scss */
+a:hover {
+  color: #2b486b;
+}
+/* line 63, ../sass/global/_dom.scss */
+a:active, a.active {
+  color: #515151;
 }
 
 /* line 18, ../sass/global/_global.scss */
@@ -988,25 +1013,26 @@ footer {
 /* line 123, ../sass/global/_menus.scss */
 #mini-panel-footer .pane-title {
   color: #fdaa68;
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: .75em;
 }
-/* line 129, ../sass/global/_menus.scss */
+/* line 130, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu {
   margin: 0 0 1em;
 }
-/* line 132, ../sass/global/_menus.scss */
+/* line 133, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf {
   font-size: 90%;
   list-style-image: none;
   list-style-type: none;
   margin: 3px 0;
 }
-/* line 138, ../sass/global/_menus.scss */
+/* line 139, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a {
   color: white;
 }
-/* line 142, ../sass/global/_menus.scss */
+/* line 143, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a:hover, #mini-panel-footer ul.menu li.leaf a:active, #mini-panel-footer ul.menu li.leaf a.active {
   color: #fff6b6;
 }

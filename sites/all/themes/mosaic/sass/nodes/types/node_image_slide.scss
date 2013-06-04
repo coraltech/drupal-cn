@@ -3,19 +3,23 @@
 @import "compass/css3/border-radius";
 
 .pip-cont .pip {
-  border: 6px solid $mdgray;
+  border-color: lighten($mdgray, 15%);
+  border-style: solid;
+  border-width: 6px;
   cursor: pointer;
   display: block;
   float: left;
   height: 0px;
   width: 0px;
-  margin: 2px 15px 2px 2px;
+  margin: 2px 8px 2px 8px;
     
   @include border-radius(6px, 6px);
   
+  &:hover,
   &.active-pip {
-    border: 8px solid $mdgray;
-    margin: 0 12px 0 0;
+    border-color: lighten($mdgray, 7%);
+    border-width: 8px;
+    margin: 0 6px 0 6px;
 
     @include border-radius(8px, 8px);
   }
