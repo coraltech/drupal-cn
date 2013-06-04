@@ -1,4 +1,0 @@
-name = Coral footer
-description = Provides custom data items for the footer: server time, version, copyright.
-package = "Coral"
-core = 7.x 

@@ -19,17 +19,17 @@
 */
 $plugin = array(
   // the title in the admin
-  'title' => t('Coral footer data'),                // ** default pane title **
+  'title' => t('Testing'),                // ** default pane title **
   // no one knows if "single" defaults to FALSE...
   'single' => TRUE,
   // oh joy, I get my own section of panel panes
-  'category' => array(t('Page elements'), -9), // We can change this category at will
+  'category' => array(t('Coral'), -9), // We can change this category at will
 
   //NOTE--->> Un-comment the next line to add configs.  Talk to me if this is not clear ;-) (DW)
-  //'edit form' => 'coral_footer_pane_content_type_edit_form',    // Edit form callback
+  //'edit form' => 'coral_testing_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_footer_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_testing_pane_content_type_render'  // Render callback
 );
 
 
@@ -37,11 +37,19 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_footer_pane_content_type_render($subtype, $conf, $context = NULL) {
-  $server_time = '<div class="fde server-time">Generated: '.date('F j, g:i:sa').'</div>';
-  $version     = '<div class="fde version">Coral Nexus version: 0.1.1</div>';
-  $copyright   = '<div class="fde copyright">&copy; 2013 Coral Technology Group LLC</div>'; 
-  $block->content = $server_time.$version.$copyright;
+function coral_testing_pane_content_type_render($subtype, $conf, $context = NULL) {
+  $output = <<<EOF
+  <p>Currently our testing framework is incomplete. When it is ready, it will provide RSpec unit testing and load testing for your modules and snippets!</p>
+  <p>You can help us develop these tools quicker by:</p>
+  <ul>
+  <li>Getting involved</li>
+  <li>Upgrade to a premium account</li>
+  <li>Sponsor the project</li>
+  <li>Spread the word</li>
+  </ul>
+EOF;
+  $block->title = t('Testing');
+  $block->content = $output;
   return $block; 
 }
 
@@ -51,11 +59,14 @@ function coral_footer_pane_content_type_render($subtype, $conf, $context = NULL)
 * 
 * Currently un-called... no edit form needed most of the time.
 */
-function coral_footer_pane_content_type_edit_form($form, &$form_state) {
+function coral_testing_pane_content_type_edit_form($form, &$form_state) {
+  //dpm($conf);  
   // The configurations as they were saved
   $conf = $form_state['conf'];
-
+  
   // Add your Form API (FAPI) additions here:
+  
+  
   return $form;
 }
 
@@ -65,7 +76,7 @@ function coral_footer_pane_content_type_edit_form($form, &$form_state) {
 * 
 * You prob. don't need this for a static content pane.
 */
-function coral_footer_pane_content_type_edit_form_submit($form, &$form_state) {
+function coral_testing_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
-  //$form_state['conf']['twitter_username'] = $form_state['values']['twitter_username'];
+  //$form_state['conf']['field'] = $form_state['values']['field'];
 }

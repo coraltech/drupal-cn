@@ -1,0 +1,4 @@
+name = Coral panes
+description = Provides custom general panes for Coral Nexus landing pages etc. 
+package = "Coral"
+core = 7.x 
