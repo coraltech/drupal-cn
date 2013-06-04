@@ -22,8 +22,8 @@ function _mosiac_be_node_load_by_type($node) {
   $type = $node->type;
   $theme_path = drupal_get_path('theme', 'mosaic');
   
-  if (file_exists($theme_path.'/css/nodes/types/node_'.$node->type.'.css')) drupal_add_css($theme_path.'/css/nodes/types/'.$node->type.'.css', array('group' => CSS_THEME));
-  if (file_exists($theme_path.'/js/nodes/types/node_'.$node->type.'.js'))   drupal_add_js($theme_path.'/js/nodes/types/'.$node->type.'.js', array('group' => JS_THEME));
+  if (file_exists($theme_path.'/css/nodes/types/node_'.$node->type.'.css')) drupal_add_css($theme_path.'/css/nodes/types/node_'.$node->type.'.css', array('group' => CSS_THEME));
+  if (file_exists($theme_path.'/js/nodes/types/node_'.$node->type.'.js'))   drupal_add_js($theme_path.'/js/nodes/types/node_'.$node->type.'.js', array('group' => JS_THEME));
 }
 
 /**
