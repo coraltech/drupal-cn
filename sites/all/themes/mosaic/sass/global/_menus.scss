@@ -25,6 +25,7 @@
     position: absolute; // we put this to the top
     top: -.5em;         // make up for some padding in the site header (.5em worth)
     right: 285px;
+    margin-top: 0;
     
     li.leaf {
       display: block;
