@@ -122,14 +122,9 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Update pips based on the current slide
   Drupal.mosaic.slideshow.prototype.updatePips = function(settings, $container, slideshow) {
 
-    // Round up the pips
-    var $pips = $container.find('.pip');
-
-    // get the current number counter provided by views slideshow -_-
-    var $counter = $container.find('.views-slideshow-slide-counter .num');
-    
-    // Hide counters
-    $container.find('.views-slideshow-slide-counter').addClass('hide');
+    var $pips = $container.find('.pip'); // Round up the pips
+    var $counter = $container.find('.views-slideshow-slide-counter .num'); // Get the current number counter provided by views slideshow -_-
+    $container.find('.views-slideshow-slide-counter').addClass('hide');    // Hide counters
     
     // Getting the current slide #
     var currentSlide = Number($counter.text()) - 1;
