@@ -7,8 +7,12 @@
 @import 'global/dom';
 @import 'global/global';
 @import 'global/grid';
+@import 'global/icons';
 @import 'global/menus';
 @import 'global/superfish';
 @import 'global/tabs';
 
 
+.clowny {
+  //@include icons-sprite('clowny');
+}

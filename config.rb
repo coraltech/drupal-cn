@@ -9,6 +9,8 @@ sass_dir = "sites/all/themes/mosaic/sass"
 javascripts_dir = "sites/all/themes/mosaic/js"
 project_type = :stand_alone
 
+images_path = "sites/all/themes/mosaic/assets"
+generated_images_path = "sites/all/themes/mosaic/assets/sprites"
 
 # Images are located in the mosaic theme
 icons_dir  = "sites/all/themes/mosaic/assets/icons"
