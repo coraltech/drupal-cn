@@ -1,0 +1,1 @@
+Any custom js that should be attached to various ctools layouts can be defined in the js/layouts directory.
