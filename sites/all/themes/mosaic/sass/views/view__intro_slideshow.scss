@@ -1,8 +1,16 @@
-.pip-cont {
-  margin: 0 auto;
-  position: relative;
-  z-index: 15;
-  top: -12px;
-  width: 88px;
-}
 
+// Style customizations for the intro slideshow view.
+//  defaults in node_image_slide.scss
+
+.view-intro-slideshow {
+  margin-top: 2.6em;
+  position: relative;
+  
+  .pip-cont {
+    margin: 0 auto;
+    position: relative;
+    z-index: 15;
+    top: -12px;
+    width: 88px;
+  }
+}

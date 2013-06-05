@@ -1,0 +1,18 @@
+
+// Controls styles that are central to the mosaic landing 1 layout
+
+@import "global/colors";
+@import "global/dom";
+
+.layout-landing-1 {
+ 
+  .follower {
+    margin-top: $default_vert_unit;
+    background: url('../../assets/images/coral-sep-long.png') top center no-repeat;  
+  
+    .pane-title {
+      color: $mdred;
+    }
+  }
+
+}

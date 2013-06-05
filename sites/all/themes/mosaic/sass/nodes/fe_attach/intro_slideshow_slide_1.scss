@@ -1,0 +1,20 @@
+
+// Adds customization for slide 1 of the intro slides
+
+.intro-slide-1 {
+  position: relative;
+  
+  .intro-diag-msg {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 215px;
+    font-size: 90%; 
+  }
+  .more {
+    position: absolute;
+    right: 12px;
+    top: 130px;
+  }
+}
