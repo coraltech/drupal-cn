@@ -38,20 +38,36 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_getting_started_pane_content_type_render($subtype, $conf, $context = NULL) {
+  global $user;
+  
+  $pricing = l('* Pricing options', '<front>');
+  $more    = l('Get started', '<front>');
+  $callout = 'Sign up for a ';
+  $accnt = l('premium account', '<front>');
+  
+  $user_text = '';
+  if (!$user->uid) {
+    $user_text = l('Login', 'user/login') . ' or ' . l('register', 'user/register') . " to get started. It's";
+  }
+  else {
+    $callout = 'Upgrade to a ';
+    $user_text = t('In-site development is');
+  }
+    
   $output = <<<EOF
   <span class="clowny"></span>
-  <p class="em">Two ways to get started</p>
+  <p class="em">Two easy ways to get started with Coral Nexus</p>
   <h4 class="header command-line">Command line:</h4>
   <div class="shell">
-    <div class="row"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
-    <div class="row"><span class="prompt">$></span> <span class="command">vagrant coral create {repo} {dir}</span></div>
+    <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
+    <div class="line"><span class="prompt">$></span> <span class="command">vagrant coral create {repo} {dir}</span></div>
   </div>
-  <div class="msg">You now have a local cluster runnung that includes ssh access and an online dashboard!</div>
+  <div class="msg prepend-3 append-2"><span class="up-pointer"></span>You now have a local cluster runnung that includes ssh access and an online dashboard!</div>
   <h4 class="header web-portal">In-site development:</h4>
-  <p>Login or register to get started. It's free for all open source projects and makes creating, configuring, and sharing technology clusters easy!</p>
-  <p>Need private projects? No problem. Sign up for a premium account and help support our growth.</p>
-  <span class="pricing">* Pricing options</span>
-  <span class="more">All the facts</span>
+  <p>{$user_text} free for all open source projects and makes creating, configuring, and sharing technology clusters easy!</p>
+  <p>Need private projects? No problem. {$callout} {$accnt} and help support our growth.</p>
+  <span class="pricing left">{$pricing}</span>
+  <span class="more right">{$more}</span>
 EOF;
   
   $block->title = t('Getting started');

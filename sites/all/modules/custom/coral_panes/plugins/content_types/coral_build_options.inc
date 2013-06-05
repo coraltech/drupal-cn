@@ -38,13 +38,19 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_build_options_pane_content_type_render($subtype, $conf, $context = NULL) {
+  
+  $cmd_guide = l('using the command line tools', '<front>');
+  $web_guide = l('using the Coral Nexus website', '<front>');
+  $mob_guide = l('using the Restful API', '<front>');
+  $rub_guide = l('using the Ruby API', '<front>');  
+    
   $output = <<<EOF
   <p>Coral Nexus is designed to be flexible to use. In addition to the command line and in-site tools, you can also use our API's.</p>
   <ul class="build-options">
-    <li class="command-line"><span class="label">Command line</span> - See our guide on using the command line tools.</li>
-    <li class="web-portal"><span class="label">In-site tools</span> - See our guide on using the Coral Nexus website.</li>
-    <li class="mobile-apps"><span class="label">Command line</span> - See our guide on using the Restful API.</li>
-    <li class="ruby-apps"><span class="label">Command line</span> - See our guide on using the Ruby API.</li>
+    <li class="command-line"><span class="icon"></span><span class="label">Command line</span> - See our guide on {$cmd_guide}.</li>
+    <li class="web-portal"><span class="icon"></span><span class="label">In-site tools</span> - See our guide on {$web_guide}.</li>
+    <li class="mobile-apps"><span class="icon"></span><span class="label">Command line</span> - See our guide on {$mob_guide}.</li>
+    <li class="ruby-apps"><span class="icon"></span><span class="label">Command line</span> - See our guide on {$rub_guide}.</li>
   </ul>
 EOF;
   $block->title = t('Build options');
