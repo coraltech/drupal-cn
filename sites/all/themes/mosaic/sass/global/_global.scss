@@ -4,6 +4,7 @@
 //  add it here!
 
 @import 'global/colors';
+@import 'global/dom';
 @import 'global/gradients';
 
 // external imports
@@ -22,7 +23,7 @@ $site_width: 962px;
 
 // site margin top and bottom
 .pane-header { margin: 0 auto; padding-top: .5em; }
-.pane-footer { margin: 0 auto 1em; }
+.pane-footer { margin: 0 auto $default_vert_unit; }
 
 // Unset margin in the header
 #mini-panel-header { 
@@ -110,8 +111,9 @@ header .pane-search-form {
   color: $white;
   font-size: 90%;
   text-align: right;
+  margin: $default_vert_unit 0;
   
   .fde { // footer data element
-    margin: 0 0 8px;
+    margin: 0 0 ($default_vert_unit / 2);
   }
 }

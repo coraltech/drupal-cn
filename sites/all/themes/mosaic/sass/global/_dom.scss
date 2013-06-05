@@ -39,12 +39,12 @@ body.html {
 // --- Headers
 h1, h2, h3, h4, h5, h6 {
   color: $dkgray;
-  margin: $default_vert_unit 0;
+  margin: $default_vert_unit 0 ($default_vert_unit / 2) 0;
 }
 h1 { font-size: 1.5em; }
 h2 { font-size: 1.3em; }
-h3 { font-size: 1.15em; }
-h4 { font-size: 1em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.15em; }
 
 
 // --- Media
@@ -57,19 +57,21 @@ video {
 
 
 // --- Links
-a { 
+a,
+li a,
+li.leaf a { 
   color: $mdblue; 
   font-weight: bold;
   text-decoration: none;
   
+  &:active, &.active { color: lighten($dkblue, 5%); }
   &:hover { color: $dkblue; }
-  &:active, &.active { color: $dkgray; }
 }
 
 // --- Text
  
 p {
-  margin: $default_vert_unit 0;
+  margin: ($default_vert_unit / 2) 0 $default_vert_unit 0;
 }
 
 
@@ -79,7 +81,8 @@ ul {
   
   li {
     list-style: disc;
-    margin: 0 0 $default_vert_unit 1em;  
+    list-style-image: url('../../assets/images/li-red.png');
+    margin: 0 0 ($default_vert_unit / 2) 1em;  
   }
   
 }
