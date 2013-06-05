@@ -1,5 +1,10 @@
-/* line 1, ../../sass/views/view__intro_slideshow.scss */
-.pip-cont {
+/* line 5, ../../sass/views/view__intro_slideshow.scss */
+.view-intro-slideshow {
+  margin-top: 2.6em;
+  position: relative;
+}
+/* line 9, ../../sass/views/view__intro_slideshow.scss */
+.view-intro-slideshow .pip-cont {
   margin: 0 auto;
   position: relative;
   z-index: 15;

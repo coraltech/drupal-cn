@@ -1,0 +1,158 @@
+/* line 31, ../../sass/global/_dom.scss */
+body.html {
+  font-size: 16px;
+  font-family: arial, helvetica, sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.25em;
+}
+
+/* line 40, ../../sass/global/_dom.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #515151;
+  margin: 1.25em 0 0.625em 0;
+}
+
+/* line 44, ../../sass/global/_dom.scss */
+h1 {
+  font-size: 1.5em;
+}
+
+/* line 45, ../../sass/global/_dom.scss */
+h2 {
+  font-size: 1.3em;
+}
+
+/* line 46, ../../sass/global/_dom.scss */
+h3 {
+  font-size: 1.25em;
+}
+
+/* line 47, ../../sass/global/_dom.scss */
+h4 {
+  font-size: 1.15em;
+}
+
+/* line 54, ../../sass/global/_dom.scss */
+img,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+/* line 62, ../../sass/global/_dom.scss */
+a,
+li a,
+li.leaf a {
+  color: #446eac;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 67, ../../sass/global/_dom.scss */
+a:active, a.active,
+li a:active,
+li a.active,
+li.leaf a:active,
+li.leaf a.active {
+  color: #32547d;
+}
+/* line 68, ../../sass/global/_dom.scss */
+a:hover,
+li a:hover,
+li.leaf a:hover {
+  color: #2b486b;
+}
+
+/* line 73, ../../sass/global/_dom.scss */
+p {
+  margin: 0.625em 0 1.25em 0;
+}
+
+/* line 79, ../../sass/global/_dom.scss */
+ul {
+  margin: 1.25em 0.5em;
+}
+/* line 82, ../../sass/global/_dom.scss */
+ul li {
+  list-style: disc;
+  list-style-image: url("../../assets/images/li-red.png");
+  margin: 0 0 0.625em 1em;
+}
+
+/* line 106, icons/*.png */
+.icons-sprite, .pane-coral-getting-started .clowny, .pane-coral-getting-started .msg .up-pointer {
+  background: url('/images/icons-sce8a7eb1ff.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started {
+  position: relative;
+}
+/* line 13, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .clowny {
+  display: block;
+  font-size: 130%;
+  left: -71px;
+  top: -12px;
+  position: absolute;
+  background-position: 0 0;
+  height: 56px;
+  width: 65px;
+}
+/* line 23, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started h4 {
+  color: #e17d2c;
+}
+/* line 26, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .shell {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  border-color: #777777;
+  border-style: solid;
+  padding: 0.625em;
+  background: #373737;
+  background: -moz-linear-gradient(top, #373737 0%, #262626 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #373737), color-stop(100%, #262626));
+  background: -webkit-linear-gradient(top, #373737 0%, #262626 100%);
+  background: -o-linear-gradient(top, #373737 0%, #262626 100%);
+  background: -ms-linear-gradient(top, #373737 0%, #262626 100%);
+  background: linear-gradient(to bottom, #373737 0%, #262626 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 36, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .shell .line {
+  padding: 0;
+  font-size: .9em;
+  font-weight: bold;
+  font-family: monospace, "Courier New", Courier;
+}
+/* line 42, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .shell .line .prompt {
+  color: #36b048;
+}
+/* line 46, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .shell .line .command {
+  color: white;
+}
+/* line 51, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .msg {
+  font-size: 90%;
+  margin-top: 0.41667em;
+  padding-top: 0.41667em;
+  line-height: 1.125em;
+  position: relative;
+}
+/* line 58, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .msg .up-pointer {
+  display: block;
+  position: absolute;
+  left: -36px;
+  top: -1px;
+  background-position: 0 -665px;
+  height: 28px;
+  width: 28px;
+}
+/* line 68, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+.pane-coral-getting-started .pricing, .pane-coral-getting-started .more {
+  font-size: 90%;
+}

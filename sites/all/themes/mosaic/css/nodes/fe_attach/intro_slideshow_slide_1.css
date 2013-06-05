@@ -1,0 +1,19 @@
+/* line 4, ../../../sass/nodes/fe_attach/intro_slideshow_slide_1.scss */
+.intro-slide-1 {
+  position: relative;
+}
+/* line 7, ../../../sass/nodes/fe_attach/intro_slideshow_slide_1.scss */
+.intro-slide-1 .intro-diag-msg {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 215px;
+  font-size: 90%;
+}
+/* line 15, ../../../sass/nodes/fe_attach/intro_slideshow_slide_1.scss */
+.intro-slide-1 .more {
+  position: absolute;
+  right: 12px;
+  top: 130px;
+}

@@ -99,6 +99,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   color: #777777;
 }
 
+/* line 25, ../sass/global/_construct.scss */
+.em {
+  font-style: italic;
+}
+
 /* line 31, ../sass/global/_dom.scss */
 body.html {
   font-size: 16px;
@@ -110,7 +115,7 @@ body.html {
 /* line 40, ../sass/global/_dom.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #515151;
-  margin: 1.25em 0;
+  margin: 1.25em 0 0.625em 0;
 }
 
 /* line 44, ../sass/global/_dom.scss */
@@ -125,12 +130,12 @@ h2 {
 
 /* line 46, ../sass/global/_dom.scss */
 h3 {
-  font-size: 1.15em;
+  font-size: 1.25em;
 }
 
 /* line 47, ../sass/global/_dom.scss */
 h4 {
-  font-size: 1em;
+  font-size: 1.15em;
 }
 
 /* line 54, ../sass/global/_dom.scss */
@@ -141,37 +146,127 @@ video {
   max-width: 100%;
 }
 
-/* line 60, ../sass/global/_dom.scss */
-a {
+/* line 62, ../sass/global/_dom.scss */
+a,
+li a,
+li.leaf a {
   color: #446eac;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 65, ../sass/global/_dom.scss */
-a:hover {
+/* line 67, ../sass/global/_dom.scss */
+a:active, a.active,
+li a:active,
+li a.active,
+li.leaf a:active,
+li.leaf a.active {
+  color: #32547d;
+}
+/* line 68, ../sass/global/_dom.scss */
+a:hover,
+li a:hover,
+li.leaf a:hover {
   color: #2b486b;
 }
-/* line 66, ../sass/global/_dom.scss */
-a:active, a.active {
-  color: #515151;
-}
 
-/* line 71, ../sass/global/_dom.scss */
+/* line 73, ../sass/global/_dom.scss */
 p {
-  margin: 1.25em 0;
+  margin: 0.625em 0 1.25em 0;
 }
 
-/* line 77, ../sass/global/_dom.scss */
+/* line 79, ../sass/global/_dom.scss */
 ul {
   margin: 1.25em 0.5em;
 }
-/* line 80, ../sass/global/_dom.scss */
+/* line 82, ../sass/global/_dom.scss */
 ul li {
   list-style: disc;
-  margin: 0 0 1.25em 1em;
+  list-style-image: url("../../assets/images/li-red.png");
+  margin: 0 0 0.625em 1em;
 }
 
-/* line 18, ../sass/global/_global.scss */
+/* line 31, ../sass/global/_dom.scss */
+body.html {
+  font-size: 16px;
+  font-family: arial, helvetica, sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.25em;
+}
+
+/* line 40, ../sass/global/_dom.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #515151;
+  margin: 1.25em 0 0.625em 0;
+}
+
+/* line 44, ../sass/global/_dom.scss */
+h1 {
+  font-size: 1.5em;
+}
+
+/* line 45, ../sass/global/_dom.scss */
+h2 {
+  font-size: 1.3em;
+}
+
+/* line 46, ../sass/global/_dom.scss */
+h3 {
+  font-size: 1.25em;
+}
+
+/* line 47, ../sass/global/_dom.scss */
+h4 {
+  font-size: 1.15em;
+}
+
+/* line 54, ../sass/global/_dom.scss */
+img,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+/* line 62, ../sass/global/_dom.scss */
+a,
+li a,
+li.leaf a {
+  color: #446eac;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 67, ../sass/global/_dom.scss */
+a:active, a.active,
+li a:active,
+li a.active,
+li.leaf a:active,
+li.leaf a.active {
+  color: #32547d;
+}
+/* line 68, ../sass/global/_dom.scss */
+a:hover,
+li a:hover,
+li.leaf a:hover {
+  color: #2b486b;
+}
+
+/* line 73, ../sass/global/_dom.scss */
+p {
+  margin: 0.625em 0 1.25em 0;
+}
+
+/* line 79, ../sass/global/_dom.scss */
+ul {
+  margin: 1.25em 0.5em;
+}
+/* line 82, ../sass/global/_dom.scss */
+ul li {
+  list-style: disc;
+  list-style-image: url("../../assets/images/li-red.png");
+  margin: 0 0 0.625em 1em;
+}
+
+/* line 19, ../sass/global/_global.scss */
 .main-global,
 .pane-header,
 .pane-footer,
@@ -180,39 +275,39 @@ ul li {
   margin: 0 auto;
 }
 
-/* line 24, ../sass/global/_global.scss */
+/* line 25, ../sass/global/_global.scss */
 .pane-header {
   margin: 0 auto;
   padding-top: .5em;
 }
 
-/* line 25, ../sass/global/_global.scss */
+/* line 26, ../sass/global/_global.scss */
 .pane-footer {
-  margin: 0 auto 1em;
+  margin: 0 auto 1.25em;
 }
 
-/* line 29, ../sass/global/_global.scss */
+/* line 30, ../sass/global/_global.scss */
 #mini-panel-header .inside, #mini-panel-header .panel-separator {
   margin: 0;
 }
 
-/* line 34, ../sass/global/_global.scss */
+/* line 35, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 40, ../sass/global/_global.scss */
+/* line 41, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
 }
 
-/* line 43, ../sass/global/_global.scss */
+/* line 44, ../sass/global/_global.scss */
 .mosaic-cont {
   padding: 1em 0;
 }
 
-/* line 49, ../sass/global/_global.scss */
+/* line 50, ../sass/global/_global.scss */
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -221,7 +316,7 @@ header .pane-search-form {
   position: relative;
   width: 275px;
 }
-/* line 57, ../sass/global/_global.scss */
+/* line 58, ../sass/global/_global.scss */
 header .pane-search-form .form-text {
   background: none;
   border: none;
@@ -231,7 +326,7 @@ header .pane-search-form .form-text {
   padding: 5px 8px;
   width: 185px;
 }
-/* line 66, ../sass/global/_global.scss */
+/* line 67, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
   border: 1px solid #2b486b;
   height: 27px;
@@ -240,7 +335,7 @@ header .pane-search-form .form-wrapper {
   top: 11px;
   width: 60px;
 }
-/* line 74, ../sass/global/_global.scss */
+/* line 75, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper .form-submit {
   border: 1px solid #446eac;
   color: white;
@@ -260,12 +355,12 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 87, ../sass/global/_global.scss */
+/* line 88, ../sass/global/_global.scss */
 .pane-gigya-gigya-login {
   float: right;
   position: relative;
 }
-/* line 91, ../sass/global/_global.scss */
+/* line 92, ../sass/global/_global.scss */
 .pane-gigya-gigya-login .pane-title {
   text-align: center;
   color: #777777;
@@ -274,26 +369,27 @@ header .pane-search-form .form-wrapper .form-submit {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 97, ../sass/global/_global.scss */
+/* line 98, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink {
   margin-top: -21px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 100, ../sass/global/_global.scss */
+/* line 101, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink table td {
   text-align: center;
 }
 
-/* line 109, ../sass/global/_global.scss */
+/* line 110, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
+  margin: 1.25em 0;
 }
-/* line 114, ../sass/global/_global.scss */
+/* line 116, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
-  margin: 0 0 8px;
+  margin: 0 0 0.625em;
 }
 
 /* line 52, ../sass/global/grid.scss */
@@ -859,18 +955,99 @@ header .pane-search-form .form-wrapper .form-submit {
   width: 100%;
 }
 
-/* line 21, ../sass/global/_menus.scss */
+/* line 31, ../sass/global/_dom.scss */
+body.html {
+  font-size: 16px;
+  font-family: arial, helvetica, sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.25em;
+}
+
+/* line 40, ../sass/global/_dom.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #515151;
+  margin: 1.25em 0 0.625em 0;
+}
+
+/* line 44, ../sass/global/_dom.scss */
+h1 {
+  font-size: 1.5em;
+}
+
+/* line 45, ../sass/global/_dom.scss */
+h2 {
+  font-size: 1.3em;
+}
+
+/* line 46, ../sass/global/_dom.scss */
+h3 {
+  font-size: 1.25em;
+}
+
+/* line 47, ../sass/global/_dom.scss */
+h4 {
+  font-size: 1.15em;
+}
+
+/* line 54, ../sass/global/_dom.scss */
+img,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+/* line 62, ../sass/global/_dom.scss */
+a,
+li a,
+li.leaf a {
+  color: #446eac;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 67, ../sass/global/_dom.scss */
+a:active, a.active,
+li a:active,
+li a.active,
+li.leaf a:active,
+li.leaf a.active {
+  color: #32547d;
+}
+/* line 68, ../sass/global/_dom.scss */
+a:hover,
+li a:hover,
+li.leaf a:hover {
+  color: #2b486b;
+}
+
+/* line 73, ../sass/global/_dom.scss */
+p {
+  margin: 0.625em 0 1.25em 0;
+}
+
+/* line 79, ../sass/global/_dom.scss */
+ul {
+  margin: 1.25em 0.5em;
+}
+/* line 82, ../sass/global/_dom.scss */
+ul li {
+  list-style: disc;
+  list-style-image: url("../../assets/images/li-red.png");
+  margin: 0 0 0.625em 1em;
+}
+
+/* line 22, ../sass/global/_menus.scss */
 .pane-menu-support {
   position: relative;
 }
-/* line 24, ../sass/global/_menus.scss */
+/* line 25, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu {
   position: absolute;
   top: -.5em;
   right: 285px;
   margin-top: 0;
 }
-/* line 30, ../sass/global/_menus.scss */
+/* line 31, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf {
   display: block;
   float: left;
@@ -881,11 +1058,11 @@ header .pane-search-form .form-wrapper .form-submit {
   width: 95px;
   position: relative;
 }
-/* line 40, ../sass/global/_menus.scss */
+/* line 41, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf.first {
   background: #36b048;
 }
-/* line 43, ../sass/global/_menus.scss */
+/* line 44, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf.first:before {
   content: "";
   display: block;
@@ -897,7 +1074,7 @@ header .pane-search-form .form-wrapper .form-submit {
   height: 25px;
   border-radius: 20px;
 }
-/* line 47, ../sass/global/_menus.scss */
+/* line 48, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf.first:after {
   content: "";
   display: block;
@@ -909,12 +1086,12 @@ header .pane-search-form .form-wrapper .form-submit {
   height: 25px;
   border-radius: 20px;
 }
-/* line 52, ../sass/global/_menus.scss */
+/* line 53, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf.last {
-  background: #c63f26;
+  background: #b02e1c;
   margin: 0;
 }
-/* line 56, ../sass/global/_menus.scss */
+/* line 57, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf.last:before {
   content: "";
   display: block;
@@ -926,7 +1103,7 @@ header .pane-search-form .form-wrapper .form-submit {
   height: 25px;
   border-radius: 10px;
 }
-/* line 60, ../sass/global/_menus.scss */
+/* line 61, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf.last:after {
   content: "";
   display: block;
@@ -938,7 +1115,7 @@ header .pane-search-form .form-wrapper .form-submit {
   height: 25px;
   border-radius: 10px;
 }
-/* line 66, ../sass/global/_menus.scss */
+/* line 67, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf a {
   border-radius: 0 0 7px 7px;
   display: block;
@@ -955,7 +1132,7 @@ header .pane-search-form .form-wrapper .form-submit {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 80, ../sass/global/_menus.scss */
+/* line 81, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf a.get-help-tab {
   background: #36b048;
   background: -moz-linear-gradient(top, #36b048 0%, #2a8938 100%);
@@ -967,26 +1144,26 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
   border-bottom: 2px solid #20682a;
 }
-/* line 84, ../sass/global/_menus.scss */
+/* line 85, ../sass/global/_menus.scss */
 .pane-menu-support ul.menu li.leaf a.issues-tab {
-  background: #c63f26;
-  background: -moz-linear-gradient(top, #c63f26 0%, #9b311e 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c63f26), color-stop(100%, #9b311e));
-  background: -webkit-linear-gradient(top, #c63f26 0%, #9b311e 100%);
-  background: -o-linear-gradient(top, #c63f26 0%, #9b311e 100%);
-  background: -ms-linear-gradient(top, #c63f26 0%, #9b311e 100%);
-  background: linear-gradient(to bottom, #c63f26 0%, #9b311e 100%);
+  background: #b02e1c;
+  background: -moz-linear-gradient(top, #b02e1c 0%, #842315 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b02e1c), color-stop(100%, #842315));
+  background: -webkit-linear-gradient(top, #b02e1c 0%, #842315 100%);
+  background: -o-linear-gradient(top, #b02e1c 0%, #842315 100%);
+  background: -ms-linear-gradient(top, #b02e1c 0%, #842315 100%);
+  background: linear-gradient(to bottom, #b02e1c 0%, #842315 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
   border-bottom: 2px solid #762921;
 }
 
-/* line 96, ../sass/global/_menus.scss */
+/* line 97, ../sass/global/_menus.scss */
 .pane-top-menus {
   border-top: 1px solid #919191;
   border-bottom: 1px solid #919191;
   padding: 1px 0;
 }
-/* line 101, ../sass/global/_menus.scss */
+/* line 102, ../sass/global/_menus.scss */
 .pane-top-menus > .pane-content {
   border-top: 1px solid #777777;
   border-bottom: 1px solid #777777;
@@ -1000,17 +1177,17 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 111, ../sass/global/_menus.scss */
+/* line 112, ../sass/global/_menus.scss */
 #mini-panel-top_menus {
   height: 37px;
 }
 
-/* line 112, ../sass/global/_menus.scss */
+/* line 113, ../sass/global/_menus.scss */
 #mini-panel-top_menus .inside {
   margin: 0;
 }
 
-/* line 116, ../sass/global/_menus.scss */
+/* line 117, ../sass/global/_menus.scss */
 footer {
   background: #313131;
   background: -moz-linear-gradient(top, #313131 0%, #515151 100%);
@@ -1022,28 +1199,27 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 120, ../sass/global/_menus.scss */
+/* line 121, ../sass/global/_menus.scss */
 #mini-panel-footer {
   font-size: 90%;
-  padding-top: 1.2em;
 }
 /* line 124, ../sass/global/_menus.scss */
 #mini-panel-footer .pane-title {
   color: #fdaa68;
   font-size: 1em;
   font-weight: bold;
-  margin-bottom: .75em;
+  margin-bottom: 0.625em;
 }
 /* line 131, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu {
-  margin: 0 0 1em;
+  margin: 0;
 }
 /* line 134, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf {
   font-size: 90%;
   list-style-image: none;
   list-style-type: none;
-  margin: 3px 0;
+  margin: 0;
 }
 /* line 140, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a {
