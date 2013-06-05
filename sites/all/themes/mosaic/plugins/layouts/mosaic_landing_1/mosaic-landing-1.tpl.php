@@ -18,7 +18,7 @@
       <?php endif; ?>
       
       <?php if (!empty($content['secondary'])): ?>
-      <div class="container secondary-content grid-12-last">
+      <div class="container secondary-content grid-13-last">
         <div class="limiter prepend-1">
           <?php print render($content['secondary']); ?>
         </div>
