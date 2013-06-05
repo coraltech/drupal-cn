@@ -10,7 +10,6 @@ javascripts_dir = "sites/all/themes/mosaic/js"
 project_type = :stand_alone
 
 images_path = "sites/all/themes/mosaic/assets"
-generated_images_path = "sites/all/themes/mosaic/assets/sprites"
 
 # Images are located in the mosaic theme
 icons_dir  = "sites/all/themes/mosaic/assets/icons"
@@ -23,7 +22,7 @@ htiles_dir = "sites/all/themes/mosaic/assets/htiles"
 # output_style = :expanded or :nested or :compact or :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
-relative_assets = true
+#relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
