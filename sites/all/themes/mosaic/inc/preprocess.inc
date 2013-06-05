@@ -25,6 +25,7 @@ function mosaic_preprocess (&$vars, $hook) {
  */
 function mosaic_preprocess_panels_pane(&$vars) {
   global $base_path;
+  
   $path     = drupal_get_path('theme', 'mosaic');  
   $join     = '_';  
   $root     = 'pane__';
@@ -44,6 +45,11 @@ function mosaic_preprocess_panels_pane(&$vars) {
   // Add the js - basic type
   if (file_exists($path.'/js/panes/'.$base_js_file)) drupal_add_js($path.'/js/panes/'.$base_js_file, array('group' => JS_THEME)); // - targeted type
   if (file_exists($path.'/js/panes/'.$js_file))      drupal_add_js($path.'/js/panes/'.$js_file, array('group' => JS_THEME));
+  
+  // Add layout types
+  $layout = $vars['display']->layout;
+  if (file_exists($path.'/css/layouts/'.$layout.'.css')) drupal_add_css($path.'/css/layouts/'.$layout.'.css', array('group' => CSS_THEME)); // - targeted layout
+  if (file_exists($path.'/js/layouts/'.$layout.'.js'))   drupal_add_css($path.'/js/layouts/'.$layout.'.js', array('group' => JS_THEME));
 }
 
 
