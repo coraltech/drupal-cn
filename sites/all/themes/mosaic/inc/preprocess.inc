@@ -31,8 +31,8 @@ function mosaic_preprocess_panels_pane(&$vars) {
   $root     = 'pane__';
   $type     = str_replace('-', $join, $vars['pane']->type);            // dpm($type);
   $subtype  = $join.str_replace('-', $join, $vars['pane']->subtype);   // dpm($subtype);
-  $base_css_file = $root.$type;
-  $base_js_file  = $root.$type;
+  $base_css_file = $root.$type.'.css';
+  $base_js_file  = $root.$type.'.js';
   $css_file = $root.$type.$subtype.'.css';
   $js_file  = $root.$type.$subtype.'.js';
 
