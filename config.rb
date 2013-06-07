@@ -17,6 +17,8 @@ mosaic_dir = "sites/all/themes/mosaic/assets/mosaic"
 vtiles_dir = "sites/all/themes/mosaic/assets/vtiles"
 htiles_dir = "sites/all/themes/mosaic/assets/htiles"
 
+require 'sassy-buttons'
+
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
