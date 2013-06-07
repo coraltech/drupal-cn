@@ -1,0 +1,69 @@
+
+// Adds customization for slide 1 of the intro slides
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import "global/gradients";
+@import "global/icons";
+
+@import 'compass/css3/opacity';
+
+.intro-slide-4 {
+  position: relative;
+  height: 315px;
+  width:410px;
+  background: $ltyellow;
+  
+  @include linear-h-gradient($ltblue, lighten($ltblue, 10%));
+  
+  img { display: none; }
+  
+  .header {
+    background: $white;
+    box-shadow: 2px 0px 3px rgba(0,0,0,.3);
+    height: 315px;
+    
+    .title {
+      background: $mdblue;
+      margin: 0;
+      padding: 1em;
+    }
+    .sep {
+      border-bottom: 3px double $mdgray;
+    }
+    
+    @include linear-v-gradient(lighten($ltgray, 10%), darken($ltgray, 5%));
+  }
+  
+  .inner {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  
+  .getting-started-icon {
+    display: block;
+    float: left;
+    margin: ($default_vert_unit / 2);
+    
+    @include icons-sprite('getting-started');
+  }
+  
+  h2 { margin: 0; color: $white; }
+  
+  ul {
+    margin: 1em 1em 0 1em;
+  }
+  
+  p {
+    margin-left:.75em;
+    margin-right:.75em;
+    font-size: 90%;
+  }
+  
+  .more {
+    margin: 0 1em;
+    display: block;
+    
+    @include btn-glass;
+  } 
+}

@@ -1,5 +1,7 @@
 
 // Adds customization for slide 1 of the intro slides
+@import 'global/colors';
+@import 'global/fonts';
 
 .intro-slide-1 {
   position: relative;
@@ -15,6 +17,6 @@
   .more {
     position: absolute;
     right: 12px;
-    top: 130px;
+    top: (5.5 * $default_vert_unit);
   }
 }
