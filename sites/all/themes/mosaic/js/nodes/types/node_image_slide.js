@@ -62,7 +62,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       // Init
       initialize: function() {
-        slideshow.startup();     // Do a little init work
+        slideshow.startup(this.$container);     // Do a little init work
         slideshow.addPips(this.settings, this.$container); // Set up the nav pips
         slideshow.updatePips(this.settings, this.$container, this.slideshow);
         _.bindAll(this, 'clickPip', 'hoverPip');           // Bind the actions         
@@ -87,7 +87,6 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       // Hover event
       hoverPip: function(ev) {
-        console.log(ev.type);
         if (ev.type == 'mouseenter') $(ev.target).addClass('hover');
         if (ev.type == 'mouseleave') $(ev.target).removeClass('hover');
       },
@@ -100,9 +99,9 @@ Drupal.mosaic = Drupal.mosaic || {};
   //---
   
   // Kickoff the slideshow
-  Drupal.mosaic.slideshow.prototype.startup = function() {
+  Drupal.mosaic.slideshow.prototype.startup = function(container) {
     // We need to ensure the right size for all img containers
-    var $imgs = this.$slideshow.find('img');
+    var $imgs = $(container).find('img');
     var maxW  = 0;
     $imgs.each(function() { if ($(this).width() > maxW) maxW = $(this).width(); });
     $imgs.each(function() { $(this).parent().width(maxW); });
