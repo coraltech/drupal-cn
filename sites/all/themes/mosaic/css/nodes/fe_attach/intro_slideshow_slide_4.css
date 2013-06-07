@@ -1,0 +1,147 @@
+/* line 146, icons/*.png */
+.icons-sprite, .intro-slide-4 .getting-started-icon {
+  background: url('/images/icons-s76be0bee84.png') no-repeat;
+}
+
+/* line 11, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 {
+  position: relative;
+  height: 315px;
+  width: 410px;
+  background: #fff6b6;
+  background: #cad5e2;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #cad5e2 0%, #ebeff4 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #cad5e2), color-stop(100%, #ebeff4));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #cad5e2 0%, #ebeff4 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #cad5e2 0%, #ebeff4 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #cad5e2 0%, #ebeff4 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #cad5e2 0%, #ebeff4 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right,GradientType=1 );
+  /* IE6-9 */
+}
+/* line 19, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 img {
+  display: none;
+}
+/* line 21, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 .header {
+  background: white;
+  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.3);
+  height: 315px;
+  background: #f7f7f7;
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #d0d0d0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #d0d0d0));
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #d0d0d0 100%);
+  background: -o-linear-gradient(top, #f7f7f7 0%, #d0d0d0 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #d0d0d0 100%);
+  background: linear-gradient(to bottom, #f7f7f7 0%, #d0d0d0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 26, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 .header .title {
+  background: #446eac;
+  margin: 0;
+  padding: 1em;
+}
+/* line 31, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 .header .sep {
+  border-bottom: 3px double #777777;
+}
+/* line 38, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 .inner {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+/* line 43, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 .getting-started-icon {
+  display: block;
+  float: left;
+  margin: 0.625em;
+  background-position: 0 -346px;
+  height: 48px;
+  width: 48px;
+}
+/* line 51, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 h2 {
+  margin: 0;
+  color: white;
+}
+/* line 53, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 ul {
+  margin: 1em 1em 0 1em;
+}
+/* line 57, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 p {
+  margin-left: .75em;
+  margin-right: .75em;
+  font-size: 90%;
+}
+/* line 63, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+.intro-slide-4 .more {
+  margin: 0 1em;
+  display: block;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #5b83be), color-stop(51%, #446eac));
+  background: -webkit-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: -moz-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: -o-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: linear-gradient(#5b83be 50%, #446eac 51%);
+  -webkit-box-shadow: #92acd4 0 1px 0 inset;
+  -moz-box-shadow: #92acd4 0 1px 0 inset;
+  box-shadow: #92acd4 0 1px 0 inset;
+  border: 1px solid #507bba;
+  text-shadow: #2c476f 0 -1px 0;
+}
+/* line 15, ../../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.intro-slide-4 .more:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.intro-slide-4 .more:hover {
+  background-color: #4875b7;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4570b0), color-stop(51%, #4875b7));
+  background: -webkit-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: -moz-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: -o-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: linear-gradient(#4570b0 50%, #4875b7 51%);
+}
+/* line 33, ../../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.intro-slide-4 .more:active {
+  -webkit-box-shadow: #4773b3 0 1px 2px inset;
+  -moz-box-shadow: #4773b3 0 1px 2px inset;
+  box-shadow: #4773b3 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.intro-slide-4 .more.disabled, .intro-slide-4 .more[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #6288c1;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.intro-slide-4 .more::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}

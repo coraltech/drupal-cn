@@ -1,13 +1,15 @@
 /* line 5, ../../sass/views/view__intro_slideshow.scss */
 .view-intro-slideshow {
+  background: url("../../assets/images/coral-slideshow-sep.png") 410px top no-repeat;
   margin-top: 2.6em;
+  padding-right: 11px;
   position: relative;
 }
-/* line 9, ../../sass/views/view__intro_slideshow.scss */
+/* line 11, ../../sass/views/view__intro_slideshow.scss */
 .view-intro-slideshow .pip-cont {
   margin: 0 auto;
   position: relative;
   z-index: 15;
   top: -12px;
-  width: 88px;
+  width: 116px;
 }

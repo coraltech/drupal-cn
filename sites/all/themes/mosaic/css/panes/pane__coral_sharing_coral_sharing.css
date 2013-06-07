@@ -1,38 +1,37 @@
-/* line 31, ../../sass/global/_dom.scss */
+/* line 30, ../../sass/global/_dom.scss */
 body.html {
   font-size: 16px;
   font-family: arial, helvetica, sans-serif;
-  letter-spacing: 1px;
   line-height: 1.25em;
 }
 
-/* line 40, ../../sass/global/_dom.scss */
+/* line 39, ../../sass/global/_dom.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #515151;
   margin: 1.25em 0 0.625em 0;
 }
 
-/* line 44, ../../sass/global/_dom.scss */
+/* line 43, ../../sass/global/_dom.scss */
 h1 {
   font-size: 1.5em;
 }
 
-/* line 45, ../../sass/global/_dom.scss */
+/* line 44, ../../sass/global/_dom.scss */
 h2 {
   font-size: 1.3em;
 }
 
-/* line 46, ../../sass/global/_dom.scss */
+/* line 45, ../../sass/global/_dom.scss */
 h3 {
   font-size: 1.25em;
 }
 
-/* line 47, ../../sass/global/_dom.scss */
+/* line 46, ../../sass/global/_dom.scss */
 h4 {
   font-size: 1.15em;
 }
 
-/* line 54, ../../sass/global/_dom.scss */
+/* line 53, ../../sass/global/_dom.scss */
 img,
 object,
 embed,
@@ -40,7 +39,7 @@ video {
   max-width: 100%;
 }
 
-/* line 62, ../../sass/global/_dom.scss */
+/* line 61, ../../sass/global/_dom.scss */
 a,
 li a,
 li.leaf a {
@@ -48,7 +47,7 @@ li.leaf a {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 67, ../../sass/global/_dom.scss */
+/* line 66, ../../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -56,32 +55,42 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 68, ../../sass/global/_dom.scss */
+/* line 67, ../../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 73, ../../sass/global/_dom.scss */
+/* line 71, ../../sass/global/_dom.scss */
+strong, b {
+  font-weight: bold;
+}
+
+/* line 75, ../../sass/global/_dom.scss */
 p {
   margin: 0.625em 0 1.25em 0;
 }
 
 /* line 79, ../../sass/global/_dom.scss */
+em, .em {
+  font-style: italic;
+}
+
+/* line 85, ../../sass/global/_dom.scss */
 ul {
   margin: 1.25em 0.5em;
 }
-/* line 82, ../../sass/global/_dom.scss */
+/* line 88, ../../sass/global/_dom.scss */
 ul li {
   list-style: disc;
-  list-style-image: url("../../assets/images/li-red.png");
+  list-style-image: url("/sites/all/themes/mosaic/assets/images/li-red.png");
   margin: 0 0 0.625em 1em;
 }
 
-/* line 106, icons/*.png */
+/* line 146, icons/*.png */
 .icons-sprite, .pane-coral-sharing .sharing-options .private-projects .icon, .pane-coral-sharing .sharing-options .public-projects .icon {
-  background: url('/images/icons-sce8a7eb1ff.png') no-repeat;
+  background: url('/images/icons-s76be0bee84.png') no-repeat;
 }
 
 /* line 10, ../../sass/panes/pane__coral_sharing_coral_sharing.scss */
@@ -103,13 +112,13 @@ ul li {
 }
 /* line 24, ../../sass/panes/pane__coral_sharing_coral_sharing.scss */
 .pane-coral-sharing .sharing-options .private-projects .icon {
-  background-position: 0 -508px;
+  background-position: 0 -846px;
   height: 29px;
   width: 39px;
 }
 /* line 27, ../../sass/panes/pane__coral_sharing_coral_sharing.scss */
 .pane-coral-sharing .sharing-options .public-projects .icon {
-  background-position: 0 -106px;
+  background-position: 0 -444px;
   height: 25px;
   width: 42px;
 }
