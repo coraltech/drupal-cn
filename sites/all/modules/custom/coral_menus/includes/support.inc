@@ -26,13 +26,13 @@ function coral_menus_support_links_loader() {
       'link_title' => t('Get help'),
       'link_path'  => 'node/8',
       'weight'     => 1,
-      'options' => coral_menus_link_set_attributes(array('class'=>'get-help-tab')),
+      'options' => array('attributes' => array('class'=> array('get-help-tab'))),
     ),
     'issues' => array(
       'link_title' => t('Issues?'),
       'link_path'  => 'node/8',
       'weight'     => 2,
-      'options' => coral_menus_link_set_attributes(array('class'=>'issues-tab')),
+      'options' => array('attributes' => array('class'=> array('issues-tab'))),
     ),
   );
 }

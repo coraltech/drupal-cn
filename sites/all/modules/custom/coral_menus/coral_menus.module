@@ -137,7 +137,7 @@ function coral_menus_manage_links($lfunc, $menu, &$state) {
 
     // Do we need to update the link in the state and db?
     if (!coral_menus_link_eq($name, $link, $menu, $state, $changes)) {
-      
+     
       // Loop through the changeset returned by the equality measurer
       foreach ($changes as $linkid => $changeset) {
 
@@ -241,14 +241,14 @@ function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
   
   $eq = TRUE; // Help determine if we need to regenerate this link
   $check_keys = array_keys($link_def); // The keys that we have defined in the file definition
-  
+
   // Go through the defined keys
   foreach($check_keys as $key) {
     
     if ($key == 'plid' && !is_numeric($link_def[$key])) {
       $link_def[$key] = coral_menus_translate_link_parent($link_def, $menu, $state);
     }
-    
+
     $def_hash   = sha1(serialize($link_def[$key])); // defined has values
     $state_hash = ''; // Empty container for the state hash
     if (!empty($state[$menu['menu_name']]['links'][$link_name][$key])) {
@@ -259,7 +259,6 @@ function coral_menus_link_eq($link_name, $link_def, $menu, $state, &$changes) {
       // Data different  
       $changes[$link_name][$key] = $link_def[$key];  
       $eq = FALSE; // Who moved my cheese?!
-      
     }
     else { } // Data same
   }
