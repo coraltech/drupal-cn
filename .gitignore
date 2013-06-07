@@ -5,6 +5,9 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
+# Compass image sprites
+images/*
+
 # Project files and folders
 .project
 
