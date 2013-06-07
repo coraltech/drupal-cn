@@ -46,7 +46,7 @@ function coral_sharing_pane_content_type_render($subtype, $conf, $context = NULL
   <ul>
 EOF;
 
-  $block->title = t('Sharing is caring');
+  $block->title = t('Sharing options');
   $block->content = $output;
   return $block; 
 }
