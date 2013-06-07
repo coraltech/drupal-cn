@@ -14,7 +14,7 @@
   width:410px;
   background: $ltyellow;
   
-  @include linear-h-gradient($ltblue, lighten($ltblue, 10%));
+  @include linear-h-gradient(darken($ltblue, 15%), #C9D5E1);
   
   img { display: none; }
   
