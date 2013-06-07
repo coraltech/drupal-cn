@@ -297,18 +297,3 @@ function coral_menu_reset($menu, $mfunc, &$current_state, $reset = FALSE) {
 }
 
 
-// --- Attributes as they would be set in the link
-//  This is by no means a full compendium on interfacing
-//  with the l() or url() functions. You can enter options
-//  and attributes without this function! inc file link
-//  definitions map to Drupal link and urls exactly.
-function coral_menus_link_set_attributes($attr = array()) {
-	$attributes = array();
-  if ($attr) {
-		foreach ($attr as $attribute => $value) {
-			$attributes['attributes'][$attribute] = $value;
-		}
-	}
-	return $attributes;
-}
-
