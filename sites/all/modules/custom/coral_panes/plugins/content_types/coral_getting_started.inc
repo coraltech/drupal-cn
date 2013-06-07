@@ -62,7 +62,7 @@ function coral_getting_started_pane_content_type_render($subtype, $conf, $contex
     <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
     <div class="line"><span class="prompt">$></span> <span class="command">vagrant coral create {repo} {dir}</span></div>
   </div>
-  <div class="msg prepend-3 append-2"><span class="up-pointer"></span>You now have a local cluster runnung that includes ssh access and an online dashboard!</div>
+  <div class="msg prepend-3 append-2"><span class="up-pointer"></span>You now have a local cluster that includes ssh access and an online dashboard!</div>
   <h4 class="header web-portal">In-site development:</h4>
   <p>{$user_text} free for all open source projects and makes creating, configuring, and sharing technology clusters easy!</p>
   <p>Need private projects? No problem. {$callout} {$accnt} and help support our growth.</p>
