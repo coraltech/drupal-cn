@@ -3,7 +3,9 @@
 //  defaults in node_image_slide.scss
 
 .view-intro-slideshow {
+  background: url('../../assets/images/coral-slideshow-sep.png') 410px top no-repeat;
   margin-top: 2.6em;
+  padding-right: 11px;
   position: relative;
   
   .pip-cont {
@@ -11,6 +13,6 @@
     position: relative;
     z-index: 15;
     top: -12px;
-    width: 88px;
+    width: 116px;
   }
 }
