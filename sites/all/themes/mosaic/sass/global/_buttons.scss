@@ -1,0 +1,27 @@
+
+// File for storing / including button mixins
+//  includes sassy buttons: https://github.com/jhardy/Sassy-Buttons
+//
+// ------------------------------
+// Sassy buttons default inputs:
+//  @include sassy-button(gradient-style, border-radius, font-size, first-color, second-color, text-color, text-style, auto-states, ie-support);
+// ------------------------------
+
+@import 'global/colors';
+
+@import "sassy-buttons";
+
+// lighten glassy on hover
+@mixin btn-glass($radius: 0px, $font-size: 16px, $color: $mdblue, $color2: lighten($mdblue, 10%), $text-color: $white) {
+  @include btn-glass-ltn($radius, $font-size, $color, $color2, $text-color); 
+}
+
+@mixin btn-glass-ltn($radius: 0px, $font-size: 16px, $color: $mdblue, $color2: lighten($mdblue, 10%), $text-color: $white) {
+  @include sassy-button("glass", $radius, $font-size, $mdblue, $color2, $text-color);
+}
+
+@mixin btn-glass-dkn($radius: 0px, $font-size: 16px, $color: $mdblue, $color2: darken($mdblue, 3%), $text-color: $white) {
+  @include sassy-button("glass", $radius, $font-size, $mdblue, $color2, $text-color);
+}
+
+

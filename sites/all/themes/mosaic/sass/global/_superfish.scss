@@ -67,7 +67,7 @@
     min-width: 12em; // allow long menu items to determine submenu width 
     *width: 12em;    // no auto sub width for IE7, see white-space comment below
   
-    @include opacity(1);
+    @include opacity(.9);
     
     li {
       position: relative;

@@ -4,6 +4,7 @@
 @import "global/colors";
 @import "global/fonts";
 
+
 // Font Size Reference (12px base)
 //------------------------------------------------------------------------------
 //    6px   |   0.5em     |   50%     |   5pt
@@ -26,12 +27,10 @@
 //    23px  |   1.917em   |   191.7%  |   17pt
 //    24px  |   2em       |   200%    |   18pt
 
-$default_vert_unit: 1.25em;
-
 body.html {
   font-size: 16px;
   font-family: $sans_fonts;
-  letter-spacing: 1px;
+  //letter-spacing: 1px;
   line-height: $default_vert_unit;
 }
 
@@ -69,9 +68,16 @@ li.leaf a {
 }
 
 // --- Text
- 
+strong, b {
+  font-weight: bold;
+}
+
 p {
   margin: ($default_vert_unit / 2) 0 $default_vert_unit 0;
+}
+
+em,.em {
+  font-style: italic;
 }
 
 
@@ -81,7 +87,7 @@ ul {
   
   li {
     list-style: disc;
-    list-style-image: url('../../assets/images/li-red.png');
+    list-style-image: url('/sites/all/themes/mosaic/assets/images/li-red.png');
     margin: 0 0 ($default_vert_unit / 2) 1em;  
   }
   

@@ -3,12 +3,12 @@
 //  If it is not visible on EVERY page do not
 //  add it here!
 
-@import 'global/colors';
-@import 'global/dom';
-@import 'global/gradients';
-
 // external imports
 @import 'compass/css3/opacity';
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
 
 $site_width: 962px; 
 
