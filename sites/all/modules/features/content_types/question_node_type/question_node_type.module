@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Question node_type feature.
+ */
+
+include_once 'question_node_type.features.inc';
