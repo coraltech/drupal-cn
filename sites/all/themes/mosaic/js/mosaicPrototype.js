@@ -2,24 +2,7 @@
 Backbone = Backbone || {};
 Drupal.mosaicPrototype = Drupal.mosaicPrototype || {};
 
-/**
- *
- * Mosaic forms will check to see if there are
- *  settings for any form's textfield defaults.
- *  Should only recieve requests for items that
- *  implement it. Only implement on pages where
- *  needed!
- *
- * These defaults are added via modules and 
- *  themes via whatever hooks they deem fit.
- *
- * Add new defaults to: 
- * 
- * Drupal.settings.mosaic.fieldDefaults:
- * 
- *  - fieldDefaults['.selector']['default'] = 'Default text';
- *  
-*/
+
 // Document loaded!
 (function($, Backbone) {
   
@@ -74,9 +57,6 @@ Drupal.mosaicPrototype = Drupal.mosaicPrototype || {};
     });
     
     // Kick start! ---
-    // Now, every time you click on a link with the class
-    //  proto-click, you should get an alert message saying
-    //  foo : bar
     new ProtoView();
   };
   
