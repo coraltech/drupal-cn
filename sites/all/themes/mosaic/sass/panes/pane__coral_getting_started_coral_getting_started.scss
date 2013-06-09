@@ -7,6 +7,8 @@
 @import "global/icons";
 @import "global/gradients";
 
+@import "compass/css3/box-shadow";
+
 .pane-coral-getting-started {
   position: relative;
   
@@ -24,13 +26,12 @@
     color: $mdorange;
   }
   .shell {
-    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
     border-width: 1px;
     border-color: $mdgray;
     border-style: solid;
-    //margin-top: (-1 * ($default_vert_unit / 4));
     padding: ($default_vert_unit / 2);
     
+    @include box-shadow(rgba(0,0,0,.2) 2px 2px 6px);
     @include linear-v-gradient(darken($dkgray, 10%), darken($dkgray, 17%));
         
     .line {
@@ -41,7 +42,6 @@
       
       .prompt { 
         color: $mdgreen; 
-        //font-weight: bold; 
       }
       .command { 
         color: $white; 
