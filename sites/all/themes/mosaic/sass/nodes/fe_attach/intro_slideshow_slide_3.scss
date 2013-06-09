@@ -6,6 +6,7 @@
 @import "global/icons";
 
 @import 'compass/css3/opacity';
+@import 'compass/css3/box-shadow';
 
 .intro-slide-3 {
   position: relative;
@@ -17,8 +18,8 @@
   
   .header {
     background: $ltgreen;
-    box-shadow: 0px 2px 4px rgba(0,0,0,.3);
-    
+
+    @include box-shadow(rgba(0,0,0,.3) 0px 2px 4px);
     @include linear-v-gradient($ltgreen, darken($ltgreen, 5%));
   }
   

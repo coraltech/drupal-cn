@@ -7,6 +7,7 @@
 @import "global/icons";
 
 @import 'compass/css3/opacity';
+@import 'compass/css3/box-shadow';
 
 .intro-slide-4 {
   position: relative;
@@ -14,13 +15,12 @@
   width:410px;
   background: $ltyellow;
   
-  @include linear-h-gradient(darken($ltblue, 15%), #C9D5E1);
+  @include linear-h-gradient(lighten($ltblue, 7%), #C9D5E1);
   
   img { display: none; }
   
   .header {
     background: $white;
-    box-shadow: 2px 0px 3px rgba(0,0,0,.3);
     height: 315px;
     
     .title {
@@ -31,7 +31,8 @@
     .sep {
       border-bottom: 3px double $mdgray;
     }
-    
+
+    @include box-shadow(rgba(0,0,0,.3) 2px 0px 3px);
     @include linear-v-gradient(lighten($ltgray, 10%), darken($ltgray, 5%));
   }
   
