@@ -44,14 +44,14 @@ function coral_menus_help_links_loader() {
         'link_path'  => 'node/8',
         'options'    => array('attributes' => array('class'=>array('command-line'))),
         'plid'       => 'documentation',
-        'weight'     => 3,
+        'weight'     => 1,
       ),
       'web_portal' => array(
         'link_title' => t('Website usage'),
         'link_path'  => 'node/8',
         'options'    => array('attributes' => array('class'=>array('web-portal'))),
         'plid'       => 'documentation',
-        'weight'     => 3,
+        'weight'     => 2,
       ),
       'restful_api' => array(
         'link_title' => t('Restful API usage'),
@@ -65,7 +65,7 @@ function coral_menus_help_links_loader() {
         'link_path'  => 'node/8',
         'options'    => array('attributes' => array('class'=>array('ruby-api'))),
         'plid'       => 'documentation',
-        'weight'     => 3,
+        'weight'     => 4,
       ),
     'getting_started' => array(
       'link_title' => t('Getting started'),
