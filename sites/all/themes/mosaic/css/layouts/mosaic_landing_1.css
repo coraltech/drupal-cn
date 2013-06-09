@@ -46,8 +46,9 @@ li.leaf a {
   color: #446eac;
   font-weight: bold;
   text-decoration: none;
+  outline: none;
 }
-/* line 66, ../../sass/global/_dom.scss */
+/* line 67, ../../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -55,33 +56,33 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 67, ../../sass/global/_dom.scss */
+/* line 68, ../../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 71, ../../sass/global/_dom.scss */
+/* line 72, ../../sass/global/_dom.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 75, ../../sass/global/_dom.scss */
+/* line 76, ../../sass/global/_dom.scss */
 p {
   margin: 0.625em 0 1.25em 0;
 }
 
-/* line 79, ../../sass/global/_dom.scss */
+/* line 80, ../../sass/global/_dom.scss */
 em, .em {
   font-style: italic;
 }
 
-/* line 85, ../../sass/global/_dom.scss */
+/* line 86, ../../sass/global/_dom.scss */
 ul {
   margin: 1.25em 0.5em;
 }
-/* line 88, ../../sass/global/_dom.scss */
+/* line 89, ../../sass/global/_dom.scss */
 ul li {
   list-style: disc;
   list-style-image: url("/sites/all/themes/mosaic/assets/images/li-red.png");

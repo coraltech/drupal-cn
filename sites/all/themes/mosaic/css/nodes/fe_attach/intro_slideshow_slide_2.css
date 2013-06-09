@@ -3,21 +3,23 @@
   background: url('/images/icons-s76be0bee84.png') no-repeat;
 }
 
-/* line 10, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 11, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 {
   position: relative;
   height: 315px;
   width: 410px;
   background: #dddddd;
 }
-/* line 16, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 17, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 img {
   display: none;
 }
-/* line 18, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 19, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 .header {
   background: #cad5e2;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
   background: #cad5e2;
   background: -moz-linear-gradient(top, #cad5e2 0%, #bac8d9 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cad5e2), color-stop(100%, #bac8d9));
@@ -27,12 +29,12 @@
   background: linear-gradient(to bottom, #cad5e2 0%, #bac8d9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 25, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 26, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 .inner {
   margin-left: 1em;
   margin-right: 1em;
 }
-/* line 30, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 31, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 .social-icon {
   display: block;
   position: absolute;
@@ -42,22 +44,22 @@
   height: 75px;
   width: 65px;
 }
-/* line 39, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 40, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 .title {
   padding: .35em 0;
   background: #446eac;
   margin: 0;
 }
-/* line 44, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 45, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 .title h2 {
   color: #fff6b6;
   margin: 0;
 }
-/* line 50, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 51, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 ul {
   margin-top: 1em;
 }
-/* line 51, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+/* line 52, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 p {
   margin-left: 85px;
   margin-right: 1em;

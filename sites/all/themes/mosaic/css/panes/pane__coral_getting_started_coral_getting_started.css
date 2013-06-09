@@ -46,8 +46,9 @@ li.leaf a {
   color: #446eac;
   font-weight: bold;
   text-decoration: none;
+  outline: none;
 }
-/* line 66, ../../sass/global/_dom.scss */
+/* line 67, ../../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -55,33 +56,33 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 67, ../../sass/global/_dom.scss */
+/* line 68, ../../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 71, ../../sass/global/_dom.scss */
+/* line 72, ../../sass/global/_dom.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 75, ../../sass/global/_dom.scss */
+/* line 76, ../../sass/global/_dom.scss */
 p {
   margin: 0.625em 0 1.25em 0;
 }
 
-/* line 79, ../../sass/global/_dom.scss */
+/* line 80, ../../sass/global/_dom.scss */
 em, .em {
   font-style: italic;
 }
 
-/* line 85, ../../sass/global/_dom.scss */
+/* line 86, ../../sass/global/_dom.scss */
 ul {
   margin: 1.25em 0.5em;
 }
-/* line 88, ../../sass/global/_dom.scss */
+/* line 89, ../../sass/global/_dom.scss */
 ul li {
   list-style: disc;
   list-style-image: url("/sites/all/themes/mosaic/assets/images/li-red.png");
@@ -93,11 +94,11 @@ ul li {
   background: url('/images/icons-s76be0bee84.png') no-repeat;
 }
 
-/* line 10, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+/* line 12, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
 .pane-coral-getting-started {
   position: relative;
 }
-/* line 13, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+/* line 15, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
 .pane-coral-getting-started .clowny {
   display: block;
   font-size: 130%;
@@ -108,17 +109,19 @@ ul li {
   height: 56px;
   width: 65px;
 }
-/* line 23, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+/* line 25, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
 .pane-coral-getting-started h4 {
   color: #e17d2c;
 }
-/* line 26, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+/* line 28, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
 .pane-coral-getting-started .shell {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   border-width: 1px;
   border-color: #777777;
   border-style: solid;
   padding: 0.625em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
   background: #373737;
   background: -moz-linear-gradient(top, #373737 0%, #262626 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #373737), color-stop(100%, #262626));
@@ -128,14 +131,14 @@ ul li {
   background: linear-gradient(to bottom, #373737 0%, #262626 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 36, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+/* line 37, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
 .pane-coral-getting-started .shell .line {
   padding: 0;
   font-size: .9em;
   font-weight: bold;
   font-family: monospace, "Courier New", Courier;
 }
-/* line 42, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
+/* line 43, ../../sass/panes/pane__coral_getting_started_coral_getting_started.scss */
 .pane-coral-getting-started .shell .line .prompt {
   color: #36b048;
 }

@@ -147,8 +147,9 @@ li.leaf a {
   color: #446eac;
   font-weight: bold;
   text-decoration: none;
+  outline: none;
 }
-/* line 66, ../sass/global/_dom.scss */
+/* line 67, ../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -156,33 +157,33 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 67, ../sass/global/_dom.scss */
+/* line 68, ../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 71, ../sass/global/_dom.scss */
+/* line 72, ../sass/global/_dom.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 75, ../sass/global/_dom.scss */
+/* line 76, ../sass/global/_dom.scss */
 p {
   margin: 0.625em 0 1.25em 0;
 }
 
-/* line 79, ../sass/global/_dom.scss */
+/* line 80, ../sass/global/_dom.scss */
 em, .em {
   font-style: italic;
 }
 
-/* line 85, ../sass/global/_dom.scss */
+/* line 86, ../sass/global/_dom.scss */
 ul {
   margin: 1.25em 0.5em;
 }
-/* line 88, ../sass/global/_dom.scss */
+/* line 89, ../sass/global/_dom.scss */
 ul li {
   list-style: disc;
   list-style-image: url("/sites/all/themes/mosaic/assets/images/li-red.png");
@@ -230,7 +231,7 @@ header,
   padding: 1em 0;
 }
 
-/* line 50, ../sass/global/_global.scss */
+/* line 49, ../sass/global/_global.scss */
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -239,7 +240,7 @@ header .pane-search-form {
   position: relative;
   width: 275px;
 }
-/* line 58, ../sass/global/_global.scss */
+/* line 57, ../sass/global/_global.scss */
 header .pane-search-form .form-text {
   background: none;
   border: none;
@@ -249,7 +250,7 @@ header .pane-search-form .form-text {
   padding: 5px 8px;
   width: 185px;
 }
-/* line 67, ../sass/global/_global.scss */
+/* line 66, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
   border: 1px solid #2b486b;
   height: 27px;
@@ -258,7 +259,7 @@ header .pane-search-form .form-wrapper {
   top: 11px;
   width: 60px;
 }
-/* line 75, ../sass/global/_global.scss */
+/* line 74, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper .form-submit {
   border: 1px solid #446eac;
   color: white;
@@ -278,12 +279,12 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 88, ../sass/global/_global.scss */
+/* line 87, ../sass/global/_global.scss */
 .pane-gigya-gigya-login {
   float: right;
   position: relative;
 }
-/* line 92, ../sass/global/_global.scss */
+/* line 91, ../sass/global/_global.scss */
 .pane-gigya-gigya-login .pane-title {
   text-align: center;
   color: #777777;
@@ -292,25 +293,25 @@ header .pane-search-form .form-wrapper .form-submit {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 98, ../sass/global/_global.scss */
+/* line 97, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink {
   margin-top: -21px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 101, ../sass/global/_global.scss */
+/* line 100, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink table td {
   text-align: center;
 }
 
-/* line 110, ../sass/global/_global.scss */
+/* line 109, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 1.25em 0;
 }
-/* line 116, ../sass/global/_global.scss */
+/* line 115, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
@@ -878,6 +879,30 @@ header .pane-search-form .form-wrapper .form-submit {
   width: 100%;
 }
 
+/* line 9, ../sass/global/_magnific_popup.scss */
+.mfp-bg {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 13, ../sass/global/_magnific_popup.scss */
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  margin: 0 auto;
+  height: 542px;
+  width: 810px;
+  background: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+}
+/* line 19, ../sass/global/_magnific_popup.scss */
+.mfp-inline-holder .mfp-content .mfp-close,
+.mfp-ajax-holder .mfp-content .mfp-close {
+  top: 92%;
+  left: 95%;
+}
+
 /* line 21, ../sass/global/_menus.scss */
 .pane-menu-support {
   position: relative;
@@ -1072,14 +1097,14 @@ footer {
   color: #fff6b6;
 }
 
-/* line 14, ../sass/global/_superfish.scss */
+/* line 15, ../sass/global/_superfish.scss */
 .sf-menu, .sf-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 23, ../sass/global/_superfish.scss */
+/* line 24, ../sass/global/_superfish.scss */
 .sf-menu.sf-horizontal.sf-shadow ul,
 .sf-menu.sf-vertical.sf-shadow ul,
 .sf-menu.sf-navbar.sf-shadow ul ul {
@@ -1093,13 +1118,13 @@ footer {
   border-bottom-left-radius: 0;
 }
 
-/* line 34, ../sass/global/_superfish.scss */
+/* line 36, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu {
   float: left;
   margin-bottom: 0;
   letter-spacing: 2px;
 }
-/* line 39, ../sass/global/_superfish.scss */
+/* line 41, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu a {
   border-top: none;
   color: white;
@@ -1116,13 +1141,12 @@ footer {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 54, ../sass/global/_superfish.scss */
+/* line 56, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu ul {
   border-style: none solid none solid;
   border-width: 0px 1px 1px 1px;
   border-color: #9d9d9d;
   background: #f7f7f7;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   display: none;
   left: 0;
   padding: 0;
@@ -1132,14 +1156,17 @@ footer {
   z-index: 99;
   min-width: 12em;
   *width: 12em;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
-  opacity: 0.9;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
 }
-/* line 72, ../sass/global/_superfish.scss */
+/* line 74, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu ul li {
   position: relative;
 }
-/* line 75, ../sass/global/_superfish.scss */
+/* line 77, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu ul li a {
   color: #515151;
   border-bottom: 1px solid #9d9d9d;
@@ -1149,28 +1176,28 @@ footer {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 82, ../sass/global/_superfish.scss */
+/* line 84, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu ul li a:hover, #mini-panel-top_menus .sf-menu ul li a:active, #mini-panel-top_menus .sf-menu ul li a.active {
   color: black;
 }
-/* line 89, ../sass/global/_superfish.scss */
+/* line 91, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu ul ul {
   left: 100%;
 }
-/* line 98, ../sass/global/_superfish.scss */
+/* line 100, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu a:hover, #mini-panel-top_menus .sf-menu a:active, #mini-panel-top_menus .sf-menu a.active, #mini-panel-top_menus .sf-menu > .sfHover > a.menuparent {
   color: #fff6b6;
 }
-/* line 102, ../sass/global/_superfish.scss */
+/* line 104, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu > li {
   float: left;
 }
-/* line 106, ../sass/global/_superfish.scss */
+/* line 108, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu > li:hover > ul, #mini-panel-top_menus .sf-menu > li.sfHover > ul {
   top: 37px;
   display: block;
 }
-/* line 113, ../sass/global/_superfish.scss */
+/* line 115, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu a.menuparent > .arrow {
   display: block;
   position: absolute;
@@ -1183,7 +1210,7 @@ footer {
   border-bottom: 5px solid transparent;
   border-left: 5px solid #7496c8;
 }
-/* line 121, ../sass/global/_superfish.scss */
+/* line 123, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu .sfHover.sf-depth-1 > a.menuparent > .arrow {
   top: 17px;
   right: 0px;
@@ -1194,7 +1221,7 @@ footer {
   border-right: 5px solid transparent;
   border-top: 5px solid #7496c8;
 }
-/* line 127, ../sass/global/_superfish.scss */
+/* line 129, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
   width: 0;
   height: 0;
@@ -1204,19 +1231,90 @@ footer {
   border-left: 5px solid black;
 }
 
-/* line 134, ../sass/global/_superfish.scss */
+/* line 138, ../sass/global/_superfish.scss */
+.sf-vertical {
+  width: 12em;
+  min-width: 12em;
+}
+/* line 142, ../sass/global/_superfish.scss */
+.sf-vertical li {
+  background: #dddddd;
+  border-bottom: 1px solid #c4c4c4;
+}
+/* line 146, ../sass/global/_superfish.scss */
+.sf-vertical li a {
+  padding: 0.625em;
+}
+/* line 150, ../sass/global/_superfish.scss */
+.sf-vertical li ul {
+  border-left: 1px solid #cbcbcb;
+  min-width: 12em;
+  width: 12em !important;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 6px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=97);
+  opacity: 0.97;
+}
+/* line 164, ../sass/global/_superfish.scss */
+.sf-vertical a:hover, .sf-vertical a:active, .sf-vertical a.active, .sf-vertical > .sfHover > a.menuparent {
+  color: #2b486b;
+}
+/* line 168, ../sass/global/_superfish.scss */
+.sf-vertical > li {
+  float: left;
+}
+/* line 172, ../sass/global/_superfish.scss */
+.sf-vertical > li:hover > ul, .sf-vertical > li.sfHover > ul {
+  display: block;
+}
+/* line 178, ../sass/global/_superfish.scss */
+.sf-vertical a.menuparent > .arrow {
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 3px;
+  width: 0;
+  height: 0;
+  border-right: 7px solid transparent;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #7496c8;
+}
+/* line 186, ../sass/global/_superfish.scss */
+.sf-vertical .sfHover.sf-depth-1 > a.menuparent > .arrow {
+  top: 15px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #7496c8;
+}
+/* line 192, ../sass/global/_superfish.scss */
+.sf-vertical .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+  width: 0;
+  height: 0;
+  border-right: 7px solid transparent;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid black;
+}
+
+/* line 199, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .pane-superfish-2 .sf-menu {
   float: right;
   letter-spacing: 1px;
 }
-/* line 138, ../sass/global/_superfish.scss */
+/* line 203, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .pane-superfish-2 .sf-menu a {
   font-size: 100%;
   font-weight: normal;
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 144, ../sass/global/_superfish.scss */
+/* line 209, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .pane-superfish-2 .sf-menu a.menuparent > .arrow {
   left: 3px;
   width: 0;
@@ -1226,7 +1324,7 @@ footer {
   border-bottom: 5px solid transparent;
   border-right: 5px solid #7496c8;
 }
-/* line 150, ../sass/global/_superfish.scss */
+/* line 215, ../sass/global/_superfish.scss */
 #mini-panel-top_menus .pane-superfish-2 .sf-menu .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
   width: 0;
   height: 0;

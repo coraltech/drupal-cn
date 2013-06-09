@@ -1,0 +1,121 @@
+/* line 10, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  background: -webkit-linear-gradient(left, #dddddd 12em, white 12em, white);
+  background: -moz-linear-gradient(left, #dddddd 12em, white 12em, white);
+  background: -o-linear-gradient(left, #dddddd 12em, white 12em, white);
+  background: -ms-linear-gradient(left, #dddddd 12em, white 12em, white);
+  background: linear-gradient(to right, #dddddd 12em, #ffffff 12em, #ffffff);
+}
+/* line 14, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-top,
+.mfp-ajax-holder .mfp-content .panel-col-top {
+  background: #f1f1f1;
+}
+/* line 17, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-top .inside,
+.mfp-ajax-holder .mfp-content .panel-col-top .inside {
+  margin-bottom: 0;
+}
+/* line 21, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-top .title-msg,
+.mfp-ajax-holder .mfp-content .panel-col-top .title-msg {
+  font-size: 90%;
+}
+/* line 26, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-first,
+.mfp-ajax-holder .mfp-content .panel-col-first {
+  width: 12em;
+}
+/* line 29, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-first li,
+.mfp-ajax-holder .mfp-content .panel-col-first li {
+  background: #dddddd;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dddddd), color-stop(100%, #d5d5d5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #dddddd 0%, #d5d5d5 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right,GradientType=1 );
+  /* IE6-9 */
+}
+/* line 30, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-first li a,
+.mfp-ajax-holder .mfp-content .panel-col-first li a {
+  color: #2b486b;
+}
+/* line 35, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-first li a:hover, .mfp-inline-holder .mfp-content .panel-col-first li a:active, .mfp-inline-holder .mfp-content .panel-col-first li a.active,
+.mfp-ajax-holder .mfp-content .panel-col-first li a:hover,
+.mfp-ajax-holder .mfp-content .panel-col-first li a:active,
+.mfp-ajax-holder .mfp-content .panel-col-first li a.active {
+  color: black;
+}
+/* line 43, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last,
+.mfp-ajax-holder .mfp-content .panel-col-last {
+  width: 76%;
+}
+/* line 46, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last .pane-content,
+.mfp-ajax-holder .mfp-content .panel-col-last .pane-content {
+  border-top: 1px solid #777777;
+  overflow-y: scroll;
+  height: 364px;
+  padding: 0 15px 15px;
+}
+/* line 53, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last > .inside,
+.mfp-ajax-holder .mfp-content .panel-col-last > .inside {
+  margin: 0;
+}
+/* line 56, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last > .inside h2,
+.mfp-ajax-holder .mfp-content .panel-col-last > .inside h2 {
+  margin: 0;
+  padding: 15px;
+  background: #ebeff4;
+}
+/* line 63, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last .filter-wrapper,
+.mfp-ajax-holder .mfp-content .panel-col-last .filter-wrapper {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #efefef;
+}
+/* line 69, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last .node-question-form .form-actions,
+.mfp-ajax-holder .mfp-content .panel-col-last .node-question-form .form-actions {
+  bottom: -8px;
+  position: absolute;
+  right: 50px;
+  z-index: 5;
+}
+/* line 76, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-bottom,
+.mfp-ajax-holder .mfp-content .panel-col-bottom {
+  position: absolute;
+  bottom: 0px;
+  height: 2.5em;
+  background: #f1f1f1;
+  border-top: 1px solid #d0d0d0;
+}
+/* line 83, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .help-header,
+.mfp-ajax-holder .mfp-content .help-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #d0d0d0;
+}
+/* line 87, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .help-header h2,
+.mfp-ajax-holder .mfp-content .help-header h2 {
+  margin: 0;
+}

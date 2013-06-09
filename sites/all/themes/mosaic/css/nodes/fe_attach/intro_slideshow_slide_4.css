@@ -3,38 +3,40 @@
   background: url('/images/icons-s76be0bee84.png') no-repeat;
 }
 
-/* line 11, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 12, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 {
   position: relative;
   height: 315px;
   width: 410px;
   background: #fff6b6;
-  background: #99aec7;
+  background: #e1e7ef;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #99aec7 0%, #c9d5e1 100%);
+  background: -moz-linear-gradient(left, #e1e7ef 0%, #c9d5e1 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #99aec7), color-stop(100%, #c9d5e1));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #e1e7ef), color-stop(100%, #c9d5e1));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #99aec7 0%, #c9d5e1 100%);
+  background: -webkit-linear-gradient(left, #e1e7ef 0%, #c9d5e1 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #99aec7 0%, #c9d5e1 100%);
+  background: -o-linear-gradient(left, #e1e7ef 0%, #c9d5e1 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #99aec7 0%, #c9d5e1 100%);
+  background: -ms-linear-gradient(left, #e1e7ef 0%, #c9d5e1 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #99aec7 0%, #c9d5e1 100%);
+  background: linear-gradient(to right, #e1e7ef 0%, #c9d5e1 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right,GradientType=1 );
   /* IE6-9 */
 }
-/* line 19, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 20, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 img {
   display: none;
 }
-/* line 21, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 22, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 .header {
   background: white;
-  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.3);
   height: 315px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 0px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 2px 0px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 0px 3px;
   background: #f7f7f7;
   background: -moz-linear-gradient(top, #f7f7f7 0%, #d0d0d0 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #d0d0d0));
@@ -54,12 +56,12 @@
 .intro-slide-4 .header .sep {
   border-bottom: 3px double #777777;
 }
-/* line 38, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 39, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 .inner {
   margin-left: 1em;
   margin-right: 1em;
 }
-/* line 43, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 44, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 .getting-started-icon {
   display: block;
   float: left;
@@ -68,22 +70,22 @@
   height: 48px;
   width: 48px;
 }
-/* line 51, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 52, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 h2 {
   margin: 0;
   color: white;
 }
-/* line 53, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 54, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 ul {
   margin: 1em 1em 0 1em;
 }
-/* line 57, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 58, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 p {
   margin-left: .75em;
   margin-right: .75em;
   font-size: 90%;
 }
-/* line 63, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 64, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 .more {
   margin: 0 1em;
   display: block;
