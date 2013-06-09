@@ -244,6 +244,4 @@
 [submodule "sites/all/themes/mosaic/js/lib/magnificent_popup"]
 	path = sites/all/themes/mosaic/js/lib/magnificent_popup
 	url = https://github.com/dimsemenov/Magnific-Popup
-[submodule "sites/all/modules/contrib/hide_formats"]
-	path = sites/all/modules/contrib/hide_formats
-	url = http://git.drupal.org/project/hide_formats
+i
