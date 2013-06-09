@@ -1,0 +1,6 @@
+name = Coral Q&A
+description = Provides Q&A content types and related functionality.
+dependencies[] = coral
+dependencies[] = file
+package = Coral
+core = 7.x

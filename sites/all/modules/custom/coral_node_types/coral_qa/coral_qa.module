@@ -1,0 +1,18 @@
+<?php
+
+coral_include(array(
+  //'classes',
+  'classes/nodes'
+), 'inc', array('module' => 'coral_qa'));
+
+//------------------------------------------------------------------------------
+// Core hooks
+/**
+ * Return a list of the Coral node classes.
+ */
+function coral_qa_coral_classes_alter($type, &$class_map) {
+  if ($type == 'node') {  
+    $class_map[CoralQuestionNode::type()] = 'CoralQuestionNode';
+    //$class_map[CoralAnswerNode::type()] = 'CoralAnswerNode';
+  }
+}

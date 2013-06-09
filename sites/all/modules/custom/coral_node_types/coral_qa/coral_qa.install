@@ -1,0 +1,22 @@
+<?php
+  
+/**
+ * Implements hook_uninstall().
+ */
+function coral_qa_uninstall() {
+  // Set of types this module provides
+  $coral_qa_types = array('question'); // 'coral_answer');  // comments in it's own module.
+
+  foreach ($coral_qa_types as $type) {
+    // Delete nodes and node types.
+    $result = db_select('node', 'n')
+          ->fields('n', array('nid'))
+          ->condition('type', $type, '=')
+          ->execute();
+  
+    foreach ($result as $record) {
+      node_delete($record->nid);
+    }
+    node_type_delete($type);
+  }
+}
