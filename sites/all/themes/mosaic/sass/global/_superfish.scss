@@ -9,6 +9,7 @@
 // external imports
 @import 'compass/css3/opacity';
 @import 'compass/css3/text-shadow';
+@import 'compass/css3/box-shadow';
 
 // Primary styles
 .sf-menu, .sf-menu * {
@@ -30,6 +31,7 @@
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 
 #mini-panel-top_menus .sf-menu {
   float: left;
@@ -56,7 +58,6 @@
     border-width: 0px 1px 1px 1px;
     border-color: lighten($mdgray, 15%);
     background: lighten($ltgray, 10%);
-    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
     display: none;
     left: 0;
     padding: 0;
@@ -67,7 +68,8 @@
     min-width: 12em; // allow long menu items to determine submenu width 
     *width: 12em;    // no auto sub width for IE7, see white-space comment below
   
-    @include opacity(.9);
+    @include box-shadow(rgba(0,0,0,.3) 2px 2px 6px);
+    @include opacity(.95);
     
     li {
       position: relative;
@@ -130,6 +132,69 @@
 }
 
 
+// --------------------------------------------
+//  Vertical menus
+// --------------------------------------------
+.sf-vertical {
+  width: 12em;
+  min-width: 12em;
+  
+  li {
+    background: $ltgray;
+    border-bottom: 1px solid darken($ltgray, 10%);
+    
+    a {
+      padding: (.5 * $default_vert_unit);
+    }
+    
+    ul {
+      border-left: 1px solid darken($ltgray, 7%);
+      min-width: 12em;
+      width: 12em !important;
+      
+      @include box-shadow(rgba(0,0,0,.3) 2px 1px 6px);
+      @include opacity(.97);
+    }
+  }
+  
+  // self referencing
+  & a:hover,
+  & a:active,
+  & a.active,
+  & > .sfHover > a.menuparent {
+   color: $dkblue;
+  }
+  
+  & > li {
+    float: left;
+    
+    &:hover > ul,
+    &.sfHover > ul { // second level ul's need to be 37px from the top
+      display: block;
+    }    
+  }
+  
+  // Arrows
+  & a.menuparent > .arrow {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 3px;
+    
+    @include arrow-right(7px, lighten($mdblue, 15%));
+  }
+  & .sfHover.sf-depth-1 > a.menuparent > .arrow {
+    top: 15px;
+    right: 5px;
+    
+    @include arrow-down(7px, lighten($mdblue, 15%));
+  }
+  & .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+    @include arrow-right(7px, $black);
+  }
+}
+
+// ------------------------------------
 // Secondary (User menu) superfish menu
 #mini-panel-top_menus .pane-superfish-2 .sf-menu {
   float: right;

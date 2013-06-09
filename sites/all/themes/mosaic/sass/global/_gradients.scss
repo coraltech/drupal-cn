@@ -24,3 +24,14 @@
   background: linear-gradient(to right, $left 0%,$right 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right,GradientType=1 ); /* IE6-9 */
 }
+
+// @TODO make this work even with >= IE7
+// @TODO see how we could extropolate this to allow it to make 
+//        comprehensive column designs... like infinite number of cols!
+@mixin col-gradient($colstart: $ltgray, $colend: $white, $end: $white, $colwidth: 12em) {
+  background: -webkit-linear-gradient(left, $colstart $colwidth, $colend $colwidth, $end);
+  background: -moz-linear-gradient(left, $colstart $colwidth, $colend $colwidth, $end);
+  background: -o-linear-gradient(left, $colstart $colwidth, $colend $colwidth, $end);
+  background: -ms-linear-gradient(left, $colstart $colwidth, $colend $colwidth, $end);
+  background: linear-gradient(to right, $colstart $colwidth, $colend $colwidth, $end);
+}

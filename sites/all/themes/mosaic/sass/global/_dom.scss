@@ -62,6 +62,7 @@ li.leaf a {
   color: $mdblue; 
   font-weight: bold;
   text-decoration: none;
+  outline: none;
   
   &:active, &.active { color: lighten($dkblue, 5%); }
   &:hover { color: $dkblue; }

@@ -1,0 +1,25 @@
+
+// Magnific popup styles
+
+@import 'global/colors';
+
+@import 'compass/css3/opacity';
+@import 'compass/css3/box-shadow';
+
+.mfp-bg {
+  @include opacity(.5);
+}
+.mfp-inline-holder .mfp-content, 
+.mfp-ajax-holder .mfp-content {
+  margin: 0 auto;
+  height: 542px;
+  width: 810px;
+  background: $white;
+  
+  .mfp-close {
+    top: 92%;
+    left: 95%;
+  }
+  
+  @include box-shadow(rgba(0,0,0,.5) 10px 10px 20px);
+}
