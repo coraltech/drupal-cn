@@ -6,6 +6,7 @@ version     = VERSION
 core        = 7.x
 
 ; - Stylesheets
+stylesheets[all][]   = js/lib/magnificent_popup/dist/magnific-popup.css
 stylesheets[all][]   = css/screen.css
 stylesheets[print][] = css/print.css
 
@@ -13,6 +14,7 @@ stylesheets[print][] = css/print.css
 ; -- Libraries
 scripts[] = js/lib/underscore/underscore.js
 scripts[] = js/lib/backbone/backbone.js
+scripts[] = js/lib/magnificent_popup/dist/jquery.magnific-popup.js
 
 ; -- Custom
 scripts[] = js/global/mosaicForms.js
