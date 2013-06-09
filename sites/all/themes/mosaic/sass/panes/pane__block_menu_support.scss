@@ -1,0 +1,91 @@
+
+// Provides styles for the support menu and associated popups
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+
+.mfp-inline-holder .mfp-content, 
+.mfp-ajax-holder .mfp-content {
+  
+  @include col-gradient;
+  
+  .panel-col-top {
+    background: lighten($ltgray, 8%);
+    
+    .inside {
+      margin-bottom: 0;
+    }
+    
+    .title-msg {
+      font-size: 90%;
+      //padding: 0 $default_vert_unit;
+    }
+  }
+  .panel-col-first {
+    width: 12em;
+    
+    li {
+      a {
+        color: $dkblue;
+        
+        &:hover,
+        &:active,
+        &.active {
+          color: $black;
+        }
+      }
+      
+      @include linear-h-gradient($ltgray, darken($ltgray, 3%));      
+    }
+  }
+  .panel-col-last {
+    width: 76%;
+    
+    .pane-content {
+      border-top: 1px solid $mdgray;
+      overflow-y: scroll;
+      height: 364px;
+      padding: 0 15px 15px;
+    }
+    
+    & > .inside {
+      margin: 0;
+      
+      h2 {
+        margin: 0;
+        padding: 15px;
+        background: lighten($ltblue, 10%);
+      }
+    }
+    
+    .filter-wrapper {
+      margin: 0;
+      padding: 0;
+      border: 1px solid lighten($ltgray, 7%);
+    }
+    
+    .node-question-form .form-actions {
+      bottom: -8px;
+      position: absolute;
+      right: 50px;
+      z-index: 5;
+    }
+  }
+  .panel-col-bottom {
+    position: absolute;
+    bottom: 0px;
+    height: 2 * $default_vert_unit;
+    background: lighten($ltgray, 8%);
+    border-top: 1px solid darken($ltgray, 5%);
+  }  
+  .help-header {
+    padding: 15px 20px; //(.5 * $default_vert_unit) $default_vert_unit;
+    border-bottom: 1px solid darken($ltgray, 5%);
+        
+    h2 {
+      margin: 0;
+    }
+  }
+}
