@@ -22,7 +22,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 // Document loaded!
 (function($) {
   
-  Drupal.behaviors.mosaicFormsInit = {    
+  Drupal.behaviors.mosaicTextFieldInit = {    
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         if (Drupal.settings.mosaic.fieldDefaults) {
@@ -30,9 +30,9 @@ Drupal.mosaic = Drupal.mosaic || {};
         
           for (selector in fieldDefaults) {      
             var $formElement = $(selector);
-        
+            //console.log(selector);
             for (var index = 0; index < $formElement.length; index++) {
-              new Drupal.mosaic.forms($formElement[index], fieldDefaults[selector]);
+              new Drupal.mosaic.textfieldDefault($formElement[index], fieldDefaults[selector]);
             }
           }
         }
@@ -43,12 +43,12 @@ Drupal.mosaic = Drupal.mosaic || {};
     }
   };
 
-  // Mosaic process
-  
-  Drupal.mosaic.forms = function(formElement, fieldDefaults) {
+  // Mosaic textfieldDefault takes one textfield and ensures it is
+  //  set as it should be according to the specs in textfield_defaults.inc
+  Drupal.mosaic.textfieldDefault = function(formElement, fieldDefaults) {
     this.$element = $(formElement);
+    var textfieldDefault = this;
     
-    var forms     = this;
     var FieldList = Backbone.View.extend({
       
       // Home
@@ -62,13 +62,13 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       // Init
       initialize: function() { 
-        forms.process(fieldDefaults, 'blur');
+        textfieldDefault.process(fieldDefaults, 'blur', true);
         _.bindAll(this, 'blurField', 'focusField'); 
       },
       
       // Updates
-      blurField:  function() { forms.process(fieldDefaults, 'blur' ); },
-      focusField: function() { forms.process(fieldDefaults, 'focus'); }
+      blurField:  function() { textfieldDefault.process(fieldDefaults, 'blur' ); },
+      focusField: function() { textfieldDefault.process(fieldDefaults, 'focus'); }
     });
     
     // Kick start!
@@ -77,22 +77,38 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   //---
   
-  Drupal.mosaic.forms.prototype.process = function(settings, op) {
-    id   = this.$element.attr('id');
-    $elm = this.$element;
+  // Process each textfield
+  Drupal.mosaic.textfieldDefault.prototype.process = function(settings, op, init) {
     
-    if ($elm.val() === '') {
-      if (op === 'blur') {
-        $elm.val(settings['default']).addClass('field-default');
+    // Runtime baby!
+    init = init || false;
+    var id   = this.$element.attr('id');
+    var $elm = this.$element;
+    var val  = $elm.val();
+    
+    // Field is blurring  
+    if (op == 'blur') {
+      if (val == settings['default']) { // value is already ok
+        $elm.addClass('field-default'); // add the default class
+      }
+      if (val != settings['default']) { // value is not eq to settings
+        if (init) { // do we override? yes on initialization of the page
+          $elm.val(settings['default']).addClass('field-default');
+        }
+        else {
+          if (val == '') { // they are leaving it blank
+            $elm.val(settings['default']).addClass('field-default');
+          }
+        }
       }
     }
-      
-    // Has contents
-    if ($elm.val() === settings['default']) {
-      if (op === 'focus') {
+    
+    // User is focusing
+    if (op == 'focus') { 
+      if (val == settings['default']) { // we only work on it if its in a default state
         $elm.val('').removeClass('field-default');
-      }
+      }      
     }
   }
-  
-})(jQuery); 
+})(jQuery);
+

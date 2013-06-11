@@ -26,9 +26,9 @@ function mosaic_add_textfield_defaults($form_id, $form) {
     //'e.g. Using configurations', 
     //'e.g. Coral cluster tutorial'
   );
-  
+
   switch ($form_id) {
-    // NOTE: Put selectors in order from most to least specific.
+    // NOTE: Put selectors (for each form) in order from most to least specific.
     
     // --- Search form
     case 'search_form':
@@ -50,6 +50,13 @@ function mosaic_add_textfield_defaults($form_id, $form) {
         '#search-block-form .form-text' => 'Search'
       );
       break;
+    
+    // --- Question node form ;-)  
+    case 'question_node_form':
+      $matrix['question_node_form'] = array(
+        '#question-node-form .form-item-title .form-text' => 'Your question',
+        '#question-node-form .form-item-field-tags-und .form-text' => 'Question tags'
+      );
 
     default: break; 
   }
