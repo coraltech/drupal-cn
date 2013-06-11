@@ -28,7 +28,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.helpPanelManager = function($panel) {
     
     // jQuery objects of note
-    this.$panel = $panel;
+    this.$panel = $panel; // the mini-panel that holds the popup contents
     
     // Identification and settings
     var helpPanelManager = this;
@@ -39,48 +39,74 @@ Drupal.mosaic = Drupal.mosaic || {};
       // Settings and conf
       helpPanelManager: helpPanelManager,
       
-      // events
+      // Events
       events: {
         'click .sf-menu a': 'menuClick'
       },
       
-      // Init
+      // Init the manager
       initialize: function() {
         helpPanelManager.initializeForms(this.el);
          _.bindAll(this, 'menuClick');
       },
       
+      // Default help menu item click
       menuClick: function(ev) {
-        $handled = false;
-        $clicked = $(ev.target);
+        handled = false; // we will let the click pass if it isnt handled below
+        $clicked = $(ev.target); // target the user clicked on (jQuery)
         
-        // Contact us switches forms between 
+        // Contact us  --  switches forms between 
         //  contact and ask a question.
         if ($clicked.hasClass('contact-us')) {
-          //console.log($clicked.text());
-          if ($clicked.text() == 'Contact us') $clicked.text('Ask a question');
-          else { $clicked.text('Contact us'); }
-          $panes = $(this.el).find('.panel-col-last .panel-pane');
-          $panes.each(function(i) {
-            if ($(this).hasClass('hide')) {
-              $(this).removeClass('hide');
-            }
-            else {
-              $(this).addClass('hide');
-            }
-          });
-          $handled = true;
+          helpPanelManager.contactClick($clicked, $(this.el));// Contact link clicked
+          handled = true;// this is js handled
         }
-        if ($handled) return false;
+        
+        // Bug report  --  turns off the magnificPopup
+        //  and clicks the bug report button ;-)
+        else if ($clicked.hasClass('bug-report')) {
+          helpPanelManager.bugClick();// Bug link clicked
+          handled = true;// this is js handled
+        }
+        
+        if (handled) return false; // don't execute the click event for real
       }
     });
     // Instantiate the panel view object
     new PanelView();
-  }
+  };
   
   Drupal.mosaic.helpPanelManager.prototype.initializeForms = function(panel) {
     // Get rid of the separator -_- 
     $(panel).find('.panel-col-last .panel-separator').remove();
-  }
+  };
+  
+  // Manages click handling of 'Contact us / Ask question' link
+  Drupal.mosaic.helpPanelManager.prototype.contactClick = function($clicked, $panel) {
+    if ($clicked.text() == 'Contact us') $clicked.text('Ask a question');
+    else { $clicked.text('Contact us'); }
+    $panes = $panel.find('.panel-col-last .panel-pane');
+    
+    // Go through panes
+    $panes.each(function(i) {
+      if ($(this).hasClass('hide')) {
+        $(this).removeClass('hide');
+      }
+      else {
+        $(this).addClass('hide');
+      }
+    });
+  };
+  
+  // Manages click handling of 'Issues and bugs!' link.
+  //  simply closes the current popup and opens the issue manager
+  Drupal.mosaic.helpPanelManager.prototype.bugClick = function() {
+    // close the mfp - http://stackoverflow.com/a/16919889/1857689
+    var magnificPopup = $.magnificPopup.instance;
+    magnificPopup.close();
+          
+    // click the issues tab         
+    $('a.issues-tab').trigger('click');
+  };
   
 })(jQuery);
