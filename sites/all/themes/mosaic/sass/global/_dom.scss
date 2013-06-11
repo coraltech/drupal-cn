@@ -1,8 +1,11 @@
 
 // File should only contain default dom object styles for Coral Nexus
 
+@import "global/buttons";
 @import "global/colors";
 @import "global/fonts";
+//@import "sassy-buttons";
+
 
 
 // Font Size Reference (12px base)
@@ -94,4 +97,14 @@ ul {
   
 }
 
+
+// --- Forms
+input.form-submit {
+  @include btn-glass;
+  @include btn-structure;
+}
+
+input.form-text {
+  width: 80%;
+}
 
