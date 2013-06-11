@@ -104,12 +104,14 @@
 .mfp-inline-holder .mfp-content .panel-col-last .node-question-form .form-actions,
 .mfp-ajax-holder .mfp-content .panel-col-last .contact-form .form-actions,
 .mfp-ajax-holder .mfp-content .panel-col-last .node-question-form .form-actions {
-  bottom: -8px;
+  bottom: 6px;
   position: absolute;
   right: 50px;
   z-index: 5;
+  margin: 0;
+  padding: 0;
 }
-/* line 86, ../../sass/panes/pane__block_menu_support.scss */
+/* line 88, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-bottom,
 .mfp-ajax-holder .mfp-content .panel-col-bottom {
   position: absolute;
@@ -118,13 +120,13 @@
   background: #f1f1f1;
   border-top: 1px solid #d0d0d0;
 }
-/* line 93, ../../sass/panes/pane__block_menu_support.scss */
+/* line 95, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .help-header,
 .mfp-ajax-holder .mfp-content .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 97, ../../sass/panes/pane__block_menu_support.scss */
+/* line 99, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .help-header h2,
 .mfp-ajax-holder .mfp-content .help-header h2 {
   margin: 0;
