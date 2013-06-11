@@ -15,9 +15,11 @@ stylesheets[print][] = css/print.css
 scripts[] = js/lib/underscore/underscore.js
 scripts[] = js/lib/backbone/backbone.js
 scripts[] = js/lib/magnificent_popup/dist/jquery.magnific-popup.js
+scripts[] = js/lib/tinymce/tinymce/js/tinymce/tinymce.min.js
 
 ; -- Custom
 scripts[] = js/global/mosaicForms.js
+scripts[] = js/global/mosaicMce.js
 
 ; - Panels
 plugins[panels][layouts]     = plugins/layouts
