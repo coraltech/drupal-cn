@@ -8,7 +8,6 @@
 // ------------------------------
 
 @import 'global/colors';
-
 @import "sassy-buttons";
 
 // lighten glassy on hover
@@ -22,6 +21,10 @@
 
 @mixin btn-glass-dkn($radius: 0px, $font-size: 16px, $color: $mdblue, $color2: darken($mdblue, 3%), $text-color: $white) {
   @include sassy-button("glass", $radius, $font-size, $mdblue, $color2, $text-color);
+}
+
+@mixin btn-structure($padding: 2px 5px, $font-size: 16px, $radius: 0px) {
+  @include sassy-button-structure($radius, $font-size, $padding);
 }
 
 
