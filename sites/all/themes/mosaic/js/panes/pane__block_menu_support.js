@@ -50,8 +50,9 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       // Init
       initialize: function() {
-        helpManager.initializeBox($(this.el), this.popupID);         
+        helpManager.initializeBox($(this.el), this.popupID);
       },
+     
     });
     
     new ManagerView();
@@ -60,9 +61,21 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.helpManager.prototype.initializeBox = function($helpMenu, popupID) {
     $target = $helpMenu.find('.get-help-tab');
     if ($target.attr('href') != '#'+popupID) $target.attr('href', '#'+popupID);
+    
+    // Open the popup that contains the menu and question/contact forms
     $target.magnificPopup({
       type:'inline',
-      midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      callbacks: {
+        
+        open: function() { 
+          // For the Question form
+          // Call up the wysiwyg editor
+          tinymce.init(Drupal.mosaic.tinymceSettings('.node-question-form .text-full'));
+        },
+        
+        close: function() {  }
+      }
     });  
   }
   
