@@ -903,6 +903,11 @@ header .pane-search-form .form-wrapper .form-submit {
   left: 95%;
 }
 
+/* line 26, ../sass/global/_magnific_popup.scss */
+.mfp-content {
+  overflow: hidden;
+}
+
 /* line 21, ../sass/global/_menus.scss */
 .pane-menu-support {
   position: relative;
