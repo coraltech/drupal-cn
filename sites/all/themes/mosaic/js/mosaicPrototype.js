@@ -1,4 +1,73 @@
 // Registers the Mosaic namespace
+
+// Registers / uses the Mosaic namespace
+Drupal.mosaic = Drupal.mosaic || {};
+
+// @TODO: Turn this into a good prototype!
+// ----------------------------------------------------------------------
+// Magnificent popup instantiation
+// ----------------------------------------------------------------------
+// Document loaded!
+(function($) {
+  Drupal.behaviors.mosaicHelpPanelInit = {    
+    attach : function(context, settings) {
+      
+      try { // Use try to prevent systemic failure
+        $panel = $('#pane-getting-help');
+        if ($panel.length > 0) {
+          new Drupal.mosaic.helpPanelManager($panel);
+        }
+      }
+      catch(err) {
+        console.log('mosaicHelpPanelInit reported errors! Error: '+err);
+      }
+    }
+  };
+  
+  Drupal.mosaic.helpPanelManager = function($panel) {
+    
+    // jQuery objects of note
+    this.$panel = $panel;
+    
+    // Identification and settings
+    var helpPanelManager = this;
+    var PanelView = Backbone.View.extend({
+      // Home
+      el: this.$panel,
+      
+      // Settings and conf
+      helpPanelManager: helpPanelManager,
+      
+      // events
+      events: {
+        'click .sf-menu a': 'menuClick'
+      },
+      
+      // Init
+      initialize: function() {
+        helpPanelManager.initializeForms(this.el);
+         _.bindAll(this, 'menuClick');
+      },
+      
+      menuClick: function(ev) {
+        console.log('Item clicked');
+      }
+     
+    });
+    // Instantiate the panel view object
+    new PanelView();
+  }
+  
+  Drupal.mosaic.helpPanelManager.prototype.initializeForms = function($panel) {
+    console.log('Initializing'); 
+  }
+  
+})(jQuery);
+
+
+
+/*
+
 Backbone = Backbone || {};
 Drupal.mosaicPrototype = Drupal.mosaicPrototype || {};
 
@@ -66,4 +135,4 @@ Drupal.mosaicPrototype = Drupal.mosaicPrototype || {};
     console.log(foo + ' : ' + bar);
   }
   
-})(jQuery); 
+})(jQuery); */
