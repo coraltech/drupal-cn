@@ -77,10 +77,12 @@
     
     .contact-form .form-actions,
     .node-question-form .form-actions {
-      bottom: -8px;
+      bottom: 6px;
       position: absolute;
       right: 50px;
       z-index: 5;
+      margin: 0;
+      padding: 0;
     }
   }
   .panel-col-bottom {
