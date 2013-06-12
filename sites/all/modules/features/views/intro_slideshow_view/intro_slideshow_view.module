@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the intro_slideshow_view feature.
+ */
+
+include_once 'intro_slideshow_view.features.inc';
