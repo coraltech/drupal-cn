@@ -20,6 +20,7 @@ scripts[] = js/lib/tinymce/tinymce/js/tinymce/tinymce.min.js
 ; -- Custom
 scripts[] = js/global/mosaicForms.js
 scripts[] = js/global/mosaicMce.js
+scripts[] = js/global/mosaicSlideshow.js
 
 ; - Panels
 plugins[panels][layouts]     = plugins/layouts
