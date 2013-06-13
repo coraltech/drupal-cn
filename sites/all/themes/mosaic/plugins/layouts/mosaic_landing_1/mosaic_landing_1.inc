@@ -15,5 +15,6 @@ $plugin = array(
     'main' => t('Main'),
     'secondary' => t('Secondary'),
     'follower' => t('Follower'),
+    'sub_footer' => t('Sub footer'),
   ),
 );
