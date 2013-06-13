@@ -1,0 +1,44 @@
+
+// Main grid mixins and variables
+
+$width: 100%; // total width (%) of page 
+$columns: 24; // number of columns 
+$col_margin: 2%; // margin (%) between columns 
+
+// create row div
+@mixin row() { 
+  float: left; 
+  clear: both; 
+  width: $width; 
+} 
+
+// create a column div 
+@mixin col($n: 1, $last:'false') { 
+  float: left; 
+  @include span($n, $last); 
+} 
+
+// make an element span n columns
+@mixin span($n: 1, $last:'false') {
+  @if $last == 'false' {
+    width: percentage($n / $columns) - $col_margin;
+  }
+  @else {
+    width: percentage($n / $columns);
+  }
+} 
+
+// the last column in a row needs this 
+@mixin last() { 
+  margin-right: 0; 
+} 
+
+// prepend n blank columns 
+@mixin prepend($n: 1) { 
+  margin-left: percentage($n / $columns) 
+} 
+
+// append n blank columns 
+@mixin append($n: 1) { 
+  margin-right: percentage($n / $columns)
+}
