@@ -3,6 +3,7 @@
 //  It should contain only helper type class definitions.
 
 @import 'global/colors';
+@import 'global/site_vars';
 
 // hides
 .hide { position: absolute; left: -9999em; }
@@ -19,5 +20,10 @@
 // forms
 .field-default {
   color: $mdgray; // default field text color - class applied in mosaicForms.js
+}
+
+// Site width
+.site-width {
+  @include site_width;
 }
 
