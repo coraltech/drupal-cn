@@ -1,0 +1,15 @@
+
+// Contains site theme variables
+
+$site_width: 962px;
+
+@mixin site_width($center:'true') {
+  width: $site_width;
+  @if $center == 'true' {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
