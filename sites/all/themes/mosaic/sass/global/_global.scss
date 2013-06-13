@@ -9,16 +9,16 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/site_vars';
 
-$site_width: 962px; 
 
 // -- Global container widths
-.main-global,
 .pane-header,
 .pane-footer,
+.pane-page-tabs,
+.pane-page-messages,
 .pane-top-menus #mini-panel-top_menus {
-  width: $site_width;
-  margin: 0 auto;
+  @include site_width;
 }
 
 // site margin top and bottom
@@ -42,7 +42,7 @@ header,
   background: $white;
 }
 .mosaic-cont {
-  padding: 1em 0;
+  padding: 1em 0 0;
 }
 
 // -- Search form -- added here bc it is on every page
