@@ -1,0 +1,56 @@
+
+// Scss for the featured projects home display
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/icons';
+
+.sub_footer { 
+  background: $ltgray; 
+  margin: 0;
+  padding: 0;
+}
+
+.pane-featured-projects-home {
+  height: 2 * $default_vert_unit;
+  position: relative;
+  padding-top: 1em;
+    
+  h2 {
+    color: $mdred;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: -10px;
+    
+    &:after { 
+      padding-left: 10px;
+      content: '-'; 
+    }
+  }
+  
+  .icon {
+    display: block;
+    position: absolute;
+    left: -25px;
+    top: 10px;
+    
+    @include icons-sprite('coral-star');
+  }
+  
+  .pip-cont {
+    position: absolute;
+    bottom: -8px;
+    margin-left: -8px;
+    z-index: 5;
+  }
+    
+  .pane-title {
+    @include col(5, true);
+  }
+  .pane-content {
+    @include col(19, true);
+  }
+}
+
