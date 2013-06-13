@@ -1,0 +1,58 @@
+/* line 154, icons/*.png */
+.icons-sprite, .pane-featured-projects-home .icon {
+  background: url('/images/icons-s82db911083.png') no-repeat;
+}
+
+/* line 9, ../../sass/views/view__featured_projects__home.scss */
+.sub_footer {
+  background: #dddddd;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home {
+  height: 2.5em;
+  position: relative;
+  padding-top: 1em;
+}
+/* line 20, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home h2 {
+  color: #b02e1c;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  right: -10px;
+}
+/* line 27, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home h2:after {
+  padding-left: 10px;
+  content: '-';
+}
+/* line 33, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home .icon {
+  display: block;
+  position: absolute;
+  left: -25px;
+  top: 10px;
+  background-position: 0 -608px;
+  height: 29px;
+  width: 30px;
+}
+/* line 42, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home .pip-cont {
+  position: absolute;
+  bottom: -8px;
+  margin-left: -8px;
+  z-index: 5;
+}
+/* line 49, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home .pane-title {
+  float: left;
+  width: 20.83333%;
+}
+/* line 52, ../../sass/views/view__featured_projects__home.scss */
+.pane-featured-projects-home .pane-content {
+  float: left;
+  width: 79.16667%;
+}

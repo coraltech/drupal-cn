@@ -1,6 +1,6 @@
-/* line 146, icons/*.png */
+/* line 154, icons/*.png */
 .icons-sprite, .pane-coral-sharing .sharing-options .private-projects .icon, .pane-coral-sharing .sharing-options .public-projects .icon {
-  background: url('/images/icons-s76be0bee84.png') no-repeat;
+  background: url('/images/icons-s82db911083.png') no-repeat;
 }
 
 /* line 10, ../../sass/panes/pane__coral_sharing_coral_sharing.scss */
@@ -22,7 +22,7 @@
 }
 /* line 24, ../../sass/panes/pane__coral_sharing_coral_sharing.scss */
 .pane-coral-sharing .sharing-options .private-projects .icon {
-  background-position: 0 -846px;
+  background-position: 0 -928px;
   height: 29px;
   width: 39px;
 }
