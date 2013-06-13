@@ -14,10 +14,12 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       try { // Use try to prevent systemic failure
         // gather slideshows
+        //console.log($('.views_slideshow_cycle_main').length); = 2
         if ($('.views_slideshow_cycle_main').length > 0) {
           $slideshows = $('.views_slideshow_cycle_main');
           $slideshows.each(function(i) {
             $container = $(this).parent();
+            //console.log($container);
             new Drupal.mosaic.slideshow($(this), $container);
           });
         }
