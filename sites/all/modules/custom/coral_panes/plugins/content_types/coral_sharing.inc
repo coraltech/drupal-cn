@@ -41,7 +41,7 @@ function coral_sharing_pane_content_type_render($subtype, $conf, $context = NULL
   $output = <<<EOF
   <p>Coral Nexus projects are stored as Git repos so they are portable and easily shared with your team-mates or the public.</p>
   <ul class="sharing-options">
-    <li class="private-projects"><span class="icon"></span><span class="label">Private projects</span> - Can be securly accessed in-site or locally via SSH.</li>
+    <li class="private-projects"><span class="icon"></span><span class="label">Private projects</span> - Can be securely accessed in-site or locally via SSH.</li>
     <li class="public-projects"><span class="icon"></span><span class="label">Public projects</span> - Can be cloned and forked at anytime by anyone. Project owner grants SSH access to project team members as usual.</li>
   <ul>
 EOF;
