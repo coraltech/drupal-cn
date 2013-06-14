@@ -7,7 +7,7 @@
 @import 'global/icons';
 
 .pane-coral-projects-panel-pane-1 {
-  background: lighten($ltblue, 7%);
+  background: lighten($ltblue, 3%);
   margin-bottom: $default_vert_unit;
   padding-bottom: 4px;
   border-bottom: 1px solid darken($ltblue, 7%);
@@ -33,7 +33,7 @@
   }
   
   .view-coral-projects {
-    background: lighten($ltgray, 7%);
+    background: lighten($ltgray, 3%);
     
     .views-field-title {
       line-height: $default_vert_unit;
@@ -68,10 +68,10 @@
     }
     
     .views-row {
-      border-bottom: 1px solid darken($ltgray, 5%);
+      border-bottom: 1px solid lighten($ltgray, 5%);
     }
     .views-row-even {
-      background: lighten($ltblue, 12%);
+      background: $ltblue;
     }
   }
 }

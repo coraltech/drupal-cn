@@ -8,27 +8,28 @@
 @import "compass/css3/box-shadow";
 
 .pane-coral-thinking-help {
-  border-top: 1px solid lighten($mdgray, 15%);
-  border-left: 1px solid lighten($mdgray, 15%);
+  margin-top: 2 * $default_vert_unit;
+  //border-top: 1px solid lighten($mdgray, 15%);
+  //border-left: 1px solid lighten($mdgray, 15%);
   position: relative;
-  padding: .5em;
+  padding: .65em 0 .5em;
   
   .pane-title {
     font-size: 125%;
-    margin: 0 0 0 145px;
+    margin: 0 0 0 150px;
     padding: 0;
   }
   
   img {
     position: absolute;
-    top: 2.15em;
+    top: 1.75em;
     left: 1.65em;
   }
   
   ul {
-    margin: .5em 0 .5em 140px;    
+    margin: .4em 0 .4em 145px;    
   }
     
-  @include box-shadow(rgba(0,0,0,.6) 2px 2px 4px);
+  @include box-shadow(rgba(0,0,0,.3) 2px 2px 4px);
   @include linear-v-gradient(darken($ltgray, 5%), lighten($ltgray, 5%));  
 }

@@ -5,7 +5,7 @@
 
 /* line 9, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1 {
-  background: #e1e7ef;
+  background: #d4dde7;
   margin-bottom: 1.25em;
   padding-bottom: 4px;
   border-bottom: 1px solid #b3c3d5;
@@ -32,7 +32,7 @@
 }
 /* line 35, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1 .view-coral-projects {
-  background: #efefef;
+  background: #e5e5e5;
 }
 /* line 38, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1 .view-coral-projects .views-field-title {
@@ -70,11 +70,11 @@
 }
 /* line 70, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1 .view-coral-projects .views-row {
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid #eaeaea;
 }
 /* line 73, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1 .view-coral-projects .views-row-even {
-  background: #f2f4f8;
+  background: #cad5e2;
 }
 
 /* line 80, ../../sass/views/view__coral_projects.scss */
