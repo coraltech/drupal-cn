@@ -40,7 +40,7 @@ $plugin = array(
 function coral_testing_pane_content_type_render($subtype, $conf, $context = NULL) {
   $output = <<<EOF
   <p>Currently our testing framework is incomplete. When it is ready, it will provide RSpec unit testing and load testing for your modules and snippets!</p>
-  <p>You can help us develop these tools faster by:</p>
+  <p>Help us develop these tools faster by:</p>
 EOF;
 
   $output .= '<ul>';
