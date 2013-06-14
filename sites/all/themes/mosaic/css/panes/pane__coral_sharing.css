@@ -1,0 +1,34 @@
+/* line 178, icons/*.png */
+.icons-sprite, .pane-coral-sharing .sharing-options .private-projects .icon, .pane-coral-sharing .sharing-options .public-projects .icon {
+  background: url('/images/icons-sd6d7646231.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_sharing.scss */
+.pane-coral-sharing .sharing-options li {
+  list-style: none;
+  margin: 0 0 1.25em 40px;
+  position: relative;
+}
+/* line 15, ../../sass/panes/pane__coral_sharing.scss */
+.pane-coral-sharing .sharing-options .icon {
+  display: block;
+  position: absolute;
+  left: -55px;
+  top: 3px;
+}
+/* line 21, ../../sass/panes/pane__coral_sharing.scss */
+.pane-coral-sharing .sharing-options .label {
+  color: #b02e1c;
+}
+/* line 24, ../../sass/panes/pane__coral_sharing.scss */
+.pane-coral-sharing .sharing-options .private-projects .icon {
+  background-position: 0 -1189px;
+  height: 29px;
+  width: 39px;
+}
+/* line 27, ../../sass/panes/pane__coral_sharing.scss */
+.pane-coral-sharing .sharing-options .public-projects .icon {
+  background-position: 0 -532px;
+  height: 25px;
+  width: 42px;
+}

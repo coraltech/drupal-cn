@@ -1,0 +1,12 @@
+/* line 7, ../../sass/panes/pane__coral_about_intro.scss */
+.pane-coral-about-intro h1 {
+  font-size: 185%;
+  line-height: 125%;
+  margin: 0 0 0.625em 0;
+}
+/* line 13, ../../sass/panes/pane__coral_about_intro.scss */
+.pane-coral-about-intro h2 {
+  font-size: 165%;
+  line-height: 1.25em;
+  margin: 0 0 0.625em 0;
+}

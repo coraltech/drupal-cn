@@ -269,55 +269,129 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 107, ../sass/global/_dom.scss */
+/* line 106, ../sass/global/_dom.scss */
+input#edit-delete {
+  margin-left: 2em;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #d33722), color-stop(51%, #b02e1c));
+  background: -webkit-linear-gradient(#d33722 50%, #b02e1c 51%);
+  background: -moz-linear-gradient(#d33722 50%, #b02e1c 51%);
+  background: -o-linear-gradient(#d33722 50%, #b02e1c 51%);
+  background: linear-gradient(#d33722 50%, #b02e1c 51%);
+  -webkit-box-shadow: #e56d5c 0 1px 0 inset;
+  -moz-box-shadow: #e56d5c 0 1px 0 inset;
+  box-shadow: #e56d5c 0 1px 0 inset;
+  border: 1px solid #9a2818;
+  text-shadow: #621a10 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete:hover {
+  background-color: #912617;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b42f1d), color-stop(51%, #912617));
+  background: -webkit-linear-gradient(#b42f1d 50%, #912617 51%);
+  background: -moz-linear-gradient(#b42f1d 50%, #912617 51%);
+  background: -o-linear-gradient(#b42f1d 50%, #912617 51%);
+  background: linear-gradient(#b42f1d 50%, #912617 51%);
+}
+/* line 33, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete:active {
+  -webkit-box-shadow: #8d2516 0 1px 2px inset;
+  -moz-box-shadow: #8d2516 0 1px 2px inset;
+  box-shadow: #8d2516 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete.disabled, input#edit-delete[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #b02e1c;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+input#edit-delete::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+/* line 112, ../sass/global/_dom.scss */
 input.form-text {
   width: 80%;
 }
 
-/* line 20, ../sass/global/_global.scss */
+/* line 21, ../sass/global/_global.scss */
 .pane-header,
 .pane-footer,
 .pane-page-tabs,
 .pane-page-messages,
-.pane-top-menus #mini-panel-top_menus {
+.pane-top-menus #mini-panel-top_menus,
+.mosaic-cont > .container {
   width: 962px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 25, ../sass/global/_global.scss */
+/* line 26, ../sass/global/_global.scss */
 .pane-header {
   margin: 0 auto;
   padding-top: .5em;
 }
 
-/* line 26, ../sass/global/_global.scss */
+/* line 27, ../sass/global/_global.scss */
 .pane-footer {
   margin: 0 auto 1.25em;
 }
 
-/* line 30, ../sass/global/_global.scss */
+/* line 31, ../sass/global/_global.scss */
 #mini-panel-header .inside, #mini-panel-header .panel-separator {
   margin: 0;
 }
 
-/* line 35, ../sass/global/_global.scss */
+/* line 36, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 41, ../sass/global/_global.scss */
+/* line 42, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
 }
 
-/* line 44, ../sass/global/_global.scss */
+/* line 45, ../sass/global/_global.scss */
 .mosaic-cont {
   padding: 1em 0 0;
 }
 
-/* line 49, ../sass/global/_global.scss */
+/* line 50, ../sass/global/_global.scss */
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -326,7 +400,7 @@ header .pane-search-form {
   position: relative;
   width: 275px;
 }
-/* line 57, ../sass/global/_global.scss */
+/* line 58, ../sass/global/_global.scss */
 header .pane-search-form .form-text {
   background: none;
   border: none;
@@ -336,7 +410,7 @@ header .pane-search-form .form-text {
   padding: 5px 8px;
   width: 185px;
 }
-/* line 66, ../sass/global/_global.scss */
+/* line 67, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
   border: 1px solid #2b486b;
   height: 27px;
@@ -345,7 +419,7 @@ header .pane-search-form .form-wrapper {
   top: 11px;
   width: 60px;
 }
-/* line 74, ../sass/global/_global.scss */
+/* line 75, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper .form-submit {
   border: 1px solid #446eac;
   color: white;
@@ -365,12 +439,12 @@ header .pane-search-form .form-wrapper .form-submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 87, ../sass/global/_global.scss */
+/* line 88, ../sass/global/_global.scss */
 .pane-gigya-gigya-login {
   float: right;
   position: relative;
 }
-/* line 91, ../sass/global/_global.scss */
+/* line 92, ../sass/global/_global.scss */
 .pane-gigya-gigya-login .pane-title {
   text-align: center;
   color: #777777;
@@ -379,25 +453,25 @@ header .pane-search-form .form-wrapper .form-submit {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 97, ../sass/global/_global.scss */
+/* line 98, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink {
   margin-top: -21px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 100, ../sass/global/_global.scss */
+/* line 101, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink table td {
   text-align: center;
 }
 
-/* line 109, ../sass/global/_global.scss */
+/* line 110, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
-  margin: 1.25em 0;
+  margin: 0;
 }
-/* line 115, ../sass/global/_global.scss */
+/* line 116, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
@@ -1160,30 +1234,31 @@ footer {
 /* line 120, ../sass/global/_menus.scss */
 #mini-panel-footer {
   font-size: 90%;
+  padding-top: 1.25em;
 }
-/* line 123, ../sass/global/_menus.scss */
+/* line 124, ../sass/global/_menus.scss */
 #mini-panel-footer .pane-title {
   color: #fdaa68;
   font-size: 1em;
   font-weight: bold;
-  margin-bottom: 0.625em;
+  margin: 0 0 0.625em;
 }
-/* line 130, ../sass/global/_menus.scss */
+/* line 131, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu {
   margin: 0;
 }
-/* line 133, ../sass/global/_menus.scss */
+/* line 134, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf {
   font-size: 90%;
   list-style-image: none;
   list-style-type: none;
   margin: 0;
 }
-/* line 139, ../sass/global/_menus.scss */
+/* line 140, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a {
   color: white;
 }
-/* line 143, ../sass/global/_menus.scss */
+/* line 144, ../sass/global/_menus.scss */
 #mini-panel-footer ul.menu li.leaf a:hover, #mini-panel-footer ul.menu li.leaf a:active, #mini-panel-footer ul.menu li.leaf a.active {
   color: #fff6b6;
 }

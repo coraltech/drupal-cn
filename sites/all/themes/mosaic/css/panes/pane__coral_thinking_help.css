@@ -1,0 +1,34 @@
+/* line 10, ../../sass/panes/pane__coral_thinking_help.scss */
+.pane-coral-thinking-help {
+  border-top: 1px solid #9d9d9d;
+  border-left: 1px solid #9d9d9d;
+  position: relative;
+  padding: .5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+  background: #d0d0d0;
+  background: -moz-linear-gradient(top, #d0d0d0 0%, #eaeaea 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d0d0d0), color-stop(100%, #eaeaea));
+  background: -webkit-linear-gradient(top, #d0d0d0 0%, #eaeaea 100%);
+  background: -o-linear-gradient(top, #d0d0d0 0%, #eaeaea 100%);
+  background: -ms-linear-gradient(top, #d0d0d0 0%, #eaeaea 100%);
+  background: linear-gradient(to bottom, #d0d0d0 0%, #eaeaea 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 16, ../../sass/panes/pane__coral_thinking_help.scss */
+.pane-coral-thinking-help .pane-title {
+  font-size: 125%;
+  margin: 0 0 0 145px;
+  padding: 0;
+}
+/* line 22, ../../sass/panes/pane__coral_thinking_help.scss */
+.pane-coral-thinking-help img {
+  position: absolute;
+  top: 2.15em;
+  left: 1.65em;
+}
+/* line 28, ../../sass/panes/pane__coral_thinking_help.scss */
+.pane-coral-thinking-help ul {
+  margin: .5em 0 .5em 140px;
+}

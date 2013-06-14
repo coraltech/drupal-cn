@@ -161,7 +161,80 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 107, ../../sass/global/_dom.scss */
+/* line 106, ../../sass/global/_dom.scss */
+input#edit-delete {
+  margin-left: 2em;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #d33722), color-stop(51%, #b02e1c));
+  background: -webkit-linear-gradient(#d33722 50%, #b02e1c 51%);
+  background: -moz-linear-gradient(#d33722 50%, #b02e1c 51%);
+  background: -o-linear-gradient(#d33722 50%, #b02e1c 51%);
+  background: linear-gradient(#d33722 50%, #b02e1c 51%);
+  -webkit-box-shadow: #e56d5c 0 1px 0 inset;
+  -moz-box-shadow: #e56d5c 0 1px 0 inset;
+  box-shadow: #e56d5c 0 1px 0 inset;
+  border: 1px solid #9a2818;
+  text-shadow: #621a10 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete:hover {
+  background-color: #912617;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b42f1d), color-stop(51%, #912617));
+  background: -webkit-linear-gradient(#b42f1d 50%, #912617 51%);
+  background: -moz-linear-gradient(#b42f1d 50%, #912617 51%);
+  background: -o-linear-gradient(#b42f1d 50%, #912617 51%);
+  background: linear-gradient(#b42f1d 50%, #912617 51%);
+}
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete:active {
+  -webkit-box-shadow: #8d2516 0 1px 2px inset;
+  -moz-box-shadow: #8d2516 0 1px 2px inset;
+  box-shadow: #8d2516 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+input#edit-delete.disabled, input#edit-delete[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #b02e1c;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+input#edit-delete::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+/* line 112, ../../sass/global/_dom.scss */
 input.form-text {
   width: 80%;
 }
