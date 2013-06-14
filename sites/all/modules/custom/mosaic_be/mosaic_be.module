@@ -4,27 +4,17 @@
 coral_include(array('includes'), 'inc', array('module' => 'mosaic_be'));
 
 
-/**
- * Launch file loaders by entity
- */
-function mosaic_be_entity_view_alter(&$build, $type) {
-    
-  switch($type) {
-      
-    // We only support nodes at this point
-    case 'node':
-      $entity    = $build['#node'];
-      $view_mode = $build['#view_mode'];
-      
-      // Load css and js files as needed by the theme
-      //  note files are loaded w theme level settings._mosiac_be_node_load_by_nid($entity);              // Load by node id
-      _mosiac_be_node_load_by_nid($entity);              // Load by node id
-      _mosiac_be_node_load_by_type($entity);             // Load by node type
-      _mosaic_be_node_load_by_mode($entity, $view_mode); // Load by view modes
-      _mosaic_be_node_load_by_fe_attach($entity);        // Load by fe_attach field (added on node create form)
-      break;
-    
-    default:
-      break;
+function mosaic_panelizer_pre_render_alter($panelizer, $display, $entity) {
+
+  $view_mode = $panelizer->view_mode;
+  
+  // Nodes
+  if (!empty($entity->nid) && is_numeric($entity->nid)) {
+    // Load css and js files as needed by the theme
+    //  note files are loaded w theme level settings._mosiac_be_node_load_by_nid($entity);              // Load by node id
+    _mosiac_be_node_load_by_nid($entity);              // Load by node id
+    _mosiac_be_node_load_by_type($entity);             // Load by node type
+    _mosaic_be_node_load_by_mode($entity, $view_mode); // Load by view modes
+    _mosaic_be_node_load_by_fe_attach($entity);        // Load by fe_attach field (added on node create form)
   }
 }
