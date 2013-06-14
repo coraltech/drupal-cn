@@ -9,7 +9,7 @@
     </div>
     <?php endif; ?>
   
-  
+    <div class='row'>
     <?php if (!empty($content['main'])): ?>
     <div class="container main-content grid-11">
       <div class="limiter">
@@ -25,6 +25,7 @@
       </div>
     </div>
     <?php endif; ?>
+    </div>
   
     <?php if (!empty($content['follower'])): ?>
     <div class="container grid-24-last follower clear">

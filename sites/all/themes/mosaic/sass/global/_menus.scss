@@ -119,12 +119,13 @@ footer {
 
 #mini-panel-footer {
   font-size: 90%;
-    
+  padding-top: $default_vert_unit;
+  
   .pane-title {
     color: $ltorange;
     font-size: 1em;
     font-weight: bold;
-    margin-bottom: ($default_vert_unit / 2);
+    margin: 0 0 ($default_vert_unit / 2);
   }
   
   ul.menu {

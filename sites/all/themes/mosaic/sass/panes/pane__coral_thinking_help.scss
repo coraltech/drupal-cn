@@ -1,0 +1,34 @@
+
+// Scss file for the coral_thinking_help content pane
+
+@import 'global/fonts';
+@import 'global/colors';
+@import "global/gradients";
+
+@import "compass/css3/box-shadow";
+
+.pane-coral-thinking-help {
+  border-top: 1px solid lighten($mdgray, 15%);
+  border-left: 1px solid lighten($mdgray, 15%);
+  position: relative;
+  padding: .5em;
+  
+  .pane-title {
+    font-size: 125%;
+    margin: 0 0 0 145px;
+    padding: 0;
+  }
+  
+  img {
+    position: absolute;
+    top: 2.15em;
+    left: 1.65em;
+  }
+  
+  ul {
+    margin: .5em 0 .5em 140px;    
+  }
+    
+  @include box-shadow(rgba(0,0,0,.6) 2px 2px 4px);
+  @include linear-v-gradient(darken($ltgray, 5%), lighten($ltgray, 5%));  
+}

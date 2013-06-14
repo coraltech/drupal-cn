@@ -1,0 +1,105 @@
+
+// Scss styles for the coral_projects view (see about page)
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/icons';
+
+.pane-coral-projects-panel-pane-1 {
+  background: lighten($ltblue, 7%);
+  margin-bottom: $default_vert_unit;
+  padding-bottom: 4px;
+  border-bottom: 1px solid darken($ltblue, 7%);
+  position: relative;
+  
+  .icon {
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+  }
+  
+  .pane-title {
+    font-size: 115%;
+    padding: .75em 0 .75em 3em;
+    margin: 0;
+  }
+  
+  a {
+    position: relative;
+    top: -2px;
+    font-size: 85%;
+  }
+  
+  .view-coral-projects {
+    background: lighten($ltgray, 7%);
+    
+    .views-field-title {
+      line-height: $default_vert_unit;
+      margin-top: $default_vert_unit / 2.1;
+      
+      @include col(7.5);
+      @include prepend(.5);
+      
+      a {
+        color: $mdorange;
+        &:hover {
+          color: darken($mdorange, 10%);
+        }
+      }
+    }
+    .proj-links {
+      line-height: $default_vert_unit;
+      margin-bottom: $default_vert_unit / 2;
+      
+      @include col(7.5);
+      @include prepend(.5);
+      
+    }
+    
+    .views-field-body {
+      p {
+        font-size: 85%;
+        margin: ($default_vert_unit / 2) ($default_vert_unit / 2) ($default_vert_unit / 2) 0; 
+      }
+          
+      @include col(16, true, right);
+    }
+    
+    .views-row {
+      border-bottom: 1px solid darken($ltgray, 5%);
+    }
+    .views-row-even {
+      background: lighten($ltblue, 12%);
+    }
+  }
+}
+
+.pane-coral-projects-panel-pane-1.proj-shell {
+  .icon {
+    top: 10px;
+    @include icons-sprite('command-line');
+  }
+}
+.pane-coral-projects-panel-pane-1.proj-drupal {
+  .icon {
+    @include icons-sprite('druplicon');
+  }
+}
+.pane-coral-projects-panel-pane-1.proj-vagrant {
+  .icon {
+    @include icons-sprite('vagrant');
+  }
+}
+.pane-coral-projects-panel-pane-1.proj-puppet {
+  .icon {
+    @include icons-sprite('puppet');
+  }
+}
+.pane-coral-projects-panel-pane-1.proj-ruby {
+  .icon {
+    top: 10px;
+    @include icons-sprite('ruby-apps');
+  }
+}

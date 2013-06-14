@@ -10,7 +10,7 @@
 function mosaic_add_textfield_defaults($form_id, &$form) {
   
   $matrix = variable_get('mosaic_texfield_defaults_matrix', array());  
-  //dpm($matrix);
+//dpm($matrix);
   
   // Process the defaults and add to the matrix if exists
   $defaults = 'mosaic__'.$form_id.'__defaults';
@@ -63,6 +63,7 @@ function mosaic_get_form_options($form) {
 function mosaic_textfield_defaults_validate($form, &$form_state) {
   // Current state of the textfield_defaults  
   $matrix = variable_get('mosaic_texfield_defaults_matrix', array());
+  if (empty($matrix[$form['#form_id']])) return; // do we have anything to process?
   
   // we dont need to look at these values
   $ignore = array(
@@ -156,10 +157,10 @@ function mosaic__search_form__defaults($form, &$matrix) {
 
 
 // Node question creation form (currently not used)
-function mosaic__node_question_form__defaults($form, &$matrix) {
+function mosaic__question_node_form__defaults($form, &$matrix) {
   $matrix['question_node_form'] = array(
-    '#question-node-form .form-item-title .form-text' => 'Your question',
-    '#question-node-form .form-item-field-tags-und .form-text' => 'Question tags'
+    '#question-node-form .form-item-title .form-text' => 'State your question',
+    '#question-node-form .form-item-field-tags-und .form-text' => 'E.g. Tag, Tag two, Tres...'
   );
 }
 

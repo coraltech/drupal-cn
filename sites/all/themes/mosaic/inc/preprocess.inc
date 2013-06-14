@@ -66,6 +66,7 @@ function mosaic_preprocess_views_view(&$vars) {
       'view__' . $vars['view']->name
     );
     foreach($files as $i => $file) {
+//dpm($file);
       if (function_exists('_preprocess_'.$file)) $func($file);
       if (file_exists($path.'/css/views/'.$file.'.css')) drupal_add_css($path.'/css/views/'.$file.'.css', array('group' => CSS_THEME));  
       if (file_exists($path.'/js/views/'.$file.'.js'))   drupal_add_js($path.'/js/views/'.$file.'.js', array('group' => JS_THEME));

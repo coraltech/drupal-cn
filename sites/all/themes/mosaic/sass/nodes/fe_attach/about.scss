@@ -1,0 +1,10 @@
+
+// Scss file customizi1ng (tweaking) the about page
+
+@import 'global/grid_mix';
+
+// Re-adjust the grid ;-)
+.layout-landing-1 .main-content      { @include col(10); }
+.layout-landing-1 .secondary-content { @include col(14); }
+
+

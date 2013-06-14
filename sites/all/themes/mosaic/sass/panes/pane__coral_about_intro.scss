@@ -1,0 +1,18 @@
+
+// Customizations of the about intro
+
+@import 'global/fonts';
+
+.pane-coral-about-intro {
+  h1 {
+    font-size: 185%;
+    line-height: 125%;
+    margin: 0 0 ($default_vert_unit / 2) 0;
+  }
+  
+  h2 {
+    font-size: 165%;
+    line-height: 1.25em;
+    margin: 0 0 ($default_vert_unit / 2) 0;
+  }
+}

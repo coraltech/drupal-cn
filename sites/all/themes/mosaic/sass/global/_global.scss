@@ -17,7 +17,8 @@
 .pane-footer,
 .pane-page-tabs,
 .pane-page-messages,
-.pane-top-menus #mini-panel-top_menus {
+.pane-top-menus #mini-panel-top_menus,
+.mosaic-cont > .container {
   @include site_width;
 }
 
@@ -110,7 +111,7 @@ header .pane-search-form {
   color: $white;
   font-size: 90%;
   text-align: right;
-  margin: $default_vert_unit 0;
+  margin: 0;
   
   .fde { // footer data element
     margin: 0 0 ($default_vert_unit / 2);

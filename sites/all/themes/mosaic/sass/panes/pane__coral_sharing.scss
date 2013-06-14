@@ -1,0 +1,31 @@
+
+// Build options custom pane styles
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+
+.pane-coral-sharing {
+  .sharing-options {
+    li {
+      list-style: none;
+      margin: 0 0 $default_vert_unit 40px;
+      position: relative;
+    }
+    .icon {
+      display: block;
+      position: absolute;
+      left: -55px;
+      top: 3px;
+    }
+    .label {
+      color: $mdred;
+    }
+    .private-projects .icon {
+      @include icons-sprite('private-projects');
+    }
+    .public-projects .icon {
+      @include icons-sprite('public-projects');
+    }
+  }
+}

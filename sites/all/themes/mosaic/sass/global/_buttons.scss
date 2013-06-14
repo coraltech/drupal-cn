@@ -16,11 +16,11 @@
 }
 
 @mixin btn-glass-ltn($radius: 0px, $font-size: 16px, $color: $mdblue, $color2: lighten($mdblue, 10%), $text-color: $white) {
-  @include sassy-button("glass", $radius, $font-size, $mdblue, $color2, $text-color);
+  @include sassy-button("glass", $radius, $font-size, $color, $color2, $text-color);
 }
 
 @mixin btn-glass-dkn($radius: 0px, $font-size: 16px, $color: $mdblue, $color2: darken($mdblue, 3%), $text-color: $white) {
-  @include sassy-button("glass", $radius, $font-size, $mdblue, $color2, $text-color);
+  @include sassy-button("glass", $radius, $font-size, $color, $color2, $text-color);
 }
 
 @mixin btn-structure($padding: 2px 5px, $font-size: 16px, $radius: 0px) {

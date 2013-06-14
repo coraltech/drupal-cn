@@ -1,0 +1,14 @@
+
+// Scss file for coral_people custom content pane
+
+@import 'global/fonts';
+
+.pane-coral-people {
+  margin-top: 2.5 * $default_vert_unit;
+  
+  p {
+    float: right;
+    width: 12em;
+  }
+}
+
