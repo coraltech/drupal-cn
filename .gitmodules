@@ -260,3 +260,6 @@ i
 [submodule "sites/all/modules/contrib/pathauto"]
 	path = sites/all/modules/contrib/pathauto
 	url = http://git.drupal.org/project/pathauto.git
+[submodule "sites/all/modules/contrib/redirect"]
+	path = sites/all/modules/contrib/redirect
+	url = http://git.drupal.org/project/redirect.git
