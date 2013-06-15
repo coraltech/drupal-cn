@@ -30,7 +30,7 @@ function coral_menus_main_links_loader() {
     ),  
     'community' => array(
       'link_title' => t('Community'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/32',
       'weight'     => 2,
     ),
     'find' => array(

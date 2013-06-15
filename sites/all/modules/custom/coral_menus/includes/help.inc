@@ -29,13 +29,13 @@ function coral_menus_help_links_loader() {
     ),
     'contact_us' => array(
       'link_title' => t('Contact us'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'contact',
       'options' => array('attributes' => array('class'=>array('contact-us'))),
       'weight'     => 2,
     ),
     'documentation' => array(
       'link_title' => t('Documentation'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/32',
       'options'    => array('attributes' => array('class'=>array('documentation'))),
       'weight'     => 3,
     ),
