@@ -1,0 +1,31 @@
+
+// Book explorer navigation styles
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.pane-book-explorer-book-explorer {
+  margin-bottom: $default_vert_unit;
+  
+  .pane-title {
+    color: $white;
+    background: $mdblue;
+    padding: ($default_vert_unit / 2);
+    margin: 0 0 3px;
+  }
+  
+  ul.menu {
+    padding: 10px;
+    background: desaturate(lighten($ltblue, 7%), 20%);
+    
+    li.leaf,
+    li.expanded {
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+    
+    ul.menu {
+      padding: 0;
+    }
+  }
+}  

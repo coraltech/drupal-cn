@@ -1,0 +1,27 @@
+
+// Scss file for the coral_puppet_overview content pane
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+.pane-coral-puppet-overview {
+  margin-right: 0;
+  margin-left: 2%; 
+  
+  .pane-title {
+    color: $white;
+    background: lighten($mdgray, 10%);
+    padding: ($default_vert_unit / 2);
+    margin-top: 0;
+  }
+  
+  p {
+    margin-left: .25em;
+  }
+  
+  ul {
+    margin-left: $default_vert_unit / 2;
+  }  
+}
+

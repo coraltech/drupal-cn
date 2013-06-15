@@ -1,0 +1,13 @@
+
+// Scss file for the community documentation welcome message (at the top)
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.pane-coral-documentation-welcome {
+  background: lighten($ltyellow, 5%);
+  color: darken($mdgray, 7%);
+  margin-bottom: $default_vert_unit;
+  padding: $default_vert_unit / 2;
+  text-align: center;
+}

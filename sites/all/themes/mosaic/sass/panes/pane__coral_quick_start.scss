@@ -1,0 +1,52 @@
+
+// Scss file for the pane_coral_quickstart custom content pane.
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+
+.pane-coral-quick-start {
+  margin-bottom: $default_vert_unit;
+  position: relative;
+  
+  .pane-title {
+    margin: ($default_vert_unit / 2) 2em ($default_vert_unit / 2) 65px;
+    font-size: 130%;
+  }
+  
+  .icon {
+    display: block;
+    position: absolute;
+    top: ($default_vert_unit / 2);
+    left: 0;
+    
+    @include icons-sprite('getting-started');
+  }
+  
+  .small {
+    padding: 0 1em;
+  }
+  
+  .tout {
+    border-top: 5px solid $mdgray;
+    background: $ltgray;
+    
+    p { 
+      margin: 0;
+      padding: $default_vert_unit 1em;
+      text-align: center; 
+    }
+  }
+  
+  .btn {
+    // these go on top here so we can do a little tweaking below
+    @include btn-glass(0, 16px, $mdgreen, lighten($mdgreen, 10%));
+    @include btn-structure;
+    
+    margin: 0 auto $default_vert_unit;
+    display: block;
+    width: 6em;
+    text-align: center;
+  }
+}

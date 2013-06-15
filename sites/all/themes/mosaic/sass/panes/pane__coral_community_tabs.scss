@@ -1,0 +1,97 @@
+
+// Scss file for the community tabs
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+@import 'global/grid_mix';
+@import 'global/icons';
+
+@import "compass/css3/box-shadow";
+
+$tab_height_variance: .5em; // variance between active and inactive
+
+// tabs container
+.pane-coral-community-tabs {
+  margin-bottom: $default_vert_unit;
+  
+  ul {
+    font-size: 150%;
+    border-bottom: 1px solid $mdgray;
+    margin: 0;
+    padding: 0 1em;
+    height: (2 * $default_vert_unit) + $tab_height_variance;
+  
+    li {
+      list-style: none;
+      list-style-image: none;
+      padding: 0;
+      margin: 0;
+      width: 49.9%;
+      float: left;
+      
+      a {
+        height: (2 * $default_vert_unit);
+        display: block;
+        margin: $tab_height_variance 5px 0;
+        background: $ltgray;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        border-color: $mdgray;
+        position: relative;
+        padding-left: 80px;
+        top: -1px;
+        line-height: (2 * $default_vert_unit);
+        color: $mdgray;
+
+        @include box-shadow(rgba(0,0,0,.15) 1px -2px 4px);
+        @include linear-v-gradient($ltgray, lighten($ltgray, 7%));
+        
+        &:hover {
+          margin-top: ($tab_height_variance / 2);
+          height: (2 * $default_vert_unit) + ($tab_height_variance / 2);
+          line-height: (2 * $default_vert_unit) + ($tab_height_variance / 2);
+          .icon {
+            top: .2em !important;
+          }
+          
+          @include linear-v-gradient(lighten($ltgreen, 8%), lighten($ltgreen, 20%));
+        }
+        &.active {
+          height: (2 * $default_vert_unit) + $tab_height_variance;
+          margin-top: 0;
+          border-width: 1px 1px 0 1px;
+          top: 0;
+          line-height: (2 * $default_vert_unit) + $tab_height_variance;
+          
+          .icon { // shift icon loc when the tab size increases
+            top: .5em !important;
+          }
+          
+          @include linear-v-gradient(lighten($ltgray, 5%), $white);
+        }
+        .icon {
+          display: block;
+          position: absolute;
+          top: .2em;
+          left: 15px;
+        }
+        // community
+        &.lcom {
+          .icon {
+            @include icons-sprite('coral-community');
+          }
+        }
+        
+        // qa
+        &.lqa {
+          padding-left: 115px;
+          .icon {
+            top: .1em;
+            @include icons-sprite('coral-qa');
+          }
+        }
+      }
+    }
+  }  
+}

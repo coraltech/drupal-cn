@@ -1,0 +1,45 @@
+
+// Scss file for the pane_coral_quickstart custom content pane.
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+
+.pane-coral-account-management {
+  margin-left: 2%;
+  margin-right: 0;
+  margin-bottom: $default_vert_unit;
+  position: relative;
+  
+  .pane-title {
+    margin: ($default_vert_unit / 2) 0 ($default_vert_unit / 2) 55px;
+    font-size: 130%;
+  }
+  
+  .icon {
+    display: block;
+    position: absolute;
+    top: ($default_vert_unit / 2);
+    left: 0;
+    
+    @include icons-sprite('coral-key');
+  }
+  
+  .small {
+    padding: 0 1em;
+  }
+  
+  .set {
+    margin-left: .5em;
+  }
+  
+  h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+  }
+  ul {
+    margin: .35em 0 $default_vert_unit .125em;
+  }
+}
