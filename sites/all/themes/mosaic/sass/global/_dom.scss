@@ -62,11 +62,13 @@ video {
 a,
 li a,
 li.leaf a { 
-  color: $mdblue; 
+  color: $mdblue;
+  font-size: 100%;
   font-weight: bold;
+  line-height: $default_vert_unit;
   text-decoration: none;
   outline: none;
-  
+    
   &:active, &.active { color: lighten($dkblue, 5%); }
   &:hover { color: $dkblue; }
 }
@@ -77,22 +79,30 @@ strong, b {
 }
 
 p {
-  margin: ($default_vert_unit / 2) 0 $default_vert_unit 0;
+  margin: $default_vert_unit 0;
 }
 
 em,.em {
   font-style: italic;
 }
 
+small {
+  font-size: 80%;
+  line-height: 1.25em;
+}
+
 
 // --- Lists
-ul {
+ul,
+.item-list ul {
   margin: $default_vert_unit .5em;
   
-  li {
+  li,
+  li.leaf {
     list-style: disc;
     list-style-image: url('/sites/all/themes/mosaic/assets/images/li-red.png');
-    margin: 0 0 ($default_vert_unit / 2) 1em;  
+    margin: 0 0 0 1em;
+    padding-top: 0;  
   }
   
 }
