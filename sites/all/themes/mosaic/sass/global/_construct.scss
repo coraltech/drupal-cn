@@ -27,3 +27,9 @@
   @include site_width;
 }
 
+// Text
+.sml,
+.small {
+  font-size: 80%;
+  line-height: 1.25em;
+}
