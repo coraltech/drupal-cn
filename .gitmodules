@@ -254,3 +254,6 @@ i
 [submodule "sites/all/modules/contrib/talk"]
 	path = sites/all/modules/contrib/talk
 	url = http://git.drupal.org/project/talk.git
+[submodule "sites/all/modules/contrib/freelinking"]
+	path = sites/all/modules/contrib/freelinking
+	url = http://git.drupal.org/project/freelinking.git
