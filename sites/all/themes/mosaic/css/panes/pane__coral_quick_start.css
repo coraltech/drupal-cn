@@ -1,0 +1,115 @@
+/* line 202, icons/*.png */
+.icons-sprite, .pane-coral-quick-start .icon {
+  background: url('/images/icons-s748c761de5.png') no-repeat;
+}
+
+/* line 9, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start {
+  margin-bottom: 1.25em;
+  position: relative;
+}
+/* line 13, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .pane-title {
+  margin: 0.625em 2em 0.625em 65px;
+  font-size: 130%;
+}
+/* line 18, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .icon {
+  display: block;
+  position: absolute;
+  top: 0.625em;
+  left: 0;
+  background-position: 0 -448px;
+  height: 48px;
+  width: 48px;
+}
+/* line 27, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .small {
+  padding: 0 1em;
+}
+/* line 31, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .tout {
+  border-top: 5px solid #777777;
+  background: #dddddd;
+}
+/* line 35, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .tout p {
+  margin: 0;
+  padding: 1.25em 1em;
+  text-align: center;
+}
+/* line 42, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .btn {
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF36B048', endColorstr='#FF1E6228');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #48c75b), color-stop(51%, #36b048));
+  background: -webkit-linear-gradient(#48c75b 50%, #36b048 51%);
+  background: -moz-linear-gradient(#48c75b 50%, #36b048 51%);
+  background: -o-linear-gradient(#48c75b 50%, #36b048 51%);
+  background: linear-gradient(#48c75b 50%, #36b048 51%);
+  -webkit-box-shadow: #82d98f 0 1px 0 inset;
+  -moz-box-shadow: #82d98f 0 1px 0 inset;
+  box-shadow: #82d98f 0 1px 0 inset;
+  border: 1px solid #3cc350;
+  text-shadow: #226e2d 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  margin: 0 auto 1.25em;
+  display: block;
+  width: 6em;
+  text-align: center;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-quick-start .btn:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-quick-start .btn:hover {
+  background-color: #3abc4d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #37b44a), color-stop(51%, #3abc4d));
+  background: -webkit-linear-gradient(#37b44a 50%, #3abc4d 51%);
+  background: -moz-linear-gradient(#37b44a 50%, #3abc4d 51%);
+  background: -o-linear-gradient(#37b44a 50%, #3abc4d 51%);
+  background: linear-gradient(#37b44a 50%, #3abc4d 51%);
+}
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-quick-start .btn:active {
+  -webkit-box-shadow: #38b84b 0 1px 2px inset;
+  -moz-box-shadow: #38b84b 0 1px 2px inset;
+  box-shadow: #38b84b 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-quick-start .btn.disabled, .pane-coral-quick-start .btn[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #50c962;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.pane-coral-quick-start .btn::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}

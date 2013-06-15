@@ -1,6 +1,6 @@
-/* line 178, icons/*.png */
+/* line 202, icons/*.png */
 .icons-sprite, .intro-slide-2 .social-icon {
-  background: url('/images/icons-sd6d7646231.png') no-repeat;
+  background: url('/images/icons-s748c761de5.png') no-repeat;
 }
 
 /* line 11, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
@@ -40,7 +40,7 @@
   position: absolute;
   top: 2.5em;
   left: 10px;
-  background-position: 0 -106px;
+  background-position: 0 -208px;
   height: 75px;
   width: 65px;
 }
@@ -60,6 +60,10 @@
   margin-top: 1em;
 }
 /* line 52, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
+.intro-slide-2 li {
+  margin: 0 0 0.3125em 1em;
+}
+/* line 53, ../../../sass/nodes/fe_attach/intro_slideshow_slide_2.scss */
 .intro-slide-2 p {
   margin-left: 85px;
   margin-right: 1em;

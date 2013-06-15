@@ -1,0 +1,20 @@
+/* line 8, ../../sass/panes/pane__coral_puppet_overview.scss */
+.pane-coral-puppet-overview {
+  margin-right: 0;
+  margin-left: 2%;
+}
+/* line 12, ../../sass/panes/pane__coral_puppet_overview.scss */
+.pane-coral-puppet-overview .pane-title {
+  color: white;
+  background: #919191;
+  padding: 0.625em;
+  margin-top: 0;
+}
+/* line 19, ../../sass/panes/pane__coral_puppet_overview.scss */
+.pane-coral-puppet-overview p {
+  margin-left: .25em;
+}
+/* line 23, ../../sass/panes/pane__coral_puppet_overview.scss */
+.pane-coral-puppet-overview ul {
+  margin-left: 0.625em;
+}

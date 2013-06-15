@@ -6,5 +6,6 @@
 /* line 10, ../../sass/panes/pane__coral_people.scss */
 .pane-coral-people p {
   float: right;
+  margin-top: 0.625em;
   width: 11em;
 }

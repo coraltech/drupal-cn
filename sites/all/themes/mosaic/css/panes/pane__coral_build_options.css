@@ -1,6 +1,6 @@
-/* line 178, icons/*.png */
+/* line 202, icons/*.png */
 .icons-sprite, .pane-coral-build-options .build-options .command-line .icon, .pane-coral-build-options .build-options .web-portal .icon, .pane-coral-build-options .build-options .mobile-apps .icon, .pane-coral-build-options .build-options .ruby-apps .icon {
-  background: url('/images/icons-sd6d7646231.png') no-repeat;
+  background: url('/images/icons-s748c761de5.png') no-repeat;
 }
 
 /* line 10, ../../sass/panes/pane__coral_build_options.scss */
@@ -22,25 +22,36 @@
 }
 /* line 24, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .command-line .icon {
-  background-position: 0 -1268px;
+  background-position: 0 -1572px;
   height: 28px;
   width: 33px;
 }
 /* line 27, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .web-portal .icon {
-  background-position: 0 -1026px;
+  background-position: 0 -1228px;
   height: 31px;
   width: 31px;
 }
 /* line 30, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .mobile-apps .icon {
-  background-position: 0 -607px;
+  background-position: 0 -709px;
   height: 39px;
   width: 34px;
 }
 /* line 33, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .ruby-apps .icon {
-  background-position: 0 -948px;
+  background-position: 0 -1150px;
   height: 28px;
   width: 29px;
+}
+/* line 40, ../../sass/panes/pane__coral_build_options.scss */
+.pane-coral-build-options .format-usage .pane-title {
+  color: white;
+  background: #919191;
+  padding: 0.625em;
+  margin-top: 0;
+}
+/* line 46, ../../sass/panes/pane__coral_build_options.scss */
+.pane-coral-build-options .format-usage li {
+  margin-left: 45px;
 }

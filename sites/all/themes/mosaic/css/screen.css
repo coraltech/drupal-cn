@@ -106,6 +106,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-right: auto;
 }
 
+/* line 32, ../sass/global/_construct.scss */
+.sml,
+.small {
+  font-size: 80%;
+  line-height: 1.25em;
+}
+
 /* line 33, ../sass/global/_dom.scss */
 body.html {
   font-size: 16px;
@@ -152,11 +159,13 @@ a,
 li a,
 li.leaf a {
   color: #446eac;
+  font-size: 100%;
   font-weight: bold;
+  line-height: 1.25em;
   text-decoration: none;
   outline: none;
 }
-/* line 70, ../sass/global/_dom.scss */
+/* line 72, ../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -164,40 +173,51 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 71, ../sass/global/_dom.scss */
+/* line 73, ../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 75, ../sass/global/_dom.scss */
+/* line 77, ../sass/global/_dom.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 79, ../sass/global/_dom.scss */
+/* line 81, ../sass/global/_dom.scss */
 p {
-  margin: 0.625em 0 1.25em 0;
+  margin: 1.25em 0;
 }
 
-/* line 83, ../sass/global/_dom.scss */
+/* line 85, ../sass/global/_dom.scss */
 em, .em {
   font-style: italic;
 }
 
 /* line 89, ../sass/global/_dom.scss */
-ul {
-  margin: 1.25em 0.5em;
-}
-/* line 92, ../sass/global/_dom.scss */
-ul li {
-  list-style: disc;
-  list-style-image: url("/sites/all/themes/mosaic/assets/images/li-red.png");
-  margin: 0 0 0.625em 1em;
+small {
+  font-size: 80%;
+  line-height: 1.25em;
 }
 
-/* line 102, ../sass/global/_dom.scss */
+/* line 97, ../sass/global/_dom.scss */
+ul,
+.item-list ul {
+  margin: 1.25em 0.5em;
+}
+/* line 101, ../sass/global/_dom.scss */
+ul li,
+ul li.leaf,
+.item-list ul li,
+.item-list ul li.leaf {
+  list-style: disc;
+  list-style-image: url("/sites/all/themes/mosaic/assets/images/li-red.png");
+  margin: 0 0 0 1em;
+  padding-top: 0;
+}
+
+/* line 112, ../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -269,7 +289,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 106, ../sass/global/_dom.scss */
+/* line 116, ../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -342,7 +362,7 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 112, ../sass/global/_dom.scss */
+/* line 122, ../sass/global/_dom.scss */
 input.form-text {
   width: 80%;
 }
@@ -453,25 +473,29 @@ header .pane-search-form .form-wrapper .form-submit {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 98, ../sass/global/_global.scss */
-.pane-gigya-gigya-login #divGigyaLogin_bottomLink {
+/* line 100, ../sass/global/_global.scss */
+.pane-gigya-gigya-login #divGigyaLogin_bottomLink,
+.pane-gigya-gigya-login #divGigyaLogin-1_bottomLink,
+.pane-gigya-gigya-login #divGigyaLogin-2_bottomLink {
   margin-top: -21px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 101, ../sass/global/_global.scss */
-.pane-gigya-gigya-login #divGigyaLogin_bottomLink table td {
+/* line 103, ../sass/global/_global.scss */
+.pane-gigya-gigya-login #divGigyaLogin_bottomLink table td,
+.pane-gigya-gigya-login #divGigyaLogin-1_bottomLink table td,
+.pane-gigya-gigya-login #divGigyaLogin-2_bottomLink table td {
   text-align: center;
 }
 
-/* line 110, ../sass/global/_global.scss */
+/* line 112, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 116, ../sass/global/_global.scss */
+/* line 118, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }

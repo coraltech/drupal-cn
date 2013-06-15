@@ -1,0 +1,45 @@
+/* line 202, icons/*.png */
+.icons-sprite, .pane-coral-account-management .icon {
+  background: url('/images/icons-s748c761de5.png') no-repeat;
+}
+
+/* line 9, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management {
+  margin-left: 2%;
+  margin-right: 0;
+  margin-bottom: 1.25em;
+  position: relative;
+}
+/* line 15, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management .pane-title {
+  margin: 0.625em 0 0.625em 55px;
+  font-size: 130%;
+}
+/* line 20, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management .icon {
+  display: block;
+  position: absolute;
+  top: 0.625em;
+  left: 0;
+  background-position: 0 -1470px;
+  height: 52px;
+  width: 35px;
+}
+/* line 29, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management .small {
+  padding: 0 1em;
+}
+/* line 33, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management .set {
+  margin-left: .5em;
+}
+/* line 37, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+/* line 42, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management ul {
+  margin: 0.35em 0 1.25em 0.125em;
+}

@@ -1,0 +1,26 @@
+/* line 7, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+.pane-book-explorer-book-explorer {
+  margin-bottom: 1.25em;
+}
+/* line 10, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+.pane-book-explorer-book-explorer .pane-title {
+  color: white;
+  background: #446eac;
+  padding: 0.625em;
+  margin: 0 0 3px;
+}
+/* line 17, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+.pane-book-explorer-book-explorer ul.menu {
+  padding: 10px;
+  background: #e6e8ea;
+}
+/* line 22, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+.pane-book-explorer-book-explorer ul.menu li.leaf,
+.pane-book-explorer-book-explorer ul.menu li.expanded {
+  padding-top: 0;
+  margin-bottom: 0;
+}
+/* line 27, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+.pane-book-explorer-book-explorer ul.menu ul.menu {
+  padding: 0;
+}
