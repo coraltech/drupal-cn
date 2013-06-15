@@ -1,0 +1,21 @@
+
+// Scss file customizi1ng (tweaking) the documentation page
+
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+// Re-adjust the grid ;-)
+.layout-landing-1 .main-content      { @include col(8); }
+.layout-landing-1 .secondary-content { 
+  .limiter.prepend-1 {
+    margin-left: $default_vert_unit / 2;
+  }
+  
+  @include col(16, true); 
+}
+
+.cont-sep {
+  margin-top: $default_vert_unit / 2;
+  width: 100%;
+  height: 20px;
+}
