@@ -248,3 +248,6 @@ i
 [submodule "sites/all/modules/contrib/flexifilter"]
 	path = sites/all/modules/contrib/flexifilter
 	url = http://git.drupal.org/project/flexifilter.git
+[submodule "sites/all/modules/contrib/wikitools"]
+	path = sites/all/modules/contrib/wikitools
+	url = http://git.drupal.org/project/wikitools.git
