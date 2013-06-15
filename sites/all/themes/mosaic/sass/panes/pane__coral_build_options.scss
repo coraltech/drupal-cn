@@ -34,4 +34,17 @@
       @include icons-sprite('ruby-apps');
     }
   }
+  
+  // Format usage overrides
+  .format-usage {
+    .pane-title {
+      color: $white;
+      background: lighten($mdgray, 10%);
+      padding: ($default_vert_unit / 2);
+      margin-top: 0;
+    }
+    li {
+      margin-left: 45px; 
+    }
+  }
 }
