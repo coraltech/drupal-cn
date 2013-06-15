@@ -251,3 +251,6 @@ i
 [submodule "sites/all/modules/contrib/wikitools"]
 	path = sites/all/modules/contrib/wikitools
 	url = http://git.drupal.org/project/wikitools.git
+[submodule "sites/all/modules/contrib/talk"]
+	path = sites/all/modules/contrib/talk
+	url = http://git.drupal.org/project/talk.git
