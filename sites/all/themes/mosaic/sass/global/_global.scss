@@ -95,7 +95,9 @@ header .pane-search-form {
     
     @include font(70%, bold);
   }
-  #divGigyaLogin_bottomLink {
+  #divGigyaLogin_bottomLink,
+  #divGigyaLogin-1_bottomLink,
+  #divGigyaLogin-2_bottomLink {
     margin-top: -21px;
     
     table td { text-align: center; }
