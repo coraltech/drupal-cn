@@ -245,3 +245,6 @@
 	path = sites/all/themes/mosaic/js/lib/magnificent_popup
 	url = https://github.com/dimsemenov/Magnific-Popup
 i
+[submodule "sites/all/modules/contrib/flexifilter"]
+	path = sites/all/modules/contrib/flexifilter
+	url = http://git.drupal.org/project/flexifilter.git
