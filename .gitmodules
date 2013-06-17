@@ -265,3 +265,7 @@
 [submodule "sites/all/modules/contrib/search_api_solr"]
 	path = sites/all/modules/contrib/search_api_solr
 	url = http://git.drupal.org/project/search_api_solr
+
+[submodule "sites/all/modules/contrib/pm_existing_pages"]
+	path = sites/all/modules/contrib/pm_existing_pages
+	url = http://git.drupal.org/project/pm_existing_pages.git
