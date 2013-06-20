@@ -1,12 +1,13 @@
 
 // Styles relating to Drupal primary and secondary tabs
+@import 'global/fonts';
 
 .pane-page-tabs {
   padding: 0 0 1em;
   
   ul { margin: 0; 
     li {
-      line-height: 1em;
+      //line-height: 1em;
       margin: 0 .5em 0 0;
       
       a {
@@ -14,5 +15,9 @@
         margin: 0;
       }
     }
+  }
+  ul.primary {
+    line-height: $default_vert_unit;
+    height: $default_vert_unit;
   }
 }
