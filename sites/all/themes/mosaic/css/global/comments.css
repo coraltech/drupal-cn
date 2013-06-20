@@ -1,0 +1,66 @@
+/* line 7, ../../sass/global/comments.scss */
+.comment .new {
+  color: #e17d2c;
+  font-weight: bold;
+  float: left;
+  margin-top: 1.75em;
+  margin-right: 1em;
+}
+/* line 14, ../../sass/global/comments.scss */
+.comment .comment-title {
+  float: left;
+}
+/* line 17, ../../sass/global/comments.scss */
+.comment .submitted {
+  clear: left;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-1 {
+  margin-left: 0em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-2 {
+  margin-left: 1em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-3 {
+  margin-left: 2em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-4 {
+  margin-left: 3em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-5 {
+  margin-left: 4em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-6 {
+  margin-left: 5em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-7 {
+  margin-left: 6em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-8 {
+  margin-left: 7em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-9 {
+  margin-left: 8em;
+}
+
+/* line 24, ../../sass/global/comments.scss */
+.comment-thread-10 {
+  margin-left: 9em;
+}

@@ -1,0 +1,45 @@
+/* line 10, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .pane-node-comment-form {
+  float: left;
+  width: 54.16667%;
+  float: none;
+  margin: 1.25em auto;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 6px;
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 6px;
+}
+/* line 17, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .pane-node-comment-form .pane-title {
+  background: #515151;
+  border-bottom: 3px double #dddddd;
+  color: white;
+  padding: 0.7em 0.875em 0.4375em 0.875em;
+  margin: 0;
+}
+/* line 24, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .pane-node-comment-form .pane-content {
+  padding: 1em 1.25em;
+  background: #cad5e2;
+  background: -moz-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cad5e2), color-stop(100%, #c4c4c4));
+  background: -webkit-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
+  background: -o-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
+  background: -ms-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
+  background: linear-gradient(to bottom, #cad5e2 0%, #c4c4c4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 29, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .pane-node-comment-form .form-item-subject label,
+.page-node-talk .pane-node-comment-form .filter-wrapper {
+  display: none;
+}
+/* line 32, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .pane-node-comment-form .form-item {
+  margin: 0;
+  padding: 0 0 .5em;
+}
+/* line 38, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .pane-node-comment-form input.form-text {
+  font-size: 130%;
+  width: 99.8%;
+}

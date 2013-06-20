@@ -1,0 +1,56 @@
+/* line 10, ../../../sass/nodes/types/node_book.scss */
+.layout-landing-1 .main-content {
+  float: left;
+  width: 31.33333%;
+}
+
+/* line 11, ../../../sass/nodes/types/node_book.scss */
+.layout-landing-1 .secondary-content {
+  float: left;
+  width: 66.66667%;
+}
+/* line 12, ../../../sass/nodes/types/node_book.scss */
+.layout-landing-1 .secondary-content .limiter.prepend-1 {
+  margin-left: 0.625em;
+}
+
+/* line 21, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content {
+  position: relative;
+  float: none;
+  width: 100%;
+}
+/* line 24, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content .pane-page-title h1 {
+  margin: .75em 0;
+}
+/* line 28, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content .pane-node-title {
+  background: #777777;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  float: right;
+  width: 41.66667%;
+}
+/* line 34, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content .pane-node-title a {
+  color: white;
+}
+/* line 38, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content .pane-node-title .pane-content {
+  padding: 0.625em;
+}
+/* line 47, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node {
+  background: #f7f7f7;
+  margin-left: 1em;
+  margin-bottom: 1.25em;
+  float: right;
+  width: 41.66667%;
+}
+/* line 52, ../../../sass/nodes/types/node_book.scss */
+.node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content {
+  border: 1px solid #777777;
+  padding: 3.75em 16px 16px;
+}

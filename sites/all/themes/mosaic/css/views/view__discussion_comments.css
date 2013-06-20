@@ -1,0 +1,70 @@
+/* line 10, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix {
+  display: block;
+  height: 2.5em;
+  background: #fff9d0;
+  margin-top: 3px;
+  margin-right: -2%;
+  padding: 0.625em 0;
+  float: left;
+  width: 58.25%;
+}
+/* line 19, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix:after {
+  display: inline;
+}
+/* line 21, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix select {
+  position: relative;
+  top: -1px;
+  margin-left: 5px;
+}
+/* line 26, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix label {
+  float: left;
+  font-weight: normal;
+}
+/* line 30, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix .views-widget-sort-by {
+  margin-left: 1em;
+}
+/* line 33, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix .form-submit {
+  margin-top: 0;
+}
+
+/* line 41, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments.view-sortby-created .comment {
+  margin-left: 0;
+}
+
+/* line 47, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .views-row-even .comment {
+  background: #efefef;
+  border-top: 3px double #dddddd;
+  border-bottom: 3px double #dddddd;
+}
+/* line 52, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .comment {
+  padding: 0 1em;
+}
+/* line 54, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .comment ul.links.inline {
+  display: block;
+}
+/* line 57, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .comment h3.comment-title {
+  margin: 15px 0;
+}
+/* line 60, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .comment h3.comment-title a {
+  color: #777777;
+}
+/* line 62, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .comment h3.comment-title a:hover {
+  color: #515151;
+}
+/* line 67, ../../sass/views/view__discussion_comments.scss */
+.view-discussion-comments .comment .submitted {
+  margin: 15px 0;
+}
