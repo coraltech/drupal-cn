@@ -3,8 +3,9 @@
 // Include includes
 coral_include(array('includes'), 'inc', array('module' => 'mosaic_be'));
 
-
-function mosaic_panelizer_pre_render_alter($panelizer, $display, $entity) {
+// Check panelizer to see if it is adding any content types we should
+//  be aware of.
+function mosaic_be_panelizer_pre_render_alter($panelizer, $display, $entity) {
 
   $view_mode = $panelizer->view_mode;
   
@@ -16,5 +17,32 @@ function mosaic_panelizer_pre_render_alter($panelizer, $display, $entity) {
     _mosiac_be_node_load_by_type($entity);             // Load by node type
     _mosaic_be_node_load_by_mode($entity, $view_mode); // Load by view modes
     _mosaic_be_node_load_by_fe_attach($entity);        // Load by fe_attach field (added on node create form)
+  
+  
   }
 }
+
+
+// Some stuff doesnt go through panelizer that could be caught here.
+function mosaic_be_init() {
+  $item = menu_get_item();
+  if (isset($item['page_arguments'])) {
+    $obj = array_shift($item['page_arguments']);
+  
+    // It's a node! Congratulations!
+    if (is_object($obj) && isset($obj->nid) && $obj->nid > 0) {
+      // Load css and js files as needed by the theme
+      //  note files are loaded w theme level settings._mosiac_be_node_load_by_nid($entity);              // Load by node id
+      _mosiac_be_node_load_by_nid($obj);              // Load by node id
+      _mosiac_be_node_load_by_type($obj);             // Load by node type
+      _mosaic_be_node_load_by_fe_attach($obj);        // Load by fe_attach field (added on node create form)
+      _mosaic_be_comment_load_by_node($obj);
+    }
+  }
+}
+
+
+
+
+
+

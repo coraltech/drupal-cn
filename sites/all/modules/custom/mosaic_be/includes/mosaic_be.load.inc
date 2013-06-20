@@ -21,7 +21,7 @@ function _mosiac_be_node_load_by_nid($node) {
 function _mosiac_be_node_load_by_type($node) {
   $type = $node->type;
   $theme_path = drupal_get_path('theme', 'mosaic');
-  
+//dpm('node_'.$node->type.'.css');
   if (file_exists($theme_path.'/css/nodes/types/node_'.$node->type.'.css')) drupal_add_css($theme_path.'/css/nodes/types/node_'.$node->type.'.css', array('group' => CSS_THEME));
   if (file_exists($theme_path.'/js/nodes/types/node_'.$node->type.'.js'))   drupal_add_js($theme_path.'/js/nodes/types/node_'.$node->type.'.js', array('group' => JS_THEME));
 }
@@ -56,3 +56,37 @@ function _mosaic_be_node_load_by_fe_attach($entity) {
     }
   }
 }
+
+
+/**
+ * Load comment css and js according to the needs of the many.
+ *  God save the Queen.
+ */
+function _mosaic_be_comment_load_by_node($obj) {
+  if (
+    isset($obj) && 
+    isset($obj->comment) && 
+    $obj->comment == COMMENT_NODE_OPEN
+  ){
+    $mode = ''; // default
+    // we can load comment styles on base "comments"
+    //  or as they would apply to a node type + mode
+    if (isset($obj->panelizer['page_manager']) && 
+       isset($obj->panelizer['page_manager']->view_mode)) {
+      // Add via mode if need be  
+      $mode = $obj->panelizer['page_manager']->view_mode;
+    }
+
+    $files = array(
+      'comments',
+      'comments__'.$obj->type,
+      'comments__'.$obj->type.'__'.$mode
+    );
+    $theme_path = drupal_get_path('theme', 'mosaic');
+    foreach ($files as $file) {
+      if (file_exists($theme_path.'/css/comments/'.$file.'.css')) drupal_add_css($theme_path.'/css/comments/'.$file.'.css', array('group' => CSS_THEME));
+      if (file_exists($theme_path.'/js/comments/'.$file.'.js'))  drupal_add_js($theme_path.'/js/comments/'.$file.'.js', array('group' => JS_THEME));
+    }
+  }
+}
+
