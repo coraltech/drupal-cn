@@ -108,6 +108,33 @@ ul,
 }
 
 
+// the edit / delete / reply links
+ul.links {
+  display: block;
+  height: 2 * $default_vert_unit;
+  margin: 0;
+      
+  li {
+    float: right;
+    margin: 0 0 0 5px;
+        
+    @include btn-matte-inset;
+    @include btn-structure;
+    
+    // Link type overrides
+      
+    &.comment-delete {
+      @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 4%));
+      @include btn-structure;
+    }
+    a {
+      color: #fff;
+    }
+  }
+}
+
+
+
 // --- Forms
 input.form-submit {
   @include btn-glass;
