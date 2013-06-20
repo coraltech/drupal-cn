@@ -1,0 +1,27 @@
+
+// Base scss file for comment displays
+
+@import 'global/colors';
+
+.comment {
+  .new {
+    color: $mdorange;
+    font-weight: bold;
+    float: left;
+    margin-top: 1.75em;
+    margin-right: 1em;
+  }
+  .comment-title {
+    float: left;
+  }
+  .submitted {
+    clear: left;
+  }
+}
+
+$indents: 10;
+@for $i from 1 through $indents {
+  .comment-thread-#{$i} {
+    margin-left: #{$i - 1}em;   
+  }
+}
