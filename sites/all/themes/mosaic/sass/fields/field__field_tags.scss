@@ -1,0 +1,20 @@
+
+// Field tags scss styles
+
+.field-name-field-tags {
+  
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  
+  .field-label,
+  .field-item {
+    float: left;
+  }
+  
+}
+
