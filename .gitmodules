@@ -265,7 +265,12 @@
 [submodule "sites/all/modules/contrib/search_api_solr"]
 	path = sites/all/modules/contrib/search_api_solr
 	url = http://git.drupal.org/project/search_api_solr
-
+[submodule "sites/all/modules/contrib/prepopulate"]
+	path = sites/all/modules/contrib/prepopulate
+	url = http://git.drupal.org/project/prepopulate.git
 [submodule "sites/all/modules/contrib/pm_existing_pages"]
 	path = sites/all/modules/contrib/pm_existing_pages
 	url = http://git.drupal.org/project/pm_existing_pages.git
+[submodule "sites/all/modules/contrib/permalinks_to_nodepath"]
+	path = sites/all/modules/contrib/permalinks_to_nodepath
+	url = http://git.drupal.org/sandbox/Ayesh/1578662.git
