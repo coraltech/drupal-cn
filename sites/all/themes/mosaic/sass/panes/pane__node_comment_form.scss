@@ -1,0 +1,42 @@
+
+// Comment form scss definitions
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/gradients';
+@import "compass/css3/box-shadow";
+
+.page-node-talk .pane-node-comment-form {
+  @include col(13, true);
+  
+  float: none;
+  margin: $default_vert_unit auto;
+  @include box-shadow(rgba(0,0,0,.4) 5px 5px 6px);
+    
+  .pane-title {
+    background: $dkgray;
+    border-bottom: 3px double $ltgray;
+    color: $white;
+    padding: .7em (.7 * $default_vert_unit) (.7 * ($default_vert_unit / 2)) (.7 * $default_vert_unit);
+    margin: 0;
+  }
+  .pane-content {
+    padding: 1em $default_vert_unit;
+    @include linear-v-gradient($ltblue, darken($ltgray, 10%));
+  }
+  .form-item-subject label, 
+  .filter-wrapper {
+    display: none;
+  }
+  .form-item {
+    margin: 0;
+    padding: 0 0 .5em;
+  }
+  
+  
+  input.form-text {
+    font-size: 130%;
+    width: 99.8%;
+  }
+} 
