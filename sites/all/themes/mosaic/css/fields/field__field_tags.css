@@ -1,4 +1,9 @@
-/* line 6, ../../sass/fields/field__field_tags.scss */
+/* line 210, icons/*.png */
+.icons-sprite, .field-name-field-tags .field-label {
+  background: url('/images/icons-sc44a47acbe.png') no-repeat;
+}
+
+/* line 8, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags:after {
   content: ".";
   display: block;
@@ -6,8 +11,16 @@
   clear: both;
   visibility: hidden;
 }
-/* line 15, ../../sass/fields/field__field_tags.scss */
+/* line 17, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-label,
 .field-name-field-tags .field-item {
   float: left;
+}
+/* line 21, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags .field-label {
+  display: block;
+  text-indent: -9999em;
+  background-position: 0 -1728px;
+  height: 14px;
+  width: 11px;
 }
