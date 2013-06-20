@@ -1,0 +1,61 @@
+
+// Some scss customizations for the book node type.
+//  adjusts a few layout parameters
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+// Re-adjust the grid ;-)
+// Actual book node styles
+.layout-landing-1 .main-content      { @include col(8); }
+.layout-landing-1 .secondary-content { 
+  .limiter.prepend-1 {
+    margin-left: $default_vert_unit / 2;
+  }
+  
+  @include col(16, true); 
+}
+
+
+// Talk section styles - see talk tab
+.node-type-book.node-talk .layout-node-1 .main-content { 
+  position: relative;
+  
+  .pane-page-title h1 {
+    margin: .75em 0;
+  }
+  
+  .pane-node-title {
+     background: $mdgray;
+     position: absolute;
+     top: 0;
+     right: 0px;
+     
+     a {
+       color: $white;
+     }
+     
+     .pane-content {
+       padding: $default_vert_unit / 2;
+     }
+      
+    @include col(10, false, right);
+  }
+  
+  //pane-entity-view pane-node
+  //.pane-node-body {
+  .pane-entity-view.pane-node {
+    background: lighten($ltgray, 10%);
+    margin-left: 1em;
+    margin-bottom: $default_vert_unit;
+    
+    & > .pane-content {
+      border: 1px solid $mdgray;
+      padding: (3 * $default_vert_unit) 16px 16px;
+    }
+    
+    @include col(10, false, right);   
+  }
+  
+  @include col(24, true, none); 
+}
