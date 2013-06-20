@@ -274,3 +274,6 @@
 [submodule "sites/all/modules/contrib/permalinks_to_nodepath"]
 	path = sites/all/modules/contrib/permalinks_to_nodepath
 	url = http://git.drupal.org/sandbox/Ayesh/1578662.git
+[submodule "sites/all/contrib/permalinks_to_nodepath"]
+	path = sites/all/contrib/permalinks_to_nodepath
+	url = http://git.drupal.org/sandbox/Ayesh/1578662.git
