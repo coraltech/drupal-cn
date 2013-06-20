@@ -1,6 +1,6 @@
 <?php
 // Hooks we can preprocess
-function mosaic_preprocess (&$vars, $hook) {
+function mosaic_preprocess(&$vars, $hook) {
 //dpm($hook);
 }
 
@@ -36,7 +36,7 @@ function mosaic_preprocess_panels_pane(&$vars) {
   $css_file = $root.$type.$subtype.'.css';
   $js_file  = $root.$type.$subtype.'.js';
 
-  //dpm($css_file);
+//dpm($css_file);
   
   // Add the css - basic type
   if (file_exists($path.'/css/panes/'.$base_css_file)) drupal_add_css($path.'/css/panes/'.$base_css_file, array('group' => CSS_THEME)); // - targeted type
@@ -67,17 +67,53 @@ function mosaic_preprocess_views_view(&$vars) {
     );
     foreach($files as $i => $file) {
 //dpm($file);
-      if (function_exists('_preprocess_'.$file)) $func($file);
+      $func = '_preprocess_'.$file;
+      if (function_exists($func)) $func($vars);
       if (file_exists($path.'/css/views/'.$file.'.css')) drupal_add_css($path.'/css/views/'.$file.'.css', array('group' => CSS_THEME));  
       if (file_exists($path.'/js/views/'.$file.'.js'))   drupal_add_js($path.'/js/views/'.$file.'.js', array('group' => JS_THEME));
     }
   }
+  
+  if (isset($vars['view']->exposed_raw_input['sort_by'])) {
+    $vars['classes_array'][] = 'view-sortby-'.$vars['view']->exposed_raw_input['sort_by']; 
+  }
 }
 
+
+// Preprocess the comment - add thread class
+function mosaic_preprocess_comment(&$vars) {
+  //dpm($vars);
+  
+  // set comment title class
+  $vars['title_attributes_array']['class'] = array('comment-title');
+
+  $count  = count(explode('.', $vars['comment']->thread));
+  if ($count > 10) $count = 10; // no need to go deeper than 10 lvls
+  $vars['classes_array'][] = 'comment-thread-'.$count;
+}
+
+
+// Preprocess field - add css and js where applicable
+function mosaic_preprocess_field(&$variables, $hook) {
+  $path = drupal_get_path('theme', 'mosaic'); 
+  $element = $variables['element'];
+  
+  $files = array(
+    'field__'.$element['#field_type'],
+    'field__'.$element['#field_name']
+  );
+  foreach ($files as $file) {
+//dpm($file);
+    if (file_exists($path.'/css/fields/'.$file.'.css')) drupal_add_css($path.'/css/fields/'.$file.'.css', array('group' => CSS_THEME));
+    if (file_exists($path.'/js/fields/'.$file.'.js')) drupal_add_js($path.'/js/fields/'.$file.'.js', array('group' => JS_THEME));
+  }
+}
 
 // Ensure entity|node.tpl.php is in place: use if needed (e.g: submitted by...)
 function mosaic_preprocess_entity(&$vars) {}
 function mosaic_preprocess_node(&$vars) {}
+
+
 
 
 
