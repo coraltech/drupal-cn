@@ -1,0 +1,11 @@
+
+// Scss file for the breadcrumb
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.pane-coral-breadcrumb {
+  color: lighten($mdgray, 10%);
+  font-weight: bold;
+  margin: ($default_vert_unit * 1.5) 0;
+} 
