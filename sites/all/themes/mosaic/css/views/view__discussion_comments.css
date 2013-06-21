@@ -47,24 +47,26 @@
 /* line 52, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments .comment {
   padding: 0 1em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
-/* line 54, ../../sass/views/view__discussion_comments.scss */
+/* line 57, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments .comment ul.links.inline {
   display: block;
 }
-/* line 57, ../../sass/views/view__discussion_comments.scss */
+/* line 60, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments .comment h3.comment-title {
   margin: 15px 0;
 }
-/* line 60, ../../sass/views/view__discussion_comments.scss */
+/* line 63, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments .comment h3.comment-title a {
   color: #777777;
 }
-/* line 62, ../../sass/views/view__discussion_comments.scss */
+/* line 65, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments .comment h3.comment-title a:hover {
   color: #515151;
 }
-/* line 67, ../../sass/views/view__discussion_comments.scss */
+/* line 70, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments .comment .submitted {
-  margin: 15px 0;
+  padding: 15px 0 0 0;
 }

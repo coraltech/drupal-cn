@@ -1,6 +1,6 @@
-/* line 210, icons/*.png */
+/* line 218, icons/*.png */
 .icons-sprite, .field-name-field-tags .field-label {
-  background: url('/images/icons-sc44a47acbe.png') no-repeat;
+  background: url('/images/icons-s0640884fd9.png') no-repeat;
 }
 
 /* line 8, ../../sass/fields/field__field_tags.scss */
@@ -11,16 +11,42 @@
   clear: both;
   visibility: hidden;
 }
-/* line 17, ../../sass/fields/field__field_tags.scss */
-.field-name-field-tags .field-label,
+/* line 16, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags .field-label {
+  float: left;
+  display: block;
+  text-indent: -9999em;
+  color: white;
+  margin-top: 1px;
+  margin-right: 5px;
+  background-position: 0 -1798px;
+  height: 14px;
+  width: 11px;
+}
+/* line 25, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-item {
   float: left;
 }
-/* line 21, ../../sass/fields/field__field_tags.scss */
-.field-name-field-tags .field-label {
-  display: block;
-  text-indent: -9999em;
-  background-position: 0 -1728px;
-  height: 14px;
-  width: 11px;
+/* line 28, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags .field-item:after {
+  content: ",";
+  margin-right: 3px;
+}
+/* line 33, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags .field-item a {
+  background: #dddddd;
+  color: #777777;
+  font-size: 85%;
+  float: left;
+  margin: 0 0 5px;
+  padding: 0 3px;
+}
+/* line 41, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags .field-item a:hover {
+  color: #515151;
+}
+/* line 47, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags .field-item:last-child:after {
+  content: '';
+  margin-right: 0;
 }

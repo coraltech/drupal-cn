@@ -218,15 +218,15 @@ ul li.leaf,
 }
 
 /* line 112, ../sass/global/_dom.scss */
-ul.links {
+.html ul.links {
   display: block;
-  height: 2.5em;
-  margin: 0;
+  margin: 1.25em 0;
+  height: 1.25em;
 }
 /* line 117, ../sass/global/_dom.scss */
-ul.links li {
+.html ul.links li {
   float: right;
-  margin: 0 0 0 5px;
+  margin: 5px 0 0 5px;
   font-size: 16px;
   padding: 0.5em 1.5em;
   color: white;
@@ -263,11 +263,11 @@ ul.links li {
   border-radius: 0px;
 }
 /* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li:hover {
+.html ul.links li:hover {
   text-decoration: none;
 }
 /* line 18, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li:hover {
+.html ul.links li:hover {
   background-color: #385b8f;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
   background: -webkit-linear-gradient(#3d629a 3%, #385b8f 75%);
@@ -276,13 +276,13 @@ ul.links li:hover {
   background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
 /* line 21, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li:active {
+.html ul.links li:active {
   -webkit-box-shadow: #345484 0 1px 2px inset;
   -moz-box-shadow: #345484 0 1px 2px inset;
   box-shadow: #345484 0 1px 2px inset;
 }
 /* line 6, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li.disabled, ul.links li[disabled] {
+.html ul.links li.disabled, .html ul.links li[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
   background: #4067a1;
@@ -292,12 +292,12 @@ ul.links li.disabled, ul.links li[disabled] {
   box-shadow: none;
 }
 /* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
-ul.links li::-moz-focus-inner {
+.html ul.links li::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
 /* line 126, ../sass/global/_dom.scss */
-ul.links li.comment-delete {
+.html ul.links li.comment-delete {
   font-size: 16px;
   padding: 0.5em 1.5em;
   color: white;
@@ -334,11 +334,11 @@ ul.links li.comment-delete {
   border-radius: 0px;
 }
 /* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li.comment-delete:hover {
+.html ul.links li.comment-delete:hover {
   text-decoration: none;
 }
 /* line 18, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li.comment-delete:hover {
+.html ul.links li.comment-delete:hover {
   background-color: #882416;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #882416));
   background: -webkit-linear-gradient(#9a2818 3%, #882416 75%);
@@ -347,13 +347,13 @@ ul.links li.comment-delete:hover {
   background: linear-gradient(#9a2818 3%, #882416 75%);
 }
 /* line 21, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li.comment-delete:active {
+.html ul.links li.comment-delete:active {
   -webkit-box-shadow: #7b2014 0 1px 2px inset;
   -moz-box-shadow: #7b2014 0 1px 2px inset;
   box-shadow: #7b2014 0 1px 2px inset;
 }
 /* line 6, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.links li.comment-delete.disabled, ul.links li.comment-delete[disabled] {
+.html ul.links li.comment-delete.disabled, .html ul.links li.comment-delete[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
   background: #9e2919;
@@ -363,12 +363,12 @@ ul.links li.comment-delete.disabled, ul.links li.comment-delete[disabled] {
   box-shadow: none;
 }
 /* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
-ul.links li.comment-delete::-moz-focus-inner {
+.html ul.links li.comment-delete::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
 /* line 130, ../sass/global/_dom.scss */
-ul.links li a {
+.html ul.links li a {
   color: #fff;
 }
 
@@ -519,7 +519,19 @@ input#edit-delete::-moz-focus-inner {
 
 /* line 149, ../sass/global/_dom.scss */
 input.form-text {
+  font-size: 135%;
   width: 80%;
+}
+
+/* line 153, ../sass/global/_dom.scss */
+html.js input.form-autocomplete {
+  background-position: 100% 8px;
+}
+
+/* line 156, ../sass/global/_dom.scss */
+html.js input.throbbing {
+  background-position: 100% -12px;
+  /* LTR */
 }
 
 /* line 7, ../sass/global/comments.scss */

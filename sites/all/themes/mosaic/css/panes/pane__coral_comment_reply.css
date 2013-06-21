@@ -1,5 +1,5 @@
-/* line 10, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .pane-node-comment-form {
+/* line 10, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .pane-coral-comment-reply {
   float: left;
   width: 54.16667%;
   float: none;
@@ -8,16 +8,16 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 6px;
   box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 6px;
 }
-/* line 18, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .pane-node-comment-form .pane-title {
+/* line 18, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .pane-coral-comment-reply .pane-title {
   background: #515151;
   border-bottom: 3px double #dddddd;
   color: white;
   padding: 0.7em 0.875em 0.4375em 0.875em;
   margin: 0;
 }
-/* line 25, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .pane-node-comment-form .pane-content {
+/* line 25, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .pane-coral-comment-reply .pane-content {
   padding: 1em 1.25em;
   background: #cad5e2;
   background: -moz-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
@@ -28,24 +28,24 @@
   background: linear-gradient(to bottom, #cad5e2 0%, #c4c4c4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 30, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .pane-node-comment-form .form-item-subject label,
-.page-node-talk .pane-node-comment-form .filter-wrapper {
+/* line 30, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .pane-coral-comment-reply .form-item-subject label,
+.page-comment-reply .pane-coral-comment-reply .filter-wrapper {
   display: none;
 }
-/* line 33, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .pane-node-comment-form .form-item {
+/* line 33, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .pane-coral-comment-reply .form-item {
   margin: 0;
   padding: 0 0 .5em;
 }
-/* line 39, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .pane-node-comment-form input.form-text {
+/* line 39, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .pane-coral-comment-reply input.form-text {
   font-size: 130%;
   width: 99.8%;
 }
 
-/* line 45, ../../sass/panes/pane__node_comment_form.scss */
-.page-node-talk .form-left {
+/* line 45, ../../sass/panes/pane__coral_comment_reply.scss */
+.page-comment-reply .form-left {
   margin-left: 0;
   margin-right: 0;
   float: left;

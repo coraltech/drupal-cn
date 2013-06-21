@@ -1,6 +1,6 @@
-/* line 210, icons/*.png */
+/* line 218, icons/*.png */
 .icons-sprite, .pane-coral-projects-panel-pane-1.proj-shell .icon, .pane-coral-projects-panel-pane-1.proj-drupal .icon, .pane-coral-projects-panel-pane-1.proj-vagrant .icon, .pane-coral-projects-panel-pane-1.proj-puppet .icon, .pane-coral-projects-panel-pane-1.proj-ruby .icon {
-  background: url('/images/icons-sc44a47acbe.png') no-repeat;
+  background: url('/images/icons-s0640884fd9.png') no-repeat;
 }
 
 /* line 9, ../../sass/views/view__coral_projects.scss */
@@ -80,7 +80,7 @@
 /* line 80, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1.proj-shell .icon {
   top: 10px;
-  background-position: 0 -1572px;
+  background-position: 0 -1642px;
   height: 28px;
   width: 33px;
 }
