@@ -50,6 +50,12 @@ function mosaic_preprocess_panels_pane(&$vars) {
   $layout = $vars['display']->layout;
   if (file_exists($path.'/css/layouts/'.$layout.'.css')) drupal_add_css($path.'/css/layouts/'.$layout.'.css', array('group' => CSS_THEME)); // - targeted layout
   if (file_exists($path.'/js/layouts/'.$layout.'.js'))   drupal_add_css($path.'/js/layouts/'.$layout.'.js', array('group' => JS_THEME));
+  
+  // Call potential preprocessors
+  $base_func = 'mosaic_preprocess_panels_pane__'.$type;  // dpm($base_func);
+  $full_func = 'mosaic_preprocess_panels_pane__'.$type.'__'.$subtype; //dpm($full_func);
+  if (function_exists($base_func)) $base_func($vars);
+  if (function_exists($full_func)) $full_func($vars);
 }
 
 
@@ -111,7 +117,19 @@ function mosaic_preprocess_field(&$variables, $hook) {
 
 // Ensure entity|node.tpl.php is in place: use if needed (e.g: submitted by...)
 function mosaic_preprocess_entity(&$vars) {}
-function mosaic_preprocess_node(&$vars) {}
+
+// Add some stuff to nodes... lots of stuff right?
+function mosaic_preprocess_node(&$vars) {
+  $vars['title_attributes_array']['class'] = 'node-title';
+}
+
+
+// Preprocess node-title panes - add icon span 
+function mosaic_preprocess_panels_pane__node_title(&$vars) {
+  $content  = $vars['content'];
+  $position = strpos($content, '>');
+  $vars['content'] = substr($content, 0, $position+1).'<span class="icon"></span>'.substr($content, $position+1);
+}
 
 
 
