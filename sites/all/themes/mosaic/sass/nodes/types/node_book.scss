@@ -4,6 +4,9 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/grid_mix';
+@import 'global/icons';
+
+@import "compass/utilities/general/clearfix";
 
 // Re-adjust the grid ;-)
 // Actual book node styles
@@ -16,8 +19,28 @@
   @include col(16, true); 
 }
 
+.page-comment-reply .pane-node-title,
+.node-type-book .pane-node-title {
+  h1 { 
+    margin: .65em 0;
+  }
+    
+  .icon {
+    display: block;
+    float: left;
+    margin-right: .4em;
+    
+    @include icons-sprite('coral-book');
+  }
+  ul.links li {
+    float: left;
+    margin: 0 5px 5px 0;
+  }
+}
 
-// Talk section styles - see talk tab
+
+// Talk section styles - see Discussion (talk) tab
+.page-comment-reply .layout-node-1 .main-content,
 .node-type-book.node-talk .layout-node-1 .main-content { 
   position: relative;
   
@@ -26,7 +49,7 @@
   }
   
   .pane-node-title {
-     background: $mdgray;
+     background: lighten($mdgray, 7%);
      position: absolute;
      top: 0;
      right: 0px;
@@ -49,9 +72,24 @@
     margin-left: 1em;
     margin-bottom: $default_vert_unit;
     
+    h2.node-title {
+      display: none;
+    }
+    
     & > .pane-content {
       border: 1px solid $mdgray;
       padding: (3 * $default_vert_unit) 16px 16px;
+    }
+    ul.links.inline {
+      margin: 0;
+      &:after {
+        display: none;
+      }
+    }
+    ul.links.inline li {
+      float: left;
+      margin: 5px 5px 0 0;
+      font-size: 85%;
     }
     
     @include col(10, false, right);   
