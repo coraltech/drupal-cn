@@ -1,8 +1,10 @@
 
 // Field tags scss styles
+@import 'global/colors';
+@import 'global/icons';
 
 .field-name-field-tags {
-  
+
   &:after {
     content: ".";
     display: block;
@@ -11,10 +13,41 @@
     visibility: hidden;
   }
   
-  .field-label,
+  .field-label {
+    float: left;
+    display: block;
+    text-indent: -9999em;
+    color: $white;
+    margin-top: 1px;
+    margin-right: 5px;
+    @include icons-sprite('coral-tag');
+  }
   .field-item {
     float: left;
+        
+    &:after {
+      content: ",";
+      margin-right: 3px;
+    }
+    
+    a {
+      background: $ltgray;
+      color: $mdgray;
+      font-size: 85%;
+      float: left;
+      margin: 0 0 5px;
+      padding: 0 3px;
+      
+      &:hover {
+        color: $dkgray;
+      }
+    }
+  }  
+  .field-item:last-child {
+    &:after {
+      content: '';
+      margin-right: 0;
+    }
   }
-  
-}
+} 
 
