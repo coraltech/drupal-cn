@@ -7,22 +7,22 @@ Drupal.mosaic = Drupal.mosaic || {};
 //
 // Document loaded!
 (function($) {
-  Drupal.behaviors.mosaicCommentFormInit = {    
+  Drupal.behaviors.mosaicCommentsBookInit = {    
     attach : function(context, settings) {
       try { // Use try to prevent systemic failure
-        $('.pane-node-comment-form').each(function(i) {
+        $('.pane-node-comment-form, .pane-coral-comment-reply').each(function(i) {
           new Drupal.mosaic.manageCommentForm($(this));
         })
       }
       catch(err) {
-        console.log('mosaicCommentFormInit reported errors! Error: '+err);
+        console.log('mosaicCommentsBookInit reported errors! Error: '+err);
       }
       
       try {
         new Drupal.mosaic.manageCommentTitles();
       }
       catch(err) {
-        console.log('mosaicCommentFormInit reported errors! Error: '+err);
+        console.log('mosaicCommentsBookInit reported errors! Error: '+err);
       }
     }
   };
@@ -48,7 +48,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   // Manages comment form layout
   Drupal.mosaic.manageCommentForm = function($form) {
-    if ($form.parents('.page-node-talk').length) {
+    if ($form.parents('.page-node-talk').length || $form.parents('.page-comment-reply').length) {
       $title = $('.limiter>.pane-node-title'); //$title.height()
       $node  = $('.limiter>.pane-entity-view');
       
@@ -58,10 +58,12 @@ Drupal.mosaic = Drupal.mosaic || {};
         nodePos  = $node.position();
         
         if (formPos.top && (formPos.top >= (titlePos.top + $title.height() + $node.height()))) {
-          $form.css('width', '99.8%');
+          $form.removeClass('form-left');
+          $form.addClass('form-center');
         }
         else {
-          $form.css({'margin':'0 0 2.5em', 'float': 'left'});
+          $form.addClass('form-left');
+          $form.removeClass('form-center');
         }
       }
       catch (err) {
