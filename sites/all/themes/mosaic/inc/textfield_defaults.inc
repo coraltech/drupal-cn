@@ -8,6 +8,7 @@
  *  to the Drupal.settings.mosaic.fieldDefaults array.
  */
 function mosaic_add_textfield_defaults($form_id, &$form) {
+  //dpm($form_id);   
   $matrix = variable_get('mosaic_texfield_defaults_matrix', array());  
   
   // Process the defaults and add to the matrix if exists
@@ -223,7 +224,8 @@ function mosaic__search_form__defaults($form, &$matrix) {
 function mosaic__comment_node_book_form__defaults($form, &$matrix) {
   // Selectors  
   $matrix['comment_node_book_form']['selectors'] = array(
-    '.pane-node-comment-form .form-item-subject .form-text' => 'Optional title'
+    '.pane-node-comment-form .form-item-subject .form-text' => 'Optional title',
+    '.pane-coral-comment-reply .form-item-subject .form-text' => 'Optional title'
   );
   // Custom validation
   $matrix['comment_node_book_form']['validate'] = array('mosaic_textfield_comment_node_book_form_validate');
