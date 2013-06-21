@@ -4,8 +4,8 @@
 @import "global/buttons";
 @import "global/colors";
 @import "global/fonts";
-//@import "sassy-buttons";
 
+@import "compass/utilities/general/clearfix";
 
 
 // Font Size Reference (12px base)
@@ -108,15 +108,15 @@ ul,
 }
 
 
-// the edit / delete / reply links
-ul.links {
+// the item actions (edit delete etc...)
+.html ul.links {
   display: block;
-  height: 2 * $default_vert_unit;
-  margin: 0;
-      
+  margin: $default_vert_unit 0;
+  height: $default_vert_unit; //include pie-clearfix;
+  
   li {
     float: right;
-    margin: 0 0 0 5px;
+    margin: 5px 0 0 5px;
         
     @include btn-matte-inset;
     @include btn-structure;
@@ -147,6 +147,13 @@ input#edit-delete {
 }
 
 input.form-text {
+  font-size: 135%;
   width: 80%;
+}
+html.js input.form-autocomplete {
+  background-position: 100% 8px;
+}
+html.js input.throbbing {
+  background-position: 100% -12px; /* LTR */
 }
 
