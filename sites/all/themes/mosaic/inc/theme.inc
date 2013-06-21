@@ -37,6 +37,24 @@ function mosaic_menu_tree($variables) {
 
 
 /**
+ * Returns HTML for a breadcrumb trail.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - breadcrumb: An array containing the breadcrumb links.
+ */
+function mosaic_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+
+  if (!empty($breadcrumb)) {
+    // Provide a navigational heading to give context for breadcrumb links to
+    // screen-reader users. Make the heading invisible with .element-invisible.
+    return '<span class="breadcrumb">' . implode(' » ', $breadcrumb) . '</span>';
+  }
+}
+
+
+/**
  * Helper function that builds the nested lists of a Superfish menu.
  */
 function mosaic_superfish_build($variables) {
