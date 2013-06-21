@@ -12,6 +12,7 @@
   
   float: none;
   margin: $default_vert_unit auto;
+  
   @include box-shadow(rgba(0,0,0,.4) 5px 5px 6px);
     
   .pane-title {
@@ -39,4 +40,10 @@
     font-size: 130%;
     width: 99.8%;
   }
-} 
+}
+
+.page-node-talk .form-left {
+  margin-left: 0;
+  margin-right: 0;
+  float: left;
+}
