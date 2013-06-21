@@ -51,6 +51,9 @@
   }
   .comment {
     padding: 0 1em;
+    margin-top: $default_vert_unit;
+    margin-bottom: $default_vert_unit;
+
     ul.links.inline {
       display: block;
     }
@@ -65,7 +68,7 @@
       }
     }
     .submitted {
-      margin: 15px 0;
+      padding: 15px 0 0 0;
     }
   }
 }
