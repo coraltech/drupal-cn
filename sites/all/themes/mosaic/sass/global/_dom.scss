@@ -112,7 +112,7 @@ ul,
 .html ul.links {
   display: block;
   margin: $default_vert_unit 0;
-  height: $default_vert_unit; //include pie-clearfix;
+  height: 1.84 * $default_vert_unit; //include pie-clearfix;
   
   li {
     float: right;
