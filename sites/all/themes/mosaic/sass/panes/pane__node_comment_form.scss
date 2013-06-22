@@ -41,9 +41,15 @@
     width: 99.8%;
   }
 }
-
+// Controls form layout style
+// js added class
 .page-node-talk .form-left {
   margin-left: 0;
   margin-right: 0;
   float: left;
+}
+.page-node-talk .form-center {
+  float: left;
+  margin-left: .2%;
+  width: 99.5%;
 }
