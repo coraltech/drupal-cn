@@ -38,6 +38,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         $commentText  = $(this).find('.field-name-comment-body');
         commentText  = $(this).find('.field-name-comment-body').text();
         
+        // check to see if the title matches the start of the body
         var pattern = new RegExp('^'+commentTitle);
         if (commentText.match(pattern)) {
           $commentTitle.remove();
@@ -48,19 +49,25 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   // Manages comment form layout
   Drupal.mosaic.manageCommentForm = function($form) {
-    if ($form.parents('.page-node-talk').length || $form.parents('.page-comment-reply').length) {
-      $title = $('.limiter>.pane-node-title'); //$title.height()
+    if ( // Comments can happen on these two types (body classes) so far
+      $form.parents('.page-node-talk').length || 
+      $form.parents('.page-comment-reply').length
+    ){
+
+      $title = $('.limiter>.pane-node-title');
       $node  = $('.limiter>.pane-entity-view');
       
-      try {
+      try { // check positioning of comment form
         formPos  = $form.position(); formPos.top = formPos.top + 20;
         titlePos = $title.position();
         nodePos  = $node.position();
         
+        // Form is below the displayed (floating) node
         if (formPos.top && (formPos.top >= (titlePos.top + $title.height() + $node.height()))) {
           $form.removeClass('form-left');
           $form.addClass('form-center');
         }
+        // Form is beside the displayed (floating) node
         else {
           $form.addClass('form-left');
           $form.removeClass('form-center');
