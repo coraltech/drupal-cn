@@ -1,0 +1,29 @@
+
+// Primary scss file for the back to pane
+//  This pane is used to allow ppl who clicked reply
+//  to easily get back to where they want.
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+
+.pane-coral-back-to {
+  line-height: $default_vert_unit * 2;
+  @include prepend(2);
+  
+  .goto-title {
+    clear: left;
+    color: lighten($mdgray, 7%);
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+  }
+  ul {
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
