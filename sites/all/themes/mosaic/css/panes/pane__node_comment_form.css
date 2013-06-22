@@ -44,9 +44,16 @@
   width: 99.8%;
 }
 
-/* line 45, ../../sass/panes/pane__node_comment_form.scss */
+/* line 46, ../../sass/panes/pane__node_comment_form.scss */
 .page-node-talk .form-left {
   margin-left: 0;
   margin-right: 0;
   float: left;
+}
+
+/* line 51, ../../sass/panes/pane__node_comment_form.scss */
+.page-node-talk .form-center {
+  float: left;
+  margin-left: .2%;
+  width: 99.5%;
 }

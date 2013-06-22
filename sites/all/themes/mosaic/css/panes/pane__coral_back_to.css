@@ -1,0 +1,18 @@
+/* line 11, ../../sass/panes/pane__coral_back_to.scss */
+.pane-coral-back-to {
+  line-height: 2.5em;
+  margin-left: 8.33333%;
+}
+/* line 15, ../../sass/panes/pane__coral_back_to.scss */
+.pane-coral-back-to .goto-title {
+  clear: left;
+  color: #898989;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+}
+/* line 23, ../../sass/panes/pane__coral_back_to.scss */
+.pane-coral-back-to ul li {
+  float: left;
+  margin-right: 10px;
+}
