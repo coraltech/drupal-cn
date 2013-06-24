@@ -1,0 +1,7 @@
+<?php
+
+function revision_cache_schema() {
+  $schema['cache_revision_cache'] = drupal_get_schema_unprocessed('system', 'cache');
+  return $schema;
+}
+

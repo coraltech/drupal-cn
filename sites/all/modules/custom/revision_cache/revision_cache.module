@@ -1,0 +1,49 @@
+<?php
+/*------------------------------------------------------------------------------
+ * Drupal Hooks
+ *----------------------------------------------------------------------------*/
+/**
+ * Implementation of hook_flush_caches()...
+ * 
+ * Ensures this cache is flushed on cc all... comment out to lock signatures.
+ */
+function revision_cache_flush_caches() {
+  return array('cache_revision_cache');
+}
+
+
+/**
+ * Implementation of hook_entity_update()
+ * 
+ * Clears this user's cached sig on update of the user.
+ */
+function revision_cache_node_update($node) {
+  cache_clear_all('revision_cache_'.$node->nid, 'cache_revision_cache');
+}
+
+
+/*------------------------------------------------------------------------------
+ * Assistant function(s)
+ *----------------------------------------------------------------------------*/
+/**
+ * Revisions loader - should be used for loading entity revisions
+ */
+function revision_cache_revision_load($node, $reset = FALSE) {
+  static $revisions;
+  if (is_numeric($node->nid) && (!isset($revisions[$node->nid]) || $reset)) {
+    if (!$reset && ($cache = cache_get('revision_cache_'.$node->nid, 'cache_revision_cache')) && !empty($cache->data)) {
+      $revisions = unserialize($cache->data);
+    }
+    else {
+      // Calculations
+      if (is_object($node)) {
+        $revisions[$node->nid] = node_revision_list($node);
+        cache_set('revision_cache_'.$node->nid, serialize($revisions), 'cache_revision_cache');
+      }
+    }
+  }
+  if (!empty($revisions[$node->nid])) {
+    return $revisions[$node->nid];
+  }
+}
+

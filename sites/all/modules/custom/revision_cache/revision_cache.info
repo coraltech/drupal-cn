@@ -1,0 +1,5 @@
+name = Revision cache
+description = This module provides a layer through which to call up cached node revision data.
+core = 7.x
+files[] = revision_cache.module
+package = "Caching"
