@@ -1,0 +1,68 @@
+<?php
+/*------------------------------------------------------------------------------
+ * Drupal Hooks
+ *----------------------------------------------------------------------------*/
+/**
+ * Implementation of hook_flush_caches()...
+ * 
+ * Ensures this cache is flushed on cc all... comment out to lock signatures.
+ */
+function signature_cache_flush_caches() {
+  return array('cache_signature_cache');
+}
+
+/**
+ * Implementation of hook_user_update()
+ * 
+ * Clears this user's cached sig on update of the user.
+ */
+function signature_cache_user_update(&$edit, $account, $category) {
+	if (!isset($edit['signature']) || !isset($edit['original'])) {
+		return false;
+	}
+  // Clear this users cached signature if it has changed
+  if ($edit['signature'] != $edit['original']->signature) {
+    cache_clear_all('signature_cache_'.$account->uid, 'cache_signature_cache');
+  }
+}
+
+/**
+ * Node and comment preprocessing
+ */
+function signature_cache_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  $vars['signature'] = (!empty($node)) ? signature_cache_signature_load($node->uid) : false;
+}
+function signature_cache_preprocess_comment(&$vars) {
+  $comment = $vars['comment'];
+  $vars['signature'] = (!empty($comment)) ? signature_cache_signature_load($comment->uid) : false;
+}
+
+
+/*------------------------------------------------------------------------------
+ * Assistant function(s)
+ *----------------------------------------------------------------------------*/
+/**
+ * Actual signature loader - should be used for loading user signatures where not already available.
+ */
+function signature_cache_signature_load($uid, $reset = FALSE) {
+  static $signatures;
+  if (is_numeric($uid) && (!isset($signatures[$uid]) || $reset)) {
+    if (!$reset && ($cache = cache_get('signature_cache_'.$uid, 'cache_signature_cache')) && !empty($cache->data)) {
+      $signatures = unserialize($cache->data);
+    }
+    else {
+      // Calculations
+      $user = user_load($uid);
+      if (is_object($user)) {
+        // @TODO: Load the prefered format! - FORMAT is HARDCODED!
+        $signatures[$user->uid] = check_markup($user->signature, 'filtered_html');
+        cache_set('signature_cache_'.$uid, serialize($signatures), 'cache_signature_cache');
+      }
+    }
+  }
+  if (!empty($signatures[$uid])) {
+    return $signatures[$uid];
+  }
+}
+

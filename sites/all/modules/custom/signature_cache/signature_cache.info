@@ -1,0 +1,5 @@
+name = Signature cache
+description = This module provides a tool to load and cache user signatures.
+core = 7.x
+files[] = signature_cache.module
+package = "Caching"
