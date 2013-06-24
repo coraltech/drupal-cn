@@ -10,3 +10,34 @@ function coral_panes_ctools_plugin_directory($owner, $plugin_type) {
     return 'plugins/content_types';
   }
 }
+
+
+/**
+ * Implements hook theme
+ */
+function coral_panes_theme() {
+  $path = drupal_get_path('module', 'coral_panes') . '/theme';
+
+  return array(
+    'coral_stat' => array(
+      'variables' => array(
+        'stat_title' => NULL,  // stat title: eg: Comment count: 
+        'data'       => NULL,  // stat data
+        'node'       => NULL,  // parent node
+        'layout'     => NULL   // layout (not used yet)
+      ),
+      'template' => 'coral_stat',
+      'pattern' => 'coral_stat__',
+      'path' => $path,
+    ),
+    'coral_stat_set' => array(
+      'variables' => array(
+        'markup' => NULL,  // stat set markup
+        'set_name' => NULL // name of set
+      ),
+      'template' => 'coral_stat_set',
+      'pattern' => 'coral_stat_set__',
+      'path' => $path,
+    )
+  );
+}
