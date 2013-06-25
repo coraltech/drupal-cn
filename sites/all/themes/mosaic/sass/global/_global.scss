@@ -12,6 +12,7 @@
 @import 'global/gradients';
 @import 'global/site_vars';
 
+@import 'global/buttons';
 
 // -- Global container widths
 .pane-header,
@@ -69,18 +70,18 @@ header .pane-search-form {
     border: 1px solid $dkblue;
     height: 27px;
     position: absolute;
-    right: 8px;
+    right: 4px;
     top: 11px;
-    width: 60px;
+    width: 65px;
     
     .form-submit {
-      border: 1px solid $mdblue;
       color: $white;
       height: 27px;
-      width: 60px;
+      width: 65px;
       
       @include font(80%);
-      @include linear-v-gradient(#0065a5, #2a4a70);
+      @include btn-matte-inset;
+      @include btn-structure;
     }
   }
 }
@@ -106,8 +107,30 @@ header .pane-search-form {
     @include opacity(.85);
   }
 }
- 
 
+
+// Table of contents as it appears in content
+.toc {
+  clear: left;
+  width: 12em;
+  float: left;
+  margin: .25em 1em ($default_vert_unit / 2) 0;
+  padding: ($default_vert_unit / 4) .5em;
+  
+  @include linear-v-gradient(lighten($ltblue, 7%), desaturate($ltblue, 60%));
+  
+  .toc-title {
+    text-align: left;
+    font-size: 90%;
+  }
+  .toc-toggle-message {
+    font-size: 95%;
+    font-family: $mono-fonts;
+  }  
+}
+.toc-back-to-top {
+  display: none;
+}
 
 // -- Footer
 .pane-coral-footer {
