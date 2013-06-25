@@ -1,9 +1,11 @@
 
 // Field tags scss styles
 @import 'global/colors';
+@import 'global/fonts';
 @import 'global/icons';
 
 .field-name-field-tags {
+  margin: $default_vert_unit 0;
 
   &:after {
     content: ".";
