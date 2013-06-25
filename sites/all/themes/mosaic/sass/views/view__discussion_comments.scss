@@ -7,68 +7,44 @@
 @import 'global/grid_mix';
 
 
-.page-node-talk .view-discussion-comments .views-exposed-widgets.clearfix {
-  display: block;
-  height: 2 * $default_vert_unit;
-  background: lighten($ltyellow, 5%);
-  margin-top: 3px;
-  margin-right: -2%;
-  padding: ($default_vert_unit / 2) 0;
-   
-  @include col(13.98, true);
-  &:after { display: inline; }
-  
-  select {
-    position: relative;
-    top: -1px;
-    margin-left: 5px;  
-  } 
-  label { 
-    float: left; 
-    font-weight: normal;
-  }
-  .views-widget-sort-by {
-    margin-left: 1em;
-  } 
-  .form-submit {
-    margin-top: 0;
+.page-node-talk .view-discussion-comments .views-exposed-form {
+
+  height: 3.45em; // container height to keep first comment from riding up
+
+  .views-exposed-widgets.clearfix {
+    display: block;
+    height: 2.2em;
+    background: lighten($ltyellow, 5%);
+    margin-right: -2%;
+    margin-bottom: 0;
+    padding: ($default_vert_unit / 2) 0;
+     
+    @include col(13.98, true);
+    &:after { display: inline; }
+    
+    select {
+      position: relative;
+      top: -1px;
+      margin-left: 5px;  
+    } 
+    label { 
+      float: left; 
+      font-weight: normal;
+    }
+    .views-exposed-widget {
+      margin: .45em 1em 0 0;
+      padding: 0;
+    }
+    .views-widget-sort-by {
+      margin-left: 1em;
+    }
+    .form-submit {
+      margin-top: 0;
+    }
   }
 }
-
-// @TODO: Think about moving this to a general comments scss file.
 
 // Override margin-left on comments when sort by created
 .view-discussion-comments.view-sortby-created .comment {
   margin-left: 0;
-}
-
-// Comment styles
-.view-discussion-comments {
-  .views-row-even .comment {
-    background: lighten($ltgray, 7%);
-    border-top: 3px double $ltgray;
-    border-bottom: 3px double $ltgray;
-  }
-  .comment {
-    padding: 0 1em;
-    margin-top: $default_vert_unit;
-    margin-bottom: $default_vert_unit;
-
-    ul.links.inline {
-      display: block;
-    }
-    h3.comment-title {
-      margin: 15px 0;
-      
-      a {
-        color: $mdgray;
-        &:hover {
-          color: $dkgray;
-        }
-      }
-    }
-    .submitted {
-      padding: 15px 0 0 0;
-    }
-  }
 }
