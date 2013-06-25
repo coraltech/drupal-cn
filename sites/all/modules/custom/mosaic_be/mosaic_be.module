@@ -41,6 +41,67 @@ function mosaic_be_init() {
   }
 }
 
+function mosaic_be_anchor_identifier($toc, $h) {
+  if (isset($h->title) && isset($toc['header'])) {
+    $toc_header = $toc['header'];
+    $title = $h->title;
+    $id = $title;
+  }
+  $allowed_chars = '';
+  if (empty($toc_header['id_strip']['dashes'])) {
+    $allowed_chars = '-';
+  }
+  $allowed_chars .= 'A-Za-z';
+  if (empty($toc_header['id_strip']['digits'])) {
+    $allowed_chars .= '0-9';
+  }
+  if (empty($toc_header['id_strip']['periods'])) {
+    $allowed_chars .= '.';
+  }
+  if (empty($toc_header['id_strip']['underscores'])) {
+    $allowed_chars .= '_';
+  }
+  if (empty($toc_header['id_strip']['colons'])) {
+    $allowed_chars .= ':';
+  }
+  $id = preg_replace(
+    array(
+      '/&nbsp;|\s/',
+      '/\'/',
+      '/&mdash;/',
+      '/&ndash;/',
+      '/&amp;/',
+      '/&[a-z]+;/',
+      '/[^' . $allowed_chars . ']/',
+      '/^[-0-9._:]+/',
+      '/__+/',
+    ),
+    array(
+      '_',     // &nbsp; and spaces
+      '-',     // apostrophe, so it makes things slightly more readable
+      '--',    // &mdash;
+      '--',    // &ndash;
+      'and',   // &amp;
+      '',      // any other entity
+      '',      // any character that is invalid as an ID name
+      '',      // any digits at the start of the name
+      '_',     // reduce multiple underscores to just one
+    ),
+    strip_tags($title)
+  );
+  if (!$id) {
+    // no identifier (i.e. title is composed exclusively of digits, entities, etc.)
+    $id = $toc_header['id_prefix'] . $toc_header['id_sep'] . $toc_header['idx']++;
+  }
+  else {
+    $id .= $toc_header['id_sep'] . rand(0,1000);
+  }
+  
+  $h->attrs = ' class="toc-section" id="'.$id.'"';
+  $h->ident = $id;
+  return $h;
+}
+
 
 
 
