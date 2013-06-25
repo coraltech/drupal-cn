@@ -1,4 +1,19 @@
-/* line 7, ../../sass/global/comments.scss */
+/* line 8, ../../sass/global/comments.scss */
+.views-row-even .comment {
+  background: #efefef;
+  border-style: solid;
+  border-width: 1px 1px 1px 15px;
+  border-color: #9d9d9d;
+}
+
+/* line 14, ../../sass/global/comments.scss */
+.comment {
+  padding: 0 1em;
+  border-style: solid;
+  border-width: 1px 1px 1px 15px;
+  border-color: #dddddd;
+}
+/* line 20, ../../sass/global/comments.scss */
 .comment .new {
   color: #e17d2c;
   font-weight: bold;
@@ -6,61 +21,70 @@
   margin-top: 1.75em;
   margin-right: 1em;
 }
-/* line 14, ../../sass/global/comments.scss */
-.comment .comment-title {
-  float: left;
+/* line 27, ../../sass/global/comments.scss */
+.comment ul.links.inline {
+  display: block;
 }
-/* line 17, ../../sass/global/comments.scss */
+/* line 31, ../../sass/global/comments.scss */
+.comment h3.comment-title a {
+  color: #777777;
+}
+/* line 33, ../../sass/global/comments.scss */
+.comment h3.comment-title a:hover {
+  color: #515151;
+}
+/* line 38, ../../sass/global/comments.scss */
 .comment .submitted {
   clear: left;
+  margin: 1.25em 0;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-1 {
   margin-left: 0em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-2 {
   margin-left: 1em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-3 {
   margin-left: 2em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-4 {
   margin-left: 3em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-5 {
   margin-left: 4em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-6 {
   margin-left: 5em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-7 {
   margin-left: 6em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-8 {
   margin-left: 7em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-9 {
   margin-left: 8em;
 }
 
-/* line 24, ../../sass/global/comments.scss */
+/* line 46, ../../sass/global/comments.scss */
 .comment-thread-10 {
   margin-left: 9em;
 }

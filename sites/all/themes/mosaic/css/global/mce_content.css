@@ -1,37 +1,53 @@
-/* line 33, ../../sass/global/_dom.scss */
-body.html {
+/* line 34, ../../sass/global/_dom.scss */
+body {
   font-size: 16px;
   font-family: arial, helvetica, sans-serif;
+}
+
+/* line 38, ../../sass/global/_dom.scss */
+html > body {
   line-height: 1.25em;
 }
 
-/* line 42, ../../sass/global/_dom.scss */
+/* line 44, ../../sass/global/_dom.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #515151;
-  margin: 1.25em 0 0.625em 0;
-}
-
-/* line 46, ../../sass/global/_dom.scss */
-h1 {
-  font-size: 1.5em;
-}
-
-/* line 47, ../../sass/global/_dom.scss */
-h2 {
-  font-size: 1.3em;
+  clear: left;
 }
 
 /* line 48, ../../sass/global/_dom.scss */
+h1 {
+  font-size: 1.5em;
+  line-height: 1.6667em;
+  margin-top: 0.4167em;
+  margin-bottom: 0.4167em;
+}
+
+/* line 54, ../../sass/global/_dom.scss */
+h2 {
+  font-size: 1.375em;
+  line-height: 1.8182em;
+  margin-top: 0.4545em;
+  margin-bottom: 0.4545em;
+}
+
+/* line 60, ../../sass/global/_dom.scss */
 h3 {
   font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
-/* line 49, ../../sass/global/_dom.scss */
+/* line 66, ../../sass/global/_dom.scss */
 h4 {
-  font-size: 1.15em;
+  font-size: 1.125em;
+  line-height: 1.1111em;
+  margin-top: 0.5555em;
+  margin-bottom: 0.5555em;
 }
 
-/* line 56, ../../sass/global/_dom.scss */
+/* line 78, ../../sass/global/_dom.scss */
 img,
 object,
 embed,
@@ -39,7 +55,7 @@ video {
   max-width: 100%;
 }
 
-/* line 64, ../../sass/global/_dom.scss */
+/* line 86, ../../sass/global/_dom.scss */
 a,
 li a,
 li.leaf a {
@@ -50,7 +66,7 @@ li.leaf a {
   text-decoration: none;
   outline: none;
 }
-/* line 72, ../../sass/global/_dom.scss */
+/* line 94, ../../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -58,40 +74,40 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 73, ../../sass/global/_dom.scss */
+/* line 95, ../../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 77, ../../sass/global/_dom.scss */
+/* line 99, ../../sass/global/_dom.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 81, ../../sass/global/_dom.scss */
+/* line 103, ../../sass/global/_dom.scss */
 p {
   margin: 1.25em 0;
 }
 
-/* line 85, ../../sass/global/_dom.scss */
+/* line 107, ../../sass/global/_dom.scss */
 em, .em {
   font-style: italic;
 }
 
-/* line 89, ../../sass/global/_dom.scss */
+/* line 111, ../../sass/global/_dom.scss */
 small {
   font-size: 80%;
   line-height: 1.25em;
 }
 
-/* line 97, ../../sass/global/_dom.scss */
+/* line 119, ../../sass/global/_dom.scss */
 ul,
 .item-list ul {
   margin: 1.25em 0.5em;
 }
-/* line 101, ../../sass/global/_dom.scss */
+/* line 123, ../../sass/global/_dom.scss */
 ul li,
 ul li.leaf,
 .item-list ul li,
@@ -102,13 +118,13 @@ ul li.leaf,
   padding-top: 0;
 }
 
-/* line 112, ../../sass/global/_dom.scss */
+/* line 134, ../../sass/global/_dom.scss */
 .html ul.links {
   display: block;
   margin: 1.25em 0;
   height: 2.3em;
 }
-/* line 117, ../../sass/global/_dom.scss */
+/* line 139, ../../sass/global/_dom.scss */
 .html ul.links li {
   float: right;
   margin: 5px 0 0 5px;
@@ -181,7 +197,7 @@ ul li.leaf,
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 126, ../../sass/global/_dom.scss */
+/* line 148, ../../sass/global/_dom.scss */
 .html ul.links li.comment-delete {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -252,12 +268,12 @@ ul li.leaf,
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 130, ../../sass/global/_dom.scss */
+/* line 152, ../../sass/global/_dom.scss */
 .html ul.links li a {
   color: #fff;
 }
 
-/* line 139, ../../sass/global/_dom.scss */
+/* line 161, ../../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -329,7 +345,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 143, ../../sass/global/_dom.scss */
+/* line 165, ../../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -402,18 +418,18 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 149, ../../sass/global/_dom.scss */
+/* line 171, ../../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 153, ../../sass/global/_dom.scss */
+/* line 175, ../../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 156, ../../sass/global/_dom.scss */
+/* line 178, ../../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */

@@ -3,7 +3,11 @@
   background: url('/images/icons-s0640884fd9.png') no-repeat;
 }
 
-/* line 8, ../../sass/fields/field__field_tags.scss */
+/* line 7, ../../sass/fields/field__field_tags.scss */
+.field-name-field-tags {
+  margin: 1.25em 0;
+}
+/* line 10, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags:after {
   content: ".";
   display: block;
@@ -11,7 +15,7 @@
   clear: both;
   visibility: hidden;
 }
-/* line 16, ../../sass/fields/field__field_tags.scss */
+/* line 18, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-label {
   float: left;
   display: block;
@@ -23,16 +27,16 @@
   height: 14px;
   width: 11px;
 }
-/* line 25, ../../sass/fields/field__field_tags.scss */
+/* line 27, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-item {
   float: left;
 }
-/* line 28, ../../sass/fields/field__field_tags.scss */
+/* line 30, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-item:after {
   content: ",";
   margin-right: 3px;
 }
-/* line 33, ../../sass/fields/field__field_tags.scss */
+/* line 35, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-item a {
   background: #dddddd;
   color: #777777;
@@ -41,11 +45,11 @@
   margin: 0 0 5px;
   padding: 0 3px;
 }
-/* line 41, ../../sass/fields/field__field_tags.scss */
+/* line 43, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-item a:hover {
   color: #515151;
 }
-/* line 47, ../../sass/fields/field__field_tags.scss */
+/* line 49, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags .field-item:last-child:after {
   content: '';
   margin-right: 0;
