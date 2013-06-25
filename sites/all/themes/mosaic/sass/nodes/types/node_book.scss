@@ -22,7 +22,8 @@
 .page-comment-reply .pane-node-title,
 .node-type-book .pane-node-title {
   h1 { 
-    margin: .65em 0;
+    margin: .75em 0;
+    line-height: 16px;
   }
     
   .icon {
@@ -45,7 +46,7 @@
   position: relative;
   
   .pane-page-title h1 {
-    margin: .75em 0;
+
   }
   
   .pane-node-title {
@@ -78,7 +79,7 @@
     
     & > .pane-content {
       border: 1px solid $mdgray;
-      padding: (3 * $default_vert_unit) 16px 16px;
+      padding: (2 * $default_vert_unit) 16px 16px;
     }
     ul.links.inline {
       margin: 0;
