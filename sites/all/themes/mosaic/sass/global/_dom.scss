@@ -7,33 +7,35 @@
 
 @import "compass/utilities/general/clearfix";
 
+// Base 16px
+// pixel to em 
+// 10px - 0.63em
+// 11px - 0.689em
+// 12px - 0.750em
+// 13px - 0.814em
+// 14px - 0.875em
+// 15px - 0.938em
+// 16px - 1em
+// 17px - 1.064em
+// 18px - 1.125em
+// 19px - 1.188em
+// 20px - 1.250em
+// 21px - 1.313em
+// 22px - 1.375em
+// 23px - 1.438em
+// 24px - 1.500em
+// 25px - 1.563em
+// 26px - 1.625em
+// 27px - 1.688em
+// 28px - 1.750em
+// 29px - 1.813em
+// 30px - 1.75em
 
-// Font Size Reference (12px base)
-//------------------------------------------------------------------------------
-//    6px   |   0.5em     |   50%     |   5pt
-//    7px   |   0.583em   |   58.3%   |   5pt
-//    8px   |   0.667em   |   66.7%   |   6pt
-//    9px   |   0.75em    |   75%     |   7pt
-//    10px  |   0.833em   |   83.3%   |   8pt
-//    11px  |   0.917em   |   91.7%   |   8pt
-//    12px  |   1em       |   100%    |   9pt
-//    13px  |   1.083em   |   108.3%  |   10pt
-//    14px  |   1.167em   |   116.7%  |   11pt
-//    15px  |   1.25em    |   125%    |   11pt
-//    16px  |   1.333em   |   133.3%  |   12pt
-//    17px  |   1.417em   |   141.7%  |   13pt
-//    18px  |   1.5em     |   150%    |   14pt
-//    19px  |   1.583em   |   158.3%  |   14pt
-//    20px  |   1.667em   |   166.7%  |   15pt
-//    21px  |   1.75em    |   175%    |   16pt
-//    22px  |   1.833em   |   183.3%  |   17pt
-//    23px  |   1.917em   |   191.7%  |   17pt
-//    24px  |   2em       |   200%    |   18pt
-
-body.html {
+body {
   font-size: 16px;
   font-family: $sans_fonts;
-  //letter-spacing: 1px;
+}
+html > body {
   line-height: $default_vert_unit;
 }
 
@@ -41,12 +43,32 @@ body.html {
 // --- Headers
 h1, h2, h3, h4, h5, h6 {
   color: $dkgray;
-  margin: $default_vert_unit 0 ($default_vert_unit / 2) 0;
+  clear: left;
 }
-h1 { font-size: 1.5em; }
-h2 { font-size: 1.3em; }
-h3 { font-size: 1.25em; }
-h4 { font-size: 1.15em; }
+h1 { 
+  font-size: 1.5em; // 24px
+  line-height: 1.6667em; // 40px
+  margin-top: 0.4167em;
+  margin-bottom: 0.4167em;
+}
+h2 { 
+  font-size: 1.375em; // 22px
+  line-height: 1.8182em; // 40px
+  margin-top: 0.4545em;
+  margin-bottom: 0.4545em;
+}
+h3 { 
+  font-size: 1.25em; // 20px
+  line-height: 1em; // 20px
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+h4 { 
+  font-size: 1.125em; // 18px
+  line-height: 1.1111em; // 20px
+  margin-top: 0.5555em;
+  margin-bottom: 0.5555em;
+}
 
 
 // --- Media
