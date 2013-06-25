@@ -3,7 +3,7 @@
 @import 'global/fonts';
 
 .pane-page-tabs {
-  padding: 0 0 1em;
+  padding: 0 0 $default_vert_unit;
   
   ul { margin: 0; 
     li {
