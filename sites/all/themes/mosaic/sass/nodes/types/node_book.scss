@@ -30,6 +30,7 @@
     display: block;
     float: left;
     margin-right: .4em;
+    margin-top: -3px;
     
     @include icons-sprite('coral-book');
   }
