@@ -49,7 +49,11 @@
     @include icons-sprite('getting-started');
   }
   
-  h2 { margin: 0; color: $white; }
+  h2 { 
+    margin: 0; 
+    color: $white; 
+    line-height: $default_vert_unit;  
+  }
   
   ul {
     margin: 1em;
@@ -57,9 +61,7 @@
   li { margin: 0 0 ($default_vert_unit / 4) 1em; }
   
   p {
-    margin-top: .75em;
-    margin-left:.75em;
-    margin-right:.75em;
+    margin: .625em 1em;
     font-size: 90%;
   }
   

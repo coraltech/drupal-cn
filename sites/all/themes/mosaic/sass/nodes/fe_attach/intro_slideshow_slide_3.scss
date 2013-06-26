@@ -31,7 +31,7 @@
   .portable-icon {
     display: block;
     position: absolute;
-    top: (1.75 * $default_vert_unit);
+    top: (2.5 * $default_vert_unit);
     left: 10px;
     
     @include icons-sprite('cloud-case');
@@ -45,6 +45,7 @@
     h2 {
       color: $white; 
       margin: 0;
+      line-height: $default_vert_unit;
     }
   }
   

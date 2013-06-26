@@ -31,7 +31,7 @@
   .social-icon {
     display: block;
     position: absolute;
-    top: (2 * $default_vert_unit);
+    top: (2.5 * $default_vert_unit);
     left: 10px;
     
     @include icons-sprite('coral-team');
@@ -45,6 +45,7 @@
     h2 {
       color: $ltyellow; 
       margin: 0;
+      line-height: $default_vert_unit;
     }
   }
   
