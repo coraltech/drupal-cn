@@ -1,0 +1,25 @@
+
+// Scss file for view: "entity_authors" Display: "icon_set"
+
+@import 'global/colors';
+@import 'global/fonts';
+
+@import "compass/utilities/general/clearfix";
+
+// This is a pane view so this is ok ;-)
+.pane-entity-authors-icon-set {
+  margin: $default_vert_unit 0;
+  
+  @include pie-clearfix;
+  
+  // H3's are user images!
+  //  the image is the "group by" field in the view
+  h3 {   
+    border: 1px solid lighten($ltgray, 7%);
+    overflow: visible;
+    float: left;
+    clear: none;
+    margin-right: $default_vert_unit / 4;    
+    img { display: block; }
+  }
+}
