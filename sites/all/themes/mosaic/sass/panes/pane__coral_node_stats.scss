@@ -1,0 +1,23 @@
+
+// Main scss file for the node stats pane
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+.pane-coral-node-stats {
+  border: 1px solid darken($ltblue, 5%);
+  clear: left;
+  width: 12em;
+  float: left;
+  font-size: 95%;
+  margin: (-1 * ($default_vert_unit / 4)) 1em ($default_vert_unit / 4) 0;
+  padding: ($default_vert_unit / 4);
+  
+  background: $ltyellow;
+  color: $mdgray;
+  
+  .coral-stat {
+    font-weight: bold;
+  }
+}
