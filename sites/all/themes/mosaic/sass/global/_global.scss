@@ -114,8 +114,9 @@ header .pane-search-form {
   clear: left;
   width: 12em;
   float: left;
-  margin: .25em 1em ($default_vert_unit / 2) 0;
-  padding: ($default_vert_unit / 4) .5em;
+  
+  margin: (-1 * ($default_vert_unit / 4)) 1em ($default_vert_unit / 2) 0;
+  padding: ($default_vert_unit / 4);
   
   @include linear-v-gradient(lighten($ltblue, 7%), desaturate($ltblue, 60%));
   
