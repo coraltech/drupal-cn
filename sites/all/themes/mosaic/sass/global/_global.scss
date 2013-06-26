@@ -111,6 +111,7 @@ header .pane-search-form {
 
 // Table of contents as it appears in content
 .toc {
+  border: 1px solid darken($ltblue, 5%);
   clear: left;
   width: 12em;
   float: left;
@@ -118,11 +119,12 @@ header .pane-search-form {
   margin: (-1 * ($default_vert_unit / 4)) 1em ($default_vert_unit / 2) 0;
   padding: ($default_vert_unit / 4);
   
-  @include linear-v-gradient(lighten($ltblue, 7%), desaturate($ltblue, 60%));
+  @include linear-v-gradient(lighten($ltblue, 10%), lighten($ltblue, 5%));
   
   .toc-title {
     text-align: left;
     font-size: 90%;
+    color: $mdgray;
   }
   .toc-toggle-message {
     font-size: 95%;
