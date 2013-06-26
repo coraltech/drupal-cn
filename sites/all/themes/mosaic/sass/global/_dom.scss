@@ -129,6 +129,14 @@ ul,
   
 }
 
+ol {
+  list-style: decimal;
+  margin: 0;
+  
+  ol {
+    margin-left: 1.325em;
+  }
+}
 
 // the item actions (edit delete etc...)
 .html ul.links {
