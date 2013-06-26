@@ -8,19 +8,20 @@
   background: #446eac;
   padding: 0.625em;
   margin: 0 0 3px;
+  line-height: .8em;
 }
-/* line 17, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+/* line 18, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
 .pane-book-explorer-book-explorer ul.menu {
   padding: 10px;
   background: #e6e8ea;
 }
-/* line 22, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+/* line 23, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
 .pane-book-explorer-book-explorer ul.menu li.leaf,
 .pane-book-explorer-book-explorer ul.menu li.expanded {
   padding-top: 0;
   margin-bottom: 0;
 }
-/* line 27, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
+/* line 28, ../../sass/panes/pane__block_book_explorer_book_explorer.scss */
 .pane-book-explorer-book-explorer ul.menu ul.menu {
   padding: 0;
 }

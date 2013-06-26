@@ -38,7 +38,7 @@
 .intro-slide-3 .portable-icon {
   display: block;
   position: absolute;
-  top: 2.1875em;
+  top: 3.125em;
   left: 10px;
   background-position: 0 -333px;
   height: 65px;
@@ -54,16 +54,17 @@
 .intro-slide-3 .title h2 {
   color: white;
   margin: 0;
+  line-height: 1.25em;
 }
-/* line 51, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 52, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 ul {
   margin-top: 1em;
 }
-/* line 52, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 53, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 li {
   margin: 0 0 0.3125em 1em;
 }
-/* line 53, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 54, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 p {
   margin-left: 105px;
   margin-right: 1em;

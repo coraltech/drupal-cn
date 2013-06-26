@@ -12,8 +12,9 @@
 .pane-coral-quick-start .pane-title {
   margin: 0.625em 2em 0.625em 65px;
   font-size: 130%;
+  line-height: 1.25em;
 }
-/* line 18, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 19, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .icon {
   display: block;
   position: absolute;
@@ -23,22 +24,22 @@
   height: 48px;
   width: 48px;
 }
-/* line 27, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 28, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .small {
   padding: 0 1em;
 }
-/* line 31, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 32, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .tout {
   border-top: 5px solid #777777;
   background: #dddddd;
 }
-/* line 35, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 36, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .tout p {
   margin: 0;
   padding: 1.25em 1em;
   text-align: center;
 }
-/* line 42, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 43, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .btn {
   font-size: 16px;
   padding: 0.5em 1.5em;

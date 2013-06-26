@@ -23,13 +23,14 @@
   padding: 0;
   position: relative;
   right: -10px;
+  line-height: .8em;
 }
-/* line 27, ../../sass/views/view__featured_projects__home.scss */
+/* line 28, ../../sass/views/view__featured_projects__home.scss */
 .pane-featured-projects-home h2:after {
   padding-left: 10px;
   content: '-';
 }
-/* line 33, ../../sass/views/view__featured_projects__home.scss */
+/* line 34, ../../sass/views/view__featured_projects__home.scss */
 .pane-featured-projects-home .icon {
   display: block;
   position: absolute;
@@ -39,19 +40,19 @@
   height: 29px;
   width: 30px;
 }
-/* line 42, ../../sass/views/view__featured_projects__home.scss */
+/* line 43, ../../sass/views/view__featured_projects__home.scss */
 .pane-featured-projects-home .pip-cont {
   position: absolute;
   bottom: -8px;
   margin-left: -8px;
   z-index: 5;
 }
-/* line 49, ../../sass/views/view__featured_projects__home.scss */
+/* line 50, ../../sass/views/view__featured_projects__home.scss */
 .pane-featured-projects-home .pane-title {
   float: left;
   width: 20.83333%;
 }
-/* line 52, ../../sass/views/view__featured_projects__home.scss */
+/* line 53, ../../sass/views/view__featured_projects__home.scss */
 .pane-featured-projects-home .pane-content {
   float: left;
   width: 79.16667%;

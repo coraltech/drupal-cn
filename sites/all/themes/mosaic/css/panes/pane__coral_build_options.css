@@ -50,8 +50,9 @@
   background: #919191;
   padding: 0.625em;
   margin-top: 0;
+  line-height: .8em;
 }
-/* line 46, ../../sass/panes/pane__coral_build_options.scss */
+/* line 47, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .format-usage li {
   margin-left: 45px;
 }

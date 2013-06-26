@@ -74,23 +74,22 @@
 .intro-slide-4 h2 {
   margin: 0;
   color: white;
+  line-height: 1.25em;
 }
-/* line 54, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 58, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 ul {
   margin: 1em;
 }
-/* line 57, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 61, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 li {
   margin: 0 0 0.3125em 1em;
 }
-/* line 59, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 63, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 p {
-  margin-top: .75em;
-  margin-left: .75em;
-  margin-right: .75em;
+  margin: .625em 1em;
   font-size: 90%;
 }
-/* line 66, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
+/* line 68, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
 .intro-slide-4 .more {
   margin: 0 1em;
   display: block;
