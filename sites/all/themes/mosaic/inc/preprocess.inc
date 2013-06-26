@@ -59,13 +59,12 @@ function mosaic_preprocess_panels_pane(&$vars) {
 }
 
 
-
 /**
  * Implements hook_preprocess_views_view().
  */
 function mosaic_preprocess_views_view(&$vars) {
   $path = drupal_get_path('theme', 'mosaic');  
-  
+//dpm($vars);  
    if(isset($vars['view']->name)) {
     $files = array(
       'view__' . $vars['view']->name . '__' . $vars['view']->current_display,
@@ -85,6 +84,16 @@ function mosaic_preprocess_views_view(&$vars) {
   }
 }
 
+// Preprocess for views fields (row - sort of)
+function mosaic_preprocess_views_view_fields(&$vars) {
+  //dpm($vars);
+}
+
+// Preprocess for views field
+function mosaic_preprocess_views_view_field(&$vars) {
+  $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->field_alias;
+  if (function_exists($func)) $func($vars);
+}
 
 // Preprocess the comment - add thread class
 function mosaic_preprocess_comment(&$vars) {
@@ -103,7 +112,7 @@ function mosaic_preprocess_comment(&$vars) {
 function mosaic_preprocess_field(&$variables, $hook) {
   $path = drupal_get_path('theme', 'mosaic'); 
   $element = $variables['element'];
-  
+
   $files = array(
     'field__'.$element['#field_type'],
     'field__'.$element['#field_name']
@@ -131,6 +140,44 @@ function mosaic_preprocess_panels_pane__node_title(&$vars) {
   $vars['content'] = substr($content, 0, $position+1).'<span class="icon"></span>'.substr($content, $position+1);
 }
 
+
+// Preprocess user pictures.
+function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars) {
+  //dpm($vars);
+  $row   = $vars['row']; //dpm($row);
+  $field = $vars['field']; //dpm($field);
+  if ($vars['output'] == '') {
+    if (isset($row->users_node_revision_uid)) {
+      // style name
+      $image_style = 'user_thumb_small'; // @TODO Update this to the right one when its made.
+      if (isset($field->options['image_style'])) {
+        $image_style = $field->options['image_style'];
+      }
+      $title = '';
+      if (isset($row->users_node_revision_name)) {
+        $title = t('View profile of '.$row->users_node_revision_name);
+      }
+      
+      $vars['output'] = l(
+        theme(
+          'image_style', 
+          array(
+            'style_name' => $image_style,
+            'path' => 'public://coraltechiconlg.png',
+            'title' => $title
+          )
+        ), 
+        'user/'.$row->users_node_revision_uid, // link path
+        array('html' => 'true') // we have a pic
+      );
+    }
+  }
+}
+
+function mosaic__preprocess_user_image() {
+  $output = '';
+  return $output;
+}
 
 
 
