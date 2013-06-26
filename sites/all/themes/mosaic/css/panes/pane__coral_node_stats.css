@@ -1,0 +1,16 @@
+/* line 8, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats {
+  border: 1px solid #bac8d9;
+  clear: left;
+  width: 12em;
+  float: left;
+  font-size: 95%;
+  margin: -0.3125em 1em 0.3125em 0;
+  padding: 0.3125em;
+  background: #fff6b6;
+  color: #777777;
+}
+/* line 20, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .coral-stat {
+  font-weight: bold;
+}

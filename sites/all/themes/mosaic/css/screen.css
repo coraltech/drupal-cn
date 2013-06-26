@@ -833,44 +833,46 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
 
 /* line 113, ../sass/global/_global.scss */
 .toc {
+  border: 1px solid #bac8d9;
   clear: left;
   width: 12em;
   float: left;
   margin: -0.3125em 1em 0.625em 0;
   padding: 0.3125em;
-  background: #e1e7ef;
-  background: -moz-linear-gradient(top, #e1e7ef 0%, #d6d6d6 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e1e7ef), color-stop(100%, #d6d6d6));
-  background: -webkit-linear-gradient(top, #e1e7ef 0%, #d6d6d6 100%);
-  background: -o-linear-gradient(top, #e1e7ef 0%, #d6d6d6 100%);
-  background: -ms-linear-gradient(top, #e1e7ef 0%, #d6d6d6 100%);
-  background: linear-gradient(to bottom, #e1e7ef 0%, #d6d6d6 100%);
+  background: #ebeff4;
+  background: -moz-linear-gradient(top, #ebeff4 0%, #dae2eb 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ebeff4), color-stop(100%, #dae2eb));
+  background: -webkit-linear-gradient(top, #ebeff4 0%, #dae2eb 100%);
+  background: -o-linear-gradient(top, #ebeff4 0%, #dae2eb 100%);
+  background: -ms-linear-gradient(top, #ebeff4 0%, #dae2eb 100%);
+  background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 123, ../sass/global/_global.scss */
+/* line 124, ../sass/global/_global.scss */
 .toc .toc-title {
   text-align: left;
   font-size: 90%;
+  color: #777777;
 }
-/* line 127, ../sass/global/_global.scss */
+/* line 129, ../sass/global/_global.scss */
 .toc .toc-toggle-message {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
 }
 
-/* line 132, ../sass/global/_global.scss */
+/* line 134, ../sass/global/_global.scss */
 .toc-back-to-top {
   display: none;
 }
 
-/* line 137, ../sass/global/_global.scss */
+/* line 139, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 143, ../sass/global/_global.scss */
+/* line 145, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
