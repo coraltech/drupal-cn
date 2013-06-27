@@ -40,6 +40,13 @@
   }
 }
 
+.node-type-book .book-navigation {
+  clear: both;
+  .menu {
+    padding: .3125em 1em;
+    margin: 0;
+  }
+}
 
 // Talk section styles - see Discussion (talk) tab
 .page-comment-reply .layout-node-1 .main-content,
