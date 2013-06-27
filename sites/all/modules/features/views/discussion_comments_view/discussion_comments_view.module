@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Discussion comments view feature.
+ */
+
+include_once 'discussion_comments_view.features.inc';
