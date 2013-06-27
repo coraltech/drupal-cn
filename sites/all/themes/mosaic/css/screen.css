@@ -232,24 +232,30 @@ ul li.leaf,
   margin: 0 0 0 1em;
   padding-top: 0;
 }
+/* line 129, ../sass/global/_dom.scss */
+ul li.collapsed,
+.item-list ul li.collapsed {
+  margin: 0 0 0 1em;
+  padding-top: 0;
+}
 
-/* line 132, ../sass/global/_dom.scss */
+/* line 136, ../sass/global/_dom.scss */
 ol {
   list-style: decimal;
   margin: 0;
 }
-/* line 136, ../sass/global/_dom.scss */
+/* line 140, ../sass/global/_dom.scss */
 ol ol {
   margin-left: 1.325em;
 }
 
-/* line 142, ../sass/global/_dom.scss */
+/* line 146, ../sass/global/_dom.scss */
 .html ul.links {
   display: block;
   margin: 1.25em 0;
   height: 2.3em;
 }
-/* line 147, ../sass/global/_dom.scss */
+/* line 151, ../sass/global/_dom.scss */
 .html ul.links li {
   float: right;
   margin: 5px 0 0 5px;
@@ -322,7 +328,7 @@ ol ol {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 156, ../sass/global/_dom.scss */
+/* line 160, ../sass/global/_dom.scss */
 .html ul.links li.comment-delete {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -393,12 +399,12 @@ ol ol {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 160, ../sass/global/_dom.scss */
+/* line 164, ../sass/global/_dom.scss */
 .html ul.links li a {
   color: #fff;
 }
 
-/* line 169, ../sass/global/_dom.scss */
+/* line 173, ../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -470,7 +476,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 173, ../sass/global/_dom.scss */
+/* line 177, ../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -543,18 +549,18 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 179, ../sass/global/_dom.scss */
+/* line 183, ../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 183, ../sass/global/_dom.scss */
+/* line 187, ../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 186, ../sass/global/_dom.scss */
+/* line 190, ../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */

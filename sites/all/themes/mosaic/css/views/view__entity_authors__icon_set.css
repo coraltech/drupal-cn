@@ -9,7 +9,14 @@
   display: table;
   clear: both;
 }
-/* line 17, ../../sass/views/view__entity_authors__icon_set.scss */
+/* line 15, ../../sass/views/view__entity_authors__icon_set.scss */
+.pane-entity-authors-icon-set .pane-title {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .75em;
+  margin-bottom: .25em;
+}
+/* line 24, ../../sass/views/view__entity_authors__icon_set.scss */
 .pane-entity-authors-icon-set h3 {
   border: 1px solid #efefef;
   overflow: visible;
@@ -17,7 +24,7 @@
   clear: none;
   margin-right: 0.3125em;
 }
-/* line 23, ../../sass/views/view__entity_authors__icon_set.scss */
+/* line 30, ../../sass/views/view__entity_authors__icon_set.scss */
 .pane-entity-authors-icon-set h3 img {
   display: block;
 }

@@ -1,0 +1,28 @@
+/* line 8, ../../sass/views/view__related_qa__small_list.scss */
+.pane-related-qa-small-list {
+  border-bottom: 3px solid #c4c4c4;
+}
+/* line 11, ../../sass/views/view__related_qa__small_list.scss */
+.pane-related-qa-small-list .pane-title {
+  color: white;
+  padding: 0.625em;
+  margin: 0 0 3px;
+  line-height: .8em;
+  background: #777777;
+  background: -moz-linear-gradient(top, #777777 0%, #898989 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #898989));
+  background: -webkit-linear-gradient(top, #777777 0%, #898989 100%);
+  background: -o-linear-gradient(top, #777777 0%, #898989 100%);
+  background: -ms-linear-gradient(top, #777777 0%, #898989 100%);
+  background: linear-gradient(to bottom, #777777 0%, #898989 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 20, ../../sass/views/view__related_qa__small_list.scss */
+.pane-related-qa-small-list .views-row {
+  background: #dddddd;
+  padding: .1562em .5em;
+}
+/* line 24, ../../sass/views/view__related_qa__small_list.scss */
+.pane-related-qa-small-list .views-row-even {
+  background: #eaeaea;
+}

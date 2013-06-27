@@ -44,14 +44,24 @@
   margin: 0 5px 5px 0;
 }
 
-/* line 46, ../../../sass/nodes/types/node_book.scss */
+/* line 43, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .book-navigation {
+  clear: both;
+}
+/* line 45, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .book-navigation .menu {
+  padding: .3125em 1em;
+  margin: 0;
+}
+
+/* line 53, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content,
 .node-type-book.node-talk .layout-node-1 .main-content {
   position: relative;
   float: none;
   width: 100%;
 }
-/* line 53, ../../../sass/nodes/types/node_book.scss */
+/* line 60, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title {
   background: #898989;
@@ -61,17 +71,17 @@
   float: right;
   width: 41.66667%;
 }
-/* line 59, ../../../sass/nodes/types/node_book.scss */
+/* line 66, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title a,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title a {
   color: white;
 }
-/* line 63, ../../../sass/nodes/types/node_book.scss */
+/* line 70, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title .pane-content,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title .pane-content {
   padding: 0.625em;
 }
-/* line 72, ../../../sass/nodes/types/node_book.scss */
+/* line 79, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node {
   background: #f7f7f7;
@@ -80,28 +90,28 @@
   float: right;
   width: 41.66667%;
 }
-/* line 77, ../../../sass/nodes/types/node_book.scss */
+/* line 84, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title {
   display: none;
 }
-/* line 81, ../../../sass/nodes/types/node_book.scss */
+/* line 88, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content {
   border: 1px solid #777777;
   padding: 2.5em 16px 16px;
 }
-/* line 85, ../../../sass/nodes/types/node_book.scss */
+/* line 92, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline {
   margin: 0;
 }
-/* line 87, ../../../sass/nodes/types/node_book.scss */
+/* line 94, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after {
   display: none;
 }
-/* line 91, ../../../sass/nodes/types/node_book.scss */
+/* line 98, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li {
   float: left;
