@@ -64,8 +64,7 @@ function mosaic_preprocess_panels_pane(&$vars) {
  */
 function mosaic_preprocess_views_view(&$vars) {
   $path = drupal_get_path('theme', 'mosaic');  
-//dpm($vars);  
-   if(isset($vars['view']->name)) {
+  if(isset($vars['view']->name)) {
     $files = array(
       'view__' . $vars['view']->name . '__' . $vars['view']->current_display,
       'view__' . $vars['view']->name
@@ -97,8 +96,6 @@ function mosaic_preprocess_views_view_field(&$vars) {
 
 // Preprocess the comment - add thread class
 function mosaic_preprocess_comment(&$vars) {
-  //dpm($vars);
-  
   // set comment title class
   $vars['title_attributes_array']['class'] = array('comment-title');
 
@@ -172,11 +169,6 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
       );
     }
   }
-}
-
-function mosaic__preprocess_user_image() {
-  $output = '';
-  return $output;
 }
 
 
