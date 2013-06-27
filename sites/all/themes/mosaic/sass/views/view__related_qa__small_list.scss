@@ -1,0 +1,27 @@
+
+// Primary Scss file for the small list display of the related qa view
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+.pane-related-qa-small-list {
+  border-bottom: 3px solid darken($ltgray, 10%);
+  
+  .pane-title {
+    color: $white;
+    padding: 0.625em;
+    margin: 0 0 3px;
+    line-height: .8em;
+    
+    @include linear-v-gradient($mdgray, lighten($mdgray, 7%));
+  }
+  
+  .views-row {
+    background: $ltgray;
+    padding: .1562em .5em;
+  }
+  .views-row-even {
+    background: lighten($ltgray, 5%);
+  }
+}
