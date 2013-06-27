@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Coral projects view feature.
+ */
+
+include_once 'coral_projects_view.features.inc';
