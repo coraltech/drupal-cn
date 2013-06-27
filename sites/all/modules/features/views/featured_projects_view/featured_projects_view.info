@@ -1,8 +1,9 @@
 name = Featured projects view
 description = Provides the featured projects view
 core = 7.x
-package = Features
-version = 7.x-1.0
+package = Coral views
+php = 5.2.4
+version = 7.x-1.1
 project = featured_projects_view
 dependencies[] = ctools
 dependencies[] = views
