@@ -1,0 +1,4 @@
+name = Hide user submitted toc
+description = Allows the hiding of any user submitted toc ([toc ...]) so that the toc is always at the top!
+package = Coral
+core = 7.x

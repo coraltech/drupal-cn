@@ -1,0 +1,34 @@
+<?php
+/**
+* Implements hook_filter_info().
+*/
+function hide_user_toc_filter_info() {
+  $filters = array();
+  $filters['hide_toc_tip'] = array(
+    'title' => t('Hide user toc formatter'),
+    'description' => t('Removes any [toc ...] that the user may have submitted.  We add it automatically to the top for standardization. This filter should come before toc itself.'),
+    'prepare callback' => 'hide_user_toc_filter_prepare',
+    'process callback' => 'hide_user_toc_filter_process'
+  );
+  return $filters;
+}
+/**
+* Implements filter prepare callback.
+*/
+function hide_user_toc_filter_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
+  return $text;
+}
+
+/**
+* Implements filter process callback.
+*/
+function hide_user_toc_filter_process($text, $filter, $format, $langcode, $cache, $cache_id) {
+  // Get rid of toc... We add it automatically
+  //  This ensures that the toc is always at the top!
+  return preg_replace('%\[toc\s*([^\]]*)\]%', '', $text);
+}
+
+/**
+* Implements filter tips callback.
+*/
+function _hide_user_toc_tips() {}
