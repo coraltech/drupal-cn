@@ -12,6 +12,13 @@
   
   @include pie-clearfix;
   
+  .pane-title { // like an h3
+    font-size: 1.25em; // 20px
+    line-height: 1em; // 20px
+    margin-top: .75em;
+    margin-bottom: .25em;  
+  }
+  
   // H3's are user images!
   //  the image is the "group by" field in the view
   h3 {   
