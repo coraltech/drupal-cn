@@ -55,6 +55,68 @@ function mosaic_breadcrumb($variables) {
 
 
 /**
+ * Theme the output of the Back to Top link.
+ *
+ * This way users can easily add an image instead of using the CSS
+ * arrow up as we have in the module.
+ *
+ * @param $toc A TOC object with the options and levels.
+ *
+ * @return Rendered HTML to be displayed.
+ */
+function mosaic_tableofcontents_back_to_top($variables) {
+  $toc = $variables['toc'];
+  $label = check_plain($toc['back_to_top']['label']);
+  $anchor = check_plain($toc['back_to_top']['anchor']);
+  return "<div class='toc-back-to-top'><a href='#{$anchor}'><span>{$label}</span></a></div>";
+}
+
+
+function mosaic_filter_tips($variables) {
+  $tips = $variables['tips'];
+  $long = $variables['long'];
+  $output = '';
+
+  $multiple = count($tips) > 1;
+  if ($multiple) {
+    $output = '<h2>' . t('Text Formats') . '</h2>';
+  }
+
+  if (count($tips)) {
+    if ($multiple) {
+      $output .= '<div class="compose-tips">';
+    }
+    foreach ($tips as $name => $tiplist) {
+      if ($multiple) {
+        $output .= '<div class="filter-type filter-' . drupal_html_class($name) . '">';
+        $output .= '<h3>' . $name . '</h3>';
+      }
+
+      if (count($tiplist) > 0) {
+        $output .= '<ul class="tips">';
+        foreach ($tiplist as $tip) {
+          // filter the toc tip out... toc added automatically
+          
+          if($tip['id'] == 'filter_toc') $tip['tip'] = t('Tables of contents will be added automatically.'); 
+          $output .= '<li' . ($long ? ' id="filter-' . str_replace("/", "-", $tip['id']) . '">' : '>') . $tip['tip'] . '</li>';
+        }
+        $output .= '</ul>';
+      }
+
+      if ($multiple) {
+        $output .= '</div>';
+      }
+    }
+    if ($multiple) {
+      $output .= '</div>';
+    }
+  }
+
+  return $output;
+}
+
+
+/**
  * Helper function that builds the nested lists of a Superfish menu.
  */
 function mosaic_superfish_build($variables) {
