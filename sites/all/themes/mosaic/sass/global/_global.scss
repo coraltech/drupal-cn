@@ -5,11 +5,14 @@
 
 // external imports
 @import 'compass/css3/opacity';
+@import "compass/css3/border-radius";
 
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/comments';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/grid_mix';
 @import 'global/site_vars';
 
 @import 'global/buttons';
@@ -131,8 +134,34 @@ header .pane-search-form {
     font-family: $mono-fonts;
   }  
 }
+.toc-section {
+
+}
 .toc-back-to-top {
-  display: none;
+  background: none;
+  float: right;
+  padding: 0;
+  margin: -1.35em -1.5em 0 0;
+  
+  a {
+    display: block;
+    border: 1px solid lighten($mdgray, 10%);
+    height: 14px;
+    width: 14px;
+    
+    @include linear-v-gradient($ltgray, $white);
+    @include border-radius(8px);
+  }
+  span {
+    text-indent: 9999em;
+    display: block;
+    height: 0px;
+    width: 0px;
+    margin: -1px 0 0 2px;
+    overflow: hidden;
+    
+    @include arrow-up(5px, $mdgray);
+  }
 }
 
 // -- Footer
