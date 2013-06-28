@@ -242,20 +242,16 @@ ul li.collapsed,
 /* line 136, ../sass/global/_dom.scss */
 ol {
   list-style: decimal;
-  margin: 0;
-}
-/* line 140, ../sass/global/_dom.scss */
-ol ol {
   margin-left: 1.325em;
 }
 
-/* line 146, ../sass/global/_dom.scss */
+/* line 142, ../sass/global/_dom.scss */
 .html ul.links {
   display: block;
   margin: 1.25em 0;
   height: 2.3em;
 }
-/* line 151, ../sass/global/_dom.scss */
+/* line 147, ../sass/global/_dom.scss */
 .html ul.links li {
   float: right;
   margin: 5px 0 0 5px;
@@ -328,7 +324,7 @@ ol ol {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 160, ../sass/global/_dom.scss */
+/* line 156, ../sass/global/_dom.scss */
 .html ul.links li.comment-delete {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -399,12 +395,12 @@ ol ol {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 164, ../sass/global/_dom.scss */
+/* line 160, ../sass/global/_dom.scss */
 .html ul.links li a {
   color: #fff;
 }
 
-/* line 173, ../sass/global/_dom.scss */
+/* line 169, ../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -476,7 +472,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 177, ../sass/global/_dom.scss */
+/* line 173, ../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -549,18 +545,18 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 183, ../sass/global/_dom.scss */
+/* line 179, ../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 187, ../sass/global/_dom.scss */
+/* line 183, ../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 190, ../sass/global/_dom.scss */
+/* line 186, ../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
@@ -657,7 +653,7 @@ html.js input.throbbing {
   margin-left: 9em;
 }
 
-/* line 23, ../sass/global/_global.scss */
+/* line 26, ../sass/global/_global.scss */
 .pane-header,
 .pane-footer,
 .pane-page-tabs,
@@ -669,39 +665,39 @@ html.js input.throbbing {
   margin-right: auto;
 }
 
-/* line 28, ../sass/global/_global.scss */
+/* line 31, ../sass/global/_global.scss */
 .pane-header {
   margin: 0 auto;
   padding-top: .5em;
 }
 
-/* line 29, ../sass/global/_global.scss */
+/* line 32, ../sass/global/_global.scss */
 .pane-footer {
   margin: 0 auto 1.25em;
 }
 
-/* line 33, ../sass/global/_global.scss */
+/* line 36, ../sass/global/_global.scss */
 #mini-panel-header .inside, #mini-panel-header .panel-separator {
   margin: 0;
 }
 
-/* line 38, ../sass/global/_global.scss */
+/* line 41, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 44, ../sass/global/_global.scss */
+/* line 47, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
 }
 
-/* line 47, ../sass/global/_global.scss */
+/* line 50, ../sass/global/_global.scss */
 .mosaic-cont {
   padding: 1em 0 0;
 }
 
-/* line 52, ../sass/global/_global.scss */
+/* line 55, ../sass/global/_global.scss */
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -710,7 +706,7 @@ header .pane-search-form {
   position: relative;
   width: 275px;
 }
-/* line 60, ../sass/global/_global.scss */
+/* line 63, ../sass/global/_global.scss */
 header .pane-search-form .form-text {
   background: none;
   border: none;
@@ -720,7 +716,7 @@ header .pane-search-form .form-text {
   padding: 5px 8px;
   width: 185px;
 }
-/* line 69, ../sass/global/_global.scss */
+/* line 72, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
   border: 1px solid #2b486b;
   height: 27px;
@@ -729,7 +725,7 @@ header .pane-search-form .form-wrapper {
   top: 11px;
   width: 65px;
 }
-/* line 77, ../sass/global/_global.scss */
+/* line 80, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper .form-submit {
   color: white;
   height: 27px;
@@ -808,12 +804,12 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 90, ../sass/global/_global.scss */
+/* line 93, ../sass/global/_global.scss */
 .pane-gigya-gigya-login {
   float: right;
   position: relative;
 }
-/* line 94, ../sass/global/_global.scss */
+/* line 97, ../sass/global/_global.scss */
 .pane-gigya-gigya-login .pane-title {
   text-align: center;
   color: #777777;
@@ -822,7 +818,7 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 102, ../sass/global/_global.scss */
+/* line 105, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink,
 .pane-gigya-gigya-login #divGigyaLogin-1_bottomLink,
 .pane-gigya-gigya-login #divGigyaLogin-2_bottomLink {
@@ -830,14 +826,14 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 105, ../sass/global/_global.scss */
+/* line 108, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink table td,
 .pane-gigya-gigya-login #divGigyaLogin-1_bottomLink table td,
 .pane-gigya-gigya-login #divGigyaLogin-2_bottomLink table td {
   text-align: center;
 }
 
-/* line 113, ../sass/global/_global.scss */
+/* line 116, ../sass/global/_global.scss */
 .toc {
   border: 1px solid #bac8d9;
   clear: left;
@@ -854,31 +850,69 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 124, ../sass/global/_global.scss */
+/* line 127, ../sass/global/_global.scss */
 .toc .toc-title {
   text-align: left;
   font-size: 90%;
   color: #777777;
 }
-/* line 129, ../sass/global/_global.scss */
+/* line 132, ../sass/global/_global.scss */
 .toc .toc-toggle-message {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
 }
 
-/* line 134, ../sass/global/_global.scss */
+/* line 140, ../sass/global/_global.scss */
 .toc-back-to-top {
-  display: none;
+  background: none;
+  float: right;
+  padding: 0;
+  margin: -1.35em -1.5em 0 0;
+}
+/* line 146, ../sass/global/_global.scss */
+.toc-back-to-top a {
+  display: block;
+  border: 1px solid #919191;
+  height: 14px;
+  width: 14px;
+  background: #dddddd;
+  background: -moz-linear-gradient(top, #dddddd 0%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, white));
+  background: -webkit-linear-gradient(top, #dddddd 0%, white 100%);
+  background: -o-linear-gradient(top, #dddddd 0%, white 100%);
+  background: -ms-linear-gradient(top, #dddddd 0%, white 100%);
+  background: linear-gradient(to bottom, #dddddd 0%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 155, ../sass/global/_global.scss */
+.toc-back-to-top span {
+  text-indent: 9999em;
+  display: block;
+  height: 0px;
+  width: 0px;
+  margin: -1px 0 0 2px;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #777777;
 }
 
-/* line 139, ../sass/global/_global.scss */
+/* line 168, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 145, ../sass/global/_global.scss */
+/* line 174, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
