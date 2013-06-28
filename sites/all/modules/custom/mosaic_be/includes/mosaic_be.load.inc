@@ -6,11 +6,13 @@
  * Format: node__{nid}.css
  */
 function _mosiac_be_node_load_by_nid($node) {
-  $type = $node->nid;
-  $theme_path = drupal_get_path('theme', 'mosaic');
-  
-  if (file_exists($theme_path.'/css/nodes/nids/node_'.$node->nid.'.css')) drupal_add_css($theme_path.'/css/nodes/nids/node_'.$node->nid.'.css', array('group' => CSS_THEME));
-  if (file_exists($theme_path.'/js/nodes/nids/node_'.$node->nid.'.js'))   drupal_add_js($theme_path.'/js/nodes/nids/node_'.$node->nid.'.js', array('group' => JS_THEME));
+  if (isset($node->nid)) {
+    $nid = $node->nid;
+    $theme_path = drupal_get_path('theme', 'mosaic');
+    
+    if (file_exists($theme_path.'/css/nodes/nids/node_'.$nid.'.css')) drupal_add_css($theme_path.'/css/nodes/nids/node_'.$nid.'.css', array('group' => CSS_THEME));
+    if (file_exists($theme_path.'/js/nodes/nids/node_'.$nid.'.js'))   drupal_add_js($theme_path.'/js/nodes/nids/node_'.$nid.'.js', array('group' => JS_THEME));
+  }
 }
 
 /**
@@ -19,11 +21,13 @@ function _mosiac_be_node_load_by_nid($node) {
  * Format: node__{type}.css
  */
 function _mosiac_be_node_load_by_type($node) {
-  $type = $node->type;
-  $theme_path = drupal_get_path('theme', 'mosaic');
-//dpm('node_'.$node->type.'.css');
-  if (file_exists($theme_path.'/css/nodes/types/node_'.$node->type.'.css')) drupal_add_css($theme_path.'/css/nodes/types/node_'.$node->type.'.css', array('group' => CSS_THEME));
-  if (file_exists($theme_path.'/js/nodes/types/node_'.$node->type.'.js'))   drupal_add_js($theme_path.'/js/nodes/types/node_'.$node->type.'.js', array('group' => JS_THEME));
+  if (isset($node->type)) {
+    $type = $node->type;  
+    $theme_path = drupal_get_path('theme', 'mosaic');
+    //dpm('node_'.$node->type.'.css');
+    if (file_exists($theme_path.'/css/nodes/types/node_'.$type.'.css')) drupal_add_css($theme_path.'/css/nodes/types/node_'.$type.'.css', array('group' => CSS_THEME));
+    if (file_exists($theme_path.'/js/nodes/types/node_'.$type.'.js'))   drupal_add_js($theme_path.'/js/nodes/types/node_'.$type.'.js', array('group' => JS_THEME));
+  }
 }
 
 /**
@@ -32,11 +36,13 @@ function _mosiac_be_node_load_by_type($node) {
  * Format: node__{type}__{mode}.css
  */
 function _mosaic_be_node_load_by_mode($node, $mode) {
-  $type = $node->type;
-  $theme_path = drupal_get_path('theme', 'mosaic');
+  if (isset($node->type)) {
+    $type = $node->type;  
+    $theme_path = drupal_get_path('theme', 'mosaic');
   
-  if (file_exists($theme_path.'/css/nodes/view_modes/node_'.$node->type.'__'.$mode.'.css')) drupal_add_css($theme_path.'/css/nodes/view_modes/'.$node->type.'__'.$mode.'.css', array('group' => CSS_THEME));
-  if (file_exists($theme_path.'/js/nodes/view_modes/node_'.$node->type.'__'.$mode.'.js'))   drupal_add_js($theme_path.'/js/nodes/view_modes/'.$node->type.'__'.$mode.'.js', array('group' => JS_THEME));
+    if (file_exists($theme_path.'/css/nodes/view_modes/node_'.$type.'__'.$mode.'.css')) drupal_add_css($theme_path.'/css/nodes/view_modes/'.$type.'__'.$mode.'.css', array('group' => CSS_THEME));
+    if (file_exists($theme_path.'/js/nodes/view_modes/node_'.$type.'__'.$mode.'.js'))   drupal_add_js($theme_path.'/js/nodes/view_modes/'.$type.'__'.$mode.'.js', array('group' => JS_THEME));
+  }
 }
 
 /**
