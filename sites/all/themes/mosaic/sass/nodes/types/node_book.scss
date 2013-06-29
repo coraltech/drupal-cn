@@ -62,7 +62,9 @@
      position: absolute;
      top: 0;
      right: 0px;
-     
+     .icon {
+       margin-top: 0;
+     }
      a {
        color: $white;
      }
@@ -88,6 +90,7 @@
     & > .pane-content {
       border: 1px solid $mdgray;
       padding: (2 * $default_vert_unit) 16px 16px;
+      .node-book { margin-top: $default_vert_unit; }
     }
     ul.links.inline {
       margin: 0;
