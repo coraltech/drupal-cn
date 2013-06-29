@@ -66,9 +66,115 @@ function mosaic_breadcrumb($variables) {
  */
 function mosaic_tableofcontents_back_to_top($variables) {
   $toc = $variables['toc'];
+  
   $label = check_plain($toc['back_to_top']['label']);
   $anchor = check_plain($toc['back_to_top']['anchor']);
-  return "<div class='toc-back-to-top'><a href='#{$anchor}'><span>{$label}</span></a></div>";
+  return "<div class='toc-back-to-top hide'><a href='#{$anchor}'><span>{$label}</span></a></div>";
+}
+
+
+/**
+ * Theme the output of a table of contents.
+ *
+ * @param $toc A TOC object with the options, table of contents, headers, and files.
+ *
+ * @return Rendered HTML to be displayed.
+ */
+function mosaic_tableofcontents_toc($variables) {
+  static $toc;
+  //if (md5(serialize($toc)) != md5(serialize($variables['toc']))) {
+    $toc = $variables['toc'];  
+    // Add the toc to the settings so we can read it
+    //$settings = array('mosaicToc' => array('toc' => $toc));
+    //drupal_add_js($settings, 'setting');
+    
+  //}
+  dpm($toc);
+  
+  
+  
+  
+  if ((int)$toc['on_off']['min_limit'] > count($toc['header']['h'])) return '';
+  
+  // TODO: we should only define the id="toc" for the first TOC
+  if ($toc['back_to_top']['anchor']) {
+    $id = ' id="' . check_plain($toc['back_to_top']['anchor']) . '"';
+  }
+  else {
+    $id = '';
+  }
+  $output = "<div{$id} class='toc'>\n";
+  if ($toc['box']['title'] != '<none>') {
+    // TODO: at this time, the hideshow works with all TOCs at once
+    $hs = ($toc['box']['hide_show']) ? '<span class="toc-toggle-message">&nbsp;</span>' : '';
+    $output .= "<div class='toc-title'>" . t($toc['box']['title']) . $hs . "</div>\n";
+  }
+
+  $list = $toc['numbering']['method'] == 4 ? 'ol' : 'ul';
+  $output .= "<div class='toc-list'>\n<$list>\n";
+
+  $has_content = FALSE;
+
+  // Process nested lists.
+  $level = $toc['box']['minlevel'];
+  if (!isset($toc['header']['h'])) {
+    $toc['header']['h'] = array();
+  }
+  foreach ($toc['header']['h'] as $index => $h) {
+
+    $cur_level = $h->level;
+    if ($cur_level >= $toc['box']['minlevel'] && $cur_level <= $toc['box']['maxlevel']) {
+      $has_content = TRUE;
+
+      // Be sure to deal with skipping between non-adjacent h levels.
+      if ($cur_level > $level) {
+        do {
+          $output .= "\n<" . $list . ">\n";
+          ++$level;
+        } while ($cur_level > $level);
+      }
+      elseif ($cur_level < $level) {
+        do {
+          $output .= "</li>\n</" . $list . ">\n";
+          --$level;
+        } while ($cur_level < $level);
+        $output .= "</li>\n";
+      }
+      elseif ($index != 0) { // we know that $cur_level == $level here
+        // Close list items at the same level (except the very first time)
+        $output .= "</li>\n";
+      }
+
+      if ($h->number) {
+        $number = '<span class="toc-number">' . $h->number . '</span>';
+      }
+      else {
+        $number = '';
+      }
+      $list_class = 'toc-level-' . ($level - $toc['box']['minlevel'] + 1);
+
+      $title = strip_tags($h->title, $toc['header']['allowed']);
+
+      // insert the li element
+      $output .= "\t<li class=\"$list_class\">";
+      $output .= "<a href=\"#" . $h->ident . "\">" . $number . $title . "</a>";
+    }
+  }
+  // Did we recurse back out? If not, close open lists.
+  for (; $level > $toc['box']['minlevel']; --$level) {
+    $output .= "</li>\n</" . $list . ">\n";
+  }
+  $output .= "</li>\n";
+
+  if (!$has_content) {
+    // this happens when all the header levels are either too small or too large
+    // and if there is no attachment either
+    return '';
+  }
+
+  $output .= "</" . $list . ">\n</div>\n</div>";
+
+  return theme('tableofcontents_toc_text', array('toc' => $toc, 'output' => $output));
 }
 
 
@@ -98,6 +204,11 @@ function mosaic_filter_tips($variables) {
           // filter the toc tip out... toc added automatically
           
           if($tip['id'] == 'filter_toc') $tip['tip'] = t('Tables of contents will be added automatically.'); 
+          if($tip['id'] == 'Mediawiki Format') { 
+            $tip['tip'] = t('You may use the Wikimedia format: see:').
+                            l('Wikimedia formatting help', 'http://www.mediawiki.org/wiki/Help:Formatting', 
+                            array('attributes' => array('target' => '_blank'))); 
+          }
           $output .= '<li' . ($long ? ' id="filter-' . str_replace("/", "-", $tip['id']) . '">' : '>') . $tip['tip'] . '</li>';
         }
         $output .= '</ul>';
