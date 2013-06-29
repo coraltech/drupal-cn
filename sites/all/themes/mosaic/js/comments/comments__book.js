@@ -34,6 +34,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       $comments.each(function(i) {
         $commentTitle = $(this).find('.comment-title');
         commentTitle = $(this).find('.comment-title').text();
+        commentTitle = commentTitle.replace(/^\s+|\s+$/g, ''); // get rid of whitespace
         
         $commentText  = $(this).find('.field-name-comment-body');
         commentText  = $(this).find('.field-name-comment-body').text();
@@ -58,7 +59,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       $node  = $('.limiter>.pane-entity-view');
       
       try { // check positioning of comment form
-        formPos  = $form.position(); formPos.top = formPos.top + 20;
+        formPos  = $form.position(); formPos.top = formPos.top + 41; // the page-title h1 is now like 40 px tall!
         titlePos = $title.position();
         nodePos  = $node.position();
         
@@ -72,6 +73,9 @@ Drupal.mosaic = Drupal.mosaic || {};
           $form.addClass('form-left');
           $form.removeClass('form-center');
         }
+        
+        //console.log(formPos.top);
+        //console.log(titlePos.top + $title.height() + $node.height());
       }
       catch (err) {
         console.log('Apparently something is missing: '+err);
