@@ -14,6 +14,26 @@
   border-color: #dddddd;
 }
 /* line 20, ../../sass/global/comments.scss */
+.comment .user-picture {
+  float: left;
+  margin: 5px 5px 0 -5px;
+}
+/* line 23, ../../sass/global/comments.scss */
+.comment .user-picture img {
+  display: block;
+  border: 1px solid #dddddd;
+}
+/* line 28, ../../sass/global/comments.scss */
+.comment .au-sub {
+  float: left;
+}
+/* line 31, ../../sass/global/comments.scss */
+.comment .po-sub {
+  float: right;
+  font-size: 90%;
+  color: #919191;
+}
+/* line 36, ../../sass/global/comments.scss */
 .comment .new {
   color: #e17d2c;
   font-weight: bold;
@@ -21,70 +41,83 @@
   margin-top: 1.75em;
   margin-right: 1em;
 }
-/* line 27, ../../sass/global/comments.scss */
+/* line 43, ../../sass/global/comments.scss */
 .comment ul.links.inline {
   display: block;
 }
-/* line 31, ../../sass/global/comments.scss */
+/* line 47, ../../sass/global/comments.scss */
 .comment h3.comment-title a {
   color: #777777;
 }
-/* line 33, ../../sass/global/comments.scss */
+/* line 49, ../../sass/global/comments.scss */
 .comment h3.comment-title a:hover {
   color: #515151;
 }
-/* line 38, ../../sass/global/comments.scss */
+/* line 54, ../../sass/global/comments.scss */
 .comment .submitted {
+  margin: 0.625em 0 1.25em;
+}
+/* line 57, ../../sass/global/comments.scss */
+.comment .perma-link {
+  float: right;
+  font-size: 90%;
+  margin: .75em 0 0 .5em;
+}
+/* line 61, ../../sass/global/comments.scss */
+.comment .perma-link a {
+  color: #aaaaaa;
+}
+/* line 65, ../../sass/global/comments.scss */
+.comment .content {
   clear: left;
-  margin: 1.25em 0;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-1 {
   margin-left: 0em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-2 {
   margin-left: 1em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-3 {
   margin-left: 2em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-4 {
   margin-left: 3em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-5 {
   margin-left: 4em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-6 {
   margin-left: 5em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-7 {
   margin-left: 6em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-8 {
   margin-left: 7em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-9 {
   margin-left: 8em;
 }
 
-/* line 46, ../../sass/global/comments.scss */
+/* line 72, ../../sass/global/comments.scss */
 .comment-thread-10 {
   margin-left: 9em;
 }
