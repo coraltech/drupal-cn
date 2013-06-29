@@ -17,6 +17,22 @@
   border-width: 1px 1px 1px 15px;
   border-color: $ltgray;
 
+  .user-picture {
+    float: left;
+    margin: 5px 5px 0 -5px;
+    img {
+      display: block;
+      border: 1px solid $ltgray;
+    }
+  }
+  .au-sub {
+    float: left;
+  }
+  .po-sub {
+    float: right;
+    font-size: 90%;
+    color: lighten($mdgray, 10%)
+  }
   .new {
     color: $mdorange;
     font-weight: bold;
@@ -36,8 +52,18 @@
     }
   }
   .submitted {
+    margin: ($default_vert_unit / 2) 0 $default_vert_unit;
+  }
+  .perma-link {
+    float: right;
+    font-size: 90%;
+    margin: .75em 0 0 .5em;
+    a {
+      color: lighten($mdgray, 20%);
+    }
+  }
+  .content {
     clear: left;
-    margin: $default_vert_unit 0;
   }
 }
 
