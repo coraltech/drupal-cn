@@ -94,7 +94,7 @@ function mosaic_be_anchor_identifier($toc, $h) {
     $id = $toc_header['id_prefix'] . $toc_header['id_sep'] . $toc_header['idx']++;
   }
   else {
-    $id .= $toc_header['id_sep'] . rand(0,1000);
+    $id .= rand(0,1000);
   }
   
   $h->attrs = ' class="toc-section" id="'.$id.'"';
