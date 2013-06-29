@@ -1,7 +1,6 @@
 <?php
-/**
-* Implements hook_filter_info().
-*/
+
+// Implements hook_filter_info().
 function hide_user_toc_filter_info() {
   $filters = array();
   $filters['hide_toc_tip'] = array(
@@ -12,23 +11,30 @@ function hide_user_toc_filter_info() {
   );
   return $filters;
 }
-/**
-* Implements filter prepare callback.
-*/
+
+// Implements filter prepare callback.
 function hide_user_toc_filter_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
   return $text;
 }
 
-/**
-* Implements filter process callback.
-*/
+
+// Implements filter process callback.
 function hide_user_toc_filter_process($text, $filter, $format, $langcode, $cache, $cache_id) {
   // Get rid of toc... We add it automatically
   //  This ensures that the toc is always at the top!
   return preg_replace('%\[toc\s*([^\]]*)\]%', '', $text);
 }
 
-/**
-* Implements filter tips callback.
-*/
+
+// Implements filter tips callback.
 function _hide_user_toc_tips() {}
+
+
+// Implements hook_comment_presave.
+//  Gets rid of [toc... text in comment suject
+//  when no subject was submitted.
+function hide_user_toc_comment_presave($comment) {
+  if (preg_match('%\[toc%', $comment->subject)) {
+    $comment->subject = '';
+  }
+}
