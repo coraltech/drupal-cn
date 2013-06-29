@@ -94,6 +94,12 @@ li.leaf a {
   &:active, &.active { color: lighten($dkblue, 5%); }
   &:hover { color: $dkblue; }
 }
+a.freelink-createnode {
+  color: $mdred;
+  &:hover {
+    color: $dkred;
+  }
+}
 
 // --- Text
 strong, b {
