@@ -93,6 +93,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       }
       if (val != settings['default']) { // value is not eq to settings
         if (init && $elm.val() == '') { // do we override? yes on initialization of the page
+          // @TODO: Check and see if what IS there is the default
           $elm.val(settings['default']).addClass('field-default');
         }
         else {
