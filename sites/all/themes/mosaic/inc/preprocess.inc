@@ -146,7 +146,7 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
   if ($vars['output'] == '') {
     if (isset($row->users_node_revision_uid)) {
       // style name
-      $image_style = 'user_thumb_small'; // @TODO Update this to the right one when its made.
+      $image_style = 'user_thumb_small';
       if (isset($field->options['image_style'])) {
         $image_style = $field->options['image_style'];
       }
@@ -155,23 +155,45 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
         $title = t('View profile of '.$row->users_node_revision_name);
       }
       
-      $vars['output'] = l(
-        theme(
-          'image_style', 
-          array(
-            'style_name' => $image_style,
-            'path' => 'public://coraltechiconlg.png',
-            'title' => $title
-          )
-        ), 
-        'user/'.$row->users_node_revision_uid, // link path
-        array('html' => 'true') // we have a pic
-      );
+      $vars['output'] = mosaic_compile_default_user_image($row->users_node_revision_uid, $image_style, $title);
     }
   }
 }
 
+// Compile a default user picture and link
+function mosaic_preprocess_user_picture(&$vars) {
+  $a0 = arg(0); $a1 = arg(1); $a2 = arg(2);
+  
+  $account = $vars['account'];
+  $title = '';
+  if (isset($account->name)) {
+    $title = t('View profile of '.$account->name);
+  }
+  //dpm($a0);dpm($a1);dpm($a2);
+  if ($a0 == 'user') { // thumbnail (larger than normal)
+    $image_style = 'thumbnail';
+    $vars['user_picture'] = mosaic_compile_default_user_image($account->uid, $image_style, $title);
+  }
+  else {
+    $image_style = 'user_thumb_small';
+    $vars['user_picture'] = mosaic_compile_default_user_image($account->uid, $image_style, $title);
+  }
+}
 
+function mosaic_compile_default_user_image($uid, $image_style, $title) {
+  return l(
+    theme(
+      'image_style', 
+      array(
+        'style_name' => $image_style,
+        'path' => 'public://coraltechiconlg.png',
+        'title' => $title
+      )
+    ), 
+    'user/'.$uid, // link path
+    array('html' => 'true') // we have a pic
+  );
+}
 
 
 
