@@ -96,12 +96,19 @@ function mosaic_preprocess_views_view_field(&$vars) {
 
 // Preprocess the comment - add thread class
 function mosaic_preprocess_comment(&$vars) {
-  // set comment title class
+  // Set comment title class
   $vars['title_attributes_array']['class'] = array('comment-title');
 
+  // Depth classes
   $count  = count(explode('.', $vars['comment']->thread));
   if ($count > 10) $count = 10; // no need to go deeper than 10 lvls
   $vars['classes_array'][] = 'comment-thread-'.$count;
+  
+  // Compile nice "submitted" info
+  //$vars['submitted'] = t('!datetime', array('!username' => $variables['author'], '!datetime' => $variables['created']));
+  $au_sub = '<span class="au-sub">'.$vars['author'].'</span>';
+  $po_sub = '<span class="po-sub">Posted: '.$vars['created'].'</span>';
+  $vars['submitted'] = $au_sub . $po_sub;
 }
 
 
