@@ -81,19 +81,18 @@ function mosaic_tableofcontents_back_to_top($variables) {
  * @return Rendered HTML to be displayed.
  */
 function mosaic_tableofcontents_toc($variables) {
-  static $toc;
-  //if (md5(serialize($toc)) != md5(serialize($variables['toc']))) {
-    $toc = $variables['toc'];  
-    // Add the toc to the settings so we can read it
-    //$settings = array('mosaicToc' => array('toc' => $toc));
-    //drupal_add_js($settings, 'setting');
-    
-  //}
-  dpm($toc);
+  $toc = $variables['toc'];
+
+  // This stuff allows us to find the various toc on the front end
+  //  Add the toc to Drupal.settings.mosaicToc so we can read it
+  if (isset($toc['header']['h'][0]->ident)) {
+    $first_title_id = $toc['header']['h'][0]->ident;
+    $settings = array('mosaic' => array('tocDefaults' => array($first_title_id => $toc)));
+    drupal_add_js($settings, 'setting');
+  }  
   
-  
-  
-  
+  // Escape adding the toc if we are below the min limit
+  if (!isset($toc['header']['h'])) $toc['header']['h'] = array();
   if ((int)$toc['on_off']['min_limit'] > count($toc['header']['h'])) return '';
   
   // TODO: we should only define the id="toc" for the first TOC
