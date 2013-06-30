@@ -1,0 +1,5 @@
+name = Permalinks to Nodepath
+description = Redirects comment permelinks to their corresponding node path with correct pager and fragment matching, to prevent search engines from detecting duplicate content.
+core=7.x
+files[] = permalinks_to_nodepath.module
+dependencies[] = comment

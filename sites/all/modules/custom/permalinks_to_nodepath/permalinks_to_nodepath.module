@@ -1,0 +1,21 @@
+<?php
+function permalinks_to_nodepath_menu_alter(&$items) {
+ $items['comment/%']['page callback'] = 'permalinks_to_nodepath_commentpermalink';
+}
+
+function permalinks_to_nodepath_commentpermalink($cid) {
+if (($comment = comment_load($cid)) && ($node = node_load($comment->nid))) {
+
+    // Find the current display page for this comment.
+    $page = comment_get_display_page($comment->cid, $node->type);
+	
+	// Rather than setting menu_executive_active_handler and changing $_GET values, we redirectto the actual node URL with fragments and pager set.
+	if ($page > 0) {
+		drupal_goto("node/$comment->nid/talk", array('fragment'=>"comment-$comment->cid",'query'=>array('page'=>$page)), 301);
+	}
+	else{
+		drupal_goto("node/$comment->nid/talk", array('fragment'=>"comment-$comment->cid"), 301);
+	}
+  }
+  drupal_not_found();
+}
