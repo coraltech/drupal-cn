@@ -271,9 +271,6 @@
 [submodule "sites/all/modules/contrib/pm_existing_pages"]
 	path = sites/all/modules/contrib/pm_existing_pages
 	url = http://git.drupal.org/project/pm_existing_pages.git
-[submodule "sites/all/modules/contrib/permalinks_to_nodepath"]
-	path = sites/all/modules/contrib/permalinks_to_nodepath
-	url = http://git.drupal.org/sandbox/Ayesh/1578662.git
-[submodule "sites/all/modules/contrib/tableofcontents"]
-	path = sites/all/modules/contrib/tableofcontents
-	url = http://git.drupal.org/project/tableofcontents.git
+[submodule "sites/all/themes/mosaic/js/lib/TableOfContents"]
+	path = sites/all/themes/mosaic/js/lib/TableOfContents
+	url = https://github.com/dcneiner/TableOfContents.git
