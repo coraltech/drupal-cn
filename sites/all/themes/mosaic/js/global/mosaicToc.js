@@ -2,34 +2,38 @@
 Drupal.mosaic = Drupal.mosaic || {};
 
 /**
- *
- * Mosaic forms will check to see if there are
- *  settings for any form's textfield defaults.
- *  Should only recieve requests for items that
- *  implement it. Only implement on pages where
- *  needed!
- *
- * These defaults are added via modules and 
- *  themes via whatever hooks they deem fit.
- *
- * Add new defaults to: 
- * 
- * Drupal.settings.mosaic.fieldDefaults:
- * 
- *  - fieldDefaults['.selector']['default'] = 'Default text';
- *  
-*/
+ * TOC Initiator - see also: https://github.com/dcneiner/TableOfContents
+ */
 // Document loaded!
 (function($) {
   
   Drupal.behaviors.mosaicTocInit = {    
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
-        if (Drupal.settings.mosaic.tocDefaults) {
-          for (toc in Drupal.settings.mosaic.tocDefaults) {
-            new Drupal.mosaic.mosaicToc(toc, Drupal.settings.mosaic.tocDefaults); 
+        // Toc options
+        var settings = {
+          startLevel     : 2,
+          depth          : 6,
+          topLinks       : true,
+          topLinkClass   : "toc-top",
+          tocTrigger     : 4,
+          tocTitle       : Drupal.t("Table of contents"),
+          tocToggleState : 'hide',
+          tocToggle: { 
+            show:'[<span>hide</span>]', // looks odd but you need to tell it what to say
+            hide:'[<span>show</span>]'  //  when hidden, show "show" else show "hide"...
           }
+        };
+        
+        // Selectors we apply this to
+        var selectors = ['.node .content', '.comment .content'];
+        for (ind in selectors) {
+          $items = $(selectors[ind]);
+          $items.each(function(i) {
+            new Drupal.mosaic.mosaicToc(this, settings);
+          });  
         }
+        
       }
       catch (err) {
         console.log('mosaicTocInit() reported errors... Perhaps you ordered tea? Error: '+err);
@@ -37,32 +41,47 @@ Drupal.mosaic = Drupal.mosaic || {};
     }
   };
 
-  // Mosaic textfieldDefault takes one textfield and ensures it is
-  //  set as it should be according to the specs in textfield_defaults.inc
-  Drupal.mosaic.mosaicToc = function(tocElement, tocDefaults) {
-    var mosaicToc = this;
-    // The tocElement refers to the ID that unifies the
-    //  header (the actual) with an anchor with the same href (+#)
-    var $header_element = $('#'+tocElement);
-    var $toc_anchor = $('.toc a[href="#'+tocElement+'"]');
-    this.$toc = $toc_anchor.parents('.toc');
-    this.$parent = $(this.$toc).parent();
-
+  // mosaicToc takes the container and applies the TOC to it.  
+  Drupal.mosaic.mosaicToc = function(container, settings) {
+    var mosaicToc  = this;
+    var settings   = settings;
+    var $container = $(container);
+    
+    if (!$container.length) return; // whaddaya gonna do?
+    
     var tocList = Backbone.View.extend({
       
       // Home
-      el: this.$parent,
-      toc: this.$toc,
+      el: $container,
       
-      // Events ... null
+      // Events ...
+      events: {
+        'click .toc-tog-state': 'tocTogClick'
+      },
       
       // Init
       initialize: function() { 
-        mosaicToc.process(this.toc, tocElement, tocDefaults);
-        //_.bindAll(this, 'blurField', 'focusField'); 
+        mosaicToc.process($(this.el), settings);
+        _.bindAll(this, 'tocTogClick'); 
       },
       
-      // Updates ... null
+      // Updates ...
+      tocTogClick: function(ev) {
+        var contID  = $(this.el).attr('id');
+        var tocID   = contID.replace('container-', '');
+        var $target = $(ev.currentTarget);
+        var current = $target.text();
+        for (state in settings.tocToggle) {
+          statedata = settings.tocToggle[state];
+          if (current != statedata.replace(/(<([^>]+)>)/ig,"")) {
+            $target.html(settings.tocToggle[state]);
+            break; 
+          }
+        }
+
+        if (state == 'hide') $('#'+tocID).hide(750);
+        else $('#'+tocID).show(750);
+      }
     });
         
     // Kick start!
@@ -72,21 +91,53 @@ Drupal.mosaic = Drupal.mosaic || {};
   //---
   
   // Process each textfield
-  Drupal.mosaic.mosaicToc.prototype.process = function($toc, tocElement, tocDefaults) {
-    //console.log(tocElement);
-    //console.log(tocDefaults);
-    // establish unique ids for this .toc
-    var tocSeed = Math.floor(1000*Math.random());
-    $toc.attr('id', $toc.attr('id')+'_'+tocSeed);
+  Drupal.mosaic.mosaicToc.prototype.process = function($container, settings) {
+    var seed = Math.floor(Math.random() * 1000);
+    this.addToc($container, settings, seed);
+  };
+
+  // return the toc title if there is one.
+  //  Also adds show hide
+  Drupal.mosaic.mosaicToc.prototype.tocTitle = function(settings) {
+    var title = '';
+    if (settings.tocTitle) {
+      title += '<div class="toc-title">'+settings.tocTitle;
+      if (settings.tocToggleState) {
+        if (settings.tocToggle[settings.tocToggleState]) {
+          title += '<span class="toc-tog-state">'+settings.tocToggle[settings.tocToggleState]+'</span>';
+        }
+      }
+      title += '</div>';
+    }
+    return title;
+  };
+  
+  // Add the TOC itself
+  Drupal.mosaic.mosaicToc.prototype.addToc = function($container, settings, seed) {
     
-    $tocItems = $toc.find('li a');
-    $tocItems.each(function(i) {
-      var id = $(this).attr('href');
-      $item = $(id);
-      var tagName = $item.prop('tagName');
-      $top = $item.next();
-      $top.removeClass('hide').addClass('toc-'+tagName).find('a').attr('href', '#'+$toc.attr('id'));
-    });    
-  }
+    var tocID     = 'toc-'+seed;
+    var tocContID = 'toc-container-'+seed;
+    var tocTitle  = this.tocTitle(settings);
+     
+    
+    $container.attr('id', tocContID); // set a container id so top can point to something
+    settings.topLinkId = tocContID;   // id that top links point to
+    
+    // Setup the TOC
+    var prepend = '<div class="toc-wrapper-'+seed+'">'; // init the prepend
+    if (tocTitle) prepend += '<div class="toc-title">'+tocTitle+'</div>';
+    prepend += '<ol id="'+tocID+'"></ol></div>';
+    
+    // Find if we need to add toc.
+    $headers = $container.find("h1, h2, h3, h4, h5, h6");
+    if ($headers.length >= settings.tocTrigger) {
+      // Set and add the container and add the toc
+      $container.prepend(prepend);
+      var $toc = $('#'+tocID).tableOfContents($container, settings);
+    
+      if(settings.tocToggleState == 'hide') $toc.hide(); // set visibility state
+    }
+  };
+  
 })(jQuery);
 
