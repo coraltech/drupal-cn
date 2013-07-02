@@ -136,8 +136,27 @@ ul,
     margin: 0 0 0 1em;
     padding-top: 0;
   }
-  
 }
+#autocomplete {
+  border: 1px solid $ltgray;
+  
+  ul {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+  
+    li,
+    li.leaf {
+      margin: 0;
+      padding: 2px 3px;
+      list-style: none;
+      list-style-image: none;
+      border-bottom: 1px solid $ltgray;
+    } 
+  }
+}
+
 
 ol {
   list-style: decimal;

@@ -2,11 +2,66 @@
 // Scss file for the Tag search custom pane
 //  as seen on Community page
 
+@import "compass/css3/border-radius";
+
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
 
 .pane-coral-tag-search {
+  padding: 5px;
+  position: relative;
+  border: 1px solid darken($ltgray, 20%);
   
+  @include linear-v-gradient(darken($ltgray, 5%), darken($ltgray, 15%));
   
+  .pane-title { display: none; }
+  
+  form {
+    .arrow-ring {
+      position: absolute;
+      display: block;
+      top: 10px;
+      right: -1em;
+      width: 20px;
+      height: 20px;
+      //border: 1px solid darken($ltgray, 12%);
+      border-style: solid;
+      border-color: $mdgray $mdgray $mdgray $ltgray;
+      border-width: 1px;
+      
+      @include border-right-radius(10px);
+      @include linear-v-gradient(darken($ltgray, 25%), $mdgray);
+    }
+    .arrow {
+      position: absolute;
+      display: block;
+      top: 5px;
+      right: .1em;
+      @include arrow-right(5px, $white);
+    }
+    .form-item {
+      margin: 0;
+    }
+    .form-text {
+      width: 98.5%;
+      height: 25px; 
+    }
+    .form-submit {
+      position: absolute;
+      top: 10px;
+      right: -1em;
+      border: none;
+      background: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      text-shadow: none;
+      color: $black;
+      width: 22px;
+      height: 22px;
+      text-indent: -9999em;
+    }
+  }
 }
