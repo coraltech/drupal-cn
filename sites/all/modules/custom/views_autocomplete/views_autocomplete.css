@@ -1,0 +1,25 @@
+
+/**
+ * Views Autocomplete styles.
+ */
+
+/* Suggestion list */
+#autocomplete {
+  border: 2px solid #000000;
+  background: #5F606B;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+}
+#autocomplete ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 5px;
+  padding: 5px;
+}
+#autocomplete li {
+  background: #ffffff;
+  color: #000;
+  cursor: default;
+  white-space: normal;
+}

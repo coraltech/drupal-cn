@@ -1,0 +1,449 @@
+<?php
+
+/**
+ * @file
+ * Adds a views based autocomplete system to entityreference fields.
+ *
+ * Also allows for direct entity id injection.
+ */
+
+#-------------------------------------------------------------------------------
+# Menu hooks
+
+/**
+ * Implements hook_menu().
+ */
+function views_autocomplete_menu() {
+  $items['views_autocomplete/%/%/%'] = array(
+    'page callback' => 'views_autocomplete_callback',
+    'page arguments' => array(1, 2, 3),
+    'access callback' => 'views_autocomplete_access_callback',
+    'access arguments' => array(1, 2, 3),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+#-------------------------------------------------------------------------------
+# Form hooks
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+*/
+function views_autocomplete_form_field_ui_field_edit_form_alter(&$form, &$form_state, $form_id) {
+
+  if (!in_array($form['#field']['type'], array('entityreference'))) {
+    return;
+  }
+
+  $ref_entity_type = views_autocomplete_get_entity_type($form['#field']);
+  $view_settings   = $form['#instance']['widget']['settings']['views_autocomplete'];
+
+  $description = '<p>' . t('The list of entities that can be referenced can provided by a view (Views module) using the "Autocomplete" display type.') . '</p>';
+
+  // Special note for legacy fields migrated from D6.
+  if (!empty($view_settings['view_name']) && $view_settings['display_name'] == 'default') {
+    $description .= '<p><strong><span class="admin-missing">'. t("Important D6 migration note:") . '</span></strong>';
+    $description .= '<br/>' . t("The field is currently configured to use the 'Master' display of the view %view_name.", array('%view_name' => $view_settings['view_name']));
+    $description .= '<br/>' . t("It is highly recommended that you: <br/>- edit this view and create a new display using the 'Autocomplete' display type, <br/>- update the field settings to explicitly select the correct view and display.");
+    $description .= '<br/>' . t("The field will work correctly until then, but submitting this form might inadvertently change the field settings.") . '</p>';
+  }
+
+  $form['instance']['widget']['settings']['views_autocomplete'] = array(
+    '#type'        => 'fieldset',
+    '#title'       => t('Views - Entities that can be referenced'),
+    '#collapsible' => TRUE,
+    '#collapsed'   => empty($view_settings['view_name']),
+    '#weight'      => 50,
+    '#description' => $description,
+  );
+
+  $views_options = views_autocomplete_get_views_options($ref_entity_type);
+  if ($views_options) {
+    // The value of the 'view_and_display' select below will need to be split
+    // into 'view_name' and 'view_display' in the final submitted values, so
+    // we massage the data at validate time on the wrapping element (not
+    // ideal).
+    $form['instance']['widget']['settings']['views_autocomplete']['#element_validate'] = array('views_autocomplete_settings_validate');
+
+    $views_options = array('' => '<' . t('none') . '>') + $views_options;
+    $default       = empty($view_settings['view_name']) ? '' : $view_settings['view_name'] . ':' .$view_settings['display_name'];
+
+    $form['instance']['widget']['settings']['views_autocomplete']['view_name'] = array(
+      '#type'          => 'select',
+      '#title'         => t('View used to select the entities'),
+      '#options'       => $views_options,
+      '#default_value' => $default,
+      '#description'   => '<p>' . t('Choose the view and display that select the entities that can be referenced.<br />Only views with a display of type "Autocomplete" are eligible.') . '</p>' .
+      t('Note:<ul><li>This will discard the "Entity types" settings below. Use the view\'s "filters" section instead.</li><li>Use the view\'s "fields" section to display additional informations about candidate entities on node creation/edition form.</li><li>Use the view\'s "sort criteria" section to determine the order in which candidate entities will be displayed.</li></ul>'),
+    );
+
+    $default = implode(', ', $view_settings['args']);
+    $form['instance']['widget']['settings']['views_autocomplete']['args'] = array(
+      '#type' => 'textfield',
+      '#title' => t('View arguments'),
+      '#default_value' => $default,
+      '#required' => FALSE,
+      '#description' => t('Provide a comma separated list of arguments to pass to the view.'),
+    );
+  }
+  else {
+    $form['instance']['widget']['settings']['views_autocomplete']['no_view_help'] = array(
+      '#markup' => '<p>' . t('No eligible view was found.') .'</p>',
+    );
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function views_autocomplete_field_widget_form_alter(&$element, &$form_state, $context) {
+
+  if ($context['field']['type'] == 'entityreference'
+    && isset($context['instance']['widget']['settings']['views_autocomplete']['view_name'])) {
+
+    drupal_add_css(drupal_get_path('module', 'views_autocomplete') . '/views_autocomplete.css');
+
+    $field    = $context['field'];
+    $instance = $context['instance'];
+
+    $element['target_id']['#autocomplete_path'] = 'views_autocomplete/' . $field['field_name'] . '/' . $instance['entity_type'] . '/' . $instance['bundle'];
+
+    $validators = array('views_autocomplete_entityreference_validate');
+    foreach ($element['target_id']['#element_validate'] as $validator) {
+      if ($validator != '_entityreference_autocomplete_validate') {
+        $validators[] = $validator;
+      }
+    }
+
+    $element['target_id']['#element_validate'] = $validators;
+  }
+}
+
+#-------------------------------------------------------------------------------
+# Views hooks
+
+/**
+ * Implements hook_views_api().
+ */
+function views_autocomplete_views_api() {
+  return array(
+    'api'  => 3,
+    'path' => drupal_get_path('module', 'views_autocomplete') . '/views',
+  );
+}
+
+#-------------------------------------------------------------------------------
+# CTools hooks
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function views_autocomplete_ctools_plugin_directory($module, $plugin) {
+  if ($plugin == 'layouts') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+#-------------------------------------------------------------------------------
+# Form callbacks
+
+/**
+ * Validate callback for the 'view settings' fieldset.
+ *
+ * Puts back the various form values in the expected shape.
+ */
+function views_autocomplete_settings_validate($element, &$form_state, $form) {
+
+  // Split view name and display name from the 'view_and_display' value.
+  if (!empty($element['view_name']['#value'])) {
+    list($view, $display) = explode(':', $element['view_name']['#value']);
+  }
+  else {
+    $view    = '';
+    $display = '';
+  }
+
+  // Explode the 'args' string into an actual array. Beware, explode() turns an
+  // empty string into an array with one empty string. We'll need an empty array
+  // instead.
+  $args_string = trim($element['args']['#value']);
+  $args        = ($args_string === '') ? array() : array_map('trim', explode(',', $args_string));
+
+  $value = array('view_name' => $view, 'display_name' => $display, 'args' => $args);
+
+  form_set_value($element, $value, $form_state);
+}
+
+/**
+ * Validate callback for the entityreference field.
+ */
+function views_autocomplete_entityreference_validate($element, &$form_state, $form) {
+
+  // If a value was entered into the autocomplete...
+  $value = '';
+  if (!empty($element['#value'])) {
+    // Take "label (entity id)', match the id from parenthesis.
+    if (preg_match("/^(\d+)$/", $element['#value'], $matches)
+      || preg_match("/.+\((\d+)\)/", $element['#value'], $matches)) {
+      $value = $matches[1];
+    }
+  }
+
+  // Update the value of this element so the field can validate the product IDs.
+  form_set_value($element, $value, $form_state);
+}
+
+#-------------------------------------------------------------------------------
+# Menu callbacks
+
+/**
+ * Access callback for the autocomplete results.
+ */
+function views_autocomplete_access_callback($field_name, $entity_type, $bundle, $entity = NULL, $account = NULL) {
+  return user_access('access content', $account)
+    && ($field = field_info_field($field_name))
+    && field_info_instance($entity_type, $field_name, $bundle)
+    && field_access('view', $field, $entity_type, $entity, $account)
+    && field_access('edit', $field, $entity_type, $entity, $account);
+}
+
+/**
+ * Menu callback for the autocomplete results.
+ */
+function views_autocomplete_callback($field_name, $entity_type, $bundle, $string = '') {
+
+  $field           = field_info_field($field_name);
+  $instance        = field_info_instance($entity_type, $field_name, $bundle);
+  $ref_entity_type = views_autocomplete_get_entity_type($field);
+
+  if (is_numeric($string) && $string > 0) {
+    $ids    = array($string);
+    $string = '';
+  }
+  else {
+    $ids = array();
+  }
+
+  $options = array(
+    'string' => $string,
+    'match'  => $instance['widget']['settings']['match_operator'],
+    'limit'  => 10,
+    'ids'    => $ids,
+  );
+  $references = views_autocomplete_potential_references($ref_entity_type, $field, $instance, $options);
+
+  $matches = array();
+  foreach ($references as $id => $row) {
+    // Markup is fine in autocompletion results (might happen when rendered
+    // through Views) but we want to remove hyperlinks.
+    $suggestion = preg_replace('/<a href="([^<]*)">([^<]*)<\/a>/', '$2', $row['rendered']);
+    // Add a class wrapper for a few required CSS overrides.
+    $matches[$row['title'] . " ($id)"] = '<div class="reference-autocomplete">' . $suggestion . '</div>';
+  }
+
+  drupal_json_output($matches);
+}
+
+#-------------------------------------------------------------------------------
+# Utilities
+
+
+/**
+ * Retrieves the list of views with a 'views_autocomplete' display, in a format suitable for a 'select' form element..
+ *
+ * @param $entity_type
+ *   The entity type.
+ *
+ * @return
+ *   An array of eligible views displays.
+ */
+function views_autocomplete_get_views_options($entity_type) {
+  // Filter views that contain a 'views_autocomplete' display. This actually returns a
+  // list of displays (the same view appears several times).
+  $displays = views_get_applicable_views('autocomplete display');
+
+  // Filter views that list the entity type we want, and group the separate
+  // displays by view.
+  $entity_info = entity_get_info($entity_type);
+  $options = array();
+  foreach ($displays as $data) {
+    list($view, $display_id) = $data;
+    if ($view->base_table == $entity_info['base table']) {
+      $options[$view->name . ':' . $display_id] = $view->name .' - ' . $view->display[$display_id]->display_title;
+    }
+  }
+
+  return $options;
+}
+
+/**
+ * Retrieves an array of candidate referenceable entities.
+ *
+ * This info is used in various places (allowed values, autocomplete
+ * results, input validation...). Some of them only need the ids,
+ * others id + titles, others yet id + titles + rendered row (for
+ * display in widgets).
+ *
+ * The array we return contains all the potentially needed information,
+ * and lets consumers use the parts they actually need.
+ *
+ * @param $entity_type
+ *   The type of entity being queried (needed for base table).
+ * @param $field
+ *   The field definition.
+ * @param $options
+ *   An array of options to limit the scope of the returned list. The following
+ *   key/value pairs are accepted:
+ *   - string: string to filter titles on (used by autocomplete).
+ *   - match: operator to match the above string against, can be any of:
+ *     'CONTAINS', 'equals', 'STARTS_WITH'. Defaults to 'CONTAINS'.
+ *   - ids: array of specific node ids to lookup.
+ *   - limit: maximum size of the the result set. Defaults to 0 (no limit).
+ *
+ * @return
+ *   An array of valid entities in the form:
+ *   array(
+ *     id => array(
+ *       'title'    => The entity title,
+ *       'rendered' => The text to display in widgets (can be HTML)
+ *     ),
+ *     ...
+ *   )
+ */
+function views_autocomplete_potential_references($entity_type, $field, $instance, $options = array()) {
+
+  $settings = $instance['widget']['settings']['views_autocomplete'];
+
+  // Fill in default options.
+  $options += array(
+    'string' => '',
+    'match'  => 'CONTAINS',
+    'ids'    => array(),
+    'limit'  => 0,
+  );
+
+  $results = &drupal_static(__FUNCTION__, array());
+
+  // Create unique id for static cache.
+  $cid = $field['field_name'] . ':' . $options['match'] . ':'
+  . ($options['string'] !== '' ? $options['string'] : implode('-', $options['ids']))
+  . ':' . $options['limit'];
+
+  if (!isset($results[$cid])) {
+    $references = FALSE;
+    if (!empty($settings['view_name'])) {
+      $options['title_field'] = 'title';
+
+      $references = views_autocomplete_potential_references_view($entity_type, $settings['view_name'], $settings['display_name'], $settings['args'], $options);
+    }
+
+    // Store the results.
+    $results[$cid] = !empty($references) ? $references : array();
+  }
+
+  return $results[$cid];
+}
+
+/**
+ * Retrieves an array of candidate referenceable entities, defined by a view.
+ *
+ * @param $entity_type
+ *   The entity type.
+ * @param $view_name
+ *   The name of the view.
+ * @param $display_name
+ *   The name of the view's display. This has to be a 'Autocomplete' display.
+ * @param $args
+ *   The array of arguments ("contextual filters") for the view.
+ * @param $options
+ *   Array of options to limit the scope of the returned list.
+ *   An additional key is required:
+ *   - title_field: the name of the column holding entities 'titles' within the
+ *     entity base table.
+ *
+ * @return
+ *   An array of entities.
+ */
+function views_autocomplete_potential_references_view($entity_type, $view_name, $display_name, $args, $options) {
+  $entity_info = entity_get_info($entity_type);
+
+  // Check that the view is valid and the display still exists.
+  $view = views_get_view($view_name);
+  if (!$view || $view->base_table != $entity_info['base table'] || !isset($view->display[$display_name])) {
+    return FALSE;
+  }
+
+  // If we have no access to the View an empty result should be returned to
+  // avoid triggering the fallback results.
+  if  (!$view->access(array($display_name))) {
+    return array();
+  }
+
+  // Temporary backwards compatibility for fields migrated from CCK D6: accept
+  // 'default' display, but dynamically add a 'views_autocomplete' display out
+  // of it.
+  if ($display_name == 'default') {
+    $display_name = $view->add_display('views_autocomplete');
+  }
+
+  $view->set_display($display_name);
+
+  // @todo From merlinofchaos on IRC : arguments using summary view can defeat
+  // the style setting.
+  // We might also need to check if there's an argument, and set its
+  // style_plugin as well.
+
+  // Set additional options to let references_plugin_display::query() narrow
+  // the results.
+  $views_autocomplete_options = array(
+    'ids'         => $options['ids'],
+    'title_field' => $options['title_field'],
+    'string'      => $options['string'],
+    'match'       => $options['match'],
+  );
+  $view->display_handler->set_option('views_autocomplete_options', $views_autocomplete_options);
+
+  // We need the title field for autocomplete widgets, so add it (hidden) if not
+  // present.
+  $fields = $view->get_items('field', $display_name);
+  if (!isset($fields[$options['title_field']])) {
+    $label_options = array(
+      'exclude' => 1,
+    );
+    $view->add_item($display_name, 'field', $entity_info['base table'], $options['title_field'], $label_options);
+  }
+
+  // Limit result set size.
+  $limit = !empty($options['limit']) ? $options['limit'] : 0;
+  $view->display_handler->set_option('pager', array('type' => 'some', 'options' => array('items_per_page' => $limit)));
+
+  // Make sure the query is not cached
+  $view->is_cacheable = FALSE;
+
+  // Get the results.
+  $results = $view->execute_display($display_name, $args);
+
+  return $results;
+}
+
+/**
+ * Return the proper entity type given a field object.
+ *
+ * @param $field
+ *   The field array to check for reference entity type.
+ *
+ * @return
+ *   Referenced entity type.  Defaults to 'node'.
+ */
+function views_autocomplete_get_entity_type($field) {
+  $entity_type = 'node';
+
+  switch ($field['type']) {
+    case 'entityreference':
+      $entity_type = $field['settings']['target_type'];
+      break;
+  }
+
+  return $entity_type;
+}
