@@ -35,7 +35,7 @@ function coral_menus_main_links_loader() {
     ),
     'find' => array(
       'link_title' => t('Find'),
-      'link_path'  => 'node/8',  
+      'link_path'  => 'search/node/all',  
       'weight'     => 3,
     ),
     'build' => array(
