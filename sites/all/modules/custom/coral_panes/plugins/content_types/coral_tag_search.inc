@@ -31,6 +31,9 @@ function coral_tag_search_form($form, &$form_state) {
     '#maxlength' => 60,
     '#autocomplete_path' => 'services/tagsearch',
   );
+  $form['arrow'] = array(
+    '#markup' => '<span class="arrow-ring"><span class="arrow"></span></span>'
+  );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => 'Go',
