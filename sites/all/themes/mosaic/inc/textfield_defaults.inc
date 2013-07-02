@@ -13,7 +13,7 @@ function mosaic_add_textfield_defaults($form_id, &$form) {
   
   // Process the defaults and add to the matrix if exists
   $defaults = 'mosaic__'.$form_id.'__defaults';
-
+//dpm($defaults);
   if (function_exists($defaults)) { $defaults = $defaults($form, $matrix); }
 
   // Storage container for found defaults: these are added to Drupal.settings 
@@ -198,7 +198,7 @@ function mosaic_textfield_defaults_validate($form, &$form_state) {
 // Search block form defaults (header search)
 function mosaic__search_block_form__defaults($form, &$matrix) {
   $matrix['search_block_form']['selectors'] = array(
-    '#search-block-form .form-text' => 'Search'
+    '#search-block-form .form-text' => t('Search')
   );
 }
 
@@ -219,6 +219,13 @@ function mosaic__search_form__defaults($form, &$matrix) {
   }
 }
 
+// tag search deafults
+function mosaic__coral_tag_search_form__defaults($form, &$matrix) {
+  $matrix['coral_tag_search_form']['selectors'] = array(
+    '#coral-tag-search-form .form-item-tag .form-text' => t('Tag search')
+  );
+}
+
 
 // Node book comment form
 function mosaic__comment_node_book_form__defaults($form, &$matrix) {
@@ -235,8 +242,8 @@ function mosaic__comment_node_book_form__defaults($form, &$matrix) {
 // Node question creation form (currently not used)
 function mosaic__question_node_form__defaults($form, &$matrix) {
   $matrix['question_node_form']['selectors'] = array(
-    '#question-node-form .form-item-title .form-text' => 'State your question',
-    '#question-node-form .form-item-field-tags-und .form-text' => 'E.g. Tag, Tag two, Tres...'
+    '#question-node-form .form-item-title .form-text' => t('State your question'),
+    '#question-node-form .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two, Tres...')
   );
 }
 
@@ -245,19 +252,19 @@ function mosaic__question_node_form__defaults($form, &$matrix) {
 // Default options arrays for search node
 function mosaic__search_form__search_node__defaults_options() {
   return array( // @TODO this could be coming from top search terms!
-    'e.g. Apache2 modules', 
-    'e.g. Hadoop cluster',
-    'e.g. Including snippets', 
-    'e.g. Using configurations', 
-    'e.g. Coral cluster tutorial'
+    t('e.g. Apache2 modules'), 
+    t('e.g. Hadoop cluster'),
+    t('e.g. Including snippets'), 
+    t('e.g. Using configurations'), 
+    t('e.g. Coral cluster tutorial')
   );
 }
 // Defaults options for the search user
 function mosaic__search_form__search_user__defaults_options() {
   return array( // @TODO this could be coming from top search terms!
-    'e.g. Brian95', 
-    'e.g. Username...', 
-    'e.g. user5@example.com'
+    t('e.g. Brian95'), 
+    t('e.g. Username...'), 
+    t('e.g. user5@example.com')
   );
 }
 // END main search form helpers
