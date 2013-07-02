@@ -79,8 +79,8 @@ Drupal.mosaic = Drupal.mosaic || {};
           }
         }
 
-        if (state == 'hide') $('#'+tocID).hide(750);
-        else $('#'+tocID).show(750);
+        if (state == 'hide') $('#'+tocID).parent('.toc-screen').slideUp(250);
+        else $('#'+tocID).parent('.toc-screen').slideDown(250);
       }
     });
         
@@ -124,9 +124,9 @@ Drupal.mosaic = Drupal.mosaic || {};
     settings.topLinkId = tocContID;   // id that top links point to
     
     // Setup the TOC
-    var prepend = '<div class="toc-wrapper-'+seed+'">'; // init the prepend
+    var prepend = '<div class="toc-wrapper toc-wrapper-'+seed+'">'; // init the prepend
     if (tocTitle) prepend += '<div class="toc-title">'+tocTitle+'</div>';
-    prepend += '<ol id="'+tocID+'"></ol></div>';
+    prepend += '<div class="toc-screen"><ol class="toc" id="'+tocID+'"></ol></div></div>';
     
     // Find if we need to add toc.
     $headers = $container.find("h1, h2, h3, h4, h5, h6");
@@ -135,7 +135,12 @@ Drupal.mosaic = Drupal.mosaic || {};
       $container.prepend(prepend);
       var $toc = $('#'+tocID).tableOfContents($container, settings);
     
-      if(settings.tocToggleState == 'hide') $toc.hide(); // set visibility state
+      if(settings.tocToggleState == 'hide') $toc.parent('.toc-screen').hide(); // set visibility state
+      
+      // Add some spans in the top links for arrows
+      $headers.each(function(i) {
+        $(this).find('.toc-top').prepend('<span class="arrow"></span>');
+      });
     }
   };
   

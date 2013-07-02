@@ -876,13 +876,12 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
 }
 
 /* line 116, ../sass/global/_global.scss */
-.toc {
+.toc-wrapper {
   border: 1px solid #bac8d9;
   clear: left;
   width: 12em;
   float: left;
   margin: -0.3125em 1em 0.625em 0;
-  padding: 0.3125em;
   background: #ebeff4;
   background: -moz-linear-gradient(top, #ebeff4 0%, #dae2eb 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ebeff4), color-stop(100%, #dae2eb));
@@ -892,69 +891,96 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 127, ../sass/global/_global.scss */
-.toc .toc-title {
+/* line 126, ../sass/global/_global.scss */
+.toc-wrapper .toc-title {
   text-align: left;
   font-size: 90%;
   color: #777777;
+  font-weight: bold;
+  padding: 0.15625em 0.3125em;
 }
-/* line 132, ../sass/global/_global.scss */
-.toc .toc-toggle-message {
+/* line 133, ../sass/global/_global.scss */
+.toc-wrapper .toc-tog-state {
+  margin-left: .5em;
+}
+/* line 134, ../sass/global/_global.scss */
+.toc-wrapper .toc-tog-state span {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
+  font-weight: bold;
+  margin: 0 .25em;
+  color: #446eac;
+}
+/* line 141, ../sass/global/_global.scss */
+.toc-wrapper .toc-screen {
+  padding: 0 0.3125em 0.3125em 0.625em;
+}
+/* line 144, ../sass/global/_global.scss */
+.toc-wrapper .toc-screen .toc {
+  font-size: 95%;
 }
 
-/* line 140, ../sass/global/_global.scss */
-.toc-back-to-top {
-  background: none;
+/* line 150, ../sass/global/_global.scss */
+.toc-top {
+  border: 1px solid #777777;
   float: right;
   padding: 0;
-  margin: -1.35em -1.5em 0 0;
-}
-/* line 146, ../sass/global/_global.scss */
-.toc-back-to-top a {
   display: block;
-  border: 1px solid #919191;
-  height: 14px;
-  width: 14px;
-  background: #dddddd;
-  background: -moz-linear-gradient(top, #dddddd 0%, white 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, white));
-  background: -webkit-linear-gradient(top, #dddddd 0%, white 100%);
-  background: -o-linear-gradient(top, #dddddd 0%, white 100%);
-  background: -ms-linear-gradient(top, #dddddd 0%, white 100%);
-  background: linear-gradient(to bottom, #dddddd 0%, #ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 15px;
+  width: 15px;
+  line-height: 30px;
+  margin-right: -1.25em;
+  font-size: 1em;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
+  background: #dddddd;
+  background: -moz-linear-gradient(top, #dddddd 0%, #efefef 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #efefef));
+  background: -webkit-linear-gradient(top, #dddddd 0%, #efefef 100%);
+  background: -o-linear-gradient(top, #dddddd 0%, #efefef 100%);
+  background: -ms-linear-gradient(top, #dddddd 0%, #efefef 100%);
+  background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 155, ../sass/global/_global.scss */
-.toc-back-to-top span {
-  text-indent: 9999em;
+/* line 167, ../sass/global/_global.scss */
+.toc-top .arrow {
   display: block;
-  height: 0px;
-  width: 0px;
-  margin: -1px 0 0 2px;
-  overflow: hidden;
+  position: relative;
+  top: -1px;
+  left: 2px;
   width: 0;
   height: 0;
   border-top: 5px solid transparent;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #777777;
+  border-bottom: 5px solid #446eac;
 }
 
-/* line 168, ../sass/global/_global.scss */
+/* line 176, ../sass/global/_global.scss */
+h2 .toc-top {
+  margin-top: 0.625em;
+  margin-right: -1.15em;
+}
+
+/* line 180, ../sass/global/_global.scss */
+h3 .toc-top {
+  margin-top: 0.15625em;
+}
+
+/* line 186, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 174, ../sass/global/_global.scss */
+/* line 192, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
