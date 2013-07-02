@@ -1,0 +1,7 @@
+name = Views autocomplete
+description = Adds a views based autocomplete system to entityreference fields.
+core = 7.x
+stylesheets[all][] = views_autocomplete.css
+files[] = views/views_autocomplete_plugin_display.inc
+files[] = views/views_autocomplete_plugin_style.inc
+files[] = views/views_autocomplete_plugin_row_fields.inc
