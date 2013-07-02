@@ -1,14 +1,27 @@
 <?php
-/*
-* Implements hook_ctools_plugin_directory -
-* This lets ctools know to scan my module for a content_type plugin file
-* Detailed docks in ctools/ctools.api.php
-*/
+
+/**
+ * Implements hook_ctools_plugin_directory -
+ * This lets ctools know to scan my module for a content_type plugin file
+ * Detailed docks in ctools/ctools.api.php
+ */
 function coral_panes_ctools_plugin_directory($owner, $plugin_type) {
   // we'll be nice and limit scandir() calls
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return 'plugins/content_types';
   }
+}
+
+/**
+ * Hook menu implementation
+ */
+function coral_panes_menu() {
+  $items['services/tagsearch'] = array( // adds tagsearch ability
+    'page callback' => '_coral_panes_tagsearch_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
+  return $items;
 }
 
 
@@ -40,4 +53,33 @@ function coral_panes_theme() {
       'path' => $path,
     )
   );
+}
+
+// ---
+
+// Helpers
+
+// Autocomplete callback for a tag search
+//  called on 'services/tagsearch'
+function _coral_panes_tagsearch_autocomplete($string) {
+  $matches = array();
+ 
+  // Thankfully this table contains no Alligators, yet
+  $query = db_select('taxonomy_term_data', 't');
+ 
+  // Select rows that match the string
+  $return = $query
+    ->fields('t')
+    ->condition('t.name', '%' . db_like($string) . '%', 'LIKE')
+    ->condition('t.vid', '1', '=')
+    ->range(0, 10)
+    ->execute();
+ 
+  // add matches to $matches  
+  foreach ($return as $row) {
+    $matches[$row->name] = check_plain($row->name);
+  }
+ 
+  // return for JS
+  drupal_json_output($matches);
 }
