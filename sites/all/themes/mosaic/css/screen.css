@@ -931,17 +931,18 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   font-weight: bold;
   margin: 0 .25em;
   color: #446eac;
+  cursor: pointer;
 }
-/* line 141, ../sass/global/_global.scss */
+/* line 142, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen {
   padding: 0 0.3125em 0.3125em 0.625em;
 }
-/* line 144, ../sass/global/_global.scss */
+/* line 145, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen .toc {
   font-size: 95%;
 }
 
-/* line 150, ../sass/global/_global.scss */
+/* line 151, ../sass/global/_global.scss */
 .toc-top {
   border: 1px solid #777777;
   float: right;
@@ -969,7 +970,7 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 167, ../sass/global/_global.scss */
+/* line 168, ../sass/global/_global.scss */
 .toc-top .arrow {
   display: block;
   position: relative;
@@ -983,25 +984,25 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   border-bottom: 5px solid #446eac;
 }
 
-/* line 176, ../sass/global/_global.scss */
+/* line 177, ../sass/global/_global.scss */
 h2 .toc-top {
   margin-top: 0.625em;
   margin-right: -1.15em;
 }
 
-/* line 180, ../sass/global/_global.scss */
+/* line 181, ../sass/global/_global.scss */
 h3 .toc-top {
   margin-top: 0.15625em;
 }
 
-/* line 186, ../sass/global/_global.scss */
+/* line 187, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 192, ../sass/global/_global.scss */
+/* line 193, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
