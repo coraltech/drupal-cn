@@ -137,6 +137,7 @@ header .pane-search-form {
     font-weight: bold;
     margin: 0 .25em;
     color: $mdblue;
+    cursor: pointer;
   }
   .toc-screen {
     padding: 0 ($default_vert_unit / 4) ($default_vert_unit / 4) ($default_vert_unit / 2);
