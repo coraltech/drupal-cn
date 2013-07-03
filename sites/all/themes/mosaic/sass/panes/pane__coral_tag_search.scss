@@ -13,6 +13,7 @@
   padding: 5px;
   position: relative;
   border: 1px solid darken($ltgray, 20%);
+  margin-bottom: $default_vert_unit;
   
   @include linear-v-gradient(darken($ltgray, 5%), darken($ltgray, 15%));
   
