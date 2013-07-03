@@ -1,0 +1,19 @@
+
+// Scss file for the tags tag cloud block
+
+@import 'global/colors';
+
+$levels: 6;
+
+.pane-tagclouds-1 {
+  $start: darken($ltgray, 10%);
+  @for $i from 1 through $levels {
+    $darken: 5%;
+    a.level#{$i} { 
+      color: darken($start, $i * $darken);
+      &:hover {
+        color: darken(darken($start, $i * $darken), 10%);
+      }
+    }
+  }
+}
