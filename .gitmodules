@@ -274,3 +274,6 @@
 [submodule "sites/all/themes/mosaic/js/lib/TableOfContents"]
 	path = sites/all/themes/mosaic/js/lib/TableOfContents
 	url = https://github.com/dcneiner/TableOfContents.git
+[submodule "sites/all/modules/contrib/backbone"]
+	path = sites/all/modules/contrib/backbone
+	url = http://git.drupal.org/project/backbone.git
