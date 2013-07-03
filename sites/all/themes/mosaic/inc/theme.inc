@@ -286,3 +286,65 @@ function mosaic_superfish_build($variables) {
   $output['single_children'] = $single_children;
   return $output;
 }
+
+
+/**
+ * Theme function that renders the HTML for the tags.
+ *
+ * @ingroup themable
+ */
+function mosaic_tagclouds_weighted(&$vars) {
+  $terms = $vars['terms'];
+
+  $output = '';
+  $display = variable_get('tagclouds_display_type', 'style');
+
+  if (module_exists('i18n_taxonomy')) {
+    $language = i18n_language();
+  }
+
+  if ($display=='style') {
+    foreach ($terms as $term) {
+      if (module_exists('i18n_taxonomy')) {
+        $term_name = i18n_taxonomy_term_name($term, $language->language);
+        $term_desc = tagclouds_i18n_taxonomy_term_description($term, $language->language);
+      } else {
+        $term_name = $term->name;
+        $term_desc = $term->description;
+      }
+      
+      $tag = filter_xss_admin($term_name);
+      $attributes = array('title' => $term_desc, 'class' => array('tagclouds', 'level'.$term->weight));
+      $query = array('f' => array(rawurlencode('field_tags:name') . ":" . $tag));
+      $link = "<span class='tagclouds-term'>".l(
+        $tag,
+        'search/node/all', 
+        array(
+          'attributes' => $attributes,
+          'query' => $query
+        )
+      )."</span>\n";
+      $output .= $link;
+    }
+  }
+  else {
+    foreach ($terms as $term) {
+      if (module_exists('i18n_taxonomy')) {
+        $term_name = i18n_taxonomy_term_name($term, $language->language);
+        $term_desc = tagclouds_i18n_taxonomy_term_description($term, $language->language);
+      } else {
+        $term_name = $term->name;
+        $term_desc = $term->description;
+      }
+      if ($term->count==1 && variable_get("tagclouds_display_node_link", false)) {
+        
+        $output .= tagclouds_display_node_link_count($term_name, $term->tid, $term->nid, $term->count, $term_desc);
+      }
+      else {
+        
+        $output .= tagclouds_display_term_link_count($term_name, $term->tid, $term->count, $term_desc);
+      }
+    }
+  }
+  return $output;
+}
