@@ -1,0 +1,27 @@
+<?php
+
+// Implements hook_form_alter to add defaults handlers
+//  and js settings
+function field_defaults_form_alter(&$form, &$form_state, $form_id) {
+  // @TODO: add support for other field types - when needed ;-)
+  // Add default textfield support
+  field_defaults_textfield_add_defaults($form_id, $form);
+}
+
+
+// Implements hook init
+function field_defaults_init() {
+  $path = drupal_get_path('module', 'field_defaults');  
+  coral_include(array('inc'), 'inc', array('module' => 'field_defaults'));
+  drupal_add_js($path.'/js/textfield_defaults.js', array('group' => JS_THEME)); // Added late in the game
+}
+
+
+// Returns $form actions with / replaced with _ 
+function field_defaults_translate_action($form) {
+  $action = explode('/', $form['#action']); 
+  array_shift($action);
+  return implode('_', $action);
+}
+
+

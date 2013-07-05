@@ -12,14 +12,11 @@ stylesheets[print][] = css/print.css
 
 ; - Global scripts
 ; -- Libraries
-scripts[] = js/lib/underscore/underscore.js
-scripts[] = js/lib/backbone/backbone.js
 scripts[] = js/lib/magnificent_popup/dist/jquery.magnific-popup.js
 scripts[] = js/lib/tinymce/tinymce/js/tinymce/tinymce.min.js
 scripts[] = js/lib/TableOfContents/js/jquery.tableofcontents.js
 
 ; -- Custom
-scripts[] = js/global/mosaicForms.js
 scripts[] = js/global/mosaicMce.js
 scripts[] = js/global/mosaicSlideshow.js
 scripts[] = js/global/mosaicToc.js
