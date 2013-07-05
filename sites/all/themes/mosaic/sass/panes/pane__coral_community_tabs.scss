@@ -57,7 +57,7 @@ $tab_height_variance: .5em; // variance between active and inactive
           
           @include linear-v-gradient(lighten($ltgreen, 8%), lighten($ltgreen, 20%));
         }
-        &.active {
+        &.tab-active {
           height: (2 * $default_vert_unit) + $tab_height_variance;
           margin-top: 0;
           border-width: 1px 1px 0 1px;
