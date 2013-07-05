@@ -349,3 +349,51 @@ function mosaic_tagclouds_weighted(&$vars) {
   }
   return $output;
 }
+
+
+/**
+ * Returns HTML for help text based on file upload validators.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - description: The normal description for this field, specified by the
+ *     user.
+ *   - upload_validators: An array of upload validators as used in
+ *     $element['#upload_validators'].
+ *
+ * @ingroup themeable
+ */
+function mosaic_file_upload_help($variables) {
+  $description = $variables['description'];
+  $upload_validators = $variables['upload_validators'];
+
+  $descriptions = array();
+
+  if (strlen($description)) {
+    $descriptions[] = '<span class="br">'.$description.'</span>';
+  }
+  if (isset($upload_validators['file_validate_size'])) {
+    $descriptions[] = '<span class="br">'.t('Files must be less than !size.', array('!size' => '<strong>' . format_size($upload_validators['file_validate_size'][0]) . '</strong>')).'</span>';
+  }
+  if (isset($upload_validators['file_validate_extensions'])) {
+    $descriptions[] = '<span class="br">'.t('Allowed file types: !extensions.', array('!extensions' => '<strong>' . check_plain($upload_validators['file_validate_extensions'][0]) . '</strong>')).'</span>';
+  }
+  if (isset($upload_validators['file_validate_image_resolution'])) {
+    $max = $upload_validators['file_validate_image_resolution'][0];
+    $min = $upload_validators['file_validate_image_resolution'][1];
+    if ($min && $max && $min == $max) {
+      $descriptions[] = '<span class="br">'.t('Images must be exactly !size pixels.', array('!size' => '<strong>' . $max . '</strong>')).'</span>';
+    }
+    elseif ($min && $max) {
+      $descriptions[] = '<span class="br">'.t('Images must be between !min and !max pixels.', array('!min' => '<strong>' . $min . '</strong>', '!max' => '<strong>' . $max . '</strong>')).'</span>';
+    }
+    elseif ($min) {
+      $descriptions[] = '<span class="br">'.t('Images must be larger than !min pixels.', array('!min' => '<strong>' . $min . '</strong>')).'</span>';
+    }
+    elseif ($max) {
+      $descriptions[] = '<span class="br">'.t('Images must be smaller than !max pixels.', array('!max' => '<strong>' . $max . '</strong>')).'</span>';
+    }
+  }
+
+  return implode("\n",$descriptions);
+}
