@@ -327,6 +327,7 @@ function mosaic_tagclouds_weighted(&$vars) {
       $output .= $link;
     }
   }
+  // @TODO: Ensure links this section makes point to the find page too vvv
   else {
     foreach ($terms as $term) {
       if (module_exists('i18n_taxonomy')) {
