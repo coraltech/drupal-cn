@@ -220,15 +220,9 @@
 [submodule "sites/all/libraries/backbone"]
 	path = sites/all/libraries/backbone
 	url = https://github.com/documentcloud/backbone.git
-[submodule "sites/all/themes/mosaic/js/lib/backbone"]
-        path = sites/all/themes/mosaic/js/lib/backbone
-        url = https://github.com/documentcloud/backbone.git
 [submodule "sites/all/libraries/underscore"]
 	path = sites/all/libraries/underscore
 	url = https://github.com/documentcloud/underscore.git
-[submodule "sites/all/themes/mosaic/js/lib/underscore"]
-        path = sites/all/themes/mosaic/js/lib/underscore
-        url = https://github.com/documentcloud/underscore.git
 [submodule "sites/all/modules/contrib/wysiwyg_filter"]
 	path = sites/all/modules/contrib/wysiwyg_filter
 	url = http://git.drupal.org/project/wysiwyg_filter
@@ -274,3 +268,6 @@
 [submodule "sites/all/themes/mosaic/js/lib/TableOfContents"]
 	path = sites/all/themes/mosaic/js/lib/TableOfContents
 	url = https://github.com/dcneiner/TableOfContents.git
+[submodule "sites/all/modules/contrib/backbone"]
+	path = sites/all/modules/contrib/backbone
+	url = http://git.drupal.org/project/backbone.git
