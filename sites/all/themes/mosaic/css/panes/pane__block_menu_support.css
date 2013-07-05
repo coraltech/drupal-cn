@@ -89,19 +89,22 @@
 .mfp-inline-holder .mfp-content .panel-col-last > .inside h2,
 .mfp-ajax-holder .mfp-content .panel-col-last > .inside h2 {
   margin: 0;
-  padding: 15px;
+  padding: 16px;
+  line-height: 16px;
   background: #ebeff4;
 }
-/* line 72, ../../sass/panes/pane__block_menu_support.scss */
+/* line 73, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-last .filter-wrapper,
 .mfp-ajax-holder .mfp-content .panel-col-last .filter-wrapper {
   margin: 0;
   padding: 0;
   border: 1px solid #efefef;
 }
-/* line 79, ../../sass/panes/pane__block_menu_support.scss */
+/* line 81, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last #user-login .form-actions,
 .mfp-inline-holder .mfp-content .panel-col-last .contact-form .form-actions,
 .mfp-inline-holder .mfp-content .panel-col-last .node-question-form .form-actions,
+.mfp-ajax-holder .mfp-content .panel-col-last #user-login .form-actions,
 .mfp-ajax-holder .mfp-content .panel-col-last .contact-form .form-actions,
 .mfp-ajax-holder .mfp-content .panel-col-last .node-question-form .form-actions {
   bottom: 6px;
@@ -111,7 +114,7 @@
   margin: 0;
   padding: 0;
 }
-/* line 88, ../../sass/panes/pane__block_menu_support.scss */
+/* line 90, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-bottom,
 .mfp-ajax-holder .mfp-content .panel-col-bottom {
   position: absolute;
@@ -120,13 +123,13 @@
   background: #f1f1f1;
   border-top: 1px solid #d0d0d0;
 }
-/* line 95, ../../sass/panes/pane__block_menu_support.scss */
+/* line 97, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .help-header,
 .mfp-ajax-holder .mfp-content .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 99, ../../sass/panes/pane__block_menu_support.scss */
+/* line 101, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .help-header h2,
 .mfp-ajax-holder .mfp-content .help-header h2 {
   margin: 0;
