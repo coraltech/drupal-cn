@@ -24,7 +24,7 @@ function coral_menus_help_links_loader() {
   return array(
     'com_qa'=> array(
       'link_title' => t('Community Q&A'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/55',
       'weight'     => 1,
     ),
     'contact_us' => array(
