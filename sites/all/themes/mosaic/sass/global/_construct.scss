@@ -33,3 +33,8 @@
   font-size: 80%;
   line-height: 1.25em;
 }
+
+// Simulated (override-able ;-) break tags
+.br {
+  display: block;
+}
