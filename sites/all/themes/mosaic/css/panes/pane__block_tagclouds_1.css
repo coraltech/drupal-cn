@@ -1,48 +1,80 @@
 /* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level1 {
-  color: #b7b7b7;
+  color: #b9b9b9;
 }
 /* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level1:hover {
-  color: #9d9d9d;
+  color: #a0a0a0;
 }
 /* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level2 {
-  color: #aaaaaa;
+  color: #afafaf;
 }
 /* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level2:hover {
-  color: #919191;
+  color: #969696;
 }
 /* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level3 {
-  color: #9d9d9d;
+  color: #a5a5a5;
 }
 /* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level3:hover {
-  color: #848484;
+  color: #8b8b8b;
 }
 /* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level4 {
-  color: #919191;
+  color: #9b9b9b;
 }
 /* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level4:hover {
-  color: #777777;
+  color: #818181;
 }
 /* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level5 {
-  color: #848484;
+  color: #919191;
 }
 /* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level5:hover {
-  color: #6a6a6a;
+  color: #777777;
 }
 /* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level6 {
-  color: #777777;
+  color: #868686;
 }
 /* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
 .pane-tagclouds-1 a.level6:hover {
+  color: #6d6d6d;
+}
+/* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level7 {
+  color: #7c7c7c;
+}
+/* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level7:hover {
+  color: #636363;
+}
+/* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level8 {
+  color: #727272;
+}
+/* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level8:hover {
+  color: #585858;
+}
+/* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level9 {
+  color: #686868;
+}
+/* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level9:hover {
+  color: #4e4e4e;
+}
+/* line 12, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level10 {
   color: #5e5e5e;
+}
+/* line 14, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 a.level10:hover {
+  color: #444444;
 }

@@ -113,6 +113,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   line-height: 1.25em;
 }
 
+/* line 38, ../sass/global/_construct.scss */
+.br {
+  display: block;
+}
+
 /* line 34, ../sass/global/_dom.scss */
 body {
   font-size: 16px;
