@@ -1,0 +1,4 @@
+name = Field defaults
+description = Manages default text within fields (currently only textfields: see inc/textfield.inc)
+package = Coral
+core = 7.x
