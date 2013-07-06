@@ -71,7 +71,8 @@ Drupal.mosaic = Drupal.mosaic || {};
         open: function() { 
           // For the Question form
           // Call up the wysiwyg editor
-          tinymce.init(Drupal.mosaic.tinymceSettings('.node-question-form .text-full'));
+          // Apply it to the pane's node form
+          tinymce.init(Drupal.mosaic.tinymceSettings('.pane-coral-ask-question .node-question-form .text-full'));
         },
         
         close: function() {  }
