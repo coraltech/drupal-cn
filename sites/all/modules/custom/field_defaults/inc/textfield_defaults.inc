@@ -52,8 +52,8 @@ function field_defaults_comment_node_book_form__textfield_defaults($form, &$matr
 // Node question creation form
 function field_defaults_question_node_form__textfield_defaults($form, &$matrix) {
   $matrix['question_node_form']['selectors'] = array(
-    '#question-node-form .form-item-title .form-text' => t('State your question'),
-    '#question-node-form .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two, Tres...')
+    '.node-question-form .form-item-title .form-text' => t('Question'),
+    '.node-question-form .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two...')
   );
 }
 
