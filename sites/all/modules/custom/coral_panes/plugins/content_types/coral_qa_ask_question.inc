@@ -38,15 +38,17 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $context = NULL) {
-  
   // Message stuff
   $message = '';
   if (isset($conf['welcome']) || isset($conf['welcome'])) {
-    $message .= '<div class="qa-msg grid-8">';  
+    $message .= '<div class="qa-msg grid-8"><div class="cont">';  
     if (isset($conf['welcome'])) $message .= '<h3>'.$conf['welcome'].'</h3>';
-    if (isset($conf['message'])) $message .= '<p>'.$conf['message'].'</p>';
-    $message .= '</div>';
-  }    
+    if (isset($conf['message'])) {
+      $message .= '<p>'.check_markup($conf['message']['value'], $conf['message']['format']).'</p>';
+      
+    }
+    $message .= '</div></div>';
+  } // end msg
   
   // Form stuff
   global $user;
@@ -61,11 +63,10 @@ function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $contex
     $form_state['build_info']['args'] = array($node);
     form_load_include($form_state, 'inc', 'node', 'node.pages');
     $question_form = drupal_build_form('question_node_form', $form_state);
-
     unset($question_form['additional_settings']);
   }
-  $form .= render($question_form).'</div>';
-  
+  $form .= render($question_form).'</div>'; // end form
+
   $block->title = '';
   $block->content = $message.$form;
   return $block; 
@@ -93,9 +94,9 @@ function coral_qa_ask_question_pane_content_type_edit_form($form, &$form_state) 
   
   $form['message'] = array(
     '#title' => t('Message'),
-    '#type' => 'textarea',
+    '#type' => 'text_format',
     '#description' => t('A message to present to the user'),
-    '#default_value' => isset($conf['message']) ? $conf['message'] : '',
+    '#default_value' => isset($conf['message']['value']) ? $conf['message']['value'] : '',
   );
   
   return $form;

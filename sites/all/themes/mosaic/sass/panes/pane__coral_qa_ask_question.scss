@@ -3,17 +3,60 @@
 
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/gradients';
+
+@import 'compass/utilities/general/clearfix';
 
 .pane-coral-qa-ask-question {
+  
+  @include linear-v-gradient(lighten($ltgray, 5%), darken($ltgray, 5%));
+  margin: $default_vert_unit 0;
+  padding: ($default_vert_unit / 2) ($default_vert_unit / 2) 0;
+  border: 1px solid $mdgray;
+  
+  @include pie-clearfix;
+  
+  .qa-msg {
+    background: lighten($ltgreen,20%);
+    
+    .cont {
+      border: 1px solid $ltgreen;
+      padding: ($default_vert_unit / 2);
+    }
+  }
+  
+  .form-item {
+    margin: 0 0 ($default_vert_unit / 2) 0;
+  }
   .form-type-textfield {
     width: 47.8%;
     margin-right: 2%;
     float: left;
+    .description { display: none; }
     .form-text { width: 99.8%; }
-    label { display: none; }
   }
-  .description .br {
-    display: inline;
+  .form-type-textarea {
+    clear: both; // ensure this doesnt ride up on the fields (FFx3)
   }
+  .file-widget {
+    float: left;
+    padding: 3px;
+    background: white;
+    border: 1px solid #777;
+  }
+  .description{
+    color: $mdgray;
+    clear: left;
+    .br {
+      display: inline;
+    }
+  }
+  .form-actions {
+    float: right;
+    margin: -3.75em 0 0 0;
+    padding: 0;
+  }
+  label { display: none; }
   .filter-wrapper { display: none; }
+  
 }
