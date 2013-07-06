@@ -201,6 +201,10 @@ input#edit-delete {
   @include btn-structure;
 }
 
+.form-textarea {
+  font-size: 1em;
+}
+
 input.form-text {
   font-size: 135%;
   width: 80%;
