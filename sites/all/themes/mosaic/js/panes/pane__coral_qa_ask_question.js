@@ -15,7 +15,13 @@ Drupal.mosaic = Drupal.mosaic || {};
         //  to focus the user on the textfield 
         $('.pane-coral-qa-ask-question .field-name-body .text-full').attr('rows', '5'); // reset rows
         $('.pane-coral-qa-ask-question .form-actions .form-submit').attr('value', Drupal.t('Submit question')); // reset submit text
-        $('.pane-coral-qa-ask-question .qa-msg .cont').height($('.pane-coral-qa-ask-question').height() - 32); // resize height of msg box
+        $('.pane-coral-qa-ask-question .qa-msg .cont').height($('.pane-coral-qa-ask-question form').height() - 20); // resize height of msg box
+        
+        // add little icon holder - if it doesnt exist yet
+        if (!$('.pane-coral-qa-ask-question .field-name-field-tags .icon').length) {
+          $('.pane-coral-qa-ask-question .field-name-field-tags').prepend('<span class="icon"></span>');  
+        }
+        
       }
       catch (err) {
         console.log('mosaicQAInit() reported errors. Error: '+err);
