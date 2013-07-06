@@ -1,22 +1,82 @@
-/* line 8, ../../sass/panes/pane__coral_qa_ask_question.scss */
+/* line 10, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question {
+  background: #eaeaea;
+  background: -moz-linear-gradient(top, #eaeaea 0%, #d0d0d0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, #d0d0d0));
+  background: -webkit-linear-gradient(top, #eaeaea 0%, #d0d0d0 100%);
+  background: -o-linear-gradient(top, #eaeaea 0%, #d0d0d0 100%);
+  background: -ms-linear-gradient(top, #eaeaea 0%, #d0d0d0 100%);
+  background: linear-gradient(to bottom, #eaeaea 0%, #d0d0d0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  margin: 1.25em 0;
+  padding: 0.625em 0.625em 0;
+  border: 1px solid #777777;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.pane-coral-qa-ask-question:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 19, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .qa-msg {
+  background: #e8f4ea;
+}
+/* line 22, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .qa-msg .cont {
+  border: 1px solid #a2d4a9;
+  padding: 0.625em;
+}
+/* line 28, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .form-item {
+  margin: 0 0 0.625em 0;
+}
+/* line 31, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question .form-type-textfield {
   width: 47.8%;
   margin-right: 2%;
   float: left;
 }
-/* line 12, ../../sass/panes/pane__coral_qa_ask_question.scss */
+/* line 35, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .form-type-textfield .description {
+  display: none;
+}
+/* line 36, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question .form-type-textfield .form-text {
   width: 99.8%;
 }
-/* line 13, ../../sass/panes/pane__coral_qa_ask_question.scss */
-.pane-coral-qa-ask-question .form-type-textfield label {
-  display: none;
+/* line 38, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .form-type-textarea {
+  clear: both;
 }
-/* line 15, ../../sass/panes/pane__coral_qa_ask_question.scss */
+/* line 41, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .file-widget {
+  float: left;
+  padding: 3px;
+  background: white;
+  border: 1px solid #777;
+}
+/* line 47, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .description {
+  color: #777777;
+  clear: left;
+}
+/* line 50, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question .description .br {
   display: inline;
 }
-/* line 18, ../../sass/panes/pane__coral_qa_ask_question.scss */
+/* line 54, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question .form-actions {
+  float: right;
+  margin: -3.75em 0 0 0;
+  padding: 0;
+}
+/* line 59, ../../sass/panes/pane__coral_qa_ask_question.scss */
+.pane-coral-qa-ask-question label {
+  display: none;
+}
+/* line 60, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question .filter-wrapper {
   display: none;
 }

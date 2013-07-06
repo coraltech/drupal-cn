@@ -581,17 +581,22 @@ input#edit-delete::-moz-focus-inner {
 }
 
 /* line 204, ../sass/global/_dom.scss */
+.form-textarea {
+  font-size: 1em;
+}
+
+/* line 208, ../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 208, ../sass/global/_dom.scss */
+/* line 212, ../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 211, ../sass/global/_dom.scss */
+/* line 215, ../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
