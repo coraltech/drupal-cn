@@ -3,17 +3,188 @@
 // Implements hook_form_alter to add defaults handlers
 //  and js settings
 function field_defaults_form_alter(&$form, &$form_state, $form_id) {
-  // @TODO: add support for other field types - when needed ;-)
-  // Add default textfield support
-  field_defaults_textfield_add_defaults($form_id, $form);
+  static $processed = FALSE;
+  
+  if (!$processed) {
+    // Scan for field types
+    $path  = drupal_get_path('module', 'field_defaults');
+    $files = field_defaults_read_dir($path.'/defaults');
+
+    foreach($files as $file) {
+      $type = str_replace('_defaults.inc', '', $file);
+      field_defaults_add_defaults($form_id, $form, $type);
+      drupal_add_js($path.'/js/'.$type.'_defaults.js', array('group' => JS_THEME)); // Added late in the game
+    }
+    $processed = TRUE;
+  }
 }
 
 
 // Implements hook init
 function field_defaults_init() {
-  $path = drupal_get_path('module', 'field_defaults');  
-  coral_include(array('inc'), 'inc', array('module' => 'field_defaults'));
-  drupal_add_js($path.'/js/textfield_defaults.js', array('group' => JS_THEME)); // Added late in the game
+  coral_include(array('defaults', 'fields'), 'inc', array('module' => 'field_defaults'));
+}
+
+
+/**
+ * Add textfield default text automatically with js
+ *  - see mosaicForms.js
+ * 
+ * Processes and add default text to text fields by adding settings
+ *  to the Drupal.settings.field_defaults.textfieldDefaults array.
+ */
+function field_defaults_add_defaults($form_id, &$form, $type = 'textfield') {
+  $matrix = variable_get('field_defaults_'.$type.'_matrix', array());  
+  
+  // Hook is composed:  hook_[form_id]__textfield_defaults($form, &$matrix)
+  $hook = $form_id.'__'.$type.'_defaults';
+
+  // Call up all texfield defaults from any modules that
+  $modules = module_implements($hook);
+  
+  //  implement them.
+  foreach ($modules as $module) {
+    $function = $module.'_'.$hook;
+    $function($form, $matrix); // let modules populate the matrix
+  }  
+
+  // Storage container for found defaults: these are added to Drupal.settings 
+  $field_defaults = array();
+  
+  $validation_func = 'field_defaults_'.$type.'_validation';
+  $submission_func = 'field_defaults_'.$type.'_submission';
+  
+  if (function_exists($validation_func)) $validation_func($matrix, $form_id, $form);
+  if (function_exists($validation_func)) $submission_func($matrix, $form_id, $form);
+  
+  foreach ($matrix as $frm => $defaults) {
+    if (isset($defaults['selectors'])) {
+      foreach ($defaults['selectors'] as $selector => $default) {
+        $field_defaults[$selector]['default'] = $default;
+      }
+    }
+  }
+
+  // Save the updated matrix
+  variable_set('field_defaults_'.$type.'_matrix', $matrix);
+
+  // Add to Drupal.settings
+  if (count($field_defaults)) {
+    $settings_name = $type.'Defaults';
+    drupal_add_js(array('field_defaults' => array($settings_name => $field_defaults)), 'setting');
+  }
+}
+
+
+function field_defaults_validation($matrix, $form_id, &$form, $type = 'textfield') {
+  $vhandler = FALSE;
+  
+  // We have validation routines
+  if (isset($matrix[$form_id]['validate'])) {
+    $vhandler = $matrix[$form_id]['validate'];
+    if (is_array($vhandler)) {
+      foreach ($vhandler as $handler) {
+        $form['#validate'][] = $handler;
+      }
+    }
+    if (is_string($vhandler)) {
+      if (function_exists($vhandler)) {
+        $form['#validate'][] = $vhandler;
+      }
+    }
+  }
+  
+  // No validation routines specified, add the default.
+  if (!$vhandler) {
+    $form['#validate'][] = 'field_defaults_'.$type.'_validate';
+  }  
+}
+
+
+
+// Primary validation handler - ensures the user does not submit the default
+//  Validation and submit handlers should be at the top level to prevent WSOD
+function field_defaults_validate($form, &$form_state, $type = 'textfield') {
+  // Current state of the textfield_defaults  
+  $matrix = variable_get('field_defaults_'.$type.'_matrix', array());
+  if (empty($matrix[$form['#form_id']])) return; // do we have anything to process?
+
+  // This form's defaults
+  // need to check they are not submitting defaults
+  $defaults = $matrix[$form['#form_id']];
+  
+  if ($defaults) {
+    // Load the options if any  
+    $options_func = 'field_defaults_'.$type.'_get_form_options';
+    if (function_exists($options_func)) $options = $options_func($form);
+    
+    // Search values is used the same everywhere
+    $search_values = field_defaults_get_search_values($form_state);    
+    
+    // Lets see if there are any defaults left
+    foreach ($search_values as $id => $value) {
+            
+      // Test to see if it is a default
+      if (array_search($value, $matrix[$form['#form_id']]['selectors'], TRUE)) {
+        form_set_error($id, t('You cannot submit default values (1).'));
+        return;
+      }
+
+      // Testing the optionally defined options array
+      $options = (is_array($options)) ? $options : array();
+      if (count($options) > 1) {
+        if (array_search($value, $options, TRUE)) {
+          form_set_error($id, t('You cannot submit default values (2).'));
+          return;
+        }
+      }
+    }
+  }
+}
+
+
+// Determine if we need to do any submit handling of this form
+//  You must send in custom submit handlers.  None are provided by default.
+function field_defaults_submission($matrix, $form_id, &$form) {
+  if (isset($matrix[$form_id])) {
+    $settings = $matrix[$form_id];
+    if (isset($settings['submit'])) {
+      if (is_string($settings['submit'])) {
+        $settings['submit'] = array($settings['submit']);
+      }
+      foreach ($settings['submit'] as $submit_handler) {
+        if (function_exists($submit_handler) && !in_array($submit_handler, $form['#submit'])) {
+          $form['#submit'][] = $submit_handler;
+        }
+      }
+    }
+  }
+}
+
+
+// Options arrays for field defaults
+//  allows you to randomly select from a set of defaults
+function field_defaults_get_form_options($form, $type = 'textfield') {
+  // Most specific options (by form and action)
+  // These follow the convention:
+  // - hook__[form_id]__textfield_options  *or*
+  // - hook__[form_id]__[form_action]__textfield_options
+  if (!isset($form['#form_id'])) return array();
+  
+  $hooks = array(
+    $form['#form_id'].'__'.field_defaults_translate_action($form).'__'.$type.'_options', // most specific
+    $form['#form_id'].'__'.$type.'_options' // least specific
+  );
+  foreach ($hooks as $id => $hook) {
+    // Allow modules to attach 
+    foreach (module_implements($hook) as $module) {
+      $function = $module.'_'.$hook;
+      $options = $function($form);   // return the first set found: most specific first!
+      if (is_array($options)) break; // Ignore less specifc options - if they exist
+    }
+    if (isset($options)) return $options;
+  }
+  return array();
 }
 
 
@@ -22,6 +193,42 @@ function field_defaults_translate_action($form) {
   $action = explode('/', $form['#action']); 
   array_shift($action);
   return implode('_', $action);
+}
+
+
+// Dupe of coral_menus_read_dir (which was found on the interwebs)
+function field_defaults_read_dir($dir) {// --- Read in the files and directory structure
+  $result = array(); 
+  $cdir = scandir($dir); 
+  foreach ($cdir as $key => $value) {
+    if (!in_array($value,array(".",".."))) {
+      if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) 
+        $result[$value] = field_defaults_read_dir($dir . DIRECTORY_SEPARATOR . $value); 
+      else $result[]  = $value; 
+  }} return $result;
+}
+
+
+// Return the values that we intend to screen
+//  back to the default validator.
+function field_defaults_get_search_values($form_state) {
+  // we dont need to look at these values
+  $ignore = array( 'form_build_id', 'form_token', 'form_id', 'op', 'submit' );
+  $values = $form_state['values'];
+    
+  // Container to hold the items we will be screening:
+  //  we dont know what field we are looking for... 
+  //  jQuery tags is what we have -_-
+  //  ^^^ Could be a good @TODO: could we key by some sort of id?
+  $search_values = array(); 
+    
+  // Screen out the items we dont look at
+  foreach ($values as $id => $value) {
+    if (!in_array($id, $ignore)) {
+      $search_values[$id] = $value;
+    }
+  }
+  return $search_values;
 }
 
 
