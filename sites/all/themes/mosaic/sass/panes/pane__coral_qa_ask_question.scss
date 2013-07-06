@@ -4,6 +4,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/icons';
 
 @import 'compass/utilities/general/clearfix';
 
@@ -29,11 +30,23 @@
     margin: 0 0 ($default_vert_unit / 2) 0;
   }
   .form-type-textfield {
-    width: 47.8%;
-    margin-right: 2%;
+    width: 48%;
     float: left;
     .description { display: none; }
     .form-text { width: 99.8%; }
+  }
+  .field-name-field-tags {
+    position: relative;
+    .icon {
+      display: block;
+      position: absolute;
+      top: $default_vert_unit / 2;
+      right: 48.5%;
+      @include icons-sprite('coral-tag');
+    }
+    .form-type-textfield {
+      float: right;
+    }
   }
   .form-type-textarea {
     clear: both; // ensure this doesnt ride up on the fields (FFx3)
