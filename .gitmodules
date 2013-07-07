@@ -271,3 +271,6 @@
 [submodule "sites/all/modules/contrib/backbone"]
 	path = sites/all/modules/contrib/backbone
 	url = http://git.drupal.org/project/backbone.git
+[submodule "sites/all/modules/contrib/views_load_more"]
+	path = sites/all/modules/contrib/views_load_more
+	url = http://git.drupal.org/project/views_load_more.git
