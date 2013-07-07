@@ -3,6 +3,7 @@
 
 @import "global/buttons";
 @import "global/colors";
+@import "global/headers";
 @import "global/fonts";
 
 @import "compass/utilities/general/clearfix";
@@ -45,29 +46,18 @@ h1, h2, h3, h4, h5, h6 {
   color: $dkgray;
   clear: left;
 }
+// See _headers.scss for mixins
 h1 { 
-  font-size: 1.5em; // 24px
-  line-height: 1.6667em; // 40px
-  margin-top: 0.4167em;
-  margin-bottom: 0.4167em;
+  @include h1;
 }
 h2 { 
-  font-size: 1.375em; // 22px
-  line-height: 1.8182em; // 40px
-  margin-top: 0.4545em;
-  margin-bottom: 0.4545em;
+  @include h2;
 }
 h3 { 
-  font-size: 1.25em; // 20px
-  line-height: 1em; // 20px
-  margin-top: .5em;
-  margin-bottom: .5em;
+  @include h3;
 }
 h4 { 
-  font-size: 1.125em; // 18px
-  line-height: 1.1111em; // 20px
-  margin-top: 0.5555em;
-  margin-bottom: 0.5555em;
+  @include h4;
 }
 
 
