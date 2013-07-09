@@ -25,6 +25,9 @@
 // Site width
 .site-width {
   @include site_width;
+  .site-width {  // Reset inner level:
+    width: auto; // we never want nested site-widths to have full width
+  }
 }
 
 // Text

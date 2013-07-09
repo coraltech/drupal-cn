@@ -105,15 +105,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-left: auto;
   margin-right: auto;
 }
+/* line 28, ../sass/global/_construct.scss */
+.site-width .site-width {
+  width: auto;
+}
 
-/* line 32, ../sass/global/_construct.scss */
+/* line 35, ../sass/global/_construct.scss */
 .sml,
 .small {
   font-size: 80%;
   line-height: 1.25em;
 }
 
-/* line 38, ../sass/global/_construct.scss */
+/* line 41, ../sass/global/_construct.scss */
 .br {
   display: block;
 }
@@ -982,29 +986,29 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   text-align: center;
 }
 
-/* line 114, ../sass/global/_global.scss */
+/* line 117, ../sass/global/_global.scss */
 .pane-coral-user {
   float: right;
   margin-top: 1.25em;
 }
-/* line 118, ../sass/global/_global.scss */
+/* line 121, ../sass/global/_global.scss */
 .pane-coral-user .welcome {
   float: left;
   color: #dddddd;
   font-weight: bold;
   margin: 0.3125em 0.75em 0 0;
 }
-/* line 124, ../sass/global/_global.scss */
+/* line 127, ../sass/global/_global.scss */
 .pane-coral-user .user-picture {
   float: left;
 }
-/* line 127, ../sass/global/_global.scss */
+/* line 130, ../sass/global/_global.scss */
 .pane-coral-user .username {
   float: right;
   margin: 0.3125em 0.5em 0 0.5em;
 }
 
-/* line 135, ../sass/global/_global.scss */
+/* line 138, ../sass/global/_global.scss */
 .toc-wrapper {
   border: 1px solid #bac8d9;
   clear: left;
@@ -1020,7 +1024,7 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 145, ../sass/global/_global.scss */
+/* line 148, ../sass/global/_global.scss */
 .toc-wrapper .toc-title {
   text-align: left;
   font-size: 90%;
@@ -1028,11 +1032,11 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   font-weight: bold;
   padding: 0.15625em 0.3125em;
 }
-/* line 152, ../sass/global/_global.scss */
+/* line 155, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state {
   margin-left: .5em;
 }
-/* line 153, ../sass/global/_global.scss */
+/* line 156, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state span {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
@@ -1041,16 +1045,16 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   color: #446eac;
   cursor: pointer;
 }
-/* line 161, ../sass/global/_global.scss */
+/* line 164, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen {
   padding: 0 0.3125em 0.3125em 0.625em;
 }
-/* line 164, ../sass/global/_global.scss */
+/* line 167, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen .toc {
   font-size: 95%;
 }
 
-/* line 170, ../sass/global/_global.scss */
+/* line 173, ../sass/global/_global.scss */
 .toc-top {
   border: 1px solid #777777;
   float: right;
@@ -1078,7 +1082,7 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 187, ../sass/global/_global.scss */
+/* line 190, ../sass/global/_global.scss */
 .toc-top .arrow {
   display: block;
   position: relative;
@@ -1092,25 +1096,25 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   border-bottom: 5px solid #446eac;
 }
 
-/* line 196, ../sass/global/_global.scss */
+/* line 199, ../sass/global/_global.scss */
 h2 .toc-top {
   margin-top: 0.625em;
   margin-right: -1.15em;
 }
 
-/* line 200, ../sass/global/_global.scss */
+/* line 203, ../sass/global/_global.scss */
 h3 .toc-top {
   margin-top: 0.15625em;
 }
 
-/* line 206, ../sass/global/_global.scss */
+/* line 209, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 212, ../sass/global/_global.scss */
+/* line 215, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }

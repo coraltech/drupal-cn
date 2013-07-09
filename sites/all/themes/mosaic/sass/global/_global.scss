@@ -110,7 +110,10 @@ header .pane-search-form {
     @include opacity(.85);
   }
 }
+// Gigya or coral_user take the 
+//  same spot in the header:
 
+// User welcome in the header
 .pane-coral-user {
   float: right;
   margin-top: $default_vert_unit;
@@ -166,7 +169,7 @@ header .pane-search-form {
     }
   }  
 }
-
+// Back to top links
 .toc-top {
   border: 1px solid $mdgray;
   float: right;
