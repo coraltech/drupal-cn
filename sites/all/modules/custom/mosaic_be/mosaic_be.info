@@ -1,4 +1,4 @@
 name = Mosaic theme backend support
 description = Provides support and additional hook access for use by and with mosaic theme.
-package = Coral
+package = Mosaic
 core = 7.x

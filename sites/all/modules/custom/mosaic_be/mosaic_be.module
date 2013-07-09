@@ -1,5 +1,15 @@
 <?php
 
+// @TODO: Views query alters should prob find their own module.
+function mosaic_be_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'mosaic_be') . '/includes/views'
+  );
+}
+
+
+
 // Include includes
 coral_include(array('includes'), 'inc', array('module' => 'mosaic_be'));
 
