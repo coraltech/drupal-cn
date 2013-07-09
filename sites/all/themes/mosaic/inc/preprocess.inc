@@ -179,19 +179,25 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
 // Compile a default user picture and link
 function mosaic_preprocess_user_picture(&$vars) {
   $a0 = arg(0); $a1 = arg(1); $a2 = arg(2);
-  
+ 
   $account = $vars['account'];
   $title = '';
   if (isset($account->name)) {
     $title = t('View profile of '.$account->name);
   }
+  
+  $styles = image_styles();
+  if (isset($vars['image_style']) && array_key_exists($vars['image_style'], $styles)) {
+    $image_style = $vars['image_style'];
+  }
+
   //dpm($a0);dpm($a1);dpm($a2);
   if ($a0 == 'user') { // thumbnail (larger than normal)
-    $image_style = 'thumbnail';
+    $image_style = (!isset($image_style)) ? 'thumbnail' : $image_style;
     $vars['user_picture'] = mosaic_compile_default_user_image($account->uid, $image_style, $title);
   }
   else {
-    $image_style = 'user_thumb_small';
+    $image_style = (!isset($image_style)) ? 'user_thumb_small' : $image_style;
     $vars['user_picture'] = mosaic_compile_default_user_image($account->uid, $image_style, $title);
   }
 }

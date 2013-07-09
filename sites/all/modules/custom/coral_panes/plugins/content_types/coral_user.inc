@@ -26,7 +26,7 @@ function coral_user_pane_content_type_render($subtype, $conf, $context = NULL) {
     if (isset($conf['welcome_text'])) {
       $welcome = '<span class="welcome">'.filter_xss_admin($conf['welcome_text']).'</span>';
     }  
-    $img = theme('user_picture', array('account' => $user));
+    $img = theme('user_picture', array('account' => $user, 'image_style' => 'user_thumb_small'));
     $block->content = $welcome.$img.theme('username', array('account' => $user));  
   }
   return $block;
