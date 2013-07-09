@@ -1,0 +1,4 @@
+name = Standardize tags
+description = This module ensures tags are entered in all lower case to reduce duplicate tags.
+core = 7.x
+package = "Other"

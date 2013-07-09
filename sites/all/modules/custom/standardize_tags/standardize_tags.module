@@ -1,0 +1,13 @@
+<?php
+
+// Implements hook_field_attach_presave
+//  Acts to send all tags to loewrcase only
+//   for standardization. 
+function standardize_tags_field_attach_presave($entity_type, $entity) {
+  if ($entity_type == 'taxonomy_term' && $entity->vocabulary_machine_name == 'tags') {
+    $entity->name = strtolower($entity->name);
+  }
+  return $entity;
+}
+
+
