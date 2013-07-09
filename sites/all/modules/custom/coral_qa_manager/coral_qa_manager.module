@@ -1,0 +1,161 @@
+<?php 
+/**
+ * 
+ * System Hooks
+ * 
+ ******************************************************************************/
+
+/**
+ * Implements hook_ctools_plugin_directory -
+ * This lets ctools know to scan my module for a content_type plugin file
+ * Detailed docks in ctools/ctools.api.php
+ */
+function coral_qa_manager_ctools_plugin_directory($owner, $plugin_type) {
+  // we'll be nice and limit scandir() calls
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+ 
+
+// Implimentation of hook_init()
+function coral_qa_manager_init() {
+  global $user;
+  $user = user_load($user->uid);
+  $node = new stdClass();
+  $node->nid = 0;
+  $node->uid = -1; // lets make sure anonymous could not possibly see the best answer btn
+  
+  $t = arg(0); $n = arg(1);
+  if (is_numeric($n)) {
+    $node = node_load($n);
+  }
+
+  // Set up some settings
+  $settings = array('coral_qa_manager' => array());
+  if (isset($node->nid)  && 
+      isset($node->uid)  && 
+      isset($node->type)) {
+
+    // is it a question
+    if ($node->type == 'question') {
+      $settings['coral_qa_manager']['question'] = array(
+        'nid'    => $node->nid, 
+        'author' => $node->uid, 
+      );
+    }
+  }
+  if (isset($user->name) && isset($user->uid)) {
+    $settings['coral_qa_manager']['current_user'] = array(
+      'name'   => $user->name, 
+      'uid'    => $user->uid,
+    );
+  }
+
+  drupal_add_js($settings, 'setting');
+} 
+ 
+// @TODO: Error check fields used here for their existence!!!
+//  I see a lot of accessing going on w/out isset checks!
+
+// Implementation of hook_entity_insert()
+//  This function will manage updating other nodes when 
+//  certain node types are saved 
+function coral_qa_manager_entity_insert($entity, $type) {
+  if ($type == 'node' && $entity->type == 'question') {} // dont need to do much here yet 
+    
+  // Update question's answer count (increment)
+  if ($type == 'node' && $entity->type == 'answer') {
+    $question = node_load((int)$entity->field_question['und'][0]['target_id']);
+    if (is_object($question) && $question->nid) {
+      // Add the tags from the question  
+      if (!isset($entity->field_tags) && isset($question->field_tags)) {
+        $i = 0;
+        foreach ($question->field_tags[$question->language] as $tag) {
+          $inserts = db_insert('field_data_field_tags')
+            ->fields(array(
+              'entity_type' => 'node',
+              'bundle' => $entity->type,
+              'entity_id' => $entity->nid,
+              'revision_id' => $entity->vid,
+              'language' => $entity->language,
+              'delta' => $i,
+              'field_tags_tid' => $tag['tid']
+            ))->execute();
+          $i++;
+        }
+      }
+      
+      // Update the answer count
+      $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] + 1);      
+      node_save($question);
+    }
+  }
+  
+  // Update tree (Question, Answer, and poss. Comment)
+  if ($type == 'node' && $entity->type == 'comment') {
+    coral_qa_manager_update_comment_counts_tree($entity, $type, 'insert');
+  }
+}
+
+
+// Implementation of hook_entity_insert()
+function coral_qa_manager_entity_delete($entity, $type) {
+  if ($type == 'node' && $entity->type == 'question') {}
+    
+  // Update question's answer count (decrement)
+  if ($type == 'node' && $entity->type == 'answer') {
+    $question = node_load((int)$entity->field_question['und'][0]['target_id']);
+    if (is_object($question) && $question->nid) {
+      // Update the answer count
+      $question->field_answer_count['und'][0]['value'] = (string)((int)$question->field_answer_count['und'][0]['value'] - 1);
+      node_save($question);
+    }
+  }
+  
+  // Update tree (Question, Answer, and poss. Comment)
+  if ($type == 'node' && $entity->type == 'comment') {
+    coral_qa_manager_update_comment_counts_tree($entity, $type, 'delete');
+  }
+}
+// @TODO: implement saving this way - non-full node save
+// ................................................................
+//  db_update('example_entity')
+//    ->fields(array(
+//    'updated' => REQUEST_TIME,
+//  ))
+//  ->condition('type', $type)
+//  ->condition('id', $id)
+//  ->execute();
+    
+// Update the comments
+function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
+  $incr = ($op == 'insert') ? 1 : -1; 
+
+  if ($type == 'node' && $entity->type == 'question') { return true; } // Once we get to the question we can exit recursing.
+  
+  if ($type == 'node' && $entity->type == 'answer') {
+    // get this answer's parent question and update it.
+    $question = node_load((int)$entity->field_question['und'][0]['target_id']);
+    if (is_object($question)) {
+      $question->field_comment_count['und'][0]['value'] = (string)((int)$question->field_comment_count['und'][0]['value'] + $incr); 
+      node_save($question);
+    } 
+    // we can exit
+    return true;
+  }
+  
+  if ($type == 'node' && $entity->type == 'comment') {
+    // get this comment's parent and update it.
+    $content = node_load((int)$entity->field_content['und'][0]['target_id']);
+    if (is_object($content)) {
+      $content->field_comment_count['und'][0]['value'] = (string)((int)$content->field_comment_count['und'][0]['value'] + $incr);
+      node_save($content);
+    
+      // call this again...
+      coral_qa_update_comment_counts_tree($content, 'node', $op);
+    }
+  }   
+}
+
+

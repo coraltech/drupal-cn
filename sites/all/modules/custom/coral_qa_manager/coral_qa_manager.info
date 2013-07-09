@@ -1,0 +1,4 @@
+name = Coral Q&A Manager
+description = Manages question and answer components and interactions
+package = "Coral"
+core = 7.x 
