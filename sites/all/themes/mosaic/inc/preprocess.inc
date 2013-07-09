@@ -72,6 +72,7 @@ function mosaic_preprocess_views_view(&$vars) {
     foreach($files as $i => $file) {
 //dpm($file);
       $func = '_preprocess_'.$file;
+//dpm($func);
       if (function_exists($func)) $func($vars);
       if (file_exists($path.'/css/views/'.$file.'.css')) drupal_add_css($path.'/css/views/'.$file.'.css', array('group' => CSS_THEME));  
       if (file_exists($path.'/js/views/'.$file.'.js'))   drupal_add_js($path.'/js/views/'.$file.'.js', array('group' => JS_THEME));
@@ -167,6 +168,14 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
   }
 }
 
+// Re-formulate the tag links to point to the page we are current on.
+//  Add query params for other views to read.
+function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
+  if ($vars['view']->name == 'tags_popular') { 
+    $vars['output'] = l($vars['output'], drupal_get_path_alias(), array('query' => array('tag' => $vars['output'])));
+  }
+}
+
 // Compile a default user picture and link
 function mosaic_preprocess_user_picture(&$vars) {
   $a0 = arg(0); $a1 = arg(1); $a2 = arg(2);
@@ -201,6 +210,7 @@ function mosaic_compile_default_user_image($uid, $image_style, $title) {
     array('html' => 'true') // we have a pic
   );
 }
+
 
 
 
