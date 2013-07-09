@@ -63,7 +63,6 @@ function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $contex
     $form_state['build_info']['args'] = array($node);
     form_load_include($form_state, 'inc', 'node', 'node.pages');
     $question_form = drupal_build_form('question_node_form', $form_state);
-    unset($question_form['additional_settings']);
   }
   $form .= render($question_form).'</div>'; // end form
 
