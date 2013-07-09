@@ -206,3 +206,12 @@ html.js input.throbbing {
   background-position: 100% -12px; /* LTR */
 }
 
+a.btn {
+  &:hover {
+    color: $white;
+  }
+  
+  @include btn-matte-inset;
+  @include btn-structure;
+}
+
