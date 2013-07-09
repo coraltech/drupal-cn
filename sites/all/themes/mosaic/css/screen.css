@@ -982,7 +982,29 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   text-align: center;
 }
 
-/* line 116, ../sass/global/_global.scss */
+/* line 114, ../sass/global/_global.scss */
+.pane-coral-user {
+  float: right;
+  margin-top: 1.25em;
+}
+/* line 118, ../sass/global/_global.scss */
+.pane-coral-user .welcome {
+  float: left;
+  color: #dddddd;
+  font-weight: bold;
+  margin: 0.3125em 0.75em 0 0;
+}
+/* line 124, ../sass/global/_global.scss */
+.pane-coral-user .user-picture {
+  float: left;
+}
+/* line 127, ../sass/global/_global.scss */
+.pane-coral-user .username {
+  float: right;
+  margin: 0.3125em 0.5em 0 0.5em;
+}
+
+/* line 135, ../sass/global/_global.scss */
 .toc-wrapper {
   border: 1px solid #bac8d9;
   clear: left;
@@ -998,7 +1020,7 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 126, ../sass/global/_global.scss */
+/* line 145, ../sass/global/_global.scss */
 .toc-wrapper .toc-title {
   text-align: left;
   font-size: 90%;
@@ -1006,11 +1028,11 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   font-weight: bold;
   padding: 0.15625em 0.3125em;
 }
-/* line 133, ../sass/global/_global.scss */
+/* line 152, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state {
   margin-left: .5em;
 }
-/* line 134, ../sass/global/_global.scss */
+/* line 153, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state span {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
@@ -1019,16 +1041,16 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   color: #446eac;
   cursor: pointer;
 }
-/* line 142, ../sass/global/_global.scss */
+/* line 161, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen {
   padding: 0 0.3125em 0.3125em 0.625em;
 }
-/* line 145, ../sass/global/_global.scss */
+/* line 164, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen .toc {
   font-size: 95%;
 }
 
-/* line 151, ../sass/global/_global.scss */
+/* line 170, ../sass/global/_global.scss */
 .toc-top {
   border: 1px solid #777777;
   float: right;
@@ -1056,7 +1078,7 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 168, ../sass/global/_global.scss */
+/* line 187, ../sass/global/_global.scss */
 .toc-top .arrow {
   display: block;
   position: relative;
@@ -1070,25 +1092,25 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   border-bottom: 5px solid #446eac;
 }
 
-/* line 177, ../sass/global/_global.scss */
+/* line 196, ../sass/global/_global.scss */
 h2 .toc-top {
   margin-top: 0.625em;
   margin-right: -1.15em;
 }
 
-/* line 181, ../sass/global/_global.scss */
+/* line 200, ../sass/global/_global.scss */
 h3 .toc-top {
   margin-top: 0.15625em;
 }
 
-/* line 187, ../sass/global/_global.scss */
+/* line 206, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 193, ../sass/global/_global.scss */
+/* line 212, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }

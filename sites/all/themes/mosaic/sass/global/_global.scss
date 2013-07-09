@@ -111,6 +111,25 @@ header .pane-search-form {
   }
 }
 
+.pane-coral-user {
+  float: right;
+  margin-top: $default_vert_unit;
+  
+  .welcome {
+    float: left;
+    color: $ltgray;
+    font-weight: bold;
+    margin: ($default_vert_unit / 4) .75em 0 0;
+  }
+  .user-picture {
+    float: left;
+  }
+  .username {
+    float: right;
+    margin: ($default_vert_unit / 4) .5em 0 .5em;
+  }
+}
+
 
 // Table of contents as it appears in content
 .toc-wrapper {
