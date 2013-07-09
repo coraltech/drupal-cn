@@ -1,0 +1,4 @@
+name = Coral Ajax
+description = Provides simple framework for interacting with Drupal via Ajax.
+package = Coral
+core = 7.x

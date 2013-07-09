@@ -1,0 +1,8 @@
+<?php
+
+function coral_ajax_init() {
+  $path = drupal_get_path('module', 'coral_ajax');
+  drupal_add_js($path.'/js/coral_ajax.js');
+}
+
+// [ sound of crickets ... ] //
