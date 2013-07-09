@@ -14,7 +14,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         // Any part of this that gets a mouse down we want
         //  to focus the user on the textfield 
         $('.pane-coral-qa-ask-question .field-name-body .text-full').attr('rows', '5'); // reset rows
-        $('.pane-coral-qa-ask-question .node-question-form .form-submit').attr('value', Drupal.t('Submit question')); // reset submit text
+        $('.pane-coral-qa-ask-question .node-question-form .form-actions .form-submit').attr('value', Drupal.t('Submit question')); // reset submit text
         
         var currentHeight = $('.pane-coral-qa-ask-question form').height() - 20;
         if (currentHeight < 185) currentHeight = 185;
