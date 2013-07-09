@@ -133,18 +133,19 @@
 /* line 102, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question #user-login label {
   float: left;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 /* line 107, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question #user-login .form-type-password,
 .pane-coral-qa-ask-question #user-login .form-type-textfield {
-  width: 45%;
+  width: 44%;
 }
 /* line 110, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question #user-login .form-text {
-  width: 63%;
+  width: 62%;
+  margin-left: 1%;
 }
-/* line 113, ../../sass/panes/pane__coral_qa_ask_question.scss */
+/* line 114, ../../sass/panes/pane__coral_qa_ask_question.scss */
 .pane-coral-qa-ask-question #user-login .form-actions {
   margin: 2px 1% 0 0;
   padding: 0;

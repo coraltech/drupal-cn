@@ -1,4 +1,7 @@
-/* line 8, ../../../sass/nodes/types/node_question.scss */
+/* line 12, ../../../sass/nodes/types/node_question.scss */
+.field-name-field-answer,
+.field-name-field-comment-count,
+.field-name-field-answer-count,
 .field-type-file legend {
   display: none;
 }
