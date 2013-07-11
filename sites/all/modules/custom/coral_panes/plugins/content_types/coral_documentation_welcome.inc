@@ -24,7 +24,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_documentation_welcome_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_documentation_welcome_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $be_bold = l('be bold', 'http://en.wikipedia.org/wiki/Wikipedia:Be_bold', array('attributes' => array('target' => '_blank')));
   $output = <<<EOF
 <div class="doc-welcome">

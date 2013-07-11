@@ -18,7 +18,7 @@ $plugin = array(
 );
 
 
-function coral_node_stats_pane_content_type_render($subtype, $conf, $panel_args, $context) {
+function coral_node_stats_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
 
   $stats = array();
   
@@ -55,9 +55,11 @@ function coral_node_stats_pane_content_type_edit_form_submit($form, &$form_state
 
 // Helper to load node data
 function coral_node_stats_node_data($node, &$stats) {
+  //dpm($node);
+  //dpm($stats);
 
-  // Comment count
-  if (isset($node->comment_count)) {
+  // Comment count - are comments open
+  if (isset($node->comment_count) && $node->comment == COMMENT_NODE_OPEN) {
     $stats['node']['comment_count'] = array(
       'title' => t('Comments: '),
       'data'  => $node->comment_count

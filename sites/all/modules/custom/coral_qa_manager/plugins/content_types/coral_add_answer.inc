@@ -16,16 +16,16 @@ $plugin = array(
   ),
   'category' => t('Coral'),
   'render callback'  => 'coral_answer_button_form_content_type_render',
-  'defaults' => array('anon_links' => false),
 );
 
 
-function coral_answer_button_form_content_type_render($subtype, $conf, $panel_args, $context) {
+function coral_answer_button_form_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  // NOTE: CSS (scss) and js applied via mosaic theme as it's nice and handy   
   $node = $context[0]->data;
   $content = '';
   if (isset($node->nid) && isset($node->type)) {
     if ($node->type == 'question') {
-      $content = '<a href="/node/add/answer/'.$node->nid.'?field_question='.$node->nid.'" title="Answer this question" class="btn">Answer<span class="icon"></span></a>';
+      $content = '<a href="/node/add/answer/'.$node->nid.'?field_question='.$node->nid.'" title="Answer this question" class="btn answer answer-'.$node->nid.' answers-hidden">Answer<span class="circle"><span class="arrow"></span></span></a>';
     }
   }  
     

@@ -37,7 +37,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function generic_pane_content_type_render($subtype, $conf, $context = NULL) {
+function generic_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $block->content = 'Contact!'; // ** Add your content here! with: _some_nifty_function() or whatever. **
   return $block; 
 }

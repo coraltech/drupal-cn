@@ -17,7 +17,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_back_to_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_back_to_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   // Get the args ready for inspection... Achtung baby!
   $a0 = arg(0);  $a1 = arg(1);  $a2 = arg(2);
   

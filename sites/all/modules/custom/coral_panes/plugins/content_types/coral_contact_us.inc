@@ -37,7 +37,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_contact_us_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_contact_us_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   global $user;
   $contact_form = '';
   if (user_access('access site-wide contact form')) { 

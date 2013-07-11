@@ -37,7 +37,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   // Message stuff
   $message = '';
   if (isset($conf['welcome']) || isset($conf['welcome'])) {

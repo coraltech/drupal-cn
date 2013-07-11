@@ -37,7 +37,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_testing_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_testing_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $output = <<<EOF
   <p>Currently our testing framework is incomplete. When it is ready, it will provide RSpec unit testing and load testing for your modules and snippets!</p>
   <p>Help us develop these tools faster by:</p>

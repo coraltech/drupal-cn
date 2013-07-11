@@ -23,7 +23,7 @@ if (module_exists('comment')) {
   );
 }
 
-function coral_comment_reply_form_content_type_render($subtype, $conf, $panel_args, $context) {
+function coral_comment_reply_form_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $comment = ($context[1]->identifier == 'No context') ? NULL : clone($context[1]->data);
   
   $block = new stdClass();

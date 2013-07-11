@@ -37,7 +37,7 @@ $plugin = array(
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
-function coral_ask_question_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_ask_question_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   
   global $user;
   
@@ -51,8 +51,6 @@ function coral_ask_question_pane_content_type_render($subtype, $conf, $context =
     $form_state['build_info']['args'] = array($node);
     form_load_include($form_state, 'inc', 'node', 'node.pages');
     $question_form = drupal_build_form('question_node_form', $form_state);
-
-    unset($question_form['additional_settings']);
   }
   $block->title = t('Ask a question');
   $block->content = render($question_form);

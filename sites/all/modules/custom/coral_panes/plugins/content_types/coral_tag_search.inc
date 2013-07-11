@@ -17,7 +17,7 @@ $plugin = array(
  * Run-time rendering of the body of the block (content type)
  * See ctools_plugin_examples for more advanced info
  */
-function coral_tag_search_pane_content_type_render($subtype, $conf, $context = NULL) {
+function coral_tag_search_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $block->title = t('Tag search');
   $block->content = drupal_render(drupal_get_form('coral_tag_search_form'));
   return $block; 
