@@ -1,0 +1,135 @@
+/* line 14, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer {
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF36B048', endColorstr='#FF1E6228');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #36b048), color-stop(70%, #32a443));
+  background: -webkit-linear-gradient(#36b048, #32a443 70%);
+  background: -moz-linear-gradient(#36b048, #32a443 70%);
+  background: -o-linear-gradient(#36b048, #32a443 70%);
+  background: linear-gradient(#36b048, #32a443 70%);
+  -webkit-box-shadow: #63cf73 0 1px 0 inset;
+  -moz-box-shadow: #63cf73 0 1px 0 inset;
+  box-shadow: #63cf73 0 1px 0 inset;
+  border: 1px solid #2c913b;
+  text-shadow: #184d20 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  padding-right: 25px;
+  position: relative;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-add-answer .btn.answer:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-add-answer .btn.answer:hover {
+  background-color: #2c913b;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #309c40), color-stop(75%, #2c913b));
+  background: -webkit-linear-gradient(#309c40 3%, #2c913b 75%);
+  background: -moz-linear-gradient(#309c40 3%, #2c913b 75%);
+  background: -o-linear-gradient(#309c40 3%, #2c913b 75%);
+  background: linear-gradient(#309c40 3%, #2c913b 75%);
+}
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-add-answer .btn.answer:active {
+  -webkit-box-shadow: #298536 0 1px 2px inset;
+  -moz-box-shadow: #298536 0 1px 2px inset;
+  box-shadow: #298536 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-add-answer .btn.answer.disabled, .pane-coral-add-answer .btn.answer[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #32a443;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.pane-coral-add-answer .btn.answer::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 23, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer .circle {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 14%;
+  right: 1.5%;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #247530;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
+  background: #fff9d0;
+  background: -moz-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff9d0), color-stop(100%, #e5d14a));
+  background: -webkit-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: -o-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: -ms-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: linear-gradient(to bottom, #fff9d0 0%, #e5d14a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 37, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer .circle .arrow {
+  display: block;
+  margin: 3px 0 0 6px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #515151;
+}
+/* line 42, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer .circle .arrowDown {
+  margin: 6px 0 0 3px;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #515151;
+}
+/* line 47, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer:hover .circle {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
+  background: #e5d14a;
+  background: -moz-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5d14a), color-stop(100%, #fff6b6));
+  background: -webkit-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: -o-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: -ms-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}

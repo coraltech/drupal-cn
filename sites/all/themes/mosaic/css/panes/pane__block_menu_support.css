@@ -6,7 +6,7 @@
   z-index: 1;
 }
 
-/* line 19, ../../sass/panes/pane__block_menu_support.scss */
+/* line 20, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
   background: -webkit-linear-gradient(left, #dddddd 12em, white 12em, white);
@@ -15,27 +15,27 @@
   background: -ms-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: linear-gradient(to right, #dddddd 12em, #ffffff 12em, #ffffff);
 }
-/* line 23, ../../sass/panes/pane__block_menu_support.scss */
+/* line 24, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-top,
 .mfp-ajax-holder .mfp-content .panel-col-top {
   background: #f1f1f1;
 }
-/* line 26, ../../sass/panes/pane__block_menu_support.scss */
+/* line 27, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-top .inside,
 .mfp-ajax-holder .mfp-content .panel-col-top .inside {
   margin-bottom: 0;
 }
-/* line 30, ../../sass/panes/pane__block_menu_support.scss */
+/* line 31, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-top .title-msg,
 .mfp-ajax-holder .mfp-content .panel-col-top .title-msg {
   font-size: 90%;
 }
-/* line 35, ../../sass/panes/pane__block_menu_support.scss */
+/* line 36, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-first,
 .mfp-ajax-holder .mfp-content .panel-col-first {
   width: 12em;
 }
-/* line 38, ../../sass/panes/pane__block_menu_support.scss */
+/* line 39, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-first li,
 .mfp-ajax-holder .mfp-content .panel-col-first li {
   background: #dddddd;
@@ -55,24 +55,24 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right,GradientType=1 );
   /* IE6-9 */
 }
-/* line 39, ../../sass/panes/pane__block_menu_support.scss */
+/* line 40, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-first li a,
 .mfp-ajax-holder .mfp-content .panel-col-first li a {
   color: #2b486b;
 }
-/* line 44, ../../sass/panes/pane__block_menu_support.scss */
+/* line 45, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-first li a:hover, .mfp-inline-holder .mfp-content .panel-col-first li a:active, .mfp-inline-holder .mfp-content .panel-col-first li a.active,
 .mfp-ajax-holder .mfp-content .panel-col-first li a:hover,
 .mfp-ajax-holder .mfp-content .panel-col-first li a:active,
 .mfp-ajax-holder .mfp-content .panel-col-first li a.active {
   color: black;
 }
-/* line 52, ../../sass/panes/pane__block_menu_support.scss */
+/* line 53, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-last,
 .mfp-ajax-holder .mfp-content .panel-col-last {
   width: 76%;
 }
-/* line 55, ../../sass/panes/pane__block_menu_support.scss */
+/* line 56, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-last .pane-content,
 .mfp-ajax-holder .mfp-content .panel-col-last .pane-content {
   border-top: 1px solid #777777;
@@ -80,12 +80,12 @@
   height: 364px;
   padding: 0 15px 15px;
 }
-/* line 62, ../../sass/panes/pane__block_menu_support.scss */
+/* line 63, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-last > .inside,
 .mfp-ajax-holder .mfp-content .panel-col-last > .inside {
   margin: 0;
 }
-/* line 65, ../../sass/panes/pane__block_menu_support.scss */
+/* line 66, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-last > .inside h2,
 .mfp-ajax-holder .mfp-content .panel-col-last > .inside h2 {
   margin: 0;
@@ -93,12 +93,12 @@
   line-height: 16px;
   background: #ebeff4;
 }
-/* line 73, ../../sass/panes/pane__block_menu_support.scss */
+/* line 75, ../../sass/panes/pane__block_menu_support.scss */
+.mfp-inline-holder .mfp-content .panel-col-last .vertical-tabs,
 .mfp-inline-holder .mfp-content .panel-col-last .filter-wrapper,
+.mfp-ajax-holder .mfp-content .panel-col-last .vertical-tabs,
 .mfp-ajax-holder .mfp-content .panel-col-last .filter-wrapper {
-  margin: 0;
-  padding: 0;
-  border: 1px solid #efefef;
+  display: none;
 }
 /* line 81, ../../sass/panes/pane__block_menu_support.scss */
 .mfp-inline-holder .mfp-content .panel-col-last #user-login .form-actions,
