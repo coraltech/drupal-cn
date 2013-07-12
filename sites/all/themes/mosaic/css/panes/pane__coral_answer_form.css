@@ -1,0 +1,5 @@
+/* line 6, ../../sass/panes/pane__coral_answer_form.scss */
+.pane-coral-answer-form .filter-wrapper,
+.pane-coral-answer-form .vertical-tabs {
+  display: none;
+}
