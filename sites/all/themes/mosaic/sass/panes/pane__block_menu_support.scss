@@ -15,6 +15,7 @@
   }
 }
 
+// mfp is the magnific popup container
 .mfp-inline-holder .mfp-content, 
 .mfp-ajax-holder .mfp-content {
   
@@ -70,10 +71,9 @@
       }
     }
     
+    .vertical-tabs,
     .filter-wrapper {
-      margin: 0;
-      padding: 0;
-      border: 1px solid lighten($ltgray, 7%);
+      display: none;
     }
     
     #user-login .form-actions,
