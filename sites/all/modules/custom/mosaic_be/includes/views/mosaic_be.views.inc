@@ -6,14 +6,15 @@
  * @param type $query 
  */
 function mosaic_be_views_query_alter(&$view, &$query) {
-  if ($view->name == 'questions') {
-      
-    $query_string = $_SERVER['QUERY_STRING'];
-    $query_string = explode('=', $query_string);
+  
+  if ($view->name == 'questions') { 
+    $tag = '';
     
     // if we have a tag set the view conditions
-    if (isset($query_string[1])) {
-      $tag = filter_xss_admin(urldecode($query_string[1]));
+    if (isset($_GET['tag'])) $tag = $_GET['tag'];
+    if ($tag && $tag != '') {
+      $tag = filter_xss_admin(urldecode($tag));
+      //dpm($tag);
       $conditions = array(
         0 => array(
           'field' => 'taxonomy_term_data_node.name',
@@ -29,4 +30,5 @@ function mosaic_be_views_query_alter(&$view, &$query) {
       );
     }
   }
+
 }
