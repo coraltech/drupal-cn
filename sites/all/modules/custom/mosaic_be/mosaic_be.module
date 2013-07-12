@@ -36,7 +36,7 @@ function mosaic_be_panelizer_pre_render_alter($panelizer, $display, $entity) {
 // Some stuff doesnt go through panelizer that could be caught here.
 function mosaic_be_init() {
   $item = menu_get_item();
-  if (isset($item['page_arguments'])) {
+  if (isset($item['page_arguments']) && is_array($item['page_arguments'])) {
     $obj = array_shift($item['page_arguments']);
   
     // It's a node! Congratulations!
