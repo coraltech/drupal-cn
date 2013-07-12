@@ -82,6 +82,9 @@ function mosaic_preprocess_views_view(&$vars) {
   if (isset($vars['view']->exposed_raw_input['sort_by'])) {
     $vars['classes_array'][] = 'view-sortby-'.$vars['view']->exposed_raw_input['sort_by']; 
   }
+  
+  // Put any view query info to the settings array for use by other js
+  mosaic_compile_views_query_data($vars);
 }
 
 // Preprocess for views fields (row - sort of)
@@ -202,6 +205,7 @@ function mosaic_preprocess_user_picture(&$vars) {
   }
 }
 
+// Compiles a user image
 function mosaic_compile_default_user_image($uid, $image_style, $title) {
   return l(
     theme(
@@ -217,6 +221,38 @@ function mosaic_compile_default_user_image($uid, $image_style, $title) {
   );
 }
 
+// Compiles data about this view's query and puts it to the settings array
+//  Settings key is [view_name]_[view_display]_[[view_arg]_[view_arg]...]
+function mosaic_compile_views_query_data(&$vars) {
+  
+  // Views to exclude:
+  //  Some views have a query alter running on them
+  //  that impedes this feature's usefulness. For 
+  //  this reason lets exclude those views when we can.
+  $exclude = array('questions');
+
+  // Got views? - with queries!
+  if (isset($vars['view']) && isset($vars['view']->query) && !in_array($vars['view']->name, $exclude)) {
+    $view  = $vars['view'];
+    $query = $vars['view']->query;
+
+    $settings = array(); // empty settings for now
+    if (isset($query->pager->total_items)) {
+      $settings['total_items'] = $query->pager->total_items;
+    }
+    if (isset($query->pager->options['items_per_page'])) {
+      $settings['limit'] = $query->pager->options['items_per_page'];
+    }
+    
+    // Compile settings key
+    $args = implode('_', $view->args);
+    if ($args) $args = '_'.$args;
+    $key = $view->name.'_'.$view->current_display.$args;
+    
+    // Add da settings
+    drupal_add_js(array('mosaicViews' => array($key => $settings)), 'setting');
+  }
+}
 
 
 
