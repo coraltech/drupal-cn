@@ -37,13 +37,10 @@ function coral_qa_manager_init() {
       isset($node->uid)  && 
       isset($node->type)) {
 
-    // is it a question
-    if ($node->type == 'question') {
-      $settings['coral_qa_manager']['question'] = array(
-        'nid'    => $node->nid, 
-        'author' => $node->uid, 
-      );
-    }
+    $settings['coral_qa_manager'][$node->type] = array(
+      'nid'    => $node->nid, 
+      'author' => $node->uid, 
+    );
   }
   if (isset($user->name) && isset($user->uid)) {
     $settings['coral_qa_manager']['current_user'] = array(
@@ -66,7 +63,7 @@ function coral_qa_manager_entity_insert($entity, $type) {
     
   // Update question's answer count (increment)
   if ($type == 'node' && $entity->type == 'answer') {
-    $question = node_load((int)$entity->field_question['und'][0]['target_id']);
+    $question = node_load((int)$entity->field_question[$entity->language][0]['target_id']);
     if (is_object($question) && $question->nid) {
       // Add the tags from the question  
       if (!isset($entity->field_tags) && isset($question->field_tags)) {
@@ -87,6 +84,8 @@ function coral_qa_manager_entity_insert($entity, $type) {
       }
       
       // Update the answer count
+      // @TODO: convert this to a raw db query
+      //         to prevent the node as appearing "updated"
       $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] + 1);      
       node_save($question);
     }
@@ -105,10 +104,13 @@ function coral_qa_manager_entity_delete($entity, $type) {
     
   // Update question's answer count (decrement)
   if ($type == 'node' && $entity->type == 'answer') {
-    $question = node_load((int)$entity->field_question['und'][0]['target_id']);
+    $question = node_load((int)$entity->field_question[$question->language][0]['target_id']);
     if (is_object($question) && $question->nid) {
       // Update the answer count
-      $question->field_answer_count['und'][0]['value'] = (string)((int)$question->field_answer_count['und'][0]['value'] - 1);
+      $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] - 1);
+      
+      // @TODO: convert this to a raw db query
+      //         to prevent the node as appearing "updated"
       node_save($question);
     }
   }
@@ -138,7 +140,7 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
     // get this answer's parent question and update it.
     $question = node_load((int)$entity->field_question['und'][0]['target_id']);
     if (is_object($question)) {
-      $question->field_comment_count['und'][0]['value'] = (string)((int)$question->field_comment_count['und'][0]['value'] + $incr); 
+      $question->field_comment_count[$question->language][0]['value'] = (string)((int)$question->field_comment_count[$question->language][0]['value'] + $incr); 
       node_save($question);
     } 
     // we can exit
@@ -147,9 +149,9 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
   
   if ($type == 'node' && $entity->type == 'comment') {
     // get this comment's parent and update it.
-    $content = node_load((int)$entity->field_content['und'][0]['target_id']);
+    $content = node_load((int)$entity->field_content[$entity->language][0]['target_id']);
     if (is_object($content)) {
-      $content->field_comment_count['und'][0]['value'] = (string)((int)$content->field_comment_count['und'][0]['value'] + $incr);
+      $content->field_comment_count[$content->language][0]['value'] = (string)((int)$content->field_comment_count[$content->language][0]['value'] + $incr);
       node_save($content);
     
       // call this again...
