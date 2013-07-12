@@ -13,6 +13,7 @@
 @import 'global/fonts';
 @import 'global/gradients';
 @import 'global/grid_mix';
+@import 'global/icons';
 @import 'global/site_vars';
 
 @import 'global/buttons';
@@ -86,6 +87,20 @@ header .pane-search-form {
       @include btn-matte-inset;
       @include btn-structure;
     }
+  }
+}
+
+header .coral-cloud {
+  display: block;
+  width: 85px;
+  margin: 0 0 0 54.5%;
+  
+  .icon {
+    position: absolute;
+    display: block;
+    top: 68px;
+    z-index: 0;
+    @include icons-sprite('cloud-case');
   }
 }
 

@@ -37,17 +37,26 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer = function($question) {
     
     // jQuery objects of note
-    this.$question = $question;
+    this.$question = $question; // everything centers around the Q
+    
+    // Tertiary jQuery objects
+    this.$btn = $question.find('.btn.answer');
+    this.$answerForm = $(this.$question).find('.pane-coral-answer-form');
+    this.$answersTgt = $(this.$question).find('.pane-coral-answers-target');
+    this.$loadMore = ''; // holds the more link once it's generated!
     
     // Identification and settings
-    this.$btn = $question.find('.btn.answer');
     this.answerClass = '';
     this.answerID = '';
     
-    // Setup and more:
-    $(this.$question).find('.pane-coral-answers-target').hide(); // hide the form.        
-    $(this.$question).find('.pane-coral-answer-form textarea').attr('rows', '5'); // we only want 5 cols
     
+    // Setup and more:
+    this.$answersTgt.hide(); // hide the answers container
+
+    // we only want 5 cols - then we hide the form
+    this.$answerForm.find('textarea').attr('rows', '5'); 
+    this.$answerForm.hide();
+
     var coralAnswer = this;
     var AnswerView = Backbone.View.extend({
       // Home
@@ -58,25 +67,32 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       // events
       events: {
-        'click .btn.answer': 'answerClick'
+        'click .btn.answer': 'answerClick',
+        'click .load-more' : 'moreClick'
       },
            
       // Init
       initialize: function() {
-        coralAnswer.initializeBtn();
-        _.bindAll(this, 'answerClick');
+        coralAnswer.initAnswerBtn();
+        _.bindAll(this, 'answerClick', 'moreClick');
       },
      
       answerClick: function(ev) {
+        ev.preventDefault();
         coralAnswer.handleClick(ev);
-        event.preventDefault();
       },
+      
+      moreClick: function(ev) {
+        ev.preventDefault();
+        console.log(ev);
+      }
     });
     
     new AnswerView();
   };
   
-  Drupal.coralQA.coralAnswer.prototype.initializeBtn = function() {
+  // Sets up the Answer button and pulls data from it.
+  Drupal.coralQA.coralAnswer.prototype.initAnswerBtn = function() {
     // find this button's nid and ensure the AnswerView's  
     var classes = $(this.$btn).attr('class');
     classes = classes.split(" ");
@@ -87,21 +103,41 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.answerID = c.replace('answer-', ''); 
       }
     }
-    
-    $(this.$question).find('.pane-coral-answers-target').hide(); 
   };
   
   // Handles the clicke event of the answer button
   Drupal.coralQA.coralAnswer.prototype.handleClick = function(ev) {
     // store the coralAnswer object for use in the callbacks
     // @TODO: Add waiting gif or something to let the user know something is happening!
-    if ($(this.$btn).hasClass('answers-hidden')) {
-      this.loadViewResults('answers', 'new_answers');  
+    if (this.$btn.hasClass('answers-hidden')) {
+      //this.loadViewResults('answers', 'new_answers');
+      this.$answerForm.show(); // show the form
+      this.$answersTgt.show(); // show answers 
+      this.$btn.find('.arrow').addClass('arrow-down');
+      this.$btn.removeClass('answers-hidden').addClass('answers-visible');
+      
+      // The answers are hidden.  We are starting with the first set
+      //  already loaded.  We need to discover if there are more.
+      var $answers = $(this.$answersTgt).find('.node-answer');
+      var numAnswers = $answers.length;
+      var moreHide = 'hide'; // a hide class
+      
+      if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.answerID)) {
+        var viewSettings = Drupal.settings.mosaicViews['answers_new_answers_'+this.answerID];
+        if (viewSettings.hasOwnProperty('total_items') && (Number(numAnswers) < Number(viewSettings.total_items))) {
+          // If there is no more button in this answer set, add one.
+          moreHide = ''; // hide this if it's not needed
+        }
+      }
+      this.$answersTgt.append('<a href="#" class="load-more '+moreHide+'">Load more</a>');
+      
     }
     else {
-      // @TODO Hide answers and for on demand
-      $(this.$btn).addClass('answers-hidden').removeClass('answers-visible');
-      $(this.$btn).find('.arrow').removeClass('arrowDown');
+      // hide the answers and form
+      this.$answerForm.hide(); // hide the form
+      this.$answersTgt.hide(); // hide the answers
+      this.$btn.addClass('answers-hidden').removeClass('answers-visible');
+      this.$btn.find('.arrow').removeClass('arrow-down');
     }
   };
   
@@ -115,9 +151,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       //limit : settings.lmt
     },
     function(data) {
-      console.log(data);
-      var $answersTarget = $(ca.$question).find('.answers-tgt');
-      $answersTarget.append(data).after('<span>TESTING</span>');
+      ca.$answerForm.show(); // show the form
+      ca.$answersTgt.show().append(data); // show the answers
       $(ca.$btn).addClass('answers-visible').removeClass('answers-hidden');
       $(ca.$btn).find('.arrow').addClass('arrowDown');
     }, 

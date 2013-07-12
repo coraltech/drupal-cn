@@ -39,7 +39,7 @@
         margin: 3px 0 0 6px;
         @include arrow-right(5px, $dkgray);  
       }
-      .arrowDown {
+      .arrow-down {
         margin: 6px 0 0 3px;
         @include arrow-down(5px, $dkgray);  
       }

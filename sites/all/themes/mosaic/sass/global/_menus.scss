@@ -97,6 +97,8 @@
   border-top: 1px solid lighten($mdgray, 10%);
   border-bottom: 1px solid lighten($mdgray, 10%);
   padding: 1px 0;
+  position: relative;
+  z-index: 1;
   
   & > .pane-content {
     border-top: 1px solid $mdgray;
