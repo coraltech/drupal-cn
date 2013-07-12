@@ -1,0 +1,5 @@
+/* line 6, ../../sass/forms/form__answer_node_form.scss */
+.node-answer-form .field-name-field-tags,
+.node-answer-form .field-name-field-question {
+  display: none;
+}
