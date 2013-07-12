@@ -27,13 +27,16 @@ function coral_answers_target_pane_content_type_render($subtype, $conf, $args, $
   if (isset($node->nid) && isset($node->type)) {
     if ($node->type == 'question') {
       $items = field_get_items('node', $node, 'field_answer_count');
-      foreach ($items as $indx => $item) {
-        if (isset($item['value']) && 
-            is_numeric($item['value']) && 
-            (int)$item['value'] > 0) {  
-          $block->title = t('Answers');
-          $content = '<div class="answers-tgt">&nbsp;</div>';
-        }  
+      
+      if (count($items) && isset($items[0]['value']) && is_numeric($items[0]['value']) && (int)$items[0]['value'] > 0) {
+        $view = views_get_view('answers');
+        $view->set_display('new_answers');
+        $view->set_arguments(array($node->nid));
+        $view->pre_execute();
+        $view->execute();
+        
+        $block->title = t('Answers');
+        $content = '<div class="answers-tgt">'.$view->render().'</div>';
       }
     }
   }  
