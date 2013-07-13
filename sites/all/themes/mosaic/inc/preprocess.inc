@@ -137,7 +137,9 @@ function mosaic_preprocess_entity(&$vars) {}
 
 // Add some stuff to nodes... lots of stuff right?
 function mosaic_preprocess_node(&$vars) {
-  $vars['title_attributes_array']['class'] = 'node-title';
+  if (!isset($vars['title_attributes_array']['class'])) $vars['title_attributes_array']['class'] = '';
+  if (!$vars['page']) $vars['title_attributes_array']['class'] = $vars['title_attributes_array']['class'] . ' node-teaser-title';
+  $vars['title_attributes_array']['class'] = $vars['title_attributes_array']['class'] . ' node-title';
 }
 
 
@@ -253,7 +255,6 @@ function mosaic_compile_views_query_data(&$vars) {
     drupal_add_js(array('mosaicViews' => array($key => $settings)), 'setting');
   }
 }
-
 
 
 
