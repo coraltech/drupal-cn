@@ -24,11 +24,11 @@
   Drupal.coral_ajax.view_get = function(view_name, options, success, error) {
     
     var data = {};
-    if (options.hasOwnProperty('args'))          data['args'] = options['args'];    
-    if (options.hasOwnProperty('limit'))         data['limit'] = options['limit'];
-    if (options.hasOwnProperty('offset'))        data['offset'] = options['offset'];
-    if (options.hasOwnProperty('filters'))       data['filters'] = options['filters'];
-    if (options.hasOwnProperty('format_output')) data['format_output'] = options['format_output'];
+    
+    // Carry the passed in options over to the data object
+    for (op in options) {
+      if (options.hasOwnProperty(op)) data[op] = options[op];
+    }
     
     $.ajax({
       url:'/api/view/'+view_name+'.json',
@@ -54,7 +54,7 @@
   };
   
   Drupal.coral_ajax.node_save = function(id, entity, success, error) {
-    Drupal.ajax_lib.put('node', id, entity, success, error);
+    Drupal.coral_ajax.put('node', id, entity, success, error);
   };
   
   Drupal.coral_ajax.user_load = function(id, success, error) {
