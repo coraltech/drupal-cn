@@ -104,20 +104,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       formSubmit: function(ev) {
         ev.preventDefault();
-        
-        var node = {"node":{
-          "type":"answer",
-          "title":"This is my new title ",
-          "language":"und",
-          "body":{"und":{"0":{"value":"This is the body of my node"}}}
-        }};
-        
-        /*Drupal.coral_ajax.node_save(0, node, 
-          function() { console.log('saved'); }, 
-          function(err){}
-        );*/
-                
-        console.log(ev);
+        coralAnswer.submitForm(ev);        
       }
     });
     
@@ -240,7 +227,44 @@ Drupal.coralQA = Drupal.coralQA || {};
       
     this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
   };
-
+  
+  // Handles submission of the node answer form
+  Drupal.coralQA.coralAnswer.prototype.submitForm = function(ev) {
+    
+    ca = this;
+    
+    var $form    = $(ev.currentTarget).parents('form');
+    var title    = $form.find('input[name="title"]').val();
+    var body     = $form.find('.field-name-body textarea.text-full').val();
+    var question = $form.find('.field-name-field-question .form-text').val();
+    var langNone = Drupal.settings.coral_qa_manager.language_none || "und";
+        
+    // Setup our node
+    var node = {
+      "type":"answer",
+      "title":title,
+      "language":langNone,
+      "body":{langNone:{"0":{"value":body}}},
+      "field_question":{langNone:{"0":{"target_id":question}}}
+    };
+        
+    Drupal.coral_ajax.node_create(node, 
+      function(data, msg, xhr) { 
+        //console.log(data); console.log(msg); 
+        if (msg == 'success') {
+          ca.clearForm($form); // clear the form
+        }
+      }, 
+      function(err){}
+    );
+  };
+  
+  
+  // Handles clearing of the node answer form
+  Drupal.coralQA.coralAnswer.prototype.clearForm = function($form) {
+    $form.find('input[name="title"]').val('');
+    $form.find('.field-name-body textarea.text-full').val('');      
+  }
 
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
