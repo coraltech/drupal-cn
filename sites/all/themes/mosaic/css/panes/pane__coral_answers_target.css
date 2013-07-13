@@ -1,0 +1,13 @@
+/* line 5, ../../sass/panes/pane__coral_answers_target.scss */
+.pane-coral-answers-target .load-more {
+  position: relative;
+}
+/* line 8, ../../sass/panes/pane__coral_answers_target.scss */
+.pane-coral-answers-target .load-more .ajax-progress {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: -25px;
+  top: 8%;
+}

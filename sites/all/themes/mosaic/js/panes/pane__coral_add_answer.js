@@ -20,11 +20,14 @@ Drupal.coralQA = Drupal.coralQA || {};
         // Answers revolve around the parent question.
         //  If there is no question there is nothing
         //  for the user to answer.
-        $questions = $('.node-question');
+        $questions = $('.node-question:not(".processed")');
         
         $questions.each(function(i) {
           // The questions... Oh, the questions
           new Drupal.coralQA.coralAnswer($(this));
+          
+          // Must ensure we don't re-attach the handlers
+          $(this).addClass('processed');
         });        
       }
       catch(err) {
@@ -32,8 +35,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
     }
   };
-  
-  
+
+
+  // Primary initiator of all answering related activities
   Drupal.coralQA.coralAnswer = function($question) {
     
     // jQuery objects of note
@@ -43,20 +47,30 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$btn = $question.find('.btn.answer');
     this.$answerForm = $(this.$question).find('.pane-coral-answer-form');
     this.$answersTgt = $(this.$question).find('.pane-coral-answers-target');
-    this.$loadMore = ''; // holds the more link once it's generated!
+    this.$loadMore = this.$answersTgt.find('.load-more');
     
-    // Identification and settings
-    this.answerClass = '';
-    this.answerID = '';
-    
-    
-    // Setup and more:
-    this.$answersTgt.hide(); // hide the answers container
-
-    // we only want 5 cols - then we hide the form
-    this.$answerForm.find('textarea').attr('rows', '5'); 
-    this.$answerForm.hide();
-
+    // Setup and more
+    // --------------
+    // $loadMore may or may not exist. It usually does not
+    //  on the first page run (document.loaded). In this case
+    //  we should init a few items.
+    if (!this.$loadMore.length) {
+      
+      // Identification and settings
+      this.answerClass;
+      this.answerID;
+      this.settingsID;
+      this.settings;
+      this.currentPage; 
+      
+      // hide the answers container
+      this.$answersTgt.hide();
+      
+      // we only want 5 cols - then we hide the form
+      this.$answerForm.find('textarea').attr('rows', '5'); 
+      this.$answerForm.hide();
+    }
+        
     var coralAnswer = this;
     var AnswerView = Backbone.View.extend({
       // Home
@@ -67,30 +81,50 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       // events
       events: {
-        'click .btn.answer': 'answerClick',
-        'click .load-more' : 'moreClick'
+        'click .btn.answer': 'answerClick', // show answers and form
+        'click .load-more' : 'moreClick',   // get another set from the view
+        'click .form-actions .form-submit': 'formSubmit' // submit an answer
       },
            
       // Init
       initialize: function() {
         coralAnswer.initAnswerBtn();
-        _.bindAll(this, 'answerClick', 'moreClick');
+        _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit');
       },
      
       answerClick: function(ev) {
         ev.preventDefault();
-        coralAnswer.handleClick(ev);
+        coralAnswer.handleAnswerClick(ev);
       },
       
       moreClick: function(ev) {
         ev.preventDefault();
+        coralAnswer.handleMoreClick(ev);
+      },
+      
+      formSubmit: function(ev) {
+        ev.preventDefault();
+        
+        var node = {"node":{
+          "type":"answer",
+          "title":"This is my new title ",
+          "language":"und",
+          "body":{"und":{"0":{"value":"This is the body of my node"}}}
+        }};
+        
+        /*Drupal.coral_ajax.node_save(0, node, 
+          function() { console.log('saved'); }, 
+          function(err){}
+        );*/
+                
         console.log(ev);
       }
     });
     
     new AnswerView();
   };
-  
+
+
   // Sets up the Answer button and pulls data from it.
   Drupal.coralQA.coralAnswer.prototype.initAnswerBtn = function() {
     // find this button's nid and ensure the AnswerView's  
@@ -99,22 +133,28 @@ Drupal.coralQA = Drupal.coralQA || {};
     for (cls in classes) {
       var c = classes[cls];
       if (c.match(/answer-\d+/)) {
-        this.answerClass = c;
-        this.answerID = c.replace('answer-', ''); 
+        this.answerClass = c; // capture the class
+        this.answerID = c.replace('answer-', ''); // and the nid
       }
     }
   };
-  
+
+
   // Handles the clicke event of the answer button
-  Drupal.coralQA.coralAnswer.prototype.handleClick = function(ev) {
+  Drupal.coralQA.coralAnswer.prototype.handleAnswerClick = function(ev) {
     // store the coralAnswer object for use in the callbacks
     // @TODO: Add waiting gif or something to let the user know something is happening!
+
+    //if (this.$btn.hasClass('answers-hidden') && !this.$btn.hasClass('processed')) {
     if (this.$btn.hasClass('answers-hidden')) {
+
       //this.loadViewResults('answers', 'new_answers');
       this.$answerForm.show(); // show the form
       this.$answersTgt.show(); // show answers 
       this.$btn.find('.arrow').addClass('arrow-down');
-      this.$btn.removeClass('answers-hidden').addClass('answers-visible');
+      //this.$btn.removeClass('answers-hidden').addClass('answers-visible').addClass('processed');
+      
+      this.$btn.removeClass('answers-hidden');
       
       // The answers are hidden.  We are starting with the first set
       //  already loaded.  We need to discover if there are more.
@@ -123,42 +163,97 @@ Drupal.coralQA = Drupal.coralQA || {};
       var moreHide = 'hide'; // a hide class
       
       if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.answerID)) {
-        var viewSettings = Drupal.settings.mosaicViews['answers_new_answers_'+this.answerID];
-        if (viewSettings.hasOwnProperty('total_items') && (Number(numAnswers) < Number(viewSettings.total_items))) {
-          // If there is no more button in this answer set, add one.
-          moreHide = ''; // hide this if it's not needed
+        this.settingsID = 'answers_new_answers_'+this.answerID;
+        this.settings   = Drupal.settings.mosaicViews[this.settingsID];
+        
+        if (Number(numAnswers) < Number(this.settings.total_items)) {
+          moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
         }
       }
-      this.$answersTgt.append('<a href="#" class="load-more '+moreHide+'">Load more</a>');
-      
+      // This button appears when there are more items to load. Otherwise it's hidden
+      if (!this.$loadMore.length) { // add it only if it's not there
+        this.$answersTgt.append(this.loadMoreBtn('1', moreHide));
+        this.$loadMore = this.$answersTgt.find('.load-more');
+      }
     }
     else {
       // hide the answers and form
       this.$answerForm.hide(); // hide the form
       this.$answersTgt.hide(); // hide the answers
-      this.$btn.addClass('answers-hidden').removeClass('answers-visible');
+      this.$btn.addClass('answers-hidden');
       this.$btn.find('.arrow').removeClass('arrow-down');
     }
   };
-  
+
+
+  // Process a $loadMore click! Fetches from the view
+  Drupal.coralQA.coralAnswer.prototype.handleMoreClick = function(ev) {
+    var $more = $(ev.currentTarget);
+
+    // Find out the limits and page we are on
+    var classes = $more.attr('class');
+    classes = classes.split(' ');
+    for (var i = 0; i < classes.length; i++) {
+      if (classes[i] != '') {
+        // find what page we are on.
+        if (classes[i].match(/page-\d+/)) {
+          this.currentPage = classes[i].replace('page-', '');
+        }
+      }
+    }
+    this.loadViewResults('answers', 'new_answers');
+  };
+
+
   // Handles loading the answers view
   Drupal.coralQA.coralAnswer.prototype.loadViewResults = function(view_name, view_display) {
-    var ca = this;
+    var ca = this; // for use later
+    var offset = String(Number(this.currentPage) * Number(this.settings.limit)); // current offset
+
+    // enable a throbber
+    this.$loadMore.find('.no-js').removeClass('no-js').addClass('ajax-progress');
+    this.$loadMore.find('span span').addClass('throbber');
+
+    // Render the view upon the world! Go view, go!
     Drupal.coral_ajax.view_render(view_name, {
       display_id: view_display,
       args : [ca.answerID],
-      offset : '0'//, page * settings.lmt,
-      //limit : settings.lmt
+      offset : offset,
+      limit : this.settings.limit
     },
-    function(data) {
-      ca.$answerForm.show(); // show the form
-      ca.$answersTgt.show().append(data); // show the answers
-      $(ca.$btn).addClass('answers-visible').removeClass('answers-hidden');
-      $(ca.$btn).find('.arrow').addClass('arrowDown');
-    }, 
-    function(data) {
-      console.log('err');
-    });
+    function(data) { ca.processViewResults(data); }, // success
+    function(data) { console.log('err'); });         // failure
+    // and so ends the adventure of the ajax view request... the end?
+  };
+
+
+  // Runs after the view succeeds in returning the next set.
+  Drupal.coralQA.coralAnswer.prototype.processViewResults = function(data) {
+    this.$answersTgt.find('.answers-tgt').append(data); // append the new answers
+    this.updateMoreBtn();     // Updates the more button or removes it if we have no more items 
+    Drupal.attachBehaviors(); // get timeago to re-run on the nodes
+      
+    if ($(this.$btn).hasClass('answers-hidden')) {
+      $(this.$btn).addClass('answers-visible').removeClass('answers-hidden');
+      $(this.$btn).find('.arrow').addClass('arrowDown');
+    }
+      
+    this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
+  };
+
+
+  // Returns a Load More link
+  Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
+    return '<a href="#" class="btn load-more page-'+page+' '+hide+'">Load more<span class="no-js"><span></span></a>';
   };
   
+  // Updates the more button or removes it if we have no more items
+  Drupal.coralQA.coralAnswer.prototype.updateMoreBtn = function() {
+    if ((Number(this.currentPage) + 1) * Number(this.settings.limit) >= Number(this.settings.total_items)) {
+      this.$loadMore.hide(); // No more to show, hide the button
+    }
+    else { // increment the page number
+      this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
+    }
+  };  
 })(jQuery);

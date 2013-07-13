@@ -1,0 +1,17 @@
+
+// Scss file for answers target specific items
+
+.pane-coral-answers-target {
+  .load-more {
+    position: relative;
+    
+    .ajax-progress {
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: -25px;
+      top: 8%;
+    }
+  }
+}
