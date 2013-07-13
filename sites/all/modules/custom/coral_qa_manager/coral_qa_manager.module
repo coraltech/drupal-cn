@@ -33,6 +33,8 @@ function coral_qa_manager_init() {
 
   // Set up some settings
   $settings = array('coral_qa_manager' => array());
+  
+  $settings['coral_qa_manager']['language_none'] = LANGUAGE_NONE;
   if (isset($node->nid)  && 
       isset($node->uid)  && 
       isset($node->type)) {
