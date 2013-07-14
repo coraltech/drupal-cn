@@ -18,8 +18,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       try { // Use try to prevent systemic failure
         
         // Answers revolve around the parent question.
-        //  If there is no question there is nothing
-        //  for the user to answer.
+        //  If there is no question there is nothing.
         $questions = $('.node-question:not(".processed")');
         
         $questions.each(function(i) {
@@ -48,9 +47,9 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$answerForm = $(this.$question).find('.pane-coral-answer-form');
     this.$answersTgt = $(this.$question).find('.pane-coral-answers-target');
     this.$loadMore = this.$answersTgt.find('.load-more');
-    
+        
     // Setup and more
-    // --------------
+    // ----
     // $loadMore may or may not exist. It usually does not
     //  on the first page run (document.loaded). In this case
     //  we should init a few items.
@@ -61,7 +60,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.answerID;
       this.settingsID;
       this.settings;
-      this.currentPage; 
+      this.currentPage = 1; 
+      this.addedNew = 0;
       
       // hide the answers container
       this.$answersTgt.hide();
@@ -192,9 +192,10 @@ Drupal.coralQA = Drupal.coralQA || {};
   //  NOTE: It's a good idea to ALWAYS pass the arguments.  It is possible that ca.answerID may not be the one you want?
   Drupal.coralQA.coralAnswer.prototype.loadViewResults = function(view_name, view_display, args, callback, mode, offset, limit) {
     var ca = this; // for use later
+
     var args     = [args]   || [ca.answerID]; // the view args
     var callback = callback || {}; 
-    var offset   = offset   || String(Number(this.currentPage) * Number(this.settings.limit)); // current offset
+    var offset   = offset   || String((Number(this.currentPage) * Number(this.settings.limit)) + Number(this.addedNew)); // current offset
     var limit    = limit    || this.settings.limit; // limit for the view results
     var mode     = mode     || 'full'; // if we are in "single" mode, we don't update the page number etc...
 
@@ -275,6 +276,12 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (msg == 'success') {
           ca.clearForm($form);   // clear the form
           ca.addNewAnswer(data); // add this new answer to the top of the list
+          
+          // User added one! Lets remember that to supplement the views offset
+          // ----
+          // @NOTE: this may still show the users post if they are browsing 
+          //  an active thread.
+          ca.addedNew = Number(ca.addedNew) + 1;
         }
       },
       // @TODO: process errors (missing fields etc)
