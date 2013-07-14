@@ -132,16 +132,12 @@ Drupal.coralQA = Drupal.coralQA || {};
     // store the coralAnswer object for use in the callbacks
     // @TODO: Add waiting gif or something to let the user know something is happening!
 
-    //if (this.$btn.hasClass('answers-hidden') && !this.$btn.hasClass('processed')) {
     if (this.$btn.hasClass('answers-hidden')) {
 
-      //this.loadViewResults('answers', 'new_answers');
       this.$answerForm.show(); // show the form
       this.$answersTgt.show(); // show answers 
-      this.$btn.find('.arrow').addClass('arrow-down');
-      //this.$btn.removeClass('answers-hidden').addClass('answers-visible').addClass('processed');
-      
-      this.$btn.removeClass('answers-hidden');
+      this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
+      this.$btn.removeClass('answers-hidden'); // update the btn status
       
       // The answers are hidden.  We are starting with the first set
       //  already loaded.  We need to discover if there are more.
@@ -188,14 +184,19 @@ Drupal.coralQA = Drupal.coralQA || {};
         }
       }
     }
-    this.loadViewResults('answers', 'new_answers');
+    this.loadViewResults('answers', 'new_answers', this.answerID);
   };
 
 
   // Handles loading the answers view
-  Drupal.coralQA.coralAnswer.prototype.loadViewResults = function(view_name, view_display) {
+  //  NOTE: It's a good idea to ALWAYS pass the arguments.  It is possible that ca.answerID may not be the one you want?
+  Drupal.coralQA.coralAnswer.prototype.loadViewResults = function(view_name, view_display, args, callback, mode, offset, limit) {
     var ca = this; // for use later
-    var offset = String(Number(this.currentPage) * Number(this.settings.limit)); // current offset
+    var args     = [args]   || [ca.answerID]; // the view args
+    var callback = callback || {}; 
+    var offset   = offset   || String(Number(this.currentPage) * Number(this.settings.limit)); // current offset
+    var limit    = limit    || this.settings.limit; // limit for the view results
+    var mode     = mode     || 'full'; // if we are in "single" mode, we don't update the page number etc...
 
     // enable a throbber
     this.$loadMore.find('.no-js').removeClass('no-js').addClass('ajax-progress');
@@ -204,21 +205,33 @@ Drupal.coralQA = Drupal.coralQA || {};
     // Render the view upon the world! Go view, go!
     Drupal.coral_ajax.view_render(view_name, {
       display_id: view_display,
-      args : [ca.answerID],
+      args : args,
       offset : offset,
-      limit : this.settings.limit
+      limit : limit
     },
-    function(data) { ca.processViewResults(data); }, // success
-    function(data) { console.log('err'); });         // failure
+    function(data) { // success 
+      ca.processViewResults(data, mode); 
+      if (typeof(callback) == 'function') callback(data, mode); // fastest method: no ducktyping 
+    },
+    function(data) { console.log('err'); }); // failure @TODO: get a real error handler
     // and so ends the adventure of the ajax view request... the end?
   };
 
 
   // Runs after the view succeeds in returning the next set.
-  Drupal.coralQA.coralAnswer.prototype.processViewResults = function(data) {
-    this.$answersTgt.find('.answers-tgt').append(data); // append the new answers
-    this.updateMoreBtn();     // Updates the more button or removes it if we have no more items 
-    Drupal.attachBehaviors(); // get timeago to re-run on the nodes
+  Drupal.coralQA.coralAnswer.prototype.processViewResults = function(data, mode) {
+    
+    // Add the results to the screen
+    if (mode == 'full') {   // add new results to the end
+      this.updateMoreBtn(); // Update the more button (page-#)
+      this.$answersTgt.find('.answers-tgt').append(data); // append the new answers
+    }
+    else { // single mode - add to the start
+      this.$answersTgt.find('.answers-tgt').prepend(data); // append the new answers
+    }
+    
+    // get timeago to re-run on the nodes
+    Drupal.attachBehaviors();
       
     if ($(this.$btn).hasClass('answers-hidden')) {
       $(this.$btn).addClass('answers-visible').removeClass('answers-hidden');
@@ -227,36 +240,59 @@ Drupal.coralQA = Drupal.coralQA || {};
       
     this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
   };
-  
+
+
   // Handles submission of the node answer form
   Drupal.coralQA.coralAnswer.prototype.submitForm = function(ev) {
     
-    ca = this;
+    ca = this; // capture the coralAnswer for use later
     
-    var $form    = $(ev.currentTarget).parents('form');
+    var $form   = $(ev.currentTarget).parents('form');
+    var $submit = $(ev.currentTarget);
+    
     var title    = $form.find('input[name="title"]').val();
     var body     = $form.find('.field-name-body textarea.text-full').val();
     var question = $form.find('.field-name-field-question .form-text').val();
     var langNone = Drupal.settings.coral_qa_manager.language_none || "und";
+    
+    // Let the user know something is happening
+    $submit.parent('.form-wrapper').append('<span class="ajax-progress"><span class="throbber"></span></span>');
         
     // Setup our node
     var node = {
       "type":"answer",
       "title":title,
       "language":langNone,
-      "body":{langNone:{"0":{"value":body}}},
-      "field_question":{langNone:{"0":{"target_id":question}}}
+      "body":{},
+      "field_question":{}
     };
-        
+    node["body"][langNone] = {"0":{"value": body }};
+    node["field_question"][langNone] = {"0":{"target_id": question}};
+
+    // Create the node
     Drupal.coral_ajax.node_create(node, 
       function(data, msg, xhr) { 
-        //console.log(data); console.log(msg); 
         if (msg == 'success') {
-          ca.clearForm($form); // clear the form
+          ca.clearForm($form);   // clear the form
+          ca.addNewAnswer(data); // add this new answer to the top of the list
         }
-      }, 
-      function(err){}
+      },
+      // @TODO: process errors (missing fields etc)
+      function(err) {}
     );
+  };
+  
+  
+  // Loads up this users "just submitted" answer and puts it in the list.
+  //  eg: loadViewResults(view_name, view_display, args, callback, mode, offset, limit)
+  Drupal.coralQA.coralAnswer.prototype.addNewAnswer = function(data) {
+    var ca = this; // keep this!
+    var callback = function() { // stuff we do on the there-after...
+      ca.$answerForm.find('.form-actions').find('.ajax-progress').remove();
+      var $newAnswer = ca.$question.find('#node-'+data.nid).css("background", "#fff6b6");
+      $newAnswer.animate({ backgroundColor: "transparent" }, 3000);
+    };
+    this.loadViewResults("answers", "this_answer", data.nid, callback, "single", "0", "1");
   };
   
   
@@ -264,12 +300,14 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.clearForm = function($form) {
     $form.find('input[name="title"]').val('');
     $form.find('.field-name-body textarea.text-full').val('');      
-  }
+  };
+
 
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
     return '<a href="#" class="btn load-more page-'+page+' '+hide+'">Load more<span class="no-js"><span></span></a>';
   };
+
   
   // Updates the more button or removes it if we have no more items
   Drupal.coralQA.coralAnswer.prototype.updateMoreBtn = function() {
@@ -279,5 +317,9 @@ Drupal.coralQA = Drupal.coralQA || {};
     else { // increment the page number
       this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
     }
-  };  
+  };
+ 
 })(jQuery);
+
+
+
