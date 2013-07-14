@@ -3,3 +3,13 @@
 .pane-coral-answer-form .vertical-tabs {
   display: none;
 }
+/* line 9, ../../sass/panes/pane__coral_answer_form.scss */
+.pane-coral-answer-form .form-actions {
+  position: relative;
+}
+/* line 11, ../../sass/panes/pane__coral_answer_form.scss */
+.pane-coral-answer-form .form-actions .ajax-progress {
+  position: absolute;
+  top: 15%;
+  left: 3.5em;
+}
