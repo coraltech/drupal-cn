@@ -1,0 +1,99 @@
+/* line 10, ../../sass/views/view__questions__new_questions.scss */
+.pane-views-panes.pane-questions-new-questions h2 {
+  margin-top: .15em;
+}
+
+/* line 17, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions {
+  position: relative;
+}
+/* line 19, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .q-filtered-tag {
+  position: absolute;
+  top: -2.75em;
+  left: 7.5em;
+  color: #777777;
+  background: #fff6b6;
+  padding: 3px 5px;
+}
+/* line 27, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .q-filtered-tag .filtered-by {
+  margin-right: .75em;
+  line-height: 1em;
+}
+/* line 31, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a {
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #446eac), color-stop(70%, #4067a1));
+  background: -webkit-linear-gradient(#446eac, #4067a1 70%);
+  background: -moz-linear-gradient(#446eac, #4067a1 70%);
+  background: -o-linear-gradient(#446eac, #4067a1 70%);
+  background: linear-gradient(#446eac, #4067a1 70%);
+  -webkit-box-shadow: #7496c8 0 1px 0 inset;
+  -moz-box-shadow: #7496c8 0 1px 0 inset;
+  box-shadow: #7496c8 0 1px 0 inset;
+  border: 1px solid #385b8f;
+  text-shadow: #1f3350 0 -1px 0;
+  font-size: 12px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a:hover {
+  background-color: #385b8f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
+  background: -webkit-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -moz-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: linear-gradient(#3d629a 3%, #385b8f 75%);
+}
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a:active {
+  -webkit-box-shadow: #345484 0 1px 2px inset;
+  -moz-box-shadow: #345484 0 1px 2px inset;
+  box-shadow: #345484 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a.disabled, .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #4067a1;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 35, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .q-filtered-tag .ftag {
+  color: #6a6a6a;
+  font-weight: bold;
+}

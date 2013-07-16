@@ -806,12 +806,12 @@ a.btn::-moz-focus-inner {
   margin-left: 9em;
 }
 
-/* line 218, icons/*.png */
+/* line 226, icons/*.png */
 .icons-sprite, header .coral-cloud .icon {
-  background: url('/images/icons-s0640884fd9.png') no-repeat;
+  background: url('/images/icons-s0048ccf27e.png') no-repeat;
 }
 
-/* line 27, ../sass/global/_global.scss */
+/* line 28, ../sass/global/_global.scss */
 .pane-header,
 .pane-footer,
 .pane-page-tabs,
@@ -823,39 +823,39 @@ a.btn::-moz-focus-inner {
   margin-right: auto;
 }
 
-/* line 32, ../sass/global/_global.scss */
+/* line 33, ../sass/global/_global.scss */
 .pane-header {
   margin: 0 auto;
   padding-top: .5em;
 }
 
-/* line 33, ../sass/global/_global.scss */
+/* line 34, ../sass/global/_global.scss */
 .pane-footer {
   margin: 0 auto 1.25em;
 }
 
-/* line 37, ../sass/global/_global.scss */
+/* line 38, ../sass/global/_global.scss */
 #mini-panel-header .inside, #mini-panel-header .panel-separator {
   margin: 0;
 }
 
-/* line 42, ../sass/global/_global.scss */
+/* line 43, ../sass/global/_global.scss */
 body.html {
   background: #515151;
 }
 
-/* line 48, ../sass/global/_global.scss */
+/* line 49, ../sass/global/_global.scss */
 header,
 .mosaic-cont {
   background: white;
 }
 
-/* line 51, ../sass/global/_global.scss */
+/* line 52, ../sass/global/_global.scss */
 .mosaic-cont {
   padding: 1em 0 0;
 }
 
-/* line 56, ../sass/global/_global.scss */
+/* line 57, ../sass/global/_global.scss */
 header .pane-search-form {
   background: url(../assets/images/search-bg.png) left top no-repeat;
   height: 50px;
@@ -864,7 +864,7 @@ header .pane-search-form {
   position: relative;
   width: 275px;
 }
-/* line 64, ../sass/global/_global.scss */
+/* line 65, ../sass/global/_global.scss */
 header .pane-search-form .form-text {
   background: none;
   border: none;
@@ -874,7 +874,7 @@ header .pane-search-form .form-text {
   padding: 5px 8px;
   width: 185px;
 }
-/* line 73, ../sass/global/_global.scss */
+/* line 74, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
   border: 1px solid #2b486b;
   height: 27px;
@@ -883,7 +883,7 @@ header .pane-search-form .form-wrapper {
   top: 11px;
   width: 65px;
 }
-/* line 81, ../sass/global/_global.scss */
+/* line 82, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper .form-submit {
   color: white;
   height: 27px;
@@ -962,13 +962,13 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 93, ../sass/global/_global.scss */
+/* line 94, ../sass/global/_global.scss */
 header .coral-cloud {
   display: block;
   width: 85px;
   margin: 0 0 0 54.5%;
 }
-/* line 98, ../sass/global/_global.scss */
+/* line 99, ../sass/global/_global.scss */
 header .coral-cloud .icon {
   position: absolute;
   display: block;
@@ -979,12 +979,12 @@ header .coral-cloud .icon {
   width: 85px;
 }
 
-/* line 108, ../sass/global/_global.scss */
+/* line 109, ../sass/global/_global.scss */
 .pane-gigya-gigya-login {
   float: right;
   position: relative;
 }
-/* line 112, ../sass/global/_global.scss */
+/* line 113, ../sass/global/_global.scss */
 .pane-gigya-gigya-login .pane-title {
   text-align: center;
   color: #777777;
@@ -993,7 +993,7 @@ header .coral-cloud .icon {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 120, ../sass/global/_global.scss */
+/* line 121, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink,
 .pane-gigya-gigya-login #divGigyaLogin-1_bottomLink,
 .pane-gigya-gigya-login #divGigyaLogin-2_bottomLink {
@@ -1001,36 +1001,36 @@ header .coral-cloud .icon {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 123, ../sass/global/_global.scss */
+/* line 124, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink table td,
 .pane-gigya-gigya-login #divGigyaLogin-1_bottomLink table td,
 .pane-gigya-gigya-login #divGigyaLogin-2_bottomLink table td {
   text-align: center;
 }
 
-/* line 132, ../sass/global/_global.scss */
+/* line 133, ../sass/global/_global.scss */
 .pane-coral-user {
   float: right;
   margin-top: 1.25em;
 }
-/* line 136, ../sass/global/_global.scss */
+/* line 137, ../sass/global/_global.scss */
 .pane-coral-user .welcome {
   float: left;
   color: #dddddd;
   font-weight: bold;
   margin: 0.3125em 0.75em 0 0;
 }
-/* line 142, ../sass/global/_global.scss */
+/* line 143, ../sass/global/_global.scss */
 .pane-coral-user .user-picture {
   float: left;
 }
-/* line 145, ../sass/global/_global.scss */
+/* line 146, ../sass/global/_global.scss */
 .pane-coral-user .username {
   float: right;
   margin: 0.3125em 0.5em 0 0.5em;
 }
 
-/* line 153, ../sass/global/_global.scss */
+/* line 154, ../sass/global/_global.scss */
 .toc-wrapper {
   border: 1px solid #bac8d9;
   clear: left;
@@ -1046,7 +1046,7 @@ header .coral-cloud .icon {
   background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 163, ../sass/global/_global.scss */
+/* line 164, ../sass/global/_global.scss */
 .toc-wrapper .toc-title {
   text-align: left;
   font-size: 90%;
@@ -1054,11 +1054,11 @@ header .coral-cloud .icon {
   font-weight: bold;
   padding: 0.15625em 0.3125em;
 }
-/* line 170, ../sass/global/_global.scss */
+/* line 171, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state {
   margin-left: .5em;
 }
-/* line 171, ../sass/global/_global.scss */
+/* line 172, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state span {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
@@ -1067,16 +1067,16 @@ header .coral-cloud .icon {
   color: #446eac;
   cursor: pointer;
 }
-/* line 179, ../sass/global/_global.scss */
+/* line 180, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen {
   padding: 0 0.3125em 0.3125em 0.625em;
 }
-/* line 182, ../sass/global/_global.scss */
+/* line 183, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen .toc {
   font-size: 95%;
 }
 
-/* line 188, ../sass/global/_global.scss */
+/* line 189, ../sass/global/_global.scss */
 .toc-top {
   border: 1px solid #777777;
   float: right;
@@ -1104,7 +1104,7 @@ header .coral-cloud .icon {
   background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 205, ../sass/global/_global.scss */
+/* line 206, ../sass/global/_global.scss */
 .toc-top .arrow {
   display: block;
   position: relative;
@@ -1118,25 +1118,49 @@ header .coral-cloud .icon {
   border-bottom: 5px solid #446eac;
 }
 
-/* line 214, ../sass/global/_global.scss */
+/* line 215, ../sass/global/_global.scss */
 h2 .toc-top {
   margin-top: 0.625em;
   margin-right: -1.15em;
 }
 
-/* line 218, ../sass/global/_global.scss */
+/* line 219, ../sass/global/_global.scss */
 h3 .toc-top {
   margin-top: 0.15625em;
 }
 
-/* line 224, ../sass/global/_global.scss */
+/* line 227, ../sass/global/_global.scss */
+.flag-follow .flag-message {
+  background: #fff6b6;
+  border: 1px solid #cad5e2;
+  color: #777777;
+  display: inline;
+  left: -37px;
+  position: absolute;
+  padding: 5px;
+  text-align: center;
+  text-shadow: none;
+  top: 1.85em;
+  width: 140px;
+  z-index: 3;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
+}
+
+/* line 250, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 230, ../sass/global/_global.scss */
+/* line 256, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }

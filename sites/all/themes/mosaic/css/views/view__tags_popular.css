@@ -1,0 +1,123 @@
+/* line 13, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-title {
+  color: white;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-bottom: .1545em;
+  background: #4f7e56;
+  background: -moz-linear-gradient(top, #4f7e56 0%, #5e8864 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4f7e56), color-stop(100%, #5e8864));
+  background: -webkit-linear-gradient(top, #4f7e56 0%, #5e8864 100%);
+  background: -o-linear-gradient(top, #4f7e56 0%, #5e8864 100%);
+  background: -ms-linear-gradient(top, #4f7e56 0%, #5e8864 100%);
+  background: linear-gradient(to bottom, #4f7e56 0%, #5e8864 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 21, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content {
+  padding-top: .3em;
+  background: #9d9d9d;
+}
+/* line 25, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .view-content {
+  color: #919191;
+  font-weight: bold;
+  margin-top: -.3em;
+  background: #dddddd;
+}
+/* line 31, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .view-content .views-row {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 32, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .view-content .views-row-even {
+  background: #cbcbcb;
+}
+/* line 35, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more {
+  margin: 0;
+  padding: 3px;
+  text-align: left;
+}
+/* line 40, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li {
+  margin: 0;
+  padding: 0;
+}
+/* line 44, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a {
+  color: white;
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #446eac), color-stop(70%, #4067a1));
+  background: -webkit-linear-gradient(#446eac, #4067a1 70%);
+  background: -moz-linear-gradient(#446eac, #4067a1 70%);
+  background: -o-linear-gradient(#446eac, #4067a1 70%);
+  background: linear-gradient(#446eac, #4067a1 70%);
+  -webkit-box-shadow: #7496c8 0 1px 0 inset;
+  -moz-box-shadow: #7496c8 0 1px 0 inset;
+  box-shadow: #7496c8 0 1px 0 inset;
+  border: 1px solid #385b8f;
+  text-shadow: #1f3350 0 -1px 0;
+  font-size: 12px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
+  background-color: #385b8f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
+  background: -webkit-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -moz-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: linear-gradient(#3d629a 3%, #385b8f 75%);
+}
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:active {
+  -webkit-box-shadow: #345484 0 1px 2px inset;
+  -moz-box-shadow: #345484 0 1px 2px inset;
+  box-shadow: #345484 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a.disabled, .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #4067a1;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 50, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
+  color: white;
+}

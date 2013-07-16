@@ -1,0 +1,7 @@
+/* line 8, ../../sass/forms/form__question_node_form.scss */
+.node-question-form .field-name-field-answer,
+.node-question-form .field-name-field-comment-count,
+.node-question-form .field-name-field-answer-count,
+.node-question-form .field-type-file legend {
+  display: none;
+}
