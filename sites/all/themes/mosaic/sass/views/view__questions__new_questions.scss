@@ -1,0 +1,40 @@
+
+// Scss file for the view:questions > display:new_questions
+
+@import 'global/buttons';
+@import 'global/colors';
+
+// This is kind of cheating.  Im adding this here 
+//  instead of the pane bc I dont need two files here...
+.pane-views-panes.pane-questions-new-questions {
+  h2 {
+    margin-top: .15em;
+  }
+}
+// end cheating
+
+// Note the proper scope of these styles
+.view-questions.view-display-id-new_questions {
+  position: relative;
+  .q-filtered-tag {
+    position: absolute;
+    top: -2.75em;
+    left: 7.5em;
+    color: $mdgray;
+    background: $ltyellow;
+    padding: 3px 5px;
+    
+    .filtered-by {
+      margin-right: .75em;
+      line-height: 1em;
+    }
+    .reset-filter a {
+      @include btn-matte-inset(0px, 12px, $mdblue, darken($mdblue, 3%), $white);
+      @include btn-structure(2px 5px, 12px, $radius: 0px);
+    }
+    .ftag {
+      color: darken($mdgray, 5%);
+      font-weight: bold;
+    }
+  }
+}

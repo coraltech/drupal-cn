@@ -6,6 +6,7 @@
 // external imports
 @import 'compass/css3/opacity';
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 
 @import 'global/arrows';
 @import 'global/colors';
@@ -217,6 +218,31 @@ h2 .toc-top {
 }
 h3 .toc-top {
   margin-top: ($default_vert_unit / 8);
+}
+
+
+// Follow flag
+.flag-follow {
+  
+  .flag-message {
+    background: $ltyellow;
+    border: 1px solid $ltblue;
+    color: $mdgray;
+    display: inline;
+    left: -37px;
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    text-shadow: none;
+    top: 1.85em;
+    width: 140px;
+    z-index: 3;
+      
+    @include border-radius(8px);
+    @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
+  }
+  
+  
 }
 
 

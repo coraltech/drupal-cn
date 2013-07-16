@@ -19,6 +19,8 @@
   // Use the med width separator on inner landing layouts
   //  unless overridden elsewhere.
   .layout-landing-1 .follower {
+    margin: 0;
+    padding: 0;
     background: url('../../assets/images/coral-sep-med.png') top center no-repeat;
   }
 }
