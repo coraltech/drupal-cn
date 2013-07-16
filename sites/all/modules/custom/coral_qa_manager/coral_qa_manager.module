@@ -103,10 +103,10 @@ function coral_qa_manager_entity_insert($entity, $type) {
 // Implementation of hook_entity_insert()
 function coral_qa_manager_entity_delete($entity, $type) {
   if ($type == 'node' && $entity->type == 'question') {}
-    
+
   // Update question's answer count (decrement)
   if ($type == 'node' && $entity->type == 'answer') {
-    $question = node_load((int)$entity->field_question[$question->language][0]['target_id']);
+    $question = node_load((int)$entity->field_question[$entity->language][0]['target_id']);
     if (is_object($question) && $question->nid) {
       // Update the answer count
       $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] - 1);
