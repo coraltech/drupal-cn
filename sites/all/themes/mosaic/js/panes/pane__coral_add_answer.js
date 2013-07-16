@@ -20,6 +20,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         // Answers revolve around the parent question.
         //  If there is no question there is nothing.
         $questions = $('.node-question:not(".processed")');
+        if (!$questions.length) { // see if we have full nodes...
+          $questions = $('.node-type-question:not(".processed")');
+        }
         
         $questions.each(function(i) {
           // The questions... Oh, the questions
