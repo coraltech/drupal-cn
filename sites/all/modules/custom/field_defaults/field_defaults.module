@@ -3,19 +3,21 @@
 // Implements hook_form_alter to add defaults handlers
 //  and js settings
 function field_defaults_form_alter(&$form, &$form_state, $form_id) {
-  static $processed = FALSE;
-  
-  if (!$processed) {
+
+  static $processed = array(); // declare a state-tracker (keyed by form)
+  $processed[$form_id] = array(); // processed on a form by form basis
+
+  // Check for processsing status of the form  
+  if (!isset($processed['form_id'])) {
     // Scan for field types
     $path  = drupal_get_path('module', 'field_defaults');
     $files = field_defaults_read_dir($path.'/defaults');
-
     foreach($files as $file) {
       $type = str_replace('_defaults.inc', '', $file);
       field_defaults_add_defaults($form_id, $form, $type);
       drupal_add_js($path.'/js/'.$type.'_defaults.js', array('group' => JS_THEME)); // Added late in the game
     }
-    $processed = TRUE;
+    $processed[$form_id] = TRUE;
   }
 }
 
@@ -26,16 +28,14 @@ function field_defaults_init() {
 }
 
 
-/**
- * Add textfield default text automatically with js
- *  - see mosaicForms.js
- * 
- * Processes and add default text to text fields by adding settings
- *  to the Drupal.settings.field_defaults.textfieldDefaults array.
- */
+// Add textfield default text automatically with js
+//  - see mosaicForms.js
+// 
+// Processes and add default text to text fields by adding settings
+//  to the Drupal.settings.field_defaults.textfieldDefaults array.
 function field_defaults_add_defaults($form_id, &$form, $type = 'textfield') {
   $matrix = variable_get('field_defaults_'.$type.'_matrix', array());  
-  
+
   // Hook is composed:  hook_[form_id]__textfield_defaults($form, &$matrix)
   $hook = $form_id.'__'.$type.'_defaults';
 
@@ -46,17 +46,18 @@ function field_defaults_add_defaults($form_id, &$form, $type = 'textfield') {
   foreach ($modules as $module) {
     $function = $module.'_'.$hook;
     $function($form, $matrix); // let modules populate the matrix
-  }  
+  }
 
   // Storage container for found defaults: these are added to Drupal.settings 
   $field_defaults = array();
-  
+
   $validation_func = 'field_defaults_'.$type.'_validation';
   $submission_func = 'field_defaults_'.$type.'_submission';
   
   if (function_exists($validation_func)) $validation_func($matrix, $form_id, $form);
   if (function_exists($validation_func)) $submission_func($matrix, $form_id, $form);
-  
+
+
   foreach ($matrix as $frm => $defaults) {
     if (isset($defaults['selectors'])) {
       foreach ($defaults['selectors'] as $selector => $default) {
@@ -76,9 +77,10 @@ function field_defaults_add_defaults($form_id, &$form, $type = 'textfield') {
 }
 
 
+// ---
 function field_defaults_validation($matrix, $form_id, &$form, $type = 'textfield') {
   $vhandler = FALSE;
-  
+
   // We have validation routines
   if (isset($matrix[$form_id]['validate'])) {
     $vhandler = $matrix[$form_id]['validate'];
@@ -93,11 +95,11 @@ function field_defaults_validation($matrix, $form_id, &$form, $type = 'textfield
       }
     }
   }
-  
+    
   // No validation routines specified, add the default.
   if (!$vhandler) {
     $form['#validate'][] = 'field_defaults_'.$type.'_validate';
-  }  
+  }
 }
 
 
@@ -105,14 +107,14 @@ function field_defaults_validation($matrix, $form_id, &$form, $type = 'textfield
 // Primary validation handler - ensures the user does not submit the default
 //  Validation and submit handlers should be at the top level to prevent WSOD
 function field_defaults_validate($form, &$form_state, $type = 'textfield') {
-  // Current state of the textfield_defaults  
+  // Current state of the textfield_defaults
   $matrix = variable_get('field_defaults_'.$type.'_matrix', array());
   if (empty($matrix[$form['#form_id']])) return; // do we have anything to process?
 
   // This form's defaults
   // need to check they are not submitting defaults
   $defaults = $matrix[$form['#form_id']];
-  
+
   if ($defaults) {
     // Load the options if any  
     $options_func = 'field_defaults_'.$type.'_get_form_options';
@@ -170,7 +172,7 @@ function field_defaults_get_form_options($form, $type = 'textfield') {
   // - hook__[form_id]__textfield_options  *or*
   // - hook__[form_id]__[form_action]__textfield_options
   if (!isset($form['#form_id'])) return array();
-  
+
   $hooks = array(
     $form['#form_id'].'__'.field_defaults_translate_action($form).'__'.$type.'_options', // most specific
     $form['#form_id'].'__'.$type.'_options' // least specific
