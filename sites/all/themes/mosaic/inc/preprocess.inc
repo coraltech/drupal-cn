@@ -52,7 +52,7 @@ function mosaic_preprocess_panels_pane(&$vars) {
   if (file_exists($path.'/js/layouts/'.$layout.'.js'))   drupal_add_css($path.'/js/layouts/'.$layout.'.js', array('group' => JS_THEME));
   
   // Call potential preprocessors
-  $base_func = 'mosaic_preprocess_panels_pane__'.$type;  // dpm($base_func);
+  $base_func = 'mosaic_preprocess_panels_pane__'.$type; //dpm($base_func);
   $full_func = 'mosaic_preprocess_panels_pane__'.$type.'__'.$subtype; //dpm($full_func);
   if (function_exists($base_func)) $base_func($vars);
   if (function_exists($full_func)) $full_func($vars);
@@ -151,6 +151,14 @@ function mosaic_preprocess_panels_pane__node_title(&$vars) {
 }
 
 
+// Ugh, more links!
+function mosaic_preprocess_panels_pane__node_links(&$vars) {
+  if (isset($vars['content']['node']['#links']['node-readmore'])) {
+    unset($vars['content']['node']['#links']['node-readmore']);
+  }
+}
+
+
 // Preprocess user pictures.
 function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars) {
   //dpm($vars);
@@ -176,8 +184,14 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
 // Re-formulate the tag links to point to the page we are current on.
 //  Add query params for other views to read.
 function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
+  if ($vars['view']->name == 'tags_popular' && 
+      $vars['view']->current_display == 'popular_question_tags') {
+    $vars['output'] = l($vars['output'], 'content/questions-and-answers', array('query' => array('tag' => $vars['output'])));
+    return;    
+  }
   if ($vars['view']->name == 'tags_popular') { 
     $vars['output'] = l($vars['output'], drupal_get_path_alias(), array('query' => array('tag' => $vars['output'])));
+    return;
   }
 }
 
@@ -256,6 +270,30 @@ function mosaic_compile_views_query_data(&$vars) {
   }
 }
 
+// Add additional classes to the panelizer view mode tpl title classes
+function mosaic_preprocess_panelizer_view_mode(&$vars) {
+  if (isset($vars['element']['#entity_view_mode'])) {
+    $data = $vars['element']['#entity_view_mode'];
+    $type = $data['entity_type'];
+    $bundle = $data['bundle'];
+    $mode = $data['view_mode'];
+    
+    $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-pane-title';
+    $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-'.$mode.'-pane-title';
+  }
+}
 
 
-
+// The main "new" questions page as seen on q&a.
+function _preprocess_view__questions__new_questions(&$vars) {
+  $g = $_GET;
+  $output = '';
+  $reset = l('reset', $g['q']);
+  if (isset($g['tag'])) {
+    // add a way for the user to see and reset the filtered tag
+    $output .= '<div class="q-filtered-tag">';
+    $output .= '<span class="filtered-by">'.t('filtered by: ').'"<span class="ftag">'.$g['tag'].'</span>"</span>';
+    $output .= '<span class="reset-filter">'.$reset.'</span></div>';
+    $vars['title'] = $output;
+  }
+}
