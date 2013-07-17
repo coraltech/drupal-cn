@@ -86,7 +86,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       events: {
         'click .btn.answer': 'answerClick', // show answers and form
         'click .load-more' : 'moreClick',   // get another set from the view
-        'click .form-actions .form-submit': 'formSubmit' // submit an answer
+        'click .node-answer-form .form-submit': 'formSubmit' // submit an answer
       },
            
       // Init
