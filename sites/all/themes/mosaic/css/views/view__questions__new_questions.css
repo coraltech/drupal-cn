@@ -103,6 +103,6 @@
   margin-top: 1.25em;
 }
 /* line 44, ../../sass/views/view__questions__new_questions.scss */
-.view-questions.view-display-id-new_questions h2 {
+.view-questions.view-display-id-new_questions h2.question-node-teaser-pane-title {
   margin-bottom: .05em;
 }
