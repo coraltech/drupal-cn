@@ -3,14 +3,15 @@
 
 @import 'global/buttons';
 @import 'global/colors';
+@import 'global/fonts';
 
 // This is kind of cheating.  Im adding this here 
 //  instead of the pane bc I dont need two files here...
-.pane-views-panes.pane-questions-new-questions {
-  h2 {
-    margin-top: .15em;
-  }
+.pane-questions-new-questions > h2 {
+  margin-top: .2em;
+  margin-bottom: .75em;
 }
+
 // end cheating
 
 // Note the proper scope of these styles
@@ -36,5 +37,11 @@
       color: darken($mdgray, 5%);
       font-weight: bold;
     }
+  }
+  .views-row-first {
+    margin-top: $default_vert_unit;
+  }
+  h2 {
+    margin-bottom: .05em;
   }
 }
