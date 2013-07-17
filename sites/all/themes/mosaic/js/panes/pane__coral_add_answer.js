@@ -50,7 +50,9 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$answerForm = $(this.$question).find('.pane-coral-answer-form');
     this.$answersTgt = $(this.$question).find('.pane-coral-answers-target');
     this.$loadMore = this.$answersTgt.find('.load-more');
-        
+    this.$trimmed = $(this.$question).find('.pane-node-body.body-visible'); // trimmed text
+    this.$full = $(this.$question).find('.pane-node-body.body-hidden');     // full text
+    
     // Setup and more
     // ----
     // $loadMore may or may not exist. It usually does not
@@ -65,6 +67,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.settings;
       this.currentPage = 1; 
       this.addedNew = 0;
+      this.hasTrimmed = false;
       
       // hide the answers container
       this.$answersTgt.hide();
@@ -72,6 +75,10 @@ Drupal.coralQA = Drupal.coralQA || {};
       // we only want 5 cols - then we hide the form
       this.$answerForm.find('textarea').attr('rows', '5'); 
       this.$answerForm.hide();
+      
+      // Add something clickable to the trimmed text
+      this.$trimmed.append('<p><a href="#" class="trimmed trimmed-more">View full text</a></p>');
+      this.$full.append('<p><a href="#" class="trimmed trimmed-less">Hide full text</a></p>');
     }
         
     var coralAnswer = this;
@@ -86,13 +93,15 @@ Drupal.coralQA = Drupal.coralQA || {};
       events: {
         'click .btn.answer': 'answerClick', // show answers and form
         'click .load-more' : 'moreClick',   // get another set from the view
-        'click .node-answer-form .form-submit': 'formSubmit' // submit an answer
+        'click .node-answer-form .form-submit': 'formSubmit', // submit an answer
+        'click .trimmed': 'trimmedClick'
       },
            
       // Init
       initialize: function() {
-        coralAnswer.initAnswerBtn();
-        _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit');
+        coralAnswer.initAnswerBtn(); // add events to the answer btn
+        coralAnswer.initQuestionText(); // check for summary and hide full text if avail.
+        _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit', 'trimmedClick');
       },
      
       answerClick: function(ev) {
@@ -105,6 +114,11 @@ Drupal.coralQA = Drupal.coralQA || {};
         coralAnswer.handleMoreClick(ev);
       },
       
+      trimmedClick: function(ev) {
+        ev.preventDefault();
+        coralAnswer.trimmedClick(ev);
+      },
+      
       formSubmit: function(ev) {
         ev.preventDefault();
         coralAnswer.submitForm(ev);        
@@ -112,6 +126,20 @@ Drupal.coralQA = Drupal.coralQA || {};
     });
     
     new AnswerView();
+  };
+
+
+  // Ensure the full node is hidden if the trimmed is shorter
+  Drupal.coralQA.coralAnswer.prototype.initQuestionText = function() {
+    var trimmedText = this.$trimmed.text()
+    var fullText = this.$full.text();
+    
+    // Set what is visible and hidden
+    if (fullText.length > trimmedText.length) {
+      this.$full.hide(); // hide it
+      this.hasTrimmed = true;
+    }
+    else this.$trimmed.hide();
   };
 
 
@@ -161,13 +189,28 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$answersTgt.append(this.loadMoreBtn('1', moreHide));
         this.$loadMore = this.$answersTgt.find('.load-more');
       }
+      
+      if (this.hasTrimmed) {
+        this.$trimmed.hide();
+        this.$full.show();
+      }
     }
+    
     else {
       // hide the answers and form
       this.$answerForm.hide(); // hide the form
       this.$answersTgt.hide(); // hide the answers
       this.$btn.addClass('answers-hidden');
       this.$btn.find('.arrow').removeClass('arrow-down');
+      
+      if (this.hasTrimmed) { // show the trimmed version
+        this.$trimmed.show();
+        this.$full.hide();
+      }
+    }
+    
+    if (this.hasTrimmed) {
+      
     }
   };
 
@@ -309,7 +352,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Handles clearing of the node answer form
   Drupal.coralQA.coralAnswer.prototype.clearForm = function($form) {
     $form.find('input[name="title"]').val('');
-    $form.find('.field-name-body textarea.text-full').val('');      
+    $form.find('.field-name-body textarea').val('');
   };
 
 
@@ -326,6 +369,21 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
     else { // increment the page number
       this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
+    }
+  };
+  
+  
+  // Handle the click even on the trimmed link
+  Drupal.coralQA.coralAnswer.prototype.trimmedClick = function(ev) {
+    // view all
+    if ($(ev.currentTarget).hasClass('trimmed-more')) {
+      this.$full.show();
+      this.$trimmed.hide();
+    }
+    // view trimmed
+    else {
+      this.$full.hide();
+      this.$trimmed.show();
     }
   };
  
