@@ -58,6 +58,26 @@ function field_defaults_question_node_form__textfield_defaults($form, &$matrix) 
 }
 
 
+// Node answer creation form
+function field_defaults_answer_node_form__textfield_defaults($form, &$matrix) {
+  $matrix['answer_node_form']['selectors'] = array(
+    '.node-answer-form .form-item-title .form-text' => t('Answer title (optional)')
+  );
+  // Custom validation
+  $matrix['answer_node_form']['validate'] = array('field_defaults_textfield_answer_node_form_validate');
+}
+
+
+// Node question creation form
+function field_defaults_user_login__textfield_defaults($form, &$matrix) {
+    
+  //print_r($matrix);
+  $matrix['user_login']['selectors'] = array(
+    '.user-login input[name="name"]' => t('User name | Email')
+  );
+}
+
+
 // ----------------------------------------------------------------------------------
 // Implementations of hook__[form_id]__[form_action]__textfield_options
 //  and also potentially hook__[form_id]__textfield_options 
@@ -90,6 +110,16 @@ function field_defaults_textfield_comment_node_book_form_validate($form, &$form_
   $matrix = variable_get('field_defaults_textfield_matrix', array());
   if ($form_state['values']['subject'] == $matrix[$form['#form_id']]['selectors']['.pane-node-comment-form .form-item-subject .form-text']) {
     form_set_value($form['subject'], '', $form_state);  //reset the input - dont feed in the default
+  }
+}
+
+
+// Validator for the answer node form defaults.
+//  added above ^
+function field_defaults_textfield_answer_node_form_validate($form, &$form_state) {
+  $matrix = variable_get('field_defaults_textfield_matrix', array());
+  if ($form_state['values']['title'] == $matrix[$form['#form_id']]['selectors']['.node-answer-form .form-item-title .form-text']) {
+    form_set_value($form['title'], '', $form_state);  //reset the input - dont feed in the default - let auto title do it's thing
   }
 }
 
