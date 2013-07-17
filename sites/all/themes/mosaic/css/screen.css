@@ -221,7 +221,7 @@ strong, b {
 
 /* line 99, ../sass/global/_dom.scss */
 p {
-  margin: 1.25em 0;
+  margin: 0 0 1.25em 0;
 }
 
 /* line 103, ../sass/global/_dom.scss */
@@ -288,7 +288,7 @@ ol {
 .html ul.links {
   display: block;
   margin: 1.25em 0;
-  height: 2.3em;
+  height: 2.65em;
 }
 /* line 162, ../sass/global/_dom.scss */
 .html ul.links li {

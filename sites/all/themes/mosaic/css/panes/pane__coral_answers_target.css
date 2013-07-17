@@ -11,3 +11,7 @@
   right: -25px;
   top: 8%;
 }
+/* line 17, ../../sass/panes/pane__coral_answers_target.scss */
+.pane-coral-answers-target .load-more.hide {
+  display: none;
+}
