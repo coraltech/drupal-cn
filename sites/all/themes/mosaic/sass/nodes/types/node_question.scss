@@ -2,7 +2,12 @@
 // Node question scss file
 
 @import 'global/colors';
+@import 'global/fonts';
 @import 'global/icons';
+@import 'global/gradients';
+
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/box-shadow';
 
 .node-type-question,
 .node-teaser.node-question {
@@ -31,6 +36,7 @@
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
     float: left;
+    height: 2.12 * $default_vert_unit; // same as node links
     .links { // standardize 
       padding: 0; 
       margin: 0; 
@@ -39,7 +45,6 @@
         margin: 0 5px 0 0;
         padding: 2px 5px 1px;
       }
-      
     }
   }
   
@@ -53,6 +58,37 @@
   .field-name-field-answer-count,
   .field-type-file legend {
     display: none;
-  } 
+  }
+  
+  // Inner question node + answers form and view
+  .layout-landing-1 {
+    .site-width {
+      @include pie-clearfix;
+    }
+    .follower .limiter {
+      margin-top: 1px;
+      background: lighten($ltgray, 7%) url('../../../assets/images/coral-sep-med.png') bottom center no-repeat;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .pane-coral-answer-form { 
+      .node-answer-form {
+        border: 1px solid darken($ltgray, 5%);
+        padding: ($default_vert_unit / 2) 1em;
+        margin-left: -.975em;
+        margin-right: -.975em;
+        
+        @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+        @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
+        
+        .form-item-title label {
+          display: none;
+        }
+      }
+      input.form-text {
+        width: 99%;
+      }
+    }
+  }
 }
 
