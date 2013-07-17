@@ -11,8 +11,8 @@
   width: 12em;
   float: left;
   font-size: 95%;
-  margin: (-1 * ($default_vert_unit / 4)) 1em ($default_vert_unit / 4) 0;
-  padding: ($default_vert_unit / 4);
+  margin: 0 1em ($default_vert_unit / 4) 0;
+  padding: 0 ($default_vert_unit / 4);
   
   background: $ltyellow;
   color: $mdgray;
