@@ -73,6 +73,7 @@ function field_defaults_user_login__textfield_defaults($form, &$matrix) {
     
   //print_r($matrix);
   $matrix['user_login']['selectors'] = array(
+    '.qa-form .user-login input[name="name"]' => t('User name'),
     '.user-login input[name="name"]' => t('User name | Email')
   );
 }
