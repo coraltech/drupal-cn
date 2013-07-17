@@ -30,9 +30,14 @@ function coral_node_stats_pane_content_type_render($subtype, $conf, $args, $cont
   
   if (!isset($node->nid)) return new stdClass(); // abort
   
-  // load cached revision data
-  coral_node_stats_revision_data($node, $stats); 
-  coral_node_stats_node_data($node, $stats);
+  coral_node_stats_node_type($node, $stats);
+  coral_node_stats_node_last_editor($node, $stats);
+  coral_node_stats_node_last_edit($node, $stats);
+  coral_node_stats_node_edits($node, $stats);
+  coral_node_stats_node_answers($node, $stats);
+  coral_node_stats_node_comments($node, $stats);
+  coral_node_stats_node_revisions($node, $stats);
+  coral_node_stats_node_children($node, $stats);
 
   $block->title = t('Node statistics');
   $block->content = coral_node_stats_process_stats($stats, $node); 
@@ -49,70 +54,121 @@ function coral_node_stats_pane_content_type_edit_form($form, &$form_state) {
 
 function coral_node_stats_pane_content_type_edit_form_submit($form, &$form_state) {}
 
+
 //----------------------------------
 // Helpers for loading stats
-//---------------------------------
+//----------------------------------
 
-// Helper to load node data
-function coral_node_stats_node_data($node, &$stats) {
-  //dpm($node);
-  //dpm($stats);
 
+// Node type
+function coral_node_stats_node_type($node, &$stats) {
+  if (!isset($stats['node'])) $stats['node'] = array();
+  
   // Comment count - are comments open
-  if (isset($node->comment_count) && $node->comment == COMMENT_NODE_OPEN) {
-    $stats['node']['comment_count'] = array(
-      'title' => t('Comments: '),
-      'data'  => $node->comment_count
+  if (isset($node->type)) {
+    $stats['node']['node_type'] = array(
+      'title'  => t('Type: '),
+      'data'   => node_type_get_name($node),
     );
   }
+}
 
+
+// Time of last edit
+function coral_node_stats_node_last_edit($node, &$stats) {
+  // Last edit 
+  if (isset($node->revision_timestamp)) {
+    $stats['node']['last_edit'] = array(
+      'title' => t('Edited:'),
+      'data' => format_date($node->revision_timestamp, 'short'),
+    );
+  }
+}
+
+
+// Last editor
+function coral_node_stats_node_last_editor($node, &$stats) {
+  // Last editor 
+  if (isset($node->revision_uid)) {
+    $rev_editor = user_load($node->revision_uid); 
+    if (isset($rev_editor) && (int)$rev_editor->uid > 0) {
+      $stats['node']['last_editor'] = array(
+        'title' => t('Last editor:'),
+        'data' => theme('username', array('account'=>$rev_editor)),
+      );
+    }
+  }
+}
+
+
+// Number of new revisions
+function coral_node_stats_node_edits($node, &$stats) {
+  $revs = revision_cache_revision_load($node);
+    
+  $stats['node']['edits'] = array(
+    'title' => t('Edits:'),
+    'data'  => count($revs),
+  );
+}
+
+
+// Number of answers
+function coral_node_stats_node_answers($node, &$stats) {
+  // Number of answers for this node
+  if ($node->type == 'question') {
+    $answer_count = field_get_items('node', $node, 'field_answer_count');
+    if (isset($answer_count[0]['value'])) {
+      $stats['node']['answer_count'] = array(
+        'title' => t('Answers:'),
+        'data'  => $answer_count[0]['value'],
+      );
+    }
+  }
+}
+
+
+function coral_node_stats_node_comments($node, &$stats) {
+  // Comment count - are comments open
+  // Only book content uses "real" comments
+  if ($node->type == 'book' && isset($node->comment_count) && $node->comment_original_value == COMMENT_NODE_OPEN) {
+    $stats['node']['comment_count'] = array(
+      'title'  => t('Comments: '),
+      'data'   => $node->comment_count,
+    );
+  }
+  else {
+    $comment_count = field_get_items('node', $node, 'field_comment_count');
+    $comment_count = $comment_count[0]['value'];
+    $stats['node']['comment_count'] = array(
+      'title'  => t('Comments: '),
+      'data'   => $comment_count,
+    );
+  }
+}
+
+
+function coral_node_stats_node_revisions($node, &$stats) {
+  // This one needs some access checks, eh?
+  if (_node_revision_access($node)) {
+    $stats['node']['revisions'] = array(
+      'title' => 'View',
+      'data'  => l('revisions', 'node/'.$node->nid.'/revisions'),
+    );
+  }
+}
+
+
+// Book children count
+function coral_node_stats_node_children($node, &$stats) {
   // Book data
   if (isset($node->book)) {
     $book_count = count(coral_node_stats_book_children(book_link_load($node->book['mlid'])));
     if (isset($book_count) && $book_count) {
       $stats['node']['child_pages'] = array(
         'title' => t('Sub pages: '),
-        'data'  => $book_count
+        'data'  => $book_count,
       );
     }
-  }
-}
-
-// Helper to load the revisions data
-function coral_node_stats_revision_data($node, &$stats) {
-  if (!isset($stats['revisions'])) $stats['revisions'] = array();  
-  $revs = revision_cache_revision_load($node);
-  
-  // Last editor 
-  if (isset($node->revision_uid)) {
-    $rev_editor = user_load($node->revision_uid); 
-    if (isset($rev_editor) && (int)$rev_editor->uid > 0) {
-      $stats['revisions']['last_editor'] = array(
-        'title' => t('Last editor:'),
-        'data' => theme('username', array('account'=>$rev_editor))
-      );
-    }
-  }
-  
-  // Last edit 
-  if (isset($node->revision_timestamp)) {
-    $stats['revisions']['last_edit'] = array(
-      'title' => t('Edited:'),
-      'data' => format_date($node->revision_timestamp, 'short')
-    );
-  }
-
-  $stats['revisions']['edits'] = array(
-    'title' => t('Edits:'),
-    'data'  => count($revs)
-  );
-  
-  // This one needs some access checks, eh?
-  if (_node_revision_access($node)) {
-    $stats['revisions']['view'] = array(
-      'title' => 'View',
-      'data'  => l('revisions', 'node/'.$node->nid.'/revisions'),
-    );
   }
 }
 
@@ -153,10 +209,11 @@ function coral_node_stats_process_stats($stats, $node) {
       $output .= theme(array('coral_stat_set__'.$set, 'coral_stat_set'), array('markup' => $set_markup, 'set_name' => $set));
     }
   }
-  return $output;  
+  return $output;
 }
 
 
+// Gather book children
 function coral_node_stats_book_children($book_link) {
   $flat = book_get_flat_menu($book_link);
 
