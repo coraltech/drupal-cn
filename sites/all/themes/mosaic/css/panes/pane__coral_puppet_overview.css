@@ -13,9 +13,10 @@
 }
 /* line 20, ../../sass/panes/pane__coral_puppet_overview.scss */
 .pane-coral-puppet-overview p {
+  margin-top: 1.25em;
   margin-left: .25em;
 }
-/* line 24, ../../sass/panes/pane__coral_puppet_overview.scss */
+/* line 25, ../../sass/panes/pane__coral_puppet_overview.scss */
 .pane-coral-puppet-overview ul {
   margin-left: 0.625em;
 }

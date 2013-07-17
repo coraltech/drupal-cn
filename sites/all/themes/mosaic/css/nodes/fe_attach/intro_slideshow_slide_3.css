@@ -29,12 +29,16 @@
   background: linear-gradient(to bottom, #a2d4a9 0%, #91cc99 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 26, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 22, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+.intro-slide-3 .header p {
+  margin-top: 1.25em;
+}
+/* line 28, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 .inner {
   margin-left: 1em;
   margin-right: 1em;
 }
-/* line 31, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 33, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 .portable-icon {
   display: block;
   position: absolute;
@@ -44,27 +48,27 @@
   height: 65px;
   width: 85px;
 }
-/* line 40, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 42, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 .title {
   padding: .35em 0;
   background: #36b048;
   margin: 0;
 }
-/* line 45, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 47, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 .title h2 {
   color: white;
   margin: 0;
   line-height: 1.25em;
 }
-/* line 52, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 54, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 ul {
   margin-top: 1em;
 }
-/* line 53, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 55, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 li {
   margin: 0 0 0.3125em 1em;
 }
-/* line 54, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
+/* line 56, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
 .intro-slide-3 p {
   margin-left: 105px;
   margin-right: 1em;
