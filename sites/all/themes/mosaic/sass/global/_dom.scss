@@ -97,7 +97,7 @@ strong, b {
 }
 
 p {
-  margin: $default_vert_unit 0;
+  margin: 0 0 $default_vert_unit 0;
 }
 
 em,.em {
@@ -157,7 +157,7 @@ ol {
 .html ul.links {
   display: block;
   margin: $default_vert_unit 0;
-  height: 1.84 * $default_vert_unit; //include pie-clearfix;
+  height: 2.12 * $default_vert_unit; //include pie-clearfix;
   
   li {
     float: right;

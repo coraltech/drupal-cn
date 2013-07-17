@@ -19,6 +19,8 @@
   .header {
     background: $ltblue;
     
+    p { margin-top: 1.25em; }
+    
     @include box-shadow(rgba(0,0,0,.3) 0px 2px 4px);
     @include linear-v-gradient($ltblue, darken($ltblue, 5%));
   }
@@ -31,7 +33,7 @@
   .social-icon {
     display: block;
     position: absolute;
-    top: (2.5 * $default_vert_unit);
+    top: (2.4 * $default_vert_unit);
     left: 10px;
     
     @include icons-sprite('coral-team');
