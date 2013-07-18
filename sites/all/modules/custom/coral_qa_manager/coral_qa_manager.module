@@ -154,6 +154,8 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
     $content = node_load((int)$entity->field_content[$entity->language][0]['target_id']);
     if (is_object($content)) {
       $content->field_comment_count[$content->language][0]['value'] = (string)((int)$content->field_comment_count[$content->language][0]['value'] + $incr);
+      
+      // @TODO: Make this db_update()
       node_save($content);
     
       // call this again...
