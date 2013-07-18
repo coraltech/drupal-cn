@@ -1,8 +1,8 @@
-/* line 5, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 9, ../../sass/panes/pane__coral_answers_target.scss */
 .pane-coral-answers-target .load-more {
   position: relative;
 }
-/* line 8, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 12, ../../sass/panes/pane__coral_answers_target.scss */
 .pane-coral-answers-target .load-more .ajax-progress {
   display: block;
   width: 20px;
@@ -11,7 +11,7 @@
   right: -25px;
   top: 8%;
 }
-/* line 17, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 21, ../../sass/panes/pane__coral_answers_target.scss */
 .pane-coral-answers-target .load-more.hide {
   display: none;
 }

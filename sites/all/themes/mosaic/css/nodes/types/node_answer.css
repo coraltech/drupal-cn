@@ -1,0 +1,39 @@
+/* line 234, icons/*.png */
+.icons-sprite, .html div.node-type-answer .pane-coral-page-title .icon,
+.html div.node-type-answer .answer-node-teaser-pane-title .icon,
+.html div.node-teaser.node-answer .pane-coral-page-title .icon,
+.html div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
+  background: url('/images/icons-s59cd3db666.png') no-repeat;
+}
+
+/* line 15, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer,
+.html div.node-teaser.node-answer {
+  padding-bottom: 1.25em;
+}
+/* line 21, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .pane-coral-page-title .icon,
+.html div.node-type-answer .answer-node-teaser-pane-title .icon,
+.html div.node-teaser.node-answer .pane-coral-page-title .icon,
+.html div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
+  display: block;
+  float: left;
+  margin: 4px .5em 0 0;
+  background-position: 0 -1797px;
+  height: 26px;
+  width: 25px;
+}
+/* line 29, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer h2,
+.html div.node-teaser.node-answer h2 {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+/* line 33, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .pane-coral-node-stats,
+.html div.node-teaser.node-answer .pane-coral-node-stats {
+  border: 1px solid #cbcbcb;
+  background: #dddddd;
+}

@@ -1,9 +1,9 @@
-/* line 226, icons/*.png */
+/* line 234, icons/*.png */
 .icons-sprite, .node-type-question .pane-coral-page-title .icon,
 .node-type-question .question-node-teaser-pane-title .icon,
 .node-teaser.node-question .pane-coral-page-title .icon,
 .node-teaser.node-question .question-node-teaser-pane-title .icon {
-  background: url('/images/icons-s0048ccf27e.png') no-repeat;
+  background: url('/images/icons-s59cd3db666.png') no-repeat;
 }
 
 /* line 17, ../../../sass/nodes/types/node_question.scss */
@@ -15,7 +15,7 @@
   float: left;
   margin: 7px .5em 0 0;
   background-position: 0 -1720px;
-  height: 24px;
+  height: 27px;
   width: 24px;
 }
 /* line 25, ../../../sass/nodes/types/node_question.scss */
@@ -91,7 +91,14 @@
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 75, ../../../sass/nodes/types/node_question.scss */
+/* line 74, ../../../sass/nodes/types/node_question.scss */
+.node-type-question .layout-landing-1 .follower .limiter .limiter,
+.node-teaser.node-question .layout-landing-1 .follower .limiter .limiter {
+  padding-left: 0;
+  padding-right: 0;
+  background: none;
+}
+/* line 81, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .pane-coral-answer-form .node-answer-form,
 .node-teaser.node-question .layout-landing-1 .pane-coral-answer-form .node-answer-form {
   border: 1px solid #d0d0d0;
@@ -110,12 +117,12 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
 }
-/* line 84, ../../../sass/nodes/types/node_question.scss */
+/* line 90, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .pane-coral-answer-form .node-answer-form .form-item-title label,
 .node-teaser.node-question .layout-landing-1 .pane-coral-answer-form .node-answer-form .form-item-title label {
   display: none;
 }
-/* line 88, ../../../sass/nodes/types/node_question.scss */
+/* line 94, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .pane-coral-answer-form input.form-text,
 .node-teaser.node-question .layout-landing-1 .pane-coral-answer-form input.form-text {
   width: 99%;
