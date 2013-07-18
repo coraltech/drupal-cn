@@ -164,9 +164,8 @@ Drupal.coralQA = Drupal.coralQA || {};
 
   // Handles the clicke event of the answer button
   Drupal.coralQA.coralAnswer.prototype.handleAnswerClick = function(ev) {
-    // store the coralAnswer object for use in the callbacks
-    // @TODO: Add waiting gif or something to let the user know something is happening!
 
+    // If hidden, unhide!
     if (this.$btn.hasClass('answers-hidden')) {
 
       this.$answerForm.show(); // show the form
@@ -194,6 +193,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$loadMore = this.$answersTgt.find('.load-more');
       }
       
+      // Clicking on the answer btn opens the full content
       if (this.hasTrimmed) {
         this.$trimmed.hide();
         this.$full.show();
