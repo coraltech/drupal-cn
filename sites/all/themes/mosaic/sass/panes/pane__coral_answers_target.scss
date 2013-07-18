@@ -1,7 +1,11 @@
 
 // Scss file for answers target specific items
 
+@import 'global/fonts';
+
 .pane-coral-answers-target {
+  //padding-bottom: $default_vert_unit;
+  
   .load-more {
     position: relative;
     
@@ -16,5 +20,5 @@
   }
   .load-more.hide {
     display: none;
-  }
+  }  
 }

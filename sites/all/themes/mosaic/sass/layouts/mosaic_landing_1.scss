@@ -8,7 +8,6 @@
  
   // Full width separator
   .follower {
-    margin-top: $default_vert_unit;
     background: url('../../assets/images/coral-sep-long.png') top center no-repeat;  
   
     .pane-title {
@@ -19,8 +18,6 @@
   // Use the med width separator on inner landing layouts
   //  unless overridden elsewhere.
   .layout-landing-1 .follower {
-    margin: $default_vert_unit 0 0 0;
-    padding: 0;
     background: url('../../assets/images/coral-sep-med.png') top center no-repeat;
   }
 }

@@ -70,6 +70,12 @@
       background: lighten($ltgray, 7%) url('../../../assets/images/coral-sep-med.png') bottom center no-repeat;
       padding-left: 1em;
       padding-right: 1em;
+      
+      .limiter { // third level (answer teasers)
+        padding-left: 0;
+        padding-right: 0;
+        background: none;
+      }
     }
     .pane-coral-answer-form { 
       .node-answer-form {

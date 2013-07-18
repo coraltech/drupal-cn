@@ -1,0 +1,39 @@
+
+// Scss file for node answers
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+@import 'global/gradients';
+
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/box-shadow';
+
+
+.html div.node-type-answer,
+.html div.node-teaser.node-answer {
+  
+  padding-bottom: $default_vert_unit;
+  
+  .pane-coral-page-title,
+  .answer-node-teaser-pane-title {
+    .icon { // apply question mark icon
+      display: block;
+      float: left;
+      margin: 4px .5em 0 0;
+      @include icons-sprite('coral-a');
+    }
+  }
+  
+  h2 {
+    @include h3;
+  }
+  
+  .pane-coral-node-stats {
+    border: 1px solid darken($ltgray, 7%);
+    background: $ltgray;  
+  }
+  
+}
+
