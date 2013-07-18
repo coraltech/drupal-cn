@@ -244,6 +244,12 @@ h3 .toc-top {
   @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
 }
 
+// Flag follow
+.html ul.links li.flag-follow {
+  // reset the blue defaults
+  @include btn-matte-inset(0px, 16px, darken($mdgray, 10%), $dkgray);
+  @include btn-structure;
+}
 
 // Flag abuse
 .pane-coral-flag-abuse-node {
