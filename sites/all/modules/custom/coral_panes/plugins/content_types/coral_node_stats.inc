@@ -30,9 +30,9 @@ function coral_node_stats_pane_content_type_render($subtype, $conf, $args, $cont
   
   if (!isset($node->nid)) return new stdClass(); // abort
   
-  coral_node_stats_node_type($node, $stats);
   coral_node_stats_node_last_editor($node, $stats);
   coral_node_stats_node_last_edit($node, $stats);
+  //coral_node_stats_node_type($node, $stats);
   coral_node_stats_node_edits($node, $stats);
   coral_node_stats_node_answers($node, $stats);
   coral_node_stats_node_comments($node, $stats);
