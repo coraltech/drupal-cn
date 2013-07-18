@@ -156,6 +156,9 @@ function mosaic_preprocess_panels_pane__node_links(&$vars) {
   if (isset($vars['content']['node']['#links']['node-readmore'])) {
     unset($vars['content']['node']['#links']['node-readmore']);
   }
+  if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
+    unset($vars['content']['flag']['#links']['flag-abuse_node']);
+  }
 }
 
 

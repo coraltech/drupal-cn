@@ -91,6 +91,8 @@ header .pane-search-form {
   }
 }
 
+
+// This is not used atm
 header .coral-cloud {
   display: block;
   width: 85px;
@@ -104,6 +106,8 @@ header .coral-cloud {
     @include icons-sprite('cloud-case');
   }
 }
+// end not used comp
+
 
 // -- Gigya
 .pane-gigya-gigya-login {
@@ -221,28 +225,62 @@ h3 .toc-top {
 }
 
 
-// Follow flag
-.flag-follow {
-  
-  .flag-message {
-    background: $ltyellow;
-    border: 1px solid $ltblue;
-    color: $mdgray;
-    display: inline;
-    left: -37px;
-    position: absolute;
-    padding: 5px;
-    text-align: center;
-    text-shadow: none;
-    top: 1.85em;
-    width: 140px;
-    z-index: 3;
+// Flag message defaults
+.flag-message {
+  background: $ltyellow;
+  border: 1px solid $ltblue;
+  color: $mdgray;
+  display: inline;
+  left: -37px;
+  position: absolute;
+  padding: 5px;
+  text-align: center;
+  text-shadow: none;
+  top: 1.85em;
+  width: 140px;
+  z-index: 3;
       
-    @include border-radius(8px);
-    @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
+  @include border-radius(8px);
+  @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
+}
+
+
+// Flag abuse
+.pane-coral-flag-abuse-node {
+  float: left;
+  margin: 4px 0 0 5px;
+  padding: 2px 5px 1px;
+  
+  .flag-abuse-node {
+    position: relative;
+    
+    a.flag-action,
+    a.unflag-action {
+      display: block;
+      height: 16px;
+      margin: 0;
+      padding: 0;
+      text-indent: -9999em;
+      width: 15px;
+      
+      @include icons-sprite('coral-flag-red');
+    }
+    a.unflag-action {
+      @include icons-sprite('coral-flag-green');
+    }
+    .flag-throbber {
+      position: absolute;
+      right: -2.5em;
+      display: block;
+      height: 20px;
+      width: 20px;
+      top: -1.25em;
+    }
   }
-  
-  
+  .flag-message {
+    top: .5em;
+    left: -65px;
+  }
 }
 
 
