@@ -11,6 +11,9 @@
 @import "compass/css3/box-shadow";
 
 .pane-coral-add-answer {
+  float: left;
+  margin: 0 5px 0 0;
+    
   .btn.answer {
     // reset the blue defaults
     @include btn-matte-inset(0px, 16px, $mdgreen, darken($mdgreen, 3%));
