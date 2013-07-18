@@ -1154,17 +1154,89 @@ h3 .toc-top {
   box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
 }
 
-/* line 249, ../sass/global/_global.scss */
+/* line 248, ../sass/global/_global.scss */
+.html ul.links li.flag-follow {
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF5E5E5E', endColorstr='#FF2A2A2A');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5e5e5e), color-stop(70%, #515151));
+  background: -webkit-linear-gradient(#5e5e5e, #515151 70%);
+  background: -moz-linear-gradient(#5e5e5e, #515151 70%);
+  background: -o-linear-gradient(#5e5e5e, #515151 70%);
+  background: linear-gradient(#5e5e5e, #515151 70%);
+  -webkit-box-shadow: #848484 0 1px 0 inset;
+  -moz-box-shadow: #848484 0 1px 0 inset;
+  box-shadow: #848484 0 1px 0 inset;
+  border: 1px solid #444444;
+  text-shadow: #1c1c1c 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html ul.links li.flag-follow:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html ul.links li.flag-follow:hover {
+  background-color: #444444;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #515151), color-stop(75%, #444444));
+  background: -webkit-linear-gradient(#515151 3%, #444444 75%);
+  background: -moz-linear-gradient(#515151 3%, #444444 75%);
+  background: -o-linear-gradient(#515151 3%, #444444 75%);
+  background: linear-gradient(#515151 3%, #444444 75%);
+}
+/* line 21, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html ul.links li.flag-follow:active {
+  -webkit-box-shadow: #3d3d3d 0 1px 2px inset;
+  -moz-box-shadow: #3d3d3d 0 1px 2px inset;
+  box-shadow: #3d3d3d 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html ul.links li.flag-follow.disabled, .html ul.links li.flag-follow[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #515151;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.html ul.links li.flag-follow::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+/* line 255, ../sass/global/_global.scss */
 .pane-coral-flag-abuse-node {
   float: left;
   margin: 4px 0 0 5px;
   padding: 2px 5px 1px;
 }
-/* line 254, ../sass/global/_global.scss */
+/* line 260, ../sass/global/_global.scss */
 .pane-coral-flag-abuse-node .flag-abuse-node {
   position: relative;
 }
-/* line 258, ../sass/global/_global.scss */
+/* line 264, ../sass/global/_global.scss */
 .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action,
 .pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
   display: block;
@@ -1177,13 +1249,13 @@ h3 .toc-top {
   height: 16px;
   width: 15px;
 }
-/* line 268, ../sass/global/_global.scss */
+/* line 274, ../sass/global/_global.scss */
 .pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
   background-position: 0 -1939px;
   height: 16px;
   width: 15px;
 }
-/* line 271, ../sass/global/_global.scss */
+/* line 277, ../sass/global/_global.scss */
 .pane-coral-flag-abuse-node .flag-abuse-node .flag-throbber {
   position: absolute;
   right: -2.5em;
@@ -1192,20 +1264,20 @@ h3 .toc-top {
   width: 20px;
   top: -1.25em;
 }
-/* line 280, ../sass/global/_global.scss */
+/* line 286, ../sass/global/_global.scss */
 .pane-coral-flag-abuse-node .flag-message {
   top: .5em;
   left: -65px;
 }
 
-/* line 288, ../sass/global/_global.scss */
+/* line 294, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 294, ../sass/global/_global.scss */
+/* line 300, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }
