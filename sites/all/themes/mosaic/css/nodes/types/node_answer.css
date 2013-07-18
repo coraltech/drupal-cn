@@ -1,9 +1,9 @@
-/* line 234, icons/*.png */
+/* line 250, icons/*.png */
 .icons-sprite, .html div.node-type-answer .pane-coral-page-title .icon,
 .html div.node-type-answer .answer-node-teaser-pane-title .icon,
 .html div.node-teaser.node-answer .pane-coral-page-title .icon,
 .html div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
-  background: url('/images/icons-s59cd3db666.png') no-repeat;
+  background: url('/images/icons-s3a3d07d586.png') no-repeat;
 }
 
 /* line 15, ../../../sass/nodes/types/node_answer.scss */
@@ -34,6 +34,6 @@
 /* line 33, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .pane-coral-node-stats,
 .html div.node-teaser.node-answer .pane-coral-node-stats {
-  border: 1px solid #cbcbcb;
-  background: #dddddd;
+  border: 1px solid #d0d0d0;
+  background: #eaeaea;
 }

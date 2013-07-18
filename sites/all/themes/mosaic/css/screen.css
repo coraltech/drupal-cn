@@ -806,9 +806,10 @@ a.btn::-moz-focus-inner {
   margin-left: 9em;
 }
 
-/* line 234, icons/*.png */
-.icons-sprite, header .coral-cloud .icon {
-  background: url('/images/icons-s59cd3db666.png') no-repeat;
+/* line 250, icons/*.png */
+.icons-sprite, header .coral-cloud .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action,
+.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
+  background: url('/images/icons-s3a3d07d586.png') no-repeat;
 }
 
 /* line 28, ../sass/global/_global.scss */
@@ -962,13 +963,13 @@ header .pane-search-form .form-wrapper .form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 94, ../sass/global/_global.scss */
+/* line 96, ../sass/global/_global.scss */
 header .coral-cloud {
   display: block;
   width: 85px;
   margin: 0 0 0 54.5%;
 }
-/* line 99, ../sass/global/_global.scss */
+/* line 101, ../sass/global/_global.scss */
 header .coral-cloud .icon {
   position: absolute;
   display: block;
@@ -979,12 +980,12 @@ header .coral-cloud .icon {
   width: 85px;
 }
 
-/* line 109, ../sass/global/_global.scss */
+/* line 113, ../sass/global/_global.scss */
 .pane-gigya-gigya-login {
   float: right;
   position: relative;
 }
-/* line 113, ../sass/global/_global.scss */
+/* line 117, ../sass/global/_global.scss */
 .pane-gigya-gigya-login .pane-title {
   text-align: center;
   color: #777777;
@@ -993,7 +994,7 @@ header .coral-cloud .icon {
   font-style: "default";
   font-family: arial, helvetica, sans-serif;
 }
-/* line 121, ../sass/global/_global.scss */
+/* line 125, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink,
 .pane-gigya-gigya-login #divGigyaLogin-1_bottomLink,
 .pane-gigya-gigya-login #divGigyaLogin-2_bottomLink {
@@ -1001,36 +1002,36 @@ header .coral-cloud .icon {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
-/* line 124, ../sass/global/_global.scss */
+/* line 128, ../sass/global/_global.scss */
 .pane-gigya-gigya-login #divGigyaLogin_bottomLink table td,
 .pane-gigya-gigya-login #divGigyaLogin-1_bottomLink table td,
 .pane-gigya-gigya-login #divGigyaLogin-2_bottomLink table td {
   text-align: center;
 }
 
-/* line 133, ../sass/global/_global.scss */
+/* line 137, ../sass/global/_global.scss */
 .pane-coral-user {
   float: right;
   margin-top: 1.25em;
 }
-/* line 137, ../sass/global/_global.scss */
+/* line 141, ../sass/global/_global.scss */
 .pane-coral-user .welcome {
   float: left;
   color: #dddddd;
   font-weight: bold;
   margin: 0.3125em 0.75em 0 0;
 }
-/* line 143, ../sass/global/_global.scss */
+/* line 147, ../sass/global/_global.scss */
 .pane-coral-user .user-picture {
   float: left;
 }
-/* line 146, ../sass/global/_global.scss */
+/* line 150, ../sass/global/_global.scss */
 .pane-coral-user .username {
   float: right;
   margin: 0.3125em 0.5em 0 0.5em;
 }
 
-/* line 154, ../sass/global/_global.scss */
+/* line 158, ../sass/global/_global.scss */
 .toc-wrapper {
   border: 1px solid #bac8d9;
   clear: left;
@@ -1046,7 +1047,7 @@ header .coral-cloud .icon {
   background: linear-gradient(to bottom, #ebeff4 0%, #dae2eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 164, ../sass/global/_global.scss */
+/* line 168, ../sass/global/_global.scss */
 .toc-wrapper .toc-title {
   text-align: left;
   font-size: 90%;
@@ -1054,11 +1055,11 @@ header .coral-cloud .icon {
   font-weight: bold;
   padding: 0.15625em 0.3125em;
 }
-/* line 171, ../sass/global/_global.scss */
+/* line 175, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state {
   margin-left: .5em;
 }
-/* line 172, ../sass/global/_global.scss */
+/* line 176, ../sass/global/_global.scss */
 .toc-wrapper .toc-tog-state span {
   font-size: 95%;
   font-family: monospace, "Courier New", Courier;
@@ -1067,16 +1068,16 @@ header .coral-cloud .icon {
   color: #446eac;
   cursor: pointer;
 }
-/* line 180, ../sass/global/_global.scss */
+/* line 184, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen {
   padding: 0 0.3125em 0.3125em 0.625em;
 }
-/* line 183, ../sass/global/_global.scss */
+/* line 187, ../sass/global/_global.scss */
 .toc-wrapper .toc-screen .toc {
   font-size: 95%;
 }
 
-/* line 189, ../sass/global/_global.scss */
+/* line 193, ../sass/global/_global.scss */
 .toc-top {
   border: 1px solid #777777;
   float: right;
@@ -1104,7 +1105,7 @@ header .coral-cloud .icon {
   background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 206, ../sass/global/_global.scss */
+/* line 210, ../sass/global/_global.scss */
 .toc-top .arrow {
   display: block;
   position: relative;
@@ -1118,19 +1119,19 @@ header .coral-cloud .icon {
   border-bottom: 5px solid #446eac;
 }
 
-/* line 215, ../sass/global/_global.scss */
+/* line 219, ../sass/global/_global.scss */
 h2 .toc-top {
   margin-top: 0.625em;
   margin-right: -1.15em;
 }
 
-/* line 219, ../sass/global/_global.scss */
+/* line 223, ../sass/global/_global.scss */
 h3 .toc-top {
   margin-top: 0.15625em;
 }
 
-/* line 227, ../sass/global/_global.scss */
-.flag-follow .flag-message {
+/* line 229, ../sass/global/_global.scss */
+.flag-message {
   background: #fff6b6;
   border: 1px solid #cad5e2;
   color: #777777;
@@ -1153,14 +1154,58 @@ h3 .toc-top {
   box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
 }
 
-/* line 250, ../sass/global/_global.scss */
+/* line 249, ../sass/global/_global.scss */
+.pane-coral-flag-abuse-node {
+  float: left;
+  margin: 4px 0 0 5px;
+  padding: 2px 5px 1px;
+}
+/* line 254, ../sass/global/_global.scss */
+.pane-coral-flag-abuse-node .flag-abuse-node {
+  position: relative;
+}
+/* line 258, ../sass/global/_global.scss */
+.pane-coral-flag-abuse-node .flag-abuse-node a.flag-action,
+.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
+  display: block;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  text-indent: -9999em;
+  width: 15px;
+  background-position: 0 -1873px;
+  height: 16px;
+  width: 15px;
+}
+/* line 268, ../sass/global/_global.scss */
+.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
+  background-position: 0 -1939px;
+  height: 16px;
+  width: 15px;
+}
+/* line 271, ../sass/global/_global.scss */
+.pane-coral-flag-abuse-node .flag-abuse-node .flag-throbber {
+  position: absolute;
+  right: -2.5em;
+  display: block;
+  height: 20px;
+  width: 20px;
+  top: -1.25em;
+}
+/* line 280, ../sass/global/_global.scss */
+.pane-coral-flag-abuse-node .flag-message {
+  top: .5em;
+  left: -65px;
+}
+
+/* line 288, ../sass/global/_global.scss */
 .pane-coral-footer {
   color: white;
   font-size: 90%;
   text-align: right;
   margin: 0;
 }
-/* line 256, ../sass/global/_global.scss */
+/* line 294, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
 }

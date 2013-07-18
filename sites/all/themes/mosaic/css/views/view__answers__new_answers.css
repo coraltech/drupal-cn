@@ -1,4 +1,8 @@
-/* line 5, ../../sass/views/view__answers__new_answers.scss */
+/* line 7, ../../sass/views/view__answers__new_answers.scss */
 .view-answers.view-display-id-new_answers .pager {
   display: none;
+}
+/* line 9, ../../sass/views/view__answers__new_answers.scss */
+.view-answers.view-display-id-new_answers .views-row {
+  background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
 }

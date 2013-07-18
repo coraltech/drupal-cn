@@ -1,9 +1,9 @@
-/* line 234, icons/*.png */
+/* line 250, icons/*.png */
 .icons-sprite, .node-type-question .pane-coral-page-title .icon,
 .node-type-question .question-node-teaser-pane-title .icon,
 .node-teaser.node-question .pane-coral-page-title .icon,
 .node-teaser.node-question .question-node-teaser-pane-title .icon {
-  background: url('/images/icons-s59cd3db666.png') no-repeat;
+  background: url('/images/icons-s3a3d07d586.png') no-repeat;
 }
 
 /* line 17, ../../../sass/nodes/types/node_question.scss */
@@ -87,7 +87,7 @@
 .node-type-question .layout-landing-1 .follower .limiter,
 .node-teaser.node-question .layout-landing-1 .follower .limiter {
   margin-top: 1px;
-  background: #efefef url("../../../assets/images/coral-sep-med.png") bottom center no-repeat;
+  background: #f4f4f4 url("../../../assets/images/coral-sep-med.png") bottom center no-repeat;
   padding-left: 1em;
   padding-right: 1em;
 }
