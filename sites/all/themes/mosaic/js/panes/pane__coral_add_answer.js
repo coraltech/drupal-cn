@@ -50,8 +50,8 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$answerForm = $(this.$question).find('.pane-coral-answer-form');
     this.$answersTgt = $(this.$question).find('.pane-coral-answers-target');
     this.$loadMore = this.$answersTgt.find('.load-more');
-    this.$trimmed = $(this.$question).find('.pane-node-body.body-visible'); // trimmed text
-    this.$full = $(this.$question).find('.pane-node-body.body-hidden');     // full text
+    this.$trimmed = $(this.$question).find('.pane-node-body.q-body-trimmed'); // trimmed text body pane
+    this.$full = $(this.$question).find('.pane-node-body.q-body-full');       // full text body pane
     
     // Setup and more
     // ----
@@ -77,8 +77,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$answerForm.hide();
       
       // Add something clickable to the trimmed text
-      this.$trimmed.append('<p><a href="#" class="trimmed trimmed-more">View full text</a></p>');
-      this.$full.append('<p><a href="#" class="trimmed trimmed-less">Hide full text</a></p>');
+      this.$trimmed.append('<p class="trimmed trimmed-more"><a href="#">View full text</a></p>');
+      this.$full.append('<p class="trimmed trimmed-less"><a href="#">Hide full text</a></p>');
     }
         
     var coralAnswer = this;
@@ -94,7 +94,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         'click .btn.answer': 'answerClick', // show answers and form
         'click .load-more' : 'moreClick',   // get another set from the view
         'click .node-answer-form .form-submit': 'formSubmit', // submit an answer
-        'click .trimmed': 'trimmedClick'
+        'click .trimmed a': 'trimmedClick'
       },
            
       // Init
@@ -139,7 +139,11 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$full.hide(); // hide it
       this.hasTrimmed = true;
     }
-    else this.$trimmed.hide();
+    else {
+      this.$trimmed.hide(); // hide the trimmed and clickable link
+      $link = this.$full.find('.trimmed');
+      $link.remove();
+    }
   };
 
 
@@ -207,10 +211,6 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$trimmed.show();
         this.$full.hide();
       }
-    }
-    
-    if (this.hasTrimmed) {
-      
     }
   };
 
@@ -375,8 +375,9 @@ Drupal.coralQA = Drupal.coralQA || {};
   
   // Handle the click even on the trimmed link
   Drupal.coralQA.coralAnswer.prototype.trimmedClick = function(ev) {
+    var $wrap = $(ev.currentTarget).parent('.trimmed');
     // view all
-    if ($(ev.currentTarget).hasClass('trimmed-more')) {
+    if ($wrap.hasClass('trimmed-more')) {
       this.$full.show();
       this.$trimmed.hide();
     }
