@@ -1,0 +1,58 @@
+
+// Scss file for the add comments components (see coral_add_answer as well for similar comp.)
+
+@import 'global/arrows';
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+
+
+.pane-coral-add-comment {
+  float: left;
+  margin: 0 5px 0 0;
+  
+  .btn.comment {
+    border-width: 1px;
+    
+    @include btn-matte-inset;
+    @include btn-structure;
+    
+    // Override structure settings
+    padding-right: 25px;
+    position: relative;
+    
+    .circle {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 14%;
+      right: 1.5%;
+      height: 16px;
+      width: 16px;
+      border: 1px solid darken($mdblue, 15%);
+      
+      @include box-shadow(rgba(0, 0, 0, 0.1) 0px 2px 3px inset);
+      @include linear-v-gradient(lighten($ltyellow, 5%), $mdyellow);
+      @include border-radius(8px);
+      
+      .arrow {
+        display: block;
+        margin: 3px 0 0 6px;
+        @include arrow-right(5px, $dkgray);  
+      }
+      .arrow-down {
+        margin: 6px 0 0 3px;
+        @include arrow-down(5px, $dkgray);  
+      }
+    }
+    &:hover .circle {
+      @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
+      @include linear-v-gradient($mdyellow, $ltyellow);
+    }
+  }
+}
+ 
