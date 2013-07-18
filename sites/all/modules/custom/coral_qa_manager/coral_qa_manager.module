@@ -143,6 +143,8 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
     $question = node_load((int)$entity->field_question['und'][0]['target_id']);
     if (is_object($question)) {
       $question->field_comment_count[$question->language][0]['value'] = (string)((int)$question->field_comment_count[$question->language][0]['value'] + $incr); 
+      
+      // @TODO: Make this db_update()
       node_save($question);
     } 
     // we can exit
@@ -159,7 +161,7 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
       node_save($content);
     
       // call this again...
-      coral_qa_update_comment_counts_tree($content, 'node', $op);
+      coral_qa_manager_update_comment_counts_tree($content, 'node', $op);
     }
   }   
 }
