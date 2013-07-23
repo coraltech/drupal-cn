@@ -30,7 +30,7 @@ function mosaic_preprocess_panels_pane(&$vars) {
   $join     = '_';  
   $root     = 'pane__';
   $type     = str_replace('-', $join, $vars['pane']->type);            // dpm($type);
-  $subtype  = $join.str_replace('-', $join, $vars['pane']->subtype);   // dpm($subtype);
+  $subtype  = $join.str_replace(array('-', ':'), $join, $vars['pane']->subtype);   // dpm($subtype);
   $base_css_file = $root.$type.'.css';
   $base_js_file  = $root.$type.'.js';
   $css_file = $root.$type.$subtype.'.css';
@@ -158,6 +158,15 @@ function mosaic_preprocess_panels_pane__node_links(&$vars) {
   }
   if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
     unset($vars['content']['flag']['#links']['flag-abuse_node']);
+  }
+}
+
+
+// Add nid to the body field
+function mosaic_preprocess_panels_pane__entity_field___node_body(&$vars) {
+  if (isset($vars['content']['#object']) && isset($vars['content']['#object']->nid)) {
+    $nid = $vars['content']['#object']->nid;
+    $vars['classes_array'][] = 'body-'.$nid;
   }
 }
 
