@@ -1,14 +1,20 @@
 
 // Scss file for answers target specific items
 
+@import 'global/colors';
 @import 'global/fonts';
 
 .pane-coral-answers-target {
   //padding-bottom: $default_vert_unit;
+  position: relative;
+  background: lighten($ltgray, 8%);
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 3 * $default_vert_unit;
   
   .load-more {
-    position: relative;
-    
+    position: absolute;
+    bottom: -2 * $default_vert_unit;
     .ajax-progress {
       display: block;
       width: 20px;

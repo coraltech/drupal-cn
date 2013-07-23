@@ -3,10 +3,15 @@
 
 @import 'global/colors';
 
-.view-answers.view-display-id-new_answers {
+.view-answers.view-display-id-new_answers,
+.view-answers.view-display-id-this_answer  {
   .pager { display: none; }
   
   .views-row {
+    padding-bottom: 1px;
     background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+  }
+  .views-row-first {
+    margin-top: 0;
   }
 }
