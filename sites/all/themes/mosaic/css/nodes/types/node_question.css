@@ -30,8 +30,9 @@
 .node-teaser.node-question .pane-coral-node-stats {
   border: 1px solid #dddddd;
   background: #efefef;
+  margin-bottom: 1.25em;
 }
-/* line 37, ../../../sass/nodes/types/node_question.scss */
+/* line 38, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-answer,
 .node-type-question .pane-node-links,
 .node-teaser.node-question .pane-coral-add-answer,
@@ -39,7 +40,7 @@
   float: left;
   height: 2.65em;
 }
-/* line 40, ../../../sass/nodes/types/node_question.scss */
+/* line 41, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-answer .links,
 .node-type-question .pane-node-links .links,
 .node-teaser.node-question .pane-coral-add-answer .links,
@@ -47,7 +48,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 44, ../../../sass/nodes/types/node_question.scss */
+/* line 45, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-answer .links li,
 .node-type-question .pane-node-links .links li,
 .node-teaser.node-question .pane-coral-add-answer .links li,
@@ -55,12 +56,12 @@
   margin: 0 5px 0 0;
   padding: 2px 5px 1px;
 }
-/* line 51, ../../../sass/nodes/types/node_question.scss */
+/* line 52, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-node-field-tags,
 .node-teaser.node-question .pane-node-field-tags {
   clear: left;
 }
-/* line 59, ../../../sass/nodes/types/node_question.scss */
+/* line 60, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .field-name-field-answer,
 .node-type-question .field-name-field-comment-count,
 .node-type-question .field-name-field-answer-count,
@@ -71,7 +72,7 @@
 .node-teaser.node-question .field-type-file legend {
   display: none;
 }
-/* line 65, ../../../sass/nodes/types/node_question.scss */
+/* line 66, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .site-width,
 .node-teaser.node-question .layout-landing-1 .site-width {
   *zoom: 1;
@@ -83,28 +84,11 @@
   display: table;
   clear: both;
 }
-/* line 68, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-landing-1 .follower .limiter,
-.node-teaser.node-question .layout-landing-1 .follower .limiter {
-  margin-top: 1px;
-  background: #f4f4f4 url("../../../assets/images/coral-sep-med.png") bottom center no-repeat;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-/* line 74, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-landing-1 .follower .limiter .limiter,
-.node-teaser.node-question .layout-landing-1 .follower .limiter .limiter {
-  padding-left: 0;
-  padding-right: 0;
-  background: none;
-}
-/* line 81, ../../../sass/nodes/types/node_question.scss */
+/* line 71, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .pane-coral-answer-form .node-answer-form,
 .node-teaser.node-question .layout-landing-1 .pane-coral-answer-form .node-answer-form {
   border: 1px solid #d0d0d0;
   padding: 0.625em 1em;
-  margin-left: -.975em;
-  margin-right: -.975em;
   background: #eaeaea;
   background: -moz-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, #dddddd));
@@ -117,12 +101,12 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
 }
-/* line 90, ../../../sass/nodes/types/node_question.scss */
+/* line 78, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .pane-coral-answer-form .node-answer-form .form-item-title label,
 .node-teaser.node-question .layout-landing-1 .pane-coral-answer-form .node-answer-form .form-item-title label {
   display: none;
 }
-/* line 94, ../../../sass/nodes/types/node_question.scss */
+/* line 82, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .pane-coral-answer-form input.form-text,
 .node-teaser.node-question .layout-landing-1 .pane-coral-answer-form input.form-text {
   width: 99%;
