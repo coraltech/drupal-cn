@@ -24,7 +24,7 @@ function coral_answers_target_pane_content_type_render($subtype, $conf, $args, $
   $node = $context[0]->data;
   $block = new stdClass();
   $block->title = t('Answers');
-  $content = '<div class="answers-tgt">&nbsp;</div>'; // default
+  $content = '<div class="answers-tgt answers-tgt-'.$node->nid.' clearfix"><p>No answers have been found!</p></div>'; // default
   
   if (isset($node->nid) && isset($node->type)) {
     if ($node->type == 'question') {
@@ -35,7 +35,7 @@ function coral_answers_target_pane_content_type_render($subtype, $conf, $args, $
         $view->set_arguments(array($node->nid));
         $view->pre_execute();
         $view->execute();
-        $content = '<div class="answers-tgt">'.$view->render().'</div>';
+        $content = '<div class="answers-tgt answers-tgt-'.$node->nid.'">'.$view->render().'</div>';
       }
     }
   }  
