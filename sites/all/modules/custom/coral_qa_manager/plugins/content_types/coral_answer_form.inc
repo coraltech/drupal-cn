@@ -46,6 +46,9 @@ function coral_answer_form_pane_content_type_render($subtype, $conf, $args, $con
   
   $question = $context[0]->data;
   if ($question->type == 'question') {
+    $answer_start = '<div class="answer-form answer-form-'.$question->nid.'">';
+    $answer_end = '</div>';
+    
     if (!$user->uid) {
       $user_login = render(drupal_get_form('user_login'));
       $answer_form = '<h3>Please login or '.l('register', 'user/register')." to answer questions.</h3>";
@@ -59,8 +62,9 @@ function coral_answer_form_pane_content_type_render($subtype, $conf, $args, $con
       $answer_form = drupal_build_form('answer_node_form', $form_state);
       $answer_form["field_question"][$node->language][0]['target_id']['#value'] = $question->title.' ('.$question->nid.')';
     }
+    
     $block->title = t('Answer');
-    $block->content = render($answer_form);  
+    $block->content = $answer_start.render($answer_form).$answer_end;
   }
   return $block; 
 }
