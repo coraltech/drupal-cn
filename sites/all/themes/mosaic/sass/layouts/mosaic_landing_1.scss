@@ -9,6 +9,7 @@
   // Full width separator
   .follower {
     background: url('../../assets/images/coral-sep-long.png') top center no-repeat;  
+    min-height: 1px;
   
     .pane-title {
       color: $mdred;
@@ -20,5 +21,6 @@
   .layout-landing-1 .follower {
     background: url('../../assets/images/coral-sep-med.png') top center no-repeat;
   }
+
 }
 
