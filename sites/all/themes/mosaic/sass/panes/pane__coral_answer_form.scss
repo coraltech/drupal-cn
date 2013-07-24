@@ -23,6 +23,23 @@
     }
   }
   
+  // answer form styles
+  .node-answer-form {
+    border: 1px solid darken($ltgray, 5%);
+    padding: ($default_vert_unit / 2) 1em;
+        
+    @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+    @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
+        
+    .form-item-title label {
+      display: none;
+    }
+  }
+  
+  input.form-text {
+    width: 99%;
+  }
+  
   // user login (anon. user)
   .user-login {
     & > h3 {
