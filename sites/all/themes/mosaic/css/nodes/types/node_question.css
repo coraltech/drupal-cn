@@ -32,36 +32,42 @@
   background: #efefef;
   margin-bottom: 1.25em;
 }
-/* line 38, ../../../sass/nodes/types/node_question.scss */
+/* line 39, ../../../sass/nodes/types/node_question.scss */
+.node-type-question .pane-coral-add-comment,
 .node-type-question .pane-coral-add-answer,
 .node-type-question .pane-node-links,
+.node-teaser.node-question .pane-coral-add-comment,
 .node-teaser.node-question .pane-coral-add-answer,
 .node-teaser.node-question .pane-node-links {
   float: left;
   height: 2.65em;
 }
-/* line 41, ../../../sass/nodes/types/node_question.scss */
+/* line 42, ../../../sass/nodes/types/node_question.scss */
+.node-type-question .pane-coral-add-comment .links,
 .node-type-question .pane-coral-add-answer .links,
 .node-type-question .pane-node-links .links,
+.node-teaser.node-question .pane-coral-add-comment .links,
 .node-teaser.node-question .pane-coral-add-answer .links,
 .node-teaser.node-question .pane-node-links .links {
   padding: 0;
   margin: 0;
 }
-/* line 45, ../../../sass/nodes/types/node_question.scss */
+/* line 46, ../../../sass/nodes/types/node_question.scss */
+.node-type-question .pane-coral-add-comment .links li,
 .node-type-question .pane-coral-add-answer .links li,
 .node-type-question .pane-node-links .links li,
+.node-teaser.node-question .pane-coral-add-comment .links li,
 .node-teaser.node-question .pane-coral-add-answer .links li,
 .node-teaser.node-question .pane-node-links .links li {
   margin: 0 5px 0 0;
   padding: 2px 5px 1px;
 }
-/* line 52, ../../../sass/nodes/types/node_question.scss */
+/* line 53, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-node-field-tags,
 .node-teaser.node-question .pane-node-field-tags {
   clear: left;
 }
-/* line 60, ../../../sass/nodes/types/node_question.scss */
+/* line 61, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .field-name-field-answer,
 .node-type-question .field-name-field-comment-count,
 .node-type-question .field-name-field-answer-count,
@@ -72,7 +78,7 @@
 .node-teaser.node-question .field-type-file legend {
   display: none;
 }
-/* line 66, ../../../sass/nodes/types/node_question.scss */
+/* line 67, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .site-width,
 .node-teaser.node-question .layout-landing-1 .site-width {
   *zoom: 1;
@@ -83,31 +89,4 @@
   content: "";
   display: table;
   clear: both;
-}
-/* line 71, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-landing-1 .pane-coral-answer-form .node-answer-form,
-.node-teaser.node-question .layout-landing-1 .pane-coral-answer-form .node-answer-form {
-  border: 1px solid #d0d0d0;
-  padding: 0.625em 1em;
-  background: #eaeaea;
-  background: -moz-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, #dddddd));
-  background: -webkit-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: -o-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: -ms-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: linear-gradient(to bottom, #eaeaea 0%, #dddddd 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
-}
-/* line 78, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-landing-1 .pane-coral-answer-form .node-answer-form .form-item-title label,
-.node-teaser.node-question .layout-landing-1 .pane-coral-answer-form .node-answer-form .form-item-title label {
-  display: none;
-}
-/* line 82, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-landing-1 .pane-coral-answer-form input.form-text,
-.node-teaser.node-question .layout-landing-1 .pane-coral-answer-form input.form-text {
-  width: 99%;
 }
