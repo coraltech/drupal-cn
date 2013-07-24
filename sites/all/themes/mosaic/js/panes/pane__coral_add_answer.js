@@ -51,13 +51,13 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$btn = $question.find('.btn.answer-'+this.refID);
     this.$answerForm = $(this.$question).find('.answer-form-'+this.refID);
     this.$answersTgt = $(this.$question).find('.answers-tgt-'+this.refID);
-    this.$loadMore = $(this.$question).find('.load-more-'+this.refID);
+    this.$loadMore = $(this.$question).find('.more-answers-'+this.refID);
     this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
     this.$full = $(this.$question).find('.body-full.body-'+this.refID);       // full text body pane
     
     this.$answerForm.parents('.panel-pane').eq(0).hide(); // show the form
-    this.$answersTgt.parents('.panel-pane').eq(0).hide(); // show answers 
-
+    this.$answersTgt.parents('.panel-pane').eq(0).hide(); // show answers
+    
     // Setup and more
     // ----
     // $loadMore may or may not exist. It usually does not
@@ -75,15 +75,17 @@ Drupal.coralQA = Drupal.coralQA || {};
       // we only want 5 cols - then we hide the form
       this.$answerForm.find('textarea').attr('rows', '5'); 
       
-      // Add something clickable to the trimmed text
-      this.$trimmed.append('<p class="trimmed trimmed-'+this.refID+' trimmed-more"><a href="#">View full text</a></p>');
-      this.$full.append('<p class="trimmed trimmed-'+this.refID+' trimmed-less"><a href="#">Hide full text</a></p>');
+      // Add something clickable to the trimmed text (if necc.)
+      var $tt = this.$trimmed.find('.trimmed'); // trimmed 
+      var $tf = this.$full.find('.trimmed');    // full
+      if (!$tt.length) this.$trimmed.append('<p class="trimmed trimmed-'+this.refID+' trimmed-more"><a href="#">View full text</a></p>');
+      if (!$tf.length) this.$full.append('<p class="trimmed trimmed-'+this.refID+' trimmed-less"><a href="#">Hide full text</a></p>');
     }
     
     // Adding events here so we can control the key    
     this.events = {};
     this.events['click .btn.answer-'+this.refID] = 'answerClick';
-    this.events['click .load-more-'+this.refID] = 'moreClick';
+    this.events['click .more-answers-'+this.refID] = 'moreClick';
     this.events['click .answer-form-'+this.refID+' .form-submit'] = 'formSubmit';
     this.events['click .trimmed-'+this.refID+' a'] = 'trimmedClick';
         
@@ -196,7 +198,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       //  starts off hidden here
       if (!this.$loadMore.length) { // add it only if it's not there
         this.$answersTgt.parent('.pane-content').append(this.loadMoreBtn('1', moreHide));
-        this.$loadMore = this.$answersTgt.parent('.pane-content').find('.load-more-'+this.refID);
+        this.$loadMore = this.$answersTgt.parent('.pane-content').find('.more-answers-'+this.refID);
       }
       
       // Clicking on the answer btn opens the full content
@@ -245,7 +247,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.loadViewResults = function(view_name, view_display, args, callback, mode, offset, limit) {
     var ca = this; // for use later
 
-    var args     = [args]   || [ca.answerID]; // the view args
+    var args     = [args]   || [ca.refID]; // the view args
     var callback = callback || {}; 
     var offset   = offset   || String((Number(this.currentPage) * Number(this.settings.limit)) + Number(this.addedNew)); // current offset
     var limit    = limit    || this.settings.limit; // limit for the view results
@@ -375,7 +377,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
-    return '<a href="#" class="btn load-more load-more-'+this.refID+' page-'+page+' '+hide+'">Load more<span class="no-js"><span></span></a>';
+    return '<a href="#" class="btn load-more more-answers-'+this.refID+' page-'+page+' '+hide+'">Load more<span class="no-js"><span></span></a>';
   };
 
   
