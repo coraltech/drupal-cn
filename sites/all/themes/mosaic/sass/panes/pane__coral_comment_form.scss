@@ -1,0 +1,101 @@
+
+// Scss file for the pane-coral-answer-form
+
+@import 'global/colors';
+@import 'global/headers';
+@import 'global/fonts';
+@import 'global/gradients';
+
+@import "compass/utilities/general/clearfix";
+@import 'compass/css3/box-shadow';
+
+.pane-coral-comment-form {
+  .filter-wrapper,
+  .vertical-tabs {
+    display: none;
+  }
+  .form-actions {
+    position: relative;
+    .ajax-progress {
+      position: absolute;
+      top: 15%;
+      left: 3.5em;
+    }
+  }
+  
+  // comment form styles
+  .node-comment-form {
+    border: 1px solid darken($ltgray, 5%);
+    padding: ($default_vert_unit / 2) 1em;
+      
+    @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+    @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
+      
+    .form-item-title label {
+      display: none;
+    }
+  }
+  
+  input.form-text {
+    width: 99%;
+  }
+  
+  // user login (anon. user)
+  .user-login {
+    & > h3 {
+      margin-left: 2%;
+      margin-right: 2%;
+      margin-bottom: 1em;
+    }
+    
+    border: 1px solid $ltblue;
+    margin-left: -1em;
+    margin-right: -1em;
+    
+    @include linear-v-gradient(lighten($ltblue, 7%), lighten($ltblue, 4%));
+    @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
+    @include pie-clearfix;
+    
+    label { display: none; }
+    
+    h2 {
+      @include h3;
+      margin-top: 1em;
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+    .gigya-login {
+      margin-top: .5em;
+    }
+    form h2,
+    .gigya-login {
+      clear: left; 
+      float: left;
+      margin-right: 2%;
+      margin-left: 2%;
+      width: 44%;
+    }
+    .form-item {
+      margin: 0;
+    }
+    .form-type-textfield {
+      margin-top: (-1 * 1.8 * $default_vert_unit);
+      clear: right;
+      float: right;
+      width: 45%;
+      margin-right: 2%;
+    }
+    .form-type-password {
+      clear: right;
+      float: right;
+      width: 45%;
+      margin-right: 2%;
+    }
+    .form-actions {
+      clear: both;
+      width: 95.5%;
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+
+// Scss file for the view:answers > display:new_answers
+
+@import 'global/colors';
+
+.view-comments.view-display-id-new_comments,
+.view-comments.view-display-id-this_comment  {
+  .pager { display: none; }
+  
+  .views-row {
+    padding-bottom: 1px;
+    background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+  }
+  .views-row-first {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,64 @@
+
+// Node question scss file
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+@import 'global/gradients';
+
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/box-shadow';
+
+.node-type-comment,
+.node-teaser.node-comment {
+  
+  .pane-coral-page-title,
+  .comment-node-teaser-pane-title {
+    .icon { // apply question mark icon
+      //display: block;
+      //float: left;
+      //margin: 7px .5em 0 0;
+      //@include icons-sprite('coral-q');
+    }
+  }
+  
+  .pane-coral-page-title h2 {
+    color: darken($mdblue, 7%);
+    font-weight: bold;
+    margin-top: .15em;
+  }
+  
+  .pane-coral-node-stats {
+    border: 1px solid $ltgray;
+    background: lighten($ltgray, 7%);
+    margin-bottom: $default_vert_unit;  
+  }
+  
+  .pane-coral-add-comment,
+  .pane-coral-add-answer,
+  .pane-node-links { // float links beside each other
+    float: left;
+    height: 2.12 * $default_vert_unit; // same as node links
+    .links { // standardize 
+      padding: 0; 
+      margin: 0; 
+      
+      li {
+        margin: 0 5px 0 0;
+        padding: 2px 5px 1px;
+      }
+    }
+  }
+  
+  .pane-node-field-tags {
+    clear: left;
+  }
+   
+  // Hide some things
+  .field-name-field-content,
+  .field-name-field-comment-count,
+  .field-type-file legend {
+    display: none;
+  }
+}
+
