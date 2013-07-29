@@ -20,12 +20,12 @@ $plugin = array(
 
 
 function coral_comments_target_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  // NOTE: CSS (scss) and js applied via mosaic theme as it's nice and handy   
+  // NOTE: CSS (scss) and js applied via mosaic theme as it's nice and handy
   $node = $context[0]->data;
   $block = new stdClass();
   $block->title = t('Comments');
   $content = '<div class="comments-tgt comments-tgt-'.$node->nid.' clearfix"><p>No comments have been found!</p></div>'; // default
-  
+
   if (isset($node->nid) && isset($node->type)) {
     $types = array('question', 'answer', 'comment');
     if (in_array($node->type, $types)) {
@@ -36,7 +36,9 @@ function coral_comments_target_pane_content_type_render($subtype, $conf, $args, 
         $view->set_arguments(array($node->nid));
         $view->pre_execute();
         $view->execute();
-        $content = '<div class="comments-tgt comments-tgt-'.$node->nid.'">'.$view->render().'</div>';
+        if (isset($view->result) && $view->result) {
+          $content = '<div class="comments-tgt comments-tgt-'.$node->nid.' clearfix">'.$view->render().'</div>';
+        }
       }
     }
   }  
