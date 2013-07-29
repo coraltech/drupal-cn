@@ -18,3 +18,11 @@ function field_defaults_answer_node_form__textarea_defaults($form, &$matrix) {
     '.node-answer-form .text-full' => t('Answer detail')
   );
 }
+
+
+// Node answer creation form
+function field_defaults_comment_node_form__textarea_defaults($form, &$matrix) {
+  $matrix['comment_node_form']['selectors'] = array(
+    '.node-comment-form .text-full' => t('Comment detail')
+  );
+}

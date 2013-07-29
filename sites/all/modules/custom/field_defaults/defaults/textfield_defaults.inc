@@ -68,6 +68,16 @@ function field_defaults_answer_node_form__textfield_defaults($form, &$matrix) {
 }
 
 
+// Node answer creation form
+function field_defaults_comment_node_form__textfield_defaults($form, &$matrix) {
+  $matrix['comment_node_form']['selectors'] = array(
+    '.node-comment-form .form-item-title .form-text' => t('Comment title (optional)')
+  );
+  // Custom validation
+  $matrix['comment_node_form']['validate'] = array('field_defaults_textfield_comment_node_form_validate');
+}
+
+
 // Node question creation form
 function field_defaults_user_login__textfield_defaults($form, &$matrix) {
     
@@ -120,6 +130,16 @@ function field_defaults_textfield_comment_node_book_form_validate($form, &$form_
 function field_defaults_textfield_answer_node_form_validate($form, &$form_state) {
   $matrix = variable_get('field_defaults_textfield_matrix', array());
   if ($form_state['values']['title'] == $matrix[$form['#form_id']]['selectors']['.node-answer-form .form-item-title .form-text']) {
+    form_set_value($form['title'], '', $form_state);  //reset the input - dont feed in the default - let auto title do it's thing
+  }
+}
+
+
+// Validator for the answer node form defaults.
+//  added above ^
+function field_defaults_textfield_comment_node_form_validate($form, &$form_state) {
+  $matrix = variable_get('field_defaults_textfield_matrix', array());
+  if ($form_state['values']['title'] == $matrix[$form['#form_id']]['selectors']['.node-comment-form .form-item-title .form-text']) {
     form_set_value($form['title'], '', $form_state);  //reset the input - dont feed in the default - let auto title do it's thing
   }
 }
