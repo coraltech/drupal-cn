@@ -55,7 +55,7 @@ Drupal.coralQA = Drupal.coralQA || {};
     
     this.$commentForm.parents('.panel-pane').eq(0).hide(); // hide the form
     this.$commentsTgt.parents('.panel-pane').eq(0).hide(); // hide comments
-    
+    console.log(Drupal.settings.mosaicViews);
     // Setup and more
     // ----
     // $loadMore may or may not exist. It usually does not
@@ -186,7 +186,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         //console.log('test');
         this.settingsID = 'comments_new_comments_'+this.refID;
         this.settings   = Drupal.settings.mosaicViews[this.settingsID];
-        
+        console.log(this.settingsID);
+        console.log(this.settings);
+        console.log('-------------');
         if (Number(numComments) < Number(this.settings.total_items)) {
           this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
           moreHide = ''; // hide this only if it's not needed... apparently it's needed here.

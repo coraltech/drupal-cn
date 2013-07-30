@@ -185,7 +185,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       var moreHide = 'hide'; // a hide class
       
       if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
-        //console.log('test');
         this.settingsID = 'answers_new_answers_'+this.refID;
         this.settings   = Drupal.settings.mosaicViews[this.settingsID];
         
