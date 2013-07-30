@@ -4,13 +4,13 @@
 @import 'global/colors';
 @import 'global/fonts';
 
-.pane-coral-answers-target {
+.pane-coral-comments-target {
   //padding-bottom: $default_vert_unit;
   position: relative;
   background: lighten($ltgray, 8%);
+  margin-bottom: $default_vert_unit;
   padding-left: 1em;
   padding-right: 1em;
-  margin-bottom: $default_vert_unit;
   
   .load-more {
     position: absolute;
@@ -27,9 +27,6 @@
   .load-more.hide {
     display: none;
   }
-  
-  // This is NO good but we gotta do it somewhere.
-  //  this is bc the comment target can appear within the answers target as well (at the second level)
   .pane-coral-comments-target {
     margin-bottom: 0;
     padding-left: 0;  // we re-add the padding in the views row
@@ -38,8 +35,8 @@
     .pane-coral-node-stats {
       width: 99%;
     }
-  } 
+  }  
 }
-.pane-coral-answers-target.answers-more {
+.pane-coral-comments-target.comments-more {
   margin-bottom: 3 * $default_vert_unit;
 }

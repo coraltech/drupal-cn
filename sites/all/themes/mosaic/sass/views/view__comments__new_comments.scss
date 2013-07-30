@@ -5,10 +5,12 @@
 
 .view-comments.view-display-id-new_comments,
 .view-comments.view-display-id-this_comment  {
-  .pager { display: none; }
+  //.pager { display: none; }
   
   .views-row {
-    padding-bottom: 1px;
+    .views-row {
+      padding-left: .5em;
+    }
     background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
   }
   .views-row-first {
