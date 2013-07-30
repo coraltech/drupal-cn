@@ -190,6 +190,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.settings   = Drupal.settings.mosaicViews[this.settingsID];
         
         if (Number(numAnswers) < Number(this.settings.total_items)) {
+          this.$answersTgt.parents('.panel-pane').eq(0).addClass('answers-more');
           moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
         }
       }

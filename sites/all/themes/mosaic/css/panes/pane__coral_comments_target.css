@@ -1,0 +1,41 @@
+/* line 7, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target {
+  position: relative;
+  background: #f1f1f1;
+  margin-bottom: 1.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 15, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target .load-more {
+  position: absolute;
+  bottom: -2.5em;
+}
+/* line 18, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target .load-more .ajax-progress {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: -25px;
+  top: 8%;
+}
+/* line 27, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target .load-more.hide {
+  display: none;
+}
+/* line 30, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target .pane-coral-comments-target {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 35, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target .pane-coral-comments-target .pane-coral-node-stats {
+  width: 99%;
+}
+
+/* line 40, ../../sass/panes/pane__coral_comments_target.scss */
+.pane-coral-comments-target.comments-more {
+  margin-bottom: 3.75em;
+}

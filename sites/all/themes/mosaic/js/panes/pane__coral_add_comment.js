@@ -188,6 +188,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.settings   = Drupal.settings.mosaicViews[this.settingsID];
         
         if (Number(numComments) < Number(this.settings.total_items)) {
+          this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
           moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
         }
       }

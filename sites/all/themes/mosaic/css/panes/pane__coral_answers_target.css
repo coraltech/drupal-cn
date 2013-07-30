@@ -4,7 +4,7 @@
   background: #f1f1f1;
   padding-left: 1em;
   padding-right: 1em;
-  margin-bottom: 3.75em;
+  margin-bottom: 1.25em;
 }
 /* line 15, ../../sass/panes/pane__coral_answers_target.scss */
 .pane-coral-answers-target .load-more {
@@ -23,4 +23,19 @@
 /* line 27, ../../sass/panes/pane__coral_answers_target.scss */
 .pane-coral-answers-target .load-more.hide {
   display: none;
+}
+/* line 33, ../../sass/panes/pane__coral_answers_target.scss */
+.pane-coral-answers-target .pane-coral-comments-target {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 38, ../../sass/panes/pane__coral_answers_target.scss */
+.pane-coral-answers-target .pane-coral-comments-target .pane-coral-node-stats {
+  width: 99%;
+}
+
+/* line 43, ../../sass/panes/pane__coral_answers_target.scss */
+.pane-coral-answers-target.answers-more {
+  margin-bottom: 3.75em;
 }
