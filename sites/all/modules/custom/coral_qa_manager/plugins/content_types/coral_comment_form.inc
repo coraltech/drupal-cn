@@ -64,7 +64,7 @@ function coral_comment_form_pane_content_type_render($subtype, $conf, $args, $co
       $comment_form["field_content"][$node->language][0]['target_id']['#value'] = $context_node->title.' ('.$context_node->nid.')';
     }
     
-    $block->title = t('Comment');
+    $block->title = t('Add comment');
     $block->content = $comment_start.render($comment_form).$comment_end;  
   }
   return $block; 

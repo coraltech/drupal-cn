@@ -63,7 +63,7 @@ function coral_answer_form_pane_content_type_render($subtype, $conf, $args, $con
       $answer_form["field_question"][$node->language][0]['target_id']['#value'] = $question->title.' ('.$question->nid.')';
     }
     
-    $block->title = t('Answer');
+    $block->title = t('Add answer');
     $block->content = $answer_start.render($answer_form).$answer_end;
   }
   return $block; 
