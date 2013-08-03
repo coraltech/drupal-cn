@@ -176,7 +176,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
     $title.addClass('com-form-title-'+this.refID).addClass('form-hidden'); // add some neat classes
     $title.wrap('<div class="help-wrap help-wrap-'+this.refID+'">');   // add a containing wrap
-    $title.after('<span class="help-text help-text-'+this.refID+'">show form</span>').attr('title', 'Click to answer '+contentText); // init some custom text and title
+    $title.after('<span class="help-text help-text-'+this.refID+'">show form</span>').attr('title', 'Comment on '+contentText); // init some custom text and title
     
     this.$commentForm.prepend('<div class="mdgray-txt"><strong>Add comment to</strong>: <em class="ltyellow-bg">'+contentText+'</em></div>');
     this.$commentForm.hide(); // hide the form itself
@@ -254,7 +254,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
         this.settingsID = 'comments_new_comments_'+this.refID;
         this.settings   = Drupal.settings.mosaicViews[this.settingsID];
-console.log(Number(numComments) < Number(this.settings.total_items));
+
         if (Number(numComments) < Number(this.settings.total_items)) {
           this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
           moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
