@@ -1,0 +1,54 @@
+<?php
+/**
+ * @file
+ *  Provides a generic but powerful API for web services.
+ */
+
+/**
+ * Implementation of hook_services_resources().
+ */
+function services_views_info_services_resources() {
+  $resources['view_info'] = array();
+
+  $resources['view_info']['retrieve'] = array(
+    'help' => 'Retrieves view information.',
+    'file' => array(
+      'type' => 'inc',
+      'module' => 'services_views_info',
+      'name' => 'services_views_info.resource',
+    ),
+    'callback' => 'services_views_info_get',
+    'access callback' => 'services_views_access',
+    'access arguments' => array('view'),
+    'access arguments append' => TRUE,
+    'args' => array(
+      'view_name' => array(
+        'name' => 'view_name',
+        'type' => 'string',
+        'description' => 'The name of the view to get info for.',
+        'source' => array('path' => '0'),
+        'optional' => FALSE,
+      ),
+      'display_id' => array(
+        'name' => 'display_id',
+        'type' => 'string',
+        'description' => 'The display ID of the view to get info for.',
+        'source' => array('param' => 'display_id'),
+        'optional' => TRUE,
+        'default value' => 'default',
+      ),
+      'args' => array(
+        'name' => 'args',
+        'type' => 'array',
+        'description' => 'A list of arguments to pass to the view.',
+        'source' => array('param' => 'args'),
+        'optional' => TRUE,
+        'default value' => array(),
+      ),
+      
+    ),
+  );
+
+  return $resources;
+}
+

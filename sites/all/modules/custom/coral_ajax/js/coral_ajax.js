@@ -63,10 +63,19 @@
   
   Drupal.coral_ajax.view_render = function(view_name, options, success, error) {
     options['format_output'] = true;
-    
     Drupal.coral_ajax.view_get(view_name, options, function(data) {
       success(data[0]);
     }, error);
+  };
+  
+  Drupal.coral_ajax.view_info = function(view_name, options, success, error) {
+    $.ajax({
+      url:'/api/view-info/'+view_name+'.json',
+      dataType: 'json',
+      data: options,
+      success: success,
+      error: error
+    });
   };
   
   //-----------------------------------------------------------------------------

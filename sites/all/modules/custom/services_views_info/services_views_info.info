@@ -1,0 +1,9 @@
+name = Services views info
+description = A data service for views - returns total and current limits.
+package = Services
+core = 7.x
+dependencies[] = services
+dependencies[] = views
+dependencied[] = services_views
+
+files[] = includes/views/views_plugin_info_services.inc
