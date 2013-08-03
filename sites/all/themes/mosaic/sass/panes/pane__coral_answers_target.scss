@@ -29,7 +29,9 @@
   }
   
   // This is NO good but we gotta do it somewhere.
-  //  this is bc the comment target can appear within the answers target as well (at the second level)
+  //  this is bc the comment target can appear within
+  //  the answers target as well (at the second level)
+  //  upon an ajax load.
   .pane-coral-comments-target {
     margin-bottom: 0;
     padding-left: 0;  // we re-add the padding in the views row
@@ -38,6 +40,9 @@
     .pane-coral-node-stats {
       width: 99%;
     }
+  }
+  .pane-coral-comments-target.comments-more {
+    margin-bottom: 3 * $default_vert_unit;
   } 
 }
 .pane-coral-answers-target.answers-more {
