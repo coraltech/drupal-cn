@@ -122,6 +122,216 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 8, ../sass/global/site_colors.scss */
+.white-txt {
+  color: white;
+}
+
+/* line 9, ../sass/global/site_colors.scss */
+.white-bg {
+  background: white;
+}
+
+/* line 10, ../sass/global/site_colors.scss */
+.black-txt {
+  color: black;
+}
+
+/* line 11, ../sass/global/site_colors.scss */
+.black-bg {
+  background: black;
+}
+
+/* line 14, ../sass/global/site_colors.scss */
+.ltgray-txt {
+  color: #dddddd;
+}
+
+/* line 15, ../sass/global/site_colors.scss */
+.ltgray-bg {
+  background: #dddddd;
+}
+
+/* line 16, ../sass/global/site_colors.scss */
+.mdgray-txt {
+  color: #777777;
+}
+
+/* line 17, ../sass/global/site_colors.scss */
+.mdgray-bg {
+  background: #777777;
+}
+
+/* line 18, ../sass/global/site_colors.scss */
+.dkgray-txt {
+  color: #515151;
+}
+
+/* line 19, ../sass/global/site_colors.scss */
+.dkgray-bg {
+  background: #515151;
+}
+
+/* line 20, ../sass/global/site_colors.scss */
+.silver-txt {
+  color: #dddddd;
+}
+
+/* line 21, ../sass/global/site_colors.scss */
+.silver-bg {
+  background: #dddddd;
+}
+
+/* line 24, ../sass/global/site_colors.scss */
+.ltblue-txt {
+  color: #cad5e2;
+}
+
+/* line 25, ../sass/global/site_colors.scss */
+.ltblue-bg {
+  background: #cad5e2;
+}
+
+/* line 26, ../sass/global/site_colors.scss */
+.mdblue-txt {
+  color: #446eac;
+}
+
+/* line 27, ../sass/global/site_colors.scss */
+.mdblue-bg {
+  background: #446eac;
+}
+
+/* line 28, ../sass/global/site_colors.scss */
+.dkblue-txt {
+  color: #2b486b;
+}
+
+/* line 29, ../sass/global/site_colors.scss */
+.dkblue-bg {
+  background: #2b486b;
+}
+
+/* line 32, ../sass/global/site_colors.scss */
+.ltred-txt {
+  color: #d9837b;
+}
+
+/* line 33, ../sass/global/site_colors.scss */
+.ltred-bg {
+  background: #d9837b;
+}
+
+/* line 34, ../sass/global/site_colors.scss */
+.mdred-txt {
+  color: #b02e1c;
+}
+
+/* line 35, ../sass/global/site_colors.scss */
+.mdred-bg {
+  background: #b02e1c;
+}
+
+/* line 36, ../sass/global/site_colors.scss */
+.dkred-txt {
+  color: #762921;
+}
+
+/* line 37, ../sass/global/site_colors.scss */
+.dkred-bg {
+  background: #762921;
+}
+
+/* line 40, ../sass/global/site_colors.scss */
+.ltgreen-txt {
+  color: #a2d4a9;
+}
+
+/* line 41, ../sass/global/site_colors.scss */
+.ltgreen-bg {
+  background: #a2d4a9;
+}
+
+/* line 42, ../sass/global/site_colors.scss */
+.mdgreen-txt {
+  color: #36b048;
+}
+
+/* line 43, ../sass/global/site_colors.scss */
+.mdgreen-bg {
+  background: #36b048;
+}
+
+/* line 44, ../sass/global/site_colors.scss */
+.dkgreen-txt {
+  color: #20682a;
+}
+
+/* line 45, ../sass/global/site_colors.scss */
+.dkgreen-bg {
+  background: #20682a;
+}
+
+/* line 48, ../sass/global/site_colors.scss */
+.ltorange-txt {
+  color: #fdaa68;
+}
+
+/* line 49, ../sass/global/site_colors.scss */
+.ltorange-bg {
+  background: #fdaa68;
+}
+
+/* line 50, ../sass/global/site_colors.scss */
+.mdorange-txt {
+  color: #e17d2c;
+}
+
+/* line 51, ../sass/global/site_colors.scss */
+.mdorange-bg {
+  background: #e17d2c;
+}
+
+/* line 52, ../sass/global/site_colors.scss */
+.dkorange-txt {
+  color: #b9490d;
+}
+
+/* line 53, ../sass/global/site_colors.scss */
+.dkorange-bg {
+  background: #b9490d;
+}
+
+/* line 56, ../sass/global/site_colors.scss */
+.ltyellow-txt {
+  color: #fff6b6;
+}
+
+/* line 57, ../sass/global/site_colors.scss */
+.ltyellow-bg {
+  background: #fff6b6;
+}
+
+/* line 58, ../sass/global/site_colors.scss */
+.mdyellow-txt {
+  color: #e5d14a;
+}
+
+/* line 59, ../sass/global/site_colors.scss */
+.mdyellow-bg {
+  background: #e5d14a;
+}
+
+/* line 60, ../sass/global/site_colors.scss */
+.dkyellow-txt {
+  color: #ac9605;
+}
+
+/* line 61, ../sass/global/site_colors.scss */
+.dkyellow-bg {
+  background: #ac9605;
+}
+
 /* line 35, ../sass/global/_dom.scss */
 body {
   font-size: 16px;

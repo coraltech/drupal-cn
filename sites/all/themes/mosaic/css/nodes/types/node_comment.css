@@ -52,3 +52,12 @@
 .node-teaser.node-comment .pane-node-field-tags {
   clear: left;
 }
+/* line 60, ../../../sass/nodes/types/node_comment.scss */
+.node-type-comment .field-name-field-content,
+.node-type-comment .field-name-field-comment-count,
+.node-type-comment .field-type-file legend,
+.node-teaser.node-comment .field-name-field-content,
+.node-teaser.node-comment .field-name-field-comment-count,
+.node-teaser.node-comment .field-type-file legend {
+  display: none;
+}
