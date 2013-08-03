@@ -17,8 +17,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         // Comments revolve around the parent content (question, answer, comment).
         //  If there is no content there is nothing.
         var selectors = '.node-question:not(".comment-processed"), .node-answer:not(".comment-processed"), .node-comment:not(".comment-processed")';
-        $content = $(selectors);
-        $content.each(function(i) {
+        $(selectors).each(function(i) {
           // A new case of the comments!
           new Drupal.coralQA.coralComment($(this));
           
@@ -43,7 +42,7 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$content = $content; // everything centers around the content
     
     //console.log(this.$question);
-    this.initID(this.$content, /node-\d+/, 'node-');
+    this.initID(this.$content, { pat: /node-\d+/, cls: 'node-'});
     
     // Tertiary jQuery objects
     this.$btn = $content.find('.btn.comment-'+this.refID);
@@ -55,7 +54,7 @@ Drupal.coralQA = Drupal.coralQA || {};
     
     this.$commentForm.parents('.panel-pane').eq(0).hide(); // hide the form
     this.$commentsTgt.parents('.panel-pane').eq(0).hide(); // hide comments
-    console.log(Drupal.settings.mosaicViews);
+
     // Setup and more
     // ----
     // $loadMore may or may not exist. It usually does not
@@ -80,13 +79,15 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (!$tf.length) this.$full.append('<p class="trimmed trimmed-'+this.refID+' trimmed-less"><a href="#">Hide full text</a></p>');
     }
     
-    // Adding events here so we can control the key (nid)   
+    // Adding events here so we can control the refID (nid)   
     this.events = {};
     this.events['click .btn.comment-'+this.refID] = 'commentClick';
     this.events['click .more-comments-'+this.refID] = 'moreClick';
     this.events['click .comment-form-'+this.refID+' .form-submit'] = 'formSubmit';
     this.events['click .trimmed-'+this.refID+' a'] = 'trimmedClick';
-        
+    this.events['click .com-form-title-'+this.refID] = 'formClick';
+    this.events['hover .com-form-title-'+this.refID] = 'titleHover';
+       
     var coralComment = this;
     var CommentView = Backbone.View.extend({
       // Home
@@ -100,8 +101,9 @@ Drupal.coralQA = Drupal.coralQA || {};
            
       // Init
       initialize: function() {
+        coralComment.initForm(); // initialize the form
         coralComment.initContentText(); // check for summary and hide full text if avail.
-        _.bindAll(this, 'commentClick', 'moreClick', 'formSubmit', 'trimmedClick');
+        _.bindAll(this, 'commentClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
       },
      
       commentClick: function(ev) {
@@ -122,10 +124,62 @@ Drupal.coralQA = Drupal.coralQA || {};
       formSubmit: function(ev) {
         ev.preventDefault();
         coralComment.submitForm(ev);        
+      },
+      
+      formClick: function(ev) {
+        ev.preventDefault();
+        coralComment.manageForm(ev);
+      },
+      
+      titleHover: function(ev) {
+        coralComment.titleHoverHelp(ev);
       }
     });
     
     new CommentView();
+  };
+  
+  // Manage the titleHoverHelp text (eg. Show form, etc...)
+  Drupal.coralQA.coralComment.prototype.titleHoverHelp = function(ev) {
+    var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+    var $help = $wrap.find('.help-text');
+    
+    if (ev.type == 'mouseenter') $help.animate({left: '9em'}, 500); // mouseenter; expose the text
+    else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+  }; 
+
+
+  // Show or hide the form
+  Drupal.coralQA.coralComment.prototype.manageForm = function(ev) {
+    var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+    var $help = $wrap.find('.help-text');
+    var $title = $wrap.find('.pane-title');
+    
+    if ($title.hasClass('form-hidden')) {
+      // update class and text
+      $title.removeClass('form-hidden');
+      $help.text('hide form');
+    }
+    else {
+      // update class and text
+      $title.addClass('form-hidden');
+      $help.text('show form');
+    }
+    this.$commentForm.slideToggle(); // action!
+  };
+  
+  
+  // Add an identifying class to the form title
+  Drupal.coralQA.coralComment.prototype.initForm = function() {
+    var $title = this.$commentForm.parents('.panel-pane').eq(0).children('.pane-title');  // get the pane title
+    var contentText = $.trim(this.$content.children('h2').text()); // title of the content the user is responding to
+
+    $title.addClass('com-form-title-'+this.refID).addClass('form-hidden'); // add some neat classes
+    $title.wrap('<div class="help-wrap help-wrap-'+this.refID+'">');   // add a containing wrap
+    $title.after('<span class="help-text help-text-'+this.refID+'">show form</span>').attr('title', 'Click to answer '+contentText); // init some custom text and title
+    
+    this.$commentForm.prepend('<div class="mdgray-txt"><strong>Add comment to</strong>: <em class="ltyellow-bg">'+contentText+'</em></div>');
+    this.$commentForm.hide(); // hide the form itself
   };
 
 
@@ -147,19 +201,33 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // Sets up the Comment button and pulls data from it.
-  Drupal.coralQA.coralComment.prototype.initID = function($obj, pat, cls) {
+  // Analyze the object and pull refID data
+  // Inputs:
+  //  settings.pat (string) - a pattern to search for; defaults to /comment-\d+/
+  //  settings.cls (string) - a class to replace with empty space; harvesting the integer
+  //  settings.ret (bool) - a boolean val; true to return instead of set.
+  Drupal.coralQA.coralComment.prototype.initID = function($obj, settings) {
     
-    var objPattern = pat || /comment-\d+/;
-    var objClass = cls || 'comment-';
-    
+    var objPattern = settings.pat || /comment-\d+/;
+    var objClass = settings.cls || 'comment-';
+    var ret = settings.ret || false;
+
     // find this button's nid and ensure the AnswerView's  
     var classes = $obj.attr('class');
     classes = classes.split(" ");
     for (cls in classes) {
       var c = classes[cls];
       if (c.match(objPattern)) {
-        this.refID = c.replace(objClass, ''); // and the nid
+        // Set this (standard) - save this item's id
+        if (!ret) {
+          this.refID = c.replace(objClass, ''); // and the nid
+        }
+        
+        // return it (don't save) - see updateSettings()
+        //  this can be used to identify refID's of new view rows.
+        else { 
+          return c.replace(objClass, ''); // and the nid
+        }
       }
     }
   };
@@ -167,28 +235,26 @@ Drupal.coralQA = Drupal.coralQA || {};
 
   // Handles the clicke event of the comment button
   Drupal.coralQA.coralComment.prototype.handleCommentClick = function(ev) {
-
     // If hidden, unhide!
     if (this.$btn.hasClass('comments-hidden')) {
-
-      this.$commentForm.parents('.panel-pane').eq(0).show(); // show the form
-      this.$commentsTgt.parents('.panel-pane').eq(0).show(); // show answers 
+      
+      this.$commentForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(350); // show comments 
       this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
       this.$btn.removeClass('comments-hidden'); // update the btn status
       
       // The comments are hidden.  We are starting with the first set
       //  already loaded.  We need to discover if there are more.
-      var $comments = $(this.$commentsTgt).find('.node-comment');
+      var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
+      var $cont = $view.children('.view-content');  // so we can't use find
+      var $comments = $cont.children('.views-row'); // so be it. 
+      
       var numComments = $comments.length;
       var moreHide = 'hide'; // a hide class
-      
       if (Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
-        //console.log('test');
         this.settingsID = 'comments_new_comments_'+this.refID;
         this.settings   = Drupal.settings.mosaicViews[this.settingsID];
-        console.log(this.settingsID);
-        console.log(this.settings);
-        console.log('-------------');
+console.log(Number(numComments) < Number(this.settings.total_items));
         if (Number(numComments) < Number(this.settings.total_items)) {
           this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
           moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
@@ -211,8 +277,8 @@ Drupal.coralQA = Drupal.coralQA || {};
     
     else {
       // hide the answers and form
-      this.$commentForm.parents('.panel-pane').eq(0).hide(); // hide the form
-      this.$commentsTgt.parents('.panel-pane').eq(0).hide(); // hide the comments
+      this.$commentForm.parents('.panel-pane').eq(0).slideUp(350); // hide the form
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(350); // hide the comments
       this.$btn.addClass('comments-hidden');
       this.$btn.find('.arrow').removeClass('arrow-down');
       
@@ -254,10 +320,12 @@ Drupal.coralQA = Drupal.coralQA || {};
     var limit    = limit    || this.settings.limit; // limit for the view results
     var mode     = mode     || 'full'; // if we are in "single" mode, we don't update the page number etc...
 
-    // enable a throbber
-    this.$loadMore.find('.no-js').removeClass('no-js').addClass('ajax-progress');
-    this.$loadMore.find('span span').addClass('throbber');
-
+    // enable load more throbber - if they clicked it
+    if (mode == 'full') {
+      this.$loadMore.find('.no-js').removeClass('no-js').addClass('ajax-progress');
+      this.$loadMore.find('span span').addClass('throbber');
+    }
+    
     // Render the view upon the world! Go view, go!
     Drupal.coral_ajax.view_render(view_name, {
       display_id: view_display,
@@ -266,18 +334,18 @@ Drupal.coralQA = Drupal.coralQA || {};
       limit : limit
     },
     function(data) { // success 
-      cc.processViewResults(data, mode); 
+      cc.processViewResults(data, mode);
+      cc.updateSettings(data, mode);
       if (typeof(callback) == 'function') callback(data, mode); // fastest method: no ducktyping 
     },
     function(data) { console.log('err'); }); // failure @TODO: get a real error handler
     // and so ends the adventure of the ajax view request... the end?
-
   };
 
 
   // Runs after the view succeeds in returning the next set.
   Drupal.coralQA.coralComment.prototype.processViewResults = function(data, mode) {
-    
+
     // Check get the default total items figure
     var tot = 0;
     if (this.hasOwnProperty('settings')) {
@@ -285,14 +353,17 @@ Drupal.coralQA = Drupal.coralQA || {};
         tot = this.settings.total_items;
       }
     }
-  
+        
     // Add the results to the screen
     if (mode == 'full') {   // add new results to the end
       this.updateMoreBtn(); // Update the more button (page-#)
       this.$commentsTgt.append(data); // append the new answers
     }
-    else { // single mode - add to the start
-      if (tot < 1) {
+    
+    // single mode - add to the start
+    else { 
+      $rows = this.$commentsTgt.find('.views-row');
+      if (tot < 1 && !$rows.length) { // any rows already there?
         this.$commentsTgt.html(''); // remove the default "empty" text
       }
       this.$commentsTgt.prepend(data); // append the new comments
@@ -307,6 +378,30 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
       
     this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
+  };
+  
+  
+  // Update the settings array when new items are added to the page
+  Drupal.coralQA.coralComment.prototype.updateSettings = function(data, mode) {
+    cc = this;
+    
+    // There are NEW items that were not in the page rendering
+    //  so now we have to go back and ensure that the settings
+    //  array is up to date... see Drupal.settings.mosaicViews
+    var $newItems = $(data).find('.views-row');
+    $newItems.each(function(i) {
+      var refID = cc.initID($(this).find('.node'), {pat: /node-\d+/, cls: 'node-', ret: true});
+      
+      Drupal.coral_ajax.view_info('comments', {
+        display_id: "new_comments",
+        args : refID,
+      },
+      function(data) {
+        settingsID = 'comments_new_comments_'+refID;
+        Drupal.settings.mosaicViews[settingsID] = data;
+      },
+      function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
+    });
   };
 
 
@@ -341,13 +436,14 @@ Drupal.coralQA = Drupal.coralQA || {};
     Drupal.coral_ajax.node_create(node, 
       function(data, msg, xhr) { 
         if (msg == 'success') {
-          cc.clearForm($form);   // clear the form
+          cc.clearForm($form);    // clear the form
           cc.addNewComment(data); // add this new answer to the top of the list
           
           // User added one! Lets remember that to supplement the views offset
           // ----
-          // @NOTE: this may still show the users post if they are browsing 
-          //  an active thread.
+          // @NOTE: this may still re show the users post if they are browsing 
+          //  an active thread. We would need to save a list of the items they
+          //  added and adjust the thread organization accordingly.
           cc.addedNew = Number(cc.addedNew) + 1;
         }
       },
@@ -387,6 +483,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.updateMoreBtn = function() {
     if ((Number(this.currentPage) + 1) * Number(this.settings.limit) >= Number(this.settings.total_items)) {
       this.$loadMore.hide(); // No more to show, hide the button
+      this.$commentsTgt.parents('.panel-pane').eq(0).removeClass('comments-more'); // get rid of empty space
     }
     else { // increment the page number
       this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));

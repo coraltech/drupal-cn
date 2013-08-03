@@ -6,9 +6,6 @@ Drupal.coralQA = Drupal.coralQA || {};
 // Add answer button manager
 //
 //  Controls answer button events and answers display.
-//  @TODO: decide if we want to try to impliment 
-//         a ajax enabled backbone model to submit
-//         and display answers
 // ----------------------------------------------------------------------
 // Document loaded!
 (function($) {
@@ -19,8 +16,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         // Answers revolve around the parent question.
         //  If there is no question there is nothing.
-        $questions = $('.node-question:not(".question-processed")');
-        $questions.each(function(i) {
+        $('.node-question:not(".question-processed")').each(function(i) {
           // The questions... Oh, the questions
           new Drupal.coralQA.coralAnswer($(this));
           
@@ -45,7 +41,7 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.$question = $question; // everything centers around the Q
     
     //console.log(this.$question);
-    this.initID(this.$question, /node-\d+/, 'node-');
+    this.initID(this.$question, {pat: /node-\d+/, cls: 'node-'});
     
     // Tertiary jQuery objects
     this.$btn = $question.find('.btn.answer-'+this.refID);
@@ -88,6 +84,8 @@ Drupal.coralQA = Drupal.coralQA || {};
     this.events['click .more-answers-'+this.refID] = 'moreClick';
     this.events['click .answer-form-'+this.refID+' .form-submit'] = 'formSubmit';
     this.events['click .trimmed-'+this.refID+' a'] = 'trimmedClick';
+    this.events['click .ans-form-title-'+this.refID] = 'formClick';
+    this.events['hover .ans-form-title-'+this.refID] = 'titleHover';
         
     var coralAnswer = this;
     var AnswerView = Backbone.View.extend({
@@ -102,8 +100,9 @@ Drupal.coralQA = Drupal.coralQA || {};
            
       // Init
       initialize: function() {
+        coralAnswer.initForm(); // initialize the form
         coralAnswer.initQuestionText(); // check for summary and hide full text if avail.
-        _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit', 'trimmedClick');
+        _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
       },
      
       answerClick: function(ev) {
@@ -124,6 +123,15 @@ Drupal.coralQA = Drupal.coralQA || {};
       formSubmit: function(ev) {
         ev.preventDefault();
         coralAnswer.submitForm(ev);        
+      },
+      
+      formClick: function(ev) {
+        ev.preventDefault();
+        coralAnswer.manageForm(ev);
+      },
+      
+      titleHover: function(ev) {
+        coralAnswer.titleHoverHelp(ev);
       }
     });
     
@@ -131,7 +139,51 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // Ensure the full node is hidden if the trimmed is shorter
+  // Manage the titleHoverHelp text (eg. Show form, etc...)
+  Drupal.coralQA.coralAnswer.prototype.titleHoverHelp = function(ev) {
+    var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+    var $help = $wrap.find('.help-text');
+    
+    if (ev.type == 'mouseenter') $help.animate({left: '9em'}, 500); // mouseenter; expose the text
+    else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+  }; 
+
+
+  // Show or hide the form
+  Drupal.coralQA.coralAnswer.prototype.manageForm = function(ev) {
+    var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+    var $help = $wrap.find('.help-text');
+    var $title = $wrap.find('.pane-title');
+    
+    if ($title.hasClass('form-hidden')) {
+      // update class and text
+      $title.removeClass('form-hidden');
+      $help.text('hide form');
+    }
+    else {
+      // update class and text
+      $title.addClass('form-hidden');
+      $help.text('show form');
+    }
+    this.$answerForm.slideToggle(); // action!
+  };
+  
+  
+  // Add an identifying class to the form title
+  Drupal.coralQA.coralAnswer.prototype.initForm = function() {
+    var $title = this.$answerForm.parents('.panel-pane').eq(0).children('.pane-title');  // get the pane title
+    var contentText = $.trim(this.$question.children('.question-node-pane-title').text()); // title of the content the user is responding to
+
+    $title.addClass('ans-form-title-'+this.refID).addClass('form-hidden'); // add some neat classes
+    $title.wrap('<div class="help-wrap help-wrap-'+this.refID+'">');   // add a containing wrap
+    $title.after('<span class="help-text help-text-'+this.refID+'">show form</span>').attr('title', 'Click to answer '+contentText); // init some custom text and title
+    
+    this.$answerForm.prepend('<div class="mdgray-txt"><strong>Add answer to</strong>: <em class="ltyellow-bg">'+contentText+'</em></div>');
+    this.$answerForm.hide(); // hide the form itself
+  };
+
+
+  // Ensure the full node text is hidden if the trimmed is shorter
   Drupal.coralQA.coralAnswer.prototype.initQuestionText = function() {
     var trimmedText = this.$trimmed.text()
     var fullText = this.$full.text();
@@ -144,24 +196,38 @@ Drupal.coralQA = Drupal.coralQA || {};
     else {
       this.$trimmed.hide(); // hide the trimmed and clickable link
       $link = this.$full.find('.trimmed-'+this.refID);
-      $link.remove();
+      $link.remove(); // junkit
     }
   };
 
 
-  // Sets up the Answer button and pulls data from it.
-  Drupal.coralQA.coralAnswer.prototype.initID = function($obj, pat, cls) {
+  // Analyze the object and pull refID data
+  // Inputs:
+  //  settings.pat (string) - a pattern to search for; defaults to /comment-\d+/
+  //  settings.cls (string) - a class to replace with empty space; harvesting the integer
+  //  settings.ret (bool) - a boolean val; true to return instead of set.
+  Drupal.coralQA.coralAnswer.prototype.initID = function($obj, settings) {
     
-    var objPattern = pat || /answer-\d+/;
-    var objClass = cls || 'answer-';
-    
+    var objPattern = settings.pat || /node-\d+/;
+    var objClass = settings.cls || 'node-';
+    var ret = settings.ret || false;
+
     // find this button's nid and ensure the AnswerView's  
     var classes = $obj.attr('class');
     classes = classes.split(" ");
     for (cls in classes) {
       var c = classes[cls];
       if (c.match(objPattern)) {
-        this.refID = c.replace(objClass, ''); // and the nid
+        // Set this (standard) - save this item's id
+        if (!ret) {
+          this.refID = c.replace(objClass, ''); // and the nid
+        }
+        
+        // return it (don't save) - see updateSettings()
+        //  this can be used to identify refID's of new view rows.
+        else { 
+          return c.replace(objClass, ''); // and the nid
+        }
       }
     }
   };
@@ -173,13 +239,14 @@ Drupal.coralQA = Drupal.coralQA || {};
     // If hidden, unhide!
     if (this.$btn.hasClass('answers-hidden')) {
 
-      this.$answerForm.parents('.panel-pane').eq(0).show(); // show the form
-      this.$answersTgt.parents('.panel-pane').eq(0).show(); // show answers 
+      this.$answerForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
+      this.$answersTgt.parents('.panel-pane').eq(0).slideDown(350); // show answers 
       this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
       this.$btn.removeClass('answers-hidden'); // update the btn status
       
       // The answers are hidden.  We are starting with the first set
       //  already loaded.  We need to discover if there are more.
+      //  NOTE: no need to worry about nesting... answers don't nest.
       var $answers = $(this.$answersTgt).find('.node-answer');
       var numAnswers = $answers.length;
       var moreHide = 'hide'; // a hide class
@@ -210,8 +277,8 @@ Drupal.coralQA = Drupal.coralQA || {};
     
     else {
       // hide the answers and form
-      this.$answerForm.parents('.panel-pane').eq(0).hide(); // hide the form
-      this.$answersTgt.parents('.panel-pane').eq(0).hide(); // hide the answers
+      this.$answerForm.parents('.panel-pane').eq(0).slideUp(350); // hide the form
+      this.$answersTgt.parents('.panel-pane').eq(0).slideUp(350); // hide the answers
       this.$btn.addClass('answers-hidden');
       this.$btn.find('.arrow').removeClass('arrow-down');
       
@@ -253,10 +320,12 @@ Drupal.coralQA = Drupal.coralQA || {};
     var limit    = limit    || this.settings.limit; // limit for the view results
     var mode     = mode     || 'full'; // if we are in "single" mode, we don't update the page number etc...
 
-    // enable a throbber
-    this.$loadMore.find('.no-js').removeClass('no-js').addClass('ajax-progress');
-    this.$loadMore.find('span span').addClass('throbber');
-
+    // enable load more throbber - if they clicked it
+    if (mode == 'full') {
+      this.$loadMore.find('.no-js').removeClass('no-js').addClass('ajax-progress');
+      this.$loadMore.find('span span').addClass('throbber');
+    }
+    
     // Render the view upon the world! Go view, go!
     Drupal.coral_ajax.view_render(view_name, {
       display_id: view_display,
@@ -265,7 +334,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       limit : limit
     },
     function(data) { // success 
-      ca.processViewResults(data, mode); 
+      ca.processViewResults(data, mode);
+      ca.updateSettings(data, mode);
       if (typeof(callback) == 'function') callback(data, mode); // fastest method: no ducktyping 
     },
     function(data) { console.log('err'); }); // failure @TODO: get a real error handler
@@ -290,7 +360,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$answersTgt.append(data); // append the new answers
     }
     else { // single mode - add to the start
-      if (tot < 1) {
+      $rows = this.$answersTgt.find('.views-row');
+      if (tot < 1 && !$rows.length) { // any rows already there?
         this.$answersTgt.html(''); // remove the default "empty" text
       }
       this.$answersTgt.prepend(data); // append the new answers
@@ -305,6 +376,31 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
       
     this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
+  };
+  
+  
+  // Update the settings array when new items are added to the page
+  Drupal.coralQA.coralAnswer.prototype.updateSettings = function(data, mode) {
+    cc = this;
+    
+    // There are NEW items that were not in the page rendering
+    //  so now we have to go back and ensure that the settings
+    //  array is up to date... see Drupal.settings.mosaicViews
+    var $newItems = $(data).find('.views-row');
+    $newItems.each(function(i) {
+      var $node = $(this).find('.node').eq(0); 
+      var refID = cc.initID($node, {pat: /node-\d+/, cls: 'node-', ret: true});
+    
+      Drupal.coral_ajax.view_info('comments', {
+        display_id: 'new_comments',
+        args : refID,
+      },
+      function(data) {
+        settingsID = 'comments_new_comments_'+refID;
+        Drupal.settings.mosaicViews[settingsID] = data;
+      },
+      function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
+    });
   };
 
 
@@ -344,8 +440,9 @@ Drupal.coralQA = Drupal.coralQA || {};
           
           // User added one! Lets remember that to supplement the views offset
           // ----
-          // @NOTE: this may still show the users post if they are browsing 
-          //  an active thread.
+          // @NOTE: this may still re show the users post if they are browsing 
+          //  an active thread. We would need to save a list of the items they
+          //  added and adjust the thread organization accordingly.
           ca.addedNew = Number(ca.addedNew) + 1;
         }
       },
@@ -362,7 +459,13 @@ Drupal.coralQA = Drupal.coralQA || {};
     var callback = function() { // stuff we do on the there-after...
       ca.$answerForm.find('.form-actions').find('.ajax-progress').remove();
       var $newAnswer = ca.$question.find('.node-'+data.nid).css("background", "#FFF6B6");
-      $newAnswer.animate({ backgroundColor: '#F1F1F1' }, 3000);
+      var $viewRow = $newAnswer.parent('.views-row');
+
+      $viewRow.css('padding-bottom', '1px');
+      $newAnswer.animate({ backgroundColor: '#F1F1F1' }, 3000, 'swing', function() {
+        $newAnswer.css('background', 'transparent');
+        $viewRow.css('padding-bottom', '0');
+      });
     };
     this.loadViewResults("answers", "this_answer", data.nid, callback, "single", "0", "1");
   };
@@ -385,6 +488,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.updateMoreBtn = function() {
     if ((Number(this.currentPage) + 1) * Number(this.settings.limit) >= Number(this.settings.total_items)) {
       this.$loadMore.hide(); // No more to show, hide the button
+      this.$answersTgt.parents('.panel-pane').eq(0).removeClass('answers-more'); // get rid of empty space
     }
     else { // increment the page number
       this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
