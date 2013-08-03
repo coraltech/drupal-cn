@@ -1,0 +1,61 @@
+
+// Primary palette file for Coral Nexus
+//  Only coros related things should go in here.
+
+@import 'global/colors';
+
+// Primaries
+.white-txt { color: $white; }
+.white-bg { background: $white; }
+.black-txt { color: $black; }
+.black-bg { background: $black; }
+
+// Grays
+.ltgray-txt { color: $ltgray; }
+.ltgray-bg { background: $ltgray; }
+.mdgray-txt { color: $mdgray; }
+.mdgray-bg { background: $mdgray; }
+.dkgray-txt { color: $dkgray; }
+.dkgray-bg { background: $dkgray; }
+.silver-txt { color: $ltgray; }
+.silver-bg { background: $ltgray; }
+
+// Blues
+.ltblue-txt { color: $ltblue; }
+.ltblue-bg { background: $ltblue; }
+.mdblue-txt { color: $mdblue; }
+.mdblue-bg { background: $mdblue; }
+.dkblue-txt { color: $dkblue; }
+.dkblue-bg { background: $dkblue; }
+
+// Reds
+.ltred-txt { color: $ltred; }
+.ltred-bg { background: $ltred; }
+.mdred-txt { color: $mdred; }
+.mdred-bg { background: $mdred; }
+.dkred-txt { color: $dkred; }
+.dkred-bg { background: $dkred; }
+
+// Greens
+.ltgreen-txt { color: $ltgreen; }
+.ltgreen-bg { background: $ltgreen; }
+.mdgreen-txt { color: $mdgreen; }
+.mdgreen-bg { background: $mdgreen; }
+.dkgreen-txt { color: $dkgreen; }
+.dkgreen-bg { background: $dkgreen; }
+
+// Oranges
+.ltorange-txt { color: $ltorange; }
+.ltorange-bg { background: $ltorange; }
+.mdorange-txt { color: $mdorange; }
+.mdorange-bg { background: $mdorange; }
+.dkorange-txt { color: $dkorange; }
+.dkorange-bg { background: $dkorange; }
+
+// Yellows
+.ltyellow-txt { color: $ltyellow; }
+.ltyellow-bg { background: $ltyellow; }
+.mdyellow-txt { color: $mdyellow; }
+.mdyellow-bg { background: $mdyellow; }
+.dkyellow-txt { color: $dkyellow; }
+.dkyellow-bg { background: $dkyellow; }
