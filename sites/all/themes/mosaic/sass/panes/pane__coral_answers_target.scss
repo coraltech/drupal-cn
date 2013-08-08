@@ -1,8 +1,14 @@
 
 // Scss file for answers target specific items
 
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/gradients';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
 
 .pane-coral-answers-target {
   //padding-bottom: $default_vert_unit;
@@ -28,6 +34,41 @@
     display: none;
   }
   
+  .answer-node-pane-title,
+  .comment-node-pane-title {
+    clear: none;
+    @include pie-clearfix;
+  }
+  .answer-node-pane-title > a,
+  .comment-node-pane-title > a {
+    float: left;
+  }
+  .answer-node-pane-title > .top,
+  .comment-node-pane-title > .top {
+    border: 1px solid lighten($mdgray, 15%);
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 1px 0 0 5px;
+    
+    @include box-shadow(rgba(0, 0, 0, 0.1) 0px 2px 3px inset);
+    @include linear-v-gradient(lighten($ltgray, 7%), lighten($mdgray, 25%));
+    @include border-radius(11px);
+    
+    .arrow-up {
+      display: block;
+      margin: 2px 0 0 5px;
+      @include arrow-up(5px, darken($mdgray, 10%));
+    }
+    
+    &:hover {
+      @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
+      @include linear-v-gradient(lighten($mdgray, 20%), lighten($ltgray, 5%));
+    }
+  }
+  
   // This is NO good but we gotta do it somewhere.
   //  this is bc the comment target can appear within
   //  the answers target as well (at the second level)
@@ -36,10 +77,6 @@
     margin-bottom: 0;
     padding-left: 0;  // we re-add the padding in the views row
     padding-right: 0;
-    
-    .pane-coral-node-stats {
-      width: 99%;
-    }
   }
   .pane-coral-comments-target.comments-more {
     margin-bottom: 3 * $default_vert_unit;
