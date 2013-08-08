@@ -9,3 +9,9 @@
   float: left;
   width: 66.66667%;
 }
+
+/* line 13, ../../../sass/nodes/fe_attach/qa.scss */
+.layout-node-1 .main-content {
+  width: 99.9%;
+  float: none;
+}

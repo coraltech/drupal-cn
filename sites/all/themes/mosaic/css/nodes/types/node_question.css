@@ -25,14 +25,7 @@
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 31, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-node-stats,
-.node-teaser.node-question .pane-coral-node-stats {
-  border: 1px solid #dddddd;
-  background: #efefef;
-  margin-bottom: 1.25em;
-}
-/* line 39, ../../../sass/nodes/types/node_question.scss */
+/* line 33, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment,
 .node-type-question .pane-coral-add-answer,
 .node-type-question .pane-node-links,
@@ -42,7 +35,7 @@
   float: left;
   height: 2.65em;
 }
-/* line 42, ../../../sass/nodes/types/node_question.scss */
+/* line 36, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment .links,
 .node-type-question .pane-coral-add-answer .links,
 .node-type-question .pane-node-links .links,
@@ -52,7 +45,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 46, ../../../sass/nodes/types/node_question.scss */
+/* line 40, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment .links li,
 .node-type-question .pane-coral-add-answer .links li,
 .node-type-question .pane-node-links .links li,
@@ -62,12 +55,12 @@
   margin: 0 5px 0 0;
   padding: 2px 5px 1px;
 }
-/* line 53, ../../../sass/nodes/types/node_question.scss */
+/* line 47, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-node-field-tags,
 .node-teaser.node-question .pane-node-field-tags {
   clear: left;
 }
-/* line 61, ../../../sass/nodes/types/node_question.scss */
+/* line 55, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .field-name-field-answer,
 .node-type-question .field-name-field-comment-count,
 .node-type-question .field-name-field-answer-count,
@@ -78,7 +71,7 @@
 .node-teaser.node-question .field-type-file legend {
   display: none;
 }
-/* line 67, ../../../sass/nodes/types/node_question.scss */
+/* line 61, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-landing-1 .site-width,
 .node-teaser.node-question .layout-landing-1 .site-width {
   *zoom: 1;

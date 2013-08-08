@@ -30,16 +30,7 @@ function coral_comments_target_pane_content_type_render($subtype, $conf, $args, 
     $types = array('question', 'answer', 'comment');
     if (in_array($node->type, $types)) {
       $items = field_get_items('node', $node, 'field_comment_count');
-      if (count($items) && isset($items[0]['value']) && is_numeric($items[0]['value']) && (int)$items[0]['value'] > 0) {
-        $view = views_get_view('comments');
-        $view->set_display('new_comments');
-        $view->set_arguments(array($node->nid));
-        $view->pre_execute();
-        $view->execute();
-        if (isset($view->result) && $view->result) {
-          $content = '<div class="comments-tgt comments-tgt-'.$node->nid.' clearfix">'.$view->render().'</div>';
-        }
-      }
+      $content = '<div class="comments-tgt comments-tgt-'.$node->nid.' clearfix"><p class="tgt-load">Comments are loading.<p></div>';
     }
   }  
   $block->content = $content;

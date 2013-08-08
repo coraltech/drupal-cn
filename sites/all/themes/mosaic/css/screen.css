@@ -1247,7 +1247,7 @@ header .coral-cloud .icon {
   clear: left;
   width: 12em;
   float: left;
-  margin: -0.3125em 1em 0.625em 0;
+  margin: -1.25em 1em 0.625em 0;
   background: #ebeff4;
   background: -moz-linear-gradient(top, #ebeff4 0%, #dae2eb 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ebeff4), color-stop(100%, #dae2eb));

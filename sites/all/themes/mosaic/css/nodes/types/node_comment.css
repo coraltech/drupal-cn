@@ -10,14 +10,7 @@
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 31, ../../../sass/nodes/types/node_comment.scss */
-.node-type-comment .pane-coral-node-stats,
-.node-teaser.node-comment .pane-coral-node-stats {
-  border: 1px solid #dddddd;
-  background: #efefef;
-  margin-bottom: 1.25em;
-}
-/* line 39, ../../../sass/nodes/types/node_comment.scss */
+/* line 33, ../../../sass/nodes/types/node_comment.scss */
 .node-type-comment .pane-coral-add-comment,
 .node-type-comment .pane-coral-add-answer,
 .node-type-comment .pane-node-links,
@@ -27,7 +20,7 @@
   float: left;
   height: 2.65em;
 }
-/* line 42, ../../../sass/nodes/types/node_comment.scss */
+/* line 36, ../../../sass/nodes/types/node_comment.scss */
 .node-type-comment .pane-coral-add-comment .links,
 .node-type-comment .pane-coral-add-answer .links,
 .node-type-comment .pane-node-links .links,
@@ -37,7 +30,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 46, ../../../sass/nodes/types/node_comment.scss */
+/* line 40, ../../../sass/nodes/types/node_comment.scss */
 .node-type-comment .pane-coral-add-comment .links li,
 .node-type-comment .pane-coral-add-answer .links li,
 .node-type-comment .pane-node-links .links li,
@@ -47,12 +40,12 @@
   margin: 0 5px 0 0;
   padding: 2px 5px 1px;
 }
-/* line 53, ../../../sass/nodes/types/node_comment.scss */
+/* line 47, ../../../sass/nodes/types/node_comment.scss */
 .node-type-comment .pane-node-field-tags,
 .node-teaser.node-comment .pane-node-field-tags {
   clear: left;
 }
-/* line 60, ../../../sass/nodes/types/node_comment.scss */
+/* line 54, ../../../sass/nodes/types/node_comment.scss */
 .node-type-comment .field-name-field-content,
 .node-type-comment .field-name-field-comment-count,
 .node-type-comment .field-type-file legend,
