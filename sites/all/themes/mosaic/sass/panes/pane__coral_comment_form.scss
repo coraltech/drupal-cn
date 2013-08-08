@@ -85,8 +85,6 @@
     }
     
     border: 1px solid $ltblue;
-    margin-left: -1em;
-    margin-right: -1em;
     
     @include linear-v-gradient(lighten($ltblue, 7%), lighten($ltblue, 4%));
     @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
