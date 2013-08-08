@@ -3,8 +3,16 @@
 
 @import 'global/grid_mix';
 
-// Re-adjust the grid ;-)
+// Re-adjust the grid to our needs ;-)
 .layout-landing-1 .main-content      { @include col(8); }
 .layout-landing-1 .secondary-content { @include col(16, true); }
+
+// For comments (node) inside the layout
+//  overrides the above -_- in cases where 
+//  one is within the other...
+.layout-node-1 .main-content {
+  width: 99.9%;
+  float: none;
+}
 
 
