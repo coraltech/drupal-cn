@@ -1,16 +1,21 @@
 
 // Scss file for answers target specific items
 
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/gradients';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
 
 .pane-coral-comments-target {
   //padding-bottom: $default_vert_unit;
+  border: 1px solid $mdgray;
   position: relative;
-  background: lighten($ltgray, 8%);
   margin-bottom: $default_vert_unit;
   padding-left: 1em;
-  padding-right: 1em;
   
   .load-more {
     position: absolute;
@@ -27,13 +32,53 @@
   .load-more.hide {
     display: none;
   }
-  .pane-coral-comments-target {
-    margin-bottom: 0;
-    padding-left: 0;  // we re-add the padding in the views row
-    padding-right: 0;
+  
+  .comment-node-pane-title {
+    clear: none;
+    @include pie-clearfix;
+  }
+  .comment-node-pane-title > a {
+    float: left;
+  }
+  .comment-node-pane-title > .top {
+    border: 1px solid lighten($mdgray, 15%);
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 1px 0 0 5px;
     
+    @include box-shadow(rgba(0, 0, 0, 0.1) 0px 2px 3px inset);
+    @include linear-v-gradient(lighten($ltgray, 7%), lighten($mdgray, 25%));
+    @include border-radius(11px);
+    
+    .arrow-up {
+      display: block;
+      margin: 2px 0 0 5px;
+      @include arrow-up(5px, darken($mdgray, 10%));
+    }
+    
+    &:hover {
+      @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
+      @include linear-v-gradient(lighten($mdgray, 20%), lighten($ltgray, 5%));
+    }
+  }
+  
+  .pane-coral-comments-target {
+    margin-bottom: -1px;
+    margin-right: -1px;
+    padding-left: 1em;
+
     .pane-coral-node-stats {
-      width: 99%;
+      width: auto;
+    }
+    
+    &.odd {
+      background-color: lighten($ltgray, 7%);
+    }
+    &.even {
+      background-color: $white;
     }
   }  
 }
