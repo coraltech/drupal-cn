@@ -161,7 +161,7 @@ header .coral-cloud {
   width: 12em;
   float: left;
   
-  margin: (-1 * ($default_vert_unit / 4)) 1em ($default_vert_unit / 2) 0;
+  margin: (-1 * $default_vert_unit) 1em ($default_vert_unit / 2) 0;
     
   @include linear-v-gradient(lighten($ltblue, 10%), lighten($ltblue, 5%));
   
