@@ -28,12 +28,6 @@
     margin-top: .15em;
   }
   
-  .pane-coral-node-stats {
-    border: 1px solid $ltgray;
-    background: lighten($ltgray, 7%);
-    margin-bottom: $default_vert_unit;  
-  }
-  
   .pane-coral-add-comment,
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
