@@ -19,19 +19,13 @@
     .icon { // apply question mark icon
       display: block;
       float: left;
-      margin: 4px .5em 0 0;
+      margin: 1px .5em 0 0;
       @include icons-sprite('coral-a');
     }
   }
   
   h2 {
     @include h3;
-  }
-  
-  .pane-coral-node-stats {
-    border: 1px solid darken($ltgray, 5%);
-    background: lighten($ltgray, 5%);  
-  }
-  
+  }  
 }
 
