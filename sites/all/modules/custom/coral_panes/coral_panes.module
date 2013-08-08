@@ -37,6 +37,7 @@ function coral_panes_theme() {
         'stat_title' => NULL,  // stat title: eg: Comment count: 
         'data'       => NULL,  // stat data
         'node'       => NULL,  // parent node
+        'class'      => NULL,  // stat class
         'layout'     => NULL   // layout (not used yet)
       ),
       'template' => 'coral_stat',

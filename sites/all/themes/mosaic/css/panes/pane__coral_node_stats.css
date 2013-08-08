@@ -1,16 +1,67 @@
-/* line 8, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats {
-  border: 1px solid #bac8d9;
-  clear: left;
-  width: 12em;
-  float: left;
+/* line 12, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap {
   font-size: 95%;
   margin: 0 1em 0.3125em 0;
   padding: 0 0.3125em;
-  background: #fff6b6;
-  color: #777777;
+  color: #515151;
 }
-/* line 20, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .coral-stat {
+/* line 18, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap .stat-editor {
+  *zoom: 1;
+}
+/* line 19, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap .stat-editor .user-picture {
+  float: left;
+  margin-right: .5em;
+  margin-top: 5px;
+}
+/* line 24, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap .stat-editor .user-picture img {
+  display: block;
+  border: 1px solid #c4c4c4;
+}
+/* line 29, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap .stat-editor .username {
+  font-size: 105%;
+  float: left;
+  clear: right;
+  margin-top: 0.67568em;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.pane-coral-node-stats .statset-wrap .stat-editor:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 38, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap .stat-edit {
+  margin-top: 0.64103em;
+}
+/* line 44, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .coral-stat .statid {
   font-weight: bold;
+  font-size: 95%;
+  color: #848484;
+}
+/* line 52, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-style-unstyled {
+  padding: 0;
+}
+/* line 56, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-style-yellow {
+  border: 1px solid #c4c4c4;
+  background: #fff6b6;
+  clear: left;
+  width: 12em;
+  float: left;
+  margin-bottom: 1.25em;
+}
+/* line 65, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-style-gray {
+  border: 1px solid #d0d0d0;
+  background: #eaeaea;
+  clear: left;
+  width: 12em;
+  float: left;
+  margin-bottom: 1.25em;
 }

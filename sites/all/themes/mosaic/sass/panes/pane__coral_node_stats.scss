@@ -5,19 +5,69 @@
 @import 'global/fonts';
 @import 'global/gradients';
 
+@import "compass/utilities/general/clearfix";
+
 .pane-coral-node-stats {
-  border: 1px solid darken($ltblue, 5%);
-  clear: left;
-  width: 12em;
-  float: left;
-  font-size: 95%;
-  margin: 0 1em ($default_vert_unit / 4) 0;
-  padding: 0 ($default_vert_unit / 4);
   
-  background: $ltyellow;
-  color: $mdgray;
+  .statset-wrap {
+    font-size: 95%;
+    margin: 0 1em ($default_vert_unit / 4) 0;
+    padding: 0 ($default_vert_unit / 4);
+    color: darken($mdgray, 15%);
+    
+    .stat-editor {
+      .user-picture {
+        float: left;
+        margin-right: .5em;
+        margin-top: 5px;
+        
+        img { 
+          display: block;
+          border: 1px solid darken($ltgray, 10%);  
+        }
+      }
+      .username {
+        font-size: 105%;
+        float: left;
+        clear: right;
+        margin-top: $default_vert_unit / 1.85;
+      }
+      @include pie-clearfix;
+    }
+    
+    .stat-edit {
+      margin-top: $default_vert_unit / 1.95;
+    }
+  }
   
   .coral-stat {
-    font-weight: bold;
+    .statid {
+      font-weight: bold;
+      font-size: 95%;
+      color: lighten($mdgray, 5%);
+    }
+  }
+  
+  // Styles for configurations
+  .statset-style-unstyled {
+    padding: 0;
+  }
+  
+  .statset-style-yellow {
+    border: 1px solid darken($ltgray, 10%);
+    background: $ltyellow;
+    clear: left;
+    width: 12em;
+    float: left;
+    margin-bottom: $default_vert_unit;
+  }
+  
+  .statset-style-gray {
+    border: 1px solid darken($ltgray, 5%);
+    background: lighten($ltgray, 5%);
+    clear: left;
+    width: 12em;
+    float: left;
+    margin-bottom: $default_vert_unit;
   }
 }
