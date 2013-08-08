@@ -101,6 +101,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // Init
       initialize: function() {
         coralAnswer.initForm(); // initialize the form
+        coralAnswer.initAnswer(); // initialize the answer
         coralAnswer.initQuestionText(); // check for summary and hide full text if avail.
         _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
       },
@@ -138,7 +139,7 @@ Drupal.coralQA = Drupal.coralQA || {};
     new AnswerView();
   };
 
-
+  
   // Manage the titleHoverHelp text (eg. Show form, etc...)
   Drupal.coralQA.coralAnswer.prototype.titleHoverHelp = function(ev) {
     var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
@@ -379,9 +380,33 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
   
   
+  // Attaches and configures a "to parent" link on the content 
+  Drupal.coralQA.coralAnswer.prototype.initAnswer = function() {
+    
+    var ca = this;
+    
+    var $view = $(this.$answersTgt).children('.view-answers');  // must only return children!
+    var $cont = $view.children('.view-content');  // so we can't use find
+    var $answers = $cont.children('.views-row'); // so be it.
+    
+    $answers.each(function() {
+      var $answer = $(this).children('.node-answer');
+      var arrow = '<a class="top top-'+ca.refID+'" href="#node-ttl-'+ca.refID+'"><span class="arrow-up"></span></a>';
+      // add id if necc.
+      if (!ca.$question.children('h2').attr('id')) {
+        ca.$question.children('h2').attr('id', 'node-ttl-'+ca.refID);
+      }
+      // add the arrow if necc.
+      if (!$answer.children('h2').find('.arrow-up').length) {
+        $answer.children('h2').append(arrow);
+      }
+    });
+  };
+  
+  
   // Update the settings array when new items are added to the page
   Drupal.coralQA.coralAnswer.prototype.updateSettings = function(data, mode) {
-    cc = this;
+    ca = this;
     
     // There are NEW items that were not in the page rendering
     //  so now we have to go back and ensure that the settings
@@ -389,7 +414,9 @@ Drupal.coralQA = Drupal.coralQA || {};
     var $newItems = $(data).find('.views-row');
     $newItems.each(function(i) {
       var $node = $(this).find('.node').eq(0); 
-      var refID = cc.initID($node, {pat: /node-\d+/, cls: 'node-', ret: true});
+      var refID = ca.initID($node, {pat: /node-\d+/, cls: 'node-', ret: true});
+      
+      ca.initAnswer();
     
       Drupal.coral_ajax.view_info('comments', {
         display_id: 'new_comments',
