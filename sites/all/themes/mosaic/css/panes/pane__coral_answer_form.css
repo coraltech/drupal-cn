@@ -117,13 +117,13 @@
 .html .pane-content .pane-coral-answer-form .node-answer-form {
   border: 1px solid #d0d0d0;
   padding: 0.625em 1em;
-  background: #eaeaea;
-  background: -moz-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, #dddddd));
-  background: -webkit-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: -o-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: -ms-linear-gradient(top, #eaeaea 0%, #dddddd 100%);
-  background: linear-gradient(to bottom, #eaeaea 0%, #dddddd 100%);
+  background: #d6ecd9;
+  background: -moz-linear-gradient(top, #d6ecd9 0%, #cbdece 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6ecd9), color-stop(100%, #cbdece));
+  background: -webkit-linear-gradient(top, #d6ecd9 0%, #cbdece 100%);
+  background: -o-linear-gradient(top, #d6ecd9 0%, #cbdece 100%);
+  background: -ms-linear-gradient(top, #d6ecd9 0%, #cbdece 100%);
+  background: linear-gradient(to bottom, #d6ecd9 0%, #cbdece 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;

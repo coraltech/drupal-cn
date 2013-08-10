@@ -138,3 +138,16 @@
   background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
+
+/* line 61, ../../sass/panes/pane__coral_add_answer.scss */
+.view-answers.view-display-id-new_answers .pager {
+  display: none;
+}
+/* line 63, ../../sass/panes/pane__coral_add_answer.scss */
+.view-answers.view-display-id-new_answers .views-row {
+  background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+}
+/* line 66, ../../sass/panes/pane__coral_add_answer.scss */
+.view-answers.view-display-id-new_answers .views-row-first {
+  margin-top: 0;
+}

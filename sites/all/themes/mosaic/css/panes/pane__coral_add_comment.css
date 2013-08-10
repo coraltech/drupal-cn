@@ -139,3 +139,38 @@
   background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
+/* line 57, ../../sass/panes/pane__coral_add_comment.scss */
+.pane-coral-add-comment .btn.comment .ajax-progress .throbber {
+  margin: 1px -2px -1px 6px;
+}
+
+/* line 70, ../../sass/panes/pane__coral_add_comment.scss */
+.view-comments.view-display-id-new_comments .views-row,
+.view-comments.view-display-id-this_comment .views-row {
+  background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+}
+/* line 72, ../../sass/panes/pane__coral_add_comment.scss */
+.view-comments.view-display-id-new_comments .views-row .pane-node-body,
+.view-comments.view-display-id-this_comment .views-row .pane-node-body {
+  padding-right: 1em;
+}
+/* line 75, ../../sass/panes/pane__coral_add_comment.scss */
+.view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment,
+.view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment {
+  float: right;
+}
+/* line 78, ../../sass/panes/pane__coral_add_comment.scss */
+.view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment .anon,
+.view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment .anon {
+  margin-right: 1em;
+}
+/* line 83, ../../sass/panes/pane__coral_add_comment.scss */
+.view-comments.view-display-id-new_comments .views-row-first,
+.view-comments.view-display-id-this_comment .views-row-first {
+  margin-top: 0;
+}
+/* line 86, ../../sass/panes/pane__coral_add_comment.scss */
+.view-comments.view-display-id-new_comments .pager,
+.view-comments.view-display-id-this_comment .pager {
+  display: none;
+}

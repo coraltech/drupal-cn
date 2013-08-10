@@ -22,10 +22,10 @@
 }
 /* line 29, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-editor .username {
-  font-size: 105%;
+  font-size: 125%;
   float: left;
   clear: right;
-  margin-top: 0.67568em;
+  margin-top: 0.5em;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .pane-coral-node-stats .statset-wrap .stat-editor:after {
@@ -35,7 +35,7 @@
 }
 /* line 38, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-edit {
-  margin-top: 0.64103em;
+  margin-top: 0.15625em;
 }
 /* line 44, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .coral-stat .statid {
@@ -61,7 +61,7 @@
   border: 1px solid #d0d0d0;
   background: #eaeaea;
   clear: left;
-  width: 12em;
+  width: 99%;
   float: left;
   margin-bottom: 1.25em;
 }

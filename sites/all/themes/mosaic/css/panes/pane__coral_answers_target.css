@@ -1,18 +1,23 @@
-/* line 13, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target {
+/* line 14, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target {
   position: relative;
-  background: #f1f1f1;
-  padding-left: 1em;
-  padding-right: 1em;
   margin-bottom: 1.25em;
 }
-/* line 21, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .load-more {
+/* line 17, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target > h2.pane-title {
+  background: #777777;
+  color: white;
+  font-weight: bold;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+/* line 28, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .load-more {
   position: absolute;
   bottom: -2.5em;
 }
-/* line 24, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .load-more .ajax-progress {
+/* line 31, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .load-more .ajax-progress {
   display: block;
   width: 20px;
   height: 20px;
@@ -20,58 +25,53 @@
   right: -25px;
   top: 8%;
 }
-/* line 33, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .load-more.hide {
+/* line 40, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .load-more.hide {
   display: none;
 }
-/* line 38, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .answer-node-pane-title,
-.pane-coral-answers-target .comment-node-pane-title {
+/* line 44, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answer-node-pane-title {
   clear: none;
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.pane-coral-answers-target .answer-node-pane-title:after,
-.pane-coral-answers-target .comment-node-pane-title:after {
+.html .pane-coral-answers-target .answer-node-pane-title:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 43, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .answer-node-pane-title > a,
-.pane-coral-answers-target .comment-node-pane-title > a {
+/* line 48, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answer-node-pane-title > a {
   float: left;
 }
-/* line 47, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .answer-node-pane-title > .top,
-.pane-coral-answers-target .comment-node-pane-title > .top {
-  border: 1px solid #9d9d9d;
+/* line 51, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answer-node-pane-title > .top {
+  border: 1px solid #f1f1f1;
   cursor: pointer;
   display: block;
   float: left;
   width: 20px;
   height: 20px;
   margin: 1px 0 0 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
-  background: #efefef;
-  background: -moz-linear-gradient(top, #efefef 0%, #b7b7b7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #b7b7b7));
-  background: -webkit-linear-gradient(top, #efefef 0%, #b7b7b7 100%);
-  background: -o-linear-gradient(top, #efefef 0%, #b7b7b7 100%);
-  background: -ms-linear-gradient(top, #efefef 0%, #b7b7b7 100%);
-  background: linear-gradient(to bottom, #efefef 0%, #b7b7b7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  background: #bebebe;
+  /* fallback for non-supporting browsers */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#bebebe), to(#f1f1f1));
+  /* old WebKit Syntax */
+  background-image: -webkit-radial-gradient(center center, circle contain, #bebebe 0%, #f1f1f1 100%);
+  /* New WebKit syntax */
+  background-image: -moz-radial-gradient(center center, circle contain, #bebebe 0%, #f1f1f1 100%);
+  background-image: -ms-radial-gradient(center center, circle contain, #bebebe 0%, #f1f1f1 100%);
+  /* IE10+ */
+  background-image: -o-radial-gradient(center center, circle contain, #bebebe 0%, #f1f1f1 100%);
+  /* Opera (13?) */
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   -ms-border-radius: 11px;
   -o-border-radius: 11px;
   border-radius: 11px;
 }
-/* line 60, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .answer-node-pane-title > .top .arrow-up,
-.pane-coral-answers-target .comment-node-pane-title > .top .arrow-up {
+/* line 63, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answer-node-pane-title > .top .arrow-up {
   display: block;
   margin: 2px 0 0 5px;
   width: 0;
@@ -81,37 +81,58 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #5e5e5e;
 }
-/* line 66, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .answer-node-pane-title > .top:hover,
-.pane-coral-answers-target .comment-node-pane-title > .top:hover {
+/* line 69, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answer-node-pane-title > .top:hover {
+  border: 1px solid #919191;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
-  background: #aaaaaa;
-  background: -moz-linear-gradient(top, #aaaaaa 0%, #eaeaea 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aaaaaa), color-stop(100%, #eaeaea));
-  background: -webkit-linear-gradient(top, #aaaaaa 0%, #eaeaea 100%);
-  background: -o-linear-gradient(top, #aaaaaa 0%, #eaeaea 100%);
-  background: -ms-linear-gradient(top, #aaaaaa 0%, #eaeaea 100%);
-  background: linear-gradient(to bottom, #aaaaaa 0%, #eaeaea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  background: #969696;
+  /* fallback for non-supporting browsers */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#969696), to(#dddddd));
+  /* old WebKit Syntax */
+  background-image: -webkit-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
+  /* New WebKit syntax */
+  background-image: -moz-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
+  background-image: -ms-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
+  /* IE10+ */
+  background-image: -o-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
+  /* Opera (13?) */
 }
-/* line 76, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .pane-coral-comments-target {
-  margin-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
+/* line 74, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answer-node-pane-title > .top:hover .arrow-up {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
 }
-/* line 81, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .pane-coral-comments-target .pane-coral-node-stats {
-  width: 99%;
+/* line 85, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .pane-coral-comments-target.odd {
+  background-color: #efefef;
 }
-/* line 87, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target .pane-coral-comments-target.comments-more {
+/* line 88, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .pane-coral-comments-target.even {
+  background-color: white;
+}
+/* line 91, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .pane-coral-comments-target .node .comment-node-pane-title {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0;
+  float: left;
+}
+/* line 96, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .pane-coral-comments-target.comments-more {
   margin-bottom: 3.75em;
 }
+/* line 99, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .answers-tgt.empty {
+  padding-top: 1.25em;
+}
 
-/* line 91, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 103, ../../sass/panes/pane__coral_answers_target.scss */
 .pane-coral-answers-target.answers-more {
   margin-bottom: 3.75em;
 }
