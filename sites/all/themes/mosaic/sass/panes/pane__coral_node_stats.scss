@@ -27,16 +27,16 @@
         }
       }
       .username {
-        font-size: 105%;
+        font-size: 125%;
         float: left;
         clear: right;
-        margin-top: $default_vert_unit / 1.85;
+        margin-top: $default_vert_unit / 2.5;
       }
       @include pie-clearfix;
     }
     
     .stat-edit {
-      margin-top: $default_vert_unit / 1.95;
+      margin-top: $default_vert_unit / 8;
     }
   }
   
