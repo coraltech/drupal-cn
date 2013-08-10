@@ -298,10 +298,19 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.manageComments = function() {
     var cc = this;
     
+    var callback = function() {
+      cc.setLoadStatus('finished');
+      if (cc.settings.hasOwnProperty('total_items')) {
+        if (Number(cc.settings.total_items) > 0) {
+          cc.$commentsTgt.removeClass('empty');
+        }
+      }
+    };
+    
     if (this.$btn.hasClass('comments-hidden')) {
 
       this.$commentForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
-      this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(350); // show comments 
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(350, callback); // show comments 
       this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
       this.$btn.removeClass('comments-hidden'); // update the btn status
       
@@ -322,7 +331,6 @@ Drupal.coralQA = Drupal.coralQA || {};
         // This button appears when there are more items to load. Otherwise it's hidden
         //  starts off hidden here
         if (!this.$loadMore.length) { // add it only if it's not there
-          this.setLoadStatus('finished');
           this.$commentsTgt.parent('.pane-content').append(this.loadMoreBtn('0', moreHide));
           this.$loadMore = this.$commentsTgt.parent('.pane-content').find('.more-comments-'+this.refID);
         }
@@ -488,6 +496,15 @@ Drupal.coralQA = Drupal.coralQA || {};
       // add the arrow if necc.
       if (!$comment.children('h2').find('.arrow-up').length) {
         $comment.children('h2').append(arrow);
+      }
+      
+      // Now we should move the title so it can float beside the posted data.
+      var $commentHeader = $comment.children('h2');
+      var $clone = $commentHeader.clone();
+      var $leader = $comment.find('.leader').eq(0);
+      if (!$leader.find('#node-ttl-'+cc.refID).length) { // make sure you dont add more than once
+        $leader.prepend($clone);
+        $commentHeader.addClass('hide');
       }
     });
   };
