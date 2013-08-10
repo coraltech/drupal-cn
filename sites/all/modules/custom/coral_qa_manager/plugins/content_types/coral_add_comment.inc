@@ -19,6 +19,12 @@ $plugin = array(
 );
 
 
+function coral_comment_btn_get_class() {
+  global $user;
+  if (!$user->uid) { return 'anon'; }
+  return '';
+}
+
 function coral_comment_button_form_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   // NOTE: CSS (scss) and js applied via mosaic theme as it's nice and handy   
   $node = $context[0]->data;
@@ -26,7 +32,7 @@ function coral_comment_button_form_content_type_render($subtype, $conf, $args, $
   if (isset($node->nid) && isset($node->type)) {
     $types = array('question', 'answer', 'comment');
     if (in_array($node->type, $types)) {
-      $content = '<a href="/node/add/comment/'.$node->nid.'?field_content='.$node->nid.'" title="Add a comment" class="btn comment comment-'.$node->nid.' comments-hidden">Comment<span class="circle"><span class="arrow"></span></span></a>';
+      $content = '<a href="/node/add/comment/'.$node->nid.'?field_content='.$node->nid.'" title="Add a comment" class="btn comment comment-'.$node->nid.' comments-hidden '.coral_comment_btn_get_class().'">Comment<span class="circle"><span class="arrow"></span></span></a>';
     }
   }  
     
