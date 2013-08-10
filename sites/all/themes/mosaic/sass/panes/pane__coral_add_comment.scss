@@ -53,6 +53,37 @@
       @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
       @include linear-v-gradient($mdyellow, $ltyellow);
     }
+    // Set up the throbber position in the button
+    .ajax-progress .throbber {
+      margin: 1px -2px -1px 6px;
+    }
   }
 }
- 
+
+
+// We cannot rely on the view being there.
+//  We can rely on this pane being there.
+.view-comments.view-display-id-new_comments,
+.view-comments.view-display-id-this_comment  {
+  //.pager { display: none; }
+  
+  .views-row {
+    background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+    .pane-node-body {
+      padding-right: 1em;
+    }
+    .pane-coral-add-comment {
+      float: right;
+    }
+    .pane-coral-add-comment .anon {
+      margin-right: 1em;
+    }
+    .pane-coral-flag-abuse-node {}
+  }
+  .views-row-first {
+    margin-top: 0;
+  }
+  .pager {
+    display: none;
+  }
+}

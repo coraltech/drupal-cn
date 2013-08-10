@@ -53,3 +53,18 @@
     }
   }
 }
+
+
+// We cannot rely on the view being there.
+//  We can rely on this pane being there.
+.view-answers.view-display-id-new_answers  {
+  .pager { display: none; }
+  
+  .views-row {
+    background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+  }
+  .views-row-first {
+    margin-top: 0;
+  }
+}
+
