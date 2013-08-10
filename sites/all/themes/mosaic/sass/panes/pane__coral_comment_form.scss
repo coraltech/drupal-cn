@@ -64,7 +64,7 @@
     border: 1px solid darken($ltgray, 5%);
     padding: ($default_vert_unit / 2) 1em;
       
-    @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+    @include linear-v-gradient(lighten($ltblue, 10%), desaturate(lighten($ltblue, 5%), 15%));
     @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
       
     .form-item-title label {
