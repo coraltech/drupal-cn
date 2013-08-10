@@ -25,6 +25,23 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right,GradientType=1 ); /* IE6-9 */
 }
 
+@mixin radial-gradient($outside:$white, $inside:$ltgray) {
+  background: $inside; /* fallback for non-supporting browsers */  
+  
+  background-image: -webkit-gradient(radial, center center, 0, center center, 141, from($inside), to($outside)); /* old WebKit Syntax */  
+  background-image: -webkit-radial-gradient(center center, circle contain, $inside 0%, $outside 100%); /* New WebKit syntax */  
+  background-image: -moz-radial-gradient(center center, circle contain, $inside 0%, $outside 100%);  
+  background-image: -ms-radial-gradient(center center, circle contain, $inside 0%, $outside 100%); /* IE10+ */  
+  background-image: -o-radial-gradient(center center, circle contain, $inside 0%, $outside 100%); /* Opera (13?) */  
+  
+  // @TODO: Implement color stops in gradients!
+  //background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(black), to(white), color-stop(25%, blue), color-stop(40%, green), color-stop(60%, red), color-stop(80%, purple)); /* old WebKit Syntax */  
+  //background-image: -webkit-radial-gradient(center center, circle contain, black 0%, blue 25%, green 40%, red 60%, purple 80%, white 100%); /* New WebKit syntax */  
+  //background-image: -moz-radial-gradient(center center, circle contain, black 0%, blue 25%, green 40%, red 60%, purple 80%, white 100%);  
+  //background-image: -ms-radial-gradient(center center, circle contain, black 0%, blue 25%, green 40%, red 60%, purple 80%, white 100%); /* IE10+ */  
+  //background-image: -o-radial-gradient(center center, circle contain, black 0%, blue 25%, green 40%, red 60%, purple 80%, white 100%); /* Opera (13?) */  
+}
+
 // @TODO make this work even with >= IE7
 // @TODO see how we could extropolate this to allow it to make 
 //        comprehensive column designs... like infinite number of cols!
