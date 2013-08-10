@@ -5,6 +5,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/headers';
 
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
@@ -12,10 +13,27 @@
 
 .pane-coral-comments-target {
   //padding-bottom: $default_vert_unit;
-  border: 1px solid $mdgray;
+  border-top: 1px solid $ltgray;
+  border-left: 8px solid darken($ltgray, 10%);
+  border-bottom: 1px solid darken($ltgray, 5%);
   position: relative;
+  margin-top: 2.25 * $default_vert_unit;
   margin-bottom: $default_vert_unit;
   padding-left: 1em;
+  
+  
+  // "Comments" (view pane title)
+  & > h2.pane-title {
+    @include h4;
+    
+    position: absolute;
+    top: -1.75 * $default_vert_unit;
+    left: 0;
+  }
+  
+  .views-row > .node-teaser.node-comment {
+    padding-top: $default_vert_unit / 1.75;
+  }
   
   .load-more {
     position: absolute;
@@ -35,22 +53,25 @@
   
   .comment-node-pane-title {
     clear: none;
+    float: left;
+    @include h0;
     @include pie-clearfix;
   }
   .comment-node-pane-title > a {
+    color: lighten($mdgray, 10%);
     float: left;
+    &:hover { color: $mdblue; }
   }
   .comment-node-pane-title > .top {
-    border: 1px solid lighten($mdgray, 15%);
+    border: 1px solid $white;
     cursor: pointer;
     display: block;
     float: left;
     width: 20px;
     height: 20px;
-    margin: 1px 0 0 5px;
+    margin: -2px 0 0 5px;
     
-    @include box-shadow(rgba(0, 0, 0, 0.1) 0px 2px 3px inset);
-    @include linear-v-gradient(lighten($ltgray, 7%), lighten($mdgray, 25%));
+    @include radial-gradient($white, darken($ltgray, 10%));
     @include border-radius(11px);
     
     .arrow-up {
@@ -60,27 +81,59 @@
     }
     
     &:hover {
+      border: 1px solid lighten($mdgray, 15%);
       @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
-      @include linear-v-gradient(lighten($mdgray, 20%), lighten($ltgray, 5%));
+      @include radial-gradient($ltgray, lighten($mdgray, 15%));
+      
+      .arrow-up {
+        @include arrow-up(5px, $white);
+      }
     }
   }
   
+  &.odd .comment-node-pane-title > .top {
+    border: 1px solid lighten($ltgray, 7%);
+    @include radial-gradient(lighten($ltgray, 7%), darken($ltgray, 10%));
+    
+    &:hover {
+      border: 1px solid lighten($mdgray, 12%);
+      @include radial-gradient($ltgray, lighten($mdgray, 15%));
+    }
+  }
+  
+  // Nested targets!
   .pane-coral-comments-target {
     margin-bottom: -1px;
     margin-right: -1px;
     padding-left: 1em;
 
-    .pane-coral-node-stats {
-      width: auto;
-    }
-    
     &.odd {
       background-color: lighten($ltgray, 7%);
     }
     &.even {
       background-color: $white;
     }
-  }  
+  }
+  .comments-tgt.empty {
+    padding-top: $default_vert_unit;
+  }
+  
+  .pane-coral-node-stats {
+    margin-top: -.2em;
+    
+    .stat-comments {
+      line-height: 2.05em;
+    }
+    .stat-editor {
+      .user-picture {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .username {
+        margin-top: .2em;
+      }
+    }
+  }
 }
 .pane-coral-comments-target.comments-more {
   margin-bottom: 3 * $default_vert_unit;
