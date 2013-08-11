@@ -4,7 +4,7 @@
 @import "global/colors";
 @import "global/fonts";
 
-.layout-landing-1 {
+.layout-node-1 {
  
   // Full width separator
   .follower {
@@ -18,10 +18,8 @@
   
   // Use the med width separator on inner landing layouts
   //  unless overridden elsewhere.
-  .layout-node-1 .follower,
-  .layout-landing-1 .follower {
+  .layout-node-1 .follower {
     background: url('../../assets/images/coral-sep-med.png') top center no-repeat;
   }
 
 }
-

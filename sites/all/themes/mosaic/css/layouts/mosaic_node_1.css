@@ -1,0 +1,13 @@
+/* line 10, ../../sass/layouts/mosaic_node_1.scss */
+.layout-node-1 .follower {
+  background: url("../../assets/images/coral-sep-long.png") top center no-repeat;
+  min-height: 1px;
+}
+/* line 14, ../../sass/layouts/mosaic_node_1.scss */
+.layout-node-1 .follower .pane-title {
+  color: #b02e1c;
+}
+/* line 21, ../../sass/layouts/mosaic_node_1.scss */
+.layout-node-1 .layout-node-1 .follower {
+  background: url("../../assets/images/coral-sep-med.png") top center no-repeat;
+}

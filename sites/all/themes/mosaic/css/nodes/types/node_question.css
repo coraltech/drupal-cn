@@ -72,13 +72,13 @@
   display: none;
 }
 /* line 61, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-landing-1 .site-width,
-.node-teaser.node-question .layout-landing-1 .site-width {
+.node-type-question .layout-node-1 .site-width,
+.node-teaser.node-question .layout-node-1 .site-width {
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.node-type-question .layout-landing-1 .site-width:after,
-.node-teaser.node-question .layout-landing-1 .site-width:after {
+.node-type-question .layout-node-1 .site-width:after,
+.node-teaser.node-question .layout-node-1 .site-width:after {
   content: "";
   display: table;
   clear: both;
