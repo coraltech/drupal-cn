@@ -1,11 +1,20 @@
 
 // Styles relating to Drupal primary and secondary tabs
+@import 'global/colors';
 @import 'global/fonts';
+@import 'global/gradients';
+
+@import "compass/css3/box-shadow";
+@import 'compass/css3/opacity';
+@import "compass/css3/border-radius";
 
 .pane-page-tabs {
   padding: 0 0 $default_vert_unit;
-  
-  ul { margin: 0; 
+  margin-top: -1.1em;
+    
+  ul { 
+    float: right;
+    margin: 0 0 .5em; 
     li {
       //line-height: 1em;
       margin: 0 .5em 0 0;
@@ -17,7 +26,29 @@
     }
   }
   ul.primary {
+    border: none;
     line-height: $default_vert_unit;
     height: $default_vert_unit;
+    
+    li {
+      margin: 0 0 0 .25em;
+      a {
+        border-style: none solid solid solid;
+        border-width: 0px 1px 2px 1px;
+        border-color: transparent darken($mdorange, 5%) darken($ltorange, 14%) $ltorange;
+        background: $ltorange;
+        color: $white;
+        
+        @include box-shadow(rgba(0, 0, 0, 0.5) 2px 0px 5px);
+        @include linear-v-gradient(desaturate(darken($ltorange, 20%), 7%), saturate(darken($ltorange, 25%), 15%));
+        @include opacity(.75);
+        @include border-bottom-radius(5px);
+        
+        &:hover {
+          border-color: transparent lighten($mdorange, 5%) lighten($ltorange, 5%) $ltorange;
+          @include opacity(1);
+        }
+      }
+    }
   }
 }
