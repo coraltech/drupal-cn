@@ -8,6 +8,7 @@
 @import 'global/icons';
 
 @import 'compass/utilities/general/clearfix';
+@import 'compass/css3/opacity';
 
 .pane-coral-qa-ask-question {
   
@@ -72,7 +73,32 @@
     margin: -3.75em 0 0 0;
     padding: 0;
   }
-  .node-question-form label { display: none; }
+  .node-question-form {
+    background: $mdblue;
+    border: 2px solid darken($ltgray, 5%);
+    padding: ($default_vert_unit / 2);
+    position: relative;
+    background-color: rgba(208, 208, 208, .5);
+    margin-top: 2 * $default_vert_unit;
+    
+    .form-item-title {
+      position: absolute;
+      top: -2.1 * $default_vert_unit;
+      left: 0;
+    }
+    .field-type-taxonomy-term-reference {
+      position: absolute;
+      top: -2.1 * $default_vert_unit;
+      right: 0;
+    }
+    .icon {
+      position: absolute;
+      top: .75em;
+      right: 48.65%;
+    }
+    
+    label { display: none; } 
+  }
   .filter-wrapper { display: none; }
   .vertical-tabs { display: none; }
   

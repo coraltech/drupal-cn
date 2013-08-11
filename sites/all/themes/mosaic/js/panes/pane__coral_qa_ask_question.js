@@ -16,8 +16,17 @@ Drupal.mosaic = Drupal.mosaic || {};
         $('.pane-coral-qa-ask-question .field-name-body .text-full').attr('rows', '5'); // reset rows
         $('.pane-coral-qa-ask-question .node-question-form .form-actions .form-submit').attr('value', Drupal.t('Submit question')); // reset submit text
         
-        var currentHeight = $('.pane-coral-qa-ask-question form').height() - 20;
-        if (currentHeight < 185) currentHeight = 185;
+        var $form = $('.pane-coral-qa-ask-question form');
+        var formID = $form.attr('id');
+        var currentHeight = $form.height();
+        
+        if (formID == 'user-login') {
+          if (currentHeight < 195) currentHeight = 195;
+        }
+        else {
+          if (currentHeight < 235) currentHeight = 235;  
+        }
+        
         $('.pane-coral-qa-ask-question').height(currentHeight + 30);  
         $('.pane-coral-qa-ask-question .qa-msg .cont').height(currentHeight); // resize height of msg box
         
