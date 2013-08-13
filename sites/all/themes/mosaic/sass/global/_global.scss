@@ -301,3 +301,59 @@ h3 .toc-top {
     margin: 0 0 ($default_vert_unit / 2);
   }
 }
+
+
+// Primary and secondary tabs
+.pane-page-tabs {
+  padding: 0 0 $default_vert_unit;
+  margin-top: -1.1em;
+  
+  .icoprim {
+    display: block;
+    float: right;
+    margin: 5px -.75em 0 0;
+    @include opacity(.5);
+    @include icons-sprite('road-cone');  
+  }
+    
+  ul { 
+    float: right;
+    margin: 0 0 1em; 
+    li {
+      //line-height: 1em;
+      margin: 0 .5em 0 0;
+      
+      a {
+        padding: 0 .5em;
+        margin: 0;
+      }
+    }
+  }
+  ul.primary {
+    border: none;
+    line-height: .9 * $default_vert_unit;
+    height: .9 * $default_vert_unit;
+    
+    li {
+      margin: 0 0 0 .25em;
+      a {
+        font-size: 90%;
+        border-style: none solid solid solid;
+        border-width: 0px 1px 2px 1px;
+        border-color: transparent darken($mdorange, 5%) darken($ltorange, 14%) $ltorange;
+        background: $ltorange;
+        color: $white;
+        
+        @include box-shadow(rgba(0, 0, 0, 0.35) 2px 0px 3px);
+        @include linear-v-gradient(desaturate(darken($ltorange, 20%), 7%), saturate(darken($ltorange, 25%), 15%));
+        @include opacity(.75);
+        @include border-bottom-radius(5px);
+        
+        &:hover {
+          border-color: transparent lighten($mdorange, 5%) lighten($ltorange, 5%) $ltorange;
+          @include opacity(1);
+        }
+      }
+    }
+  }
+}
