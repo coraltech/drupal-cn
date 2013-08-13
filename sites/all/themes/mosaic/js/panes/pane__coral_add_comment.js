@@ -309,11 +309,11 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       this.settingsID = 'comments_new_comments_'+this.refID;
       cc = this;
-      
       if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
         Drupal.settings.mosaicViews = {};
       }
-  
+      console.log(Drupal.settings.mosaicViews);
+      //console.log('comments_new_comments_'+this.refID);
       // If we don't have settings for this, it's the first time we've looked at it
       if (!Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
         var callback = function() {
@@ -326,6 +326,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       // No settings loading! We have already loaded these comments
       else {
+        //if (!cc.hasOwnProperty('settings')) cc.settings = Drupal.settings.mosaicViews[cc.settingsID];
         cc.manageComments(); // manage them like never before
       }
     }
@@ -339,7 +340,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.manageComments = function() {
     try {
       var cc = this;
-      
+      console.log(this);
       var callback = function() {
         cc.setLoadStatus('finished');
         if (cc.settings.hasOwnProperty('total_items')) {
@@ -436,20 +437,21 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Process a $loadMore click! Fetches from the view
   Drupal.coralQA.coralComment.prototype.handleMoreClick = function(ev) {
     try {
-      var $more = $(ev.currentTarget);
-  
-      // Find out the limits and page we are on
-      var classes = $more.attr('class');
-      classes = classes.split(' ');
-      for (var i = 0; i < classes.length; i++) {
-        if (classes[i] != '') {
-          // find what page we are on.
-          if (classes[i].match(/page-\d+/)) {
-            this.currentPage = classes[i].replace('page-', '');
+      if (!this.$loadMore.hasClass('ajax-processing')) {
+        // Find out the limits and page we are on
+        var classes = this.$loadMore.attr('class');
+        classes = classes.split(' ');
+        for (var i = 0; i < classes.length; i++) {
+          if (classes[i] != '') {
+            // find what page we are on.
+            if (classes[i].match(/page-\d+/)) {
+              this.currentPage = classes[i].replace('page-', '');
+            }
           }
         }
+        this.$loadMore.addClass('ajax-processing');
+        this.loadViewResults('comments', 'new_comments', this.refID);
       }
-      this.loadViewResults('comments', 'new_comments', this.refID);
     }
     catch (err) {
       console.log('handlMoreClick errored: '+err);
@@ -737,6 +739,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       else { // increment the page number
         this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
+        this.$loadMore.removeClass('ajax-processing'); // ok, now the user can click again!
       }
     }
     catch (err) {

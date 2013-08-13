@@ -227,7 +227,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
   // Analyze the object and pull refID data
   // Inputs:
-  //  settings.pat (string) - a pattern to search for; defaults to /comment-\d+/
+  //  settings.pat (string) - a pattern to search for; defaults to /node-\d+/
   //  settings.cls (string) - a class to replace with empty space; harvesting the integer
   //  settings.ret (bool) - a boolean val; true to return instead of set.
   Drupal.coralQA.coralAnswer.prototype.initID = function($obj, settings) {
@@ -250,12 +250,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           // return it (don't save) - see updateSettings()
           //  this can be used to identify refID's of new view rows.
           else { 
-            try {
-              return c.replace(objClass, ''); // and the nid
-            }
-            catch(err) {
-              console.log('initID errored: '+err);
-            }
+            return c.replace(objClass, ''); // and the nid
           }
         }
       }
@@ -269,57 +264,27 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Handles the clicke event of the answer button
   Drupal.coralQA.coralAnswer.prototype.handleAnswerClick = function(ev) {
     try {
-      // If hidden, unhide!
-      if (this.$btn.hasClass('answers-hidden')) {
+      this.settingsID = 'answers_new_answers_'+this.refID;
+      ca = this;
+      
+      if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
+        Drupal.settings.mosaicViews = {};
+      }
   
-        this.$answerForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
-        this.$answersTgt.parents('.panel-pane').eq(0).slideDown(350); // show answers 
-        this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
-        this.$btn.removeClass('answers-hidden'); // update the btn status
-        
-        // The answers are hidden.  We are starting with the first set
-        //  already loaded.  We need to discover if there are more.
-        //  NOTE: no need to worry about nesting... answers don't nest.
-        var $answers = $(this.$answersTgt).find('.node-answer');
-        var numAnswers = $answers.length;
-        var moreHide = 'hide'; // a hide class
-        
-        if (Drupal.settings.hasOwnProperty('mosaicViews')) {
-          if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
-            this.settingsID = 'answers_new_answers_'+this.refID;
-            this.settings   = Drupal.settings.mosaicViews[this.settingsID];
-          
-            if (Number(numAnswers) < Number(this.settings.total_items)) {
-              this.$answersTgt.parents('.panel-pane').eq(0).addClass('answers-more');
-              moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
-            }
-          }
-        }
-        // This button appears when there are more items to load. Otherwise it's hidden
-        //  starts off hidden here
-        if (!this.$loadMore.length) { // add it only if it's not there
-          this.$answersTgt.parent('.pane-content').append(this.loadMoreBtn('1', moreHide));
-          this.$loadMore = this.$answersTgt.parent('.pane-content').find('.more-answers-'+this.refID);
-        }
-        
-        // Clicking on the answer btn opens the full content
-        if (this.hasTrimmed) {
-          this.$trimmed.hide();
-          this.$full.show();
-        }
+      // If we don't have settings for this, it's the first time we've looked at it
+      if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
+        var callback = function() {
+          ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
+          ca.manageAnswers();
+        };
+        ca.setLoadStatus('loading'); // Set the loading status
+        ca.getSettings(callback);    // Get the new settings and then process callback
       }
       
+      // No settings loading! We have already loaded these answers
       else {
-        // hide the answers and form
-        this.$answerForm.parents('.panel-pane').eq(0).slideUp(350); // hide the form
-        this.$answersTgt.parents('.panel-pane').eq(0).slideUp(350); // hide the answers
-        this.$btn.addClass('answers-hidden');
-        this.$btn.find('.arrow').removeClass('arrow-down');
-        
-        if (this.hasTrimmed) { // show the trimmed version
-          this.$trimmed.show();
-          this.$full.hide();
-        }
+        //if (!cc.hasOwnProperty('settings')) ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
+        ca.manageAnswers(); // manage them like never before
       }
     }
     catch (err) {
@@ -328,28 +293,127 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
+  // Show a set of Answers
+  Drupal.coralQA.coralAnswer.prototype.manageAnswers = function() {
+    try {
+      var ca = this;
+      
+      var callback = function() {
+        ca.setLoadStatus('finished');
+        if (ca.settings.hasOwnProperty('total_items')) {
+          if (Number(ca.settings.total_items) > 0) {
+            ca.$answersTgt.removeClass('empty');
+          }
+        }
+      };
+      
+      if (this.$btn.hasClass('answers-hidden')) {
+  
+        this.$answerForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
+        this.$answersTgt.parents('.panel-pane').eq(0).slideDown(350, callback); // show answers 
+        this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
+        this.$btn.removeClass('answers-hidden'); // update the btn status
+        
+        
+        var $view = $(this.$answersTgt).children('.view-answers');  // must only return children!
+        var $cont = $view.children('.view-content');  // so we can't use find
+        var $answers = $cont.children('.views-row'); // so be it. 
+        var numAnswers = $answers.length;
+        var moreHide = 'hide';
+        
+        // @TODO: I bet addedNew should be in here too
+        if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
+          if (Number(numAnswers) < Number(this.settings.total_items)) {
+            this.$answersTgt.parents('.panel-pane').eq(0).addClass('answers-more');
+            //this.loadViewResults('answers', 'new_answers', this.refID);
+            moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
+          }
+          // This button appears when there are more items to load. Otherwise it's hidden
+          //  starts off hidden here
+          if (!this.$loadMore.length) { // add it only if it's not there
+            this.$answersTgt.parent('.pane-content').append(this.loadMoreBtn('1', moreHide));
+            this.$loadMore = this.$answersTgt.parent('.pane-content').find('.more-answers-'+this.refID);
+          }
+          
+          // Clicking on the answer btn opens the full content
+          if (this.hasTrimmed) {
+            this.$trimmed.hide();
+            this.$full.show();
+          }
+        }
+        else {
+          // @TODO: is it possible that we could be missing the settings?
+        }
+      }
+      else {
+        // hide the answers and form
+        this.$answerForm.parents('.panel-pane').eq(0).slideUp(350); // hide the form
+        this.$answersTgt.parents('.panel-pane').eq(0).slideUp(350); // hide the answers
+        this.$btn.addClass('answers-hidden');
+        this.$btn.find('.arrow').removeClass('arrow-down');
+            
+        if (this.hasTrimmed) { // show the trimmed version
+          this.$trimmed.show();
+          this.$full.hide();
+        }
+      }
+    }
+    catch (err) {
+      console.log('manageAnswers errored: '+err);
+    }
+  };
+
+
+  // Set the load status for this set of nodes
+  //  It would be nice to add '.' to the loading
+  //  message before the view is loaded.
+  Drupal.coralQA.coralAnswer.prototype.setLoadStatus = function(status) {
+    try {  
+      var status = status || 'finished';
+      // Add loading gif and manage target text
+      if (status == 'loading') {
+        // Let the user know something is happening
+        this.$btn.append('<span class="ajax-progress"><span class="throbber"></span></span>');
+      }
+      else {
+        this.$btn.find('.ajax-progress').remove();
+        if (Number(this.settings.total_items) < 1) {
+          this.$answersTgt.children('.tgt-load').text('No answers were found!');  
+        }
+        else {
+          this.$answersTgt.children('.tgt-load').remove();
+        }
+      }
+    }
+    catch (err) {
+      console.log('setLoadStatus errored: '+err);
+    }
+  };
+
+
   // Process a $loadMore click! Fetches from the view
   Drupal.coralQA.coralAnswer.prototype.handleMoreClick = function(ev) {
     try {
-      var $more = $(ev.currentTarget);
-  
-      // Find out the limits and page we are on
-      var classes = $more.attr('class');
-      classes = classes.split(' ');
-      for (var i = 0; i < classes.length; i++) {
-        if (classes[i] != '') {
-          // find what page we are on.
-          if (classes[i].match(/page-\d+/)) {
-            try {
-              this.currentPage = classes[i].replace('page-', '');
-            }
-            catch (err) {
-              console.log('handleMoreClick errored: '+err);
+      if (!this.$loadMore.hasClass('ajax-processing')) {
+        // Find out the limits and page we are on
+        var classes = this.$loadMore.attr('class');
+        classes = classes.split(' ');
+        for (var i = 0; i < classes.length; i++) {
+          if (classes[i] != '') {
+            // find what page we are on.
+            if (classes[i].match(/page-\d+/)) {
+              try {
+                this.currentPage = classes[i].replace('page-', '');
+              }
+              catch (err) {
+                console.log('handleMoreClick errored: '+err);
+              }
             }
           }
         }
+        this.$loadMore.addClass('ajax-processing');
+        this.loadViewResults('answers', 'new_answers', this.refID);
       }
-      this.loadViewResults('answers', 'new_answers', this.refID);
     }
     catch (err) {
       console.log('handleMoreClick errored: '+err);
@@ -463,9 +527,38 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
   };
   
-  
+
+  // Get the settings for this item and add to the associated theme settings
+  Drupal.coralQA.coralAnswer.prototype.getSettings = function(callback) {
+    try {
+      ca = this;
+      ca.settingsID = 'answers_new_answers_'+ca.refID;
+        
+      if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+ca.refID)) {
+        // return the current object
+        return Drupal.settings.mosaicViews[ca.settingsID]
+      }
+      
+      // Load it from the server
+      Drupal.coral_ajax.view_info('answers', {
+        display_id: "new_answers",
+        args : ca.refID,
+      },
+      function(data) {
+        Drupal.settings.mosaicViews[ca.settingsID] = data;
+        if (typeof(callback) == 'function') callback();
+        return data;
+      },
+      function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
+    }
+    catch (err) {
+      console.log('getSettings errored: '+err);
+    }
+  };
+
+
   // Update the settings array when new items are added to the page
-  Drupal.coralQA.coralAnswer.prototype.updateSettings = function(data, mode) {
+  Drupal.coralQA.coralAnswer.prototype.updateSettings = function(data) {
     try {
       ca = this;
       
@@ -479,12 +572,12 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         ca.initAnswer();
       
-        Drupal.coral_ajax.view_info('comments', {
-          display_id: 'new_comments',
+        Drupal.coral_ajax.view_info('answers', {
+          display_id: 'new_answers',
           args : refID,
         },
         function(data) {
-          settingsID = 'comments_new_comments_'+refID;
+          settingsID = 'answers_new_answers_'+refID;
           Drupal.settings.mosaicViews[settingsID] = data;
         },
         function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
@@ -604,6 +697,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       else { // increment the page number
         this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
+        this.$loadMore.removeClass('ajax-processing'); // ok, now the user can click again!
       }
     }
     catch (err) {
