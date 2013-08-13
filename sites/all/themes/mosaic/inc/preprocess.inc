@@ -257,11 +257,12 @@ function mosaic_compile_views_query_data(&$vars) {
   //  Some views have a query alter running on them
   //  that impedes this feature's usefulness. For 
   //  this reason lets exclude those views when we can.
-  $exclude = array('questions');
+  $exclude = array(); //array('questions');
 
   // Got views? - with queries!
   if (isset($vars['view']) && isset($vars['view']->query) && !in_array($vars['view']->name, $exclude)) {
     $view  = $vars['view'];
+        
     $query = $vars['view']->query;
 
     $settings = array(); // empty settings for now
@@ -274,7 +275,9 @@ function mosaic_compile_views_query_data(&$vars) {
     
     // Compile settings key
     $args = implode('_', $view->args);
-    if ($args) $args = '_'.$args;
+    if ($args) $args = '_'.$args;     // key by passed argument
+    else $args = '_'.$vars['dom_id']; //  or use the view dom id to differentiate instances when necc.
+    
     $key = $view->name.'_'.$view->current_display.$args;
     
     // Add da settings
