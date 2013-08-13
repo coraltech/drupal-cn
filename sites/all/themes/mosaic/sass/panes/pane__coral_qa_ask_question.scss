@@ -36,6 +36,7 @@
     width: 48%;
     float: left;
     clear: right;
+    margin-top: -3.35em;
     .description { display: none; }
     .form-text { width: 99.8%; }
   }
@@ -81,19 +82,9 @@
     background-color: rgba(208, 208, 208, .5);
     margin-top: 2 * $default_vert_unit;
     
-    .form-item-title {
-      position: absolute;
-      top: -2.1 * $default_vert_unit;
-      left: 0;
-    }
-    .field-type-taxonomy-term-reference {
-      position: absolute;
-      top: -2.1 * $default_vert_unit;
-      right: 0;
-    }
     .icon {
       position: absolute;
-      top: .75em;
+      top: -2.65em;
       right: 48.65%;
     }
     
