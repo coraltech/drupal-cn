@@ -45,4 +45,16 @@
   h2.question-node-teaser-pane-title {
     margin-bottom: .05em;
   }
+  .questions-more {
+    margin: ($default_vert_unit / 2) 0;
+    position: relative;
+    .ajax-progress {
+      position: absolute;
+      top: 8%;
+      right: -20%;
+    }
+    
+    @include btn-glass;
+    @include btn-structure;
+  }
 }
