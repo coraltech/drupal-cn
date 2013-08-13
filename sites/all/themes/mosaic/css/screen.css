@@ -1016,10 +1016,10 @@ a.btn::-moz-focus-inner {
   margin-left: 9em;
 }
 
-/* line 250, icons/*.png */
+/* line 258, icons/*.png */
 .icons-sprite, header .coral-cloud .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
-  background: url('/images/icons-s3a3d07d586.png') no-repeat;
+.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action, .pane-page-tabs .icoprim {
+  background: url('/images/icons-s96680670e3.png') no-repeat;
 }
 
 /* line 28, ../sass/global/_global.scss */
@@ -1490,6 +1490,81 @@ h3 .toc-top {
 /* line 300, ../sass/global/_global.scss */
 .pane-coral-footer .fde {
   margin: 0 0 0.625em;
+}
+
+/* line 307, ../sass/global/_global.scss */
+.pane-page-tabs {
+  padding: 0 0 1.25em;
+  margin-top: -1.1em;
+}
+/* line 311, ../sass/global/_global.scss */
+.pane-page-tabs .icoprim {
+  display: block;
+  float: right;
+  margin: 5px -.75em 0 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  background-position: 0 -2255px;
+  height: 16px;
+  width: 16px;
+}
+/* line 319, ../sass/global/_global.scss */
+.pane-page-tabs ul {
+  float: right;
+  margin: 0 0 1em;
+}
+/* line 322, ../sass/global/_global.scss */
+.pane-page-tabs ul li {
+  margin: 0 .5em 0 0;
+}
+/* line 326, ../sass/global/_global.scss */
+.pane-page-tabs ul li a {
+  padding: 0 .5em;
+  margin: 0;
+}
+/* line 332, ../sass/global/_global.scss */
+.pane-page-tabs ul.primary {
+  border: none;
+  line-height: 1.125em;
+  height: 1.125em;
+}
+/* line 337, ../sass/global/_global.scss */
+.pane-page-tabs ul.primary li {
+  margin: 0 0 0 .25em;
+}
+/* line 339, ../sass/global/_global.scss */
+.pane-page-tabs ul.primary li a {
+  font-size: 90%;
+  border-style: none solid solid solid;
+  border-width: 0px 1px 2px 1px;
+  border-color: transparent #d5701e #fc8222 #fdaa68;
+  background: #fdaa68;
+  color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 2px 0px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 2px 0px 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 0px 3px;
+  background: #f3720c;
+  background: -moz-linear-gradient(top, #f3720c 0%, #e66600 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3720c), color-stop(100%, #e66600));
+  background: -webkit-linear-gradient(top, #f3720c 0%, #e66600 100%);
+  background: -o-linear-gradient(top, #f3720c 0%, #e66600 100%);
+  background: -ms-linear-gradient(top, #f3720c 0%, #e66600 100%);
+  background: linear-gradient(to bottom, #f3720c 0%, #e66600 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/* line 352, ../sass/global/_global.scss */
+.pane-page-tabs ul.primary li a:hover {
+  border-color: transparent #e48b42 #fdb881 #fdaa68;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
 
 /* line 12, ../sass/global/grid.scss */
@@ -2516,67 +2591,4 @@ footer {
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-right: 5px solid black;
-}
-
-/* line 11, ../sass/global/_tabs.scss */
-.pane-page-tabs {
-  padding: 0 0 1.25em;
-  margin-top: -1.1em;
-}
-/* line 15, ../sass/global/_tabs.scss */
-.pane-page-tabs ul {
-  float: right;
-  margin: 0 0 .5em;
-}
-/* line 18, ../sass/global/_tabs.scss */
-.pane-page-tabs ul li {
-  margin: 0 .5em 0 0;
-}
-/* line 22, ../sass/global/_tabs.scss */
-.pane-page-tabs ul li a {
-  padding: 0 .5em;
-  margin: 0;
-}
-/* line 28, ../sass/global/_tabs.scss */
-.pane-page-tabs ul.primary {
-  border: none;
-  line-height: 1.25em;
-  height: 1.25em;
-}
-/* line 33, ../sass/global/_tabs.scss */
-.pane-page-tabs ul.primary li {
-  margin: 0 0 0 .25em;
-}
-/* line 35, ../sass/global/_tabs.scss */
-.pane-page-tabs ul.primary li a {
-  border-style: none solid solid solid;
-  border-width: 0px 1px 2px 1px;
-  border-color: transparent #d5701e #fc8222 #fdaa68;
-  background: #fdaa68;
-  color: white;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 5px;
-  background: #f3720c;
-  background: -moz-linear-gradient(top, #f3720c 0%, #e66600 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3720c), color-stop(100%, #e66600));
-  background: -webkit-linear-gradient(top, #f3720c 0%, #e66600 100%);
-  background: -o-linear-gradient(top, #f3720c 0%, #e66600 100%);
-  background: -ms-linear-gradient(top, #f3720c 0%, #e66600 100%);
-  background: linear-gradient(to bottom, #f3720c 0%, #e66600 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
-  opacity: 0.75;
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-/* line 47, ../sass/global/_tabs.scss */
-.pane-page-tabs ul.primary li a:hover {
-  border-color: transparent #e48b42 #fdb881 #fdaa68;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
 }

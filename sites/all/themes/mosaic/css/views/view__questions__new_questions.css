@@ -102,3 +102,82 @@
 .view-questions.view-display-id-new_questions h2.question-node-teaser-pane-title {
   margin-bottom: .05em;
 }
+/* line 48, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .questions-more {
+  margin: 0.625em 0;
+  position: relative;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #5b83be), color-stop(51%, #446eac));
+  background: -webkit-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: -moz-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: -o-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: linear-gradient(#5b83be 50%, #446eac 51%);
+  -webkit-box-shadow: #92acd4 0 1px 0 inset;
+  -moz-box-shadow: #92acd4 0 1px 0 inset;
+  box-shadow: #92acd4 0 1px 0 inset;
+  border: 1px solid #507bba;
+  text-shadow: #2c476f 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 51, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .questions-more .ajax-progress {
+  position: absolute;
+  top: 8%;
+  right: -20%;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .questions-more:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .questions-more:hover {
+  background-color: #4875b7;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4570b0), color-stop(51%, #4875b7));
+  background: -webkit-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: -moz-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: -o-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: linear-gradient(#4570b0 50%, #4875b7 51%);
+}
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .questions-more:active {
+  -webkit-box-shadow: #4773b3 0 1px 2px inset;
+  -moz-box-shadow: #4773b3 0 1px 2px inset;
+  box-shadow: #4773b3 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .questions-more.disabled, .view-questions.view-display-id-new_questions .questions-more[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #6288c1;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.view-questions.view-display-id-new_questions .questions-more::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
