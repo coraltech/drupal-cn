@@ -692,7 +692,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
     try {
-      return '<a href="#" class="btn load-more more-answers-'+this.refID+' page-'+page+' '+hide+'">Load more<span class="no-js"><span></span></a>';
+      return '<a href="#" class="btn load-more more-answers-'+this.refID+' page-'+page+' '+hide+'">More answers<span class="no-js"><span></span></a>';
     }
     catch (err) {
       console.log('loadMoreBtn errored: '+err);
