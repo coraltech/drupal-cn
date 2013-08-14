@@ -342,7 +342,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.manageComments = function() {
     try {
       var cc = this;
-      console.log(this);
+
       var callback = function() {
         cc.setLoadStatus('finished');
         if (cc.settings.hasOwnProperty('total_items')) {
