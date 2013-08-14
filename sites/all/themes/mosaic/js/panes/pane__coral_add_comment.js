@@ -67,6 +67,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.currentPage = 0; 
         this.addedNew = 0;
         this.hasTrimmed = false;
+        this.initialLoad = false;
         
         // we only want 5 cols - then we hide the form
         this.$commentForm.find('textarea').attr('rows', '5'); 
@@ -328,6 +329,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         // No settings loading! We have already loaded these comments
         else {
+          cc.settings = Drupal.settings.mosaicViews[cc.settingsID];
           cc.manageComments(); // manage them like never before
         }
       }
@@ -370,7 +372,10 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
           if (Number(numComments) < Number(this.settings.total_items)) {
             this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
-            this.loadViewResults('comments', 'new_comments', this.refID);
+            if (!this.initialLoad) { // load the first set only on the first click - after that use "more"
+              this.loadViewResults('comments', 'new_comments', this.refID);
+              this.initialLoad = true;
+            }
             moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
           }
           // This button appears when there are more items to load. Otherwise it's hidden
@@ -385,6 +390,8 @@ Drupal.coralQA = Drupal.coralQA || {};
             this.$trimmed.hide();
             this.$full.show();
           }
+          
+          this.$btn.removeClass('ajax-processing'); // no dupes
         }
         else {
           // @TODO: is it possible that we could be missing the settings?
@@ -401,6 +408,8 @@ Drupal.coralQA = Drupal.coralQA || {};
           this.$trimmed.show();
           this.$full.hide();
         }
+        
+        this.$btn.removeClass('ajax-processing'); // no dupes
       }
     }
     catch (err) {
@@ -529,9 +538,6 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$commentsTgt.prepend(data); // append the new comments
       }
       
-      // get timeago et.al. to re-run on the nodes
-      Drupal.attachBehaviors();
-        
       if (this.$btn.hasClass('comments-hidden')) {
         this.$btn.addClass('comments-visible').removeClass('comments-hidden');
         this.$btn.find('.arrow').addClass('arrowDown');
@@ -539,6 +545,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       this.$btn.removeClass('ajax-processing'); // enable the user to click again
       this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
+      
+      // get timeago et.al. to re-run on the nodes
+      Drupal.attachBehaviors();
     }
     catch (err) {
       console.log('processViewResults errored: '+err);

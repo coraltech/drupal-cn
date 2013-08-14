@@ -285,6 +285,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         // No settings loading! We have already loaded these answers
         else {
+          ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
           ca.manageAnswers(); // manage them like never before
         }
       }
@@ -299,7 +300,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.manageAnswers = function() {
     try {
       var ca = this;
-      
+
       var callback = function() {
         ca.setLoadStatus('finished');
         if (ca.settings.hasOwnProperty('total_items')) {
@@ -315,8 +316,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$answersTgt.parents('.panel-pane').eq(0).slideDown(350, callback); // show answers 
         this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
         this.$btn.removeClass('answers-hidden'); // update the btn status
-        
-        
+                
         var $view = $(this.$answersTgt).children('.view-answers');  // must only return children!
         var $cont = $view.children('.view-content');  // so we can't use find
         var $answers = $cont.children('.views-row'); // so be it. 
@@ -327,7 +327,6 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
           if (Number(numAnswers) < Number(this.settings.total_items)) {
             this.$answersTgt.parents('.panel-pane').eq(0).addClass('answers-more');
-            //this.loadViewResults('answers', 'new_answers', this.refID);
             moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
           }
           // This button appears when there are more items to load. Otherwise it's hidden
@@ -342,6 +341,8 @@ Drupal.coralQA = Drupal.coralQA || {};
             this.$trimmed.hide();
             this.$full.show();
           }
+          
+          this.$btn.removeClass('ajax-processing'); // no dupes
         }
         else {
           // @TODO: is it possible that we could be missing the settings?
@@ -358,6 +359,8 @@ Drupal.coralQA = Drupal.coralQA || {};
           this.$trimmed.show();
           this.$full.hide();
         }
+        
+        this.$btn.removeClass('ajax-processing'); // no dupes
       }
     }
     catch (err) {
@@ -486,9 +489,6 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$answersTgt.prepend(data); // append the new answers
       }
       
-      // get timeago et.al. to re-run on the nodes
-      Drupal.attachBehaviors();
-        
       if ($(this.$btn).hasClass('answers-hidden')) {
         $(this.$btn).addClass('answers-visible').removeClass('answers-hidden');
         $(this.$btn).find('.arrow').addClass('arrowDown');
@@ -496,6 +496,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       this.$btn.removeClass('ajax-processing'); // enable the user to click again
       this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
+      
+      // get timeago et.al. to re-run on the nodes
+      Drupal.attachBehaviors();
     }
     catch (err) {
       console.log('processViewResults errored: '+err);
@@ -706,7 +709,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       else { // increment the page number
         this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
-        this.$loadMore.removeClass('ajax-processing'); // ok, now the user can click again!
       }
     }
     catch (err) {
