@@ -264,27 +264,29 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Handles the clicke event of the answer button
   Drupal.coralQA.coralAnswer.prototype.handleAnswerClick = function(ev) {
     try {
-      this.settingsID = 'answers_new_answers_'+this.refID;
-      ca = this;
-      
-      if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
-        Drupal.settings.mosaicViews = {};
-      }
-  
-      // If we don't have settings for this, it's the first time we've looked at it
-      if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
-        var callback = function() {
-          ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
-          ca.manageAnswers();
-        };
-        ca.setLoadStatus('loading'); // Set the loading status
-        ca.getSettings(callback);    // Get the new settings and then process callback
-      }
-      
-      // No settings loading! We have already loaded these answers
-      else {
-        //if (!cc.hasOwnProperty('settings')) ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
-        ca.manageAnswers(); // manage them like never before
+      if (!this.$btn.hasClass('ajax-processing')) {
+        this.$btn.addClass('ajax-processing'); // no dupes
+        this.settingsID = 'answers_new_answers_'+this.refID;
+        ca = this;
+        
+        if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
+          Drupal.settings.mosaicViews = {};
+        }
+    
+        // If we don't have settings for this, it's the first time we've looked at it
+        if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
+          var callback = function() {
+            ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
+            ca.manageAnswers();
+          };
+          ca.setLoadStatus('loading'); // Set the loading status
+          ca.getSettings(callback);    // Get the new settings and then process callback
+        }
+        
+        // No settings loading! We have already loaded these answers
+        else {
+          ca.manageAnswers(); // manage them like never before
+        }
       }
     }
     catch (err) {
@@ -491,7 +493,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         $(this.$btn).addClass('answers-visible').removeClass('answers-hidden');
         $(this.$btn).find('.arrow').addClass('arrowDown');
       }
-        
+      
+      this.$btn.removeClass('ajax-processing'); // enable the user to click again
       this.$loadMore.find('span span').removeClass('throbber'); // disable throbber
     }
     catch (err) {
@@ -597,43 +600,48 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $form   = $(ev.currentTarget).parents('form');
       var $submit = $(ev.currentTarget);
       
-      var title    = $form.find('input[name="title"]').val();
-      var body     = $form.find('.field-name-body textarea.text-full').val();
-      var question = $form.find('.field-name-field-question .form-text').val();
-      var langNone = Drupal.settings.coral_qa_manager.language_none || "und";
-      
-      // Let the user know something is happening
-      $submit.parent('.form-wrapper').append('<span class="ajax-progress"><span class="throbber"></span></span>');
-          
-      // Setup our node
-      var node = {
-        "type":"answer",
-        "title":title,
-        "language":langNone,
-        "body":{},
-        "field_question":{}
-      };
-      node["body"][langNone] = {"0":{"value": body }};
-      node["field_question"][langNone] = {"0":{"target_id": question}};
-  
-      // Create the node
-      Drupal.coral_ajax.node_create(node, 
-        function(data, msg, xhr) {
-          if (msg == 'success') {
-            ca.clearForm($form);   // clear the form
-            ca.addNewAnswer(data); // add this new answer to the top of the list
+      if (!$submit.hasClass('ajax-processing')) {
+        
+        $submit.addClass('ajax-processing'); // ensure no duplicate submissions
+        
+        var title    = $form.find('input[name="title"]').val();
+        var body     = $form.find('.field-name-body textarea.text-full').val();
+        var question = $form.find('.field-name-field-question .form-text').val();
+        var langNone = Drupal.settings.coral_qa_manager.language_none || "und";
+        
+        // Let the user know something is happening
+        $submit.parent('.form-wrapper').append('<span class="ajax-progress"><span class="throbber"></span></span>');
             
-            // User added one! Lets remember that to supplement the views offset
-            // ----
-            // @NOTE: this may still re show the users post if they are browsing 
-            //  an active thread. We would need to save a list of the items they
-            //  added and adjust the thread organization accordingly.
-            ca.addedNew = Number(ca.addedNew) + 1;
-          }
-        },
-        // @TODO: process errors (missing fields etc)
-        function(err) {}
-      );
+        // Setup our node
+        var node = {
+          "type":"answer",
+          "title":title,
+          "language":langNone,
+          "body":{},
+          "field_question":{}
+        };
+        node["body"][langNone] = {"0":{"value": body }};
+        node["field_question"][langNone] = {"0":{"target_id": question}};
+    
+        // Create the node
+        Drupal.coral_ajax.node_create(node, 
+          function(data, msg, xhr) {
+            if (msg == 'success') {
+              ca.clearForm($form);   // clear the form
+              ca.addNewAnswer(data); // add this new answer to the top of the list
+              
+              // User added one! Lets remember that to supplement the views offset
+              // ----
+              // @NOTE: this may still re show the users post if they are browsing 
+              //  an active thread. We would need to save a list of the items they
+              //  added and adjust the thread organization accordingly.
+              ca.addedNew = Number(ca.addedNew) + 1;
+            }
+          },
+          // @TODO: process errors (missing fields etc)
+          function(err) {}
+        );
+      }
     }
     catch (err) {
       console.log('submitForm errored: '+err);
@@ -648,6 +656,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       var ca = this; // keep this!
       var callback = function() { // stuff we do on the there-after...
         ca.$answerForm.find('.form-actions').find('.ajax-progress').remove();
+        ca.$answerForm.find('.form-submit').removeClass('ajax-processing');
         var $newAnswer = ca.$question.find('.node-'+data.nid).css("background", "#FFF6B6");
         var $viewRow = $newAnswer.parent('.views-row');
   
