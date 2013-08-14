@@ -664,7 +664,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         var $viewRow = $newAnswer.parent('.views-row');
   
         $viewRow.css('padding-bottom', '1px');
-        $newAnswer.animate({ backgroundColor: '#F1F1F1' }, 3000, 'swing', function() {
+        $newAnswer.animate({ backgroundColor: '#FFFFFF' }, 3000, 'swing', function() {
           $newAnswer.css('background', 'transparent');
           $viewRow.css('padding-bottom', '0');
         });
