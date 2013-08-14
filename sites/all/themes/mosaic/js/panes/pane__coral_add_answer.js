@@ -709,6 +709,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       else { // increment the page number
         this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
+        this.$loadMore.removeClass('ajax-processing'); // ok, now the user can click again!
       }
     }
     catch (err) {
