@@ -1,0 +1,16 @@
+/* line 8, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .selected-title {
+  background: #36b048;
+  color: white;
+  font-weight: bold;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+/* line 15, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .best-ans-tgt {
+  padding-top: 0.625em;
+}
+/* line 18, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .best-ans-tgt .best-answer {
+  display: none;
+}

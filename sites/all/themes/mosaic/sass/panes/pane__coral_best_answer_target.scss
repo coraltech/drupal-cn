@@ -1,0 +1,20 @@
+
+// Scss file for the best answer target pane
+
+@import 'global/colors';
+@import 'global/fonts';
+
+#main-content .pane-coral-best-answer-target {
+  .selected-title {
+    background: $mdgreen;
+    color: white;
+    font-weight: bold;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  .best-ans-tgt {
+    padding-top: $default_vert_unit / 2;
+    
+    .best-answer { display: none; }
+  }
+}
