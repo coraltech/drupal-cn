@@ -47,13 +47,15 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$btn = $question.find('.btn.answer-'+this.refID);
       this.$answerForm = $(this.$question).find('.answer-form-'+this.refID);
       this.$answersTgt = $(this.$question).find('.answers-tgt-'+this.refID);
+      this.$bestAnswer = $(this.$question).find('.best-ans-tgt-'+this.refID);
       this.$loadMore = $(this.$question).find('.more-answers-'+this.refID);
       this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
       this.$full = $(this.$question).find('.body-full.body-'+this.refID);       // full text body pane
       
-      this.$answerForm.parents('.panel-pane').eq(0).hide(); // show the form
-      this.$answersTgt.parents('.panel-pane').eq(0).hide(); // show answers
-      
+      this.$answerForm.parents('.panel-pane').eq(0).hide(); // hide the form
+      this.$answersTgt.parents('.panel-pane').eq(0).hide(); // hide answers
+      this.$bestAnswer.hide();
+
       // Setup and more
       // ----
       // $loadMore may or may not exist. It usually does not
@@ -176,7 +178,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         $title.addClass('form-hidden');
         $help.text('show form');
       }
-      this.$answerForm.slideToggle(); // action!
+      this.$answerForm.slideToggle(200); // action!
     }
     catch (err) {
       console.log('manageForm errored: '+err);
@@ -311,9 +313,10 @@ Drupal.coralQA = Drupal.coralQA || {};
       };
       
       if (this.$btn.hasClass('answers-hidden')) {
-  
-        this.$answerForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
-        this.$answersTgt.parents('.panel-pane').eq(0).slideDown(350, callback); // show answers 
+
+        this.$answerForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
+        this.$answersTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show answers 
+        this.$bestAnswer.slideDown(200); // show best answer
         this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
         this.$btn.removeClass('answers-hidden'); // update the btn status
                 
@@ -350,8 +353,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       else {
         // hide the answers and form
-        this.$answerForm.parents('.panel-pane').eq(0).slideUp(350); // hide the form
-        this.$answersTgt.parents('.panel-pane').eq(0).slideUp(350); // hide the answers
+        this.$answerForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
+        this.$answersTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the answers
+        this.$bestAnswer.slideUp(200);
         this.$btn.addClass('answers-hidden');
         this.$btn.find('.arrow').removeClass('arrow-down');
             

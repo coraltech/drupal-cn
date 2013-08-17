@@ -178,7 +178,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         $title.addClass('form-hidden');
         $help.text('show form');
       }
-      this.$commentForm.slideToggle(); // action!
+      this.$commentForm.slideToggle(200); // action!
     }
     catch (err) {
       console.log('manageForm errored: '+err);
@@ -356,8 +356,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       if (this.$btn.hasClass('comments-hidden')) {
   
-        this.$commentForm.parents('.panel-pane').eq(0).slideDown(350); // show the form
-        this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(350, callback); // show comments 
+        this.$commentForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
+        this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show comments 
         this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
         this.$btn.removeClass('comments-hidden'); // update the btn status
         
@@ -399,8 +399,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       else {
         // hide the comments and form
-        this.$commentForm.parents('.panel-pane').eq(0).slideUp(350); // hide the form
-        this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(350); // hide the comments
+        this.$commentForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
+        this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
         this.$btn.addClass('comments-hidden');
         this.$btn.find('.arrow').removeClass('arrow-down');
             
