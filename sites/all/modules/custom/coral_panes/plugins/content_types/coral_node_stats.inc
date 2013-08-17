@@ -183,6 +183,15 @@ function coral_node_stats_node_last_editor($node, &$stats) {
         'title' => t('Last editor:'),
         'data'  => theme('user_picture', array('account'=>$rev_editor, 'image_style'=>'user_thumb_small')).theme('username', array('account'=>$rev_editor)),
       );
+      
+      // This is actually used by some js so don't touch
+      //  And keep it hidden; keep it safe lol
+      //  ref: pane__coral_best_answer.js
+      $stats['node']['editor_info'] = array(
+        'class' => 'editor_info editor_info-'.$node->nid.' hide',
+        'title' => $rev_editor->uid,
+        'data'  => $rev_editor->name
+      );
     }
   }
 }
