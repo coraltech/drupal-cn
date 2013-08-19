@@ -533,7 +533,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       else { 
         $rows = this.$commentsTgt.find('.views-row');
         if (tot < 1 && !$rows.length) { // any rows already there?
-          this.$commentsTgt.html(''); // remove the default "empty" text
+          this.$commentsTgt.html('').removeClass('empty'); // remove the default "empty" text and class
         }
         this.$commentsTgt.prepend(data); // append the new comments
       }
