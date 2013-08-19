@@ -97,11 +97,11 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (Drupal.settings.mosaicViews.hasOwnProperty('questions_new_questions_'+this.refID)) {
           this.settingsID = 'questions_new_questions_'+this.refID;
           this.settings   = Drupal.settings.mosaicViews[this.settingsID];
-        
+
           // Check total_item and limit count
           //  We may not need the more button
           //  Hide the regular pager...
-          if (this.settings.total_items <= this.settings.limit) {
+          if (Number(this.settings.total_items) <= Number(this.settings.limit)) {
             hide = 'hide';
           }
           
