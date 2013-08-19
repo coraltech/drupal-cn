@@ -55,11 +55,6 @@
   margin: 0 5px 0 0;
   padding: 2px 5px 1px;
 }
-/* line 47, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-node-field-tags,
-.node-teaser.node-question .pane-node-field-tags {
-  clear: left;
-}
 /* line 55, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .field-name-field-answer,
 .node-type-question .field-name-field-comment-count,

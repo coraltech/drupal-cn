@@ -139,15 +139,18 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 
-/* line 61, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 62, ../../sass/panes/pane__coral_add_answer.scss */
+.view-answers.view-display-id-this_answer .pager,
 .view-answers.view-display-id-new_answers .pager {
   display: none;
 }
-/* line 63, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 64, ../../sass/panes/pane__coral_add_answer.scss */
+.view-answers.view-display-id-this_answer .views-row,
 .view-answers.view-display-id-new_answers .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
 }
-/* line 66, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 67, ../../sass/panes/pane__coral_add_answer.scss */
+.view-answers.view-display-id-this_answer .views-row-first,
 .view-answers.view-display-id-new_answers .views-row-first {
   margin-top: 0;
 }
