@@ -126,17 +126,37 @@ Drupal.coralQA = Drupal.coralQA || {};
       var cba = this;
 
       var callback = function() {
+
         var $answersTgt = cba.$question.find('.pane-coral-answers-target');
         var $answer = $answersTgt.find('.node-'+answerID);
-        var $oldAns = $answersTgt.find('.node-'+cba.currentSelected);
         
-        cba.refreshBest(answerID, $answer, $oldAns);
+        cba.refreshBest(answerID, $answer);
       }
+
       // Stuff that lets the user know something is happening
       var $bestTgt = this.$question.find('.pane-coral-best-answer-target'); // get the best ans tgt
-      $bestTgt.append('<div class="best-switch"></div>'); // add a cover that will contain a gif
-      this.$question.find('.btn.answer').off('click').click(function() { $bestTgt.find('.node-answer').slideToggle(200); }); // re-add click functionality to the answer btn
-      setTimeout(callback, 2950); // wait for the message @TODO: load the answer bf this is done...
+      var $bestNode = $bestTgt.find('.node'); // current best answer
+      
+      if ($bestNode.length) { // if we already have one
+        var tgtPosition = $bestNode.position(); // current position
+        var tgtHeight = $bestNode.height();     // current height
+        $bestTgt.prepend('<div class="best-switch"><span style="margin-top: '+((tgtHeight/2)-7)+'px"></span></div>'); // add a cover that will contain a gif
+        $bestTgt.find('.best-switch').css({
+          'position':'absolute', 
+          'top':tgtPosition.top+'px', 
+          'left': tgtPosition.left+'px', 
+          'height':tgtHeight+'px',
+          'z-index': 3
+        });
+      }
+
+      // re-add click functionality to the answer btn
+      this.$question.find('.btn.answer').off('click').click(function() { 
+        $bestTgt.find('.node-answer').slideToggle(200); 
+        $bestTgt.find('.selected-title').slideToggle(200);
+      });
+      
+      setTimeout(callback, 2950); // wait for the message to complete
     }
     catch (err) {
       console.log('moveAnswer errored: '+err);
@@ -147,7 +167,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Refresh the target panes and nodes
   //  $answer is the answer the user has selected
   //  $oldAns is the old selected answer
-  Drupal.coralQA.coralBestAnswers.prototype.refreshBest = function(answerID, $answer, $oldAns) {
+  Drupal.coralQA.coralBestAnswers.prototype.refreshBest = function(answerID, $answer) {
     try {
       var cba = this;
     
@@ -157,21 +177,32 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         var $bestAnswerTgt = cba.$question.find('.pane-coral-best-answer-target');
         var $bestAnswer = $bestAnswerTgt.find('.node-answer');
-        
+
         if ($newAnswer.length) {
+          var $cover = $bestAnswerTgt.find('.best-switch');
+          if ($cover.length) {
+            $cover.remove();
+          }
           
           // Target empty? - add the pane title
           if (!$bestAnswer.length) $bestAnswerTgt.append('<h2 class="selected-title">Selected answer</h2>');
           
           // The answer that will live in the best answer target
           $newAnswer.find('.pane-coral-best-answer').hide();
-          
+
           // Answers that live in the additional answers target
-          $oldAns.find('.pane-coral-best-answer').show().find('a').removeClass('hide');
+          $answersTgt = cba.$question.find('.pane-coral-answers-target');
+          $answers = $answersTgt.find('.node-answer');
+          $answers.each(function() { // un-hide the best answer button
+            if (!$(this).hasClass('node-'+answerID)) { // if this isnt the selected answer
+              $(this).find('.pane-coral-best-answer').show().find('a').removeClass('hide');
+            }
+          });
+          
           $answer.find('.pane-coral-best-answer').hide();
         
           // Add this newly selected answer
-          $bestAnswerTgt.find('.node-'+cba.currentSelected).remove(); // remove old one
+          $bestAnswerTgt.find('.node').remove(); // remove old one
           cba.$question.find('.pane-coral-best-answer-target').append($newAnswer); // add new one
           cba.currentSelected = answerID; // update the currentSelected
           
@@ -238,6 +269,11 @@ Drupal.coralQA = Drupal.coralQA || {};
       var currentUser = Drupal.settings.coral_qa_manager.current_user; // get the user info
       if (currentUser.uid == this.userID) {
         
+        // hide the best answer button on the question
+        //  it's needed on the question only so that the 
+        //  js can load when no answers were loaded.
+        this.$question.find('.pane-coral-best-answer').eq(0).hide();
+        
         var $selected = this.$question.find('.pane-coral-best-answer-target .node-answer');
         if ($selected.length) {
           this.currentSelected = this.getMatch(/^node-\d+/, $selected.attr('class'));
@@ -264,13 +300,13 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       $answer.addClass('best-answer-processed'); // we won't be doing this one again
       answerID = this.getAnswerID($answer);      // current answer id
-      
+     
       // Save the answer object
       this.answers[answerID].$answer = $answer;   // save it. maybe it's useful?
       
       // Save the button for this answer
       this.answers[answerID].$answerBtn = this.answers[answerID].$answer.find('.best-answer-'+answerID);
-      
+
       // Regular answer
       if (answerID != this.currentSelected) {
         // Remove the hidden class
