@@ -30,11 +30,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       var height = $content.height(); // content height
       var $limiter = $content.find('.body-'+nodeID).eq(0).parent(); // content limiter
       var $tags = $limiter.children('.pane-node-field-tags'); // tags (for finding rel position)
-      var tagsPos = $tags.position();    // get tags position
-      var contPos = $content.position(); // get content position
-      var emptySpace = (Number(contPos.top) + Number(height)) - Number(tagsPos.top); // find empty space between the two
       
-      if (emptySpace >= 50) { // more than 50 px we remove the last line break (not needed)
+      if (Number($tags.height()) >= 24) { // more than 24 px (about a line) we remove the last line break (not needed)
         var $lineBreaks = $limiter.children('.pane-coral-break-line');
         if ($lineBreaks.length > 1) { // only remove the second of two
           $lineBreaks.eq(1).remove();
