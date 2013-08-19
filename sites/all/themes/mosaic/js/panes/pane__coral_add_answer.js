@@ -472,6 +472,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Runs after the view succeeds in returning the next set.
   Drupal.coralQA.coralAnswer.prototype.processViewResults = function(data, mode) {
     try {
+      
       // Check get the default total items figure
       var tot = 0;
       if (this.hasOwnProperty('settings')) {
@@ -488,7 +489,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       else { // single mode - add to the start
         $rows = this.$answersTgt.find('.views-row');
         if (tot < 1 && !$rows.length) { // any rows already there?
-          this.$answersTgt.html(''); // remove the default "empty" text
+          this.$answersTgt.html('').removeClass('empty'); // remove the default "empty" text and class
         }
         this.$answersTgt.prepend(data); // append the new answers
       }
