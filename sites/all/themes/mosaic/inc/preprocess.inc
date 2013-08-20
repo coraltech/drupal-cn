@@ -210,7 +210,7 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
 // Compile a default user picture and link
 function mosaic_preprocess_user_picture(&$vars) {
   $a0 = arg(0); $a1 = arg(1); $a2 = arg(2);
- 
+
   $account = $vars['account'];
   $title = '';
   if (isset($account->name)) {
@@ -234,17 +234,26 @@ function mosaic_preprocess_user_picture(&$vars) {
 }
 
 // Compiles a user image
-function mosaic_compile_default_user_image($uid, $image_style, $title) {
+function mosaic_compile_default_user_image($user, $image_style, $title) {
+  $uri = 'public://coraltechiconlg.png'; // default image
+  
+  if (is_numeric($user)) $user = user_load($user);
+  if (is_object($user) && $user->uid) {
+    if (isset($user->picture->uri)) {
+      $uri = $user->picture->uri;
+    }
+  } 
+    
   return l(
     theme(
       'image_style', 
       array(
         'style_name' => $image_style,
-        'path' => 'public://coraltechiconlg.png',
+        'path' => $uri,
         'title' => $title
       )
     ), 
-    'user/'.$uid, // link path
+    'user/'.$user->uid, // link path
     array('html' => 'true') // we have a pic
   );
 }
