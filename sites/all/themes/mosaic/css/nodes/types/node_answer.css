@@ -19,8 +19,8 @@
   width: 25px;
 }
 /* line 27, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer h2,
-.html div.node-teaser.node-answer h2 {
+.html div.node-type-answer .answer-node-pane-title,
+.html div.node-teaser.node-answer .answer-node-pane-title {
   font-size: 1.25em;
   line-height: 1em;
   margin-top: .5em;
