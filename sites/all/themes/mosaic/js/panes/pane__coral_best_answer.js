@@ -156,7 +156,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         $bestTgt.find('.selected-title').slideToggle(200);
       });
       
-      setTimeout(callback, 2950); // wait for the message to complete
+      setTimeout(callback, 1950); // wait for the message to complete
     }
     catch (err) {
       console.log('moveAnswer errored: '+err);
