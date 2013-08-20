@@ -213,12 +213,18 @@ function coral_node_stats_node_edits($node, &$stats) {
 function coral_node_stats_node_answers($node, &$stats) {
   // Number of answers for this node
   if ($node->type == 'question') {
+    $best_answer = field_get_items('node', $node, 'field_answer');
+    $best_icon = '';
+    if (isset($best_answer[0]['target_id'])) {
+      $best_icon = '<span class="best-ans-ico"></span>';      
+    }
+    
     $answer_count = field_get_items('node', $node, 'field_answer_count');
     if (isset($answer_count[0]['value'])) {
       $stats['node']['answer_count'] = array(
         'class' => 'answers',
         'title' => t('Answers:'),
-        'data'  => $answer_count[0]['value'],
+        'data'  => $answer_count[0]['value'].$best_icon,
       );
     }
   }

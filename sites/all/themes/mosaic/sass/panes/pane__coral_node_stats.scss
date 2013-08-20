@@ -4,6 +4,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/icons';
 
 @import "compass/utilities/general/clearfix";
 
@@ -37,6 +38,13 @@
     
     .stat-edit {
       margin-top: $default_vert_unit / 8;
+    }
+    
+    .stat-answers .best-ans-ico {
+      padding: 0 14px;
+      margin: 0 0 0 5px;
+      
+      @include icons-sprite('check-sml');
     }
   }
   
