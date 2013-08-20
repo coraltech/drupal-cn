@@ -1,0 +1,59 @@
+
+// Scss file for the popular tags view
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+
+// Normally this would be constrained to the view level but I need
+//  access to the pane header.
+.pane-documentation-related-view {
+  margin-top: $default_vert_unit;
+  
+  .pane-title {
+    color: $white;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-bottom: .1545em;
+    
+    @include linear-v-gradient($mdblue, desaturate(lighten($mdblue, 7%), 10%));    
+  }
+  .pane-content {
+    padding-top: .3em;
+    background: lighten($mdgray, 15%);
+    
+    .view-content {
+      color: lighten($mdgray, 10%);
+      font-weight: bold;
+      margin-top: -.3em;
+      background: $ltgray;
+
+      .views-row { padding-left: 1em; padding-right: 1em; }
+      .views-row-even { background: darken($ltgray, 7%); }
+    }
+    
+    .pager-load-more {
+      margin: 0;
+      padding: 3px;
+      text-align: left;
+      
+      li {
+        margin: 0;
+        padding: 0;
+      
+        a { 
+          color: $white; 
+          
+          @include btn-matte-inset(0px, 12px, $mdblue, darken($mdblue, 3%), $white);
+          @include btn-structure(2px 5px, 12px, $radius: 0px);
+          
+          &:hover { 
+            color: $white; 
+          }
+        }
+      }
+    }
+  }
+}

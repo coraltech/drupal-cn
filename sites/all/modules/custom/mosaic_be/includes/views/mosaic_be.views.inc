@@ -7,7 +7,7 @@
  */
 function mosaic_be_views_query_alter(&$view, &$query) {
   
-  if ($view->name == 'questions') { 
+  if ($view->name == 'questions' || $view->name == 'documentation') { 
     $tag = '';
     
     // if we have a tag set the view conditions
@@ -30,5 +30,4 @@ function mosaic_be_views_query_alter(&$view, &$query) {
       );
     }
   }
-
 }
