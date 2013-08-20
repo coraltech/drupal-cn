@@ -266,20 +266,19 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.author = $authorInfo.find('.statdata').text(); // this question's author'
       this.userID = $authorInfo.find('.statid').text();   // this questions's user id
     
+      // hide the best answer button on the question
+      //  it's needed on the question only so that the 
+      //  js can load when no answers were loaded.
+      this.$question.find('.pane-coral-best-answer').eq(0).hide();
+      
+      var $selected = this.$question.find('.pane-coral-best-answer-target .node-answer');
+      if ($selected.length) {
+        this.currentSelected = this.getMatch(/^node-\d+/, $selected.attr('class'));
+        this.currentSelected = this.currentSelected.replace('node-', ''); // only the numbers
+      }
+      
       var currentUser = Drupal.settings.coral_qa_manager.current_user; // get the user info
       if (currentUser.uid == this.userID) {
-        
-        // hide the best answer button on the question
-        //  it's needed on the question only so that the 
-        //  js can load when no answers were loaded.
-        this.$question.find('.pane-coral-best-answer').eq(0).hide();
-        
-        var $selected = this.$question.find('.pane-coral-best-answer-target .node-answer');
-        if ($selected.length) {
-          this.currentSelected = this.getMatch(/^node-\d+/, $selected.attr('class'));
-          this.currentSelected = this.currentSelected.replace('node-', ''); // only the numbers
-        }
-        
         // Get all un-processed answers from the view of answers
         var $answers = this.$question.find('.pane-coral-answers-target .node-answer:not(".best-answer-processed")');
         $answers.each(function() {
