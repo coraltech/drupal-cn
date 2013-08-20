@@ -1,26 +1,31 @@
-/* line 12, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 266, icons/*.png */
+.icons-sprite, .pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
+  background: url('/images/icons-s4afabcca13.png') no-repeat;
+}
+
+/* line 13, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap {
   font-size: 95%;
   margin: 0 1em 0.3125em 0;
   padding: 0 0.3125em;
   color: #515151;
 }
-/* line 18, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 19, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-editor {
   *zoom: 1;
 }
-/* line 19, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 20, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-editor .user-picture {
   float: left;
   margin-right: .5em;
   margin-top: 5px;
 }
-/* line 24, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 25, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-editor .user-picture img {
   display: block;
   border: 1px solid #c4c4c4;
 }
-/* line 29, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 30, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-editor .username {
   font-size: 125%;
   float: left;
@@ -33,21 +38,29 @@
   display: table;
   clear: both;
 }
-/* line 38, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 39, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap .stat-edit {
   margin-top: 0.15625em;
 }
-/* line 44, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 43, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
+  padding: 0 14px;
+  margin: 0 0 0 5px;
+  background-position: 0 -2147px;
+  height: 15px;
+  width: 18px;
+}
+/* line 52, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .coral-stat .statid {
   font-weight: bold;
   font-size: 95%;
   color: #848484;
 }
-/* line 52, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 60, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-style-unstyled {
   padding: 0;
 }
-/* line 56, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 64, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-style-yellow {
   border: 1px solid #c4c4c4;
   background: #fff6b6;
@@ -56,7 +69,7 @@
   float: left;
   margin-bottom: 1.25em;
 }
-/* line 65, ../../sass/panes/pane__coral_node_stats.scss */
+/* line 73, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-style-gray {
   border: 1px solid #d0d0d0;
   background: #eaeaea;
