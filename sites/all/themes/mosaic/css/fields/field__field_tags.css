@@ -1,14 +1,14 @@
 /* line 266, icons/*.png */
-.icons-sprite, .pane-node-field-tags .field-name-field-tags .field-label {
+.icons-sprite, .field-name-field-tags .field-label {
   background: url('/images/icons-s4afabcca13.png') no-repeat;
 }
 
 /* line 7, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags {
+.field-name-field-tags {
   margin: 1.25em 0 0;
 }
 /* line 10, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags:after {
+.field-name-field-tags:after {
   content: ".";
   display: block;
   height: 0;
@@ -16,7 +16,7 @@
   visibility: hidden;
 }
 /* line 18, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags .field-label {
+.field-name-field-tags .field-label {
   float: left;
   display: block;
   text-indent: -9999em;
@@ -28,16 +28,16 @@
   width: 11px;
 }
 /* line 27, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags .field-item {
+.field-name-field-tags .field-item {
   float: left;
 }
 /* line 30, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags .field-item:after {
+.field-name-field-tags .field-item:after {
   content: ",";
   margin-right: 3px;
 }
 /* line 35, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags .field-item a {
+.field-name-field-tags .field-item a {
   background: #dddddd;
   color: #777777;
   font-size: 85%;
@@ -46,11 +46,16 @@
   padding: 0 3px;
 }
 /* line 43, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags .field-item a:hover {
+.field-name-field-tags .field-item a:hover {
   color: #515151;
 }
 /* line 49, ../../sass/fields/field__field_tags.scss */
-.pane-node-field-tags .field-name-field-tags .field-item:last-child:after {
+.field-name-field-tags .field-item:last-child:after {
   content: '';
   margin-right: 0;
+}
+
+/* line 57, ../../sass/fields/field__field_tags.scss */
+.node-type-book .field-name-field-tags {
+  margin: 1.25em 0;
 }

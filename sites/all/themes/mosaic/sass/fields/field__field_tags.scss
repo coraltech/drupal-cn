@@ -4,7 +4,7 @@
 @import 'global/fonts';
 @import 'global/icons';
 
-.pane-node-field-tags .field-name-field-tags {
+.field-name-field-tags {
   margin: $default_vert_unit 0 0;
 
   &:after {
@@ -51,5 +51,9 @@
       margin-right: 0;
     }
   }
-} 
+}
 
+// Book node override
+.node-type-book .field-name-field-tags {
+  margin: $default_vert_unit 0;
+}
