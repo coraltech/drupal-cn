@@ -1566,6 +1566,94 @@ h3 .toc-top {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+/* line 359, ../sass/global/_global.scss */
+.pane-page-tabs ul.secondary {
+  border-bottom: none;
+  clear: both;
+  float: none;
+  padding: 0 0 0.625em 0;
+}
+/* line 365, ../sass/global/_global.scss */
+.pane-page-tabs ul.secondary li {
+  border-right: none;
+  float: right;
+  margin-right: 0;
+  padding: 0 0 0 5px;
+}
+/* line 371, ../sass/global/_global.scss */
+.pane-page-tabs ul.secondary li a {
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB3B3B3', endColorstr='#FF808080');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b3b3b3), color-stop(70%, #9a9a9a));
+  background: -webkit-linear-gradient(#b3b3b3, #9a9a9a 70%);
+  background: -moz-linear-gradient(#b3b3b3, #9a9a9a 70%);
+  background: -o-linear-gradient(#b3b3b3, #9a9a9a 70%);
+  background: linear-gradient(#b3b3b3, #9a9a9a 70%);
+  -webkit-box-shadow: #dadada 0 1px 0 inset;
+  -moz-box-shadow: #dadada 0 1px 0 inset;
+  box-shadow: #dadada 0 1px 0 inset;
+  border: 1px solid #8d8d8d;
+  text-shadow: #717171 0 -1px 0;
+  font-size: 12px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 2px 1px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 2px 1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 1px 3px;
+}
+/* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:hover {
+  background-color: #8d8d8d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #a7a7a7), color-stop(75%, #8d8d8d));
+  background: -webkit-linear-gradient(#a7a7a7 3%, #8d8d8d 75%);
+  background: -moz-linear-gradient(#a7a7a7 3%, #8d8d8d 75%);
+  background: -o-linear-gradient(#a7a7a7 3%, #8d8d8d 75%);
+  background: linear-gradient(#a7a7a7 3%, #8d8d8d 75%);
+}
+/* line 21, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:active {
+  -webkit-box-shadow: #858585 0 1px 2px inset;
+  -moz-box-shadow: #858585 0 1px 2px inset;
+  box-shadow: #858585 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a.disabled, .pane-page-tabs ul.secondary li a[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #9a9a9a;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.pane-page-tabs ul.secondary li a::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
 
 /* line 12, ../sass/global/grid.scss */
 .grid-1 {
