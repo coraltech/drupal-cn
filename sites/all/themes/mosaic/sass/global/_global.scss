@@ -9,6 +9,7 @@
 @import "compass/css3/box-shadow";
 
 @import 'global/arrows';
+@import 'global/buttons';
 @import 'global/colors';
 @import 'global/comments';
 @import 'global/fonts';
@@ -17,7 +18,6 @@
 @import 'global/icons';
 @import 'global/site_vars';
 
-@import 'global/buttons';
 
 // -- Global container widths
 .pane-header,
@@ -353,6 +353,25 @@ h3 .toc-top {
           border-color: transparent lighten($mdorange, 5%) lighten($ltorange, 5%) $ltorange;
           @include opacity(1);
         }
+      }
+    }
+  }
+  ul.secondary {
+    border-bottom: none;
+    clear: both;
+    float: none;
+    padding: 0 0 ($default_vert_unit / 2) 0;
+
+    li { 
+      border-right: none;
+      float: right; 
+      margin-right: 0;
+      padding: 0 0 0 5px;
+      
+      a {
+        @include btn-matte-inset(3px, 12px, darken($silver, 5%), darken($silver, 15%), $white);
+        @include btn-structure(2px 5px, 12px, 3px);
+        @include box-shadow(rgba(0, 0, 0, 0.25) 2px 1px 3px);
       }
     }
   }
