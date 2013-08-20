@@ -459,7 +459,7 @@ function mosaic_menu_local_tasks(&$variables) {
   if (!empty($variables['secondary'])) {
     $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
     $variables['secondary']['#prefix'] .= '<ul class="tabs secondary">';
-    $variables['secondary']['#suffix'] = '</ul><span class="icon icoprim"></span>';
+    $variables['secondary']['#suffix'] = '</ul><span class="icon icosec"></span>';
     $output .= drupal_render($variables['secondary']);
   }
 
