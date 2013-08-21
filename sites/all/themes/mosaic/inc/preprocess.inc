@@ -196,15 +196,52 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
 // Re-formulate the tag links to point to the page we are current on.
 //  Add query params for other views to read.
 function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
+  $tags = '';
+  $found = FALSE;
+  
+  if (isset($_GET['tag'])) {
+    $tags = $_GET['tag'];
+    if ($tags && $tags != '') {
+      $tags = filter_xss_admin(urldecode($tags));
+      $tags = explode(' ', $tags);
+      $reset = array();
+      foreach ($tags as $id => $tag) {
+        if ($tag != $vars['output']) {
+          $reset[] = $tag;
+        }
+        else {
+          $found = TRUE;
+        }
+      }
+      if (!$found) $reset[] = $vars['output']; // add this one too
+      $tags = implode('+', $reset);
+    }
+  }
+  else {
+    $tags = $vars['output'];
+  }
+    
+  // Popular question tags should point to the questions page
   if ($vars['view']->name == 'tags_popular' && 
       $vars['view']->current_display == 'popular_question_tags') {
-    $vars['output'] = l($vars['output'], 'content/questions-and-answers', array('query' => array('tag' => $vars['output'])));
-    return;    
+    $path = 'content/questions-and-answers';
   }
-  if ($vars['view']->name == 'tags_popular') { 
-    $vars['output'] = l($vars['output'], drupal_get_path_alias(), array('query' => array('tag' => $vars['output'])));
-    return;
+  
+  if ($vars['view']->name == 'tags_popular') {
+    $path = drupal_get_path_alias(); 
   }
+
+  $class = 'tag-term';
+  if ($found) $class = 'tag-active';
+
+  if ($tags) {
+    $vars['output'] = l($vars['output'], $path, array('query' => array('tag' => $tags), 'attributes' => array('class' => array($class))));
+  }
+  else {
+    $vars['output'] = l($vars['output'], $path, array('attributes' => array('class' => array($class))));
+  }
+  
+  return;
 }
 
 // Compile a default user picture and link
@@ -312,12 +349,37 @@ function mosaic_preprocess_panelizer_view_mode(&$vars) {
 function _preprocess_view__questions__new_questions(&$vars) {
   $g = $_GET;
   $output = '';
-  $reset = l('reset', $g['q']);
+  $reset_all = l('reset', $g['q'], array('attributes' => array('title' => t('Reset all'))));
   if (isset($g['tag'])) {
+    $tags = $g['tag'];
+    $tags = explode('+', $tags);
+    $reset = array();
+    $tag_links = array();
+   
+    $path = drupal_get_path_alias();
+    
+    // foreach tags
+    foreach ($tags as $id => $tag) {
+      $reset = array();
+
+      // find the tags that ought to go into the new reset link
+      foreach ($tags as $i => $t) {
+        if ($t != $tag) {
+          $reset[] = $t;
+        }
+      }  
+      if (count($reset)) {
+        // compile the link for this tag
+        $r = implode('+', $reset);
+        $tag_links[] = l($tag.'<small>(x)</small>', $path, array('attributes' => array('title' => t('Reset').' '.$tag), 'html' => TRUE, 'query' => array('tag' => $r)));
+      }
+    }
+    $tag_links = implode(', ', $tag_links);
+    
     // add a way for the user to see and reset the filtered tag
     $output .= '<div class="q-filtered-tag">';
-    $output .= '<span class="filtered-by">'.t('filtered by: ').'"<span class="ftag">'.$g['tag'].'</span>"</span>';
-    $output .= '<span class="reset-filter">'.$reset.'</span></div>';
+    $output .= '<span class="filtered-by">'.t('filtered by: ').'<span class="ftag">'.$tag_links.'</span></span>';
+    $output .= '<span class="reset-filter">'.$reset_all.'</span></div>';
     $vars['title'] = $output;
   }
 }
