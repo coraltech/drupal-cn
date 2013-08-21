@@ -140,12 +140,14 @@ Drupal.coralQA = Drupal.coralQA || {};
       if ($bestNode.length) { // if we already have one
         var tgtPosition = $bestNode.position(); // current position
         var tgtHeight = $bestNode.height();     // current height
+        var tgtWidth = $bestNode.width();       // current width
         $bestTgt.prepend('<div class="best-switch"><span style="margin-top: '+((tgtHeight/2)-7)+'px"></span></div>'); // add a cover that will contain a gif
         $bestTgt.find('.best-switch').css({
           'position':'absolute', 
           'top':tgtPosition.top+'px', 
           'left': tgtPosition.left+'px', 
           'height':tgtHeight+'px',
+          'width':tgtWidth+'px',
           'z-index': 3
         });
       }
@@ -180,9 +182,9 @@ Drupal.coralQA = Drupal.coralQA || {};
 
         if ($newAnswer.length) {
           var $cover = $bestAnswerTgt.find('.best-switch');
-          if ($cover.length) {
-            $cover.remove();
-          }
+          
+          // Remove the cover if it's present
+          if ($cover.length) $cover.remove();
           
           // Target empty? - add the pane title
           if (!$bestAnswer.length) $bestAnswerTgt.append('<h2 class="selected-title">Selected answer</h2>');
