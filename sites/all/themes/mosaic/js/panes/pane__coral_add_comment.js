@@ -15,7 +15,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         // Comments revolve around the parent content (question, answer, comment).
         //  If there is no content there is nothing.
-        var selectors = '.node-question:not(".comment-processed"), .node-answer:not(".comment-processed"), .node-comment:not(".comment-processed")';
+        var selectors = '.node-question.node-teaser:not(".comment-processed"), .node-answer.node-teaser:not(".comment-processed"), .node-comment.node-teaser:not(".comment-processed")';
         $(selectors).each(function(i) {
           // A new case of the comments!
           new Drupal.coralQA.coralComment($(this));
@@ -53,6 +53,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       this.$commentForm.parents('.panel-pane').eq(0).hide(); // hide the form
       this.$commentsTgt.parents('.panel-pane').eq(0).hide(); // hide comments
+
+      // Initialize the content context (teaser|full)
+      this.initContext();
   
       // Setup and more
       // ----
@@ -210,15 +213,26 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       var trimmedText = $.trim(this.$trimmed.text()); // get trimmed text
       var fullText = $.trim(this.$full.text());
+      var context = 'teaser';
       
+      var $contentContext = this.$content.parents('.node-full-node');
+      if ($contentContext.length) context = 'full'; 
+      
+      // The full text is longer than trimmed
       if (fullText.length > trimmedText.length) {
-        this.$full.hide(); // hide it
-        this.hasTrimmed = true;
+        if (context == 'teaser') {
+          this.$full.hide(); // hide it
+          this.hasTrimmed = true;
+        }
+        else {
+          this.$full.find('.trimmed-'+this.refID).remove();
+          this.$trimmed.find('.trimmed-'+this.refID).remove();
+          this.$trimmed.hide();
+        }
       }
       else {
         this.$trimmed.hide();
-        $link = this.$full.find('.trimmed-'+this.refID);
-        $link.remove(); // junkit
+        this.$full.find('.trimmed-'+this.refID).remove();
       }
     }
     catch (err) {
@@ -260,6 +274,16 @@ Drupal.coralQA = Drupal.coralQA || {};
     catch (err) {
       console.log('initID errored: '+err);
     }
+  };
+  
+  
+  // Establish the rendering context of this content.
+  Drupal.coralQA.coralComment.prototype.initContext = function() {
+    this.context = 'teaser';
+    
+    var $contentContext = this.$content.parents('.node-full-node');
+    
+    if ($contentContext.length) this.context = 'full';
   };
 
 

@@ -16,7 +16,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         // Answers revolve around the parent question.
         //  If there is no question there is nothing.
-        $('.node-question:not(".question-processed")').each(function(i) {
+        $('.node-question.node-teaser:not(".question-processed")').each(function(i) {
           // The questions... Oh, the questions
           new Drupal.coralQA.coralAnswer($(this));
           
@@ -51,10 +51,16 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$loadMore = $(this.$question).find('.more-answers-'+this.refID);
       this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
       this.$full = $(this.$question).find('.body-full.body-'+this.refID);       // full text body pane
+
+      // Initialize the content context (teaser|full)
+      this.initContext();
       
-      this.$answerForm.parents('.panel-pane').eq(0).hide(); // hide the form
-      this.$answersTgt.parents('.panel-pane').eq(0).hide(); // hide answers
-      this.$bestAnswer.hide();
+      // dont hide the answers data on the full node view
+      if (this.context == 'teaser') {
+        this.$answerForm.parents('.panel-pane').eq(0).hide(); // hide the form
+        this.$answersTgt.parents('.panel-pane').eq(0).hide(); // hide answers
+        this.$bestAnswer.hide();
+      }      
 
       // Setup and more
       // ----
@@ -144,7 +150,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('coralAnswer errored: '+err);
     }
   };
-
+  
   
   // Manage the titleHoverHelp text (eg. Show form, etc...)
   Drupal.coralQA.coralAnswer.prototype.titleHoverHelp = function(ev) {
@@ -211,14 +217,21 @@ Drupal.coralQA = Drupal.coralQA || {};
       var trimmedText = $.trim(this.$trimmed.text()); // get trimmed text
       var fullText = $.trim(this.$full.text());
       
+      // The full text is longer than trimmed
       if (fullText.length > trimmedText.length) {
-        this.$full.hide(); // hide it
-        this.hasTrimmed = true;
+        if (this.context == 'teaser') {
+          this.$full.hide(); // hide it
+          this.hasTrimmed = true;
+        }
+        else {
+          this.$full.find('.trimmed-'+this.refID).remove();
+          this.$trimmed.find('.trimmed-'+this.refID).remove();
+          this.$trimmed.hide();
+        }
       }
       else {
         this.$trimmed.hide();
-        $link = this.$full.find('.trimmed-'+this.refID);
-        $link.remove(); // junkit
+        this.$full.find('.trimmed-'+this.refID).remove();
       }
     }
     catch (err) {
@@ -259,6 +272,19 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
     catch (err) {
       console.log('initID errored: '+err);
+    }
+  };
+  
+  
+  // Establish the rendering context of this content.
+  Drupal.coralQA.coralAnswer.prototype.initContext = function() {
+    this.context = 'teaser';
+    
+    var $questionContext = this.$question.parents('.node-full-node');
+    
+    if ($questionContext.length) {
+      this.$btn.removeClass('answers-hidden').find('.arrow').addClass('arrow-down');
+      this.context = 'full';
     }
   };
 
