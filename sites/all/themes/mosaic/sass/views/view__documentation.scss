@@ -9,6 +9,7 @@
 
 // Normally this would be constrained to the view level but I need
 //  access to the pane header.
+.pane-documentation-related-node,
 .pane-documentation-related-view {
   margin-top: $default_vert_unit;
   
