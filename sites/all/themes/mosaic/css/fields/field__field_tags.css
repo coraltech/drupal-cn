@@ -55,7 +55,12 @@
   margin-right: 0;
 }
 
-/* line 57, ../../sass/fields/field__field_tags.scss */
+/* line 56, ../../sass/fields/field__field_tags.scss */
+form .field-name-field-tags {
+  margin: 0;
+}
+
+/* line 61, ../../sass/fields/field__field_tags.scss */
 .node-type-book .field-name-field-tags {
   margin: 1.25em 0;
 }
