@@ -1566,21 +1566,37 @@ h3 .toc-top {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 359, ../sass/global/_global.scss */
+/* line 358, ../sass/global/_global.scss */
+.pane-page-tabs ul.primary li a:active, .pane-page-tabs ul.primary li a.active {
+  background: #da670b;
+  background: -moz-linear-gradient(top, #da670b 0%, #cc5a00 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #da670b), color-stop(100%, #cc5a00));
+  background: -webkit-linear-gradient(top, #da670b 0%, #cc5a00 100%);
+  background: -o-linear-gradient(top, #da670b 0%, #cc5a00 100%);
+  background: -ms-linear-gradient(top, #da670b 0%, #cc5a00 100%);
+  background: linear-gradient(to bottom, #da670b 0%, #cc5a00 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 2px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+/* line 367, ../sass/global/_global.scss */
 .pane-page-tabs ul.secondary {
   border-bottom: none;
   clear: both;
   float: none;
   padding: 0 0 0.625em 0;
 }
-/* line 365, ../sass/global/_global.scss */
+/* line 373, ../sass/global/_global.scss */
 .pane-page-tabs ul.secondary li {
   border-right: none;
   float: right;
   margin-right: 0;
   padding: 0 0 0 5px;
 }
-/* line 371, ../sass/global/_global.scss */
+/* line 379, ../sass/global/_global.scss */
 .pane-page-tabs ul.secondary li a {
   font-size: 12px;
   padding: 0.5em 1.5em;
@@ -1651,6 +1667,82 @@ h3 .toc-top {
 }
 /* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
 .pane-page-tabs ul.secondary li a::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 387, ../sass/global/_global.scss */
+.pane-page-tabs ul.secondary li a:active, .pane-page-tabs ul.secondary li a.active {
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFDADADA', endColorstr='#FFA7A7A7');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dadada), color-stop(70%, #bdbdbd));
+  background: -webkit-linear-gradient(#dadada, #bdbdbd 70%);
+  background: -moz-linear-gradient(#dadada, #bdbdbd 70%);
+  background: -o-linear-gradient(#dadada, #bdbdbd 70%);
+  background: linear-gradient(#dadada, #bdbdbd 70%);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid #b1b1b1;
+  text-shadow: #979797 0 -1px 0;
+  font-size: 12px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 2px 1px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 2px 1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 1px 3px;
+  text-shadow: none;
+  color: black;
+}
+/* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:active:hover, .pane-page-tabs ul.secondary li a.active:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:active:hover, .pane-page-tabs ul.secondary li a.active:hover {
+  background-color: #b1b1b1;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #cdcdcd), color-stop(75%, #b1b1b1));
+  background: -webkit-linear-gradient(#cdcdcd 3%, #b1b1b1 75%);
+  background: -moz-linear-gradient(#cdcdcd 3%, #b1b1b1 75%);
+  background: -o-linear-gradient(#cdcdcd 3%, #b1b1b1 75%);
+  background: linear-gradient(#cdcdcd 3%, #b1b1b1 75%);
+}
+/* line 21, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:active:active, .pane-page-tabs ul.secondary li a.active:active {
+  -webkit-box-shadow: darkgrey 0 1px 2px inset;
+  -moz-box-shadow: darkgrey 0 1px 2px inset;
+  box-shadow: darkgrey 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-page-tabs ul.secondary li a:active.disabled, .pane-page-tabs ul.secondary li a:active[disabled], .pane-page-tabs ul.secondary li a.active.disabled, .pane-page-tabs ul.secondary li a.active[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #bdbdbd;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.pane-page-tabs ul.secondary li a:active::-moz-focus-inner, .pane-page-tabs ul.secondary li a.active::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }

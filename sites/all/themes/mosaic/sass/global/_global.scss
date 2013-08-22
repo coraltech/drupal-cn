@@ -353,6 +353,14 @@ h3 .toc-top {
           border-color: transparent lighten($mdorange, 5%) lighten($ltorange, 5%) $ltorange;
           @include opacity(1);
         }
+        
+        &:active,
+        &.active {
+          @include linear-v-gradient(desaturate(darken($ltorange, 25%), 7%), saturate(darken($ltorange, 30%), 15%));
+          @include box-shadow(rgba(0, 0, 0, 0.5) 2px 0px 2px);
+          @include opacity(.85);
+        }
+        
       }
     }
   }
@@ -372,6 +380,17 @@ h3 .toc-top {
         @include btn-matte-inset(3px, 12px, darken($silver, 5%), darken($silver, 15%), $white);
         @include btn-structure(2px 5px, 12px, 3px);
         @include box-shadow(rgba(0, 0, 0, 0.25) 2px 1px 3px);
+        
+        &:hover {}
+        
+        &:active,
+        &.active {
+          @include btn-matte-inset(3px, 12px, lighten($silver, 10%), darken($silver, 1%), $white);
+          @include btn-structure(2px 5px, 12px, 3px);
+          @include box-shadow(rgba(0, 0, 0, 0.25) 2px 1px 3px);
+          text-shadow: none;
+          color: $black;
+        }
       }
     }
   }
