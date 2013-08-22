@@ -36,6 +36,17 @@
     .ftag {
       color: darken($mdgray, 5%);
       font-weight: bold;
+      
+      small {
+        color: $mdgray;
+        margin-left: 3px;
+        position: relative;
+        top: -1px;
+      }
+      
+      a:hover small {
+        color: $mdred;
+      }
     }
   }
   .views-row {

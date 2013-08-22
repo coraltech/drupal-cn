@@ -98,11 +98,22 @@
   color: #6a6a6a;
   font-weight: bold;
 }
-/* line 45, ../../sass/views/view__questions__new_questions.scss */
+/* line 40, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .q-filtered-tag .ftag small {
+  color: #777777;
+  margin-left: 3px;
+  position: relative;
+  top: -1px;
+}
+/* line 47, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .q-filtered-tag .ftag a:hover small {
+  color: #b02e1c;
+}
+/* line 56, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions h2.question-node-teaser-pane-title {
   margin-bottom: .05em;
 }
-/* line 48, ../../sass/views/view__questions__new_questions.scss */
+/* line 59, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more {
   margin: 0.625em 0;
   position: relative;
@@ -141,7 +152,7 @@
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 51, ../../sass/views/view__questions__new_questions.scss */
+/* line 62, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more .ajax-progress {
   position: absolute;
   top: 8%;
