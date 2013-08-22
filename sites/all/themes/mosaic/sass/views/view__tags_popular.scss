@@ -30,6 +30,19 @@
 
       .views-row { padding-left: 1em; padding-right: 1em; }
       .views-row-even { background: darken($ltgray, 7%); }
+      
+      .tag-active {
+        &:after {
+          content: "(x)";
+          color: desaturate(darken($ltred, 5%), 15%);
+          margin-left: 5px;
+        }
+      }
+      .tag-active:hover {
+        &:after {
+          color: $mdred;
+        }
+      }
     }
     
     .pager-load-more {
