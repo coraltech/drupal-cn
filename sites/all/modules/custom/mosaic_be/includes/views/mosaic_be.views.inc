@@ -15,8 +15,8 @@ function mosaic_be_views_query_alter(&$view, &$query) {
       // if we have a tag set the view conditions
       if (isset($_GET['tag'])) $tags = $_GET['tag'];
       if ($tags && $tags != '') {
-        $tags = filter_xss_admin(urldecode($tags));
-        $tags = explode(' ', $tags);
+        $tags = filter_xss_admin(rawurldecode($tags));
+        $tags = explode('+', $tags);
 
         $conditions = array(
           0 => array(

@@ -202,8 +202,9 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   if (isset($_GET['tag'])) {
     $tags = $_GET['tag'];
     if ($tags && $tags != '') {
-      $tags = filter_xss_admin(urldecode($tags));
-      $tags = explode(' ', $tags);
+      $tags = filter_xss_admin(rawurldecode($tags));
+      $tags = explode('+', $tags); // note: this has to come in as %2B from the url!
+
       $reset = array();
       foreach ($tags as $id => $tag) {
         if ($tag != $vars['output']) {
@@ -222,15 +223,14 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   }
     
   // Popular question tags should point to the questions page
+  if ($vars['view']->name == 'tags_popular') {
+    $path = drupal_get_path_alias(); 
+  }
   if ($vars['view']->name == 'tags_popular' && 
       $vars['view']->current_display == 'popular_question_tags') {
     $path = 'content/questions-and-answers';
   }
   
-  if ($vars['view']->name == 'tags_popular') {
-    $path = drupal_get_path_alias(); 
-  }
-
   $class = 'tag-term';
   if ($found) $class = 'tag-active';
 
@@ -353,25 +353,32 @@ function _preprocess_view__questions__new_questions(&$vars) {
   if (isset($g['tag'])) {
     $tags = $g['tag'];
     $tags = explode('+', $tags);
+
     $reset = array();
     $tag_links = array();
-   
     $path = drupal_get_path_alias();
     
     // foreach tags
     foreach ($tags as $id => $tag) {
       $reset = array();
-
       // find the tags that ought to go into the new reset link
       foreach ($tags as $i => $t) {
         if ($t != $tag) {
           $reset[] = $t;
         }
+      }
+      if (count($tags) == 1) {
+        $reset[] = '';
       }  
       if (count($reset)) {
         // compile the link for this tag
         $r = implode('+', $reset);
-        $tag_links[] = l($tag.'<small>(x)</small>', $path, array('attributes' => array('title' => t('Reset').' '.$tag), 'html' => TRUE, 'query' => array('tag' => $r)));
+        if ($r != '') {
+          $tag_links[] = l($tag.'<small>(x)</small>', $path, array('attributes' => array('title' => t('Reset').' '.$tag), 'html' => TRUE, 'query' => array('tag' => $r)));
+        }
+        else {
+          $tag_links[] = l($tag.'<small>(x)</small>', $path, array('attributes' => array('title' => t('Reset').' '.$tag), 'html' => TRUE));
+        }
       }
     }
     $tag_links = implode(', ', $tag_links);
