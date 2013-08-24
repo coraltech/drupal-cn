@@ -52,7 +52,8 @@ function coral_qa_manager_init() {
   }
 
   drupal_add_js($settings, 'setting');
-} 
+}
+
  
 // @TODO: Error check fields used here for their existence!!!
 //  I see a lot of accessing going on w/out isset checks!
@@ -67,27 +68,12 @@ function coral_qa_manager_entity_insert($entity, $type) {
   if ($type == 'node' && $entity->type == 'answer') {
     $question = node_load((int)$entity->field_question[$entity->language][0]['target_id']);
     if (is_object($question) && $question->nid) {
-      // Add the tags from the question  
-      if (!isset($entity->field_tags) && isset($question->field_tags)) {
-        $i = 0;
-        foreach ($question->field_tags[$question->language] as $tag) {
-          $inserts = db_insert('field_data_field_tags')
-            ->fields(array(
-              'entity_type' => 'node',
-              'bundle' => $entity->type,
-              'entity_id' => $entity->nid,
-              'revision_id' => $entity->vid,
-              'language' => $entity->language,
-              'delta' => $i,
-              'field_tags_tid' => $tag['tid']
-            ))->execute();
-          $i++;
-        }
-      }
+      
+      coral_qa_manager_sync_tags($question, $entity); // sync tags from Q to A
       
       $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] + 1);
       coral_qa_manager_update_field($question, 'field_answer_count'); // make update
-      coral_qa_mark_node_updated($question);
+      coral_qa_manager_mark_node_updated($question);
       // @TODO: find a way to fire the updated event (hook_node_update)
       //  I am not sure if we can do that here because we are not actually 
       //  doing anything with the node... and what we are doing is already done...
@@ -102,23 +88,34 @@ function coral_qa_manager_entity_insert($entity, $type) {
 }
 
 
-// Updates a single field
+// Syncronizes tags from two nodes
+//  Master tags -> Slave tags
+function coral_qa_manager_sync_tags($master, $slave) {
+  // Add the tags from the master node 
+  if (!isset($slave->field_tags) && isset($master->field_tags)) {
+    $slave->field_tags = $master->field_tags;
+    coral_qa_manager_update_field($slave, 'field_tags', 'insert');
+  }
+}
+
+
+// Updates (or inserts) a single field
 //  $node:  object
 //  $field: string
-function coral_qa_manager_update_field($node, $field) {
+function coral_qa_manager_update_field($node, $field, $op = 'update') {
   // Get field id
-  $info = field_info_field('field_answer_count');
+  $info = field_info_field($field);
   $fields = array($info['id']);
-      
+  
   // Exec storage
-  field_sql_storage_field_storage_write('node', $node, 'update', $fields);
+  field_sql_storage_field_storage_write('node', $node, $op, $fields);
       
   cache_clear_all("field:node:$node->nid", 'cache_field');
 }
 
 
 // Update the changed timestamp
-function coral_qa_mark_node_updated($node) {
+function coral_qa_manager_mark_node_updated($node) {
   $changed = time();
   
   db_update('node')
@@ -147,16 +144,8 @@ function coral_qa_manager_entity_delete($entity, $type) {
     coral_qa_manager_update_comment_counts_tree($entity, $type, 'delete');
   }
 }
-// @TODO: implement saving this way - non-full node save
-// ................................................................
-//  db_update('example_entity')
-//    ->fields(array(
-//    'updated' => REQUEST_TIME,
-//  ))
-//  ->condition('type', $type)
-//  ->condition('id', $id)
-//  ->execute();
-    
+
+
 // Update the comments
 function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
   $incr = ($op == 'insert') ? 1 : -1; 
@@ -178,6 +167,8 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
     // get this comment's parent and update it.
     $content = node_load((int)$entity->field_content[$entity->language][0]['target_id']);
     if (is_object($content)) {
+      coral_qa_manager_sync_tags($content, $entity);
+      
       $content->field_comment_count[$content->language][0]['value'] = (string)((int)$content->field_comment_count[$content->language][0]['value'] + $incr);
       coral_qa_manager_update_field($content, 'field_comment_count'); // make update
     
