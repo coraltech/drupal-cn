@@ -85,11 +85,13 @@ function coral_qa_manager_entity_insert($entity, $type) {
         }
       }
       
-      // Update the answer count
-      // @TODO: convert this to a raw db query
-      //         to prevent the node as appearing "updated"
-      $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] + 1);      
-      node_save($question);
+      $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] + 1);
+      coral_qa_manager_update_field($question, 'field_answer_count'); // make update
+      coral_qa_mark_node_updated($question);
+      // @TODO: find a way to fire the updated event (hook_node_update)
+      //  I am not sure if we can do that here because we are not actually 
+      //  doing anything with the node... and what we are doing is already done...
+      //  thus, there is no node_save() call coming later... 
     }
   }
   
@@ -97,6 +99,32 @@ function coral_qa_manager_entity_insert($entity, $type) {
   if ($type == 'node' && $entity->type == 'comment') {
     coral_qa_manager_update_comment_counts_tree($entity, $type, 'insert');
   }
+}
+
+
+// Updates a single field
+//  $node:  object
+//  $field: string
+function coral_qa_manager_update_field($node, $field) {
+  // Get field id
+  $info = field_info_field('field_answer_count');
+  $fields = array($info['id']);
+      
+  // Exec storage
+  field_sql_storage_field_storage_write('node', $node, 'update', $fields);
+      
+  cache_clear_all("field:node:$node->nid", 'cache_field');
+}
+
+
+// Update the changed timestamp
+function coral_qa_mark_node_updated($node) {
+  $changed = time();
+  
+  db_update('node')
+    ->fields(array('changed' => $changed))
+    ->condition('nid', $node->nid, '=')
+    ->execute();
 }
 
 
@@ -110,10 +138,7 @@ function coral_qa_manager_entity_delete($entity, $type) {
     if (is_object($question) && $question->nid) {
       // Update the answer count
       $question->field_answer_count[$question->language][0]['value'] = (string)((int)$question->field_answer_count[$question->language][0]['value'] - 1);
-      
-      // @TODO: convert this to a raw db query
-      //         to prevent the node as appearing "updated"
-      node_save($question);
+      coral_qa_manager_update_field($question, 'field_answer_count'); // make update
     }
   }
   
@@ -143,9 +168,7 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
     $question = node_load((int)$entity->field_question['und'][0]['target_id']);
     if (is_object($question)) {
       $question->field_comment_count[$question->language][0]['value'] = (string)((int)$question->field_comment_count[$question->language][0]['value'] + $incr); 
-      
-      // @TODO: Make this db_update()
-      node_save($question);
+      coral_qa_manager_update_field($question, 'field_comment_count'); // make update
     } 
     // we can exit
     return true;
@@ -156,14 +179,11 @@ function coral_qa_manager_update_comment_counts_tree($entity, $type, $op) {
     $content = node_load((int)$entity->field_content[$entity->language][0]['target_id']);
     if (is_object($content)) {
       $content->field_comment_count[$content->language][0]['value'] = (string)((int)$content->field_comment_count[$content->language][0]['value'] + $incr);
-      
-      // @TODO: Make this db_update()
-      node_save($content);
+      coral_qa_manager_update_field($content, 'field_comment_count'); // make update
     
       // call this again...
       coral_qa_manager_update_comment_counts_tree($content, 'node', $op);
     }
   }   
 }
-
 
