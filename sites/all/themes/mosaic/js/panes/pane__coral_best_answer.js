@@ -279,16 +279,13 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.currentSelected = this.currentSelected.replace('node-', ''); // only the numbers
       }
       
-      var currentUser = Drupal.settings.coral_qa_manager.current_user; // get the user info
-      if (currentUser.uid == this.userID) {
-        // Get all un-processed answers from the view of answers
-        var $answers = this.$question.find('.pane-coral-answers-target .node-answer:not(".best-answer-processed")');
-        $answers.each(function() {
-          // Once we know if this logged in user is the owner of the question,
-          //  we can show the Best answer button and activate it.
-          cba.initAnswer($(this));   
-        });
-      }
+      // Get all un-processed answers from the view of answers
+      var $answers = this.$question.find('.pane-coral-answers-target .node-answer:not(".best-answer-processed")');
+      $answers.each(function() {
+        // Once we know if this logged in user is the owner of the question,
+        //  we can show the Best answer button and activate it.
+        cba.initAnswer($(this));   
+      });
     }
     catch (err) {
       console.log('initQuestion errored: '+err);
@@ -309,7 +306,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.answers[answerID].$answerBtn = this.answers[answerID].$answer.find('.best-answer-'+answerID);
 
       // Regular answer
-      if (answerID != this.currentSelected) {
+      var currentUser = Drupal.settings.coral_qa_manager.current_user; // get the user info
+      if (answerID != this.currentSelected && currentUser.uid == this.userID) {
         // Remove the hidden class
         this.answers[answerID].$answerBtn.removeClass('hide');
       }
