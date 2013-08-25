@@ -100,3 +100,7 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
   box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px;
 }
+/* line 41, ../../sass/panes/pane__coral_best_answer.scss */
+.pane-coral-best-answer .ajax-progress .throbber {
+  margin: 1px -2px -1px 6px;
+}
