@@ -19,7 +19,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         $('#superfish-2 a').unbind('click');
       }
       catch (err) {
-        console.log('mosaicQAInit() reported errors. Error: '+err);
+        console.log('mosaicCommunityInit() reported errors. Error: '+err);
       }
     }
   };
