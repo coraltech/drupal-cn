@@ -138,18 +138,22 @@
   background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
+/* line 55, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer .ajax-progress .throbber {
+  margin: 1px -2px -1px 6px;
+}
 
-/* line 62, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 66, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .pager,
 .view-answers.view-display-id-new_answers .pager {
   display: none;
 }
-/* line 64, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 68, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .views-row,
 .view-answers.view-display-id-new_answers .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
 }
-/* line 67, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 71, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .views-row-first,
 .view-answers.view-display-id-new_answers .views-row-first {
   margin-top: 0;
