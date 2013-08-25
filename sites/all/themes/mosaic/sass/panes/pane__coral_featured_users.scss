@@ -1,0 +1,24 @@
+
+// Scss file for the feat. users pane
+
+@import 'global/colors';
+@import 'global/headers';
+@import 'global/fonts';
+
+.pane-coral-featured-users {
+  margin-top: $default_vert_unit;
+  padding: 0 0 0 5px;
+  
+  .pane-title {
+    @include h4;
+    color: $mdgray;
+  }
+  
+  .user-picture {
+    float: left;
+    margin: 0 5px 5px 0;
+    img {
+      display: block;
+    }
+  }
+}
