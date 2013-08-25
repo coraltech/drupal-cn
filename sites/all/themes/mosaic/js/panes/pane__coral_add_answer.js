@@ -307,7 +307,9 @@ Drupal.coralQA = Drupal.coralQA || {};
             ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
             ca.manageAnswers();
           };
-          ca.setLoadStatus('loading'); // Set the loading status
+          
+          // PS: Comment the following line to forgoe throbber on Answer click! 
+          if (this.context != 'full') ca.setLoadStatus('loading'); // Set the loading status
           ca.getSettings(callback);    // Get the new settings and then process callback
         }
         
