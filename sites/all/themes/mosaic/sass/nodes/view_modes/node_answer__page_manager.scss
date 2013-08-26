@@ -1,0 +1,14 @@
+
+// Scss file for the page maanger (full node) display of a question node
+
+@import 'global/grid_mix';
+
+// full node
+.page-node.node-type-answer .main-global {
+  .grid-11 {
+    @include col(8);
+  };
+  .grid-13-last {
+    @include col(16, true);
+  };
+}
