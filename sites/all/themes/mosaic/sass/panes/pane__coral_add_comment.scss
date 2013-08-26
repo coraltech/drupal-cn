@@ -87,3 +87,55 @@
     display: none;
   }
 }
+
+
+.html .node-type-comment,
+.html div.node-teaser.node-comment {
+  
+  .pane-coral-page-title,
+  .comment-node-teaser-pane-title {
+    .icon { // apply question mark icon
+      //display: block;
+      //float: left;
+      //margin: 7px .5em 0 0;
+      //@include icons-sprite('coral-q');
+    }
+  }
+  
+  .pane-coral-page-title h2 {
+    color: darken($mdblue, 7%);
+    font-weight: bold;
+    margin-top: .15em;
+  }
+  
+  .pane-coral-flag-abuse-node,
+  .pane-coral-add-comment,
+  .pane-coral-add-answer,
+  .pane-node-links { // float links beside each other
+    float: right;
+    height: 2.12 * $default_vert_unit; // same as node links
+    .links { // standardize 
+      padding: 0; 
+      margin: 0; 
+      
+      li {
+        margin: 0 5px 0 0;
+        padding: 2px 5px 1px;
+      }
+    }
+  }
+  .pane-coral-flag-abuse-node {
+    margin-right: 1em;
+  }
+  
+  .pane-node-field-tags {
+    clear: left;
+  }
+   
+  // Hide some things
+  .field-name-field-content,
+  .field-name-field-comment-count,
+  .field-type-file legend {
+    display: none;
+  }
+}

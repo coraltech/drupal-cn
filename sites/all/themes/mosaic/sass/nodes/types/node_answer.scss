@@ -24,8 +24,38 @@
     }
   }
   
+  .pane-coral-add-comment,
+  .pane-coral-add-answer,
+  .pane-node-links { // float links beside each other
+    float: left;
+    height: 2.12 * $default_vert_unit; // same as node links
+    .links { // standardize 
+      padding: 0; 
+      margin: 0; 
+      
+      li {
+        margin: 0 5px 0 0;
+        padding: 2px 5px 1px;
+      }
+    }
+  }
+  
   .answer-node-pane-title {
     @include h3;
-  }  
+  }
+  
+  // Inner question node + answers form and view
+  .layout-node-1 {
+    .site-width {
+      @include pie-clearfix;
+    }
+  }
+  
+  // Hide some things
+  .field-name-field-content,
+  .field-name-field-comment-count,
+  .field-type-file legend {
+    display: none;
+  }
 }
 
