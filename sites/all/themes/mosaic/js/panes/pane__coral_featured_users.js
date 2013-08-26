@@ -16,7 +16,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         selectors   += ' .node-comment.node-teaser';   // comments
         
         var $pane = $('.featured-users');
-        var $content = $(selectors)
+        var $content = $(selectors);
         
         if ($content.length > 1) {
           new Drupal.coralQA.coralFeaturedUsers($content, $pane);
