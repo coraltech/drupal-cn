@@ -120,7 +120,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // 
+  // Move the chosen answer into the selected target
   Drupal.coralQA.coralBestAnswers.prototype.moveAnswer = function($btn, answerID) {
     try {
       var cba = this;
@@ -285,6 +285,15 @@ Drupal.coralQA = Drupal.coralQA || {};
         // Once we know if this logged in user is the owner of the question,
         //  we can show the Best answer button and activate it.
         cba.initAnswer($(this));   
+      });
+      
+      // Remove the best answer button from any loose answers (not attached to a question)
+      var $looseAnswers = $('.node-answer:not(".best-answer-processed")');
+      $looseAnswers.each(function() {
+        if (!$(this).parents('.node-question').length) {
+          $pane = $(this).find('.pane-coral-best-answer');
+          $pane.remove(); // remove from dom
+        }
       });
     }
     catch (err) {
