@@ -1,4 +1,4 @@
-/* line 10, ../../sass/panes/pane__coral_best_answer_target.scss */
+/* line 11, ../../sass/panes/pane__coral_best_answer_target.scss */
 #main-content .pane-coral-best-answer-target .selected-title {
   background: #36b048;
   color: white;
@@ -6,21 +6,21 @@
   padding-left: .5em;
   padding-right: .5em;
 }
-/* line 17, ../../sass/panes/pane__coral_best_answer_target.scss */
+/* line 18, ../../sass/panes/pane__coral_best_answer_target.scss */
 #main-content .pane-coral-best-answer-target .best-ans-tgt {
   padding-top: 0.625em;
 }
-/* line 20, ../../sass/panes/pane__coral_best_answer_target.scss */
+/* line 21, ../../sass/panes/pane__coral_best_answer_target.scss */
 #main-content .pane-coral-best-answer-target .best-ans-tgt .best-answer {
   display: none;
 }
-/* line 22, ../../sass/panes/pane__coral_best_answer_target.scss */
+/* line 23, ../../sass/panes/pane__coral_best_answer_target.scss */
 #main-content .pane-coral-best-answer-target .best-switch {
   background-color: rgba(208, 208, 208, 0.65);
   border: 1px solid #9d9d9d;
   width: 100%;
 }
-/* line 26, ../../sass/panes/pane__coral_best_answer_target.scss */
+/* line 27, ../../sass/panes/pane__coral_best_answer_target.scss */
 #main-content .pane-coral-best-answer-target .best-switch span {
   background-image: url(/misc/throbber.gif);
   background-repeat: no-repeat;
@@ -29,4 +29,23 @@
   height: 20px;
   width: 20px;
   margin-left: 49%;
+}
+/* line 43, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .pane-coral-comments-target.odd {
+  background-color: #efefef;
+}
+/* line 46, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .pane-coral-comments-target.even {
+  background-color: white;
+}
+/* line 49, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .pane-coral-comments-target .node .comment-node-pane-title {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0;
+  float: left;
+}
+/* line 54, ../../sass/panes/pane__coral_best_answer_target.scss */
+#main-content .pane-coral-best-answer-target .pane-coral-comments-target.comments-more {
+  margin-bottom: 3.75em;
 }

@@ -174,3 +174,66 @@
 .view-comments.view-display-id-this_comment .pager {
   display: none;
 }
+
+/* line 105, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .pane-coral-page-title h2,
+.html div.node-teaser.node-comment .pane-coral-page-title h2 {
+  color: #3a5e92;
+  font-weight: bold;
+  margin-top: .15em;
+}
+/* line 114, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .pane-coral-flag-abuse-node,
+.html .node-type-comment .pane-coral-add-comment,
+.html .node-type-comment .pane-coral-add-answer,
+.html .node-type-comment .pane-node-links,
+.html div.node-teaser.node-comment .pane-coral-flag-abuse-node,
+.html div.node-teaser.node-comment .pane-coral-add-comment,
+.html div.node-teaser.node-comment .pane-coral-add-answer,
+.html div.node-teaser.node-comment .pane-node-links {
+  float: right;
+  height: 2.65em;
+}
+/* line 117, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .pane-coral-flag-abuse-node .links,
+.html .node-type-comment .pane-coral-add-comment .links,
+.html .node-type-comment .pane-coral-add-answer .links,
+.html .node-type-comment .pane-node-links .links,
+.html div.node-teaser.node-comment .pane-coral-flag-abuse-node .links,
+.html div.node-teaser.node-comment .pane-coral-add-comment .links,
+.html div.node-teaser.node-comment .pane-coral-add-answer .links,
+.html div.node-teaser.node-comment .pane-node-links .links {
+  padding: 0;
+  margin: 0;
+}
+/* line 121, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .pane-coral-flag-abuse-node .links li,
+.html .node-type-comment .pane-coral-add-comment .links li,
+.html .node-type-comment .pane-coral-add-answer .links li,
+.html .node-type-comment .pane-node-links .links li,
+.html div.node-teaser.node-comment .pane-coral-flag-abuse-node .links li,
+.html div.node-teaser.node-comment .pane-coral-add-comment .links li,
+.html div.node-teaser.node-comment .pane-coral-add-answer .links li,
+.html div.node-teaser.node-comment .pane-node-links .links li {
+  margin: 0 5px 0 0;
+  padding: 2px 5px 1px;
+}
+/* line 127, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .pane-coral-flag-abuse-node,
+.html div.node-teaser.node-comment .pane-coral-flag-abuse-node {
+  margin-right: 1em;
+}
+/* line 131, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .pane-node-field-tags,
+.html div.node-teaser.node-comment .pane-node-field-tags {
+  clear: left;
+}
+/* line 138, ../../sass/panes/pane__coral_add_comment.scss */
+.html .node-type-comment .field-name-field-content,
+.html .node-type-comment .field-name-field-comment-count,
+.html .node-type-comment .field-type-file legend,
+.html div.node-teaser.node-comment .field-name-field-content,
+.html div.node-teaser.node-comment .field-name-field-comment-count,
+.html div.node-teaser.node-comment .field-type-file legend {
+  display: none;
+}

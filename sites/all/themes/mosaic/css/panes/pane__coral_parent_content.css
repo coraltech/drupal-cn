@@ -1,0 +1,156 @@
+/* line 13, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content {
+  margin-bottom: 1.375em;
+}
+/* line 20, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-title {
+  background: #446eac;
+  color: white;
+  position: relative;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF2C8F3A', endColorstr='#FF14411A');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2c8f3a), color-stop(70%, #20682a));
+  background: -webkit-linear-gradient(#2c8f3a, #20682a 70%);
+  background: -moz-linear-gradient(#2c8f3a, #20682a 70%);
+  background: -o-linear-gradient(#2c8f3a, #20682a 70%);
+  background: linear-gradient(#2c8f3a, #20682a 70%);
+  -webkit-box-shadow: #43c555 0 1px 0 inset;
+  -moz-box-shadow: #43c555 0 1px 0 inset;
+  box-shadow: #43c555 0 1px 0 inset;
+  border: 1px solid #1a5522;
+  text-shadow: #0d2a11 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  padding-right: 25px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-parent-content > .pane-title:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-parent-content > .pane-title:hover {
+  background-color: #1a5522;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #267c32), color-stop(75%, #1a5522));
+  background: -webkit-linear-gradient(#267c32 3%, #1a5522 75%);
+  background: -moz-linear-gradient(#267c32 3%, #1a5522 75%);
+  background: -o-linear-gradient(#267c32 3%, #1a5522 75%);
+  background: linear-gradient(#267c32 3%, #1a5522 75%);
+}
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-parent-content > .pane-title:active {
+  -webkit-box-shadow: #16491d 0 1px 2px inset;
+  -moz-box-shadow: #16491d 0 1px 2px inset;
+  box-shadow: #16491d 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-parent-content > .pane-title.disabled, .html .pane-coral-parent-content > .pane-title[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #20682a;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.html .pane-coral-parent-content > .pane-title::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 33, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-title .circle {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 23%;
+  right: 1.5%;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #309c40;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
+  background: #fff9d0;
+  background: -moz-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff9d0), color-stop(100%, #e5d14a));
+  background: -webkit-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: -o-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: -ms-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
+  background: linear-gradient(to bottom, #fff9d0 0%, #e5d14a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 47, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-title .circle .arrow {
+  display: block;
+  margin: 3px 0 0 6px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #515151;
+}
+/* line 52, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-title .circle .arrow-down {
+  margin: 6px 0 0 3px;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #515151;
+}
+/* line 57, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-title:hover .circle {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
+  background: #e5d14a;
+  background: -moz-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5d14a), color-stop(100%, #fff6b6));
+  background: -webkit-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: -o-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: -ms-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
+  background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 64, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-content > .node-teaser {
+  padding: 0 15px;
+  background: #fffada;
+}
+/* line 68, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-content > .node-teaser > h2 {
+  margin-top: 0;
+  position: relative;
+  top: 0.4545em;
+}

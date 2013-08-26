@@ -18,11 +18,62 @@
   height: 26px;
   width: 25px;
 }
-/* line 27, ../../../sass/nodes/types/node_answer.scss */
+/* line 29, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .pane-coral-add-comment,
+.html div.node-type-answer .pane-coral-add-answer,
+.html div.node-type-answer .pane-node-links,
+.html div.node-teaser.node-answer .pane-coral-add-comment,
+.html div.node-teaser.node-answer .pane-coral-add-answer,
+.html div.node-teaser.node-answer .pane-node-links {
+  float: left;
+  height: 2.65em;
+}
+/* line 32, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .pane-coral-add-comment .links,
+.html div.node-type-answer .pane-coral-add-answer .links,
+.html div.node-type-answer .pane-node-links .links,
+.html div.node-teaser.node-answer .pane-coral-add-comment .links,
+.html div.node-teaser.node-answer .pane-coral-add-answer .links,
+.html div.node-teaser.node-answer .pane-node-links .links {
+  padding: 0;
+  margin: 0;
+}
+/* line 36, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .pane-coral-add-comment .links li,
+.html div.node-type-answer .pane-coral-add-answer .links li,
+.html div.node-type-answer .pane-node-links .links li,
+.html div.node-teaser.node-answer .pane-coral-add-comment .links li,
+.html div.node-teaser.node-answer .pane-coral-add-answer .links li,
+.html div.node-teaser.node-answer .pane-node-links .links li {
+  margin: 0 5px 0 0;
+  padding: 2px 5px 1px;
+}
+/* line 43, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .answer-node-pane-title,
 .html div.node-teaser.node-answer .answer-node-pane-title {
   font-size: 1.25em;
   line-height: 1em;
   margin-top: .5em;
   margin-bottom: .5em;
+}
+/* line 49, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .layout-node-1 .site-width,
+.html div.node-teaser.node-answer .layout-node-1 .site-width {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.html div.node-type-answer .layout-node-1 .site-width:after,
+.html div.node-teaser.node-answer .layout-node-1 .site-width:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 57, ../../../sass/nodes/types/node_answer.scss */
+.html div.node-type-answer .field-name-field-content,
+.html div.node-type-answer .field-name-field-comment-count,
+.html div.node-type-answer .field-type-file legend,
+.html div.node-teaser.node-answer .field-name-field-content,
+.html div.node-teaser.node-answer .field-name-field-comment-count,
+.html div.node-teaser.node-answer .field-type-file legend {
+  display: none;
 }
