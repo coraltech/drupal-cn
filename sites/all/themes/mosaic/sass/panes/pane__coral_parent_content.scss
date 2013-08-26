@@ -1,0 +1,76 @@
+
+// Scss file for the parent content pane
+
+@import 'global/arrows';
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+
+.html .pane-coral-parent-content {
+
+  //background: lighten($ltyellow, 7%);
+  //padding: 0 ($default_vert_unit / 2);
+  margin-bottom: 1.1 * $default_vert_unit;
+  
+  // The floating title (Parent content)
+  & > .pane-title {
+    background: $mdblue;
+    color: $white;
+    position: relative;
+        
+    @include btn-matte-inset(0px, 16px, lighten($dkgreen, 10%), $dkgreen, $white);
+    @include btn-structure;
+    
+    font-weight: bold;
+    padding-right: 25px;
+    
+    @include box-shadow(rgba(0,0,0,.2) 2px 2px 6px);
+    
+    .circle {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 23%;
+      right: 1.5%;
+      height: 16px;
+      width: 16px;
+      border: 1px solid darken($mdgreen, 5%);
+      
+      @include box-shadow(rgba(0, 0, 0, 0.1) 0px 2px 3px inset);
+      @include linear-v-gradient(lighten($ltyellow, 5%), $mdyellow);
+      @include border-radius(8px);
+      
+      .arrow {
+        display: block;
+        margin: 3px 0 0 6px;
+        @include arrow-right(5px, $dkgray);  
+      }
+      .arrow-down {
+        margin: 6px 0 0 3px;
+        @include arrow-down(5px, $dkgray);  
+      }
+    }
+    &:hover .circle {
+      @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
+      @include linear-v-gradient($mdyellow, $ltyellow);
+    }
+  }
+  
+  // The node inside
+  & > .pane-content > .node-teaser {
+    padding: 0 15px;
+    background: lighten($ltyellow, 7%);
+    
+    & > h2 {
+      margin-top: 0; //0.4545em;
+      //margin-bottom: 0; //0.4545em;
+      position: relative;
+      top: 0.4545em;
+    }
+  }
+  
+}
