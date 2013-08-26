@@ -2,6 +2,7 @@
 // Scss file for the best answer target pane
 
 @import 'global/colors';
+@import 'global/headers';
 @import 'global/fonts';
 
 @import 'compass/css3/opacity';
@@ -32,5 +33,25 @@
       width: 20px;
       margin-left: 49%;
     }
+  }
+  
+  // This is NO good but we gotta do it somewhere.
+  //  this is bc the comment target can appear within
+  //  the answers target as well (at the second level)
+  //  upon an ajax load.
+  .pane-coral-comments-target {
+    &.odd {
+      background-color: lighten($ltgray, 7%);
+    }
+    &.even {
+      background-color: $white;
+    }
+    .node .comment-node-pane-title {
+      @include h0;
+      float: left;
+    }
+  }
+  .pane-coral-comments-target.comments-more {
+    margin-bottom: 3 * $default_vert_unit;
   }
 }
