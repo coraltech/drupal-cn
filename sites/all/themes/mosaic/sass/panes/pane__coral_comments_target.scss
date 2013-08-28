@@ -31,6 +31,13 @@
     left: 0;
   }
   
+  &.odd {
+    background-color: lighten($ltgray, 7%);
+  }
+  &.even {
+    background-color: $white;
+  }
+
   .views-row > .node-teaser.node-comment {
     padding-top: $default_vert_unit / 1.75;
   }
@@ -106,17 +113,11 @@
     margin-bottom: -1px;
     margin-right: -1px;
     padding-left: 1em;
-
-    &.odd {
-      background-color: lighten($ltgray, 7%);
-    }
-    &.even {
-      background-color: $white;
-    }
   }
   .comments-tgt.empty {
     padding-top: $default_vert_unit;
   }
+  
   
   .pane-coral-node-stats {
     margin-top: -.2em;

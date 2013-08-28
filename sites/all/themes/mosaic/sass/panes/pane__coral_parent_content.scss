@@ -67,9 +67,13 @@
     
     & > h2 {
       margin-top: 0; //0.4545em;
-      //margin-bottom: 0; //0.4545em;
       position: relative;
       top: 0.4545em;
+    }
+    
+    & > h2.answer-node-pane-title {
+      margin-bottom: 1.21em;
+      top: .8em;
     }
   }
   
