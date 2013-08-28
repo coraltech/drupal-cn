@@ -19,7 +19,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         $(selectors).each(function(i) {
           // A new case of the comments!
           new Drupal.coralQA.coralComment($(this));
-          
+
           // Must ensure we don't re-attach the handlers
           $(this).addClass('comment-processed');
         });        
@@ -42,7 +42,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       //console.log(this.$question);
       this.initID(this.$content, { pat: /node-\d+/, cls: 'node-'});
-      
+ 
       // Tertiary jQuery objects
       this.$btn = $content.find('.btn.comment-'+this.refID);
       this.$commentForm = $(this.$content).find('.comment-form-'+this.refID);
@@ -384,8 +384,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show comments 
         this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
         this.$btn.removeClass('comments-hidden'); // update the btn status
-        
-        
+
         var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
         var $cont = $view.children('.view-content');  // so we can't use find
         var $comments = $cont.children('.views-row'); // so be it. 
@@ -587,32 +586,70 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
       var $cont = $view.children('.view-content');  // so we can't use find
       var $comments = $cont.children('.views-row'); // so be it.
-      
+
+      // Process all view result comments
       $comments.each(function() {
-        var $comment = $(this).children('.node-comment');
-        var arrow = '<a class="top top-'+cc.refID+'" href="#node-ttl-'+cc.refID+'"><span class="arrow-up"></span></a>';
-        
-        // add id if necc. to the parent node
-        if (!cc.$content.children('h2').attr('id')) {
-          cc.$content.children('h2').attr('id', 'node-ttl-'+cc.refID);
-        }
-        // add the arrow if necc.
-        if (!$comment.children('h2').find('.arrow-up').length) {
-          $comment.children('h2').append(arrow);
-        }
-        
-        // Now we should move the title so it can float beside the posted data.
-        var $commentHeader = $comment.children('h2');
-        var $clone = $commentHeader.clone();
-        var $leader = $comment.find('.leader').eq(0);
-        if (!$leader.find('#node-ttl-'+cc.refID).length) { // make sure you dont add more than once
-          $leader.prepend($clone);
-          $commentHeader.addClass('hide');
-        }
+        cc.processComment($(this));
       });
+      
+      // Process the parent if it is a comment
+      if (this.$content.hasClass('node-comment')) {
+        cc.processComment(this.$content);
+      }
+      
     }
     catch (err) {
       console.log('initComment errored: '+err);
+    }
+  };
+  
+  
+  // Process each comment and get it ready for interactivity
+  Drupal.coralQA.coralComment.prototype.processComment = function($comment) {
+    try {
+      var loose = true; // is this a loose comment?
+      if (!$comment.hasClass('node-comment')) {
+        var $comment = $comment.children('.node-comment');
+        loose = false; // No, we are processing a views row item.
+      }
+      
+      // Default arrow points to this content's parent content
+      var arrow = '<a class="top top-'+this.refID+'" href="#node-ttl-'+this.refID+'"><span class="arrow-up"></span></a>';
+      var looseID = 0;
+      if (loose) {
+        // Loose arrow trys to point to parent content pane node.
+        var $actualParent = $('.pane-coral-parent-content > .pane-content > .node-teaser');
+        looseID = this.initID($actualParent, { pat: /node-\d+/, cls: 'node-', ret: true });
+        // If we have one use it
+        if (looseID) arrow = '<a class="top top-'+looseID+'" href="#node-ttl-'+looseID+'"><span class="arrow-up"></span></a>';
+        else arrow = ''; // or lets not show an arrow at all!
+      }
+      
+      // add id if necc. to the parent node
+      if (!this.$content.children('h2').attr('id')) {
+        this.$content.children('h2').attr('id', 'node-ttl-'+this.refID);
+      }
+      // when the content is loose we don't have direct lineage to the parent
+      if (loose) { // use the actual parent from above
+        $actualParent.children('h2').attr('id', 'node-ttl-'+looseID);
+      }
+      
+      // add the arrow if necc.
+      if (!$comment.children('h2').find('.arrow-up').length) {
+        $comment.children('h2').append(arrow);
+      }
+          
+      // Now we should move the title so it can float beside the posted data.
+      var $commentHeader = $comment.children('h2');
+      var $clone = $commentHeader.clone();
+      var $leader = $comment.find('.leader').eq(0);
+      if (!$leader.find('#node-ttl-'+this.refID).length) { // make sure you dont add more than once
+        $leader.prepend($clone);
+        $commentHeader.addClass('hide');
+      }
+    }
+    catch (err) {
+      console.log('processComment errored: '+ err);
     }
   };
 
