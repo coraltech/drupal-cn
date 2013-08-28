@@ -10,10 +10,17 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.behaviors.coralBestAnswerInit = {    
     attach : function(context, settings) {
       try { // Use try to prevent systemic failure
-        var $questions = $('.node-question'); // Get the questions (All of them!)
+        var $questions = $('.node-question:not(".best-answer-processed")'); // Get the questions (All of them!)
         $questions.each(function() {
           new Drupal.coralQA.coralBestAnswers($(this));
         });
+        
+        // Hide the best answer button on loose answers
+        var $answers = $('.node-answer:not(".best-answer-processed")');
+        $answers.each(function() {
+          $(this).find('.pane-coral-best-answer').eq(0).hide();
+        });
+                
       }
       catch(err) {
         console.log('coralBestAnswerInit reported errors! Error: '+err);
@@ -26,6 +33,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   //  best answer button if it is appropriate.
   Drupal.coralQA.coralBestAnswers = function($question) {
     try {
+      $question.addClass('best-answer-processed');
       
       this.$question = $question; // remember the question
       this.answers = {}; // will contain a hash of answers {nid: $node}
