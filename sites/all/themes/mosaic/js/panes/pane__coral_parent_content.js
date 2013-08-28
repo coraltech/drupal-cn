@@ -31,7 +31,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$content = $content;
       this.$title = $content.find('.pane-title').eq(0);
       this.$node = $content.find('.node').eq(0);
+      this.$nodeTitle = this.$node.children('h2');
       
+      this.nodeType = '';
       this.refID = '';
       
       // Get ready for some fun stuff!
@@ -75,14 +77,25 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       // Set up a relatively safe class
       var key = 'parent-content-'+Math.floor((Math.random()*10000)+1);
+      var arrow = 'arrow-down';
+      var action = 'Hide';
+      
       this.refID = key; // save the key
       this.$title.addClass(key); // add class
       
-      // Add decorative markup
-      this.$title.append('<span class="circle"><span class="arrow"></span></span>');
+      $addAnswer = this.$node.find('.pane-coral-add-answer').eq(0);
       
-      // Hide the node to start with
-      this.$node.addClass('hidden').hide()
+      var classes = this.$node.attr('class');
+      classes = classes.split(' ');
+      for (cls in classes) {
+        if (classes[cls].match(/node-(question|answer|comment)/)) {
+          this.nodeType = classes[cls].replace('node-', '');
+        }
+      }
+      
+      // Add decorative markup
+      this.$title.append('<span class="circle"><span class="arrow '+arrow+'"></span></span>');
+      this.$title.attr('title', action+' the '+this.nodeType+': '+$.trim(this.$nodeTitle.text()));
     }
     catch (err) {
       console.log('initParentContent errored: '+err);
@@ -96,10 +109,12 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (this.$node.hasClass('hidden')) {
         this.$node.removeClass('hidden').slideDown(200);
         this.$title.find('.arrow').addClass('arrow-down');
+        this.$title.attr('title', this.$title.attr('title').replace(/^View/, 'Hide'));
       }
       else {
         this.$node.addClass('hidden').slideUp(200);
         this.$title.find('.arrow').removeClass('arrow-down');
+        this.$title.attr('title', this.$title.attr('title').replace(/^Hide/, 'View'));
       }
     }
     catch (err) {
