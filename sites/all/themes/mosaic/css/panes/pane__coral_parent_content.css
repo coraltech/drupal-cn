@@ -154,3 +154,8 @@
   position: relative;
   top: 0.4545em;
 }
+/* line 74, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-content > .node-teaser > h2.answer-node-pane-title {
+  margin-bottom: 1.21em;
+  top: .8em;
+}
