@@ -109,11 +109,7 @@
 .view-questions.view-display-id-new_questions .q-filtered-tag .ftag a:hover small {
   color: #b02e1c;
 }
-/* line 56, ../../sass/views/view__questions__new_questions.scss */
-.view-questions.view-display-id-new_questions h2.question-node-teaser-pane-title {
-  margin-bottom: .05em;
-}
-/* line 59, ../../sass/views/view__questions__new_questions.scss */
+/* line 57, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more {
   margin: 0.625em 0;
   position: relative;
@@ -152,7 +148,7 @@
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 62, ../../sass/views/view__questions__new_questions.scss */
+/* line 60, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more .ajax-progress {
   position: absolute;
   top: 8%;

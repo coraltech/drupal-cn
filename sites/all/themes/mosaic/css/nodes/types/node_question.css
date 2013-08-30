@@ -6,26 +6,33 @@
   background: url('/images/icons-s4afabcca13.png') no-repeat;
 }
 
-/* line 17, ../../../sass/nodes/types/node_question.scss */
+/* line 16, ../../../sass/nodes/types/node_question.scss */
+.node-type-question .pane-coral-page-title,
+.node-type-question .question-node-teaser-pane-title,
+.node-teaser.node-question .pane-coral-page-title,
+.node-teaser.node-question .question-node-teaser-pane-title {
+  line-height: 1.125em;
+}
+/* line 19, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-page-title .icon,
 .node-type-question .question-node-teaser-pane-title .icon,
 .node-teaser.node-question .pane-coral-page-title .icon,
 .node-teaser.node-question .question-node-teaser-pane-title .icon {
   display: block;
   float: left;
-  margin: 7px .5em 0 0;
+  margin: 5px .5em 0 0;
   background-position: 0 -1720px;
   height: 27px;
   width: 24px;
 }
-/* line 25, ../../../sass/nodes/types/node_question.scss */
+/* line 27, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-page-title h2,
 .node-teaser.node-question .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 33, ../../../sass/nodes/types/node_question.scss */
+/* line 35, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment,
 .node-type-question .pane-coral-add-answer,
 .node-type-question .pane-node-links,
@@ -35,7 +42,7 @@
   float: left;
   height: 2.65em;
 }
-/* line 36, ../../../sass/nodes/types/node_question.scss */
+/* line 38, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment .links,
 .node-type-question .pane-coral-add-answer .links,
 .node-type-question .pane-node-links .links,
@@ -45,7 +52,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 40, ../../../sass/nodes/types/node_question.scss */
+/* line 42, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment .links li,
 .node-type-question .pane-coral-add-answer .links li,
 .node-type-question .pane-node-links .links li,
@@ -55,7 +62,7 @@
   margin: 0 5px 0 0;
   padding: 2px 5px 1px;
 }
-/* line 51, ../../../sass/nodes/types/node_question.scss */
+/* line 53, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .field-name-field-answer,
 .node-type-question .field-name-field-comment-count,
 .node-type-question .field-name-field-answer-count,
@@ -66,7 +73,7 @@
 .node-teaser.node-question .field-type-file legend {
   display: none;
 }
-/* line 57, ../../../sass/nodes/types/node_question.scss */
+/* line 59, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .layout-node-1 .site-width,
 .node-teaser.node-question .layout-node-1 .site-width {
   *zoom: 1;
