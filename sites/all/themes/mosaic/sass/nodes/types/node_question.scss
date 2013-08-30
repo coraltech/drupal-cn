@@ -14,10 +14,12 @@
   
   .pane-coral-page-title,
   .question-node-teaser-pane-title {
+    line-height: .9 * $default_vert_unit;
+    
     .icon { // apply question mark icon
       display: block;
       float: left;
-      margin: 7px .5em 0 0;
+      margin: 5px .5em 0 0;
       @include icons-sprite('coral-q');
     }
   }
