@@ -41,25 +41,27 @@ function mosaic_be_views_query_alter(&$view, &$query) {
       if (arg(0) == 'node' && is_numeric($nid)) {
         $node = node_load($nid);
         $tags = field_get_items('node', $node, 'field_tags');
-        $names = array();
-        foreach ($tags as $id => $tag) {
-          $tag = taxonomy_term_load($tag['tid']);
-          $names[] = $tag->name;
-        }
-        
-        if (count($names)) { // get the node's tags
-          $conditions = array(); 
-          $conditions[0] = array(
-            'field' => 'taxonomy_term_data_node.name',
-            'value' => $names,
-            'operator' => 'IN'
-          );
-          // Set the query (this one is on [0])
-          $query->where[0] = array(
-            'conditions' => $conditions,
-            'args' => array(),
-            'type' => 'AND'
-          );
+        if (count($tags)) {        
+          $names = array();
+          foreach ($tags as $id => $tag) {
+            $tag = taxonomy_term_load($tag['tid']);
+            $names[] = $tag->name;
+          }
+          
+          if (count($names)) { // get the node's tags
+            $conditions = array(); 
+            $conditions[0] = array(
+              'field' => 'taxonomy_term_data_node.name',
+              'value' => $names,
+              'operator' => 'IN'
+            );
+            // Set the query (this one is on [0])
+            $query->where[0] = array(
+              'conditions' => $conditions,
+              'args' => array(),
+              'type' => 'AND'
+            );
+          }
         }
       }
     }
