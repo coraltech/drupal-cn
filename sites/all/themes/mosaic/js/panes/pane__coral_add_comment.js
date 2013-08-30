@@ -594,7 +594,32 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       // Process the parent if it is a comment
       if (this.$content.hasClass('node-comment')) {
-        cc.processComment(this.$content);
+        var $parent = {};
+        
+        // Comments as a parent?
+        var $cp = this.$content.parents('.node-comment');
+        if (!$cp.length) { // not a comment
+          var $ap = this.$content.parents('.node-answer');
+          if (!$ap.length) { // answer?
+            var $qp = this.$content.parents('.node-question');
+            if (!$qp.length) { // not a question, could it be in parent content?
+              var $parentContent = $('.pane-coral-parent-content > .pane-content > .node');
+              if ($parentContent.length) {
+                $parent = $parentContent.eq(0); // the node in the parent content container
+              }
+            }
+            else {
+              $parent = $qp.eq(0); // parent is a question
+            }
+          }
+          else {
+            $parent = $ap.eq(0); // parent is an answer
+          }
+        }
+        else {
+          $parent = $cp.eq(0); // parent is a comment
+        }        
+        cc.processComment(this.$content, $parent);
       }
       
     }
@@ -605,33 +630,29 @@ Drupal.coralQA = Drupal.coralQA || {};
   
   
   // Process each comment and get it ready for interactivity
-  Drupal.coralQA.coralComment.prototype.processComment = function($comment) {
+  Drupal.coralQA.coralComment.prototype.processComment = function($comment, $parent) {
     try {
-      var loose = true; // is this a loose comment?
-      if (!$comment.hasClass('node-comment')) {
-        var $comment = $comment.children('.node-comment');
-        loose = false; // No, we are processing a views row item.
-      }
       
+      $parent = $parent || {};
+
       // Default arrow points to this content's parent content
       var arrow = '<a class="top top-'+this.refID+'" href="#node-ttl-'+this.refID+'"><span class="arrow-up"></span></a>';
-      var looseID = 0;
-      if (loose) {
+      var parentID = 0;
+      if ($parent.length) {
         // Loose arrow trys to point to parent content pane node.
-        var $actualParent = $('.pane-coral-parent-content > .pane-content > .node-teaser');
-        looseID = this.initID($actualParent, { pat: /node-\d+/, cls: 'node-', ret: true });
+        parentID = this.initID($parent, { pat: /node-\d+/, cls: 'node-', ret: true });
         // If we have one use it
-        if (looseID) arrow = '<a class="top top-'+looseID+'" href="#node-ttl-'+looseID+'"><span class="arrow-up"></span></a>';
+        if (parentID) arrow = '<a class="top top-'+parentID+'" href="#node-ttl-'+parentID+'"><span class="arrow-up"></span></a>';
         else arrow = ''; // or lets not show an arrow at all!
       }
-      
+
       // add id if necc. to the parent node
       if (!this.$content.children('h2').attr('id')) {
         this.$content.children('h2').attr('id', 'node-ttl-'+this.refID);
       }
       // when the content is loose we don't have direct lineage to the parent
-      if (loose) { // use the actual parent from above
-        $actualParent.children('h2').attr('id', 'node-ttl-'+looseID);
+      if ($parent.length) { // use the actual parent from above
+        $parent.children('h2').attr('id', 'node-ttl-'+parentID);
       }
       
       // add the arrow if necc.
