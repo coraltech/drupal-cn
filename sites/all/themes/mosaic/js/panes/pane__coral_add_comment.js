@@ -406,6 +406,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           if (!this.$loadMore.length) { // add it only if it's not there
             this.$commentsTgt.parent('.pane-content').append(this.loadMoreBtn('0', moreHide));
             this.$loadMore = this.$commentsTgt.parent('.pane-content').find('.more-comments-'+this.refID);
+            this.$loadMore.hide(); // hide this to start with
           }
           
           // Clicking on the answer btn opens the full content
@@ -547,8 +548,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
           
       // Add the results to the screen
-      if (mode == 'full') {   // add new results to the end
-        this.updateMoreBtn(); // Update the more button (page-#)
+      if (mode == 'full') {    // add new results to the end
+        this.$loadMore.show(); // show the loadMore button (hidden at first)
+        this.updateMoreBtn();  // Update the more button (page-#)
         this.$commentsTgt.append(data); // append the new comments
       }
       
