@@ -274,3 +274,9 @@
 [submodule "sites/all/modules/contrib/views_load_more"]
 	path = sites/all/modules/contrib/views_load_more
 	url = http://git.drupal.org/project/views_load_more.git
+[submodule "sites/all/modules/contrib/syntaxhighlighter"]
+	path = sites/all/modules/contrib/syntaxhighlighter
+	url = http://git.drupal.org/project/syntaxhighlighter.git
+[submodule "sites/all/modules/contrib/syntaxhighlighter_insert"]
+	path = sites/all/modules/contrib/syntaxhighlighter_insert
+	url = http://git.drupal.org/project/syntaxhighlighter_insert.git
