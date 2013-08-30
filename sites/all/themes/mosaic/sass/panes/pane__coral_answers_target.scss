@@ -47,6 +47,7 @@
   }
   .answer-node-pane-title > a {
     float: left;
+    max-width: 88%;
   }
   .answer-node-pane-title > .top {
     border: 1px solid lighten($ltgray, 8%);
