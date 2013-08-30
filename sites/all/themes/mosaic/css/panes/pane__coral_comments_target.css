@@ -67,6 +67,7 @@
 .html div.pane-coral-comments-target .comment-node-pane-title > a {
   color: #919191;
   float: left;
+  max-width: 94.85%;
 }
 /* line 71, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > a:hover {
