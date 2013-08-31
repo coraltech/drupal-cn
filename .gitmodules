@@ -280,3 +280,6 @@
 [submodule "sites/all/modules/contrib/syntaxhighlighter_insert"]
 	path = sites/all/modules/contrib/syntaxhighlighter_insert
 	url = http://git.drupal.org/project/syntaxhighlighter_insert.git
+[submodule "sites/all/themes/mosaic/js/lib/highlight"]
+	path = sites/all/themes/mosaic/js/lib/highlight
+	url = https://github.com/isagalaev/highlight.js
