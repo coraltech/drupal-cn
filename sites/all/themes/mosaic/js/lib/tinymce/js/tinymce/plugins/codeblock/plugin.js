@@ -56,7 +56,7 @@ tinymce.PluginManager.add('codeblock', function(editor, url) {
 				  if (lang == 'lang-auto') lang = ''; // unset lang on auto
 
 					// Insert content when the window form is submitted
-					editor.insertContent('<code class="prettyprint '+lang+'">'+e.data.codeblock+'</code>');
+					editor.insertContent('<pre class="prettyprint linenums '+lang+'">'+e.data.codeblock+'</pre>');
 				}
 			});
 		}
