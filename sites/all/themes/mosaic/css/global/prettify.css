@@ -1,0 +1,126 @@
+/*
+ * Derived from einaros's Sons of Obsidian theme at
+ * http://studiostyl.es/schemes/son-of-obsidian by
+ * Alex Ford of CodeTunnel:
+ * http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme
+ */
+/* line 15, ../../sass/global/prettify.scss */
+pre.prettyprint {
+  background: #373737;
+  border: 1px solid #777777;
+  clear: both;
+}
+/* line 20, ../../sass/global/prettify.scss */
+pre.prettyprint ol.linenums {
+  margin: 0 0 0 3em;
+}
+/* line 24, ../../sass/global/prettify.scss */
+pre.prettyprint li.L0, pre.prettyprint li.L1, pre.prettyprint li.L2, pre.prettyprint li.L3, pre.prettyprint li.L4, pre.prettyprint li.L5, pre.prettyprint li.L6, pre.prettyprint li.L7, pre.prettyprint li.L8, pre.prettyprint li.L9 {
+  background: #282828;
+  color: #777777;
+  list-style-type: decimal;
+}
+/* line 29, ../../sass/global/prettify.scss */
+pre.prettyprint li.L1, pre.prettyprint li.L3, pre.prettyprint li.L5, pre.prettyprint li.L7, pre.prettyprint li.L9 {
+  background: #202020;
+}
+/* line 33, ../../sass/global/prettify.scss */
+pre.prettyprint .str {
+  color: #EC7600;
+}
+/* line 36, ../../sass/global/prettify.scss */
+pre.prettyprint .kwd {
+  color: #93C763;
+}
+/* line 39, ../../sass/global/prettify.scss */
+pre.prettyprint .com {
+  color: #66747B;
+}
+/* line 42, ../../sass/global/prettify.scss */
+pre.prettyprint .typ {
+  color: #678CB1;
+}
+/* line 45, ../../sass/global/prettify.scss */
+pre.prettyprint .lit {
+  color: #FACD22;
+}
+/* line 48, ../../sass/global/prettify.scss */
+pre.prettyprint .pun {
+  color: #F1F2F3;
+}
+/* line 51, ../../sass/global/prettify.scss */
+pre.prettyprint .pln {
+  color: #F1F2F3;
+}
+/* line 54, ../../sass/global/prettify.scss */
+pre.prettyprint .tag {
+  color: #8AC763;
+}
+/* line 57, ../../sass/global/prettify.scss */
+pre.prettyprint .atn {
+  color: #E0E2E4;
+}
+/* line 60, ../../sass/global/prettify.scss */
+pre.prettyprint .atv {
+  color: #EC7600;
+}
+/* line 63, ../../sass/global/prettify.scss */
+pre.prettyprint .dec {
+  color: purple;
+}
+
+@media print {
+  /* line 70, ../../sass/global/prettify.scss */
+  .str {
+    color: #060;
+  }
+
+  /* line 73, ../../sass/global/prettify.scss */
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 77, ../../sass/global/prettify.scss */
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  /* line 81, ../../sass/global/prettify.scss */
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  /* line 85, ../../sass/global/prettify.scss */
+  .lit {
+    color: #044;
+  }
+
+  /* line 88, ../../sass/global/prettify.scss */
+  .pun {
+    color: #440;
+  }
+
+  /* line 91, ../../sass/global/prettify.scss */
+  .pln {
+    color: #000;
+  }
+
+  /* line 94, ../../sass/global/prettify.scss */
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 98, ../../sass/global/prettify.scss */
+  .atn {
+    color: #404;
+  }
+
+  /* line 101, ../../sass/global/prettify.scss */
+  .atv {
+    color: #060;
+  }
+}
