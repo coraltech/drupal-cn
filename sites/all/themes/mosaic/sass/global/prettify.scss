@@ -21,8 +21,8 @@
   margin-bottom: $default_vert_unit;
   a {
     position: absolute;
-    top: .325em;
-    right: 1em;
+    top: .625em;
+    right: 0;
     margin-bottom: -2 * $default_vert_unit;
     
     @include btn-matte-inset(0px, 16px, $mdgreen, darken($mdgreen, 3%), $white);
