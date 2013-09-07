@@ -395,3 +395,46 @@ h3 .toc-top {
     }
   }
 }
+
+// TinyMCE related styles
+.form-textarea-wrapper { clear: both; }
+.mcetxtwrp > label { float: left; }
+.mcebtn { float: right; }
+
+// Help message for textareas: added via mosaicMce.js
+.ta-help {
+  background: lighten($ltyellow, 7%);
+  border: 1px solid $mdyellow;
+  position: relative;
+  color: darken($mdgray, 7%);
+  margin-bottom: $default_vert_unit;
+  
+  @include box-shadow(rgba(0, 0, 0, 0.15) 2px 2px 2px);
+  
+  .close-help {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background: $ltred;
+    border: 1px solid $mdred;
+    color: $white;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: $mono_fonts;
+    padding: 3px;
+    line-height: 5px;
+    height: 7px;
+    
+    @include border-radius(8px);
+    @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
+  }
+  p {
+    margin: ($default_vert_unit / 2) 1em;
+    font-size: 90%;
+  }
+  i {
+    font-weight: bold;
+    font-style: normal;
+  }
+}
