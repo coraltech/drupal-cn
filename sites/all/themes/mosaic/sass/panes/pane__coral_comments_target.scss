@@ -6,6 +6,7 @@
 @import 'global/fonts';
 @import 'global/gradients';
 @import 'global/headers';
+@import 'global/icons';
 
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
@@ -63,6 +64,15 @@
     float: left;
     @include h0;
     @include pie-clearfix;
+    
+    .icon {
+      display: block;
+      float: left;
+      margin-right: 5px;
+      margin-left: -5px;
+      margin-top: 3px;
+      @include icons-sprite('coral-comment');
+    }
   }
   .comment-node-pane-title > a {
     color: lighten($mdgray, 10%);
