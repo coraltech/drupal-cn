@@ -155,42 +155,45 @@ Drupal.mosaic = Drupal.mosaic || {};
       mp = this;
       var scrWidth = $(this.$codeblock)[0].scrollWidth;
       var callback = (typeof(callback) == 'function') ? callback : function() {};
-      
-      if (ev.type == 'mouseenter') {
-        if (!this.$codeblock.hasClass('expanded')) {
-          this.$codeblock.css({'width':this.origWidth+'px'}); // set starting width for animate
-          this.$codeblock.animate({'width':(Number(this.origWidth)+25)}, 200, 'swing', callback); // do animate
-          this.$codeblock.addClass('expanded'); // add expanded class
-        }
-        this.$expand.fadeIn(200); // What say?
-      }
-      if (ev.type == 'mouseleave') {
-        var cb = function() {
-          if (!mp.$expand.hasClass('hover')) {
-            if (mp.$expand.text() != 'Close') {
-              // animate to original width
-              mp.$codeblock.animate({'width':mp.origWidth}, 200, 'swing', function() {
-                mp.$codeblock.css({'overflow':'hidden', 'width':'auto'}); // reset css
-                mp.$codeblock.removeClass('expanded'); // reset class
-                callback();
-              });
-            }
-            mp.$expand.fadeOut(200); // goodby... your legacy lives!
+
+      // don't run if you don't need to
+      if (scrWidth > this.origWidth) {
+        if (ev.type == 'mouseenter') {
+          if (!this.$codeblock.hasClass('expanded')) {
+            this.$codeblock.css({'width':this.origWidth+'px'}); // set starting width for animate
+            this.$codeblock.animate({'width':(Number(this.origWidth)+25)}, 200, 'swing', callback); // do animate
+            this.$codeblock.addClass('expanded'); // add expanded class
           }
-        };
-        setTimeout(cb, 25);
-      }
-      if (ev.type == 'click') {
-        if (this.$codeblock.hasClass('expanded-full')) {
-          // animate to original width + 25 px
-          this.$codeblock.animate({'width':Number(this.origWidth)+25}, 200, 'swing', function() {
-            mp.$codeblock.removeClass('expanded-full'); // reset class
-            callback();
-          });
+          this.$expand.fadeIn(200); // What say?
         }
-        else {
-          this.$codeblock.animate({'width':scrWidth}, 200, 'swing', callback); // do animate
-          this.$codeblock.addClass('expanded-full'); // add expanded class
+        if (ev.type == 'mouseleave') {
+          var cb = function() {
+            if (!mp.$expand.hasClass('hover')) {
+              if (mp.$expand.text() != 'Close') {
+                // animate to original width
+                mp.$codeblock.animate({'width':mp.origWidth}, 200, 'swing', function() {
+                  mp.$codeblock.css({'overflow':'hidden', 'width':'auto'}); // reset css
+                  mp.$codeblock.removeClass('expanded'); // reset class
+                  callback();
+                });
+              }
+              mp.$expand.fadeOut(200); // goodby... your legacy lives!
+            }
+          };
+          setTimeout(cb, 25);
+        }
+        if (ev.type == 'click') {
+          if (this.$codeblock.hasClass('expanded-full')) {
+            // animate to original width + 25 px
+            this.$codeblock.animate({'width':Number(this.origWidth)+25}, 200, 'swing', function() {
+              mp.$codeblock.removeClass('expanded-full'); // reset class
+              callback();
+            });
+          }
+          else {
+            this.$codeblock.animate({'width':scrWidth}, 200, 'swing', callback); // do animate
+            this.$codeblock.addClass('expanded-full'); // add expanded class
+          }
         }
       }
     }
