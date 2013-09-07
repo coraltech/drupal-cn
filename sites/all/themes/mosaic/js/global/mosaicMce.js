@@ -32,12 +32,14 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.$textarea = $nodeForm.find('.text-full');
       this.$submit   = $nodeForm.find('.form-submit');
       this.$wysiLink;  // will hold the link after it is created
+      this.$help;      // will hold the help info
       
       this.id = this.getID(); // register an id
       
       this.events = {};
       this.events['click #btn-'+this.id] = 'wysiClick';
       this.events['click .sub-'+this.id] = 'subClick';
+      this.events['click #close-help-'+this.id] = 'closeHelp';
             
       var mosaicMce = this;
       var MosaicMceView = Backbone.View.extend({
@@ -53,7 +55,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         // Init
         initialize: function() {
           mosaicMce.initTextarea(mosaicMce.$textarea);
-          _.bindAll(this, 'wysiClick', 'subClick');
+          _.bindAll(this, 'wysiClick', 'subClick', 'closeHelp');
         },
         
         // Events
@@ -66,6 +68,14 @@ Drupal.mosaic = Drupal.mosaic || {};
         wysiClick: function(ev) {
           ev.preventDefault();
           mosaicMce.handleWysiClick(ev);
+        },
+        
+        // Close help info
+        closeHelp: function(ev) {
+          ev.preventDefault();
+          mosaicMce.$help.find('.close-help').fadeOut(50, function() {
+            mosaicMce.$help.slideUp(100);  
+          });
         }
       });
       
@@ -106,11 +116,15 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       if (this.$wysiLink.hasClass('enable')) {
         tinymce.init(Drupal.mosaic.tinymceSettings('#'+this.id));
-        this.$wysiLink.removeClass('enable').text('MARKUP');
+        this.$wysiLink.removeClass('enable').text('Markup');
+        this.$help.find('.grid-12').removeClass('hide');
+        this.$help.find('.grid-24-last').removeClass('grid-24-last').addClass('grid-12-last');
       }
       else {
         tinymce.activeEditor.remove();
-        this.$wysiLink.addClass('enable').text('WYSIWYG');
+        this.$wysiLink.addClass('enable').text('Wysiwyg');
+        this.$help.find('.grid-12').addClass('hide');
+        this.$help.find('.grid-12-last').addClass('grid-24-last').removeClass('grid-12-last');
       }
     }
     catch (err) {
@@ -122,11 +136,25 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Initialize the text area - add the button (link)
   Drupal.mosaic.mosaicMce.prototype.initTextarea = function($textarea) {
     try { // add clickable link
-      var $wrap = $textarea.parents('.form-type-textarea');
-      $wrap.prepend('<a href="#" id="btn-'+this.id+'" class="enable">WYSIWYG</a>');
+      var $wrap = $textarea.parents('.form-type-textarea').eq(0).addClass('mcetxtwrp');
+      $wrap.prepend('<a href="#" id="btn-'+this.id+'" class="enable mcebtn">Wysiwyg</a>');
       
-      // save the link forever!
+      var help = "\
+      <div id='ta-help-"+this.id+"' class='ta-help clearfix'>\
+      <div id='close-help-"+this.id+"' class='close-help'>x</div>\
+      <div class='grid-12 hide'>\
+        <p>Use <i>[shift]</i>+<i>[enter]</i> for a new paragraph.\r\n\
+        Use <i>[enter]</i> for a new line.</p>\
+      </div>\
+      <div class='grid-24-last'>\
+        <p>Did you know you can use <a href='http://www.mediawiki.org/wiki/Help:Formatting' target='_blank'>Wiki formatting</a> in your posts?</p>\
+      </div>\
+      </div>";
+      $wrap.prepend(help);
+      
+      // save the new items
       this.$wysiLink = $wrap.find('#btn-'+this.id);
+      this.$help     = $wrap.find('#ta-help-'+this.id);
       
       // Ensure the submit button is event handle-able
       this.$submit.addClass('sub-'+this.id);
