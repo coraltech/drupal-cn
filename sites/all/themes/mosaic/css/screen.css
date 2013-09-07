@@ -1016,10 +1016,10 @@ a.btn::-moz-focus-inner {
   margin-left: 9em;
 }
 
-/* line 266, icons/*.png */
+/* line 274, icons/*.png */
 .icons-sprite, header .coral-cloud .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action,
 .pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s4afabcca13.png') no-repeat;
+  background: url('/images/icons-sbf3e80bf87.png') no-repeat;
 }
 
 /* line 28, ../sass/global/_global.scss */
@@ -1504,7 +1504,7 @@ h3 .toc-top {
   margin: 5px -.75em 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  background-position: 0 -2320px;
+  background-position: 0 -2382px;
   height: 16px;
   width: 16px;
 }
@@ -1768,7 +1768,7 @@ h3 .toc-top {
   border: 1px solid #e5d14a;
   position: relative;
   color: #656565;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.625em;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
   box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
