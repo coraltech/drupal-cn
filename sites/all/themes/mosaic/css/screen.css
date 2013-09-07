@@ -1747,6 +1747,67 @@ h3 .toc-top {
   margin: -1px !important;
 }
 
+/* line 400, ../sass/global/_global.scss */
+.form-textarea-wrapper {
+  clear: both;
+}
+
+/* line 401, ../sass/global/_global.scss */
+.mcetxtwrp > label {
+  float: left;
+}
+
+/* line 402, ../sass/global/_global.scss */
+.mcebtn {
+  float: right;
+}
+
+/* line 405, ../sass/global/_global.scss */
+.ta-help {
+  background: #fffada;
+  border: 1px solid #e5d14a;
+  position: relative;
+  color: #656565;
+  margin-bottom: 1.25em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+}
+/* line 414, ../sass/global/_global.scss */
+.ta-help .close-help {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: #d9837b;
+  border: 1px solid #b02e1c;
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: monospace, "Courier New", Courier;
+  padding: 3px;
+  line-height: 5px;
+  height: 7px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+}
+/* line 432, ../sass/global/_global.scss */
+.ta-help p {
+  margin: 0.625em 1em;
+  font-size: 90%;
+}
+/* line 436, ../sass/global/_global.scss */
+.ta-help i {
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* line 12, ../sass/global/grid.scss */
 .grid-1 {
   float: left;
@@ -2551,8 +2612,8 @@ footer {
 /* line 22, ../sass/global/prettify.scss */
 .precrp a {
   position: absolute;
-  top: .325em;
-  right: 1em;
+  top: .625em;
+  right: 0;
   margin-bottom: -2.5em;
   font-size: 16px;
   padding: 0.5em 1.5em;
