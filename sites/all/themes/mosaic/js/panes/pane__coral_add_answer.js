@@ -661,23 +661,30 @@ Drupal.coralQA = Drupal.coralQA || {};
         node["field_question"][langNone] = {"0":{"target_id": question}};
     
         // Create the node
-        Drupal.coral_ajax.node_create(node, 
-          function(data, msg, xhr) {
-            if (msg == 'success') {
-              ca.clearForm($form);   // clear the form
-              ca.addNewAnswer(data); // add this new answer to the top of the list
-              
-              // User added one! Lets remember that to supplement the views offset
-              // ----
-              // @NOTE: this may still re show the users post if they are browsing 
-              //  an active thread. We would need to save a list of the items they
-              //  added and adjust the thread organization accordingly.
-              ca.addedNew = Number(ca.addedNew) + 1;
-            }
-          },
-          // @TODO: process errors (missing fields etc)
-          function(err) {}
-        );
+        //  But wait for a few computer moments... 
+        //   Let tinyMce return if it needed to: see mosaicMce.js
+        var callback = function() {
+          Drupal.coral_ajax.node_create(node, 
+            function(data, msg, xhr) {
+              if (msg == 'success') {
+                ca.clearForm($form);   // clear the form
+                ca.addNewAnswer(data); // add this new answer to the top of the list
+                
+                // User added one! Lets remember that to supplement the views offset
+                // ----
+                // @NOTE: this may still re show the users post if they are browsing 
+                //  an active thread. We would need to save a list of the items they
+                //  added and adjust the thread organization accordingly.
+                ca.addedNew = Number(ca.addedNew) + 1;
+              }
+            },
+            // @TODO: process errors (missing fields etc)
+            function(err) {}
+          );
+        };
+        
+        // Set the timeout
+        setTimeout(callback, 100); // actually save
       }
     }
     catch (err) {
