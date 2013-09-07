@@ -71,13 +71,14 @@
       margin-right: 5px;
       margin-left: -5px;
       margin-top: 3px;
+
       @include icons-sprite('coral-comment');
     }
   }
   .comment-node-pane-title > a {
     color: lighten($mdgray, 10%);
     float: left;
-    max-width: 94.85%;
+    max-width: 90.85%;
     &:hover { color: $mdblue; }
   }
   .comment-node-pane-title > .top {
