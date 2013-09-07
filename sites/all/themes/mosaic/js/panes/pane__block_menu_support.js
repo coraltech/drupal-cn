@@ -66,17 +66,6 @@ Drupal.mosaic = Drupal.mosaic || {};
     $target.magnificPopup({
       type:'inline',
       midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      callbacks: {
-        
-        open: function() { 
-          // For the Question form
-          // Call up the wysiwyg editor
-          // Apply it to the pane's node form
-          tinymce.init(Drupal.mosaic.tinymceSettings('.pane-coral-ask-question .node-question-form .text-full'));
-        },
-        
-        close: function() {  }
-      }
     });  
   }
   
