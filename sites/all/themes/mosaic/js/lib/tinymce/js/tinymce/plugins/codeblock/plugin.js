@@ -1,16 +1,6 @@
 /**
- * plugin.js
- *
- * Copyright, Moxiecode Systems AB
- * Released under LGPL License.
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
+ * Codeblock plugin by Derek Webb
  */
-
-/*jshint unused:false */
-/*global tinymce:true */
-
 /**
  * Example plugin that adds a toolbar button and menu item.
  */
