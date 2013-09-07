@@ -13,7 +13,7 @@ stylesheets[print][] = css/print.css
 ; - Global scripts
 ; -- Libraries
 scripts[] = js/lib/magnificent_popup/dist/jquery.magnific-popup.js
-scripts[] = js/lib/prettify/src/run_prettify.js
+scripts[] = js/lib/prettify/src/prettify.js
 scripts[] = js/lib/tinymce/js/tinymce/tinymce.js
 scripts[] = js/lib/TableOfContents/js/jquery.tableofcontents.js
 scripts[] = js/lib/color/jquery.color.min.js
@@ -22,6 +22,7 @@ scripts[] = js/lib/color/jquery.color.min.js
 scripts[] = js/global/mosaicMce.js
 scripts[] = js/global/mosaicSlideshow.js
 scripts[] = js/global/mosaicToc.js
+scripts[] = js/global/mosaicPrettify.js
 
 ; - Panels
 plugins[panels][layouts]     = plugins/layouts
