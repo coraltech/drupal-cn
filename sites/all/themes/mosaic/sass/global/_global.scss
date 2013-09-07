@@ -407,7 +407,7 @@ h3 .toc-top {
   border: 1px solid $mdyellow;
   position: relative;
   color: darken($mdgray, 7%);
-  margin-bottom: $default_vert_unit;
+  margin-bottom: ($default_vert_unit / 2);
   
   @include box-shadow(rgba(0, 0, 0, 0.15) 2px 2px 2px);
   
