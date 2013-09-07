@@ -8,6 +8,9 @@ Drupal.mosaic = Drupal.mosaic || {};
  *  enabled code blocks. See also, codeblock plugin in 
  *  mosaic/js/lib/tinymce/js/tinymce/plugins/codeblock
  *  and prettyprint styles in mosaic/sass/global/prettify.scss
+ * 
+ * @TODO: Enable the prettyfier to run on codeblocks as
+ *  they are being input - real-time coloring! 
  */
 // Document loaded!
 (function($) {
@@ -110,15 +113,23 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Update text and animate on Expand click
   Drupal.mosaic.mosaicPrettify.prototype.handleCodeExpand = function(ev) {
     try { // update text and then animate
-      if (this.$expand.text() == 'Expand') { 
-        this.$expand.text('Close'); // update text
-        this.$expand.append('<span class="arrow arrow-left"></span>'); // update arrow  
+      if (!this.$expand.hasClass('exp-processing')) {
+        mp = this;
+        
+        this.$expand.addClass('exp-processing');
+        if (this.$expand.text() == 'Expand') { 
+          this.$expand.text('Close'); // update text
+          this.$expand.append('<span class="arrow arrow-left"></span>'); // update arrow  
+        }
+        else { 
+          this.$expand.text('Expand'); // and text
+          this.$expand.append('<span class="arrow arrow-right"></span>'); // and arrow
+        }
+        // animate
+        this.animateCode(ev, function() {
+          mp.$expand.removeClass('exp-processing');  
+        });
       }
-      else { 
-        this.$expand.text('Expand'); // and text
-        this.$expand.append('<span class="arrow arrow-right"></span>'); // and arrow
-      }
-      this.animateCode(ev); // animate
     }
     catch (err) {
       console.log('handleCodeExpand errored: '+err);
@@ -138,15 +149,17 @@ Drupal.mosaic = Drupal.mosaic || {};
 
 
   // Handle actual code animations
-  Drupal.mosaic.mosaicPrettify.prototype.animateCode = function(ev) {
+  // callback used by handleCodeExpand()
+  Drupal.mosaic.mosaicPrettify.prototype.animateCode = function(ev, callback) {
     try {
       mp = this;
       var scrWidth = $(this.$codeblock)[0].scrollWidth;
+      var callback = (typeof(callback) == 'function') ? callback : function() {};
       
       if (ev.type == 'mouseenter') {
         if (!this.$codeblock.hasClass('expanded')) {
           this.$codeblock.css({'width':this.origWidth+'px'}); // set starting width for animate
-          this.$codeblock.animate({'width':(Number(this.origWidth)+25)}, 200); // do animate
+          this.$codeblock.animate({'width':(Number(this.origWidth)+25)}, 200, 'swing', callback); // do animate
           this.$codeblock.addClass('expanded'); // add expanded class
         }
         this.$expand.fadeIn(200); // What say?
@@ -159,6 +172,7 @@ Drupal.mosaic = Drupal.mosaic || {};
               mp.$codeblock.animate({'width':mp.origWidth}, 200, 'swing', function() {
                 mp.$codeblock.css({'overflow':'hidden', 'width':'auto'}); // reset css
                 mp.$codeblock.removeClass('expanded'); // reset class
+                callback();
               });
             }
             mp.$expand.fadeOut(200); // goodby... your legacy lives!
@@ -171,10 +185,11 @@ Drupal.mosaic = Drupal.mosaic || {};
           // animate to original width + 25 px
           this.$codeblock.animate({'width':Number(this.origWidth)+25}, 200, 'swing', function() {
             mp.$codeblock.removeClass('expanded-full'); // reset class
+            callback();
           });
         }
         else {
-          this.$codeblock.animate({'width':scrWidth}, 200); // do animate
+          this.$codeblock.animate({'width':scrWidth}, 200, 'swing', callback); // do animate
           this.$codeblock.addClass('expanded-full'); // add expanded class
         }
       }
