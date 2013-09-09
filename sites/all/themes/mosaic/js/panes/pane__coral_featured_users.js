@@ -21,6 +21,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         if ($content.length > 1) {
           new Drupal.coralQA.coralFeaturedUsers($content, $pane);
         }
+        else {
+          $pane.parents('.panel-pane').eq(0).hide();
+        }
       }
       catch (err) {
         console.log('coralFeaturedUsersInit() reported errors. Error: '+err);
