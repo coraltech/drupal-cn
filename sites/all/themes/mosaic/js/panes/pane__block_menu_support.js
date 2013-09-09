@@ -31,42 +31,51 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
   Drupal.mosaic.helpManager = function($menu, popupID) {
-    
-    // jQuery objects of note
-    this.$helpMenu = $menu;
-    
-    // Identification and settings
-    this.menuID = '#'+$menu.attr('id'); //'#'+this.$slideshow.attr('id');
-    this.popupID = popupID;
-    
-    var helpManager = this;
-    var ManagerView = Backbone.View.extend({
-      // Home
-      el: this.$helpMenu,
+    try {
+      // jQuery objects of note
+      this.$helpMenu = $menu;
       
-      // Settings and conf
-      helpManager: helpManager,
-      popupID: this.popupID,
+      // Identification and settings
+      this.menuID = '#'+$menu.attr('id'); //'#'+this.$slideshow.attr('id');
+      this.popupID = popupID;
       
-      // Init
-      initialize: function() {
-        helpManager.initializeBox($(this.el), this.popupID);
-      },
-     
-    });
-    
-    new ManagerView();
+      var helpManager = this;
+      var ManagerView = Backbone.View.extend({
+        // Home
+        el: this.$helpMenu,
+        
+        // Settings and conf
+        helpManager: helpManager,
+        popupID: this.popupID,
+        
+        // Init
+        initialize: function() {
+          helpManager.initializeBox($(this.el), this.popupID);
+        },
+       
+      });
+      
+      new ManagerView();
+    }
+    catch (err) {
+      console.log('helpManager errored: '+err);
+    }
   }
   
   Drupal.mosaic.helpManager.prototype.initializeBox = function($helpMenu, popupID) {
-    $target = $helpMenu.find('.get-help-tab');
-    if ($target.attr('href') != '#'+popupID) $target.attr('href', '#'+popupID);
-    
-    // Open the popup that contains the menu and question/contact forms
-    $target.magnificPopup({
-      type:'inline',
-      midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-    });  
+    try {
+      $target = $helpMenu.find('.get-help-tab');
+      if ($target.attr('href') != '#'+popupID) $target.attr('href', '#'+popupID);
+      
+      // Open the popup that contains the menu and question/contact forms
+      $target.magnificPopup({
+        type:'inline',
+        midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      });
+    }
+    catch (err) {
+      console.log('helpManager errored: '+err);
+    }
   }
   
 })(jQuery);
