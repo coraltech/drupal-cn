@@ -56,11 +56,17 @@
   .form-type-textarea {
     clear: both; // ensure this doesnt ride up on the fields (FFx3)
   }
-  .file-widget {
-    float: left;
-    padding: 3px;
-    background: white;
-    border: 1px solid #777;
+  .form-type-managed-file {
+    .file-widget {
+      float: left;
+      padding: 3px;
+      background: white;
+      border: 1px solid #777;
+    }
+    .description {
+      position: relative;
+      top: 14px;
+    }
   }
   .description{
     color: $mdgray;
