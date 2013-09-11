@@ -40,7 +40,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // jQuery objects of note
       this.$question = $question; // everything centers around the Q
       
-      //console.log(this.$question);
+      // Get the id for this question: it is the refID of this item
       this.initID(this.$question, {pat: /node-\d+/, cls: 'node-'});
       
       // Tertiary jQuery objects
@@ -87,7 +87,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       
         // @TODO: Why not put the more link
         this.initMore();
-        
       }
             
       // Adding events here so we can control the key    
@@ -215,7 +214,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // If we don't have settings for this, it's the first time we've looked at it
       if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
         var callback = function() {
-          ca.settings = Drupal.settings.mosaicViews[ca.refID];
+          ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
           if (typeof(cb) == 'function') cb();
         };
 
@@ -328,7 +327,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $answers = $cont.children('.views-row'); // so be it. 
       var numAnswers = $answers.length;
       var moreHide = 'hide';
-        
+      
       // @TODO: I bet addedNew should be in here too
       if (Drupal.settings.mosaicViews.hasOwnProperty(this.settingsID)) {
         if (Number(numAnswers) < Number(this.settings.total_items)) {
@@ -583,7 +582,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Get the settings for this item and add to the associated theme settings
   Drupal.coralQA.coralAnswer.prototype.getSettings = function(callback) {
     try {
-      ca = this;
+      var ca = this;
       ca.settingsID = 'answers_new_answers_'+ca.refID;
         
       if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+ca.refID)) {
