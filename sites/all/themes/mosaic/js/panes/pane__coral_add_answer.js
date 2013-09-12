@@ -51,6 +51,14 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$loadMore = $(this.$question).find('.more-answers-'+this.refID);
       this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
       this.$full = $(this.$question).find('.body-full.body-'+this.refID);       // full text body pane
+      
+      // Comment comps - needed to close the comments when answers is clicked
+      // See: hideComments()
+      this.$cmtBtn   = $question.find('.btn.comment-'+this.refID);
+      this.$cmtsForm = $(this.$question).find('.comment-form-'+this.refID);
+      this.$cmtsTgt  = $(this.$question).find('.comments-tgt-'+this.refID);
+      // end comment tie-in
+      
 
       // Initialize the content context (teaser|full)
       this.initContext();
@@ -92,6 +100,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // Adding events here so we can control the key    
       this.events = {};
       this.events['click .btn.answer-'+this.refID] = 'answerClick';
+      this.events['click .btn.comment-'+this.refID] = 'commentClick';
       this.events['click .more-answers-'+this.refID] = 'moreClick';
       this.events['click .answer-form-'+this.refID+' .form-submit'] = 'formSubmit';
       this.events['click .trimmed-'+this.refID+' a'] = 'trimmedClick';
@@ -114,12 +123,17 @@ Drupal.coralQA = Drupal.coralQA || {};
           coralAnswer.initForm(); // initialize the form
           coralAnswer.initAnswer(); // initialize the answer
           coralAnswer.initQuestionText(); // check for summary and hide full text if avail.
-          _.bindAll(this, 'answerClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
+          _.bindAll(this, 'answerClick', 'commentClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
         },
        
         answerClick: function(ev) {
           ev.preventDefault();
           coralAnswer.handleAnswerClick(ev);
+        },
+        
+        commentClick: function(ev) {
+          ev.preventDefault();
+          coralAnswer.handleCommentClick(ev);
         },
         
         moreClick: function(ev) {
@@ -387,6 +401,16 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
   
   
+  Drupal.coralQA.coralAnswer.prototype.handleCommentClick = function(ev) {
+    try {
+      this.hideAnswers();
+    }
+    catch (err) {
+      console.log('handleCommentClick errored: '+err);
+    }
+  };
+  
+  
   // Process a $loadMore click! Fetches from the view
   Drupal.coralQA.coralAnswer.prototype.handleMoreClick = function(ev) {
     try {
@@ -417,8 +441,21 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // Show a set of Answers
+  // Show / Hide a set of Answers
   Drupal.coralQA.coralAnswer.prototype.manageAnswers = function() {
+    try {
+      if (this.$btn.hasClass('answers-hidden')) this.showAnswers();
+      else this.hideAnswers();
+    }
+    catch (err) {
+      console.log('manageAnswers errored: '+err);
+    }
+  };
+
+
+  // Show's this question's answers
+  //  Also will hide the comments if they are open
+  Drupal.coralQA.coralAnswer.prototype.showAnswers = function() {
     try {
       var ca = this;
 
@@ -431,42 +468,74 @@ Drupal.coralQA = Drupal.coralQA || {};
         }
       };
       
-      if (this.$btn.hasClass('answers-hidden')) {
-        // PS: Comment the following line to forgoe throbber on Answer click! 
-        if (this.context != 'full') ca.setLoadStatus('loading'); // Set the loading status
+      // PS: Comment the following line to forgoe throbber on Answer click! 
+      if (this.context != 'full') ca.setLoadStatus('loading'); // Set the loading status
 
-        this.$answerForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
-        this.$answersTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show answers 
-        this.$bestAnswer.slideDown(200); // show best answer
-        this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
-        this.$btn.removeClass('answers-hidden'); // update the btn status
+      this.$answerForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
+      this.$answersTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show answers 
+      this.$bestAnswer.slideDown(200); // show best answer
+      this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
+      this.$btn.removeClass('answers-hidden'); // update the btn status
         
-        // Clicking on the answer btn opens the full content
-        if (this.hasTrimmed) {
-          this.$trimmed.hide();
-          this.$full.show();
-        }
+      // Clicking on the answer btn opens the full content
+      if (this.hasTrimmed) {
+        this.$trimmed.hide();
+        this.$full.show();
+      }
           
-        this.$btn.removeClass('ajax-processing'); // no dupe events
-      }
-      else {
-        // hide the answers and form
-        this.$answerForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
-        this.$answersTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the answers
-        this.$bestAnswer.slideUp(200);
-        this.$btn.addClass('answers-hidden');
-        this.$btn.find('.arrow').removeClass('arrow-down');
-            
-        if (this.hasTrimmed) { // show the trimmed version
-          this.$trimmed.show();
-          this.$full.hide();
-        }
-        
-        this.$btn.removeClass('ajax-processing'); // no dupe events
-      }
+      this.$btn.removeClass('ajax-processing'); // no dupe events
+      
+      this.hideComments(); // hide comments
     }
     catch (err) {
-      console.log('manageAnswers errored: '+err);
+      console.log('showAnswers errored: '+err);
+    }
+  };
+
+
+  // Hide the question's answers
+  //  Gets called on comment add click too!
+  Drupal.coralQA.coralAnswer.prototype.hideAnswers = function() {
+    try {
+      // hide the answers and form
+      this.$answerForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
+      this.$answersTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the answers
+      this.$bestAnswer.slideUp(200);
+      this.$btn.find('.arrow').removeClass('arrow-down');
+      this.$btn.addClass('answers-hidden');
+            
+      if (this.hasTrimmed) { // show the trimmed version
+        this.$trimmed.show();
+        this.$full.hide();
+      }
+      
+      this.$btn.removeClass('ajax-processing'); // no dupe events
+    }
+    catch (err) {
+      console.log('hideAnswers errored: '+err);
+    }
+  };
+  
+  
+  // Shuts comments when the answer button is clicked!
+  //  Do not remove.  Comments js file can't do this!
+  Drupal.coralQA.coralAnswer.prototype.hideComments = function() {
+    try {
+      // hide the comments and form
+      this.$cmtsForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
+      this.$cmtsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
+      this.$cmtBtn.addClass('comments-hidden');
+      this.$cmtBtn.find('.arrow').removeClass('arrow-down');
+            
+      //if (this.hasTrimmed) { // show the trimmed version
+      //  this.$trimmed.show();
+      //  this.$full.hide();
+      // }
+        
+      //this.$btn.removeClass('ajax-processing'); // no dupes
+    }
+    catch (err) {
+      console.log('hideComments errored: '+err);
     }
   };
 
