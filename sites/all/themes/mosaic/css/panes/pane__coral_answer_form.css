@@ -8,7 +8,7 @@
 }
 /* line 21, ../../sass/panes/pane__coral_answer_form.scss */
 .html .pane-content .pane-coral-answer-form > .help-wrap > .pane-title {
-  font-size: 16px;
+  font-size: 14px;
   padding: 0.5em 1.5em;
   color: white;
   display: inline-block;
@@ -31,7 +31,7 @@
   box-shadow: #63cf73 0 1px 0 inset;
   border: 1px solid #2c913b;
   text-shadow: #184d20 0 -1px 0;
-  font-size: 16px;
+  font-size: 14px;
   padding: 2px 5px;
   color: white;
   display: inline-block;
@@ -92,9 +92,9 @@
   color: #777777;
   padding: 0 5px 0 7px;
   position: absolute;
-  line-height: 1.75em;
+  line-height: 1.5em;
   left: 0%;
-  top: 1em;
+  top: .75em;
   text-shadow: none;
   white-space: nowrap;
 }

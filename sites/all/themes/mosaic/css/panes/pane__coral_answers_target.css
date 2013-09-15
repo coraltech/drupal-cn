@@ -1,9 +1,9 @@
-/* line 14, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 15, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target {
   position: relative;
   margin-bottom: 1.25em;
 }
-/* line 17, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 18, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target > h2.pane-title {
   background: #777777;
   color: white;
@@ -11,25 +11,112 @@
   padding-left: .5em;
   padding-right: .5em;
 }
-/* line 28, ../../sass/panes/pane__coral_answers_target.scss */
-.html .pane-coral-answers-target .load-more {
-  position: absolute;
-  bottom: -2.5em;
+/* line 29, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .actions {
+  border: 1px solid #dddddd;
+  padding: 0.3125em 0.625em;
+  background: #d8d8d8;
+  background: -moz-linear-gradient(top, #d8d8d8 0%, #eaeaea 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d8d8d8), color-stop(100%, #eaeaea));
+  background: -webkit-linear-gradient(top, #d8d8d8 0%, #eaeaea 100%);
+  background: -o-linear-gradient(top, #d8d8d8 0%, #eaeaea 100%);
+  background: -ms-linear-gradient(top, #d8d8d8 0%, #eaeaea 100%);
+  background: linear-gradient(to bottom, #d8d8d8 0%, #eaeaea 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  *zoom: 1;
 }
-/* line 31, ../../sass/panes/pane__coral_answers_target.scss */
-.html .pane-coral-answers-target .load-more .ajax-progress {
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: -25px;
-  top: 8%;
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.html .pane-coral-answers-target .actions:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-/* line 40, ../../sass/panes/pane__coral_answers_target.scss */
-.html .pane-coral-answers-target .load-more.hide {
+/* line 35, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .actions .load-more {
+  position: relative;
+  margin-right: 5px;
+}
+/* line 39, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .actions .load-more .ajax-progress .throbber {
+  margin: 1px -2px -1px 6px;
+}
+/* line 43, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .actions .load-more.hide {
   display: none;
 }
-/* line 44, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 47, ../../sass/panes/pane__coral_answers_target.scss */
+.html .pane-coral-answers-target .actions .cls-answer {
+  position: relative;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b02e1c), color-stop(70%, #a32b1a));
+  background: -webkit-linear-gradient(#b02e1c, #a32b1a 70%);
+  background: -moz-linear-gradient(#b02e1c, #a32b1a 70%);
+  background: -o-linear-gradient(#b02e1c, #a32b1a 70%);
+  background: linear-gradient(#b02e1c, #a32b1a 70%);
+  -webkit-box-shadow: #e04d39 0 1px 0 inset;
+  -moz-box-shadow: #e04d39 0 1px 0 inset;
+  box-shadow: #e04d39 0 1px 0 inset;
+  border: 1px solid #8d2516;
+  text-shadow: #41110a 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-answers-target .actions .cls-answer:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-answers-target .actions .cls-answer:hover {
+  background-color: #8d2516;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #8d2516));
+  background: -webkit-linear-gradient(#9a2818 3%, #8d2516 75%);
+  background: -moz-linear-gradient(#9a2818 3%, #8d2516 75%);
+  background: -o-linear-gradient(#9a2818 3%, #8d2516 75%);
+  background: linear-gradient(#9a2818 3%, #8d2516 75%);
+}
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-answers-target .actions .cls-answer:active {
+  -webkit-box-shadow: #802114 0 1px 2px inset;
+  -moz-box-shadow: #802114 0 1px 2px inset;
+  box-shadow: #802114 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.html .pane-coral-answers-target .actions .cls-answer.disabled, .html .pane-coral-answers-target .actions .cls-answer[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #a32b1a;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.html .pane-coral-answers-target .actions .cls-answer::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 55, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title {
   clear: none;
   *zoom: 1;
@@ -40,12 +127,12 @@
   display: table;
   clear: both;
 }
-/* line 48, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 59, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > a {
   float: left;
   max-width: 88%;
 }
-/* line 52, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 63, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top {
   border: 1px solid #f1f1f1;
   cursor: pointer;
@@ -71,7 +158,7 @@
   -o-border-radius: 11px;
   border-radius: 11px;
 }
-/* line 64, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 75, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top .arrow-up {
   display: block;
   margin: 2px 0 0 5px;
@@ -82,7 +169,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #5e5e5e;
 }
-/* line 70, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 81, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top:hover {
   border: 1px solid #919191;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
@@ -100,7 +187,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 75, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 86, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top:hover .arrow-up {
   width: 0;
   height: 0;
@@ -109,31 +196,26 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid white;
 }
-/* line 86, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 97, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.odd {
   background-color: #efefef;
 }
-/* line 89, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 100, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.even {
   background-color: white;
 }
-/* line 92, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 103, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target .node .comment-node-pane-title {
   font-size: 1em;
   line-height: 1.25em;
   margin: 0;
   float: left;
 }
-/* line 97, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 108, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.comments-more {
   margin-bottom: 3.75em;
 }
-/* line 100, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 111, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answers-tgt.empty {
   padding-top: 1.25em;
-}
-
-/* line 104, ../../sass/panes/pane__coral_answers_target.scss */
-.pane-coral-answers-target.answers-more {
-  margin-bottom: 3.75em;
 }
