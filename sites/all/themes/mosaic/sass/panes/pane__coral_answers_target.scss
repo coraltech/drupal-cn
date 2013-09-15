@@ -2,6 +2,7 @@
 // Scss file for answers target specific items
 
 @import 'global/arrows';
+@import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
@@ -25,20 +26,30 @@
   position: relative;
   margin-bottom: $default_vert_unit;
   
-  .load-more {
-    position: absolute;
-    bottom: -2 * $default_vert_unit;
-    .ajax-progress {
-      display: block;
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      right: -25px;
-      top: 8%;
+  .actions {
+    border: 1px solid $ltgray;
+    padding: ($default_vert_unit / 4) ($default_vert_unit / 2);
+    @include linear-v-gradient(darken($ltgray, 2%), lighten($ltgray, 5%));
+    @include pie-clearfix;
+
+    .load-more {
+      position: relative;
+      margin-right: 5px;
+      // Set up the throbber position in the button
+      .ajax-progress .throbber {
+        margin: 1px -2px -1px 6px;
+      }
     }
-  }
-  .load-more.hide {
-    display: none;
+    .load-more.hide {
+      display: none;
+    }
+    
+    .cls-answer {
+      position: relative;
+      
+      @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%));
+      @include btn-structure;
+    }
   }
   
   .answer-node-pane-title {
@@ -101,6 +112,6 @@
     padding-top: $default_vert_unit;
   }
 }
-.pane-coral-answers-target.answers-more {
-  margin-bottom: 3 * $default_vert_unit;
-}
+//.pane-coral-answers-target.answers-more {
+//  margin-bottom: 3 * $default_vert_unit;
+//}

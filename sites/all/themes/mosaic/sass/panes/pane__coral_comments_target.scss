@@ -44,15 +44,12 @@
   }
   
   .load-more {
-    position: absolute;
-    bottom: -2 * $default_vert_unit;
-    .ajax-progress {
-      display: block;
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      right: -25px;
-      top: 8%;
+    position: relative;
+    margin: 5px 5px 5px 0;
+    
+    // Set up the throbber position in the button
+    .ajax-progress .throbber {
+      margin: 1px -2px -1px 6px;
     }
   }
   .load-more.hide {

@@ -21,7 +21,7 @@
   & > .help-wrap > .pane-title {
     @include h2; // reset node_answer.scss settings
     @include btn-matte-inset;
-    @include btn-structure;
+    @include btn-structure(2px 5px, 14px, 0px);
     
     font-weight: bold;
     text-align: center;
@@ -39,9 +39,9 @@
     color: $mdgray;
     padding: 0 5px 0 7px;
     position: absolute;
-    line-height: 1.75em;
+    line-height: 1.5em;
     left: 0%;
-    top: 1em;
+    top: .75em;
     text-shadow: none;
     white-space: nowrap;
   }
