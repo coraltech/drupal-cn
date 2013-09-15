@@ -84,6 +84,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.addedNew = 0;
         this.hasTrimmed = false;
         
+        this.$actions; // will provide a parent container for the close and more buttons for each answers target
+                
         // we only want 5 cols - then we hide the form
         this.$answerForm.find('textarea').attr('rows', '5'); 
         
@@ -93,18 +95,20 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (!$tt.length) this.$trimmed.append('<p class="trimmed trimmed-'+this.refID+' trimmed-more"><a href="#">View full text</a></p>');
         if (!$tf.length) this.$full.append('<p class="trimmed trimmed-'+this.refID+' trimmed-less"><a href="#">Hide full text</a></p>');
       
-        // @TODO: Why not put the more link
+        // Add more link and close actions
         this.initMore();
+        this.initClose();
       }
             
       // Adding events here so we can control the key    
       this.events = {};
       this.events['click .btn.answer-'+this.refID] = 'answerClick';
-      this.events['click .btn.comment-'+this.refID] = 'commentClick';
+      this.events['click .btn.comment-'+this.refID] = 'commentClick'; // closes the answers pane - all other comment related func. is in pane__coral_add_comment.js
       this.events['click .more-answers-'+this.refID] = 'moreClick';
       this.events['click .answer-form-'+this.refID+' .form-submit'] = 'formSubmit';
       this.events['click .trimmed-'+this.refID+' a'] = 'trimmedClick';
       this.events['click .ans-form-title-'+this.refID] = 'formClick';
+      this.events['click .cls-answer-'+this.refID] = 'closeClick';
       this.events['hover .ans-form-title-'+this.refID] = 'titleHover';
           
       var coralAnswer = this;
@@ -123,7 +127,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           coralAnswer.initForm(); // initialize the form
           coralAnswer.initAnswer(); // initialize the answer
           coralAnswer.initQuestionText(); // check for summary and hide full text if avail.
-          _.bindAll(this, 'answerClick', 'commentClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
+          _.bindAll(this, 'answerClick', 'commentClick', 'closeClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
         },
        
         answerClick: function(ev) {
@@ -133,7 +137,12 @@ Drupal.coralQA = Drupal.coralQA || {};
         
         commentClick: function(ev) {
           ev.preventDefault();
-          coralAnswer.handleCommentClick(ev);
+          coralAnswer.handleCommentClick(ev); // closes comments
+        },
+        
+        closeClick: function(ev) {
+          ev.preventDefault();
+          coralAnswer.handleClsClick(ev); // closes answers
         },
         
         moreClick: function(ev) {
@@ -226,7 +235,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       var ca = this;
       
       // If we don't have settings for this, it's the first time we've looked at it
-      if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
+      if (!Drupal.settings.mosaicViews.hasOwnProperty(this.settingsID)) {
         var callback = function() {
           ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
           if (typeof(cb) == 'function') cb();
@@ -247,7 +256,9 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
   
   
-  // Attaches and configures a "to parent" link on the content 
+  // Attaches and configures a "to parent" link on the content
+  //  Simpler here than in comments bc the answers can only be one
+  //  level deep and a child of a question...
   Drupal.coralQA.coralAnswer.prototype.initAnswer = function() {
     try {
       var ca = this;
@@ -342,6 +353,13 @@ Drupal.coralQA = Drupal.coralQA || {};
       var numAnswers = $answers.length;
       var moreHide = 'hide';
       
+      var $parent = this.$answersTgt.parent('.pane-content');
+      var $actions = this.$actions || undefined;
+      if (!$actions) {
+        $parent.append('<div class="actions">');
+        this.$actions = $parent.find('.actions');      
+      }
+      
       // @TODO: I bet addedNew should be in here too
       if (Drupal.settings.mosaicViews.hasOwnProperty(this.settingsID)) {
         if (Number(numAnswers) < Number(this.settings.total_items)) {
@@ -351,8 +369,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         // This button appears when there are more items to load. Otherwise it's hidden
         //  starts off hidden here
         if (!this.$loadMore.length) { // add it only if it's not there
-          this.$answersTgt.parent('.pane-content').append(this.loadMoreBtn('1', moreHide));
-          this.$loadMore = this.$answersTgt.parent('.pane-content').find('.more-answers-'+this.refID);
+          this.$actions.append(this.loadMoreBtn('1', moreHide));
+          this.$loadMore = $parent.find('.more-answers-'+this.refID);
           if (moreHide) this.$loadMore.hide();
         }
       }
@@ -364,21 +382,17 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('initMore errored: '+err);
     }
   };
-
-
-  // Manage the titleHoverHelp text (eg. Show form, etc...)
-  Drupal.coralQA.coralAnswer.prototype.titleHoverHelp = function(ev) {
+  
+  
+  // Init the close button - called directly after initMore.
+  Drupal.coralQA.coralAnswer.prototype.initClose = function() {
     try {
-      var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
-      var $help = $wrap.find('.help-text');
-      
-      if (ev.type == 'mouseenter') $help.animate({left: '9em'}, 500); // mouseenter; expose the text
-      else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+      this.$actions.append('<a href="#" title="Collapse answers view" class="btn cls-answer cls-answer-'+this.refID+'">Close</a>');
     }
     catch (err) {
-      console.log('titleHoverHelp errored: '+err);
+      console.log('initClose errored: '+err);
     }
-  }; 
+  };
 
 
   // Handles the clicke event of the answer button
@@ -401,6 +415,9 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
   
   
+  // This simply hides the answers when the comments are opened
+  //  This is only necc. when answers and comments are both present
+  //  ie. Questions...
   Drupal.coralQA.coralAnswer.prototype.handleCommentClick = function(ev) {
     try {
       this.hideAnswers();
@@ -410,6 +427,18 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
   };
   
+
+  // Handles close click
+  Drupal.coralQA.coralAnswer.prototype.handleClsClick = function(ev) {
+    try {
+      var ca = this; // yeah, we have a callback!
+      $('html, body').animate({ scrollTop: this.$question.offset().top }, 800, function () { ca.hideAnswers(); });
+    }
+    catch (err) {
+      console.log('handleCommentClick errored: '+err);
+    }
+  };
+
   
   // Process a $loadMore click! Fetches from the view
   Drupal.coralQA.coralAnswer.prototype.handleMoreClick = function(ev) {
@@ -501,6 +530,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$answerForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
       this.$answersTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the answers
       this.$bestAnswer.slideUp(200);
+
       this.$btn.find('.arrow').removeClass('arrow-down');
       this.$btn.addClass('answers-hidden');
             
@@ -522,17 +552,12 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.hideComments = function() {
     try {
       // hide the comments and form
+      // This is done here so we can shut one 
+      // when the other opens. No need to add this to comments js.
       this.$cmtsForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
       this.$cmtsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
       this.$cmtBtn.addClass('comments-hidden');
       this.$cmtBtn.find('.arrow').removeClass('arrow-down');
-            
-      //if (this.hasTrimmed) { // show the trimmed version
-      //  this.$trimmed.show();
-      //  this.$full.hide();
-      // }
-        
-      //this.$btn.removeClass('ajax-processing'); // no dupes
     }
     catch (err) {
       console.log('hideComments errored: '+err);
@@ -675,6 +700,29 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('getSettings errored: '+err);
     }
   };
+  
+
+  // Update the settings array when new items are added to the page
+  Drupal.coralQA.coralAnswer.prototype.updateSettings = function(data) {
+    try {
+      ca = this;
+      
+      // There are NEW items that were not in the page rendering
+      //  so now we have to go back and ensure that the settings
+      //  array is up to date... see Drupal.settings.mosaicViews
+      var $newItems = $(data).find('.views-row');
+      $newItems.each(function(i) {
+        var $node = $(this).find('.node').eq(0); 
+        var refID = ca.initID($node, {pat: /node-\d+/, cls: 'node-', ret: true});
+        
+        ca.initAnswer();
+        ca.getSettings();
+      });
+    }
+    catch (err) {
+      console.log('updateSettings errored: '+err);
+    }
+  };
 
 
   // Show or hide the form
@@ -742,7 +790,7 @@ Drupal.coralQA = Drupal.coralQA || {};
               if (msg == 'success') {
                 ca.clearForm($form);   // clear the form
                 ca.addNewAnswer(data); // add this new answer to the top of the list
-                
+
                 // User added one! Lets remember that to supplement the views offset
                 // ----
                 // @NOTE: this may still re show the users post if they are browsing 
@@ -776,9 +824,11 @@ Drupal.coralQA = Drupal.coralQA || {};
         ca.$answerForm.find('.form-submit').removeClass('ajax-processing');
         var $newAnswer = ca.$question.find('.node-'+data.nid).css("background", "#FFF6B6");
         var $viewRow = $newAnswer.parent('.views-row');
-  
+        
+        ca.$answerForm.slideUp(800); // hide the answer form
+        
         $viewRow.css('padding-bottom', '1px');
-        $newAnswer.animate({ backgroundColor: '#FFFFFF' }, 3000, 'swing', function() {
+        $newAnswer.animate({ backgroundColor: '#FFFFFF' }, 5000, 'swing', function() {
           $newAnswer.css('background', 'transparent');
           $viewRow.css('padding-bottom', '0');
         });
@@ -802,26 +852,6 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
   };
 
-  // Handle the click even on the trimmed link
-  Drupal.coralQA.coralAnswer.prototype.trimmedClick = function(ev) {
-    try {
-      var $wrap = $(ev.currentTarget).parent('.trimmed');
-      // view all
-      if ($wrap.hasClass('trimmed-more')) {
-        this.$full.show();
-        this.$trimmed.hide();
-      }
-      // view trimmed
-      else {
-        this.$full.hide();
-        this.$trimmed.show();
-      }
-    }
-    catch (err) {
-      console.log('trimmedClick errored: '+err);
-    }
-  };
-
 
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
@@ -830,38 +860,6 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
     catch (err) {
       console.log('loadMoreBtn errored: '+err);
-    }
-  };
-
-
-  // Update the settings array when new items are added to the page
-  Drupal.coralQA.coralAnswer.prototype.updateSettings = function(data) {
-    try {
-      ca = this;
-      
-      // There are NEW items that were not in the page rendering
-      //  so now we have to go back and ensure that the settings
-      //  array is up to date... see Drupal.settings.mosaicViews
-      var $newItems = $(data).find('.views-row');
-      $newItems.each(function(i) {
-        var $node = $(this).find('.node').eq(0); 
-        var refID = ca.initID($node, {pat: /node-\d+/, cls: 'node-', ret: true});
-        
-        ca.initAnswer();
-      
-        Drupal.coral_ajax.view_info('answers', {
-          display_id: 'new_answers',
-          args : refID,
-        },
-        function(data) {
-          settingsID = 'answers_new_answers_'+refID;
-          Drupal.settings.mosaicViews[settingsID] = data;
-        },
-        function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
-      });
-    }
-    catch (err) {
-      console.log('updateSettings errored: '+err);
     }
   };
 
@@ -883,7 +881,40 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
   };
   
+  
+  // Manage the titleHoverHelp text (eg. Show form, etc...)
+  Drupal.coralQA.coralAnswer.prototype.titleHoverHelp = function(ev) {
+    try {
+      var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+      var $help = $wrap.find('.help-text');
+      
+      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, 500); // mouseenter; expose the text
+      else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+    }
+    catch (err) {
+      console.log('titleHoverHelp errored: '+err);
+    }
+  };
+  
+  
+  // Handle the click even on the trimmed link
+  Drupal.coralQA.coralAnswer.prototype.trimmedClick = function(ev) {
+    try {
+      var $wrap = $(ev.currentTarget).parent('.trimmed');
+      // view all
+      if ($wrap.hasClass('trimmed-more')) {
+        this.$full.show();
+        this.$trimmed.hide();
+      }
+      // view trimmed
+      else {
+        this.$full.hide();
+        this.$trimmed.show();
+      }
+    }
+    catch (err) {
+      console.log('trimmedClick errored: '+err);
+    }
+  };
+  
 })(jQuery);
-
-
-
