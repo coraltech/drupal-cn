@@ -19,8 +19,8 @@
   }
   
   & > .help-wrap > .pane-title {
-    @include btn-matte-inset(0px, 16px, $mdgreen, darken($mdgreen, 3%), $white);
-    @include btn-structure;
+    @include btn-matte-inset(0px, 14px, $mdgreen, darken($mdgreen, 3%), $white);
+    @include btn-structure(2px 5px, 14px, 0px);
     
     font-weight: bold;
     text-align: center;
@@ -38,9 +38,9 @@
     color: $mdgray;
     padding: 0 5px 0 7px;
     position: absolute;
-    line-height: 1.75em;
+    line-height: 1.5em;
     left: 0%;
-    top: 1em;
+    top: .75em;
     text-shadow: none;
     white-space: nowrap;
   }
