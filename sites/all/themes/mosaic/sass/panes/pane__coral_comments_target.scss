@@ -2,6 +2,7 @@
 // Scss file for answers target specific items
 
 @import 'global/arrows';
+@import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
@@ -43,17 +44,28 @@
     padding-top: $default_vert_unit / 1.75;
   }
   
-  .load-more {
-    position: relative;
-    margin: 5px 5px 5px 0;
-    
-    // Set up the throbber position in the button
-    .ajax-progress .throbber {
-      margin: 1px -2px -1px 6px;
+  .actions {
+    padding: ($default_vert_unit / 4) 0;
+    @include pie-clearfix;
+
+    .load-more {
+      position: relative;
+      margin-right: 5px;
+      // Set up the throbber position in the button
+      .ajax-progress .throbber {
+        margin: 1px -2px -1px 6px;
+      }
     }
-  }
-  .load-more.hide {
-    display: none;
+    .load-more.hide {
+      display: none;
+    }
+    
+    .cls-comments {
+      position: relative;
+      
+      @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%));
+      @include btn-structure;
+    }
   }
   
   .comment-node-pane-title {
