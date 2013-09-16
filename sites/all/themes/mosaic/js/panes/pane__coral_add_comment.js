@@ -56,7 +56,8 @@ Drupal.coralQA = Drupal.coralQA || {};
 
       // Initialize the content context (teaser|full)
       this.initContext();
-  
+      this.initActions();
+      this.initClose();
       // Setup and more
       // ----
       // $loadMore may or may not exist. It usually does not
@@ -80,8 +81,11 @@ Drupal.coralQA = Drupal.coralQA || {};
         var $tf = this.$full.find('.trimmed');    // full
         if (!$tt.length) this.$trimmed.append('<p class="trimmed trimmed-'+this.refID+' trimmed-more"><a href="#">View full text</a></p>');
         if (!$tf.length) this.$full.append('<p class="trimmed trimmed-'+this.refID+' trimmed-less"><a href="#">Hide full text</a></p>');
+        
+        this.initActions();
+        this.initClose();
       }
-      
+    
       // Adding events here so we can control the refID (nid)   
       this.events = {};
       this.events['click .btn.comment-'+this.refID] = 'commentClick';
@@ -149,46 +153,6 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // Manage the titleHoverHelp text (eg. Show form, etc...)
-  Drupal.coralQA.coralComment.prototype.titleHoverHelp = function(ev) {
-    try {
-      var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
-      var $help = $wrap.find('.help-text');
-    
-      if (ev.type == 'mouseenter') $help.animate({left: '9em'}, 500); // mouseenter; expose the text
-      else $help.animate({left: '0em'}, 500); // mouseleave; hide text
-    }
-    catch (err) {
-      console.log('titleHoverHelp errored: '+err);
-    }
-  }; 
-
-
-  // Show or hide the form
-  Drupal.coralQA.coralComment.prototype.manageForm = function(ev) {
-    try {
-      var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
-      var $help = $wrap.find('.help-text');
-      var $title = $wrap.find('.pane-title');
-      
-      if ($title.hasClass('form-hidden')) {
-        // update class and text
-        $title.removeClass('form-hidden');
-        $help.text('hide form');
-      }
-      else {
-        // update class and text
-        $title.addClass('form-hidden');
-        $help.text('show form');
-      }
-      this.$commentForm.slideToggle(200); // action!
-    }
-    catch (err) {
-      console.log('manageForm errored: '+err);
-    }
-  };
-
-
   // Add an identifying class to the form title
   Drupal.coralQA.coralComment.prototype.initForm = function() {
     try {
@@ -239,6 +203,87 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('initContentText errored: '+err);
     }
   };
+  
+  
+  // Initialize the settings
+  Drupal.coralQA.coralComment.prototype.initSettings = function(cb) {
+    try {
+      // go ahead and set the settings id.
+      this.settingsID = 'comments_new_comments_'+this.refID;
+      
+      var cc = this;
+      
+      // If we don't have settings for this, it's the first time we've looked at it
+      if (!Drupal.settings.mosaicViews.hasOwnProperty(this.settingsID)) {
+        var callback = function() {
+          cc.settings = Drupal.settings.mosaicViews[cc.settingsID];
+          if (typeof(cb) == 'function') cb();
+        };
+
+        this.getSettings(callback);    // Get the new settings and then process callback
+      }
+        
+      // No settings loading! We have already loaded these answers
+      else {
+        this.settings = Drupal.settings.mosaicViews[cc.settingsID];
+        if (typeof(cb) == 'function') cb();
+      }
+    }
+    catch (err) {
+      console.log('initSettings errored: '+err);
+    }
+  };
+
+
+  // Attaches and configures a "to parent" link on the content 
+  Drupal.coralQA.coralComment.prototype.initComment = function() {
+    try {
+      var cc = this;
+      
+      var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
+      var $cont = $view.children('.view-content');  // so we can't use find
+      var $comments = $cont.children('.views-row'); // so be it.
+
+      // Process all view result comments
+      $comments.each(function() {
+        cc.processComment($(this));
+      });
+      
+      // Process the parent if it is a comment
+      if (this.$content.hasClass('node-comment')) {
+        var $parent = {};
+        
+        // Comments as a parent?
+        var $cp = this.$content.parents('.node-comment');
+        if (!$cp.length) { // not a comment
+          var $ap = this.$content.parents('.node-answer');
+          if (!$ap.length) { // answer?
+            var $qp = this.$content.parents('.node-question');
+            if (!$qp.length) { // not a question, could it be in parent content?
+              var $parentContent = $('.pane-coral-parent-content > .pane-content > .node');
+              if ($parentContent.length) {
+                $parent = $parentContent.eq(0); // the node in the parent content container
+              }
+            }
+            else {
+              $parent = $qp.eq(0); // parent is a question
+            }
+          }
+          else {
+            $parent = $ap.eq(0); // parent is an answer
+          }
+        }
+        else {
+          $parent = $cp.eq(0); // parent is a comment
+        }        
+        cc.processComment(this.$content, $parent);
+      }
+      
+    }
+    catch (err) {
+      console.log('initComment errored: '+err);
+    }
+  };
 
 
   // Analyze the object and pull refID data
@@ -287,7 +332,59 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // Initialize the color classes on the comment targets 
+  // Initialize the actions container
+  Drupal.coralQA.coralComment.prototype.initActions = function() {
+    try {
+      var $parent = this.$commentsTgt.parent('.pane-content');
+      var $actions = $parent.find('.actions');
+      if (!$actions.length) {
+        $parent.append('<div class="actions">');
+        this.$actions = $parent.find('.actions');
+      }
+    }
+    catch (err) {
+      console.log('initActions errored: '+err);
+    }
+  };
+
+
+  // Initialize more link
+  Drupal.coralQA.coralComment.prototype.initMore = function() {
+    try {
+      var $view = $(this.$commentsTgt).children('.view-answers');  // must only return children!
+      var $cont = $view.children('.view-content');  // so we can't use find
+      var $comments = $cont.children('.views-row'); // so be it. 
+      var numComments = $comments.length;
+      var moreHide = 'hide';
+      
+      // @TODO: I bet addedNew should be in here too
+      if (Drupal.settings.mosaicViews.hasOwnProperty(this.settingsID)) {
+        if (Number(numComments) < Number(this.settings.total_items)) {
+          this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
+          moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
+        }
+        // This button appears when there are more items to load. Otherwise it's hidden
+        //  starts off hidden here
+        if (!this.$loadMore.length) { // add it only if it's not there
+          this.$actions.prepend(this.loadMoreBtn('1', moreHide));
+          this.$loadMore = this.$actions.find('.more-comments-'+this.refID);
+          
+          if (moreHide) {
+            this.$loadMore.hide();
+          }
+        }
+      }
+      else {
+        // @TODO: is it possible that we could be missing the settings?
+      }
+    }
+    catch (err) {
+      console.log('initMore errored: '+err);
+    }
+  };
+
+
+  // Initialize the color classes on the comment targets
   Drupal.coralQA.coralComment.prototype.initTargets = function() {
     try {
       var $tgts = this.$commentsTgt.parents('.pane-coral-comments-target');
@@ -304,29 +401,28 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('initTargets errored: '+err);
     }
   };
-
-
-  // Get the needed color settings for this level;
-  //  Colors alternate between levels for ease of reading.
-  Drupal.coralQA.coralComment.prototype.getTargetColorData = function($target, $targets) {
+  
+  
+  // Init the close button - called directly after initMore.
+  Drupal.coralQA.coralComment.prototype.initClose = function() {
     try {
-      var data = {};
+      var cc = this;
       
-      data.color = data.defColor = '#EFEFEF';   // default (odd) color 
-      data.clrClass = data.defClrClass = 'odd'; // default (odd) color class
-      
-      // Where is this target, within the scope of the targets?
-      if ($targets.length % 2) {
-        data.color = '#FFFFFF';
-        data.clrClass = 'even';
+      var $closeBtn = this.$actions.find('.btn.cls-comments-'+this.refID);
+      if (!$closeBtn.length) {
+        // Append the close button
+        this.$actions.append('<a href="#" title="Collapse comments view" class="btn cls-comments cls-comments-'+this.refID+'">Close</a>');
+        $closeBtn = this.$actions.find('.btn.cls-comments-'+this.refID);
+        $closeBtn.off('click').click(function(ev) { // event must be bound here
+          ev.preventDefault(); // animate scroll and close comments
+          $('html, body').animate({ scrollTop: cc.$content.offset().top }, 800, function () { cc.hideComments(); });
+        });
       }
-      
-      return data;
     }
     catch (err) {
-      console.log('initTargetColorData errored: '+err);
+      console.log('initClose errored: '+err);
     }
-  }
+  };
 
 
   // Handles the clicke event of the comment button
@@ -335,7 +431,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (!this.$btn.hasClass('ajax-processing')) {
         this.$btn.addClass('ajax-processing'); // no dupes
         this.settingsID = 'comments_new_comments_'+this.refID;
-        cc = this;
+        
+        var cc = this;
         
         if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
           Drupal.settings.mosaicViews = {};
@@ -345,6 +442,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (!Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
           var callback = function() {
             cc.settings = Drupal.settings.mosaicViews[cc.settingsID];
+            cc.initMore();
             cc.manageComments();
           };
           cc.setLoadStatus('loading'); // Set the loading status
@@ -362,109 +460,17 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('handleCommentClick errored: '+err);
     }
   };
-
   
-  // Show a set of comments
-  Drupal.coralQA.coralComment.prototype.manageComments = function() {
+  
+  // Handles close click
+  Drupal.coralQA.coralComment.prototype.handleClsClick = function(ev) {
     try {
-      var cc = this;
-
-      var callback = function() {
-        cc.setLoadStatus('finished');
-        if (cc.settings.hasOwnProperty('total_items')) {
-          if (Number(cc.settings.total_items) > 0) {
-            cc.$commentsTgt.removeClass('empty');
-          }
-        }
-      };
-      
-      if (this.$btn.hasClass('comments-hidden')) {
-  
-        this.$commentForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
-        this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show comments 
-        this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
-        this.$btn.removeClass('comments-hidden'); // update the btn status
-
-        var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
-        var $cont = $view.children('.view-content');  // so we can't use find
-        var $comments = $cont.children('.views-row'); // so be it. 
-        var numComments = $comments.length;
-        var moreHide = 'hide';
-        
-        // @TODO: I bet addedNew should be in here too
-        if (Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
-          if (Number(numComments) < Number(this.settings.total_items)) {
-            this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
-            if (!this.initialLoad) { // load the first set only on the first click - after that use "more"
-              this.loadViewResults('comments', 'new_comments', this.refID);
-              this.initialLoad = true;
-            }
-            moreHide = ''; // hide this only if it's not needed... apparently it's needed here.
-          }
-          // This button appears when there are more items to load. Otherwise it's hidden
-          //  starts off hidden here
-          if (!this.$loadMore.length) { // add it only if it's not there
-            this.$commentsTgt.parent('.pane-content').append(this.loadMoreBtn('0', moreHide));
-            this.$loadMore = this.$commentsTgt.parent('.pane-content').find('.more-comments-'+this.refID);
-            this.$loadMore.hide(); // hide this to start with
-          }
-          
-          // Clicking on the answer btn opens the full content
-          if (this.hasTrimmed) {
-            this.$trimmed.hide();
-            this.$full.show();
-          }
-          
-          this.$btn.removeClass('ajax-processing'); // no dupes
-        }
-        else {
-          // @TODO: is it possible that we could be missing the settings?
-        }
-      }
-      else {
-        // hide the comments and form
-        this.$commentForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
-        this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
-        this.$btn.addClass('comments-hidden');
-        this.$btn.find('.arrow').removeClass('arrow-down');
-            
-        if (this.hasTrimmed) { // show the trimmed version
-          this.$trimmed.show();
-          this.$full.hide();
-        }
-        
-        this.$btn.removeClass('ajax-processing'); // no dupes
-      }
+      console.log('click');
+      //var cc = this; // yeah, we have a callback!
+      //$('html, body').animate({ scrollTop: this.$content.offset().top }, 800, function () { cc.hideComments(); });
     }
     catch (err) {
-      console.log('manageComments errored: '+err);
-    }
-  };
-
-
-  // Set the load status for this set of nodes
-  //  It would be nice to add '.' to the loading
-  //  message before the view is loaded.
-  Drupal.coralQA.coralComment.prototype.setLoadStatus = function(status) {
-    try {  
-      var status = status || 'finished';
-      // Add loading gif and manage target text
-      if (status == 'loading') {
-        // Let the user know something is happening
-        this.$btn.append('<span class="ajax-progress"><span class="throbber"></span></span>');
-      }
-      else {
-        this.$btn.find('.ajax-progress').remove();
-        if (Number(this.settings.total_items) < 1) {
-          this.$commentsTgt.children('.tgt-load').text('No comments were found!');  
-        }
-        else {
-          this.$commentsTgt.children('.tgt-load').remove();
-        }
-      }
-    }
-    catch (err) {
-      console.log('setLoadStatus errored: '+err);
+      console.log('handleCommentClick errored: '+err);
     }
   };
 
@@ -490,6 +496,92 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
     catch (err) {
       console.log('handlMoreClick errored: '+err);
+    }
+  };
+
+
+  // Show a set of comments
+  Drupal.coralQA.coralComment.prototype.manageComments = function() {
+    try {
+      if (this.$btn.hasClass('comments-hidden')) this.showComments();
+      else this.hideComments();
+    }
+    catch (err) {
+      console.log('manageComments errored: '+err);
+    }
+  };
+
+
+  // Show's this content's comments
+  Drupal.coralQA.coralComment.prototype.showComments = function() {
+    try {
+      var cc = this;
+
+      var callback = function() {
+        cc.setLoadStatus('finished');
+        if (cc.settings.hasOwnProperty('total_items')) {
+          if (Number(cc.settings.total_items) > 0) {
+            cc.$commentsTgt.removeClass('empty');
+          }
+        }
+      };
+      
+      this.$commentForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show comments 
+      this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
+      this.$btn.removeClass('comments-hidden'); // update the btn status
+
+      var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
+      var $cont = $view.children('.view-content');  // so we can't use find
+      var $comments = $cont.children('.views-row'); // so be it. 
+      var numComments = $comments.length;
+        
+      // @TODO: I bet addedNew should be in here too
+      if (Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+this.refID)) {
+        if (Number(numComments) < Number(this.settings.total_items)) {
+          this.$commentsTgt.parents('.panel-pane').eq(0).addClass('comments-more');
+          if (!this.initialLoad) { // load the first set only on the first click - after that use "more"
+            this.loadViewResults('comments', 'new_comments', this.refID);
+            this.initialLoad = true;
+          }
+        }
+                  
+        // Clicking on the answer btn opens the full content
+        if (this.hasTrimmed) {
+          this.$trimmed.hide();
+          this.$full.show();
+        }
+          
+        this.$btn.removeClass('ajax-processing'); // no dupes
+      }
+      else {
+        // @TODO: is it possible that we could be missing the settings?
+      }
+    }
+    catch(err) {
+      console.log('showComments errored: '+err);
+    }
+  };
+  
+  
+  // Hide the comment pane.
+  Drupal.coralQA.coralComment.prototype.hideComments = function() {
+    try {
+      // hide the comments and form
+      this.$commentForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
+      this.$btn.addClass('comments-hidden');
+      this.$btn.find('.arrow').removeClass('arrow-down');
+            
+      if (this.hasTrimmed) { // show the trimmed version
+        this.$trimmed.show();
+        this.$full.hide();
+      }
+
+      this.$btn.removeClass('ajax-processing'); // no dupes
+    }
+    catch (err) {
+      console.log('hideComments errored: '+err);
     }
   };
 
@@ -578,59 +670,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('processViewResults errored: '+err);
     }
   };
-  
-  
-  // Attaches and configures a "to parent" link on the content 
-  Drupal.coralQA.coralComment.prototype.initComment = function() {
-    try {
-      var cc = this;
-      
-      var $view = $(this.$commentsTgt).children('.view-comments');  // must only return children!
-      var $cont = $view.children('.view-content');  // so we can't use find
-      var $comments = $cont.children('.views-row'); // so be it.
 
-      // Process all view result comments
-      $comments.each(function() {
-        cc.processComment($(this));
-      });
-      
-      // Process the parent if it is a comment
-      if (this.$content.hasClass('node-comment')) {
-        var $parent = {};
-        
-        // Comments as a parent?
-        var $cp = this.$content.parents('.node-comment');
-        if (!$cp.length) { // not a comment
-          var $ap = this.$content.parents('.node-answer');
-          if (!$ap.length) { // answer?
-            var $qp = this.$content.parents('.node-question');
-            if (!$qp.length) { // not a question, could it be in parent content?
-              var $parentContent = $('.pane-coral-parent-content > .pane-content > .node');
-              if ($parentContent.length) {
-                $parent = $parentContent.eq(0); // the node in the parent content container
-              }
-            }
-            else {
-              $parent = $qp.eq(0); // parent is a question
-            }
-          }
-          else {
-            $parent = $ap.eq(0); // parent is an answer
-          }
-        }
-        else {
-          $parent = $cp.eq(0); // parent is a comment
-        }        
-        cc.processComment(this.$content, $parent);
-      }
-      
-    }
-    catch (err) {
-      console.log('initComment errored: '+err);
-    }
-  };
-  
-  
+
   // Process each comment and get it ready for interactivity
   Drupal.coralQA.coralComment.prototype.processComment = function($comment, $parent) {
     try {
@@ -677,6 +718,33 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
+  // Set the load status for this set of nodes
+  //  It would be nice to add '.' to the loading
+  //  message before the view is loaded.
+  Drupal.coralQA.coralComment.prototype.setLoadStatus = function(status) {
+    try {  
+      var status = status || 'finished';
+      // Add loading gif and manage target text
+      if (status == 'loading') {
+        // Let the user know something is happening
+        this.$btn.append('<span class="ajax-progress"><span class="throbber"></span></span>');
+      }
+      else {
+        this.$btn.find('.ajax-progress').remove();
+        if (Number(this.settings.total_items) < 1) {
+          this.$commentsTgt.children('.tgt-load').text('No comments were found!');  
+        }
+        else {
+          this.$commentsTgt.children('.tgt-load').remove();
+        }
+      }
+    }
+    catch (err) {
+      console.log('setLoadStatus errored: '+err);
+    }
+  };
+
+
   // Get the settings for this item and add to the associated theme settings
   Drupal.coralQA.coralComment.prototype.getSettings = function(callback) {
     try {
@@ -706,6 +774,29 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
+  // Get the needed color settings for this level;
+  //  Colors alternate between levels for ease of reading.
+  Drupal.coralQA.coralComment.prototype.getTargetColorData = function($target, $targets) {
+    try {
+      var data = {};
+      
+      data.color = data.defColor = '#EFEFEF';   // default (odd) color 
+      data.clrClass = data.defClrClass = 'odd'; // default (odd) color class
+      
+      // Where is this target, within the scope of the targets?
+      if ($targets.length % 2) {
+        data.color = '#FFFFFF';
+        data.clrClass = 'even';
+      }
+      
+      return data;
+    }
+    catch (err) {
+      console.log('initTargetColorData errored: '+err);
+    }
+  }
+
+
   // Update the settings array when new items are added to the page,
   //  as in when a list of items is added.
   Drupal.coralQA.coralComment.prototype.updateSettings = function(data, mode) {
@@ -725,6 +816,31 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
     catch (err) {
       console.log('updateSettings errored: '+err);
+    }
+  };
+
+
+  // Show or hide the form
+  Drupal.coralQA.coralComment.prototype.manageForm = function(ev) {
+    try {
+      var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+      var $help = $wrap.find('.help-text');
+      var $title = $wrap.find('.pane-title');
+      
+      if ($title.hasClass('form-hidden')) {
+        // update class and text
+        $title.removeClass('form-hidden');
+        $help.text('hide form');
+      }
+      else {
+        // update class and text
+        $title.addClass('form-hidden');
+        $help.text('show form');
+      }
+      this.$commentForm.slideToggle(200); // action!
+    }
+    catch (err) {
+      console.log('manageForm errored: '+err);
     }
   };
 
@@ -805,6 +921,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         cc.$commentForm.find('.form-actions').find('.ajax-progress').remove(); // clear the Submit btn loading gif
         cc.$commentForm.find('.form-submit').removeClass('ajax-processing');    
         var $newComment = $tgts.eq(0).find('.node-'+data.nid).css("background", "#FFF6B6"); // make the new comment yellow
+        
+        cc.$commentForm.slideUp(800); // hide the comment form
+        
         $newComment.animate({ backgroundColor: colorData.color }, 3000); // fade it back
       };
       this.loadViewResults("comments", "this_comment", data.nid, callback, "single", "0", "1");
@@ -852,6 +971,21 @@ Drupal.coralQA = Drupal.coralQA || {};
     }
     catch (err) {
       console.log('updateMoreBtn errored: '+err);
+    }
+  };
+  
+  
+  // Manage the titleHoverHelp text (eg. Show form, etc...)
+  Drupal.coralQA.coralComment.prototype.titleHoverHelp = function(ev) {
+    try {
+      var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
+      var $help = $wrap.find('.help-text');
+    
+      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, 500); // mouseenter; expose the text
+      else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+    }
+    catch (err) {
+      console.log('titleHoverHelp errored: '+err);
     }
   };
   
