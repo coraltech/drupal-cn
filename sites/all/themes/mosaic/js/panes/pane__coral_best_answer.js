@@ -151,10 +151,19 @@ Drupal.coralQA = Drupal.coralQA || {};
         });
       }
 
-      // re-add click functionality to the answer btn
+      // re-add click functionality to the answer btn.
       this.$question.find('.btn.answer').off('click').click(function() { 
         $bestTgt.find('.node-answer').slideToggle(200); 
         $bestTgt.find('.selected-title').slideToggle(200);
+      });
+      
+      // add click handler for the best answer to the close action as well.
+      this.$question.find('.btn.cls-answer').off('click').click(function() { 
+        var cb = function() {
+          $bestTgt.find('.node-answer').slideToggle(200); 
+          $bestTgt.find('.selected-title').slideToggle(200);
+        };
+        setTimeout(cb, 800); // compensate for the scrollTo that happens here.
       });
       
       setTimeout(callback, 1950); // wait for the message to complete
