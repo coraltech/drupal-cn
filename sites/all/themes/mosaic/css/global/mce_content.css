@@ -330,16 +330,16 @@ input.form-submit {
   border-radius: 0px;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #5b83be), color-stop(51%, #446eac));
-  background: -webkit-linear-gradient(#5b83be 50%, #446eac 51%);
-  background: -moz-linear-gradient(#5b83be 50%, #446eac 51%);
-  background: -o-linear-gradient(#5b83be 50%, #446eac 51%);
-  background: linear-gradient(#5b83be 50%, #446eac 51%);
-  -webkit-box-shadow: #92acd4 0 1px 0 inset;
-  -moz-box-shadow: #92acd4 0 1px 0 inset;
-  box-shadow: #92acd4 0 1px 0 inset;
-  border: 1px solid #507bba;
-  text-shadow: #2c476f 0 -1px 0;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #446eac), color-stop(70%, #4067a1));
+  background: -webkit-linear-gradient(#446eac, #4067a1 70%);
+  background: -moz-linear-gradient(#446eac, #4067a1 70%);
+  background: -o-linear-gradient(#446eac, #4067a1 70%);
+  background: linear-gradient(#446eac, #4067a1 70%);
+  -webkit-box-shadow: #7496c8 0 1px 0 inset;
+  -moz-box-shadow: #7496c8 0 1px 0 inset;
+  box-shadow: #7496c8 0 1px 0 inset;
+  border: 1px solid #385b8f;
+  text-shadow: #1f3350 0 -1px 0;
   font-size: 16px;
   padding: 2px 5px;
   color: white;
@@ -356,26 +356,26 @@ input.form-submit {
 input.form-submit:hover {
   text-decoration: none;
 }
-/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 input.form-submit:hover {
-  background-color: #4875b7;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4570b0), color-stop(51%, #4875b7));
-  background: -webkit-linear-gradient(#4570b0 50%, #4875b7 51%);
-  background: -moz-linear-gradient(#4570b0 50%, #4875b7 51%);
-  background: -o-linear-gradient(#4570b0 50%, #4875b7 51%);
-  background: linear-gradient(#4570b0 50%, #4875b7 51%);
+  background-color: #385b8f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
+  background: -webkit-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -moz-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
-/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 input.form-submit:active {
-  -webkit-box-shadow: #4773b3 0 1px 2px inset;
-  -moz-box-shadow: #4773b3 0 1px 2px inset;
-  box-shadow: #4773b3 0 1px 2px inset;
+  -webkit-box-shadow: #345484 0 1px 2px inset;
+  -moz-box-shadow: #345484 0 1px 2px inset;
+  box-shadow: #345484 0 1px 2px inset;
 }
 /* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 input.form-submit.disabled, input.form-submit[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
-  background: #6288c1;
+  background: #4067a1;
   cursor: default;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -403,16 +403,16 @@ input#edit-delete {
   border-radius: 0px;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #d33722), color-stop(51%, #b02e1c));
-  background: -webkit-linear-gradient(#d33722 50%, #b02e1c 51%);
-  background: -moz-linear-gradient(#d33722 50%, #b02e1c 51%);
-  background: -o-linear-gradient(#d33722 50%, #b02e1c 51%);
-  background: linear-gradient(#d33722 50%, #b02e1c 51%);
-  -webkit-box-shadow: #e56d5c 0 1px 0 inset;
-  -moz-box-shadow: #e56d5c 0 1px 0 inset;
-  box-shadow: #e56d5c 0 1px 0 inset;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b02e1c), color-stop(70%, #b02e1c));
+  background: -webkit-linear-gradient(#b02e1c, #b02e1c 70%);
+  background: -moz-linear-gradient(#b02e1c, #b02e1c 70%);
+  background: -o-linear-gradient(#b02e1c, #b02e1c 70%);
+  background: linear-gradient(#b02e1c, #b02e1c 70%);
+  -webkit-box-shadow: #e04d39 0 1px 0 inset;
+  -moz-box-shadow: #e04d39 0 1px 0 inset;
+  box-shadow: #e04d39 0 1px 0 inset;
   border: 1px solid #9a2818;
-  text-shadow: #621a10 0 -1px 0;
+  text-shadow: #42110b 0 -1px 0;
   font-size: 16px;
   padding: 2px 5px;
   color: white;
@@ -429,16 +429,16 @@ input#edit-delete {
 input#edit-delete:hover {
   text-decoration: none;
 }
-/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 input#edit-delete:hover {
-  background-color: #912617;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b42f1d), color-stop(51%, #912617));
-  background: -webkit-linear-gradient(#b42f1d 50%, #912617 51%);
-  background: -moz-linear-gradient(#b42f1d 50%, #912617 51%);
-  background: -o-linear-gradient(#b42f1d 50%, #912617 51%);
-  background: linear-gradient(#b42f1d 50%, #912617 51%);
+  background-color: #9a2818;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #9a2818));
+  background: -webkit-linear-gradient(#9a2818 3%, #9a2818 75%);
+  background: -moz-linear-gradient(#9a2818 3%, #9a2818 75%);
+  background: -o-linear-gradient(#9a2818 3%, #9a2818 75%);
+  background: linear-gradient(#9a2818 3%, #9a2818 75%);
 }
-/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 input#edit-delete:active {
   -webkit-box-shadow: #8d2516 0 1px 2px inset;
   -moz-box-shadow: #8d2516 0 1px 2px inset;

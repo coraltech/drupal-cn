@@ -1,43 +1,39 @@
-/* line 12, ../../sass/panes/pane__block_menu_support.scss */
+/* line 13, ../../sass/panes/pane__block_menu_support.scss */
 .mce-fullscreen .sf-menu,
-.mce-fullscreen .navbar .bar,
-.mce-fullscreen .mfp-close {
+.mce-fullscreen .navbar .bar {
   position: fixed;
   z-index: 1;
 }
 
 /* line 20, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content,
-.mfp-ajax-holder .mfp-content {
+.pane-getting-help {
   background: -webkit-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -moz-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -o-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -ms-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: linear-gradient(to right, #dddddd 12em, #ffffff 12em, #ffffff);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
 }
-/* line 24, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-top,
-.mfp-ajax-holder .mfp-content .panel-col-top {
+/* line 25, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-top {
   background: #f1f1f1;
 }
-/* line 27, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-top .inside,
-.mfp-ajax-holder .mfp-content .panel-col-top .inside {
+/* line 28, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-top .inside {
   margin-bottom: 0;
 }
-/* line 31, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-top .title-msg,
-.mfp-ajax-holder .mfp-content .panel-col-top .title-msg {
+/* line 32, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-top .title-msg {
   font-size: 90%;
 }
-/* line 36, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-first,
-.mfp-ajax-holder .mfp-content .panel-col-first {
+/* line 37, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-first {
   width: 12em;
 }
-/* line 39, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-first li,
-.mfp-ajax-holder .mfp-content .panel-col-first li {
+/* line 40, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-first li {
   background: #dddddd;
   /* Old browsers */
   background: -moz-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
@@ -55,82 +51,144 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right,GradientType=1 );
   /* IE6-9 */
 }
-/* line 40, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-first li a,
-.mfp-ajax-holder .mfp-content .panel-col-first li a {
+/* line 41, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-first li a {
   color: #2b486b;
 }
-/* line 45, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-first li a:hover, .mfp-inline-holder .mfp-content .panel-col-first li a:active, .mfp-inline-holder .mfp-content .panel-col-first li a.active,
-.mfp-ajax-holder .mfp-content .panel-col-first li a:hover,
-.mfp-ajax-holder .mfp-content .panel-col-first li a:active,
-.mfp-ajax-holder .mfp-content .panel-col-first li a.active {
+/* line 46, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-first li a:hover, .pane-getting-help .panel-col-first li a:active, .pane-getting-help .panel-col-first li a.active {
   color: black;
 }
-/* line 53, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-last,
-.mfp-ajax-holder .mfp-content .panel-col-last {
+/* line 54, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-last {
   width: 76%;
 }
-/* line 56, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-last .pane-content,
-.mfp-ajax-holder .mfp-content .panel-col-last .pane-content {
+/* line 57, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-last .pane-content {
   border-top: 1px solid #777777;
   overflow-y: scroll;
-  height: 364px;
+  height: 366px;
   padding: 0 15px 15px;
 }
-/* line 63, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-last > .inside,
-.mfp-ajax-holder .mfp-content .panel-col-last > .inside {
+/* line 64, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-last > .inside {
   margin: 0;
 }
-/* line 66, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-last > .inside h2,
-.mfp-ajax-holder .mfp-content .panel-col-last > .inside h2 {
+/* line 67, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-last > .inside h2 {
   margin: 0;
   padding: 16px;
   line-height: 16px;
   background: #ebeff4;
 }
-/* line 75, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-last .vertical-tabs,
-.mfp-inline-holder .mfp-content .panel-col-last .filter-wrapper,
-.mfp-ajax-holder .mfp-content .panel-col-last .vertical-tabs,
-.mfp-ajax-holder .mfp-content .panel-col-last .filter-wrapper {
+/* line 76, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-last .vertical-tabs,
+.pane-getting-help .panel-col-last .filter-wrapper {
   display: none;
 }
-/* line 81, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-last #user-login .form-actions,
-.mfp-inline-holder .mfp-content .panel-col-last .contact-form .form-actions,
-.mfp-inline-holder .mfp-content .panel-col-last .node-question-form .form-actions,
-.mfp-ajax-holder .mfp-content .panel-col-last #user-login .form-actions,
-.mfp-ajax-holder .mfp-content .panel-col-last .contact-form .form-actions,
-.mfp-ajax-holder .mfp-content .panel-col-last .node-question-form .form-actions {
+/* line 82, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-last #user-login .form-actions,
+.pane-getting-help .panel-col-last .contact-form .form-actions,
+.pane-getting-help .panel-col-last .node-question-form .form-actions {
   bottom: 6px;
   position: absolute;
-  right: 50px;
+  right: 5px;
   z-index: 5;
   margin: 0;
   padding: 0;
 }
 /* line 90, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .panel-col-bottom,
-.mfp-ajax-holder .mfp-content .panel-col-bottom {
+.pane-getting-help .panel-col-last #user-login .form-actions input,
+.pane-getting-help .panel-col-last .contact-form .form-actions input,
+.pane-getting-help .panel-col-last .node-question-form .form-actions input {
+  font-weight: bold;
+}
+/* line 95, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .panel-col-bottom {
   position: absolute;
   bottom: 0px;
   height: 2.5em;
   background: #f1f1f1;
   border-top: 1px solid #d0d0d0;
 }
-/* line 97, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .help-header,
-.mfp-ajax-holder .mfp-content .help-header {
+/* line 102, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 101, ../../sass/panes/pane__block_menu_support.scss */
-.mfp-inline-holder .mfp-content .help-header h2,
-.mfp-ajax-holder .mfp-content .help-header h2 {
+/* line 106, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .help-header h2 {
   margin: 0;
+}
+/* line 110, ../../sass/panes/pane__block_menu_support.scss */
+.pane-getting-help .cls-help {
+  margin-left: 5px;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b02e1c), color-stop(70%, #a32b1a));
+  background: -webkit-linear-gradient(#b02e1c, #a32b1a 70%);
+  background: -moz-linear-gradient(#b02e1c, #a32b1a 70%);
+  background: -o-linear-gradient(#b02e1c, #a32b1a 70%);
+  background: linear-gradient(#b02e1c, #a32b1a 70%);
+  -webkit-box-shadow: #e04d39 0 1px 0 inset;
+  -moz-box-shadow: #e04d39 0 1px 0 inset;
+  box-shadow: #e04d39 0 1px 0 inset;
+  border: 1px solid #8d2516;
+  text-shadow: #41110a 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-getting-help .cls-help:hover {
+  text-decoration: none;
+}
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-getting-help .cls-help:hover {
+  background-color: #8d2516;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #8d2516));
+  background: -webkit-linear-gradient(#9a2818 3%, #8d2516 75%);
+  background: -moz-linear-gradient(#9a2818 3%, #8d2516 75%);
+  background: -o-linear-gradient(#9a2818 3%, #8d2516 75%);
+  background: linear-gradient(#9a2818 3%, #8d2516 75%);
+}
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-getting-help .cls-help:active {
+  -webkit-box-shadow: #802114 0 1px 2px inset;
+  -moz-box-shadow: #802114 0 1px 2px inset;
+  box-shadow: #802114 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-getting-help .cls-help.disabled, .pane-getting-help .cls-help[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #a32b1a;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+.pane-getting-help .cls-help::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
 }
