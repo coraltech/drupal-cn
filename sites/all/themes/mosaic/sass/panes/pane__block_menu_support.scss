@@ -1,25 +1,26 @@
 
 // Provides styles for the support menu and associated popups
-
+@import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
 
+@import "compass/css3/box-shadow";
+
 // Hide a few things when mce is in fullscreen mode
 .mce-fullscreen {
   .sf-menu, //  superfish menus
-  .navbar .bar, // admin toolbar
-  .mfp-close { // magnific popups close btn
+  .navbar .bar { 
     position: fixed;
     z-index: 1;
   }
 }
 
 // mfp is the magnific popup container
-.mfp-inline-holder .mfp-content, 
-.mfp-ajax-holder .mfp-content {
+.pane-getting-help {
   
   @include col-gradient;
+  @include box-shadow(rgba(0, 0, 0, 0.5) 10px 10px 20px);
   
   .panel-col-top {
     background: lighten($ltgray, 8%);
@@ -56,7 +57,7 @@
     .pane-content {
       border-top: 1px solid $mdgray;
       overflow-y: scroll;
-      height: 364px;
+      height: 366px;
       padding: 0 15px 15px;
     }
     
@@ -81,10 +82,14 @@
     .node-question-form .form-actions {
       bottom: 6px;
       position: absolute;
-      right: 50px;
+      right: 5px;
       z-index: 5;
       margin: 0;
       padding: 0;
+      
+      input {
+        font-weight: bold;
+      }
     }
   }
   .panel-col-bottom {
@@ -101,5 +106,10 @@
     h2 {
       margin: 0;
     }
+  }
+  .cls-help {
+    margin-left: 5px;
+    @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%), $white);
+    @include btn-structure;
   }
 }
