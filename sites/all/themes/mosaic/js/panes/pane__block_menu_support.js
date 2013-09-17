@@ -4,55 +4,65 @@ Drupal.mosaic = Drupal.mosaic || {};
 
 
 // ----------------------------------------------------------------------
-// Magnificent popup instantiation
+// Help tool scripts
 // ----------------------------------------------------------------------
 // Document loaded!
 (function($) {
   Drupal.behaviors.mosaicHelpInit = {    
     attach : function(context, settings) {
-      
       try { // Use try to prevent systemic failure
         
-        $helpMenu  = $('.pane-menu-support');
-        $helpPopup = $('#pane-getting-help'); // there should be only one on the page!
+        var t = new Date;
+        var id = t.getTime()+'-'+Math.floor((Math.random()*99)+1);
         
-        if ($helpMenu.length) {
-          $helpMenu.each(function(i) {
-            // Get a new id for this menu if it lacks one. May need an id later
-            if (!$(this).attr('id')) $(this).attr('id', 'hm'+Math.floor(10000*Math.random()));
-            new Drupal.mosaic.helpManager($(this), $helpPopup.attr('id'));
-          });
-        }
+        var $helpTool = $('#pane-getting-help:not(".gh-processed")');
+        var $helpMenu = $('#mini-panel-header .pane-menu-support');
+        
+        if ($helpTool.length && $helpMenu.length) {
+          new Drupal.mosaic.helpManager(id, $helpMenu, $helpTool);
+        }    
       }
       catch(err) {
         console.log('mosaicHelpInit reported errors! Error: '+err);
       }
     }
   };
-  
-  Drupal.mosaic.helpManager = function($menu, popupID) {
+
+
+  // Initialize the help tool
+  Drupal.mosaic.helpManager = function(id, $menu, $tool) {
     try {
-      // jQuery objects of note
-      this.$helpMenu = $menu;
       
-      // Identification and settings
-      this.menuID = '#'+$menu.attr('id'); //'#'+this.$slideshow.attr('id');
-      this.popupID = popupID;
+      this.id = id;
       
+      this.$menu = $menu;
+      this.$tool = $tool.addClass('gh-processed'); // say no to re-binding!
+      this.$wrap; // will contain the wrapping element for the tool
+      
+      this.events = {};
+      this.events['click .help-'+this.id] = 'helpClick';
+            
       var helpManager = this;
       var ManagerView = Backbone.View.extend({
         // Home
-        el: this.$helpMenu,
+        el: this.$menu,
         
         // Settings and conf
         helpManager: helpManager,
-        popupID: this.popupID,
         
+        // events
+        events: helpManager.events, // keyed events
+                
         // Init
         initialize: function() {
-          helpManager.initializeBox($(this.el), this.popupID);
+          helpManager.init();
+          _.bindAll(this, 'helpClick');
         },
-       
+        
+        helpClick: function(ev) {
+          ev.preventDefault();
+          helpManager.handleHelpClick();
+        }
       });
       
       new ManagerView();
@@ -61,22 +71,111 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('helpManager errored: '+err);
     }
   }
-  
-  Drupal.mosaic.helpManager.prototype.initializeBox = function($helpMenu, popupID) {
+
+
+  // Open the help tool
+  Drupal.mosaic.helpManager.prototype.openHelp = function() {
     try {
-      $target = $helpMenu.find('.get-help-tab');
-      if ($target.attr('href') != '#'+popupID) $target.attr('href', '#'+popupID);
+      this.$wrap.css('height', $('html')[0].scrollHeight); // set the height to the current      
+      this.$wrap.fadeIn(50); // open the wrap
+      this.$tool.removeClass('help-closed').fadeIn(250); // expand the tool  
+    }
+    catch (err) {
+      console.log('openHelp errored: '+err);
+    }
+  };
+  
+
+  // Close the help tool
+  Drupal.mosaic.helpManager.prototype.closeHelp = function(ev) {
+    try {
+      var hm = this;
+      if (ev && ($(ev.target).hasClass('help-tool-cont') ||
+          $(ev.target).hasClass('cls-help'))) {
+        
+        this.$tool.addClass('help-closed').fadeOut(250, function() {
+          hm.$wrap.fadeOut(50);
+        });
+      }
+    }
+    catch (err) {
+      console.log('closeHelp errored: '+err);
+    }
+  };
+  
+  
+  // Handle click event
+  Drupal.mosaic.helpManager.prototype.handleHelpClick = function() {
+    try {
+      if (this.$tool.hasClass('help-closed')) this.openHelp();
+      else this.closeHelp(); // <-- prob never called: the btn is covered by an overlay of sorts
+    }
+    catch (err) {
+      console.log('handleHelpClick errored: '+err);
+    }
+  };
+  
+  
+  // Initialize the help tool container
+  Drupal.mosaic.helpManager.prototype.init = function() {
+    try {
+      var hm = this;
       
-      // Open the popup that contains the menu and question/contact forms
-      $target.magnificPopup({
-        type:'inline',
-        midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      // add a suitable class to the help link
+      this.$menu.find('.get-help-tab').eq(0).addClass('help-'+this.id);
+      
+      // hide the tool on initialization
+      this.$tool.slideUp(0).addClass('help-closed');
+      
+      // add a wrapper
+      this.$tool.wrap('<div class="help-tool-cont hcon-'+this.id+'">');
+      this.$wrap = this.$tool.parent('.help-tool-cont');
+      this.addCss();
+      
+      // clear and add clickability to the wrapper; and hide it.
+      this.$wrap.off('click').click(function(ev) { hm.closeHelp(ev); }).slideUp(0);
+      
+      // append a close button to the forms (contact / question)
+      var $clsBtn = this.$tool.find('.btn.cls-help');
+      if (!$clsBtn.length) {
+        this.$tool.find('.form-actions').append('<input type="button" id="close-'+this.id+'" name="op" value="Close" class="btn cls-help clsh-'+this.id+'">');
+      
+        $clsBtn = this.$tool.find('.btn.clsh-'+this.id); // add click handler
+        $clsBtn.off('click').click(function(ev) { hm.closeHelp(ev); }).slideUp(0);
+      }
+
+    }
+    catch (err) {
+      console.log('init errored: '+err);
+    }
+  }
+  
+  
+  // Apply basic css styles for the window
+  Drupal.mosaic.helpManager.prototype.addCss = function() {
+    try {
+      var w = $(window).width();
+      var h = $('body')[0].scrollHeight;
+      var ha = $(window).height();
+
+      // default css
+      this.$wrap.css({ // wrapper
+        'position': 'absolute',
+        'background-color': 'rgba(0,0,0,0.5)',
+        'width': '100%',
+        'z-index': '20'
+      });
+      this.$tool.css({ // the tool
+        'position':'absolute',
+        'width':'810px',
+        'height': '542px',
+        'margin':  ((ha-542)/2)+'px '+((w-750)/2)+'px 0'
       });
     }
     catch (err) {
-      console.log('helpManager errored: '+err);
+      console.log('addCss errored: '+err);
     }
-  }
+  };
   
 })(jQuery);
 

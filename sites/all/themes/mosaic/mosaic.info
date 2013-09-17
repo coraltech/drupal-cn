@@ -6,13 +6,11 @@ version     = VERSION
 core        = 7.x
 
 ; - Stylesheets
-stylesheets[all][]   = js/lib/magnificent_popup/dist/magnific-popup.css
 stylesheets[all][]   = css/screen.css
 stylesheets[print][] = css/print.css
 
 ; - Global scripts
 ; -- Libraries
-scripts[] = js/lib/magnificent_popup/dist/jquery.magnific-popup.js
 scripts[] = js/lib/prettify/src/prettify.js
 scripts[] = js/lib/tinymce/js/tinymce/tinymce.js
 scripts[] = js/lib/TableOfContents/js/jquery.tableofcontents.js
