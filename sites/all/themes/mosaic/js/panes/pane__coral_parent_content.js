@@ -42,7 +42,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.events = {};
       this.events['click .'+this.refID] = 'parentClick';
       
-      coralParentContent = this;
+      var coralParentContent = this;
       
       var ParentContentView = Backbone.View.extend({
         // Home
