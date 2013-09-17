@@ -182,12 +182,12 @@ ol {
 
 // --- Forms
 input.form-submit {
-  @include btn-glass;
+  @include btn-matte-inset;
   @include btn-structure;
 }
 input#edit-delete {
   margin-left: 2em;
-  @include btn-glass(0px, 16px, $mdred, $mdred);
+  @include btn-matte-inset(0px, 16px, $mdred, $mdred);
   @include btn-structure;
 }
 
