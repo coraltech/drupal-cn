@@ -1,0 +1,34 @@
+
+// Scss file for file field.
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.field-type-file {
+  .field-items {
+    margin: 0 0 $default_vert_unit; 
+    table {
+      font-size: 90%;
+      thead {
+        font-variant: small-caps;
+        color: $mdgray;
+        text-transform: lowercase;
+      }
+      td {
+        padding: 4px 3px 2px;
+      }
+    }
+  }
+}
+
+.field-widget-file-generic {
+  .form-item.form-type-textfield {
+    clear: both;
+    margin: 0 0 5px 25px;
+    white-space: normal;
+    width: 75%;
+  }
+  .form-managed-file {
+    padding-top: 7px;
+  }
+}
