@@ -21,9 +21,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         if ($content.length > 1) {
           new Drupal.coralQA.coralFeaturedUsers($content, $pane);
         }
-        else {
-          $pane.parents('.panel-pane').eq(0).hide();
-        }
+        //else {
+        //  $pane.parents('.panel-pane').eq(0).hide();
+        //}
       }
       catch (err) {
         console.log('coralFeaturedUsersInit() reported errors. Error: '+err);
@@ -83,16 +83,35 @@ Drupal.coralQA = Drupal.coralQA || {};
       //  Now, append the selected number of sorted elements
       i = 0;
       if (len) $pane.html('');
-      for (item in sorted) {
-        if (i < limit) {
-          $pane.append(sorted[item]);
-          i++;  
+      if (len > 1) { // make sure there is more than one user featured
+        this.togglePane($pane, 'show');
+        for (item in sorted) {
+          if (i < limit) {
+            $pane.append(sorted[item]);
+            i++;  
+          }
         }
+      }
+      else { // only one user... hide the pane.
+        this.togglePane($pane, 'hide');
       }
     }
     catch(err) {
       console.log('coralFeaturedUsers errored: '+err);
     }
   }
+  
+  
+  // Show or hide the pane when needed.
+  Drupal.coralQA.coralFeaturedUsers.prototype.togglePane = function($pane, op) {
+    try {
+      if (op == 'show') { $pane.parents('.panel-pane').eq(0).show(); }
+      else { $pane.parents('.panel-pane').eq(0).hide(); }
+    }
+    catch (err) {
+      console.log('togglePane errored: '+err);
+    }
+  };
+
   
 })(jQuery);
