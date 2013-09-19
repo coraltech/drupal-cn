@@ -215,3 +215,25 @@ a.btn {
   @include btn-structure;
 }
 
+
+// Tables
+table {
+  th {
+    color: $mdgray;
+    padding: 0 2px;
+  }
+  tr.even {
+    background: lighten($ltgray, 4%);
+    border: none;
+  }
+  tr.odd {
+    background: lighten($ltgray, 8%);
+    border: none;
+  }
+  a.tabledrag-handle .handle {
+    margin: 0em .25em 0 1em;
+    padding: 0.5em 0.2em;
+  }
+}
+
+
