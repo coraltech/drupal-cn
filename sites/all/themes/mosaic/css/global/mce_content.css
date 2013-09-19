@@ -558,6 +558,27 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
+/* line 221, ../../sass/global/_dom.scss */
+table th {
+  color: #777777;
+  padding: 0 2px;
+}
+/* line 225, ../../sass/global/_dom.scss */
+table tr.even {
+  background: #e7e7e7;
+  border: none;
+}
+/* line 229, ../../sass/global/_dom.scss */
+table tr.odd {
+  background: #f1f1f1;
+  border: none;
+}
+/* line 233, ../../sass/global/_dom.scss */
+table a.tabledrag-handle .handle {
+  margin: 0em .25em 0 1em;
+  padding: 0.5em 0.2em;
+}
+
 /* line 6, ../../sass/global/mce_content.scss */
 body.mce-content-body {
   background-color: #fff;
