@@ -21,9 +21,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         if ($content.length > 1) {
           new Drupal.coralQA.coralFeaturedUsers($content, $pane);
         }
-        //else {
-        //  $pane.parents('.panel-pane').eq(0).hide();
-        //}
+        else { // hide if no content to scan
+          $pane.parents('.panel-pane').eq(0).hide();
+        }
       }
       catch (err) {
         console.log('coralFeaturedUsersInit() reported errors. Error: '+err);
@@ -82,6 +82,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       //  we will clear out the old content.
       //  Now, append the selected number of sorted elements
       i = 0;
+      console.log(this);
       if (len) $pane.html('');
       if (len > 1) { // make sure there is more than one user featured
         this.togglePane($pane, 'show');
