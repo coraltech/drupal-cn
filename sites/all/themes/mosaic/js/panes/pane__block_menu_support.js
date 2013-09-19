@@ -78,7 +78,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       this.$wrap.css('height', $('html')[0].scrollHeight); // set the height to the current      
       this.$wrap.fadeIn(50); // open the wrap
-      this.$tool.removeClass('help-closed').fadeIn(250); // expand the tool  
+      this.$tool.removeClass('hide').removeClass('help-closed').fadeIn(250); // expand the tool 
     }
     catch (err) {
       console.log('openHelp errored: '+err);
@@ -93,7 +93,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       if (ev && ($(ev.target).hasClass('help-tool-cont') ||
           $(ev.target).hasClass('cls-help'))) {
         
-        this.$tool.addClass('help-closed').fadeOut(250, function() {
+        this.$tool.addClass('hide').addClass('help-closed').fadeOut(250, function() {
           hm.$wrap.fadeOut(50);
         });
       }
