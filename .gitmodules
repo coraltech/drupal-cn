@@ -274,3 +274,6 @@
 [submodule "sites/all/modules/contrib/views_load_more"]
 	path = sites/all/modules/contrib/views_load_more
 	url = http://git.drupal.org/project/views_load_more.git
+[submodule "sites/all/modules/contrib/google_analytics"]
+	path = sites/all/modules/contrib/google_analytics
+	url = http://git.drupal.org/project/google_analytics.git
