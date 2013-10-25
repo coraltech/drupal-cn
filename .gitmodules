@@ -277,3 +277,6 @@
 [submodule "sites/all/modules/contrib/google_analytics"]
 	path = sites/all/modules/contrib/google_analytics
 	url = http://git.drupal.org/project/google_analytics.git
+[submodule "sites/all/modules/contrib/media_youtube"]
+	path = sites/all/modules/contrib/media_youtube
+	url = http://git.drupal.org/project/media_youtube.git
