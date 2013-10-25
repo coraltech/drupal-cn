@@ -36,9 +36,11 @@
     width: 48%;
     float: left;
     clear: right;
-    margin-top: -3.35em;
     .description { display: none; }
     .form-text { width: 99.8%; }
+  }
+  .node-form .form-type-textfield {
+    margin-top: -3.35em;
   }
   .field-name-field-tags {
     position: relative;
