@@ -357,7 +357,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $actions = this.$actions || undefined;
       if (!$actions) {
         $parent.append('<div class="actions">');
-        this.$actions = $parent.find('.actions');      
+        this.$actions = $parent.children('.actions'); // GET THIS TO IDENT THE RIGHT ACTION SET!      
       }
       
       // @TODO: I bet addedNew should be in here too
@@ -900,6 +900,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Handle the click even on the trimmed link
   Drupal.coralQA.coralAnswer.prototype.trimmedClick = function(ev) {
     try {
+      var ca = this;
       var $wrap = $(ev.currentTarget).parent('.trimmed');
       // view all
       if ($wrap.hasClass('trimmed-more')) {
@@ -908,8 +909,10 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       // view trimmed
       else {
-        this.$full.hide();
-        this.$trimmed.show();
+        $('html, body').animate({ scrollTop: this.$question.offset().top }, 500, 'swing', function() { 
+          ca.$full.hide();
+          ca.$trimmed.show();
+        });
       }
     }
     catch (err) {

@@ -336,10 +336,10 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.initActions = function() {
     try {
       var $parent = this.$commentsTgt.parent('.pane-content');
-      var $actions = $parent.find('.actions');
+      var $actions = $parent.children('.actions');
       if (!$actions.length) {
         $parent.append('<div class="actions">');
-        this.$actions = $parent.find('.actions');
+        this.$actions = $parent.children('.actions');
       }
     }
     catch (err) {
@@ -993,6 +993,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Handle the click even on the trimmed link
   Drupal.coralQA.coralComment.prototype.trimmedClick = function(ev) {
     try {
+      var cc = this;
       var $wrap = $(ev.currentTarget).parent('.trimmed');
       // view all
       if ($wrap.hasClass('trimmed-more')) {
@@ -1001,8 +1002,10 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       // view trimmed
       else {
-        this.$full.hide();
-        this.$trimmed.show();
+        $('html, body').animate({ scrollTop: this.$content.offset().top }, 500, 'swing', function() { 
+          cc.$full.hide();
+          cc.$trimmed.show();
+        });
       }
     }
     catch (err) {
