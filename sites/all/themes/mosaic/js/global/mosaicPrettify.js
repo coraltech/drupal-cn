@@ -152,10 +152,16 @@ Drupal.mosaic = Drupal.mosaic || {};
   // callback used by handleCodeExpand()
   Drupal.mosaic.mosaicPrettify.prototype.animateCode = function(ev, callback) {
     try {
-      mp = this;
+      
       var scrWidth = $(this.$codeblock)[0].scrollWidth;
       var callback = (typeof(callback) == 'function') ? callback : function() {};
 
+      if (this.origWidth === 0) { // make sure the orig width is still set, if not, reset it.
+        this.origWidth = this.$codeblock.width();
+      }
+      
+      mp = this;
+      
       // don't run if you don't need to
       if (scrWidth > this.origWidth) {
         if (ev.type == 'mouseenter') {
