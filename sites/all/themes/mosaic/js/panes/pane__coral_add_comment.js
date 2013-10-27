@@ -465,9 +465,8 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Handles close click
   Drupal.coralQA.coralComment.prototype.handleClsClick = function(ev) {
     try {
-      console.log('click');
-      //var cc = this; // yeah, we have a callback!
-      //$('html, body').animate({ scrollTop: this.$content.offset().top }, 800, function () { cc.hideComments(); });
+      var cc = this; // yeah, we have a callback!
+      $('html, body').animate({ scrollTop: this.$content.offset().top }, 800, function () { cc.hideComments(); });
     }
     catch (err) {
       console.log('handleCommentClick errored: '+err);
