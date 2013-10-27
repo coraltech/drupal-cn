@@ -82,7 +82,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       //  we will clear out the old content.
       //  Now, append the selected number of sorted elements
       i = 0;
-      console.log(this);
+
       if (len) $pane.html('');
       if (len > 1) { // make sure there is more than one user featured
         this.togglePane($pane, 'show');
