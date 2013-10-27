@@ -420,7 +420,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   //  ie. Questions...
   Drupal.coralQA.coralAnswer.prototype.handleCommentClick = function(ev) {
     try {
-      this.hideAnswers();
+      this.hideAnswers('no toggle');
     }
     catch (err) {
       console.log('handleCommentClick errored: '+err);
@@ -524,7 +524,8 @@ Drupal.coralQA = Drupal.coralQA || {};
 
   // Hide the question's answers
   //  Gets called on comment add click too!
-  Drupal.coralQA.coralAnswer.prototype.hideAnswers = function() {
+  Drupal.coralQA.coralAnswer.prototype.hideAnswers = function(textToggle) {
+    var text = textToggle || 'toggle';
     try {
       // hide the answers and form
       this.$answerForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
@@ -534,7 +535,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$btn.find('.arrow').removeClass('arrow-down');
       this.$btn.addClass('answers-hidden');
             
-      if (this.hasTrimmed) { // show the trimmed version
+      if (this.hasTrimmed && text == 'toggle') { // show the trimmed version
         this.$trimmed.show();
         this.$full.hide();
       }
