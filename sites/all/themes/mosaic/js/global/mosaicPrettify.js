@@ -19,7 +19,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         var $prettify = $('pre.prettyprint:not("prettyprinted")');
-
+        
         // Initialize and setup events (hover)
         $prettify.each(function() {
           new Drupal.mosaic.mosaicPrettify($(this));
@@ -44,6 +44,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.$codeblock = $codeblock;
       this.$expand;   // will contain the (expand / close) codeblock button obj
       this.origWidth; // will contain pre code width
+      this.parentW;   // Will contain parent width for ref.
       
       this.id = this.getID(); // register an id
       this.init();            // kick it off!
@@ -137,7 +138,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
   
-  // Set the id for the codeblock
+  // Hover over codeblock
   Drupal.mosaic.mosaicPrettify.prototype.handleCodeHover = function(ev) {
     try {
       this.animateCode(ev);
@@ -152,32 +153,28 @@ Drupal.mosaic = Drupal.mosaic || {};
   // callback used by handleCodeExpand()
   Drupal.mosaic.mosaicPrettify.prototype.animateCode = function(ev, callback) {
     try {
-      
       var scrWidth = $(this.$codeblock)[0].scrollWidth;
       var callback = (typeof(callback) == 'function') ? callback : function() {};
-
-      if (this.origWidth === 0) { // make sure the orig width is still set, if not, reset it.
-        this.origWidth = this.$codeblock.width();
-      }
       
       mp = this;
       
-      // don't run if you don't need to
-      if (scrWidth > this.origWidth) {
+      if (scrWidth > this.parentW) { // Is expandable?
+
         if (ev.type == 'mouseenter') {
           if (!this.$codeblock.hasClass('expanded')) {
-            this.$codeblock.css({'width':this.origWidth+'px'}); // set starting width for animate
-            this.$codeblock.animate({'width':(Number(this.origWidth)+25)}, 200, 'swing', callback); // do animate
-            this.$codeblock.addClass('expanded'); // add expanded class
+            this.$codeblock.css({'width':this.parentW+'px'}); // set starting width for animate
+            this.$codeblock.animate({'width':(Number(this.parentW)+25)}, 200, 'swing', callback); // do animate 
+            this.$codeblock.addClass('expanded'); // add expanded class 
           }
           this.$expand.fadeIn(200); // What say?
         }
-        if (ev.type == 'mouseleave') {
+
+        else if (ev.type == 'mouseleave') {
           var cb = function() {
             if (!mp.$expand.hasClass('hover')) {
               if (mp.$expand.text() != 'Close') {
                 // animate to original width
-                mp.$codeblock.animate({'width':mp.origWidth}, 200, 'swing', function() {
+                mp.$codeblock.animate({'width':mp.parentW}, 200, 'swing', function() {
                   mp.$codeblock.css({'overflow':'hidden', 'width':'auto'}); // reset css
                   mp.$codeblock.removeClass('expanded'); // reset class
                   callback();
@@ -188,10 +185,11 @@ Drupal.mosaic = Drupal.mosaic || {};
           };
           setTimeout(cb, 25);
         }
-        if (ev.type == 'click') {
+
+        else if (ev.type == 'click') {
           if (this.$codeblock.hasClass('expanded-full')) {
             // animate to original width + 25 px
-            this.$codeblock.animate({'width':Number(this.origWidth)+25}, 200, 'swing', function() {
+            this.$codeblock.animate({'width':Number(this.parentW)+25}, 200, 'swing', function() {
               mp.$codeblock.removeClass('expanded-full'); // reset class
               callback();
             });
@@ -226,12 +224,24 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Set the id for the codeblock
   Drupal.mosaic.mosaicPrettify.prototype.init = function() {
     try {
+      this.origWidth = this.$codeblock.width(); // get codeblock width (std)
+      
+      // Get the parent width
+      var $parent = this.$codeblock.parents('.container').eq(0);
+      this.parentW = $parent.width() - 2; // -2 for the codeblock's borders (1px each side)
+      
+      var text = 'Expand';
+      var adir = 'right';
+      if (this.parentW < this.origWidth) { // codeblock is currently opened!
+        text = 'Close';
+        adir = 'left';
+      }
+
       this.$codeblock.attr('id', this.id); // add id to codeblock
       this.$codeblock.css({'overflow':'hidden'}); // set overflow to hidden
       this.$codeblock.wrap('<div id="crp-'+this.id+'" class="precrp">'); // add a wrapper; we can't append into the pre tag!
-      $('#crp-'+this.id).prepend('<a href="#" id="exp-'+this.id+'">Expand<span class="arrow arrow-right"></span></a>');
+      $('#crp-'+this.id).prepend('<a href="#" id="exp-'+this.id+'">'+text+'<span class="arrow arrow-'+adir+'"></span></a>');
       this.$expand = $('#exp-'+this.id).hide(); // capture and hide
-      this.origWidth = this.$codeblock.width(); // get codeblock width (std)
     }
     catch (err) {
       console.log('init errored: '+err);
