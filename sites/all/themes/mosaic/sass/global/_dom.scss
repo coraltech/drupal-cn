@@ -157,14 +157,12 @@ ol {
 .html ul.links {
   display: block;
   margin: $default_vert_unit 0;
-  height: 2.12 * $default_vert_unit; //include pie-clearfix;
-  
+
   li {
     float: right;
+    font-size: .9em;
     margin: 5px 0 0 5px;
-        
-    @include btn-matte-inset;
-    @include btn-structure;
+    border-right: 1px solid $ltgray;
     
     // Link type overrides
       
@@ -173,7 +171,11 @@ ol {
       @include btn-structure;
     }
     a {
-      color: #fff;
+      color: $mdgray;
+      
+      &:hover {
+        color: lighten($mdgray, 10%);
+      }
     }
   }
 }
