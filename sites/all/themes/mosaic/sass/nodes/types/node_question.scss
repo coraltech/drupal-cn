@@ -34,14 +34,14 @@
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
     float: left;
-    height: 2.12 * $default_vert_unit; // same as node links
+
     .links { // standardize 
       padding: 0; 
       margin: 0; 
       
       li {
-        margin: 0 5px 0 0;
-        padding: 2px 5px 1px;
+        margin: 0 6px 0 0;
+        padding: 1px 3px 1px 0;
       }
     }
   }
