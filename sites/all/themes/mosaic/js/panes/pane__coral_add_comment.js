@@ -408,11 +408,11 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       var cc = this;
       
-      var $closeBtn = this.$actions.find('.btn.cls-comments-'+this.refID);
+      var $closeBtn = this.$actions.find('.cls-comments-'+this.refID);
       if (!$closeBtn.length) {
         // Append the close button
-        this.$actions.append('<a href="#" title="Collapse comments view" class="btn cls-comments cls-comments-'+this.refID+'">Close</a>');
-        $closeBtn = this.$actions.find('.btn.cls-comments-'+this.refID);
+        this.$actions.append('<a href="#" title="Collapse comments view" class="cls-comments cls-comments-'+this.refID+'">x</a>');
+        $closeBtn = this.$actions.find('.cls-comments-'+this.refID);
         $closeBtn.off('click').click(function(ev) { // event must be bound here
           ev.preventDefault(); // animate scroll and close comments
           $('html, body').animate({ scrollTop: cc.$content.offset().top }, 800, function () { cc.hideComments(); });
@@ -948,7 +948,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Returns a Load More link
   Drupal.coralQA.coralComment.prototype.loadMoreBtn = function(page, hide) {
     try {
-      return '<a href="#" class="btn load-more more-comments-'+this.refID+' page-'+page+' '+hide+'">More comments<span class="no-js"><span></span></a>';
+      return '<a href="#" class="load-more more-comments-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>More comments<span class="no-js"><span></span></a>';
     }
     catch (err) {
       console.log('loadMoreBtn errored: '+err);

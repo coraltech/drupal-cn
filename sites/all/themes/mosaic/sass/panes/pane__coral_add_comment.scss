@@ -6,6 +6,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/icons';
 
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
@@ -16,46 +17,63 @@
   margin: 0 5px 0 0;
   
   .btn.comment {
-    border-width: 1px;
-    
-    @include btn-matte-inset;
-    @include btn-structure;
-    
-    // Override structure settings
-    padding-right: 25px;
+    padding-left: 0;
+    padding-right: 18px;
     position: relative;
+    @include btn-reset;
+    
+    
+    width: auto;
+    
+    color: $mdgray;
+    font-size: .9em;
+    
+    &:hover {
+      color: lighten($mdgray, 10%);
+    }
     
     .circle {
       cursor: pointer;
       display: block;
       position: absolute;
       top: 14%;
-      right: 1.5%;
+      right: -4px;
       height: 16px;
       width: 16px;
-      border: 1px solid darken($mdblue, 15%);
-      
-      @include box-shadow(rgba(0, 0, 0, 0.1) 0px 2px 3px inset);
-      @include linear-v-gradient(lighten($ltyellow, 5%), $mdyellow);
-      @include border-radius(8px);
       
       .arrow {
         display: block;
-        margin: 3px 0 0 6px;
+        margin: 3px 0 0 2px;
         @include arrow-right(5px, $dkgray);  
       }
       .arrow-down {
-        margin: 6px 0 0 3px;
+        margin: 6px 0 0 -1px;
         @include arrow-down(5px, $dkgray);  
       }
     }
-    &:hover .circle {
-      @include box-shadow(rgba(0, 0, 0, 0.25) 0px 2px 3px inset);
-      @include linear-v-gradient($mdyellow, $ltyellow);
+    
+    .icon {
+      display: block;
+      float: left;
+      margin-top: 1px;
+      margin-right: 2px;
+
+      @include icons-sprite('coral-comment-on');
     }
+
     // Set up the throbber position in the button
     .ajax-progress .throbber {
       margin: 1px -2px -1px 6px;
+    }
+  }
+  .btn.comments-hidden {
+    .icon {
+      @include icons-sprite('coral-comment');
+    }
+    &:hover {
+      .icon {
+        @include icons-sprite('coral-comment-on');
+      }
     }
   }
 }
@@ -113,14 +131,14 @@
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
     float: right;
-    height: 2.12 * $default_vert_unit; // same as node links
+    height: 1.12 * $default_vert_unit; // same as node links
     .links { // standardize 
       padding: 0; 
       margin: 0; 
       
       li {
         margin: 0 5px 0 0;
-        padding: 2px 5px 1px;
+        padding: 1px 6px 1px;
       }
     }
   }
