@@ -5,7 +5,7 @@
 @import 'global/icons';
 
 .field-name-field-tags {
-  margin: $default_vert_unit 0 0;
+  margin: ($default_vert_unit / 2) 0 ($default_vert_unit / 2);
 
   &:after {
     content: ".";
