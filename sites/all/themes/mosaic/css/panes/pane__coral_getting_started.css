@@ -1,6 +1,6 @@
-/* line 274, icons/*.png */
+/* line 338, icons/*.png */
 .icons-sprite, .pane-coral-getting-started .clowny, .pane-coral-getting-started .msg .up-pointer {
-  background: url('/images/icons-sbf3e80bf87.png') no-repeat;
+  background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
 /* line 11, ../../sass/panes/pane__coral_getting_started.scss */
@@ -69,7 +69,7 @@
   position: absolute;
   left: -36px;
   top: -1px;
-  background-position: 0 -2005px;
+  background-position: 0 -2137px;
   height: 28px;
   width: 28px;
 }

@@ -1,9 +1,9 @@
-/* line 274, icons/*.png */
+/* line 338, icons/*.png */
 .icons-sprite, .node-type-question .pane-coral-page-title .icon,
 .node-type-question .question-node-teaser-pane-title .icon,
 .node-teaser.node-question .pane-coral-page-title .icon,
 .node-teaser.node-question .question-node-teaser-pane-title .icon {
-  background: url('/images/icons-sbf3e80bf87.png') no-repeat;
+  background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
 /* line 16, ../../../sass/nodes/types/node_question.scss */
@@ -40,7 +40,6 @@
 .node-teaser.node-question .pane-coral-add-answer,
 .node-teaser.node-question .pane-node-links {
   float: left;
-  height: 2.65em;
 }
 /* line 38, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .pane-coral-add-comment .links,
@@ -59,8 +58,8 @@
 .node-teaser.node-question .pane-coral-add-comment .links li,
 .node-teaser.node-question .pane-coral-add-answer .links li,
 .node-teaser.node-question .pane-node-links .links li {
-  margin: 0 5px 0 0;
-  padding: 2px 5px 1px;
+  margin: 0 6px 0 0;
+  padding: 1px 3px 1px 0;
 }
 /* line 53, ../../../sass/nodes/types/node_question.scss */
 .node-type-question .field-name-field-answer,

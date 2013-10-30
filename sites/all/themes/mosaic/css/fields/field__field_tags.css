@@ -1,11 +1,11 @@
-/* line 274, icons/*.png */
+/* line 338, icons/*.png */
 .icons-sprite, .field-name-field-tags .field-label {
-  background: url('/images/icons-sbf3e80bf87.png') no-repeat;
+  background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
 /* line 7, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags {
-  margin: 1.25em 0 0;
+  margin: 0.625em 0 0.625em;
 }
 /* line 10, ../../sass/fields/field__field_tags.scss */
 .field-name-field-tags:after {
@@ -23,7 +23,7 @@
   color: white;
   margin-top: 1px;
   margin-right: 5px;
-  background-position: 0 -2145px;
+  background-position: 0 -2469px;
   height: 14px;
   width: 11px;
 }

@@ -1,113 +1,45 @@
-/* line 14, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 338, icons/*.png */
+.icons-sprite, .pane-coral-add-comment .btn.comment .icon, .pane-coral-add-comment .btn.comments-hidden .icon, .pane-coral-add-comment .btn.comments-hidden:hover .icon {
+  background: url('/images/icons-s6bd60a2940.png') no-repeat;
+}
+
+/* line 15, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment {
   float: left;
   margin: 0 5px 0 0;
 }
-/* line 18, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 19, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comment {
-  border-width: 1px;
-  font-size: 16px;
-  padding: 0.5em 1.5em;
-  color: white;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #446eac), color-stop(70%, #4067a1));
-  background: -webkit-linear-gradient(#446eac, #4067a1 70%);
-  background: -moz-linear-gradient(#446eac, #4067a1 70%);
-  background: -o-linear-gradient(#446eac, #4067a1 70%);
-  background: linear-gradient(#446eac, #4067a1 70%);
-  -webkit-box-shadow: #7496c8 0 1px 0 inset;
-  -moz-box-shadow: #7496c8 0 1px 0 inset;
-  box-shadow: #7496c8 0 1px 0 inset;
-  border: 1px solid #385b8f;
-  text-shadow: #1f3350 0 -1px 0;
-  font-size: 16px;
-  padding: 2px 5px;
-  color: white;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  padding-right: 25px;
+  padding-left: 0;
+  padding-right: 18px;
   position: relative;
-}
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-coral-add-comment .btn.comment:hover {
-  text-decoration: none;
-}
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-coral-add-comment .btn.comment:hover {
-  background-color: #385b8f;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
-  background: -webkit-linear-gradient(#3d629a 3%, #385b8f 75%);
-  background: -moz-linear-gradient(#3d629a 3%, #385b8f 75%);
-  background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
-  background: linear-gradient(#3d629a 3%, #385b8f 75%);
-}
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-coral-add-comment .btn.comment:active {
-  -webkit-box-shadow: #345484 0 1px 2px inset;
-  -moz-box-shadow: #345484 0 1px 2px inset;
-  box-shadow: #345484 0 1px 2px inset;
-}
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-coral-add-comment .btn.comment.disabled, .pane-coral-add-comment .btn.comment[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  background: #4067a1;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
+  border: none;
+  background: none;
   box-shadow: none;
+  text-shadow: none;
+  color: #515151;
+  width: auto;
+  color: #777777;
+  font-size: .9em;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
-.pane-coral-add-comment .btn.comment::-moz-focus-inner {
-  padding: 0 !important;
-  margin: -1px !important;
+/* line 31, ../../sass/panes/pane__coral_add_comment.scss */
+.pane-coral-add-comment .btn.comment:hover {
+  color: #919191;
 }
-/* line 28, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 35, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comment .circle {
   cursor: pointer;
   display: block;
   position: absolute;
   top: 14%;
-  right: 1.5%;
+  right: -4px;
   height: 16px;
   width: 16px;
-  border: 1px solid #2e4b75;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px inset;
-  background: #fff9d0;
-  background: -moz-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff9d0), color-stop(100%, #e5d14a));
-  background: -webkit-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
-  background: -o-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
-  background: -ms-linear-gradient(top, #fff9d0 0%, #e5d14a 100%);
-  background: linear-gradient(to bottom, #fff9d0 0%, #e5d14a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
 }
-/* line 42, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 44, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comment .circle .arrow {
   display: block;
-  margin: 3px 0 0 6px;
+  margin: 3px 0 0 2px;
   width: 0;
   height: 0;
   border-right: 5px solid transparent;
@@ -115,9 +47,9 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #515151;
 }
-/* line 47, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 49, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comment .circle .arrow-down {
-  margin: 6px 0 0 3px;
+  margin: 6px 0 0 -1px;
   width: 0;
   height: 0;
   border-bottom: 5px solid transparent;
@@ -125,64 +57,72 @@
   border-right: 5px solid transparent;
   border-top: 5px solid #515151;
 }
-/* line 52, ../../sass/panes/pane__coral_add_comment.scss */
-.pane-coral-add-comment .btn.comment:hover .circle {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
-  background: #e5d14a;
-  background: -moz-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5d14a), color-stop(100%, #fff6b6));
-  background: -webkit-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
-  background: -o-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
-  background: -ms-linear-gradient(top, #e5d14a 0%, #fff6b6 100%);
-  background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+/* line 55, ../../sass/panes/pane__coral_add_comment.scss */
+.pane-coral-add-comment .btn.comment .icon {
+  display: block;
+  float: left;
+  margin-top: 1px;
+  margin-right: 2px;
+  background-position: 0 -2215px;
+  height: 12px;
+  width: 19px;
 }
-/* line 57, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 65, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comment .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-
 /* line 70, ../../sass/panes/pane__coral_add_comment.scss */
+.pane-coral-add-comment .btn.comments-hidden .icon {
+  background-position: 0 -2277px;
+  height: 12px;
+  width: 19px;
+}
+/* line 74, ../../sass/panes/pane__coral_add_comment.scss */
+.pane-coral-add-comment .btn.comments-hidden:hover .icon {
+  background-position: 0 -2215px;
+  height: 12px;
+  width: 19px;
+}
+
+/* line 88, ../../sass/panes/pane__coral_add_comment.scss */
 .view-comments.view-display-id-new_comments .views-row,
 .view-comments.view-display-id-this_comment .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
 }
-/* line 72, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 90, ../../sass/panes/pane__coral_add_comment.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-node-body,
 .view-comments.view-display-id-this_comment .views-row .pane-node-body {
   padding-right: 1em;
 }
-/* line 75, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 93, ../../sass/panes/pane__coral_add_comment.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment,
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment {
   float: right;
 }
-/* line 78, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 96, ../../sass/panes/pane__coral_add_comment.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment .anon,
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment .anon {
   margin-right: 1em;
 }
-/* line 83, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 101, ../../sass/panes/pane__coral_add_comment.scss */
 .view-comments.view-display-id-new_comments .views-row-first,
 .view-comments.view-display-id-this_comment .views-row-first {
   margin-top: 0;
 }
-/* line 86, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 104, ../../sass/panes/pane__coral_add_comment.scss */
 .view-comments.view-display-id-new_comments .pager,
 .view-comments.view-display-id-this_comment .pager {
   display: none;
 }
 
-/* line 105, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 123, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .pane-coral-page-title h2,
 .html div.node-teaser.node-comment .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 114, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 132, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html .node-type-comment .pane-coral-add-comment,
 .html .node-type-comment .pane-coral-add-answer,
@@ -192,9 +132,9 @@
 .html div.node-teaser.node-comment .pane-coral-add-answer,
 .html div.node-teaser.node-comment .pane-node-links {
   float: right;
-  height: 2.65em;
+  height: 1.4em;
 }
-/* line 117, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 135, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links,
 .html .node-type-comment .pane-coral-add-comment .links,
 .html .node-type-comment .pane-coral-add-answer .links,
@@ -206,7 +146,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 121, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 139, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links li,
 .html .node-type-comment .pane-coral-add-comment .links li,
 .html .node-type-comment .pane-coral-add-answer .links li,
@@ -216,19 +156,19 @@
 .html div.node-teaser.node-comment .pane-coral-add-answer .links li,
 .html div.node-teaser.node-comment .pane-node-links .links li {
   margin: 0 5px 0 0;
-  padding: 2px 5px 1px;
+  padding: 1px 6px 1px;
 }
-/* line 127, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 145, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html div.node-teaser.node-comment .pane-coral-flag-abuse-node {
   margin-right: 1em;
 }
-/* line 131, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 149, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .pane-node-field-tags,
 .html div.node-teaser.node-comment .pane-node-field-tags {
   clear: left;
 }
-/* line 138, ../../sass/panes/pane__coral_add_comment.scss */
+/* line 156, ../../sass/panes/pane__coral_add_comment.scss */
 .html .node-type-comment .field-name-field-content,
 .html .node-type-comment .field-name-field-comment-count,
 .html .node-type-comment .field-type-file legend,

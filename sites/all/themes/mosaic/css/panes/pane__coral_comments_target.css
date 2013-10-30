@@ -1,6 +1,6 @@
-/* line 274, icons/*.png */
+/* line 338, icons/*.png */
 .icons-sprite, .html div.pane-coral-comments-target .comment-node-pane-title .icon {
-  background: url('/images/icons-sbf3e80bf87.png') no-repeat;
+  background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
 /* line 16, ../../sass/panes/pane__coral_comments_target.scss */
@@ -37,7 +37,7 @@
 }
 /* line 47, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .actions {
-  padding: 0.3125em 0;
+  position: relative;
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -46,92 +46,44 @@
   display: table;
   clear: both;
 }
-/* line 51, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 52, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .actions .load-more {
   position: relative;
   margin-right: 5px;
 }
-/* line 55, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 56, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .actions .load-more .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-/* line 59, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 60, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .actions .load-more.hide {
   display: none;
 }
-/* line 63, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 64, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .actions .cls-comments {
-  position: relative;
-  font-size: 16px;
-  padding: 0.5em 1.5em;
+  position: absolute;
+  bottom: -5px;
+  left: -28px;
+  background: #d9837b;
+  border: 1px solid #b02e1c;
   color: white;
-  display: inline-block;
   cursor: pointer;
-  text-decoration: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b02e1c), color-stop(70%, #a32b1a));
-  background: -webkit-linear-gradient(#b02e1c, #a32b1a 70%);
-  background: -moz-linear-gradient(#b02e1c, #a32b1a 70%);
-  background: -o-linear-gradient(#b02e1c, #a32b1a 70%);
-  background: linear-gradient(#b02e1c, #a32b1a 70%);
-  -webkit-box-shadow: #e04d39 0 1px 0 inset;
-  -moz-box-shadow: #e04d39 0 1px 0 inset;
-  box-shadow: #e04d39 0 1px 0 inset;
-  border: 1px solid #8d2516;
-  text-shadow: #41110a 0 -1px 0;
-  font-size: 16px;
-  padding: 2px 5px;
-  color: white;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: monospace, "Courier New", Courier;
+  padding: 3px;
+  line-height: 5px;
+  height: 7px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html div.pane-coral-comments-target .actions .cls-comments:hover {
-  text-decoration: none;
-}
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html div.pane-coral-comments-target .actions .cls-comments:hover {
-  background-color: #8d2516;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #8d2516));
-  background: -webkit-linear-gradient(#9a2818 3%, #8d2516 75%);
-  background: -moz-linear-gradient(#9a2818 3%, #8d2516 75%);
-  background: -o-linear-gradient(#9a2818 3%, #8d2516 75%);
-  background: linear-gradient(#9a2818 3%, #8d2516 75%);
-}
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html div.pane-coral-comments-target .actions .cls-comments:active {
-  -webkit-box-shadow: #802114 0 1px 2px inset;
-  -moz-box-shadow: #802114 0 1px 2px inset;
-  box-shadow: #802114 0 1px 2px inset;
-}
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html div.pane-coral-comments-target .actions .cls-comments.disabled, .html div.pane-coral-comments-target .actions .cls-comments[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  background: #a32b1a;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
-.html div.pane-coral-comments-target .actions .cls-comments::-moz-focus-inner {
-  padding: 0 !important;
-  margin: -1px !important;
-}
-/* line 71, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 84, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title {
   clear: none;
   float: left;
@@ -146,28 +98,28 @@
   display: table;
   clear: both;
 }
-/* line 77, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 90, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title .icon {
   display: block;
   float: left;
   margin-right: 5px;
   margin-left: -5px;
   margin-top: 3px;
-  background-position: 0 -2083px;
+  background-position: 0 -2277px;
   height: 12px;
   width: 19px;
 }
-/* line 87, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 100, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > a {
   color: #919191;
   float: left;
   max-width: 90.85%;
 }
-/* line 91, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 104, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > a:hover {
   color: #446eac;
 }
-/* line 93, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 106, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top {
   border: 1px solid white;
   cursor: pointer;
@@ -193,7 +145,7 @@
   -o-border-radius: 11px;
   border-radius: 11px;
 }
-/* line 105, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 118, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top .arrow-up {
   display: block;
   margin: 2px 0 0 5px;
@@ -204,7 +156,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #5e5e5e;
 }
-/* line 111, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 124, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top:hover {
   border: 1px solid #9d9d9d;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
@@ -222,7 +174,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #9d9d9d 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 116, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 129, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top:hover .arrow-up {
   width: 0;
   height: 0;
@@ -231,7 +183,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid white;
 }
-/* line 122, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 135, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target.odd .comment-node-pane-title > .top {
   border: 1px solid #efefef;
   background: #c4c4c4;
@@ -246,7 +198,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #c4c4c4 0%, #efefef 100%);
   /* Opera (13?) */
 }
-/* line 126, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 139, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target.odd .comment-node-pane-title > .top:hover {
   border: 1px solid #969696;
   background: #9d9d9d;
@@ -261,35 +213,35 @@
   background-image: -o-radial-gradient(center center, circle contain, #9d9d9d 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 133, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 146, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .pane-coral-comments-target {
   margin-bottom: -1px;
   margin-right: -1px;
   padding-left: 1em;
 }
-/* line 138, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 151, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comments-tgt.empty {
   padding-top: 1.25em;
 }
-/* line 143, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 156, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .pane-coral-node-stats {
   margin-top: -.2em;
 }
-/* line 146, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 159, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .pane-coral-node-stats .stat-comments {
-  line-height: 2.05em;
+  line-height: 2em;
 }
-/* line 150, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 163, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .pane-coral-node-stats .stat-editor .user-picture {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 154, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 167, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .pane-coral-node-stats .stat-editor .username {
   margin-top: .2em;
 }
 
-/* line 160, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 173, ../../sass/panes/pane__coral_comments_target.scss */
 .html .pane-coral-comments-target.comments-more {
   margin-bottom: 3.75em;
 }

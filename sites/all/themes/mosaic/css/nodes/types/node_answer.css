@@ -1,9 +1,9 @@
-/* line 274, icons/*.png */
+/* line 338, icons/*.png */
 .icons-sprite, .html div.node-type-answer .pane-coral-page-title .icon,
 .html div.node-type-answer .answer-node-teaser-pane-title .icon,
 .html div.node-teaser.node-answer .pane-coral-page-title .icon,
 .html div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
-  background: url('/images/icons-sbf3e80bf87.png') no-repeat;
+  background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
 /* line 19, ../../../sass/nodes/types/node_answer.scss */
@@ -26,7 +26,6 @@
 .html div.node-teaser.node-answer .pane-coral-add-answer,
 .html div.node-teaser.node-answer .pane-node-links {
   float: left;
-  height: 2.65em;
 }
 /* line 32, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .pane-coral-add-comment .links,
@@ -45,8 +44,8 @@
 .html div.node-teaser.node-answer .pane-coral-add-comment .links li,
 .html div.node-teaser.node-answer .pane-coral-add-answer .links li,
 .html div.node-teaser.node-answer .pane-node-links .links li {
-  margin: 0 5px 0 0;
-  padding: 2px 5px 1px;
+  margin: 0 6px 0 0;
+  padding: 1px 3px 0 0;
 }
 /* line 43, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .answer-node-pane-title,
