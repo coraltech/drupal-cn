@@ -45,7 +45,8 @@
   }
   
   .actions {
-    padding: ($default_vert_unit / 4) 0;
+    position: relative;
+    
     @include pie-clearfix;
 
     .load-more {
@@ -61,10 +62,22 @@
     }
     
     .cls-comments {
-      position: relative;
+      position: absolute;
+      bottom: -5px;
+      left: -28px;
+      background: $ltred;
+      border: 1px solid $mdred;
+      color: $white;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: bold;
+      font-family: $mono_fonts;
+      padding: 3px;
+      line-height: 5px;
+      height: 7px;
       
-      @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%));
-      @include btn-structure;
+      @include border-radius(8px);
+      @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
     }
   }
   
@@ -144,7 +157,7 @@
     margin-top: -.2em;
     
     .stat-comments {
-      line-height: 2.05em;
+      line-height: 2em;
     }
     .stat-editor {
       .user-picture {

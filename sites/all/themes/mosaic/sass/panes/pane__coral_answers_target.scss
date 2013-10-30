@@ -27,8 +27,10 @@
   margin-bottom: $default_vert_unit;
   
   .actions {
+    position: relative;
     border: 1px solid $ltgray;
-    padding: ($default_vert_unit / 4) ($default_vert_unit / 2);
+    padding-left: 10px;
+    
     @include linear-v-gradient(darken($ltgray, 2%), lighten($ltgray, 5%));
     @include pie-clearfix;
 
@@ -45,10 +47,22 @@
     }
     
     .cls-answer {
-      position: relative;
+      position: absolute;
+      bottom: -7px;
+      left: -8px;
+      background: $ltred;
+      border: 1px solid $mdred;
+      color: $white;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: bold;
+      font-family: $mono_fonts;
+      padding: 3px;
+      line-height: 5px;
+      height: 7px;
       
-      @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%));
-      @include btn-structure;
+      @include border-radius(8px);
+      @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
     }
   }
   
