@@ -1,9 +1,9 @@
 
 // Scss file for the best answer button
 
-@import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/icons';
 
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
@@ -11,11 +11,29 @@
 .pane-coral-best-answer {
   float: left;
   margin: 0 5px 0 0;
+
   .best-answer {
     position: relative;
+    border-right: 1px solid $ltgray;
+    color: $mdgray;
+    font-size: .9em;
+    padding: 3px 7px 3px 0;
     
-    @include btn-matte-inset(0px, 16px, $mdgreen, darken($mdgreen, 3%));
-    @include btn-structure;
+    .icon {
+      display: block;
+      float: left;
+      margin: 2px 2px 0 -2px;
+      
+      @include icons-sprite('check-sml-off');
+    }
+    
+    &:hover {
+      color: lighten($mdgray, 10%);
+
+      .icon {
+        @include icons-sprite('check-sml');
+      }
+    }
     
     .best-ans-msg {
       background: $ltyellow;
