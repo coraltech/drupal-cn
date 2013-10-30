@@ -28,7 +28,7 @@ function coral_best_answer_pane_content_type_render($subtype, $conf, $args, $con
   $content = '';
   if (isset($node->nid) && isset($node->type)) {
     if ($node->type == 'answer' || $node->type == 'question') {
-      $content = '<a href="#" class="best-answer best-answer-'.$node->nid.' hide">Best answer</a>'; 
+      $content = '<a href="#" class="best-answer best-answer-'.$node->nid.' hide"><span class="icon"></span>Best answer</a>'; 
     }
   }  
     
