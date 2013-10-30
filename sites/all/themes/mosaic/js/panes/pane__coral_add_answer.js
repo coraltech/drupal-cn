@@ -387,7 +387,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Init the close button - called directly after initMore.
   Drupal.coralQA.coralAnswer.prototype.initClose = function() {
     try {
-      this.$actions.append('<a href="#" title="Collapse answers view" class="btn cls-answer cls-answer-'+this.refID+'">Close</a>');
+      this.$actions.append('<a href="#" title="Collapse answers view" class="cls-answer cls-answer-'+this.refID+'">x</a>');
     }
     catch (err) {
       console.log('initClose errored: '+err);
@@ -857,7 +857,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
     try {
-      return '<a href="#" class="btn load-more more-answers-'+this.refID+' page-'+page+' '+hide+'">More answers<span class="no-js"><span></span></a>';
+      return '<a href="#" class="load-more more-answers-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>More answers<span class="no-js"><span></span></a>';
     }
     catch (err) {
       console.log('loadMoreBtn errored: '+err);
@@ -865,7 +865,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   };
 
 
-  // Updates the more button or removes it if we have no more items
+  // Updates the more button or removes it if we have no mo re items
   Drupal.coralQA.coralAnswer.prototype.updateMoreBtn = function() {
     try {
       if ((Number(this.currentPage) + 1) * Number(this.settings.limit) >= Number(this.settings.total_items)) {

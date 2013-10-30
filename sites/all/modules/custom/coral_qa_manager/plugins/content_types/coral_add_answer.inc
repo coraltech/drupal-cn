@@ -25,7 +25,7 @@ function coral_answer_button_form_content_type_render($subtype, $conf, $args, $c
   $content = '';
   if (isset($node->nid) && isset($node->type)) {
     if ($node->type == 'question') {
-      $content = '<a href="/node/add/answer/'.$node->nid.'?field_question='.$node->nid.'" title="Answer this question" class="btn answer answer-'.$node->nid.' answers-hidden">Answer<span class="circle"><span class="arrow"></span></span></a>';
+      $content = '<a href="/node/add/answer/'.$node->nid.'?field_question='.$node->nid.'" title="View and submit answers to this question" class="btn answer answer-'.$node->nid.' answers-hidden"><span class="icon"></span>Answers<span class="circle"><span class="arrow"></span></span></a>';
     }
   }  
     
