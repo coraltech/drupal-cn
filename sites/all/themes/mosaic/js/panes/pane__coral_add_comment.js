@@ -58,6 +58,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.initContext();
       this.initActions();
       this.initClose();
+      
+      this.speed = 250; // ms to transistion
+      
       // Setup and more
       // ----
       // $loadMore may or may not exist. It usually does not
@@ -415,7 +418,12 @@ Drupal.coralQA = Drupal.coralQA || {};
         $closeBtn = this.$actions.find('.cls-comments-'+this.refID);
         $closeBtn.off('click').click(function(ev) { // event must be bound here
           ev.preventDefault(); // animate scroll and close comments
-          $('html, body').animate({ scrollTop: cc.$content.offset().top }, 800, function () { cc.hideComments(); });
+          if (cc.inView()) {
+            $('html, body').animate({ scrollTop: cc.$content.offset().top }, cc.speed, function () { cc.hideComments(); });
+          }
+          else {
+            cc.hideComments();
+          }
         });
       }
     }
@@ -466,7 +474,13 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.handleClsClick = function(ev) {
     try {
       var cc = this; // yeah, we have a callback!
-      $('html, body').animate({ scrollTop: this.$content.offset().top }, 800, function () { cc.hideComments(); });
+
+      if (this.inView()) {
+        $('html, body').animate({ scrollTop: this.$content.offset().top }, this.speed, function () { cc.hideComments(); });
+      }
+      else {
+        this.hideComments();
+      }
     }
     catch (err) {
       console.log('handleCommentClick errored: '+err);
@@ -525,8 +539,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         }
       };
       
-      this.$commentForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
-      this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show comments 
+      this.$commentForm.parents('.panel-pane').eq(0).slideDown(this.speed); // show the form
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideDown(this.speed, callback); // show comments 
       this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
       this.$btn.removeClass('comments-hidden'); // update the btn status
 
@@ -567,8 +581,8 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralComment.prototype.hideComments = function() {
     try {
       // hide the comments and form
-      this.$commentForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
-      this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
+      this.$commentForm.parents('.panel-pane').eq(0).slideUp(this.speed); // hide the form
+      this.$commentsTgt.parents('.panel-pane').eq(0).slideUp(this.speed); // hide the comments
       this.$btn.addClass('comments-hidden');
       this.$btn.find('.arrow').removeClass('arrow-down');
             
@@ -836,7 +850,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         $title.addClass('form-hidden');
         $help.text('show form');
       }
-      this.$commentForm.slideToggle(200); // action!
+      this.$commentForm.slideToggle(this.speed); // action!
     }
     catch (err) {
       console.log('manageForm errored: '+err);
@@ -921,7 +935,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         cc.$commentForm.find('.form-submit').removeClass('ajax-processing');    
         var $newComment = $tgts.eq(0).find('.node-'+data.nid).css("background", "#FFF6B6"); // make the new comment yellow
         
-        cc.$commentForm.slideUp(800); // hide the comment form
+        cc.$commentForm.slideUp(this.speed); // hide the comment form
         
         $newComment.animate({ backgroundColor: colorData.color }, 3000); // fade it back
       };
@@ -980,8 +994,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $wrap = this.$commentForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
       var $help = $wrap.find('.help-text');
     
-      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, 500); // mouseenter; expose the text
-      else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, this.speed); // mouseenter; expose the text
+      else $help.animate({left: '0em'}, this.speed); // mouseleave; hide text
     }
     catch (err) {
       console.log('titleHoverHelp errored: '+err);
@@ -1001,14 +1015,34 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       // view trimmed
       else {
-        $('html, body').animate({ scrollTop: this.$content.offset().top }, 500, 'swing', function() { 
-          cc.$full.hide();
-          cc.$trimmed.show();
-        });
+        if (this.inView()) {
+          $('html, body').animate({ scrollTop: this.$content.offset().top }, this.speed, 'swing', function() { 
+            cc.$full.hide();
+            cc.$trimmed.show();
+          });
+        }
+        else {
+          this.$full.hide();
+          this.$trimmed.show();
+        }
       }
     }
     catch (err) {
       console.log('trimmedClick errored: '+err);
+    }
+  };
+  
+  
+  // Checks if the content is in-view
+  Drupal.coralQA.coralComment.prototype.inView = function() {
+    try {
+      var docViewTop = $(window).scrollTop();
+      var elemTop = this.$content.offset().top;
+      if (elemTop <= docViewTop) return true;
+      return false;
+    }
+    catch (err) {
+      console.log('inView errored: '+err);
     }
   };
  

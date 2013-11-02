@@ -52,6 +52,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
       this.$full = $(this.$question).find('.body-full.body-'+this.refID);       // full text body pane
       
+      this.speed = 250; // ms transistion speed
+      
       // Comment comps - needed to close the comments when answers is clicked
       // See: hideComments()
       this.$cmtBtn   = $question.find('.btn.comment-'+this.refID);
@@ -432,13 +434,19 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.handleClsClick = function(ev) {
     try {
       var ca = this; // yeah, we have a callback!
-      $('html, body').animate({ scrollTop: this.$question.offset().top }, 800, function () { ca.hideAnswers(); });
+      
+      if (this.inView()) {
+        $('html, body').animate({ scrollTop: this.$question.offset().top }, this.speed, function () { ca.hideAnswers(); });  
+      }
+      else {
+        this.hideAnswers();
+      }
     }
     catch (err) {
       console.log('handleCommentClick errored: '+err);
     }
   };
-
+  
   
   // Process a $loadMore click! Fetches from the view
   Drupal.coralQA.coralAnswer.prototype.handleMoreClick = function(ev) {
@@ -500,9 +508,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       // PS: Comment the following line to forgoe throbber on Answer click! 
       if (this.context != 'full') ca.setLoadStatus('loading'); // Set the loading status
 
-      this.$answerForm.parents('.panel-pane').eq(0).slideDown(200); // show the form
-      this.$answersTgt.parents('.panel-pane').eq(0).slideDown(200, callback); // show answers 
-      this.$bestAnswer.slideDown(200); // show best answer
+      this.$answerForm.parents('.panel-pane').eq(0).slideDown(this.speed); // show the form
+      this.$answersTgt.parents('.panel-pane').eq(0).slideDown(this.speed, callback); // show answers 
+      this.$bestAnswer.slideDown(this.speed); // show best answer
       this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
       this.$btn.removeClass('answers-hidden'); // update the btn status
         
@@ -528,9 +536,9 @@ Drupal.coralQA = Drupal.coralQA || {};
     var text = textToggle || 'toggle';
     try {
       // hide the answers and form
-      this.$answerForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
-      this.$answersTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the answers
-      this.$bestAnswer.slideUp(200);
+      this.$answerForm.parents('.panel-pane').eq(0).slideUp(this.speed); // hide the form
+      this.$answersTgt.parents('.panel-pane').eq(0).slideUp(this.speed); // hide the answers
+      this.$bestAnswer.slideUp(this.speed);
 
       this.$btn.find('.arrow').removeClass('arrow-down');
       this.$btn.addClass('answers-hidden');
@@ -555,8 +563,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       // hide the comments and form
       // This is done here so we can shut one 
       // when the other opens. No need to add this to comments js.
-      this.$cmtsForm.parents('.panel-pane').eq(0).slideUp(200); // hide the form
-      this.$cmtsTgt.parents('.panel-pane').eq(0).slideUp(200); // hide the comments
+      this.$cmtsForm.parents('.panel-pane').eq(0).slideUp(this.speed); // hide the form
+      this.$cmtsTgt.parents('.panel-pane').eq(0).slideUp(this.speed); // hide the comments
       this.$cmtBtn.addClass('comments-hidden');
       this.$cmtBtn.find('.arrow').removeClass('arrow-down');
     }
@@ -743,7 +751,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         $title.addClass('form-hidden');
         $help.text('show form');
       }
-      this.$answerForm.slideToggle(200); // action!
+      this.$answerForm.slideToggle(this.speed); // action!
     }
     catch (err) {
       console.log('manageForm errored: '+err);
@@ -826,10 +834,10 @@ Drupal.coralQA = Drupal.coralQA || {};
         var $newAnswer = ca.$question.find('.node-'+data.nid).css("background", "#FFF6B6");
         var $viewRow = $newAnswer.parent('.views-row');
         
-        ca.$answerForm.slideUp(800); // hide the answer form
+        ca.$answerForm.slideUp(this.speed); // hide the answer form
         
         $viewRow.css('padding-bottom', '1px');
-        $newAnswer.animate({ backgroundColor: '#FFFFFF' }, 5000, 'swing', function() {
+        $newAnswer.animate({ backgroundColor: '#FFFFFF' }, 3000, 'swing', function() {
           $newAnswer.css('background', 'transparent');
           $viewRow.css('padding-bottom', '0');
         });
@@ -889,8 +897,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
       var $help = $wrap.find('.help-text');
       
-      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, 500); // mouseenter; expose the text
-      else $help.animate({left: '0em'}, 500); // mouseleave; hide text
+      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, this.speed); // mouseenter; expose the text
+      else $help.animate({left: '0em'}, this.speed); // mouseleave; hide text
     }
     catch (err) {
       console.log('titleHoverHelp errored: '+err);
@@ -910,14 +918,34 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
       // view trimmed
       else {
-        $('html, body').animate({ scrollTop: this.$question.offset().top }, 500, 'swing', function() { 
-          ca.$full.hide();
-          ca.$trimmed.show();
-        });
+        if (this.inView()) {
+          $('html, body').animate({ scrollTop: this.$question.offset().top }, this.speed, 'swing', function() { 
+            ca.$full.hide();
+            ca.$trimmed.show();
+          });
+        }
+        else {
+          this.$full.hide();
+          this.$trimmed.show();
+        }
       }
     }
     catch (err) {
       console.log('trimmedClick errored: '+err);
+    }
+  };
+  
+  
+  // Checks if the question is in-view
+  Drupal.coralQA.coralAnswer.prototype.inView = function() {
+    try {
+      var docViewTop = $(window).scrollTop();
+      var elemTop = this.$question.offset().top;
+      if (elemTop <= docViewTop) return true;
+      return false;
+    }
+    catch (err) {
+      console.log('inView errored: '+err);
     }
   };
   
