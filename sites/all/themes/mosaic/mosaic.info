@@ -21,6 +21,7 @@ scripts[] = js/global/mosaicMce.js
 scripts[] = js/global/mosaicSlideshow.js
 scripts[] = js/global/mosaicToc.js
 scripts[] = js/global/mosaicPrettify.js
+scripts[] = js/global/mosaicBox.js
 
 ; - Panels
 plugins[panels][layouts]     = plugins/layouts
