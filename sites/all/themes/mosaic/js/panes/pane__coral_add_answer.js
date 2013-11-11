@@ -110,7 +110,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.events['click .answer-form-'+this.refID+' .node-form .form-submit'] = 'formSubmit';
       this.events['click .trimmed-'+this.refID+' a'] = 'trimmedClick';
       this.events['click .ans-form-title-'+this.refID] = 'formClick';
-      this.events['click .cls-answer-'+this.refID] = 'closeClick';
+      this.events['click .cls-answers-'+this.refID] = 'closeClick';
       this.events['hover .ans-form-title-'+this.refID] = 'titleHover';
           
       var coralAnswer = this;
@@ -389,7 +389,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Init the close button - called directly after initMore.
   Drupal.coralQA.coralAnswer.prototype.initClose = function() {
     try {
-      this.$actions.append('<a href="#" title="Collapse answers view" class="cls-answer cls-answer-'+this.refID+'">x</a>');
+      this.$actions.append('<a href="#" title="Collapse answers view" class="cls-answers cls-answers-'+this.refID+'">x</a>');
     }
     catch (err) {
       console.log('initClose errored: '+err);
