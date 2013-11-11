@@ -17,6 +17,7 @@ scripts[] = js/lib/TableOfContents/js/jquery.tableofcontents.js
 scripts[] = js/lib/color/jquery.color.min.js
 
 ; -- Custom
+scripts[] = js/global/mosaicCore.js
 scripts[] = js/global/mosaicMce.js
 scripts[] = js/global/mosaicSlideshow.js
 scripts[] = js/global/mosaicToc.js
