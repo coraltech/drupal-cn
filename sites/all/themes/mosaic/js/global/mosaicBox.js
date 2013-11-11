@@ -15,17 +15,20 @@ Drupal.mosaic = Drupal.mosaic || {};
         // We have to wait for the other JS in the site to finish before
         //  we compute the overlay and get it ready for action.
         setTimeout(function() {
-          var mboxOverlay = new Drupal.mosaic.mosaicBoxOverlay();
-          
+          Drupal.mosaic.core.objects['mboverlay'] = new Drupal.mosaic.mosaicBoxOverlay();
+          Drupal.mosaic.core.objects['mosaicBox'] = {}; // will contain active boxable items
+
           // Overlays only apply to questions
           $('.node-question.node-teaser:not(".mbox-processed")').each(function(i) {
+          
+            var id = Drupal.mosaic.core.initID($(this));
             
             // Only apply if not a full node or a child of the parent node container
             if (!$(this).parents('.node-full-node.node-question').length &&
                 !$(this).parents('.pane-coral-parent-content').length) {
                           
               // The questions... Oh, the questions
-              new Drupal.mosaic.mosaicBox($(this), mboxOverlay);
+              Drupal.mosaic.core.objects.mosaicBox[id] = new Drupal.mosaic.mosaicBox($(this), id);
 
               // Must ensure we don't re-attach the handlers
               $(this).addClass('mbox-processed');
@@ -53,23 +56,21 @@ Drupal.mosaic = Drupal.mosaic || {};
 
   // MosaicBox will surround the question and it's contents
   //  this is so it is easier to tell where it ends.
-  Drupal.mosaic.mosaicBox = function($question, mbOverlay) {
+  Drupal.mosaic.mosaicBox = function($question, id) {
     try {
       if ($question.length) {
-        this.id;
+        this.id = id;
         
         this.$question = $question;
-        this.$btn      = $question.find('.btn.answer');
-        this.mbOverlay = mbOverlay;
+        this.mbOverlay = Drupal.mosaic.core.objects.mboverlay;
         
         // will store a reference to an ongoing close button position monitor (if one is visible)
         this.closeInterval = false;
         
-        this.getID(this.$btn);
-
         this.events = {};
-        this.events['click .btn.answer-'+this.id] = 'answerClick';
-        
+        this.events['click .btn.answer-'+this.id]  = 'answerClick';
+        this.events['click .btn.comment-'+this.id] = 'commentClick';
+
         var mosaicBox = this;
         var MosaicBoxView = Backbone.View.extend({
           // Home
@@ -83,13 +84,17 @@ Drupal.mosaic = Drupal.mosaic || {};
           
           // Init
           initialize : function() {
-            _.bindAll(this, 'answerClick'); //, 'closeClick');
+            _.bindAll(this, 'answerClick', 'commentClick');
           },
 
           // Events
           // Answer link       console.log(this);initiates overlay
           answerClick: function(ev) {
-            mosaicBox.handleAnswerClick(ev);
+            mosaicBox.handleClick(ev, 'answer');
+          },
+          
+          commentClick: function(ev) {
+            mosaicBox.handleClick(ev, 'comment');
           }
         });
         
@@ -101,14 +106,14 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
   
-  // Handles the opeing of the answers
+  // Handles the opening of the content
   //  Will cause the overlay to engage, etc...
-  Drupal.mosaic.mosaicBox.prototype.handleAnswerClick = function(ev) {
+  Drupal.mosaic.mosaicBox.prototype.handleClick = function(ev, type) {
     try {
-      this.initClose(); // start up the close button
+      clearTimeout(this.closeInterval); // reset the interval - if one exists
       
-      this.updateQBox(true); // Initialize the Question box styles
-      
+      this.initClose(type); // start up the close button
+      this.updateBox(true); // Initialize the Question box styles
       this.mbOverlay.$overlay.fadeTo(50, .65);
       this.mbOverlay.$overlay.removeClass('hidden');
       
@@ -118,14 +123,14 @@ Drupal.mosaic = Drupal.mosaic || {};
       }, 250); // leave time for transistions and so on
     }
     catch (err) {
-      console.log('handleAnswerClick errored: '+err);
+      console.log('handleClick errored: '+err);
     }
   };
 
 
   // Box state around the question. Truthy to create a box, 
   //  falsey to reset the box.
-  Drupal.mosaic.mosaicBox.prototype.updateQBox = function(state) {
+  Drupal.mosaic.mosaicBox.prototype.updateBox = function(state) {
     try {
       var boxState = state || false;
       
@@ -139,49 +144,60 @@ Drupal.mosaic = Drupal.mosaic || {};
         'position': position,
         'padding-left': padding+'px',
         'padding-right': padding+'px',
-        'margin-left': (-1*padding)+'px',
-        'margin-right': (-1*padding)+'px',
+        'margin-left': (-1 * padding)+'px',
+        'margin-right': (-1 * padding)+'px',
         'z-index': zIndex
       });      
     }
     catch (err) {
-      console.log('updateQBox errored: '+err);
+      console.log('updateBox errored: '+err);
     }
   };
   
   
   // Set up close facilities
-  Drupal.mosaic.mosaicBox.prototype.initClose = function() {
+  Drupal.mosaic.mosaicBox.prototype.initClose = function(type) {
     try {
       // For coupling the close clicks
-      this.$clsAnswers = this.$question.find('.pane-coral-answers-target .cls-answer').eq(0);
-    
+      // this.$cls represents the answers or comments added close button (eg. .cls-comments
       this.$question.prepend('<div class="mbclose">x</div>');
       this.$close = this.$question.children('.mbclose');
-      
+
       this.$close.css({
         'cursor': 'pointer',
         'position': 'absolute',
         'z-index': 7,
         'font-size': '2em',
-        'right': '10px',
-        'top': '10px',
+        'right': '-14px',
+        'top': '-14px',
       });
       
       // Close triggers two clicks
       var mbo = this;
-      this.$close.click(function() { 
-        mbo.handleCloseClick(); 
-        mbo.$clsAnswers.trigger('click');  
-      });
+      var sel = '.pane-coral-'+type+'s-target .cls-'+type+'s';
       
-      this.$clsAnswers.click(function() {
-        if (mbo.$close != undefined) { // No more!
+      this.$cls = this.$question.find(sel);
+      this.$cls.click(function() {
+        if (mbo.$close != undefined && !mbo.$close.hasClass('closing')) {
           mbo.$close.trigger('click');
+          setTimeout(function() {
+            mbo.closeBox();
+          }, 50);
+        }
+        else {
+          mbo.closeBox();
         }
       });
       
+      this.$close.click(function() {
+        mbo.$close.addClass('closing');
+        setTimeout(function() {
+          mbo.$cls.trigger('click');
+        }, 50);
+      });
+      
       this.closeInterval = setInterval(function() {
+        //console.log('len: '+mbo.$close.length);
         var docTop = $(window).scrollTop();
         var qTop = mbo.$question.offset().top;
         var extra = 0;
@@ -191,7 +207,7 @@ Drupal.mosaic = Drupal.mosaic || {};
           mbo.$close.css('top', docTop - qTop + extra);
         }
         else {
-          mbo.$close.css('top', 0);
+          mbo.$close.css('top', -14);
         }
       }, 100);
     }
@@ -202,41 +218,23 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   
   // Close up the animations
-  Drupal.mosaic.mosaicBox.prototype.handleCloseClick = function() {
+  Drupal.mosaic.mosaicBox.prototype.closeBox = function() {
     try {
       if (this.$close != undefined) {
         this.$close.remove();
         delete this.$close;
       }
+      clearInterval(this.closeInterval);
       this.mbOverlay.updateOverlay('hide');
       this.mbOverlay.$overlay.addClass('hidden');
-      this.updateQBox(); // reset question box
-      clearInterval(this.closeInterval);
+      this.updateBox(); // reset question box
+      
     }
     catch (err) {
-      console.log('handleCloseClick errored: '+err);
+      console.log('closeBox errored: '+err);
     }
   };
   
-
-  // Extract the question id
-  Drupal.mosaic.mosaicBox.prototype.getID = function($btn) {
-    try {
-      var classes = $btn.attr('class');
-      classes = classes.split(" ");
-      for (cls in classes) {
-        var c = classes[cls];
-        if (c.match(/answer-\d+/)) {
-          this.id = c.replace('answer-', ''); // and the nid
-          break;
-        }
-      }
-    }
-    catch (err) {
-      console.log('getID errored: '+err);
-    }
-  };
-
 
   // Overlay methods
   // ---------------
