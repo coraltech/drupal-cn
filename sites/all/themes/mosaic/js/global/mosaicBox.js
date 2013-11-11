@@ -110,17 +110,25 @@ Drupal.mosaic = Drupal.mosaic || {};
   //  Will cause the overlay to engage, etc...
   Drupal.mosaic.mosaicBox.prototype.handleClick = function(ev, type) {
     try {
-      clearTimeout(this.closeInterval); // reset the interval - if one exists
       
-      this.initClose(type); // start up the close button
-      this.updateBox(true); // Initialize the Question box styles
-      this.mbOverlay.$overlay.fadeTo(50, .65);
-      this.mbOverlay.$overlay.removeClass('hidden');
+      if (!$(ev.currentTarget).hasClass('mbopen')) {
+        $(ev.currentTarget).addClass('mbopen'); // add class for toggling
+        
+        clearTimeout(this.closeInterval); // reset the interval - if one exists
       
-      var mbo = this.mbOverlay;
-      setTimeout(function() {
-        mbo.updateOverlay();
-      }, 250); // leave time for transistions and so on
+        this.initClose(type); // start up the close button
+        this.updateBox(true); // Initialize the Question box styles
+        this.mbOverlay.$overlay.fadeTo(50, .65);
+        this.mbOverlay.$overlay.removeClass('hidden');
+      
+        var mbo = this.mbOverlay;
+        setTimeout(function() {
+          mbo.updateOverlay();
+        }, 250); // leave time for transistions and so on
+      }
+      else {
+        this.closeBox();  
+      }
     }
     catch (err) {
       console.log('handleClick errored: '+err);
@@ -182,7 +190,7 @@ Drupal.mosaic = Drupal.mosaic || {};
           mbo.$close.trigger('click');
           setTimeout(function() {
             mbo.closeBox();
-          }, 50);
+          }, 25);
         }
         else {
           mbo.closeBox();
@@ -193,7 +201,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         mbo.$close.addClass('closing');
         setTimeout(function() {
           mbo.$cls.trigger('click');
-        }, 50);
+        }, 25);
       });
       
       this.closeInterval = setInterval(function() {
@@ -217,18 +225,21 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
   
-  // Close up the animations
+  // Close up the box
   Drupal.mosaic.mosaicBox.prototype.closeBox = function() {
     try {
+      var $open = this.$question.find('.mbopen');
+      $open.removeClass('mbopen');
+    
       if (this.$close != undefined) {
         this.$close.remove();
         delete this.$close;
       }
       clearInterval(this.closeInterval);
+
       this.mbOverlay.updateOverlay('hide');
       this.mbOverlay.$overlay.addClass('hidden');
       this.updateBox(); // reset question box
-      
     }
     catch (err) {
       console.log('closeBox errored: '+err);
