@@ -12,7 +12,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       try { // Use try to prevent systemic failure
         var $questions = $('.node-question');
         $questions.each(function() {
-          new Drupal.coralQA.coralBestAnswers($(this));
+          new Drupal.coralQA.coralBestAnswer($(this));
         });
       }
       catch(err) {
@@ -24,7 +24,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   
   // Finds this questions visible answers and updates the 
   //  best answer button if it is appropriate.
-  Drupal.coralQA.coralBestAnswers = function($question) {
+  Drupal.coralQA.coralBestAnswer = function($question) {
     try {
       this.$question = $question; // remember the question
       this.answers = {}; // will contain a hash of answers {nid: $node}
@@ -32,24 +32,24 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.author; // will contain the author info
       this.currentSelected; // Holds the nid of the selected node if there is one.
             
-      var coralBestAnswers = this;
+      var coralBestAnswer = this;
       
       // Get ready for some fun stuff!
-      coralBestAnswers.initQuestion();
+      coralBestAnswer.initQuestion();
 
       // Events
       this.events = {};
       for (id in this.answers) this.events['click .best-answer-'+id] = 'bestAnswer';
 
-      var BestAnswersView = Backbone.View.extend({
+      var BestAnswerView = Backbone.View.extend({
         // Home
         el: this.$question,
         
         // Settings and conf
-        coralBestAnswers: coralBestAnswers,
+        coralBestAnswer: coralBestAnswer,
         
         // events
-        events: coralBestAnswers.events, // keyed events
+        events: coralBestAnswer.events, // keyed events
              
         // Init
         initialize: function() {
@@ -59,19 +59,19 @@ Drupal.coralQA = Drupal.coralQA || {};
         // callbacks
         bestAnswer: function(ev) {
           ev.preventDefault();
-          coralBestAnswers.bestAnswerClick(ev);
+          coralBestAnswer.bestAnswerClick(ev);
         }
       });
       
-      new BestAnswersView();
+      new BestAnswerView();
     }
     catch (err) {
-      console.log('coralBestAnswers errored: '+err);
+      console.log('coralBestAnswer errored: '+err);
     }
   };
   
   
-  Drupal.coralQA.coralBestAnswers.prototype.bestAnswerClick = function(ev) {
+  Drupal.coralQA.coralBestAnswer.prototype.bestAnswerClick = function(ev) {
     try {
       var cba = this; // save this!
 
@@ -120,7 +120,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Move the chosen answer into the selected target
-  Drupal.coralQA.coralBestAnswers.prototype.moveAnswer = function($btn, answerID) {
+  Drupal.coralQA.coralBestAnswer.prototype.moveAnswer = function($btn, answerID) {
     try {
       var cba = this;
 
@@ -177,7 +177,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Refresh the target panes and nodes
   //  $answer is the answer the user has selected
   //  $oldAns is the old selected answer
-  Drupal.coralQA.coralBestAnswers.prototype.refreshBest = function(answerID, $answer) {
+  Drupal.coralQA.coralBestAnswer.prototype.refreshBest = function(answerID, $answer) {
     try {
       var cba = this;
     
@@ -230,7 +230,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   
 
   // You got questions? we got answers!
-  Drupal.coralQA.coralBestAnswers.prototype.getAnswer = function(answerID, callback) {
+  Drupal.coralQA.coralBestAnswer.prototype.getAnswer = function(answerID, callback) {
     try {
       // Render the view upon the world! Go view, go!
       Drupal.coral_ajax.view_render('answers', {
@@ -250,7 +250,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Report the status of the submission
-  Drupal.coralQA.coralBestAnswers.prototype.reportStatus = function($btn, message, state) {
+  Drupal.coralQA.coralBestAnswer.prototype.reportStatus = function($btn, message, state) {
     try {
       $btn.append('<span class="best-ans-msg msg-'+state+'">'+message+'</span>');
       $btn.find('.best-ans-msg').animate({opacity: 0}, 3000, function() {
@@ -264,7 +264,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Set up this question's exposed answers
-  Drupal.coralQA.coralBestAnswers.prototype.initQuestion = function() {
+  Drupal.coralQA.coralBestAnswer.prototype.initQuestion = function() {
     try {
       var cba = this; // store this for later
     
@@ -311,7 +311,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Initialize the answer and save it's object
-  Drupal.coralQA.coralBestAnswers.prototype.initAnswer = function($answer) {
+  Drupal.coralQA.coralBestAnswer.prototype.initAnswer = function($answer) {
     try {
       $answer.addClass('best-answer-processed'); // we won't be doing this one again
       answerID = this.getAnswerID($answer);      // current answer id
@@ -344,7 +344,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   
   
   // Get this answer's nid
-  Drupal.coralQA.coralBestAnswers.prototype.getAnswerID = function($answer) {
+  Drupal.coralQA.coralBestAnswer.prototype.getAnswerID = function($answer) {
     try {
       var $bestAnswerBtn = $answer.find('.best-answer');
       var answerID = this.getMatch(/^best-answer-\d+/, $bestAnswerBtn.attr('class'));
@@ -361,7 +361,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Find the class that matches the pattern
-  Drupal.coralQA.coralBestAnswers.prototype.getMatch = function(pattern, classes) {
+  Drupal.coralQA.coralBestAnswer.prototype.getMatch = function(pattern, classes) {
     try {
       classes = classes.split(' ');
       for (cls in classes) { 
