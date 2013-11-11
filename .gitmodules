@@ -235,9 +235,6 @@
 [submodule "sites/all/libraries/json2"]
 	path = sites/all/libraries/json2
 	url = https://github.com/douglascrockford/JSON-js
-[submodule "sites/all/themes/mosaic/js/lib/magnificent_popup"]
-	path = sites/all/themes/mosaic/js/lib/magnificent_popup
-	url = https://github.com/dimsemenov/Magnific-Popup
 [submodule "sites/all/modules/contrib/flexifilter"]
 	path = sites/all/modules/contrib/flexifilter
 	url = http://git.drupal.org/project/flexifilter.git
