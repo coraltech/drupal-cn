@@ -1732,6 +1732,37 @@ h3 .toc-top {
   font-style: normal;
 }
 
+/* line 465, ../sass/global/_global.scss */
+.mbclose {
+  background: #d9837b;
+  border: 1px solid #b02e1c;
+  color: white;
+  font-weight: bold;
+  font-family: monospace, "Courier New", Courier;
+  padding: 3px 0 1px 5px;
+  height: 0.8em;
+  width: 0.8em;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
+  background: #d9837b;
+  /* fallback for non-supporting browsers */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#d9837b), to(#ce5e53));
+  /* old WebKit Syntax */
+  background-image: -webkit-radial-gradient(center center, circle contain, #d9837b 0%, #ce5e53 100%);
+  /* New WebKit syntax */
+  background-image: -moz-radial-gradient(center center, circle contain, #d9837b 0%, #ce5e53 100%);
+  background-image: -ms-radial-gradient(center center, circle contain, #d9837b 0%, #ce5e53 100%);
+  /* IE10+ */
+  background-image: -o-radial-gradient(center center, circle contain, #d9837b 0%, #ce5e53 100%);
+  /* Opera (13?) */
+}
+
 /* line 12, ../sass/global/grid.scss */
 .grid-1 {
   float: left;
