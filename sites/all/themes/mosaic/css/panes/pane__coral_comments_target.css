@@ -240,8 +240,3 @@
 .html div.pane-coral-comments-target .pane-coral-node-stats .stat-editor .username {
   margin-top: .2em;
 }
-
-/* line 173, ../../sass/panes/pane__coral_comments_target.scss */
-.html .pane-coral-comments-target.comments-more {
-  margin-bottom: 3.75em;
-}
