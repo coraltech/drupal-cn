@@ -180,7 +180,9 @@ Drupal.mosaic = Drupal.mosaic || {};
         'top': '-14px',
       });
       
-      // Close can trigger two clicks
+      // Close can trigger two clicks:
+      // ---
+      // the answers or comments section close btn
       var sel = '.pane-coral-'+type+'s-target .cls-'+type+'s';
       this.$cls = this.$question.find(sel);
       
@@ -201,7 +203,8 @@ Drupal.mosaic = Drupal.mosaic || {};
         }
       });
       
-      this.$close.click(function() {  
+      // the mosaicBox gen. close btn (the big one)
+      this.$close.off('click').click(function() { // dont re-add click event!
         mbo.$close.addClass('closing');
         setTimeout(function() {
           mbo.$cls.trigger('click');
