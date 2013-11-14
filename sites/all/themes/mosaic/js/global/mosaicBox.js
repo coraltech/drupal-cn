@@ -112,15 +112,17 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       
       if (!$(ev.currentTarget).hasClass('mbopen')) {
+        this.$question.find('.mbopen').removeClass('mbopen'); // clear old instances
+        
         $(ev.currentTarget).addClass('mbopen'); // add class for toggling
         
         clearTimeout(this.closeInterval); // reset the interval - if one exists
-      
+        
         this.initClose(type); // start up the close button
         this.updateBox(true); // Initialize the Question box styles
         this.mbOverlay.$overlay.fadeTo(50, .65);
         this.mbOverlay.$overlay.removeClass('hidden');
-      
+        
         var mbo = this.mbOverlay;
         setTimeout(function() {
           mbo.updateOverlay();
@@ -150,10 +152,8 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.$question.css({
         'background-color': color,
         'position': position,
-        'padding-left': padding+'px',
-        'padding-right': padding+'px',
-        'margin-left': (-1 * padding)+'px',
-        'margin-right': (-1 * padding)+'px',
+        'padding': (padding / 3) + 'px ' + padding + 'px',
+        'margin': (-1 * (padding / 3)) + 'px ' + (-1 * padding) + 'px',
         'z-index': zIndex
       });      
     }
@@ -180,24 +180,28 @@ Drupal.mosaic = Drupal.mosaic || {};
         'top': '-14px',
       });
       
-      // Close triggers two clicks
-      var mbo = this;
+      // Close can trigger two clicks
       var sel = '.pane-coral-'+type+'s-target .cls-'+type+'s';
-      
       this.$cls = this.$question.find(sel);
-      this.$cls.click(function() {
-        if (mbo.$close != undefined && !mbo.$close.hasClass('closing')) {
-          mbo.$close.trigger('click');
-          setTimeout(function() {
-            mbo.closeBox();
-          }, 25);
-        }
-        else {
-          mbo.closeBox();
+      
+      var mbo = this;      
+      this.$cls.each(function() {
+        var $p = $(this).parents('.node-teaser'); // only trigger the click event on the outermost close buttons
+        if ($p.length < 2) {
+          $(this).click(function() {
+            if (mbo.$close != undefined && !mbo.$close.hasClass('closing')) {
+              setTimeout(function() {
+                mbo.closeBox();
+              }, 25);
+            }
+            else {
+              mbo.closeBox();
+            }
+          });
         }
       });
       
-      this.$close.click(function() {
+      this.$close.click(function() {  
         mbo.$close.addClass('closing');
         setTimeout(function() {
           mbo.$cls.trigger('click');
@@ -205,7 +209,6 @@ Drupal.mosaic = Drupal.mosaic || {};
       });
       
       this.closeInterval = setInterval(function() {
-        //console.log('len: '+mbo.$close.length);
         var docTop = $(window).scrollTop();
         var qTop = mbo.$question.offset().top;
         var extra = 0;
