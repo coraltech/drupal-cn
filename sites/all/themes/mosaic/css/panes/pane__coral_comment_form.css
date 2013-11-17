@@ -14,10 +14,8 @@
   margin-bottom: 0.4545em;
   font-size: 16px;
   padding: 0.5em 1.5em;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -34,13 +32,12 @@
   -moz-box-shadow: #7496c8 0 1px 0 inset;
   box-shadow: #7496c8 0 1px 0 inset;
   border: 1px solid #385b8f;
+  color: white;
   text-shadow: #1f3350 0 -1px 0;
   font-size: 14px;
   padding: 2px 5px;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -52,11 +49,11 @@
   width: 7em;
   z-index: 2;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title:hover {
   text-decoration: none;
 }
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title:hover {
   background-color: #385b8f;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
@@ -65,13 +62,13 @@
   background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
   background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title:active {
   -webkit-box-shadow: #345484 0 1px 2px inset;
   -moz-box-shadow: #345484 0 1px 2px inset;
   box-shadow: #345484 0 1px 2px inset;
 }
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title.disabled, .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
@@ -81,7 +78,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;

@@ -9,10 +9,8 @@
   position: relative;
   font-size: 16px;
   padding: 0.5em 1.5em;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -29,13 +27,12 @@
   -moz-box-shadow: #43c555 0 1px 0 inset;
   box-shadow: #43c555 0 1px 0 inset;
   border: 1px solid #1a5522;
+  color: white;
   text-shadow: #0d2a11 0 -1px 0;
   font-size: 16px;
   padding: 2px 5px;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -47,11 +44,11 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
   box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-coral-parent-content > .pane-title:hover {
   text-decoration: none;
 }
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-coral-parent-content > .pane-title:hover {
   background-color: #1a5522;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #267c32), color-stop(75%, #1a5522));
@@ -60,13 +57,13 @@
   background: -o-linear-gradient(#267c32 3%, #1a5522 75%);
   background: linear-gradient(#267c32 3%, #1a5522 75%);
 }
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-coral-parent-content > .pane-title:active {
   -webkit-box-shadow: #16491d 0 1px 2px inset;
   -moz-box-shadow: #16491d 0 1px 2px inset;
   box-shadow: #16491d 0 1px 2px inset;
 }
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .html .pane-coral-parent-content > .pane-title.disabled, .html .pane-coral-parent-content > .pane-title[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
@@ -76,7 +73,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
 .html .pane-coral-parent-content > .pane-title::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;

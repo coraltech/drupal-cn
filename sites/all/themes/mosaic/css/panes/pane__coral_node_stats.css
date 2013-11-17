@@ -67,7 +67,7 @@
   clear: left;
   width: 12em;
   float: left;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.625em;
 }
 /* line 73, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-style-gray {
@@ -76,5 +76,5 @@
   clear: left;
   width: 12em;
   float: left;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.625em;
 }

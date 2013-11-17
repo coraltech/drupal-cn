@@ -43,10 +43,8 @@
 .pane-coral-quick-start .btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -63,13 +61,12 @@
   -moz-box-shadow: #82d98f 0 1px 0 inset;
   box-shadow: #82d98f 0 1px 0 inset;
   border: 1px solid #3cc350;
+  color: white;
   text-shadow: #226e2d 0 -1px 0;
   font-size: 16px;
   padding: 2px 5px;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -80,11 +77,11 @@
   width: 6em;
   text-align: center;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-coral-quick-start .btn:hover {
   text-decoration: none;
 }
-/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-coral-quick-start .btn:hover {
   background-color: #3abc4d;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #37b44a), color-stop(51%, #3abc4d));
@@ -93,13 +90,13 @@
   background: -o-linear-gradient(#37b44a 50%, #3abc4d 51%);
   background: linear-gradient(#37b44a 50%, #3abc4d 51%);
 }
-/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-coral-quick-start .btn:active {
   -webkit-box-shadow: #38b84b 0 1px 2px inset;
   -moz-box-shadow: #38b84b 0 1px 2px inset;
   box-shadow: #38b84b 0 1px 2px inset;
 }
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-coral-quick-start .btn.disabled, .pane-coral-quick-start .btn[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
@@ -109,7 +106,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
 .pane-coral-quick-start .btn::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;

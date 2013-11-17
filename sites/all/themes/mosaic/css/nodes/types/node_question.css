@@ -1,23 +1,23 @@
 /* line 338, icons/*.png */
-.icons-sprite, .node-type-question .pane-coral-page-title .icon,
-.node-type-question .question-node-teaser-pane-title .icon,
-.node-teaser.node-question .pane-coral-page-title .icon,
-.node-teaser.node-question .question-node-teaser-pane-title .icon {
+.icons-sprite, .html .node-type-question .pane-coral-page-title .icon,
+.html .node-type-question .question-node-teaser-pane-title .icon,
+.html .node-teaser.node-question .pane-coral-page-title .icon,
+.html .node-teaser.node-question .question-node-teaser-pane-title .icon {
   background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
-/* line 16, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-page-title,
-.node-type-question .question-node-teaser-pane-title,
-.node-teaser.node-question .pane-coral-page-title,
-.node-teaser.node-question .question-node-teaser-pane-title {
+/* line 18, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-coral-page-title,
+.html .node-type-question .question-node-teaser-pane-title,
+.html .node-teaser.node-question .pane-coral-page-title,
+.html .node-teaser.node-question .question-node-teaser-pane-title {
   line-height: 1.125em;
 }
-/* line 19, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-page-title .icon,
-.node-type-question .question-node-teaser-pane-title .icon,
-.node-teaser.node-question .pane-coral-page-title .icon,
-.node-teaser.node-question .question-node-teaser-pane-title .icon {
+/* line 21, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-coral-page-title .icon,
+.html .node-type-question .question-node-teaser-pane-title .icon,
+.html .node-teaser.node-question .pane-coral-page-title .icon,
+.html .node-teaser.node-question .question-node-teaser-pane-title .icon {
   display: block;
   float: left;
   margin: 5px .5em 0 0;
@@ -25,62 +25,74 @@
   height: 27px;
   width: 24px;
 }
-/* line 27, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-page-title h2,
-.node-teaser.node-question .pane-coral-page-title h2 {
+/* line 29, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-coral-page-title h2,
+.html .node-teaser.node-question .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 35, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-add-comment,
-.node-type-question .pane-coral-add-answer,
-.node-type-question .pane-node-links,
-.node-teaser.node-question .pane-coral-add-comment,
-.node-teaser.node-question .pane-coral-add-answer,
-.node-teaser.node-question .pane-node-links {
+/* line 37, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-coral-add-comment,
+.html .node-type-question .pane-coral-add-answer,
+.html .node-type-question .pane-node-links,
+.html .node-teaser.node-question .pane-coral-add-comment,
+.html .node-teaser.node-question .pane-coral-add-answer,
+.html .node-teaser.node-question .pane-node-links {
   float: left;
 }
-/* line 38, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-add-comment .links,
-.node-type-question .pane-coral-add-answer .links,
-.node-type-question .pane-node-links .links,
-.node-teaser.node-question .pane-coral-add-comment .links,
-.node-teaser.node-question .pane-coral-add-answer .links,
-.node-teaser.node-question .pane-node-links .links {
+/* line 40, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-coral-add-comment .links,
+.html .node-type-question .pane-coral-add-answer .links,
+.html .node-type-question .pane-node-links .links,
+.html .node-teaser.node-question .pane-coral-add-comment .links,
+.html .node-teaser.node-question .pane-coral-add-answer .links,
+.html .node-teaser.node-question .pane-node-links .links {
   padding: 0;
   margin: 0;
 }
-/* line 42, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .pane-coral-add-comment .links li,
-.node-type-question .pane-coral-add-answer .links li,
-.node-type-question .pane-node-links .links li,
-.node-teaser.node-question .pane-coral-add-comment .links li,
-.node-teaser.node-question .pane-coral-add-answer .links li,
-.node-teaser.node-question .pane-node-links .links li {
+/* line 44, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-coral-add-comment .links li,
+.html .node-type-question .pane-coral-add-answer .links li,
+.html .node-type-question .pane-node-links .links li,
+.html .node-teaser.node-question .pane-coral-add-comment .links li,
+.html .node-teaser.node-question .pane-coral-add-answer .links li,
+.html .node-teaser.node-question .pane-node-links .links li {
   margin: 0 6px 0 0;
   padding: 1px 3px 1px 0;
 }
-/* line 53, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .field-name-field-answer,
-.node-type-question .field-name-field-comment-count,
-.node-type-question .field-name-field-answer-count,
-.node-type-question .field-type-file legend,
-.node-teaser.node-question .field-name-field-answer,
-.node-teaser.node-question .field-name-field-comment-count,
-.node-teaser.node-question .field-name-field-answer-count,
-.node-teaser.node-question .field-type-file legend {
+/* line 55, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .field-name-field-answer,
+.html .node-type-question .field-name-field-comment-count,
+.html .node-type-question .field-name-field-answer-count,
+.html .node-type-question .field-type-file legend,
+.html .node-teaser.node-question .field-name-field-answer,
+.html .node-teaser.node-question .field-name-field-comment-count,
+.html .node-teaser.node-question .field-name-field-answer-count,
+.html .node-teaser.node-question .field-type-file legend {
   display: none;
 }
-/* line 59, ../../../sass/nodes/types/node_question.scss */
-.node-type-question .layout-node-1 .site-width,
-.node-teaser.node-question .layout-node-1 .site-width {
+/* line 61, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .layout-node-1 .site-width,
+.html .node-teaser.node-question .layout-node-1 .site-width {
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.node-type-question .layout-node-1 .site-width:after,
-.node-teaser.node-question .layout-node-1 .site-width:after {
+.html .node-type-question .layout-node-1 .site-width:after,
+.html .node-teaser.node-question .layout-node-1 .site-width:after {
   content: "";
   display: table;
   clear: both;
+}
+
+/* line 67, ../../../sass/nodes/types/node_question.scss */
+.html .node-question.boxopen {
+  position: relative;
+  z-index: 6;
+  background: white;
+  margin-top: -0.625em;
+  margin-bottom: -0.625em;
+  margin-left: -1.25em;
+  margin-right: -1.25em;
+  padding: 0.625em 1.25em;
 }

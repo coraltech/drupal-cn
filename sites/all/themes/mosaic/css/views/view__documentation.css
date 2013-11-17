@@ -63,10 +63,8 @@
   color: white;
   font-size: 12px;
   padding: 0.5em 1.5em;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -83,25 +81,24 @@
   -moz-box-shadow: #7496c8 0 1px 0 inset;
   box-shadow: #7496c8 0 1px 0 inset;
   border: 1px solid #385b8f;
+  color: white;
   text-shadow: #1f3350 0 -1px 0;
   font-size: 12px;
   padding: 2px 5px;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-documentation-related-node .pane-content .pager-load-more li a:hover,
 .pane-documentation-related-view .pane-content .pager-load-more li a:hover {
   text-decoration: none;
 }
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-documentation-related-node .pane-content .pager-load-more li a:hover,
 .pane-documentation-related-view .pane-content .pager-load-more li a:hover {
   background-color: #385b8f;
@@ -111,14 +108,14 @@
   background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
   background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-documentation-related-node .pane-content .pager-load-more li a:active,
 .pane-documentation-related-view .pane-content .pager-load-more li a:active {
   -webkit-box-shadow: #345484 0 1px 2px inset;
   -moz-box-shadow: #345484 0 1px 2px inset;
   box-shadow: #345484 0 1px 2px inset;
 }
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .pane-documentation-related-node .pane-content .pager-load-more li a.disabled, .pane-documentation-related-node .pane-content .pager-load-more li a[disabled],
 .pane-documentation-related-view .pane-content .pager-load-more li a.disabled,
 .pane-documentation-related-view .pane-content .pager-load-more li a[disabled] {
@@ -130,7 +127,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
 .pane-documentation-related-node .pane-content .pager-load-more li a::-moz-focus-inner,
 .pane-documentation-related-view .pane-content .pager-load-more li a::-moz-focus-inner {
   padding: 0 !important;

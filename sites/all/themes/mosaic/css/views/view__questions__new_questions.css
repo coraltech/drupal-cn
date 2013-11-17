@@ -26,10 +26,8 @@
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a {
   font-size: 12px;
   padding: 0.5em 1.5em;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -46,24 +44,23 @@
   -moz-box-shadow: #7496c8 0 1px 0 inset;
   box-shadow: #7496c8 0 1px 0 inset;
   border: 1px solid #385b8f;
+  color: white;
   text-shadow: #1f3350 0 -1px 0;
   font-size: 12px;
   padding: 2px 5px;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a:hover {
   text-decoration: none;
 }
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a:hover {
   background-color: #385b8f;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
@@ -72,13 +69,13 @@
   background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
   background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a:active {
   -webkit-box-shadow: #345484 0 1px 2px inset;
   -moz-box-shadow: #345484 0 1px 2px inset;
   box-shadow: #345484 0 1px 2px inset;
 }
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a.disabled, .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
@@ -88,7 +85,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
@@ -115,10 +112,8 @@
   position: relative;
   font-size: 16px;
   padding: 0.5em 1.5em;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -135,13 +130,12 @@
   -moz-box-shadow: #92acd4 0 1px 0 inset;
   box-shadow: #92acd4 0 1px 0 inset;
   border: 1px solid #507bba;
+  color: white;
   text-shadow: #2c476f 0 -1px 0;
   font-size: 16px;
   padding: 2px 5px;
-  color: white;
   display: inline-block;
   cursor: pointer;
-  text-decoration: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -154,11 +148,11 @@
   top: 8%;
   right: -20%;
 }
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .questions-more:hover {
   text-decoration: none;
 }
-/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .questions-more:hover {
   background-color: #4875b7;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4570b0), color-stop(51%, #4875b7));
@@ -167,13 +161,13 @@
   background: -o-linear-gradient(#4570b0 50%, #4875b7 51%);
   background: linear-gradient(#4570b0 50%, #4875b7 51%);
 }
-/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .questions-more:active {
   -webkit-box-shadow: #4773b3 0 1px 2px inset;
   -moz-box-shadow: #4773b3 0 1px 2px inset;
   box-shadow: #4773b3 0 1px 2px inset;
 }
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .view-questions.view-display-id-new_questions .questions-more.disabled, .view-questions.view-display-id-new_questions .questions-more[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
@@ -183,7 +177,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 76, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2/stylesheets/_sassy-buttons.sass */
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
 .view-questions.view-display-id-new_questions .questions-more::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;

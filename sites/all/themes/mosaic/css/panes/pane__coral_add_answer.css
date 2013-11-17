@@ -94,8 +94,3 @@
 .view-answers.view-display-id-new_answers .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
 }
-/* line 88, ../../sass/panes/pane__coral_add_answer.scss */
-.view-answers.view-display-id-this_answer .views-row-first,
-.view-answers.view-display-id-new_answers .views-row-first {
-  margin-top: 0;
-}
