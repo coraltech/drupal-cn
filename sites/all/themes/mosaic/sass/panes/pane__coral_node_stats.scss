@@ -67,7 +67,7 @@
     clear: left;
     width: 12em;
     float: left;
-    margin-bottom: $default_vert_unit;
+    margin-bottom: ($default_vert_unit / 2);
   }
   
   .statset-style-gray {
@@ -76,6 +76,6 @@
     clear: left;
     width: 12em;
     float: left;
-    margin-bottom: $default_vert_unit;
+    margin-bottom: ($default_vert_unit / 2);
   }
 }

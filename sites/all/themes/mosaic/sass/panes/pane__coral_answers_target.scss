@@ -28,15 +28,22 @@
   
   .actions {
     position: relative;
-    border: 1px solid $ltgray;
-    padding-left: 10px;
-    
-    @include linear-v-gradient(darken($ltgray, 2%), lighten($ltgray, 5%));
+  
     @include pie-clearfix;
 
     .load-more {
+      background: $ltgray;
+      border: 1px solid darken($ltgray, 7%);
+      color: $dkgray;
+      padding: 7px 7px 7px 15px;
       position: relative;
-      margin-right: 5px;
+      font-size: .85em;
+      display: block;
+      
+      &:hover {
+        color: $black;
+      }
+      
       // Set up the throbber position in the button
       .ajax-progress .throbber {
         margin: 1px -2px -1px 6px;
@@ -118,14 +125,15 @@
       @include h0;
       float: left;
     }
+    .actions .load-more {
+      background: transparent;
+    }
   }
   .pane-coral-comments-target.comments-more {
-    margin-bottom: 3 * $default_vert_unit;
+
   }
   .answers-tgt.empty {
-    padding-top: $default_vert_unit;
+    padding: $default_vert_unit 10px;
   }
 }
-//.pane-coral-answers-target.answers-more {
-//  margin-bottom: 3 * $default_vert_unit;
-//}
+.pane-coral-answers-target.answers-more { }

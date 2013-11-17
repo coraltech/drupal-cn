@@ -14,15 +14,12 @@
 @import "compass/utilities/general/clearfix";
 
 .html div.pane-coral-comments-target {
-  //padding-bottom: $default_vert_unit;
   border-top: 1px solid $ltgray;
   border-left: 8px solid darken($ltgray, 10%);
   border-bottom: 1px solid darken($ltgray, 5%);
   position: relative;
-  margin-top: 2.25 * $default_vert_unit;
+  margin-top: $default_vert_unit;
   margin-bottom: $default_vert_unit;
-  padding-left: 1em;
-  
   
   // "Comments" (view pane title)
   & > h2.pane-title {
@@ -40,18 +37,22 @@
     background-color: $white;
   }
 
-  .views-row > .node-teaser.node-comment {
-    padding-top: $default_vert_unit / 1.75;
-  }
-  
   .actions {
     position: relative;
     
     @include pie-clearfix;
 
     .load-more {
+      color: $dkgray;
+      padding: 7px 7px 7px 15px;
       position: relative;
-      margin-right: 5px;
+      font-size: .85em;
+      display: block;
+      
+      &:hover {
+        color: $black;
+      }
+      
       // Set up the throbber position in the button
       .ajax-progress .throbber {
         margin: 1px -2px -1px 6px;
@@ -63,8 +64,8 @@
     
     .cls-comments {
       position: absolute;
-      bottom: -5px;
-      left: -28px;
+      bottom: -8px;
+      left: -12px;
       background: $ltred;
       border: 1px solid $mdred;
       color: $white;
@@ -146,10 +147,11 @@
   .pane-coral-comments-target {
     margin-bottom: -1px;
     margin-right: -1px;
-    padding-left: 1em;
+    margin-left: $default_vert_unit / 2;
   }
   .comments-tgt.empty {
     padding-top: $default_vert_unit;
+    padding-left: 1em;
   }
   
   
@@ -170,6 +172,82 @@
     }
   }
 }
-//.html .pane-coral-comments-target.comments-more {
-//  margin-bottom: 3 * $default_vert_unit;
-//}
+.html .pane-coral-comments-target.comments-more {
+  background: $ltgray;
+}
+
+
+// We cannot rely on the view being there.
+//  We can rely on this pane being there.
+.view-comments.view-display-id-new_comments,
+.view-comments.view-display-id-this_comment  {
+  .views-row {
+    border-bottom: 1px solid $ltgray;
+    
+    .pane-node-body {
+      padding-right: 1em;
+    }
+    .pane-coral-add-comment {
+      float: right;
+    }
+    .pane-coral-add-comment .anon {
+      margin-right: 1em;
+    }
+    .pane-coral-flag-abuse-node {}
+    
+    .row,
+    .leader {
+      padding-left: 1em;
+    }
+  }
+  .views-row-first {
+    margin-top: 0;
+  }
+  .pager {
+    display: none;
+  }
+}
+
+
+.html .node-type-comment,
+.html div.node-teaser.node-comment {
+  
+  padding: ($default_vert_unit / 2) 0 0;
+  
+  .pane-coral-page-title h2 {
+    color: darken($mdblue, 7%);
+    font-weight: bold;
+    margin-top: .15em;
+  }
+  
+  .pane-coral-flag-abuse-node,
+  .pane-coral-add-comment,
+  .pane-coral-add-answer,
+  .pane-node-links { // float links beside each other
+    float: right;
+    height: 1.12 * $default_vert_unit; // same as node links
+    .links { // standardize 
+      padding: 0; 
+      margin: 0; 
+      
+      li {
+        margin: 0 5px 0 0;
+        padding: 1px 6px 1px;
+      }
+    }
+  }
+  .pane-coral-flag-abuse-node {
+    margin-right: 1em;
+  }
+  
+  .pane-node-field-tags {
+    clear: left;
+  }
+   
+  // Hide some things
+  .field-name-field-content,
+  .field-name-field-comment-count,
+  .field-type-file legend {
+    display: none;
+  }
+}
