@@ -9,8 +9,8 @@
 @import 'compass/utilities/general/clearfix';
 @import 'compass/css3/box-shadow';
 
-.node-type-question,
-.node-teaser.node-question {
+.html .node-type-question,
+.html .node-teaser.node-question {
   
   .pane-coral-page-title,
   .question-node-teaser-pane-title {
@@ -60,5 +60,16 @@
       @include pie-clearfix;
     }
   }
+}
+
+.html .node-question.boxopen {
+  position: relative;
+  z-index: 6;
+  background: $white;
+  margin-top: -1 * ($default_vert_unit / 2);
+  margin-bottom: -1 * ($default_vert_unit / 2);
+  margin-left: -1 * ($default_vert_unit);
+  margin-right: -1 * ($default_vert_unit);
+  padding: ($default_vert_unit / 2) $default_vert_unit;
 }
 
