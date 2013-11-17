@@ -149,13 +149,13 @@ Drupal.mosaic = Drupal.mosaic || {};
       var padding  = (boxState) ? 15 : 0;
       var zIndex   = (boxState) ? '6' : 'auto';
       
-      this.$question.css({
-        'background-color': color,
-        'position': position,
-        'padding': (padding / 3) + 'px ' + padding + 'px',
-        'margin': (-1 * (padding / 3)) + 'px ' + (-1 * padding) + 'px',
-        'z-index': zIndex
-      });      
+      if (boxState) {
+        this.$question.addClass('boxopen');  
+      }
+      else {
+        this.$question.removeClass('boxopen');
+      }
+      
     }
     catch (err) {
       console.log('updateBox errored: '+err);
