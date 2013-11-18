@@ -11,7 +11,7 @@
 .html div.node-teaser.node-answer {
   margin: 0;
 }
-/* line 22, ../../../sass/nodes/types/node_answer.scss */
+/* line 21, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .pane-coral-page-title .icon,
 .html div.node-type-answer .answer-node-teaser-pane-title .icon,
 .html div.node-teaser.node-answer .pane-coral-page-title .icon,
@@ -23,7 +23,7 @@
   height: 26px;
   width: 25px;
 }
-/* line 32, ../../../sass/nodes/types/node_answer.scss */
+/* line 31, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .pane-coral-add-comment,
 .html div.node-type-answer .pane-coral-add-answer,
 .html div.node-type-answer .pane-node-links,
@@ -32,7 +32,7 @@
 .html div.node-teaser.node-answer .pane-node-links {
   float: left;
 }
-/* line 35, ../../../sass/nodes/types/node_answer.scss */
+/* line 34, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .pane-coral-add-comment .links,
 .html div.node-type-answer .pane-coral-add-answer .links,
 .html div.node-type-answer .pane-node-links .links,
@@ -42,7 +42,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 39, ../../../sass/nodes/types/node_answer.scss */
+/* line 38, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .pane-coral-add-comment .links li,
 .html div.node-type-answer .pane-coral-add-answer .links li,
 .html div.node-type-answer .pane-node-links .links li,
@@ -52,7 +52,7 @@
   margin: 0 6px 0 0;
   padding: 1px 3px 0 0;
 }
-/* line 46, ../../../sass/nodes/types/node_answer.scss */
+/* line 45, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .answer-node-pane-title,
 .html div.node-teaser.node-answer .answer-node-pane-title {
   font-size: 1.25em;
@@ -60,7 +60,7 @@
   margin-top: .5em;
   margin-bottom: .5em;
 }
-/* line 52, ../../../sass/nodes/types/node_answer.scss */
+/* line 51, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .layout-node-1 .site-width,
 .html div.node-teaser.node-answer .layout-node-1 .site-width {
   *zoom: 1;
@@ -72,7 +72,7 @@
   display: table;
   clear: both;
 }
-/* line 60, ../../../sass/nodes/types/node_answer.scss */
+/* line 59, ../../../sass/nodes/types/node_answer.scss */
 .html div.node-type-answer .field-name-field-content,
 .html div.node-type-answer .field-name-field-comment-count,
 .html div.node-type-answer .field-type-file legend,

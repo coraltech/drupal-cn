@@ -22,7 +22,7 @@
   display: table;
   clear: both;
 }
-/* line 35, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 34, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more {
   background: #dddddd;
   border: 1px solid #cbcbcb;
@@ -32,19 +32,19 @@
   font-size: .85em;
   display: block;
 }
-/* line 44, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 43, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more:hover {
   color: black;
 }
-/* line 49, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 48, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-/* line 53, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 52, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more.hide {
   display: none;
 }
-/* line 57, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 56, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .cls-answers {
   position: absolute;
   bottom: -7px;
@@ -68,7 +68,7 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
 }
-/* line 77, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 76, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title {
   clear: none;
   *zoom: 1;
@@ -79,12 +79,12 @@
   display: table;
   clear: both;
 }
-/* line 81, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 80, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > a {
   float: left;
   max-width: 88%;
 }
-/* line 85, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 84, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top {
   border: 1px solid #f1f1f1;
   cursor: pointer;
@@ -110,7 +110,7 @@
   -o-border-radius: 11px;
   border-radius: 11px;
 }
-/* line 97, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 96, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top .arrow-up {
   display: block;
   margin: 2px 0 0 5px;
@@ -121,7 +121,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #5e5e5e;
 }
-/* line 103, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 102, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top:hover {
   border: 1px solid #919191;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
@@ -139,7 +139,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 108, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 107, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top:hover .arrow-up {
   width: 0;
   height: 0;
@@ -148,26 +148,26 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid white;
 }
-/* line 119, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 118, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.odd {
   background-color: #efefef;
 }
-/* line 122, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 121, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.even {
   background-color: white;
 }
-/* line 125, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 124, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target .node .comment-node-pane-title {
   font-size: 1em;
   line-height: 1.25em;
   margin: 0;
   float: left;
 }
-/* line 129, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 128, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target .actions .load-more {
   background: transparent;
 }
-/* line 136, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 135, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answers-tgt.empty {
   padding: 1.25em 10px;
 }
