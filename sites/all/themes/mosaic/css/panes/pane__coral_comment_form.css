@@ -1,12 +1,25 @@
 /* line 13, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form {
   margin-top: 0.625em;
-}
-/* line 17, ../../sass/panes/pane__coral_comment_form.scss */
-.html .pane-content .pane-coral-comment-form > .help-wrap {
+  margin-bottom: 1.25em;
   position: relative;
+  padding-left: 0.625em;
 }
-/* line 21, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 19, ../../sass/panes/pane__coral_comment_form.scss */
+.html .pane-content .pane-coral-comment-form .cmt-header {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: #b02e1c;
+}
+/* line 25, ../../sass/panes/pane__coral_comment_form.scss */
+.html .pane-content .pane-coral-comment-form > .help-wrap {
+  position: absolute;
+  top: -0.625em;
+  left: 7.5em;
+}
+/* line 31, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .pane-title {
   font-size: 1.375em;
   line-height: 1.8182em;
@@ -83,7 +96,7 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 33, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 43, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form > .help-wrap > .help-text {
   background: #dddddd;
   border: 1px solid #9d9d9d;
@@ -94,27 +107,27 @@
   padding: 0 5px 0 7px;
   position: absolute;
   line-height: 1.5em;
-  left: 0%;
+  left: 0em;
   top: .75em;
   text-shadow: none;
   white-space: nowrap;
 }
-/* line 50, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 60, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .filter-wrapper,
 .html .pane-content .pane-coral-comment-form .vertical-tabs {
   display: none;
 }
-/* line 53, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 63, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .form-actions {
   position: relative;
 }
-/* line 55, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 65, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .form-actions .ajax-progress {
   position: absolute;
   top: 15%;
   left: 3.5em;
 }
-/* line 63, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 73, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .node-comment-form {
   border: 1px solid #d0d0d0;
   padding: 0.625em 1em;
@@ -130,15 +143,15 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
 }
-/* line 70, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 80, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .node-comment-form .form-item-title label {
   display: none;
 }
-/* line 75, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 85, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form input.form-text {
   width: 99%;
 }
-/* line 80, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 90, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login {
   border: 1px solid #cad5e2;
   background: #e1e7ef;
@@ -154,7 +167,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
   *zoom: 1;
 }
-/* line 81, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 91, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login > h3 {
   margin-left: 2%;
   margin-right: 2%;
@@ -166,11 +179,11 @@
   display: table;
   clear: both;
 }
-/* line 93, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 103, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login label {
   display: none;
 }
-/* line 95, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 105, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login h2 {
   font-size: 1.25em;
   line-height: 1em;
@@ -180,11 +193,11 @@
   margin-left: 2%;
   margin-right: 2%;
 }
-/* line 101, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 111, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login .gigya-login {
   margin-top: .5em;
 }
-/* line 105, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 115, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login form h2,
 .html .pane-content .pane-coral-comment-form .user-login .gigya-login {
   clear: left;
@@ -193,11 +206,11 @@
   margin-left: 2%;
   width: 44%;
 }
-/* line 112, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 122, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login .form-item {
   margin: 0;
 }
-/* line 115, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 125, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login .form-type-textfield {
   margin-top: -2.25em;
   clear: right;
@@ -205,14 +218,14 @@
   width: 45%;
   margin-right: 2%;
 }
-/* line 122, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 132, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login .form-type-password {
   clear: right;
   float: right;
   width: 45%;
   margin-right: 2%;
 }
-/* line 128, ../../sass/panes/pane__coral_comment_form.scss */
+/* line 138, ../../sass/panes/pane__coral_comment_form.scss */
 .html .pane-content .pane-coral-comment-form .user-login .form-actions {
   clear: both;
   width: 95.5%;

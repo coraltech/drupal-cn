@@ -7,7 +7,7 @@
 .html .pane-coral-answers-target > h2.pane-title {
   background: #777777;
   color: white;
-  font-weight: bold;
+  font-weight: normal;
   padding-left: .5em;
   padding-right: .5em;
 }
@@ -170,4 +170,5 @@
 /* line 135, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answers-tgt.empty {
   padding: 1.25em 10px;
+  margin-top: -1.25em;
 }

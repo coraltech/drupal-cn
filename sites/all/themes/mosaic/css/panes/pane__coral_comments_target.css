@@ -9,8 +9,8 @@
   border-left: 8px solid #c4c4c4;
   border-bottom: 1px solid #d0d0d0;
   position: relative;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: 0.625em;
+  margin-bottom: 1.0625em;
 }
 /* line 25, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target > h2.pane-title {
