@@ -18,7 +18,7 @@
   & > h2.pane-title {
     background: $mdgray;
     color: $white;
-    font-weight: bold;
+    font-weight: normal;
     padding-left: .5em;
     padding-right: .5em;
   }
@@ -134,6 +134,7 @@
   }
   .answers-tgt.empty {
     padding: $default_vert_unit 10px;
+    margin-top: -1 * $default_vert_unit;
   }
 }
 .pane-coral-answers-target.answers-more { }

@@ -11,12 +11,12 @@
   .selected-title {
     background: $mdgreen;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
     padding-left: .5em;
     padding-right: .5em;
   }
   .best-ans-tgt {
-    padding-top: $default_vert_unit / 2;
+    margin-top: $default_vert_unit / 2;
     
     .best-answer { display: none; }
   }

@@ -12,10 +12,20 @@
 
 .html .pane-content .pane-coral-comment-form {
   margin-top: $default_vert_unit / 2;
+  margin-bottom: $default_vert_unit;
+  position: relative;
+  padding-left: ($default_vert_unit / 2);
+  
+  .cmt-header {
+    @include h3;
+    color: $mdred;
+  }
   
   // the pane title (it's clickable)
   & > .help-wrap {
-    position: relative;
+    position: absolute;
+    top: -0.625em;
+    left: 7.5em;
   }
 
   & > .help-wrap > .pane-title {
@@ -40,7 +50,7 @@
     padding: 0 5px 0 7px;
     position: absolute;
     line-height: 1.5em;
-    left: 0%;
+    left: 0em;
     top: .75em;
     text-shadow: none;
     white-space: nowrap;

@@ -18,8 +18,8 @@
   border-left: 8px solid darken($ltgray, 10%);
   border-bottom: 1px solid darken($ltgray, 5%);
   position: relative;
-  margin-top: $default_vert_unit;
-  margin-bottom: $default_vert_unit;
+  margin-top: $default_vert_unit / 2;
+  margin-bottom: $default_vert_unit * .85;
   
   // "Comments" (view pane title)
   & > h2.pane-title {

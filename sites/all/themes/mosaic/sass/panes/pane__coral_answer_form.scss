@@ -12,10 +12,19 @@
 
 .html .pane-content .pane-coral-answer-form { // .html and .pane-content added for more weight
   margin-top: $default_vert_unit / 2;
+  margin-bottom: $default_vert_unit;
+  position: relative;
+  
+  .ans-header {
+    @include h2;
+    color: $mdred;
+  }
   
   // the pane title (it's clickable)
   & > .help-wrap {
-    position: relative;
+    position: absolute;
+    top: -0.125em;
+    left: 6em;
   }
   
   & > .help-wrap > .pane-title {
@@ -39,7 +48,7 @@
     padding: 0 5px 0 7px;
     position: absolute;
     line-height: 1.5em;
-    left: 0%;
+    left: 0em;
     top: .75em;
     text-shadow: none;
     white-space: nowrap;
