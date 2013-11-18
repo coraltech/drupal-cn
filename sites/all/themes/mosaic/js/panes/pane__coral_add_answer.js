@@ -183,6 +183,11 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Add an identifying class to the form title
   Drupal.coralQA.coralAnswer.prototype.initForm = function() {
     try {
+      // do we have a best answer?
+      var $best = this.$bestAnswer.find('.node-answer');
+      if (!$best.length) this.$answersTgt.parent('.pane-content').siblings('.pane-title').hide(); // if best exists, keep the second answers title (it makes a good divider)
+      var $ansFrm = this.$answerForm.parent('.pane-content').parent('.pane-coral-answer-form').prepend('<div class="ans-header">Answers</div>');
+      
       var $title = this.$answerForm.parents('.panel-pane').eq(0).children('.pane-title');  // get the pane title
       var contentText = $.trim(this.$question.children('.question-node-pane-title').text()); // title of the content the user is responding to
   

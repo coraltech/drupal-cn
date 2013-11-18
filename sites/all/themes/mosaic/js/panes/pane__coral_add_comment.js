@@ -159,6 +159,10 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Add an identifying class to the form title
   Drupal.coralQA.coralComment.prototype.initForm = function() {
     try {
+      
+      this.$commentsTgt.parent('.pane-content').siblings('.pane-title').hide();
+      var $cmtFrm = this.$commentForm.parent('.pane-content').parent('.pane-coral-comment-form').prepend('<div class="cmt-header">Comments</div>');
+      
       var $title = this.$commentForm.parents('.panel-pane').eq(0).children('.pane-title');  // get the pane title
       var contentText = $.trim(this.$content.children('h2').text()); // title of the content the user is responding to
   
