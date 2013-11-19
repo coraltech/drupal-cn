@@ -966,7 +966,13 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Returns a Load More link
   Drupal.coralQA.coralComment.prototype.loadMoreBtn = function(page, hide) {
     try {
-      return '<a href="#" class="load-more more-comments-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>More comments<span class="no-js"><span></span></a>';
+      var tot = this.settings.total_items;
+      var cur = this.settings.limit;
+      if (Number(this.settings.total_items) <= Number(this.settings.limit)) tot = cur;
+      
+      var btn = '<span class="btn">More comments</span>';
+      var pgtot = '<span class="pgtot">(<span class="cur">'+cur+'</span>/<span class="tot">'+tot+'</span>)</span>';
+      return '<a href="#" class="load-more more-comments-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>'+btn+pgtot+'<span class="no-js"><span></span></a>';
     }
     catch (err) {
       console.log('loadMoreBtn errored: '+err);
@@ -984,6 +990,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       else { // increment the page number
         this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
         this.$loadMore.removeClass('ajax-processing'); // ok, now the user can click again!
+        
+        this.$loadMore.find('.cur').text((Number(this.currentPage) + 1) * Number(this.settings.limit));
       }
     }
     catch (err) {
