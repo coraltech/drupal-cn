@@ -1,21 +1,21 @@
 /* line 338, icons/*.png */
-.icons-sprite, .html div.node-type-answer .pane-coral-page-title .icon,
-.html div.node-type-answer .answer-node-teaser-pane-title .icon,
-.html div.node-teaser.node-answer .pane-coral-page-title .icon,
-.html div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
+.icons-sprite, div.node-type-answer .pane-coral-page-title .icon,
+div.node-type-answer .answer-node-teaser-pane-title .icon,
+div.node-teaser.node-answer .pane-coral-page-title .icon,
+div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
   background: url('/images/icons-s6bd60a2940.png') no-repeat;
 }
 
 /* line 15, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer,
-.html div.node-teaser.node-answer {
+div.node-type-answer,
+div.node-teaser.node-answer {
   margin: 0;
 }
 /* line 21, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .pane-coral-page-title .icon,
-.html div.node-type-answer .answer-node-teaser-pane-title .icon,
-.html div.node-teaser.node-answer .pane-coral-page-title .icon,
-.html div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
+div.node-type-answer .pane-coral-page-title .icon,
+div.node-type-answer .answer-node-teaser-pane-title .icon,
+div.node-teaser.node-answer .pane-coral-page-title .icon,
+div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
   display: block;
   float: left;
   margin: 3px .5em 0 0;
@@ -24,60 +24,60 @@
   width: 25px;
 }
 /* line 31, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .pane-coral-add-comment,
-.html div.node-type-answer .pane-coral-add-answer,
-.html div.node-type-answer .pane-node-links,
-.html div.node-teaser.node-answer .pane-coral-add-comment,
-.html div.node-teaser.node-answer .pane-coral-add-answer,
-.html div.node-teaser.node-answer .pane-node-links {
+div.node-type-answer .pane-coral-add-comment,
+div.node-type-answer .pane-coral-add-answer,
+div.node-type-answer .pane-node-links,
+div.node-teaser.node-answer .pane-coral-add-comment,
+div.node-teaser.node-answer .pane-coral-add-answer,
+div.node-teaser.node-answer .pane-node-links {
   float: left;
 }
 /* line 34, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .pane-coral-add-comment .links,
-.html div.node-type-answer .pane-coral-add-answer .links,
-.html div.node-type-answer .pane-node-links .links,
-.html div.node-teaser.node-answer .pane-coral-add-comment .links,
-.html div.node-teaser.node-answer .pane-coral-add-answer .links,
-.html div.node-teaser.node-answer .pane-node-links .links {
+div.node-type-answer .pane-coral-add-comment .links,
+div.node-type-answer .pane-coral-add-answer .links,
+div.node-type-answer .pane-node-links .links,
+div.node-teaser.node-answer .pane-coral-add-comment .links,
+div.node-teaser.node-answer .pane-coral-add-answer .links,
+div.node-teaser.node-answer .pane-node-links .links {
   padding: 0;
   margin: 0;
 }
 /* line 38, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .pane-coral-add-comment .links li,
-.html div.node-type-answer .pane-coral-add-answer .links li,
-.html div.node-type-answer .pane-node-links .links li,
-.html div.node-teaser.node-answer .pane-coral-add-comment .links li,
-.html div.node-teaser.node-answer .pane-coral-add-answer .links li,
-.html div.node-teaser.node-answer .pane-node-links .links li {
+div.node-type-answer .pane-coral-add-comment .links li,
+div.node-type-answer .pane-coral-add-answer .links li,
+div.node-type-answer .pane-node-links .links li,
+div.node-teaser.node-answer .pane-coral-add-comment .links li,
+div.node-teaser.node-answer .pane-coral-add-answer .links li,
+div.node-teaser.node-answer .pane-node-links .links li {
   margin: 0 6px 0 0;
   padding: 1px 3px 0 0;
 }
 /* line 45, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .answer-node-pane-title,
-.html div.node-teaser.node-answer .answer-node-pane-title {
+div.node-type-answer .answer-node-pane-title,
+div.node-teaser.node-answer .answer-node-pane-title {
   font-size: 1.25em;
   line-height: 1em;
   margin-top: .5em;
   margin-bottom: .5em;
 }
 /* line 51, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .layout-node-1 .site-width,
-.html div.node-teaser.node-answer .layout-node-1 .site-width {
+div.node-type-answer .layout-node-1 .site-width,
+div.node-teaser.node-answer .layout-node-1 .site-width {
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.html div.node-type-answer .layout-node-1 .site-width:after,
-.html div.node-teaser.node-answer .layout-node-1 .site-width:after {
+div.node-type-answer .layout-node-1 .site-width:after,
+div.node-teaser.node-answer .layout-node-1 .site-width:after {
   content: "";
   display: table;
   clear: both;
 }
 /* line 59, ../../../sass/nodes/types/node_answer.scss */
-.html div.node-type-answer .field-name-field-content,
-.html div.node-type-answer .field-name-field-comment-count,
-.html div.node-type-answer .field-type-file legend,
-.html div.node-teaser.node-answer .field-name-field-content,
-.html div.node-teaser.node-answer .field-name-field-comment-count,
-.html div.node-teaser.node-answer .field-type-file legend {
+div.node-type-answer .field-name-field-content,
+div.node-type-answer .field-name-field-comment-count,
+div.node-type-answer .field-type-file legend,
+div.node-teaser.node-answer .field-name-field-content,
+div.node-teaser.node-answer .field-name-field-comment-count,
+div.node-teaser.node-answer .field-type-file legend {
   display: none;
 }

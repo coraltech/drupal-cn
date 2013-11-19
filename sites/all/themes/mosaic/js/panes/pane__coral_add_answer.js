@@ -77,7 +77,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       // $loadMore may or may not exist. It usually does not
       //  on the first page run (document.loaded). In this case
       //  we should init a few items.
-      console.log('len: '+this.$loadMore.length);
       if (!this.$loadMore.length) {
         
         // Identification and settings
@@ -102,8 +101,6 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.initMore();
         this.initClose();
       }
-      
-      console.log('len2: '+this.$loadMore.length);
             
       // Adding events here so we can control the key    
       this.events = {};
