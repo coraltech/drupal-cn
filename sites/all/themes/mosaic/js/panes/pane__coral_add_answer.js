@@ -42,7 +42,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       // Get the id for this question: it is the refID of this item
       this.initID(this.$question, {pat: /node-\d+/, cls: 'node-'});
-      
+
       // Tertiary jQuery objects
       this.$btn = $question.find('.btn.answer-'+this.refID);
       this.$answerForm = $(this.$question).find('.answer-form-'+this.refID);
@@ -77,6 +77,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // $loadMore may or may not exist. It usually does not
       //  on the first page run (document.loaded). In this case
       //  we should init a few items.
+      console.log('len: '+this.$loadMore.length);
       if (!this.$loadMore.length) {
         
         // Identification and settings
@@ -101,6 +102,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.initMore();
         this.initClose();
       }
+      
+      console.log('len2: '+this.$loadMore.length);
             
       // Adding events here so we can control the key    
       this.events = {};
@@ -286,8 +289,6 @@ Drupal.coralQA = Drupal.coralQA || {};
           $answer.children('h2').append(arrow);
         }
       });
-      
-      if ($answers.length) this.initMore();
     }
     catch (err) {
       console.log('initAnswer errored: '+err);
@@ -870,7 +871,13 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Returns a Load More link
   Drupal.coralQA.coralAnswer.prototype.loadMoreBtn = function(page, hide) {
     try {
-      return '<a href="#" class="load-more more-answers-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>More answers<span class="no-js"><span></span></a>';
+      var tot = this.settings.total_items;
+      var cur = this.settings.limit;
+      if (Number(this.settings.total_items) <= Number(this.settings.limit)) tot = cur;
+                
+      var btn = '<span class="btn">More answers</span>';
+      var pgtot = '<span class="pgtot">(<span class="cur">'+cur+'</span>/<span class="tot">'+tot+'</span>)</span>';
+      return '<a href="#" class="load-more more-answers-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>'+btn+pgtot+'<span class="no-js"><span></span></a>';
     }
     catch (err) {
       console.log('loadMoreBtn errored: '+err);
@@ -888,6 +895,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       else { // increment the page number
         this.$loadMore.removeClass('page-'+this.currentPage).addClass('page-'+String((Number(this.currentPage) + 1)));
         this.$loadMore.removeClass('ajax-processing'); // ok, now the user can click again!
+        
+        this.$loadMore.find('.cur').text((Number(this.currentPage) + 1) * Number(this.settings.limit));
       }
     }
     catch (err) {
