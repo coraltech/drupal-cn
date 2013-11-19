@@ -107,8 +107,8 @@
   color: #b02e1c;
 }
 /* line 57, ../../sass/views/view__questions__new_questions.scss */
-.view-questions.view-display-id-new_questions .questions-more {
-  margin: 0.625em 0;
+.view-questions.view-display-id-new_questions .questions-more .btn {
+  margin: 0.625em 0.5em 0.625em 0;
   position: relative;
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -121,17 +121,17 @@
   border-radius: 0px;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #5b83be), color-stop(51%, #446eac));
-  background: -webkit-linear-gradient(#5b83be 50%, #446eac 51%);
-  background: -moz-linear-gradient(#5b83be 50%, #446eac 51%);
-  background: -o-linear-gradient(#5b83be 50%, #446eac 51%);
-  background: linear-gradient(#5b83be 50%, #446eac 51%);
-  -webkit-box-shadow: #92acd4 0 1px 0 inset;
-  -moz-box-shadow: #92acd4 0 1px 0 inset;
-  box-shadow: #92acd4 0 1px 0 inset;
-  border: 1px solid #507bba;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #446eac), color-stop(70%, #4067a1));
+  background: -webkit-linear-gradient(#446eac, #4067a1 70%);
+  background: -moz-linear-gradient(#446eac, #4067a1 70%);
+  background: -o-linear-gradient(#446eac, #4067a1 70%);
+  background: linear-gradient(#446eac, #4067a1 70%);
+  -webkit-box-shadow: #7496c8 0 1px 0 inset;
+  -moz-box-shadow: #7496c8 0 1px 0 inset;
+  box-shadow: #7496c8 0 1px 0 inset;
+  border: 1px solid #385b8f;
   color: white;
-  text-shadow: #2c476f 0 -1px 0;
+  text-shadow: #1f3350 0 -1px 0;
   font-size: 16px;
   padding: 2px 5px;
   display: inline-block;
@@ -143,42 +143,42 @@
   border-radius: 0px;
 }
 /* line 60, ../../sass/views/view__questions__new_questions.scss */
-.view-questions.view-display-id-new_questions .questions-more .ajax-progress {
+.view-questions.view-display-id-new_questions .questions-more .btn .ajax-progress {
   position: absolute;
-  top: 8%;
+  top: 20%;
   right: -20%;
 }
 /* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.view-questions.view-display-id-new_questions .questions-more:hover {
+.view-questions.view-display-id-new_questions .questions-more .btn:hover {
   text-decoration: none;
 }
-/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.view-questions.view-display-id-new_questions .questions-more:hover {
-  background-color: #4875b7;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4570b0), color-stop(51%, #4875b7));
-  background: -webkit-linear-gradient(#4570b0 50%, #4875b7 51%);
-  background: -moz-linear-gradient(#4570b0 50%, #4875b7 51%);
-  background: -o-linear-gradient(#4570b0 50%, #4875b7 51%);
-  background: linear-gradient(#4570b0 50%, #4875b7 51%);
+/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .questions-more .btn:hover {
+  background-color: #385b8f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
+  background: -webkit-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -moz-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: -o-linear-gradient(#3d629a 3%, #385b8f 75%);
+  background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
-/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.view-questions.view-display-id-new_questions .questions-more:active {
-  -webkit-box-shadow: #4773b3 0 1px 2px inset;
-  -moz-box-shadow: #4773b3 0 1px 2px inset;
-  box-shadow: #4773b3 0 1px 2px inset;
+/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.view-questions.view-display-id-new_questions .questions-more .btn:active {
+  -webkit-box-shadow: #345484 0 1px 2px inset;
+  -moz-box-shadow: #345484 0 1px 2px inset;
+  box-shadow: #345484 0 1px 2px inset;
 }
 /* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.view-questions.view-display-id-new_questions .questions-more.disabled, .view-questions.view-display-id-new_questions .questions-more[disabled] {
+.view-questions.view-display-id-new_questions .questions-more .btn.disabled, .view-questions.view-display-id-new_questions .questions-more .btn[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
-  background: #6288c1;
+  background: #4067a1;
   cursor: default;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 /* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
-.view-questions.view-display-id-new_questions .questions-more::-moz-focus-inner {
+.view-questions.view-display-id-new_questions .questions-more .btn::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }

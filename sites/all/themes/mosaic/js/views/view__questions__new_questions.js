@@ -101,12 +101,18 @@ Drupal.coralQA = Drupal.coralQA || {};
           // Check total_item and limit count
           //  We may not need the more button
           //  Hide the regular pager...
+          // And track some vars.
+          var tot = this.settings.total_items;
+          var cur = this.settings.limit;
           if (Number(this.settings.total_items) <= Number(this.settings.limit)) {
+            tot = cur;
             hide = 'hide';
           }
           
           // Add a more button
-          this.$view.append('<a class="questions-more more-'+this.refID+' page-1 '+hide+'" href="#">More questions<span class="no-js"><span></span></span></a>');
+          var btn = '<span class="btn">More questions</span>';
+          var pgtot = '<span class="pgtot">(<span class="cur">'+cur+'</span>/<span class="tot">'+tot+'</span>)</span>';
+          this.$view.append('<a class="questions-more more-'+this.refID+' page-1 '+hide+'" href="#">'+btn+pgtot+'<span class="no-js"><span></span></span></a>');
           this.$more = this.$view.children('.more-'+this.refID); // remember it...
         }
       }
@@ -230,6 +236,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       else { // increment the page number
         this.$more.removeClass('page-'+this.page).addClass('page-'+String((Number(this.page) + 1)));
         this.$more.removeClass('ajax-processing'); // ok, now the user can click again!
+        
+        this.$more.find('.cur').text((Number(this.page) + 1) * Number(this.settings.limit));
       }
     }
     catch (err) {

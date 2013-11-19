@@ -54,16 +54,16 @@
   }
   .views-row-first {}
 
-  .questions-more {
-    margin: ($default_vert_unit / 2) 0;
+  .questions-more .btn {
+    margin: ($default_vert_unit / 2) .5em ($default_vert_unit / 2) 0;
     position: relative;
     .ajax-progress {
       position: absolute;
-      top: 8%;
+      top: 20%;
       right: -20%;
     }
     
-    @include btn-glass;
+    @include btn-matte-inset;
     @include btn-structure;
   }
 }
