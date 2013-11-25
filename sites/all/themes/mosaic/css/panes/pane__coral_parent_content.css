@@ -150,7 +150,7 @@
   margin-top: 0;
   padding-top: 0.4545em;
 }
-/* line 73, ../../sass/panes/pane__coral_parent_content.scss */
-.html .pane-coral-parent-content > .pane-content > .node-teaser > h2.answer-node-pane-title {
-  margin-bottom: 1.21em;
+/* line 77, ../../sass/panes/pane__coral_parent_content.scss */
+.html .pane-coral-parent-content > .pane-content > .node-teaser .pane-coral-best-answer {
+  display: none;
 }

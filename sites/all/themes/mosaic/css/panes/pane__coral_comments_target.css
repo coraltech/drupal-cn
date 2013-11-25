@@ -269,28 +269,28 @@
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment .anon {
   margin-right: 1em;
 }
-/* line 199, ../../sass/panes/pane__coral_comments_target.scss */
-.view-comments.view-display-id-new_comments .views-row .row,
-.view-comments.view-display-id-new_comments .views-row .leader,
-.view-comments.view-display-id-this_comment .views-row .row,
-.view-comments.view-display-id-this_comment .views-row .leader {
-  padding-left: 1em;
-}
-/* line 203, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 198, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row-first,
 .view-comments.view-display-id-this_comment .views-row-first {
   margin-top: 0;
 }
-/* line 206, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 201, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .pager,
 .view-comments.view-display-id-this_comment .pager {
   display: none;
 }
 
-/* line 213, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 208, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment,
 .html div.node-teaser.node-comment {
   padding: 0.625em 0 0;
+}
+/* line 210, ../../sass/panes/pane__coral_comments_target.scss */
+.html .node-type-comment .row,
+.html .node-type-comment .leader,
+.html div.node-teaser.node-comment .row,
+.html div.node-teaser.node-comment .leader {
+  padding-left: 1em;
 }
 /* line 217, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-page-title h2,
