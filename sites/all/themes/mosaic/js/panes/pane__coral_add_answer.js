@@ -908,7 +908,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $wrap = this.$answerForm.parent('.pane-content').siblings('.help-wrap-'+this.refID); // get the wrapper
       var $help = $wrap.find('.help-text');
       
-      if (ev.type == 'mouseenter') $help.animate({left: '7.85em'}, this.speed); // mouseenter; expose the text
+      if (ev.type == 'mouseenter') $help.animate({left: '7.5em'}, this.speed); // mouseenter; expose the text
       else $help.animate({left: '0em'}, this.speed); // mouseleave; hide text
     }
     catch (err) {

@@ -194,11 +194,6 @@
       margin-right: 1em;
     }
     .pane-coral-flag-abuse-node {}
-    
-    .row,
-    .leader {
-      padding-left: 1em;
-    }
   }
   .views-row-first {
     margin-top: 0;
@@ -211,6 +206,11 @@
 
 .html .node-type-comment,
 .html div.node-teaser.node-comment {
+  .row,
+  .leader {
+    padding-left: 1em;
+  }
+  
   
   padding: ($default_vert_unit / 2) 0 0;
   

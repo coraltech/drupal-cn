@@ -11,28 +11,29 @@
 @import 'compass/css3/box-shadow';
 
 .html .pane-content .pane-coral-comment-form {
-  margin-top: $default_vert_unit / 2;
-  margin-bottom: $default_vert_unit;
+  margin-top: $default_vert_unit / 1.5;
+  margin-bottom: $default_vert_unit / 1.5;
   position: relative;
   padding-left: ($default_vert_unit / 2);
   
   .cmt-header {
-    @include h3;
+    @include h4;
     color: $mdred;
   }
   
   // the pane title (it's clickable)
   & > .help-wrap {
     position: absolute;
-    top: -0.625em;
-    left: 7.5em;
+    top: -0.125em;
+    left: 6.5em;
   }
 
   & > .help-wrap > .pane-title {
     @include h2; // reset node_answer.scss settings
     @include btn-matte-inset;
-    @include btn-structure(2px 5px, 14px, 0px);
+    @include btn-structure(1px 3px, 12px, 0px);
     
+    margin: 0;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -44,14 +45,14 @@
     background: $ltgray;
     border: 1px solid lighten($mdgray, 15%);
     font-weight: normal;
-    font-size: 85%;
+    font-size: 12px;
     font-family: $mono_fonts;
     color: $mdgray;
     padding: 0 5px 0 7px;
     position: absolute;
     line-height: 1.5em;
     left: 0em;
-    top: .75em;
+    top: .25em;
     text-shadow: none;
     white-space: nowrap;
   }

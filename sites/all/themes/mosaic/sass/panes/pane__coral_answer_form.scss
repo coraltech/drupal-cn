@@ -11,12 +11,12 @@
 @import 'compass/css3/box-shadow';
 
 .html .pane-content .pane-coral-answer-form { // .html and .pane-content added for more weight
-  margin-top: $default_vert_unit / 2;
-  margin-bottom: $default_vert_unit;
+  margin-top: $default_vert_unit / 1.5;
+  margin-bottom: $default_vert_unit / 1.5;
   position: relative;
   
   .ans-header {
-    @include h2;
+    @include h4;
     color: $mdred;
   }
   
@@ -24,13 +24,14 @@
   & > .help-wrap {
     position: absolute;
     top: -0.125em;
-    left: 6em;
+    left: 5em;
   }
   
   & > .help-wrap > .pane-title {
-    @include btn-matte-inset(0px, 14px, $mdgreen, darken($mdgreen, 3%), $white);
-    @include btn-structure(2px 5px, 14px, 0px);
+    @include btn-matte-inset(0px, 12px, $mdgreen, darken($mdgreen, 3%), $white);
+    @include btn-structure(1px 3px, 12px, 0px);
     
+    margin: 0;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -42,14 +43,14 @@
     background: $ltgray;
     border: 1px solid lighten($mdgray, 15%);
     font-weight: normal;
-    font-size: 85%;
+    font-size: 12px;
     font-family: $mono_fonts;
     color: $mdgray;
     padding: 0 5px 0 7px;
     position: absolute;
     line-height: 1.5em;
     left: 0em;
-    top: .75em;
+    top: .25em;
     text-shadow: none;
     white-space: nowrap;
   }
