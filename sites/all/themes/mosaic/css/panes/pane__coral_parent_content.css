@@ -2,7 +2,7 @@
 .html .pane-coral-parent-content {
   margin-bottom: 1.375em;
 }
-/* line 20, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 18, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-title {
   background: #446eac;
   color: white;
@@ -78,7 +78,7 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 33, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 31, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-title .circle {
   cursor: pointer;
   display: block;
@@ -105,7 +105,7 @@
   -o-border-radius: 8px;
   border-radius: 8px;
 }
-/* line 47, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 45, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-title .circle .arrow {
   display: block;
   margin: 3px 0 0 6px;
@@ -116,7 +116,7 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #515151;
 }
-/* line 52, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 50, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-title .circle .arrow-down {
   margin: 6px 0 0 3px;
   width: 0;
@@ -126,7 +126,7 @@
   border-right: 5px solid transparent;
   border-top: 5px solid #515151;
 }
-/* line 57, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 55, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-title:hover .circle {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
@@ -140,17 +140,17 @@
   background: linear-gradient(to bottom, #e5d14a 0%, #fff6b6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 64, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 62, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-content > .node-teaser {
   padding: 0 15px;
   background: #fffada;
 }
-/* line 68, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 66, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-content > .node-teaser > h2 {
   margin-top: 0;
   padding-top: 0.4545em;
 }
-/* line 77, ../../sass/panes/pane__coral_parent_content.scss */
+/* line 73, ../../sass/panes/pane__coral_parent_content.scss */
 .html .pane-coral-parent-content > .pane-content > .node-teaser .pane-coral-best-answer {
   display: none;
 }

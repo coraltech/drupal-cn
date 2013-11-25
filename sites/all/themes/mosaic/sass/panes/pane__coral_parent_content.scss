@@ -12,8 +12,6 @@
 
 .html .pane-coral-parent-content {
 
-  //background: lighten($ltyellow, 7%);
-  //padding: 0 ($default_vert_unit / 2);
   margin-bottom: 1.1 * $default_vert_unit;
   
   // The floating title (Parent content)
@@ -70,8 +68,10 @@
       padding-top: 0.4545em;
     }
     
-    & > h2.answer-node-pane-title {
-      margin-bottom: 1.21em;
+    & > h2.answer-node-pane-title {}
+    
+    .pane-coral-best-answer {
+      display: none; // best answer irrelevant in the parent content pane.
     }
   }
   
