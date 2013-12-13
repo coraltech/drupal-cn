@@ -3,6 +3,7 @@
 
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/icons';
 
 
 .views-row-even .comment {
@@ -19,7 +20,7 @@
 
   .user-picture {
     float: left;
-    margin: 5px 5px 0 -5px;
+    margin: 5px 5px ($default_vert_unit / 2) -5px;
     img {
       display: block;
       border: 1px solid $ltgray;
@@ -37,11 +38,20 @@
     color: $mdorange;
     font-weight: bold;
     float: left;
-    margin-top: 1.75em;
-    margin-right: 1em;
+    margin-top: 0;
+    margin-right: .5em;
   }
   ul.links.inline {
     display: block;
+    height: $default_vert_unit;
+    border-top: 1px dotted $ltgray;
+    margin-bottom: -1px;
+    li {
+      float: right;
+      font-size: 80%;
+      line-height: 1.5em;
+      padding: 0 6px 0 3px;
+    }
   }
   h3.comment-title {
     a {
@@ -64,6 +74,31 @@
   }
   .content {
     clear: left;
+  }
+  
+  span.icon {
+    display: inline-block;
+    margin-right: 3px;
+    margin-bottom: -2px;
+  }
+   
+  li.comment-delete span.icon {
+    @include icons-sprite('delete-off');
+  }
+  li.comment-edit span.icon {
+    @include icons-sprite('edit-off');
+  }
+  li.comment-reply span.icon {
+    @include icons-sprite('coral-comment');
+  }
+  li.comment-delete a:hover span.icon {
+    @include icons-sprite('delete');
+  }
+  li.comment-edit a:hover span.icon {
+    @include icons-sprite('edit');
+  }
+  li.comment-reply a:hover span.icon {
+    @include icons-sprite('coral-comment-on');
   }
 }
 

@@ -156,26 +156,25 @@ ol {
 // the item actions (edit delete etc...)
 .html ul.links {
   display: block;
-  margin: $default_vert_unit 0;
+  margin: 0;
 
   li {
     float: right;
     font-size: .9em;
-    margin: 5px 0 0 5px;
+    margin: 0;
+    padding: 0 3px;
     border-right: 1px solid $ltgray;
     
-    // Link type overrides
-      
-    &.comment-delete {
-      @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 4%));
-      @include btn-structure;
-    }
     a {
       color: $mdgray;
       
       &:hover {
         color: lighten($mdgray, 10%);
       }
+    }
+    &.first {
+      border-right: none;
+      padding-right: 0;
     }
   }
 }
