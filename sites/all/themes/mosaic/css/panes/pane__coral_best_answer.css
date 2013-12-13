@@ -1,6 +1,6 @@
-/* line 338, icons/*.png */
+/* line 370, icons/*.png */
 .icons-sprite, .pane-coral-best-answer .best-answer .icon, .pane-coral-best-answer .best-answer:hover .icon {
-  background: url('/images/icons-s6bd60a2940.png') no-repeat;
+  background: url('/images/icons-s086485c927.png') no-repeat;
 }
 
 /* line 11, ../../sass/panes/pane__coral_best_answer.scss */
@@ -21,7 +21,7 @@
   display: block;
   float: left;
   margin: 2px 2px 0 -2px;
-  background-position: 0 -3010px;
+  background-position: 0 -3270px;
   height: 15px;
   width: 18px;
 }
@@ -31,7 +31,7 @@
 }
 /* line 33, ../../sass/panes/pane__coral_best_answer.scss */
 .pane-coral-best-answer .best-answer:hover .icon {
-  background-position: 0 -2533px;
+  background-position: 0 -2598px;
   height: 15px;
   width: 18px;
 }

@@ -163,93 +163,31 @@ ol {
 /* line 157, ../../sass/global/_dom.scss */
 .html ul.links {
   display: block;
-  margin: 1.25em 0;
+  margin: 0;
 }
 /* line 161, ../../sass/global/_dom.scss */
 .html ul.links li {
   float: right;
   font-size: .9em;
-  margin: 5px 0 0 5px;
+  margin: 0;
+  padding: 0 3px;
   border-right: 1px solid #dddddd;
 }
-/* line 169, ../../sass/global/_dom.scss */
-.html ul.links li.comment-delete {
-  font-size: 16px;
-  padding: 0.5em 1.5em;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB02E1C', endColorstr='#FF58170E');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b02e1c), color-stop(70%, #9e2919));
-  background: -webkit-linear-gradient(#b02e1c, #9e2919 70%);
-  background: -moz-linear-gradient(#b02e1c, #9e2919 70%);
-  background: -o-linear-gradient(#b02e1c, #9e2919 70%);
-  background: linear-gradient(#b02e1c, #9e2919 70%);
-  -webkit-box-shadow: #e04d39 0 1px 0 inset;
-  -moz-box-shadow: #e04d39 0 1px 0 inset;
-  box-shadow: #e04d39 0 1px 0 inset;
-  border: 1px solid #882416;
-  color: white;
-  text-shadow: #40110a 0 -1px 0;
-  font-size: 16px;
-  padding: 2px 5px;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-}
-/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html ul.links li.comment-delete:hover {
-  text-decoration: none;
-}
-/* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html ul.links li.comment-delete:hover {
-  background-color: #882416;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #882416));
-  background: -webkit-linear-gradient(#9a2818 3%, #882416 75%);
-  background: -moz-linear-gradient(#9a2818 3%, #882416 75%);
-  background: -o-linear-gradient(#9a2818 3%, #882416 75%);
-  background: linear-gradient(#9a2818 3%, #882416 75%);
-}
-/* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html ul.links li.comment-delete:active {
-  -webkit-box-shadow: #7b2014 0 1px 2px inset;
-  -moz-box-shadow: #7b2014 0 1px 2px inset;
-  box-shadow: #7b2014 0 1px 2px inset;
-}
-/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.html ul.links li.comment-delete.disabled, .html ul.links li.comment-delete[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  background: #9e2919;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
-.html ul.links li.comment-delete::-moz-focus-inner {
-  padding: 0 !important;
-  margin: -1px !important;
-}
-/* line 173, ../../sass/global/_dom.scss */
+/* line 168, ../../sass/global/_dom.scss */
 .html ul.links li a {
   color: #777777;
 }
-/* line 176, ../../sass/global/_dom.scss */
+/* line 171, ../../sass/global/_dom.scss */
 .html ul.links li a:hover {
   color: #919191;
 }
+/* line 175, ../../sass/global/_dom.scss */
+.html ul.links li.first {
+  border-right: none;
+  padding-right: 0;
+}
 
-/* line 186, ../../sass/global/_dom.scss */
+/* line 185, ../../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -318,7 +256,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 190, ../../sass/global/_dom.scss */
+/* line 189, ../../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -388,29 +326,29 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 196, ../../sass/global/_dom.scss */
+/* line 195, ../../sass/global/_dom.scss */
 .form-textarea {
   font-size: 1em;
 }
 
-/* line 200, ../../sass/global/_dom.scss */
+/* line 199, ../../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 204, ../../sass/global/_dom.scss */
+/* line 203, ../../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 207, ../../sass/global/_dom.scss */
+/* line 206, ../../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
 }
 
-/* line 211, ../../sass/global/_dom.scss */
+/* line 210, ../../sass/global/_dom.scss */
 a.btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -444,7 +382,7 @@ a.btn {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 212, ../../sass/global/_dom.scss */
+/* line 211, ../../sass/global/_dom.scss */
 a.btn:hover {
   color: white;
 }
@@ -483,22 +421,22 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 223, ../../sass/global/_dom.scss */
+/* line 222, ../../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 227, ../../sass/global/_dom.scss */
+/* line 226, ../../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 231, ../../sass/global/_dom.scss */
+/* line 230, ../../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 235, ../../sass/global/_dom.scss */
+/* line 234, ../../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;
