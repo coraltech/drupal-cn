@@ -11,12 +11,12 @@
 @import 'global/arrows';
 @import 'global/buttons';
 @import 'global/colors';
-@import 'global/comments';
 @import 'global/fonts';
 @import 'global/gradients';
 @import 'global/grid_mix';
 @import 'global/icons';
 @import 'global/site_vars';
+@import 'global/comments';
 
 
 // -- Global container widths
@@ -161,7 +161,7 @@ header .coral-cloud {
   width: 12em;
   float: left;
   
-  margin: (-1 * $default_vert_unit) 1em ($default_vert_unit / 2) 0;
+  margin: 0 1em 0 0;
     
   @include linear-v-gradient(lighten($ltblue, 10%), lighten($ltblue, 5%));
   
@@ -189,6 +189,10 @@ header .coral-cloud {
     }
   }  
 }
+// Override the toc margin in a few places
+.node-book .toc-wrapper { margin-top: -1 * ($default_vert_unit / 2); }
+.node-talk .toc-wrapper { margin-top: 0; }
+
 // Back to top links
 .toc-top {
   border: 1px solid $mdgray;
@@ -203,6 +207,8 @@ header .coral-cloud {
   line-height: 30px;
   margin-right: -1.25em;
   font-size: 1em;
+  position: relative;
+  z-index: 1;
   
   @include border-radius(8px);
   @include linear-v-gradient($ltgray, lighten($ltgray, 7%));
