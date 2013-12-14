@@ -10,7 +10,7 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
 
   // Add the js - basic type
   $path = drupal_get_path('theme', 'mosaic').'/css/forms/form__'.$form_id;
-
+dpm($form_id);
   if (file_exists($path.'.css')) drupal_add_css($path.'.css', array('group' => CSS_THEME)); // - targeted type
   if (file_exists($path.'.js'))  drupal_add_js($path.'.js', array('group' => JS_THEME));
 }
@@ -30,5 +30,14 @@ function mosaic_form_comment_node_book_form_alter(&$form, &$form_state) {
 
 function mosaic_form_user_login_alter(&$form, &$form_state) {
   $form['#attributes']['class'][] = 'user-login';
+}
+
+
+function mosaic_form_book_node_form_alter(&$form, &$form_state) {
+  dpm($form);
+  // Gets rid of book management tools for all but admin level users.
+  if (!user_access('administer book outlines') && user_access('add content to books')) {
+    $form['book']['bid']['#type'] = 'hidden';  
+  }
 }
 
