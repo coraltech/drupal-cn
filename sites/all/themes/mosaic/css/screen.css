@@ -509,19 +509,14 @@ ol {
 }
 /* line 168, ../sass/global/_dom.scss */
 .html ul.links li a {
-  color: #777777;
+  color: #9d9d9d;
 }
 /* line 171, ../sass/global/_dom.scss */
 .html ul.links li a:hover {
-  color: #919191;
-}
-/* line 175, ../sass/global/_dom.scss */
-.html ul.links li.first {
-  border-right: none;
-  padding-right: 0;
+  color: #5e5e5e;
 }
 
-/* line 185, ../sass/global/_dom.scss */
+/* line 181, ../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -590,7 +585,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 189, ../sass/global/_dom.scss */
+/* line 185, ../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -660,29 +655,29 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 195, ../sass/global/_dom.scss */
+/* line 191, ../sass/global/_dom.scss */
 .form-textarea {
   font-size: 1em;
 }
 
-/* line 199, ../sass/global/_dom.scss */
+/* line 195, ../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 203, ../sass/global/_dom.scss */
+/* line 199, ../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 206, ../sass/global/_dom.scss */
+/* line 202, ../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
 }
 
-/* line 210, ../sass/global/_dom.scss */
+/* line 206, ../sass/global/_dom.scss */
 a.btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -716,7 +711,7 @@ a.btn {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 211, ../sass/global/_dom.scss */
+/* line 207, ../sass/global/_dom.scss */
 a.btn:hover {
   color: white;
 }
@@ -755,22 +750,22 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 222, ../sass/global/_dom.scss */
+/* line 218, ../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 226, ../sass/global/_dom.scss */
+/* line 222, ../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 230, ../sass/global/_dom.scss */
+/* line 226, ../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 234, ../sass/global/_dom.scss */
+/* line 230, ../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;
@@ -847,121 +842,125 @@ table a.tabledrag-handle .handle {
   line-height: 1.5em;
   padding: 0 6px 0 3px;
 }
-/* line 57, ../sass/global/comments.scss */
+/* line 55, ../sass/global/comments.scss */
+.comment ul.links.inline li.first {
+  border-right: none;
+}
+/* line 61, ../sass/global/comments.scss */
 .comment h3.comment-title a {
   color: #777777;
 }
-/* line 59, ../sass/global/comments.scss */
+/* line 63, ../sass/global/comments.scss */
 .comment h3.comment-title a:hover {
   color: #515151;
 }
-/* line 64, ../sass/global/comments.scss */
+/* line 68, ../sass/global/comments.scss */
 .comment .submitted {
   margin: 0.625em 0 1.25em;
 }
-/* line 67, ../sass/global/comments.scss */
+/* line 71, ../sass/global/comments.scss */
 .comment .perma-link {
   float: right;
   font-size: 90%;
   margin: .75em 0 0 .5em;
 }
-/* line 71, ../sass/global/comments.scss */
+/* line 75, ../sass/global/comments.scss */
 .comment .perma-link a {
   color: #aaaaaa;
 }
-/* line 75, ../sass/global/comments.scss */
+/* line 79, ../sass/global/comments.scss */
 .comment .content {
   clear: left;
 }
-/* line 79, ../sass/global/comments.scss */
+/* line 83, ../sass/global/comments.scss */
 .comment span.icon {
   display: inline-block;
   margin-right: 3px;
   margin-bottom: -2px;
 }
-/* line 85, ../sass/global/comments.scss */
+/* line 89, ../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
   background-position: 0 -3140px;
   height: 15px;
   width: 15px;
 }
-/* line 88, ../sass/global/comments.scss */
+/* line 92, ../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
   background-position: 0 -3075px;
   height: 15px;
   width: 15px;
 }
-/* line 91, ../sass/global/comments.scss */
+/* line 95, ../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
   background-position: 0 -2277px;
   height: 12px;
   width: 19px;
 }
-/* line 94, ../sass/global/comments.scss */
+/* line 98, ../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
   background-position: 0 -3205px;
   height: 15px;
   width: 15px;
 }
-/* line 97, ../sass/global/comments.scss */
+/* line 101, ../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
   background-position: 0 -2339px;
   height: 15px;
   width: 15px;
 }
-/* line 100, ../sass/global/comments.scss */
+/* line 104, ../sass/global/comments.scss */
 .comment li.comment-reply a:hover span.icon {
   background-position: 0 -2215px;
   height: 12px;
   width: 19px;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-1 {
   margin-left: 0em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-2 {
   margin-left: 1em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-3 {
   margin-left: 2em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-4 {
   margin-left: 3em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-5 {
   margin-left: 4em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-6 {
   margin-left: 5em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-7 {
   margin-left: 6em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-8 {
   margin-left: 7em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-9 {
   margin-left: 8em;
 }
 
-/* line 107, ../sass/global/comments.scss */
+/* line 111, ../sass/global/comments.scss */
 .comment-thread-10 {
   margin-left: 9em;
 }
