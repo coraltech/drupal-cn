@@ -166,15 +166,11 @@ ol {
     border-right: 1px solid $ltgray;
     
     a {
-      color: $mdgray;
+      color: lighten($mdgray,15%);
       
       &:hover {
-        color: lighten($mdgray, 10%);
+        color: darken($mdgray, 10%);
       }
-    }
-    &.first {
-      border-right: none;
-      padding-right: 0;
     }
   }
 }
