@@ -19,7 +19,7 @@
     background: $dkgray;
     border-bottom: 3px double $ltgray;
     color: $white;
-    padding: .7em (.7 * $default_vert_unit) (.7 * ($default_vert_unit / 2)) (.7 * $default_vert_unit);
+    padding: 0 (.7 * $default_vert_unit) 0 (.7 * $default_vert_unit);
     margin: 0;
   }
   .pane-content {
