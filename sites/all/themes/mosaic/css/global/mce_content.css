@@ -183,6 +183,16 @@ ol {
 }
 
 /* line 181, ../../sass/global/_dom.scss */
+.html .form-item {
+  margin-bottom: 1.25em;
+}
+/* line 184, ../../sass/global/_dom.scss */
+.html .form-item label {
+  font-weight: bold;
+  color: #777777;
+}
+
+/* line 190, ../../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -251,7 +261,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 185, ../../sass/global/_dom.scss */
+/* line 194, ../../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -321,29 +331,29 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 191, ../../sass/global/_dom.scss */
+/* line 200, ../../sass/global/_dom.scss */
 .form-textarea {
   font-size: 1em;
 }
 
-/* line 195, ../../sass/global/_dom.scss */
+/* line 204, ../../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 199, ../../sass/global/_dom.scss */
+/* line 208, ../../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 202, ../../sass/global/_dom.scss */
+/* line 211, ../../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
 }
 
-/* line 206, ../../sass/global/_dom.scss */
+/* line 215, ../../sass/global/_dom.scss */
 a.btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -377,7 +387,7 @@ a.btn {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 207, ../../sass/global/_dom.scss */
+/* line 216, ../../sass/global/_dom.scss */
 a.btn:hover {
   color: white;
 }
@@ -416,22 +426,22 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 218, ../../sass/global/_dom.scss */
+/* line 227, ../../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 222, ../../sass/global/_dom.scss */
+/* line 231, ../../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 226, ../../sass/global/_dom.scss */
+/* line 235, ../../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 230, ../../sass/global/_dom.scss */
+/* line 239, ../../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;

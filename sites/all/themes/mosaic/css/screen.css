@@ -517,6 +517,16 @@ ol {
 }
 
 /* line 181, ../sass/global/_dom.scss */
+.html .form-item {
+  margin-bottom: 1.25em;
+}
+/* line 184, ../sass/global/_dom.scss */
+.html .form-item label {
+  font-weight: bold;
+  color: #777777;
+}
+
+/* line 190, ../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -585,7 +595,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 185, ../sass/global/_dom.scss */
+/* line 194, ../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -655,29 +665,29 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 191, ../sass/global/_dom.scss */
+/* line 200, ../sass/global/_dom.scss */
 .form-textarea {
   font-size: 1em;
 }
 
-/* line 195, ../sass/global/_dom.scss */
+/* line 204, ../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 80%;
 }
 
-/* line 199, ../sass/global/_dom.scss */
+/* line 208, ../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
 }
 
-/* line 202, ../sass/global/_dom.scss */
+/* line 211, ../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
 }
 
-/* line 206, ../sass/global/_dom.scss */
+/* line 215, ../sass/global/_dom.scss */
 a.btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -711,7 +721,7 @@ a.btn {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 207, ../sass/global/_dom.scss */
+/* line 216, ../sass/global/_dom.scss */
 a.btn:hover {
   color: white;
 }
@@ -750,38 +760,38 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 218, ../sass/global/_dom.scss */
+/* line 227, ../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 222, ../sass/global/_dom.scss */
+/* line 231, ../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 226, ../sass/global/_dom.scss */
+/* line 235, ../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 230, ../sass/global/_dom.scss */
+/* line 239, ../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;
 }
 
 /* line 370, icons/*.png */
-.icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action .icon,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action:hover .icon,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
+.icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
+.flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
+.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
   background: url('/images/icons-s086485c927.png') no-repeat;
 }
 
 /* line 370, icons/*.png */
-.icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action .icon,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action .icon, .pane-coral-flag-abuse-node .flag-abuse-node a.flag-action:hover .icon,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
+.icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
+.flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
+.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
   background: url('/images/icons-s086485c927.png') no-repeat;
 }
 
@@ -1348,17 +1358,18 @@ h3 .toc-top {
   margin: 0 0 0 -2px;
   border-left: 1px solid #dddddd;
 }
+
 /* line 284, ../sass/global/_global.scss */
-.pane-coral-flag-abuse-node .flag-abuse-node a.flag-action,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action {
+.flag-abuse-node a.flag-action,
+.flag-abuse-node a.unflag-action {
   color: #777777;
   margin: 0;
   padding: 0 0 0 3px;
   font-size: .9em;
 }
 /* line 290, ../sass/global/_global.scss */
-.pane-coral-flag-abuse-node .flag-abuse-node a.flag-action .icon,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action .icon {
+.flag-abuse-node a.flag-action .icon,
+.flag-abuse-node a.unflag-action .icon {
   display: block;
   float: left;
   margin: 3px 0 0 0;
@@ -1367,25 +1378,25 @@ h3 .toc-top {
   width: 15px;
 }
 /* line 297, ../sass/global/_global.scss */
-.pane-coral-flag-abuse-node .flag-abuse-node a.flag-action:hover,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action:hover {
+.flag-abuse-node a.flag-action:hover,
+.flag-abuse-node a.unflag-action:hover {
   color: #919191;
 }
 /* line 299, ../sass/global/_global.scss */
-.pane-coral-flag-abuse-node .flag-abuse-node a.flag-action:hover .icon,
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action:hover .icon {
+.flag-abuse-node a.flag-action:hover .icon,
+.flag-abuse-node a.unflag-action:hover .icon {
   background-position: 0 -1939px;
   height: 16px;
   width: 15px;
 }
 /* line 305, ../sass/global/_global.scss */
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action .icon {
+.flag-abuse-node a.unflag-action .icon {
   background-position: 0 -2071px;
   height: 16px;
   width: 15px;
 }
 /* line 308, ../sass/global/_global.scss */
-.pane-coral-flag-abuse-node .flag-abuse-node a.unflag-action:hover .icon {
+.flag-abuse-node a.unflag-action:hover .icon {
   color: #919191;
   background-position: 0 -2005px;
   height: 16px;
