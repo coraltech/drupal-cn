@@ -33,14 +33,14 @@
   }
   .form-type-password,
   .form-type-textfield {
-    width: 48%;
+    width: 47%;
     float: left;
     clear: right;
     .description { display: none; }
-    .form-text { width: 99.8%; }
+    .form-text { width: 94.8%; }
   }
   .node-form .form-type-textfield {
-    margin-top: -3.35em;
+    margin-top: -3.75em;
   }
   .field-name-field-tags {
     position: relative;
@@ -89,7 +89,7 @@
     padding: ($default_vert_unit / 2);
     position: relative;
     background-color: rgba(208, 208, 208, .5);
-    margin-top: 2 * $default_vert_unit;
+    margin-top: 2.85em;
     
     .icon {
       position: absolute;
