@@ -13,7 +13,7 @@
   .statset-wrap {
     font-size: 95%;
     margin: 0 1em ($default_vert_unit / 4) 0;
-    padding: 0 ($default_vert_unit / 4);
+    padding: 0 ($default_vert_unit / 4) ($default_vert_unit / 4);
     color: darken($mdgray, 15%);
     
     .stat-editor {
