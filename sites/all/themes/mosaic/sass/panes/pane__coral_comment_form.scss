@@ -77,14 +77,15 @@
       
     @include linear-v-gradient(lighten($ltblue, 10%), desaturate(lighten($ltblue, 5%), 15%));
     @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
-      
+    
+    .field-type-file,
     .form-item-title label {
       display: none;
     }
   }
   
   input.form-text {
-    width: 99%;
+    width: 97.5%;
   }
   
   // user login (anon. user)
