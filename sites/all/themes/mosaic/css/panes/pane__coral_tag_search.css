@@ -21,7 +21,7 @@
 .pane-coral-tag-search form .arrow-ring {
   position: absolute;
   display: block;
-  top: 10px;
+  top: 31%;
   right: -1em;
   width: 20px;
   height: 20px;
@@ -62,10 +62,9 @@
 }
 /* line 48, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .form-text {
-  width: 98.5%;
-  height: 25px;
+  width: 94.5%;
 }
-/* line 52, ../../sass/panes/pane__coral_tag_search.scss */
+/* line 51, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .form-submit {
   position: absolute;
   top: 10px;

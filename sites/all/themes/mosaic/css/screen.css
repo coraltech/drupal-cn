@@ -518,7 +518,7 @@ ol {
 
 /* line 181, ../sass/global/_dom.scss */
 .html .form-item {
-  margin-bottom: 1.25em;
+  margin: 0.625em 0 1.25em 0;
 }
 /* line 184, ../sass/global/_dom.scss */
 .html .form-item label {
@@ -527,6 +527,11 @@ ol {
 }
 
 /* line 190, ../sass/global/_dom.scss */
+.html .form-actions {
+  margin: 0.625em 0;
+}
+
+/* line 194, ../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -559,6 +564,7 @@ input.form-submit {
   -ms-border-radius: 0px;
   -o-border-radius: 0px;
   border-radius: 0px;
+  margin: 0 5px 0 0;
 }
 /* line 15, ../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 input.form-submit:hover {
@@ -595,7 +601,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 194, ../sass/global/_dom.scss */
+/* line 200, ../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -665,29 +671,78 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 200, ../sass/global/_dom.scss */
+/* line 206, ../sass/global/_dom.scss */
 .form-textarea {
   font-size: 1em;
 }
 
-/* line 204, ../sass/global/_dom.scss */
+/* line 209, ../sass/global/_dom.scss */
+.filter-wrapper {
+  padding: 0;
+}
+/* line 212, ../sass/global/_dom.scss */
+.filter-wrapper .filter-help {
+  float: right;
+  text-align: right;
+  width: 49%;
+  padding: 0;
+}
+/* line 218, ../sass/global/_dom.scss */
+.filter-wrapper .form-item {
+  float: left;
+  width: 50%;
+  margin: 0 0 1.25em;
+  padding: 0;
+}
+/* line 225, ../sass/global/_dom.scss */
+.filter-wrapper .form-item select,
+.filter-wrapper .form-item label {
+  float: left;
+  margin-right: 5px;
+}
+/* line 230, ../sass/global/_dom.scss */
+.filter-wrapper .filter-guidelines {
+  clear: both;
+}
+
+/* line 235, ../sass/global/_dom.scss */
+.form-item .description {
+  background: #e8f4ea;
+  font-size: 0.85em;
+  padding: 0 3px;
+}
+
+/* line 241, ../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
-  width: 80%;
+  width: 98.45%;
+  padding: .25em;
 }
 
-/* line 208, ../sass/global/_dom.scss */
+/* line 247, ../sass/global/_dom.scss */
 html.js input.form-autocomplete {
-  background-position: 100% 8px;
+  background-image: url(../assets/images/coral-throbber-blue-15.gif);
+  background-position: 99.5% 10px;
+  background-repeat: no-repeat;
 }
 
-/* line 211, ../sass/global/_dom.scss */
+/* line 253, ../sass/global/_dom.scss */
+html.js input.form-autocomplete {
+  background-position: 99.5% 10px;
+}
+
+/* line 256, ../sass/global/_dom.scss */
 html.js input.throbbing {
-  background-position: 100% -12px;
+  background-position: 99.5% -124px;
   /* LTR */
 }
 
-/* line 215, ../sass/global/_dom.scss */
+/* line 260, ../sass/global/_dom.scss */
+.vertical-tabs ul li {
+  list-style: none;
+}
+
+/* line 265, ../sass/global/_dom.scss */
 a.btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -721,7 +776,7 @@ a.btn {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 216, ../sass/global/_dom.scss */
+/* line 266, ../sass/global/_dom.scss */
 a.btn:hover {
   color: white;
 }
@@ -760,22 +815,22 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 227, ../sass/global/_dom.scss */
+/* line 277, ../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 231, ../sass/global/_dom.scss */
+/* line 281, ../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 235, ../sass/global/_dom.scss */
+/* line 285, ../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 239, ../sass/global/_dom.scss */
+/* line 289, ../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;
@@ -1044,7 +1099,7 @@ header .pane-search-form .form-wrapper {
   height: 27px;
   position: absolute;
   right: 4px;
-  top: 11px;
+  top: 1px;
   width: 65px;
 }
 /* line 82, ../sass/global/_global.scss */

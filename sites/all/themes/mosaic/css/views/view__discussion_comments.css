@@ -34,15 +34,19 @@
   padding: 0;
 }
 /* line 38, ../../sass/views/view__discussion_comments.scss */
+.page-node-talk .view-discussion-comments .views-exposed-form .views-exposed-widgets.clearfix .views-exposed-widget .form-item {
+  margin: 0;
+}
+/* line 42, ../../sass/views/view__discussion_comments.scss */
 .page-node-talk .view-discussion-comments .views-exposed-form .views-exposed-widgets.clearfix .views-widget-sort-by {
   margin-left: 1em;
 }
-/* line 41, ../../sass/views/view__discussion_comments.scss */
+/* line 45, ../../sass/views/view__discussion_comments.scss */
 .page-node-talk .view-discussion-comments .views-exposed-form .views-exposed-widgets.clearfix .form-submit {
   margin-top: 0;
 }
 
-/* line 48, ../../sass/views/view__discussion_comments.scss */
+/* line 52, ../../sass/views/view__discussion_comments.scss */
 .view-discussion-comments.view-sortby-created .comment {
   margin-left: 0;
 }

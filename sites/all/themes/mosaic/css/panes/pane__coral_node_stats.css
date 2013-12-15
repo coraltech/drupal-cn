@@ -7,7 +7,7 @@
 .pane-coral-node-stats .statset-wrap {
   font-size: 95%;
   margin: 0 1em 0.3125em 0;
-  padding: 0 0.3125em;
+  padding: 0 0.3125em 0.3125em;
   color: #515151;
 }
 /* line 19, ../../sass/panes/pane__coral_node_stats.scss */
