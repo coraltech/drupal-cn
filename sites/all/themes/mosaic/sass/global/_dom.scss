@@ -178,9 +178,24 @@ ol {
 
 
 // --- Forms
+.html .form-item {
+  margin: ($default_vert_unit / 2) 0 $default_vert_unit 0;
+  
+  label {
+    font-weight: bold;
+    color: $mdgray;
+  }
+}
+
+.html .form-actions {
+  margin: ($default_vert_unit / 2) 0;
+}
+
 input.form-submit {
   @include btn-matte-inset;
   @include btn-structure;
+  
+  margin: 0 5px 0 0;
 }
 input#edit-delete {
   margin-left: 2em;
@@ -191,17 +206,61 @@ input#edit-delete {
 .form-textarea {
   font-size: 1em;
 }
+.filter-wrapper {
+  padding: 0;
+  
+  .filter-help {
+    float: right;
+    text-align: right;
+    width: 49%;
+    padding: 0;
+  }
+  .form-item {
+    float: left;
+    width: 50%;
+    margin: 0 0 $default_vert_unit;
+    padding: 0;
+    
+    select,
+    label {
+      float: left;
+      margin-right: 5px;
+    }
+  }
+  .filter-guidelines {
+    clear: both;
+  }
+}
+
+.form-item .description {
+ background: lighten($ltgreen, 20%);
+ font-size: 0.85em;
+ padding: 0 3px;
+}
 
 input.form-text {
   font-size: 135%;
-  width: 80%;
+  width: 98.45%;
+  padding: .25em;
 }
+
 html.js input.form-autocomplete {
-  background-position: 100% 8px;
+  background-image: url(../assets/images/coral-throbber-blue-15.gif);
+  background-position: 99.5% 10px;
+  background-repeat: no-repeat;
+}
+
+html.js input.form-autocomplete {
+  background-position: 99.5% 10px;
 }
 html.js input.throbbing {
-  background-position: 100% -12px; /* LTR */
+  background-position: 99.5% -124px; /* LTR */
 }
+
+.vertical-tabs ul li {
+  list-style: none;
+}
+
 
 a.btn {
   &:hover {
