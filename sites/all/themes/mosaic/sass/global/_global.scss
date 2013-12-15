@@ -76,7 +76,7 @@ header .pane-search-form {
     height: 27px;
     position: absolute;
     right: 4px;
-    top: 11px;
+    top: 1px;
     width: 65px;
     
     .form-submit {
@@ -278,40 +278,40 @@ h3 .toc-top {
   padding: 1px 0px 1px 4px;
   margin: 0 0 0 -2px;
   border-left: 1px solid $ltgray;
-  
-  .flag-abuse-node {
-    a.flag-action,
-    a.unflag-action {
-      color: $mdgray;
-      margin: 0;
-      padding: 0 0 0 3px;
-      font-size: .9em;
+}
+.flag-abuse-node {
+  a.flag-action,
+  a.unflag-action {
+    color: $mdgray;
+    margin: 0;
+    padding: 0 0 0 3px;
+    font-size: .9em;
             
-      .icon {
-        display: block;
-        float: left;
-        margin: 3px 0 0 0;
-        @include icons-sprite('coral-flag-red-off');
-      }    
+    .icon {
+      display: block;
+      float: left;
+      margin: 3px 0 0 0;
+      @include icons-sprite('coral-flag-red-off');
+    }    
       
-      &:hover {
-        color: lighten($mdgray, 10%);
-        .icon {
-          @include icons-sprite('coral-flag-red');
-        }
-      }
-    }
-    a.unflag-action {
+    &:hover {
+      color: lighten($mdgray, 10%);
       .icon {
-        @include icons-sprite('coral-flag-green-off');
-      }
-      &:hover .icon {
-        color: lighten($mdgray, 10%);
-        @include icons-sprite('coral-flag-green');
+        @include icons-sprite('coral-flag-red');
       }
     }
   }
+  a.unflag-action {
+    .icon {
+      @include icons-sprite('coral-flag-green-off');
+    }
+    &:hover .icon {
+      color: lighten($mdgray, 10%);
+      @include icons-sprite('coral-flag-green');
+    }
+  }
 }
+
 .node-comment .pane-coral-flag-abuse-node {
   padding: 1px 0px 0px 3px;
 }
