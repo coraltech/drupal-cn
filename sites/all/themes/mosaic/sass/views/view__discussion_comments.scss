@@ -34,6 +34,10 @@
     .views-exposed-widget {
       margin: .45em 1em 0 0;
       padding: 0;
+      
+      .form-item {
+        margin: 0;
+      }
     }
     .views-widget-sort-by {
       margin-left: 1em;
