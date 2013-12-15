@@ -40,11 +40,28 @@
   }
 }
 
-.node-type-book .book-navigation {
-  clear: both;
-  .menu {
-    padding: .3125em 1em;
-    margin: 0;
+.node-type-book {
+  // Add comment bubble icon to discussion link
+  .links .discussion a {
+    .icon {
+      display: block;
+      float: left;
+      margin: 2px 2px 0 0;
+      @include icons-sprite('coral-comment');
+    }
+    
+    &.active .icon,
+    &:hover .icon {
+      @include icons-sprite('coral-comment-on');
+    }
+  }
+  
+  .book-navigation {
+    clear: both;
+    .menu {
+      padding: .3125em 1em;
+      margin: 0;
+    }
   }
 }
 
