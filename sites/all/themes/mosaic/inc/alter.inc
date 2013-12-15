@@ -47,16 +47,18 @@ function mosaic_node_view_alter(&$build) {
   // Change book node links (send add comment to discussion page)
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'book') {
     $node = $build['#node'];
-    $links = $build['links']['comment']['#links'];
-    unset($build['links']['comment']['#links']);
-
-    $new_links = array();
-    foreach ($links as $i => $link) {
-      if ($link['title'] == 'Discussion') {
-        $new_links['discussion'] = $link; 
+    if (isset($build['links']['comment']) && $build['links']['comment']['#links']) {
+      $links = $build['links']['comment']['#links'];
+      unset($build['links']['comment']['#links']);
+      
+      $new_links = array();
+      foreach ($links as $i => $link) {
+        if ($link['title'] == 'Discussion') {
+          $new_links['discussion'] = $link; 
+        }
       }
+      $build['links']['comment']['#links'] = $new_links;
     }
-    $build['links']['comment']['#links'] = $new_links;
   }
 }
 
