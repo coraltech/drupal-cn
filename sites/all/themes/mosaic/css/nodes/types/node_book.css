@@ -1,7 +1,7 @@
-/* line 370, icons/*.png */
+/* line 402, icons/*.png */
 .icons-sprite, .page-comment-reply .pane-node-title .icon,
-.node-type-book .pane-node-title .icon, .node-type-book .links .discussion a .icon, .node-type-book .links .discussion a.active .icon, .node-type-book .links .discussion a:hover .icon {
-  background: url('/images/icons-s086485c927.png') no-repeat;
+.node-type-book .pane-node-title .icon, .node-type-book .links .discussion a .icon, .node-type-book .links .discussion a.active .icon, .node-type-book .links .discussion a:hover .icon, .node-type-book .links .book_printer a .icon, .node-type-book .links .book_printer a.active .icon, .node-type-book .links .book_printer a:hover .icon, .node-type-book .links .book_add_child a .icon, .node-type-book .links .book_add_child a.active .icon, .node-type-book .links .book_add_child a:hover .icon {
+  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
 }
 
 /* line 13, ../../../sass/nodes/types/node_book.scss */
@@ -45,38 +45,74 @@
 }
 
 /* line 46, ../../../sass/nodes/types/node_book.scss */
-.node-type-book .links .discussion a .icon {
+.node-type-book .links .icon {
   display: block;
   float: left;
   margin: 2px 2px 0 0;
+}
+/* line 52, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .links .discussion a .icon {
   background-position: 0 -2277px;
   height: 12px;
   width: 19px;
 }
-/* line 54, ../../../sass/nodes/types/node_book.scss */
+/* line 57, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .discussion a.active .icon, .node-type-book .links .discussion a:hover .icon {
   background-position: 0 -2215px;
   height: 12px;
   width: 19px;
 }
-/* line 59, ../../../sass/nodes/types/node_book.scss */
+/* line 63, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .links .book_printer a .icon {
+  background-position: 0 -2793px;
+  height: 15px;
+  width: 15px;
+}
+/* line 68, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .links .book_printer a.active .icon, .node-type-book .links .book_printer a:hover .icon {
+  background-position: 0 -2858px;
+  height: 15px;
+  width: 15px;
+}
+/* line 74, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .links .book_add_child a .icon {
+  background-position: 0 -2728px;
+  height: 15px;
+  width: 15px;
+}
+/* line 79, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .links .book_add_child a.active .icon, .node-type-book .links .book_add_child a:hover .icon {
+  background-position: 0 -2663px;
+  height: 15px;
+  width: 15px;
+}
+/* line 85, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .book-navigation {
   clear: both;
 }
-/* line 61, ../../../sass/nodes/types/node_book.scss */
+/* line 87, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .book-navigation .menu {
   padding: .3125em 1em;
   margin: 0;
 }
 
-/* line 70, ../../../sass/nodes/types/node_book.scss */
+/* line 96, ../../../sass/nodes/types/node_book.scss */
+.page-node.node-type-book .pane-node .links {
+  padding: 0.625em 0;
+}
+/* line 99, ../../../sass/nodes/types/node_book.scss */
+.page-node.node-type-book .pane-node .links li.first {
+  border-right: none;
+}
+
+/* line 107, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content,
 .node-type-book.node-talk .layout-node-1 .main-content {
   position: relative;
   float: none;
   width: 100%;
 }
-/* line 77, ../../../sass/nodes/types/node_book.scss */
+/* line 114, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title {
   background: #898989;
@@ -86,22 +122,22 @@
   float: right;
   width: 41.66667%;
 }
-/* line 82, ../../../sass/nodes/types/node_book.scss */
+/* line 119, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title .icon,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title .icon {
   margin-top: 0;
 }
-/* line 85, ../../../sass/nodes/types/node_book.scss */
+/* line 122, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title a,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title a {
   color: white;
 }
-/* line 89, ../../../sass/nodes/types/node_book.scss */
+/* line 126, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title .pane-content,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title .pane-content {
   padding: 0.625em;
 }
-/* line 98, ../../../sass/nodes/types/node_book.scss */
+/* line 135, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node {
   background: #f7f7f7;
@@ -110,36 +146,34 @@
   float: right;
   width: 41.66667%;
 }
-/* line 103, ../../../sass/nodes/types/node_book.scss */
+/* line 140, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title {
   display: none;
 }
-/* line 107, ../../../sass/nodes/types/node_book.scss */
+/* line 144, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content {
   border: 1px solid #777777;
   padding: 2.5em 16px 16px;
 }
-/* line 110, ../../../sass/nodes/types/node_book.scss */
+/* line 147, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content .node-book,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content .node-book {
   margin-top: 1.25em;
 }
-/* line 112, ../../../sass/nodes/types/node_book.scss */
+/* line 149, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline {
   margin: 0;
 }
-/* line 114, ../../../sass/nodes/types/node_book.scss */
+/* line 152, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after {
   display: none;
 }
-/* line 118, ../../../sass/nodes/types/node_book.scss */
-.page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li,
-.node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li {
-  float: left;
-  margin: 5px 5px 0 0;
-  font-size: 85%;
+/* line 156, ../../../sass/nodes/types/node_book.scss */
+.page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li.first,
+.node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li.first {
+  border-right: none;
 }

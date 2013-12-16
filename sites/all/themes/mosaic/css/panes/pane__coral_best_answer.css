@@ -1,6 +1,6 @@
-/* line 370, icons/*.png */
+/* line 402, icons/*.png */
 .icons-sprite, .pane-coral-best-answer .best-answer .icon, .pane-coral-best-answer .best-answer:hover .icon {
-  background: url('/images/icons-s086485c927.png') no-repeat;
+  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
 }
 
 /* line 11, ../../sass/panes/pane__coral_best_answer.scss */
@@ -21,7 +21,7 @@
   display: block;
   float: left;
   margin: 2px 2px 0 -2px;
-  background-position: 0 -3270px;
+  background-position: 0 -3530px;
   height: 15px;
   width: 18px;
 }
