@@ -41,18 +41,44 @@
 }
 
 .node-type-book {
-  // Add comment bubble icon to discussion link
-  .links .discussion a {
+  // Add icons and so on
+  .links {
     .icon {
       display: block;
       float: left;
       margin: 2px 2px 0 0;
-      @include icons-sprite('coral-comment');
+    }
+    .discussion a {
+      .icon {
+        @include icons-sprite('coral-comment');
+      }
+    
+      &.active .icon,
+      &:hover .icon {
+        @include icons-sprite('coral-comment-on');
+      }
     }
     
-    &.active .icon,
-    &:hover .icon {
-      @include icons-sprite('coral-comment-on');
+    .book_printer a {
+      .icon {
+        @include icons-sprite('print-off');
+      }
+    
+      &.active .icon,
+      &:hover .icon {
+        @include icons-sprite('print');
+      }
+    }
+    
+    .book_add_child a {
+      .icon {
+        @include icons-sprite('coral-new-page-off');
+      }
+    
+      &.active .icon,
+      &:hover .icon {
+        @include icons-sprite('coral-new-page');
+      }
     }
   }
   
@@ -64,6 +90,17 @@
     }
   }
 }
+
+
+// Full node display
+.page-node.node-type-book .pane-node .links {
+  padding: ($default_vert_unit / 2) 0;
+  
+  li.first {
+    border-right: none;
+  }
+}
+
 
 // Talk section styles - see Discussion (talk) tab
 .page-comment-reply .layout-node-1 .main-content,
@@ -111,14 +148,14 @@
     }
     ul.links.inline {
       margin: 0;
+
       &:after {
         display: none;
       }
-    }
-    ul.links.inline li {
-      float: left;
-      margin: 5px 5px 0 0;
-      font-size: 85%;
+      
+      li.first {
+        border-right: none;
+      }
     }
     
     @include col(10, false, right);   
