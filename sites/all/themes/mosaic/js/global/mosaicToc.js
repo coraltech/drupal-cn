@@ -26,14 +26,16 @@ Drupal.mosaic = Drupal.mosaic || {};
         };
         
         // Selectors we apply this to
-        var selectors = ['.node .content', '.comment .content'];
+        var selectors = ['.node .content:not(".toc-proc")', '.comment .content:not(".toc-proc")'];
         for (ind in selectors) {
           $items = $(selectors[ind]);
           $items.each(function(i) {
-            new Drupal.mosaic.mosaicToc(this, settings);
-          });  
+            if (!$(this).hasClass('toc-proc')) {
+              $(this).addClass('toc-proc'); // no re-processing
+              new Drupal.mosaic.mosaicToc(this, settings);
+            }
+          });
         }
-        
       }
       catch (err) {
         console.log('mosaicTocInit() reported errors... Perhaps you ordered tea? Error: '+err);
@@ -120,6 +122,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     var tocTitle  = this.tocTitle(settings);
      
     
+    $container.addClass('toc-container');
     $container.attr('id', tocContID); // set a container id so top can point to something
     settings.topLinkId = tocContID;   // id that top links point to
     
