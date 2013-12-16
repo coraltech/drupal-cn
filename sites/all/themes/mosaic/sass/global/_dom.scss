@@ -156,8 +156,9 @@ ol {
 // the item actions (edit delete etc...)
 .html ul.links {
   display: block;
+  min-height: $default_vert_unit;
   margin: 0;
-
+  
   li {
     float: right;
     font-size: .9em;
