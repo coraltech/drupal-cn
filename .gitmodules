@@ -277,3 +277,4 @@
 [submodule "sites/all/modules/contrib/media_youtube"]
 	path = sites/all/modules/contrib/media_youtube
 	url = http://git.drupal.org/project/media_youtube.git
+
