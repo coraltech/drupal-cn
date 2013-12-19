@@ -278,3 +278,6 @@
 	path = sites/all/modules/contrib/media_youtube
 	url = http://git.drupal.org/project/media_youtube.git
 
+[submodule "sites/all/modules/contrib/panels_tabs"]
+	path = sites/all/modules/contrib/panels_tabs
+	url = http://git.drupal.org/project/panels_tabs.git
