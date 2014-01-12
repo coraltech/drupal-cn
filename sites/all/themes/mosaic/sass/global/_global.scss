@@ -7,6 +7,7 @@
 @import 'compass/css3/opacity';
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
 
 @import 'global/arrows';
 @import 'global/buttons';
@@ -43,6 +44,11 @@
 body.html {
   background: $dkgray; 
 }
+
+body.page-references-dialog {
+  background: transparent;
+}
+
 // See _menus.scss for primary (main) menu 
 //  coloration settings.
 header,
@@ -481,4 +487,59 @@ h3 .toc-top {
   @include border-radius(20px);
   @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
   @include radial-gradient(darken($ltred, 10%), $ltred);
+}
+
+
+// Vertically aligned panels_tabs
+// Add body class to reqd panelizer to use vertical tabs.
+body.vertical-panels-tabs .ui-tabs {
+  
+  border: none;
+  font-size: 1em;
+  margin-bottom: $default_vert_unit;
+  
+  @include pie-clearfix;
+  
+  & > .item-list { // the widget tabs
+    position: absolute;
+    width: 12em;
+  }
+  
+  .ui-tabs-panel { // individual panels in the viewer
+    margin-left: 12em;
+    padding: 0 1em;
+  }
+  
+  .ui-tabs-nav {
+    border: none;
+    background: none;
+    
+    li.ui-corner-top {
+      border: none;
+      background: none;
+      @include border-radius(0px);
+    }
+    li a {
+      width: 10em;
+      line-height: 2 * $default_vert_unit;
+      
+      border: 1px solid $ltgray;      
+    }
+    
+    
+    
+    
+    /*.ui-state-default {
+      border-color: $ltgray;
+      border-bottom: 1px solid darken($ltgray, 15%) !important;
+      
+      @include linear-v-gradient(lighten($ltgray, 10%), lighten($ltgray, 3%));
+    }
+    .ui-state-active {
+      border-color: $mdgray;
+      border-bottom: 1px solid $mdgray !important;
+      @include linear-v-gradient(lighten($ltblue, 5%), darken($ltblue, 5%));
+    }*/
+  }
+  
 }
