@@ -1,0 +1,142 @@
+/* line 442, icons/*.png */
+.icons-sprite, .pane-coral-home-community .team {
+  background: url('/images/icons-s90292af557.png') no-repeat;
+}
+
+/* line 11, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community {
+  position: relative;
+  margin-bottom: 2.5em;
+  border-bottom: 1px solid #919191;
+  background: #cbcbcb;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #eaeaea 0%, #cbcbcb 50%, #dddddd 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(50%, #cbcbcb), color-stop(100%, #dddddd));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #eaeaea 0%, #cbcbcb 50%, #dddddd 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #eaeaea 0%, #cbcbcb 50%, #dddddd 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #eaeaea 0%, #cbcbcb 50%, #dddddd 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #eaeaea 0%, #cbcbcb 50%, #dddddd 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
+  /* IE6-9 */
+}
+/* line 16, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community p, .pane-coral-home-community h2, .pane-coral-home-community h4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+/* line 23, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .pane-title {
+  font-weight: bold;
+}
+/* line 27, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .team {
+  display: block;
+  font-size: 130%;
+  right: 85px;
+  top: -28px;
+  position: absolute;
+  background-position: 0 -314px;
+  height: 75px;
+  width: 65px;
+}
+/* line 40, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .bgr-wr,
+.pane-coral-home-community .bgr-gr,
+.pane-coral-home-community .bgr-wl,
+.pane-coral-home-community .bgr-gl {
+  height: 300px;
+  width: 1px;
+  background: #446eac;
+  position: absolute;
+  top: 15px;
+}
+/* line 48, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .bgr-wr {
+  left: -1px;
+  background: #e5e5e5;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(50%, #e5e5e5), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
+  /* IE6-9 */
+}
+/* line 52, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .bgr-gr {
+  left: -2px;
+  background: #898989;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(50%, #898989), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #898989 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
+  /* IE6-9 */
+}
+/* line 56, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .bgr-wl {
+  right: -1px;
+  background: #e5e5e5;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(50%, #e5e5e5), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
+  /* IE6-9 */
+}
+/* line 60, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community .bgr-gl {
+  right: -2px;
+  background: #898989;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(50%, #898989), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #898989 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #898989 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
+  /* IE6-9 */
+}
+/* line 66, ../../sass/panes/pane__coral_home_community.scss */
+.pane-coral-home-community h4 {
+  color: #e17d2c;
+}

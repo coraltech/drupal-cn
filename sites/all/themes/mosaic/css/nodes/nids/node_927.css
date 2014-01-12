@@ -1,0 +1,35 @@
+/* line 6, ../../../sass/nodes/nids/node_927.scss */
+.coral-slide.coral-diagram {
+  position: relative;
+}
+/* line 9, ../../../sass/nodes/nids/node_927.scss */
+.coral-slide.coral-diagram h2 {
+  position: absolute;
+  top: .25em;
+  right: 48px;
+  width: 585px;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.35em;
+  text-align: center;
+}
+/* line 20, ../../../sass/nodes/nids/node_927.scss */
+.coral-slide.coral-diagram ul {
+  position: absolute;
+  top: 100px;
+  width: 415px;
+  right: 20px;
+}
+/* line 26, ../../../sass/nodes/nids/node_927.scss */
+.coral-slide.coral-diagram ul li {
+  font-weight: bold;
+  margin-bottom: .65em;
+  font-size: .9em;
+  color: #6a6a6a;
+}
+/* line 35, ../../../sass/nodes/nids/node_927.scss */
+.coral-slide.coral-diagram a {
+  position: absolute;
+  bottom: 15px;
+  right: 22px;
+}

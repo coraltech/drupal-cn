@@ -1,0 +1,96 @@
+/* line 442, icons/*.png */
+.icons-sprite {
+  background: url('/images/icons-s90292af557.png') no-repeat;
+}
+
+/* line 12, ../../sass/panes/pane__coral_home_login.scss */
+.pane-coral-home-login {
+  position: relative;
+  margin-bottom: 1.25em;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.pane-coral-home-login:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 19, ../../sass/panes/pane__coral_home_login.scss */
+.pane-coral-home-login a.btn {
+  font-size: 22px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF247530', endColorstr='#FF0C2710');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #2e953d), color-stop(51%, #247530));
+  background: -webkit-linear-gradient(#2e953d 50%, #247530 51%);
+  background: -moz-linear-gradient(#2e953d 50%, #247530 51%);
+  background: -o-linear-gradient(#2e953d 50%, #247530 51%);
+  background: linear-gradient(#2e953d 50%, #247530 51%);
+  -webkit-box-shadow: #48c75b 0 1px 0 inset;
+  -moz-box-shadow: #48c75b 0 1px 0 inset;
+  box-shadow: #48c75b 0 1px 0 inset;
+  border: 1px solid #267d33;
+  color: white;
+  text-shadow: #103315 0 -1px 0;
+  font-size: 22px;
+  padding: 8px 1em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  text-align: center;
+  font-size: 1.5em;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-home-login a.btn:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-home-login a.btn:hover {
+  background-color: #247530;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #257932), color-stop(51%, #247530));
+  background: -webkit-linear-gradient(#257932 50%, #247530 51%);
+  background: -moz-linear-gradient(#257932 50%, #247530 51%);
+  background: -o-linear-gradient(#257932 50%, #247530 51%);
+  background: linear-gradient(#257932 50%, #247530 51%);
+}
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-home-login a.btn:active {
+  -webkit-box-shadow: #23722e 0 1px 2px inset;
+  -moz-box-shadow: #23722e 0 1px 2px inset;
+  box-shadow: #23722e 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-home-login a.btn.disabled, .pane-coral-home-login a.btn[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #2c913b;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.pane-coral-home-login a.btn::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 26, ../../sass/panes/pane__coral_home_login.scss */
+.pane-coral-home-login ul, .pane-coral-home-login p {
+  margin-top: 3px;
+}
+/* line 30, ../../sass/panes/pane__coral_home_login.scss */
+.pane-coral-home-login .login-sep {
+  height: 25px;
+  background: url("../../assets/images/coral-sep-long.png") top center no-repeat;
+}

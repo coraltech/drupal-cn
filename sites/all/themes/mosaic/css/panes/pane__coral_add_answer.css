@@ -1,6 +1,6 @@
-/* line 402, icons/*.png */
+/* line 442, icons/*.png */
 .icons-sprite, .pane-coral-add-answer .btn.answer .icon, .pane-coral-add-answer .btn.answers-hidden .icon, .pane-coral-add-answer .btn.answers-hidden:hover .icon {
-  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
+  background: url('/images/icons-s90292af557.png') no-repeat;
 }
 
 /* line 14, ../../sass/panes/pane__coral_add_answer.scss */
@@ -59,7 +59,7 @@
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -2469px;
+  background-position: 0 -2963px;
   height: 15px;
   width: 15px;
 }
@@ -73,13 +73,13 @@
 }
 /* line 67, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden .icon {
-  background-position: 0 -2404px;
+  background-position: 0 -2898px;
   height: 15px;
   width: 15px;
 }
 /* line 71, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden:hover .icon {
-  background-position: 0 -2469px;
+  background-position: 0 -2963px;
   height: 15px;
   width: 15px;
 }

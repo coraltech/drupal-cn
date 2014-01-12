@@ -1,7 +1,7 @@
-/* line 402, icons/*.png */
+/* line 442, icons/*.png */
 .icons-sprite, .page-comment-reply .pane-node-title .icon,
 .node-type-book .pane-node-title .icon, .node-type-book .links .discussion a .icon, .node-type-book .links .discussion a.active .icon, .node-type-book .links .discussion a:hover .icon, .node-type-book .links .book_printer a .icon, .node-type-book .links .book_printer a.active .icon, .node-type-book .links .book_printer a:hover .icon, .node-type-book .links .book_add_child a .icon, .node-type-book .links .book_add_child a.active .icon, .node-type-book .links .book_add_child a:hover .icon {
-  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
+  background: url('/images/icons-s90292af557.png') no-repeat;
 }
 
 /* line 13, ../../../sass/nodes/types/node_book.scss */
@@ -33,7 +33,7 @@
   float: left;
   margin-right: .4em;
   margin-top: -3px;
-  background-position: 0 -1572px;
+  background-position: 0 -2066px;
   height: 20px;
   width: 22px;
 }
@@ -52,37 +52,37 @@
 }
 /* line 52, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .discussion a .icon {
-  background-position: 0 -2277px;
+  background-position: 0 -2771px;
   height: 12px;
   width: 19px;
 }
 /* line 57, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .discussion a.active .icon, .node-type-book .links .discussion a:hover .icon {
-  background-position: 0 -2215px;
+  background-position: 0 -2709px;
   height: 12px;
   width: 19px;
 }
 /* line 63, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_printer a .icon {
-  background-position: 0 -2793px;
+  background-position: 0 -3287px;
   height: 15px;
   width: 15px;
 }
 /* line 68, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_printer a.active .icon, .node-type-book .links .book_printer a:hover .icon {
-  background-position: 0 -2858px;
+  background-position: 0 -3352px;
   height: 15px;
   width: 15px;
 }
 /* line 74, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_add_child a .icon {
-  background-position: 0 -2728px;
+  background-position: 0 -3222px;
   height: 15px;
   width: 15px;
 }
 /* line 79, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_add_child a.active .icon, .node-type-book .links .book_add_child a:hover .icon {
-  background-position: 0 -2663px;
+  background-position: 0 -3157px;
   height: 15px;
   width: 15px;
 }

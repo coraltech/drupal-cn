@@ -1,6 +1,6 @@
-/* line 402, icons/*.png */
+/* line 442, icons/*.png */
 .icons-sprite, .pane-coral-qa-ask-question .field-name-field-tags .icon {
-  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
+  background: url('/images/icons-s90292af557.png') no-repeat;
 }
 
 /* line 13, ../../sass/panes/pane__coral_qa_ask_question.scss */
@@ -68,7 +68,7 @@
   position: absolute;
   top: 0.625em;
   right: 48.5%;
-  background-position: 0 -2534px;
+  background-position: 0 -3028px;
   height: 14px;
   width: 11px;
 }

@@ -1,0 +1,14 @@
+/* line 5, ../../../sass/nodes/nids/node_926.scss */
+.coral-slide.cloud-handle {
+  position: relative;
+}
+/* line 8, ../../../sass/nodes/nids/node_926.scss */
+.coral-slide.cloud-handle h2 {
+  position: absolute;
+  top: 1em;
+  right: 108px;
+  width: 363px;
+  font-size: 3.25em;
+  font-weight: bold;
+  line-height: 1.35em;
+}

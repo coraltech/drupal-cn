@@ -1,6 +1,6 @@
-/* line 402, icons/*.png */
+/* line 442, icons/*.png */
 .icons-sprite, .intro-slide-4 .getting-started-icon {
-  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
+  background: url('/images/icons-s90292af557.png') no-repeat;
 }
 
 /* line 12, ../../../sass/nodes/fe_attach/intro_slideshow_slide_4.scss */
@@ -66,7 +66,7 @@
   display: block;
   float: left;
   margin: 0.625em;
-  background-position: 0 -448px;
+  background-position: 0 -554px;
   height: 48px;
   width: 48px;
 }

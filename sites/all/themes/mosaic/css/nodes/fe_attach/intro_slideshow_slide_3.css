@@ -1,6 +1,6 @@
-/* line 402, icons/*.png */
+/* line 442, icons/*.png */
 .icons-sprite, .intro-slide-3 .portable-icon {
-  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
+  background: url('/images/icons-s90292af557.png') no-repeat;
 }
 
 /* line 11, ../../../sass/nodes/fe_attach/intro_slideshow_slide_3.scss */
@@ -44,7 +44,7 @@
   position: absolute;
   top: 3.125em;
   left: 10px;
-  background-position: 0 -333px;
+  background-position: 0 -439px;
   height: 65px;
   width: 85px;
 }

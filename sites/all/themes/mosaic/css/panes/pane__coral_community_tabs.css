@@ -1,6 +1,6 @@
-/* line 402, icons/*.png */
+/* line 442, icons/*.png */
 .icons-sprite, .pane-coral-community-tabs ul li a.lcom .icon, .pane-coral-community-tabs ul li a.lqa .icon {
-  background: url('/images/icons-s9fc993f7aa.png') no-repeat;
+  background: url('/images/icons-s90292af557.png') no-repeat;
 }
 
 /* line 15, ../../sass/panes/pane__coral_community_tabs.scss */
@@ -97,7 +97,7 @@
 }
 /* line 81, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.lcom .icon {
-  background-position: 0 -798px;
+  background-position: 0 -904px;
   height: 50px;
   width: 50px;
 }
@@ -108,7 +108,7 @@
 /* line 89, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.lqa .icon {
   top: .1em;
-  background-position: 0 -106px;
+  background-position: 0 -212px;
   height: 52px;
   width: 90px;
 }

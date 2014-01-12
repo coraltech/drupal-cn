@@ -1,0 +1,92 @@
+/* line 442, icons/*.png */
+.icons-sprite, .view-slideshow .nav-cont .nav-prev, .view-slideshow .nav-cont .nav-next {
+  background: url('/images/icons-s90292af557.png') no-repeat;
+}
+
+/* line 12, ../../sass/views/view__slideshow.scss */
+.pip-cont .pip {
+  border-color: #9d9d9d;
+  border-style: solid;
+  border-width: 6px;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 0px;
+  width: 0px;
+  margin: 2px 8px 2px 8px;
+  -webkit-border-radius: 6px 6px;
+  -moz-border-radius: 6px / 6px;
+  border-radius: 6px / 6px;
+}
+/* line 26, ../../sass/views/view__slideshow.scss */
+.pip-cont .pip:hover, .pip-cont .pip.active-pip {
+  border-color: #898989;
+  border-width: 8px;
+  margin: 0 6px 0 6px;
+  -webkit-border-radius: 8px 8px;
+  -moz-border-radius: 8px / 8px;
+  border-radius: 8px / 8px;
+}
+
+/* line 35, ../../sass/views/view__slideshow.scss */
+.view-slideshow {
+  background: url("../../assets/images/coral-sep-full.png") bottom center no-repeat;
+  position: relative;
+  padding-bottom: 13px;
+  margin: 1.25em 0;
+}
+/* line 40, ../../sass/views/view__slideshow.scss */
+.view-slideshow .slide-img {
+  display: block;
+  width: 100%;
+}
+/* line 46, ../../sass/views/view__slideshow.scss */
+.view-slideshow .slide-top,
+.view-slideshow .slide-bottom {
+  height: 1px;
+  background: #446eac;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, white 0%, #446eac 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #446eac), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, white 0%, #446eac 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, white 0%, #446eac 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, white 0%, #446eac 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%, #446eac 50%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right ,GradientType=1 );
+  /* IE6-9 */
+}
+/* line 52, ../../sass/views/view__slideshow.scss */
+.view-slideshow .pip-cont {
+  margin: 0 auto;
+  position: relative;
+  z-index: 15;
+  top: -8px;
+  width: 58px;
+}
+/* line 61, ../../sass/views/view__slideshow.scss */
+.view-slideshow .nav-cont .nav {
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+  z-index: 3;
+}
+/* line 68, ../../sass/views/view__slideshow.scss */
+.view-slideshow .nav-cont .nav-prev {
+  left: -25px;
+  background-position: 0 -1287px;
+  height: 60px;
+  width: 55px;
+}
+/* line 73, ../../sass/views/view__slideshow.scss */
+.view-slideshow .nav-cont .nav-next {
+  right: -25px;
+  background-position: 0 -1092px;
+  height: 60px;
+  width: 55px;
+}

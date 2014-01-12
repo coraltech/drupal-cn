@@ -1,0 +1,66 @@
+/* line 11, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container {
+  background: url("../../assets/images/blue-ribbon-grad.png") repeat-x;
+  position: relative;
+  margin-bottom: 3.125em;
+  color: #dae2eb;
+}
+/* line 17, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container .home-intro-content {
+  background: url("../../assets/images/blue-ribbon-grad-sep.png") bottom center no-repeat;
+  padding: 0 1em;
+  min-height: 280px;
+  font-size: 120%;
+}
+/* line 27, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container .shade-line {
+  background: url("../../assets/images/bottom-shade.png") bottom left repeat-x;
+  height: 13px;
+  width: 100%;
+  position: absolute;
+  bottom: -13px;
+}
+/* line 36, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container .home-intro-left,
+.home-intro-container .home-intro-right {
+  position: absolute;
+  top: 0px;
+}
+/* line 41, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container .home-intro-left {
+  background: url("../../assets/images/blue-ribbon-wings.png") left top no-repeat;
+  width: 95px;
+  height: 300px;
+  left: -70px;
+}
+/* line 48, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container .home-intro-right {
+  background: url("../../assets/images/blue-ribbon-wings.png") right top no-repeat;
+  width: 90px;
+  height: 300px;
+  right: -72px;
+}
+/* line 55, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container .more {
+  color: #c5e4c9;
+  font-size: .8em;
+  float: right;
+}
+/* line 61, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container h2 {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-top: .5em;
+  font-size: 1.45em;
+}
+/* line 69, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container ul {
+  margin-top: 0.625em;
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+/* line 74, ../../sass/panes/pane__coral_home_intro.scss */
+.home-intro-container ul li {
+  margin-bottom: 0.625em;
+}

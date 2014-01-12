@@ -1,0 +1,37 @@
+/* line 442, icons/*.png */
+.icons-sprite, .pane-coral-home-contribute .public-work, .pane-coral-home-contribute .troubleshoot {
+  background: url('/images/icons-s90292af557.png') no-repeat;
+}
+
+/* line 9, ../../sass/panes/pane__coral_home_contribute.scss */
+.pane-coral-home-contribute {
+  position: relative;
+  margin-bottom: 2.5em;
+}
+/* line 13, ../../sass/panes/pane__coral_home_contribute.scss */
+.pane-coral-home-contribute .pane-title {
+  font-weight: bold;
+}
+/* line 17, ../../sass/panes/pane__coral_home_contribute.scss */
+.pane-coral-home-contribute .public-work {
+  display: block;
+  float: left;
+  margin: -5px 0 -1.25em 0;
+  background-position: 0 -740px;
+  height: 25px;
+  width: 42px;
+}
+/* line 24, ../../sass/panes/pane__coral_home_contribute.scss */
+.pane-coral-home-contribute .troubleshoot {
+  display: block;
+  float: left;
+  margin: 2.3em 0 -1.25em 0;
+  background-position: 0 -1885px;
+  height: 29px;
+  width: 39px;
+}
+/* line 31, ../../sass/panes/pane__coral_home_contribute.scss */
+.pane-coral-home-contribute h4 {
+  color: #e17d2c;
+  margin-left: 3em;
+}
