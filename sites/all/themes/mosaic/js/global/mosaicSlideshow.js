@@ -59,15 +59,17 @@ Drupal.mosaic = Drupal.mosaic || {};
       // Events
       events: {
         'click span.pip': 'clickPip',  // click on a pip
-        'hover span.pip': 'hoverPip'   // mouseover a pip
+        'hover span.pip': 'hoverPip',  // mouseover a pip
+        'click span.nav': 'clickNav'   // click on prev or next
       },
       
       // Init
       initialize: function() {
         slideshow.startup(this.$container);     // Do a little init work
         slideshow.addPips(this.settings, this.$container); // Set up the nav pips
+        slideshow.addNextPrev(this.settings, this.$container); // Add next previous buttons
         slideshow.updatePips(this.settings, this.$container, this.slideshow);
-        _.bindAll(this, 'clickPip', 'hoverPip');           // Bind the actions         
+        _.bindAll(this, 'clickPip', 'hoverPip', 'clickNav');   // Bind the actions         
       },
       
       // Pip click event
@@ -76,8 +78,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         slideID = slideID.replace('pip-', ''); // slide number 1 - N
         
         // Slideshow ids and settings
-        var fullID = slideshow.id;                              // full slideshow id
-        var settings = Drupal.settings.viewsSlideshowCycle[fullID]; // slideshow settings
+        var settings = Drupal.settings.viewsSlideshowCycle[slideshow.id]; // slideshow settings
         
         // Set settings for new action!
         settings.slideNum = Number(slideID);
@@ -85,6 +86,17 @@ Drupal.mosaic = Drupal.mosaic || {};
         
         // Goto slide
         Drupal.viewsSlideshowCycle.goToSlide(settings); 
+      },
+      
+      clickNav: function(ev) {
+        var settings = Drupal.settings.viewsSlideshowCycle[slideshow.id]; // slideshow settings
+        settings.slideshowID = settings.vss_id;
+        if ($(ev.currentTarget).hasClass('nav-next')) {
+          Drupal.viewsSlideshowCycle.nextSlide(settings);
+        }
+        else {
+          Drupal.viewsSlideshowCycle.previousSlide(settings);
+        }
       },
       
       // Hover event
@@ -107,6 +119,16 @@ Drupal.mosaic = Drupal.mosaic || {};
     var maxW  = 0;
     $imgs.each(function() { if ($(this).width() > maxW) maxW = $(this).width(); });
     $imgs.each(function() { $(this).parent().width(maxW); });
+  }
+  
+  // Add the clickable pips (UI)
+  Drupal.mosaic.slideshow.prototype.addNextPrev = function(settings, $container) {
+    if (settings.totalImages > 1) {
+      var nav = '<div class="nav-cont">'; // open the container
+      nav += '<span class="nav nav-prev"></span>';
+      nav += '<span class="nav nav-next"></span>';
+      $container.append(nav);
+    }
   }
   
   // Add the clickable pips (UI)
