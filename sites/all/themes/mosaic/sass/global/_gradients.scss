@@ -42,6 +42,28 @@
   //background-image: -o-radial-gradient(center center, circle contain, black 0%, blue 25%, green 40%, red 60%, purple 80%, white 100%); /* Opera (13?) */  
 }
 
+@mixin reflected-h-gradient($left:$white, $center:$mdblue, $right:$white) {
+  background: $center; /* Old browsers */
+  background: -moz-linear-gradient(left, $left 0%, $center 50%, $right 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $left), color-stop(50%, $center), color-stop(100%, $right)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, $left 0%,$center 50%, $right 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $left 0%, $center 50%, $right 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $left 0%,$center 50%, $right 100%); /* IE10+ */
+  background: linear-gradient(to right, $left 0%, $center 50%, $right 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right ,GradientType=1 ); /* IE6-9 */
+}
+
+@mixin reflected-v-gradient($top:$white, $center:$mdblue, $bottom:$white) {
+  background: $center; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $center 50%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(50%,$center), color-stop(100%, $bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $top 0%, $center 50%, $bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $top 0%, $center 50%, $bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $top 0%, $center 50%, $bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $top 0%, $center 50%, $bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$top, endColorstr=$bottom,GradientType=0 ); /* IE6-9 */
+}
+
 // @TODO make this work even with >= IE7
 // @TODO see how we could extropolate this to allow it to make 
 //        comprehensive column designs... like infinite number of cols!
