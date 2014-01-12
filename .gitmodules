@@ -281,3 +281,9 @@
 [submodule "sites/all/modules/contrib/panels_tabs"]
 	path = sites/all/modules/contrib/panels_tabs
 	url = http://git.drupal.org/project/panels_tabs.git
+[submodule "sites/all/modules/contrib/typogrify"]
+	path = sites/all/modules/contrib/typogrify
+	url = http://git.drupal.org/project/typogrify.git
+[submodule "sites/all/modules/contrib/markdown"]
+	path = sites/all/modules/contrib/markdown
+	url = http://git.drupal.org/project/markdown.git
