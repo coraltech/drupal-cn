@@ -1,0 +1,36 @@
+
+// File controls styles for coral_getting_started custom pane.
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+
+
+.pane-coral-home-contribute {
+  position: relative;
+  margin-bottom: 2 * $default_vert_unit;
+  
+  .pane-title {
+    font-weight: bold;
+  }
+  
+  .public-work {
+    display: block;
+    float: left;
+    margin: -5px 0 (-1 * $default_vert_unit) 0; 
+    @include icons-sprite('public-projects');
+  }
+  
+  .troubleshoot {
+    display: block;
+    float: left;
+    margin: 2.3em 0 (-1 * $default_vert_unit) 0;
+    @include icons-sprite('private-projects');
+  }
+  
+  h4 {
+    color: $mdorange;
+    margin-left: 3em;
+  }
+  
+}

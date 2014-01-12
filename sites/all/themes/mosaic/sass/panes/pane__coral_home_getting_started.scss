@@ -1,0 +1,72 @@
+
+// File controls styles for coral_getting_started custom pane.
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+@import "global/gradients";
+
+@import "compass/css3/box-shadow";
+
+.pane-coral-home-getting-started {
+  position: relative;
+  
+  .pane-title {
+    font-weight: bold;
+  }
+  
+  .clowny {
+    display: block;
+    font-size: 130%;
+    right: 65px;
+    top: -1px;
+    position: absolute;
+    
+    @include icons-sprite('clowny-left');
+  }
+  
+  h4 {
+    color: $mdorange;
+  }
+  .shell {
+    border-width: 1px;
+    border-color: $mdgray;
+    border-style: solid;
+    padding: ($default_vert_unit / 4);
+    
+    @include box-shadow(rgba(0,0,0,.2) 2px 2px 6px);
+    @include linear-v-gradient(darken($dkgray, 10%), darken($dkgray, 17%));
+        
+    .line {
+      padding: 0;
+      font-size: .8em;
+      font-weight: bold;
+      font-family: $mono_fonts;
+      
+      .prompt { 
+        color: $mdgreen; 
+      }
+      .command { 
+        color: $white; 
+      }
+    }
+  }
+  .msg {
+    margin-top: ($default_vert_unit / 3);
+    padding-top: ($default_vert_unit / 3);
+    line-height: ($default_vert_unit * .9);
+    position: relative;
+    
+    .up-pointer {
+      display: block;
+      position: absolute;
+      left: -36px;
+      top: -1px;
+      
+      @include icons-sprite('coral-pointer');
+    }
+  }
+  .more {
+    margin-top: $default_vert_unit / 8;
+  }
+}

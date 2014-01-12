@@ -1,0 +1,70 @@
+
+// File controls styles for coral_getting_started custom pane.
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+@import "global/gradients";
+
+@import "compass/css3/box-shadow";
+
+.pane-coral-home-community {
+  position: relative;
+  margin-bottom: 2 * $default_vert_unit;
+  border-bottom: 1px solid lighten($mdgray, 10%);
+  
+  p, h2, h4 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  @include reflected-v-gradient(lighten($ltgray, 5%), darken($ltgray, 7%), $ltgray);
+  
+  .pane-title {
+    font-weight: bold;
+  }
+  
+  .team {
+    display: block;
+    font-size: 130%;
+    right: 85px;
+    top: -28px;
+    position: absolute;
+    
+    @include icons-sprite('coral-team');
+  }
+  
+  .bgr-wr,
+  .bgr-gr,
+  .bgr-wl,
+  .bgr-gl {
+    height: 300px;
+    width: 1px;
+    background: $mdblue;
+    position: absolute;
+    top: 15px;
+  }
+  
+  .bgr-wr {
+    left: -1px;
+    @include reflected-v-gradient($white, lighten($ltgray, 3%), $white);
+  }
+  .bgr-gr {
+    left: -2px;
+    @include reflected-v-gradient($white, lighten($mdgray, 7%), $white);
+  }
+  .bgr-wl {
+    right: -1px;
+    @include reflected-v-gradient($white, lighten($ltgray, 3%), $white);
+  }
+  .bgr-gl {
+    right: -2px;
+    @include reflected-v-gradient($white, lighten($mdgray, 7%), $white);
+  }
+  
+  
+  h4 {
+    color: $mdorange;
+  }
+  
+}

@@ -1,0 +1,78 @@
+
+// Main scss file for the home page intro info pane
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+@import 'global/headers';
+
+@import "compass/utilities/general/clearfix";
+
+.home-intro-container {
+  background: url('../../assets/images/blue-ribbon-grad.png') repeat-x;
+  position: relative;
+  margin-bottom: 2.5 * $default_vert_unit;
+  color: lighten($ltblue, 5%);
+  
+  .home-intro-content {
+    background: url('../../assets/images/blue-ribbon-grad-sep.png') bottom center no-repeat;
+    
+    padding: 0 1em;
+    min-height: 280px;
+    font-size: 120%;
+    //@include pie-clearfix;
+  }
+  
+  
+  .shade-line {
+    background: url('../../assets/images/bottom-shade.png') bottom left repeat-x;
+    height: 13px;
+    width: 100%;
+    position: absolute;
+    bottom: -13px;
+  }
+  
+  .home-intro-left,
+  .home-intro-right {
+    position: absolute;
+    top: 0px;
+  }
+  
+  .home-intro-left {
+    background: url('../../assets/images/blue-ribbon-wings.png') left top no-repeat;
+    width: 95px;
+    height: 300px;
+    left: -70px;
+  }
+  
+  .home-intro-right {
+    background: url('../../assets/images/blue-ribbon-wings.png') right top no-repeat;
+    width: 90px;
+    height: 300px;
+    right: -72px;
+  }
+  
+  .more {
+    color: lighten($ltgreen, 10%);
+    font-size: .8em;
+    float: right;
+  }
+  
+  h2 {
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    padding-top: .5em;
+    font-size: 1.45em;
+  }
+  
+  ul {
+    margin-top: $default_vert_unit / 2;
+    margin-bottom: 0;
+    margin-left: 1em;
+    
+    li {
+      margin-bottom: $default_vert_unit / 2;
+    }
+  }
+}
