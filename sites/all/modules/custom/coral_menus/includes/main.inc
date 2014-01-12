@@ -25,29 +25,34 @@ function coral_menus_main_links_loader() {
   return array(
     'about'=> array(
       'link_title' => t('About'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/916',
       'weight'     => 1,
-    ),  
+    ),
+    'download' => array(
+      'link_title' => t('Downloads'),
+      'link_path'  => '<front>',
+      'weight'     => 2,
+    ), 
     'community' => array(
       'link_title' => t('Community'),
       'link_path'  => 'node/32',
-      'weight'     => 2,
+      'weight'     => 3,
     ),
     'find' => array(
       'link_title' => t('Find'),
       'link_path'  => 'search/node/all',  
-      'weight'     => 3,
-    ),
-    'build' => array(
-      'link_title' => t('Build'),
-      'link_path'  => 'node/8',
       'weight'     => 4,
-    ),
-    'test' => array(
-      'link_title' => t('Test'),
-      'link_path'  => 'node/8',
-      'weight'     => 5,
     )
+    //'build' => array(
+    //  'link_title' => t('Build'),
+    //  'link_path'  => 'node/8',
+    //  'weight'     => 5,
+    //)
+    //'test' => array(
+    //  'link_title' => t('Test'),
+    //  'link_path'  => 'node/8',
+    //  'weight'     => 6,
+    //)
   );
 }
 
