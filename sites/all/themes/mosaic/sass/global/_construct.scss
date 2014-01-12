@@ -9,8 +9,8 @@
 .hide { position: absolute; left: -9999em; }
 
 // floats
-.left  { float: left;  }
-.right { float: right; }
+.left, div.left  { float: left;  }
+.right, div.right { float: right; }
 
 // and clears
 .clear       { clear: both;  }
