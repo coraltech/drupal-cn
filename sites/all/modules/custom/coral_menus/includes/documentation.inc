@@ -22,25 +22,30 @@ function coral_menus_documentation_menu_loader() {
  **/
 function coral_menus_documentation_links_loader() {
   return array(
-    'command_line'=> array(
-      'link_title' => t('Command line'),
+    'commands'=> array(
+      'link_title' => t('Commands'),
       'link_path'  => 'node/8',
       'weight'     => 1,
     ),
-    'web_portal' => array(
-      'link_title' => t('Web portal'),
+    'architecture' => array(
+      'link_title' => t('Architecture'),
       'link_path'  => 'node/8',
       'weight'     => 2,
     ),
-    'restful_api' => array(
-      'link_title' => t('Restful API'),
+    'requirements' => array(
+      'link_title' => t('Requirements'),
       'link_path'  => 'node/8',
       'weight'     => 3,
     ),
-    'ruby_api' => array(
-      'link_title' => t('Ruby API'),
+    'cluster' => array(
+      'link_title' => t('Creating your first cluster'),
       'link_path'  => 'node/8',
       'weight'     => 4,
+    ),
+    'plugins' => array(
+      'link_title' => t('Adding new plugins'),
+      'link_path'  => 'node/8',
+      'weight'     => 5,
     )
   );
 }
