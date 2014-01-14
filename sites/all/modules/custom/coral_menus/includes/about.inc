@@ -29,7 +29,7 @@ function coral_menus_about_links_loader() {
     ),
     'team' => array(
       'link_title' => t('Team'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/930',
       'weight'     => 2,
     ),
     'support' => array(
