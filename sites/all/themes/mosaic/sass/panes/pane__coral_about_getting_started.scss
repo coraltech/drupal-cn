@@ -1,0 +1,77 @@
+
+// Customizations of the about intro
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+@import "global/gradients";
+
+@import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
+
+
+.pane-coral-about-getting-started {
+  position: relative;
+  margin-bottom: 2 * $default_vert_unit;
+  
+  @include pie-clearfix;
+  
+  .pane-title {
+    color: darken($mdorange, 7%);
+    clear: both;
+  }
+  
+  .getting-started {
+    display: block;
+    float: left;
+    margin-right: 0.5em;
+    position: relative;
+    top: 4px;
+    @include icons-sprite('getting-started');
+  }  
+  
+  .shell {
+    border-width: 1px;
+    border-color: $mdgray;
+    border-style: solid;
+    padding: ($default_vert_unit / 4);
+    
+    @include box-shadow(rgba(0,0,0,.2) 2px 2px 6px);
+    @include linear-v-gradient(darken($dkgray, 10%), darken($dkgray, 17%));
+        
+    .line {
+      padding: 0;
+      font-size: .8em;
+      font-weight: bold;
+      font-family: $mono_fonts;
+      
+      .prompt { 
+        color: $mdgreen; 
+      }
+      .command { 
+        color: $white; 
+      }
+    }
+  }
+  
+  .msg {
+    margin-top: ($default_vert_unit / 3);
+    margin-bottom: $default_vert_unit;
+    padding-top: ($default_vert_unit / 3);
+    line-height: ($default_vert_unit * .9);
+    position: relative;
+    
+    .up-pointer {
+      display: block;
+      position: absolute;
+      left: -38px;
+      top: 4px;
+      
+      @include icons-sprite('coral-pointer');
+    }
+  }
+  
+  .more {
+    float: right;
+  }
+}

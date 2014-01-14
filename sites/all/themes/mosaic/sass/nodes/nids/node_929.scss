@@ -1,0 +1,10 @@
+// Main about page
+
+@import 'global/grid_mix';
+
+.main-content.grid-11 {
+  @include col(6.5);
+}
+.secondary-content.grid-13-last {
+  @include col(17.5, 'true');
+}

@@ -1,0 +1,34 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+
+@import "compass/css3/border-radius";
+
+.pane-coral-on-git {
+  position: relative;
+  margin-bottom: 2 * $default_vert_unit;
+  
+  .find-us {
+    font-size: 90%;
+    margin-left: 1em;
+    color: $mdgray;
+  }
+  .git-link {
+    background: $mdgreen;
+    
+    @include border-radius(20px);
+    
+    a {
+      color: $white;
+      display: block;
+      padding: ($default_vert_unit / 2) 0em ($default_vert_unit / 2) 1em;
+      font-size: 90%;
+      
+      &:hover {
+        color: lighten($ltyellow, 5%);
+      }
+    }
+  }
+}

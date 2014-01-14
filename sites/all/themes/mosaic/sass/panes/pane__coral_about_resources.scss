@@ -1,0 +1,19 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+
+@import "compass/utilities/general/clearfix";
+
+
+.pane-coral-about-resources {
+  position: relative;
+  margin-bottom: $default_vert_unit;
+  
+  //@include pie-clearfix;
+  
+  .pane-title {
+    color: darken($mdorange, 7%);
+  }
+}

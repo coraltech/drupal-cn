@@ -1,0 +1,59 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+@import 'global/grid_mix';
+
+@import "compass/utilities/general/clearfix";
+
+
+.pane-coral-about-technologies {
+  position: relative;
+  
+  .pane-title {
+    color: darken($mdorange, 7%);
+  }
+  
+  .tico {
+    @include pie-clearfix;
+    
+    span {
+      display: block;
+      float: left;
+      margin-right: 1em;
+    }
+    
+    .vagrant {
+      @include icons-sprite('vagrant');
+    }
+    .puppet {
+      @include icons-sprite('puppet');
+    }
+    .ruby {
+      @include icons-sprite('ruby-apps');
+    }
+    .fog {
+      @include icons-sprite('fog');
+    }
+    .git {
+      @include icons-sprite('git');
+    }
+  }
+  
+  ul {
+    margin-top: 1.45em; 
+    
+    li {
+      margin-top: ($default_vert_unit / 2);
+      margin-bottom: ($default_vert_unit / 2);
+      
+      span {
+        font-size: 90%;
+      }
+    }
+  }
+}
