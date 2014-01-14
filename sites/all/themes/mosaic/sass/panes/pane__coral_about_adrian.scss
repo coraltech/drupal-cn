@@ -1,0 +1,28 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+
+.pane-coral-about-adrian {
+  position: relative;
+  
+  .pane-title {
+    color: darken($mdorange, 7%);
+  }
+  
+  .teammate {
+    display: block;
+    float: left;
+    margin: 0 10px 5px 0;
+    background: $ltgray;
+    font-size: 3em;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+}

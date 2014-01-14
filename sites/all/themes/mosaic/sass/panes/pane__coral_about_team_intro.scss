@@ -1,0 +1,35 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+
+h1.page-title {
+  color: $mdorange;
+  
+  @include huge;
+  
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+
+.pane-coral-about-team-intro {
+  p {
+    @include h3;
+    margin-bottom: $default_vert_unit;
+    line-height: 1.25em;
+    color: lighten($dkgray, 15%);
+  }
+ 
+  .coral-team {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    @include icons-sprite('coral-team'); 
+  }
+}

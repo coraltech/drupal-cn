@@ -1,0 +1,25 @@
+/* line 450, icons/*.png */
+.icons-sprite {
+  background: url('/images/icons-s7075c67732.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_about_adrian.scss */
+.pane-coral-about-adrian {
+  position: relative;
+}
+/* line 13, ../../sass/panes/pane__coral_about_adrian.scss */
+.pane-coral-about-adrian .pane-title {
+  color: #cc6b1d;
+}
+/* line 17, ../../sass/panes/pane__coral_about_adrian.scss */
+.pane-coral-about-adrian .teammate {
+  display: block;
+  float: left;
+  margin: 0 10px 5px 0;
+  background: #dddddd;
+  font-size: 3em;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+}

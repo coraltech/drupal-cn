@@ -1,0 +1,36 @@
+/* line 450, icons/*.png */
+.icons-sprite, .pane-coral-about-team-intro .coral-team {
+  background: url('/images/icons-s7075c67732.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_about_team_intro.scss */
+h1.page-title {
+  color: #e17d2c;
+  font-size: 2em;
+  line-height: 1.4em;
+  margin-top: .3125em;
+  margin-bottom: .3125em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+/* line 21, ../../sass/panes/pane__coral_about_team_intro.scss */
+.pane-coral-about-team-intro p {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-bottom: 1.25em;
+  line-height: 1.25em;
+  color: #777777;
+}
+/* line 28, ../../sass/panes/pane__coral_about_team_intro.scss */
+.pane-coral-about-team-intro .coral-team {
+  display: block;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background-position: 0 -420px;
+  height: 75px;
+  width: 65px;
+}
