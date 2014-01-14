@@ -1,0 +1,63 @@
+
+@import 'global/arrows';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+
+.pane-menu-about {
+  border: 1px solid $ltblue;
+  background: lighten($ltgray, 5%) url('../../assets/images/diag-tile.png');
+  padding: 5px;
+  margin-bottom: 2 * $default_vert_unit;
+  
+  ul {
+    margin: 0;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.75);
+      
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      list-style-image: none;
+      
+      a {
+        border: 1px solid lighten($ltgray, 10%);
+        position: relative;
+        display: block;
+        height: 40px;
+        color: lighten($dkgray, 2%);
+        line-height: 40px;
+        padding: 0 .5em;
+        font-size: 1.5em;
+          
+        &:hover,
+        &.active,
+        &:active {
+          background: $white;
+          border: 1px solid $ltgray;
+          width: 210px;
+          color: darken($dkgray, 7%); 
+          
+          .ar-out {
+            display: block;
+            position: absolute;
+            top: -1px;
+            right: -43px;
+            
+            @include arrow-right(21px, $ltgray);
+            
+            .ar-in {
+              display: block;
+              position: absolute;
+              top: -20px;
+              right: -18px;
+              
+              @include arrow-right(20px, $white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
