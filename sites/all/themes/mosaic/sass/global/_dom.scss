@@ -35,6 +35,7 @@
 body {
   font-size: 16px;
   font-family: $sans_fonts;
+  color: darken($dkgray, 10%);
 }
 html > body {
   line-height: $default_vert_unit;
