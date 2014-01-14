@@ -30,3 +30,11 @@
   line-height: 1.25em;
   margin: 0;
 }
+
+
+@mixin huge() {
+  font-size: 2em; // 32px
+  line-height: 1.4em; // 1.4em
+  margin-top: .3125em;
+  margin-bottom: .3125em;
+}
