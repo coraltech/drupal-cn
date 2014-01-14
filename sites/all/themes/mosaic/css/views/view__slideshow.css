@@ -1,6 +1,6 @@
-/* line 442, icons/*.png */
+/* line 450, icons/*.png */
 .icons-sprite, .view-slideshow .nav-cont .nav-prev, .view-slideshow .nav-cont .nav-next {
-  background: url('/images/icons-s90292af557.png') no-repeat;
+  background: url('/images/icons-s7075c67732.png') no-repeat;
 }
 
 /* line 12, ../../sass/views/view__slideshow.scss */
@@ -79,14 +79,14 @@
 /* line 68, ../../sass/views/view__slideshow.scss */
 .view-slideshow .nav-cont .nav-prev {
   left: -25px;
-  background-position: 0 -1287px;
+  background-position: 0 -1393px;
   height: 60px;
   width: 55px;
 }
 /* line 73, ../../sass/views/view__slideshow.scss */
 .view-slideshow .nav-cont .nav-next {
   right: -25px;
-  background-position: 0 -1092px;
+  background-position: 0 -1198px;
   height: 60px;
   width: 55px;
 }

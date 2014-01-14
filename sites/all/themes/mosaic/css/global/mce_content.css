@@ -2,20 +2,21 @@
 body {
   font-size: 16px;
   font-family: arial, helvetica, sans-serif;
+  color: #373737;
 }
 
-/* line 39, ../../sass/global/_dom.scss */
+/* line 40, ../../sass/global/_dom.scss */
 html > body {
   line-height: 1.25em;
 }
 
-/* line 45, ../../sass/global/_dom.scss */
+/* line 46, ../../sass/global/_dom.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #515151;
   clear: left;
 }
 
-/* line 50, ../../sass/global/_dom.scss */
+/* line 51, ../../sass/global/_dom.scss */
 h1 {
   font-size: 1.5em;
   line-height: 1.6667em;
@@ -23,7 +24,7 @@ h1 {
   margin-bottom: 0.4167em;
 }
 
-/* line 53, ../../sass/global/_dom.scss */
+/* line 54, ../../sass/global/_dom.scss */
 h2 {
   font-size: 1.375em;
   line-height: 1.8182em;
@@ -31,7 +32,7 @@ h2 {
   margin-bottom: 0.4545em;
 }
 
-/* line 56, ../../sass/global/_dom.scss */
+/* line 57, ../../sass/global/_dom.scss */
 h3 {
   font-size: 1.25em;
   line-height: 1em;
@@ -39,7 +40,7 @@ h3 {
   margin-bottom: .5em;
 }
 
-/* line 59, ../../sass/global/_dom.scss */
+/* line 60, ../../sass/global/_dom.scss */
 h4 {
   font-size: 1.125em;
   line-height: 1.1111em;
@@ -47,7 +48,7 @@ h4 {
   margin-bottom: 0.5555em;
 }
 
-/* line 68, ../../sass/global/_dom.scss */
+/* line 69, ../../sass/global/_dom.scss */
 img,
 object,
 embed,
@@ -55,7 +56,7 @@ video {
   max-width: 100%;
 }
 
-/* line 76, ../../sass/global/_dom.scss */
+/* line 77, ../../sass/global/_dom.scss */
 a,
 li a,
 li.leaf a {
@@ -66,7 +67,7 @@ li.leaf a {
   text-decoration: none;
   outline: none;
 }
-/* line 84, ../../sass/global/_dom.scss */
+/* line 85, ../../sass/global/_dom.scss */
 a:active, a.active,
 li a:active,
 li a.active,
@@ -74,49 +75,49 @@ li.leaf a:active,
 li.leaf a.active {
   color: #32547d;
 }
-/* line 85, ../../sass/global/_dom.scss */
+/* line 86, ../../sass/global/_dom.scss */
 a:hover,
 li a:hover,
 li.leaf a:hover {
   color: #2b486b;
 }
 
-/* line 87, ../../sass/global/_dom.scss */
+/* line 88, ../../sass/global/_dom.scss */
 a.freelink-createnode {
   color: #b02e1c;
 }
-/* line 89, ../../sass/global/_dom.scss */
+/* line 90, ../../sass/global/_dom.scss */
 a.freelink-createnode:hover {
   color: #762921;
 }
 
-/* line 95, ../../sass/global/_dom.scss */
+/* line 96, ../../sass/global/_dom.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 99, ../../sass/global/_dom.scss */
+/* line 100, ../../sass/global/_dom.scss */
 p {
   margin: 0 0 1.25em 0;
 }
 
-/* line 103, ../../sass/global/_dom.scss */
+/* line 104, ../../sass/global/_dom.scss */
 em, .em {
   font-style: italic;
 }
 
-/* line 107, ../../sass/global/_dom.scss */
+/* line 108, ../../sass/global/_dom.scss */
 small {
   font-size: 80%;
   line-height: 1.25em;
 }
 
-/* line 115, ../../sass/global/_dom.scss */
+/* line 116, ../../sass/global/_dom.scss */
 ul,
 .item-list ul {
   margin: 1.25em 0.5em;
 }
-/* line 119, ../../sass/global/_dom.scss */
+/* line 120, ../../sass/global/_dom.scss */
 ul li,
 ul li.leaf,
 .item-list ul li,
@@ -126,25 +127,25 @@ ul li.leaf,
   margin: 0 0 0 1em;
   padding-top: 0;
 }
-/* line 125, ../../sass/global/_dom.scss */
+/* line 126, ../../sass/global/_dom.scss */
 ul li.collapsed,
 .item-list ul li.collapsed {
   margin: 0 0 0 1em;
   padding-top: 0;
 }
 
-/* line 130, ../../sass/global/_dom.scss */
+/* line 131, ../../sass/global/_dom.scss */
 #autocomplete {
   border: 1px solid #dddddd;
 }
-/* line 133, ../../sass/global/_dom.scss */
+/* line 134, ../../sass/global/_dom.scss */
 #autocomplete ul {
   list-style: none;
   list-style-image: none;
   margin: 0;
   padding: 0;
 }
-/* line 140, ../../sass/global/_dom.scss */
+/* line 141, ../../sass/global/_dom.scss */
 #autocomplete ul li,
 #autocomplete ul li.leaf {
   margin: 0;
@@ -154,19 +155,19 @@ ul li.collapsed,
   border-bottom: 1px solid #dddddd;
 }
 
-/* line 151, ../../sass/global/_dom.scss */
+/* line 152, ../../sass/global/_dom.scss */
 ol {
   list-style: decimal;
   margin-left: 1.325em;
 }
 
-/* line 157, ../../sass/global/_dom.scss */
+/* line 158, ../../sass/global/_dom.scss */
 .html ul.links {
   display: block;
   min-height: 1.25em;
   margin: 0;
 }
-/* line 162, ../../sass/global/_dom.scss */
+/* line 163, ../../sass/global/_dom.scss */
 .html ul.links li {
   float: right;
   font-size: .9em;
@@ -174,31 +175,31 @@ ol {
   padding: 0 3px;
   border-right: 1px solid #dddddd;
 }
-/* line 169, ../../sass/global/_dom.scss */
+/* line 170, ../../sass/global/_dom.scss */
 .html ul.links li a {
   color: #9d9d9d;
 }
-/* line 172, ../../sass/global/_dom.scss */
+/* line 173, ../../sass/global/_dom.scss */
 .html ul.links li a:hover {
   color: #5e5e5e;
 }
 
-/* line 182, ../../sass/global/_dom.scss */
+/* line 183, ../../sass/global/_dom.scss */
 .html .form-item {
   margin: 0.625em 0 1.25em 0;
 }
-/* line 185, ../../sass/global/_dom.scss */
+/* line 186, ../../sass/global/_dom.scss */
 .html .form-item label {
   font-weight: bold;
   color: #777777;
 }
 
-/* line 191, ../../sass/global/_dom.scss */
+/* line 192, ../../sass/global/_dom.scss */
 .html .form-actions {
   margin: 0.625em 0;
 }
 
-/* line 195, ../../sass/global/_dom.scss */
+/* line 196, ../../sass/global/_dom.scss */
 input.form-submit {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -268,7 +269,7 @@ input.form-submit::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 201, ../../sass/global/_dom.scss */
+/* line 202, ../../sass/global/_dom.scss */
 input#edit-delete {
   margin-left: 2em;
   font-size: 16px;
@@ -338,78 +339,78 @@ input#edit-delete::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 207, ../../sass/global/_dom.scss */
+/* line 208, ../../sass/global/_dom.scss */
 .form-textarea {
   font-size: 1em;
 }
 
-/* line 210, ../../sass/global/_dom.scss */
+/* line 211, ../../sass/global/_dom.scss */
 .filter-wrapper {
   padding: 0;
 }
-/* line 213, ../../sass/global/_dom.scss */
+/* line 214, ../../sass/global/_dom.scss */
 .filter-wrapper .filter-help {
   float: right;
   text-align: right;
   width: 49%;
   padding: 0;
 }
-/* line 219, ../../sass/global/_dom.scss */
+/* line 220, ../../sass/global/_dom.scss */
 .filter-wrapper .form-item {
   float: left;
   width: 50%;
   margin: 0 0 1.25em;
   padding: 0;
 }
-/* line 226, ../../sass/global/_dom.scss */
+/* line 227, ../../sass/global/_dom.scss */
 .filter-wrapper .form-item select,
 .filter-wrapper .form-item label {
   float: left;
   margin-right: 5px;
 }
-/* line 231, ../../sass/global/_dom.scss */
+/* line 232, ../../sass/global/_dom.scss */
 .filter-wrapper .filter-guidelines {
   clear: both;
 }
 
-/* line 236, ../../sass/global/_dom.scss */
+/* line 237, ../../sass/global/_dom.scss */
 .form-item .description {
   background: #e8f4ea;
   font-size: 0.85em;
   padding: 0 3px;
 }
 
-/* line 242, ../../sass/global/_dom.scss */
+/* line 243, ../../sass/global/_dom.scss */
 input.form-text {
   font-size: 135%;
   width: 98.45%;
   padding: .25em;
 }
 
-/* line 248, ../../sass/global/_dom.scss */
+/* line 249, ../../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-image: url(../assets/images/coral-throbber-blue-15.gif);
   background-position: 99.5% 10px;
   background-repeat: no-repeat;
 }
 
-/* line 254, ../../sass/global/_dom.scss */
+/* line 255, ../../sass/global/_dom.scss */
 html.js input.form-autocomplete {
   background-position: 99.5% 10px;
 }
 
-/* line 257, ../../sass/global/_dom.scss */
+/* line 258, ../../sass/global/_dom.scss */
 html.js input.throbbing {
   background-position: 99.5% -124px;
   /* LTR */
 }
 
-/* line 261, ../../sass/global/_dom.scss */
+/* line 262, ../../sass/global/_dom.scss */
 .vertical-tabs ul li {
   list-style: none;
 }
 
-/* line 266, ../../sass/global/_dom.scss */
+/* line 267, ../../sass/global/_dom.scss */
 a.btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -443,7 +444,7 @@ a.btn {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 267, ../../sass/global/_dom.scss */
+/* line 268, ../../sass/global/_dom.scss */
 a.btn:hover {
   color: white;
 }
@@ -482,22 +483,22 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 278, ../../sass/global/_dom.scss */
+/* line 279, ../../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 282, ../../sass/global/_dom.scss */
+/* line 283, ../../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 286, ../../sass/global/_dom.scss */
+/* line 287, ../../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 290, ../../sass/global/_dom.scss */
+/* line 291, ../../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;

@@ -1,0 +1,9 @@
+/* line 10, ../../sass/panes/pane__coral_project_status.scss */
+.pane-coral-project-status {
+  position: relative;
+  margin-bottom: 1.25em;
+}
+/* line 16, ../../sass/panes/pane__coral_project_status.scss */
+.pane-coral-project-status .pane-title {
+  color: #cc6b1d;
+}

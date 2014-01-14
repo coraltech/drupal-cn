@@ -1,0 +1,31 @@
+/* line 9, ../../sass/panes/pane__coral_on_git.scss */
+.pane-coral-on-git {
+  position: relative;
+  margin-bottom: 2.5em;
+}
+/* line 13, ../../sass/panes/pane__coral_on_git.scss */
+.pane-coral-on-git .find-us {
+  font-size: 90%;
+  margin-left: 1em;
+  color: #777777;
+}
+/* line 18, ../../sass/panes/pane__coral_on_git.scss */
+.pane-coral-on-git .git-link {
+  background: #36b048;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+/* line 23, ../../sass/panes/pane__coral_on_git.scss */
+.pane-coral-on-git .git-link a {
+  color: white;
+  display: block;
+  padding: 0.625em 0em 0.625em 1em;
+  font-size: 90%;
+}
+/* line 29, ../../sass/panes/pane__coral_on_git.scss */
+.pane-coral-on-git .git-link a:hover {
+  color: #fff9d0;
+}

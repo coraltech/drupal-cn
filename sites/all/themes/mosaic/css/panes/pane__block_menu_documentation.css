@@ -1,0 +1,24 @@
+/* line 6, ../../sass/panes/pane__block_menu_documentation.scss */
+.main-content .pane-menu-documentation {
+  margin-bottom: 2.5em;
+  padding-left: 10px;
+}
+/* line 10, ../../sass/panes/pane__block_menu_documentation.scss */
+.main-content .pane-menu-documentation .pane-title {
+  color: #cc6b1d;
+  font-size: 1.125em;
+  line-height: 1.1111em;
+  margin-top: 0.5555em;
+  margin-bottom: 0.5555em;
+}
+/* line 16, ../../sass/panes/pane__block_menu_documentation.scss */
+.main-content .pane-menu-documentation ul {
+  margin-top: 0.41667em;
+  margin-bottom: 0.41667em;
+}
+/* line 20, ../../sass/panes/pane__block_menu_documentation.scss */
+.main-content .pane-menu-documentation ul li {
+  margin-top: 0.41667em;
+  margin-bottom: 0.41667em;
+  margin-left: .75em;
+}

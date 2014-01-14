@@ -1,6 +1,6 @@
-/* line 442, icons/*.png */
+/* line 450, icons/*.png */
 .icons-sprite, .pane-coral-home-contribute .public-work, .pane-coral-home-contribute .troubleshoot {
-  background: url('/images/icons-s90292af557.png') no-repeat;
+  background: url('/images/icons-s7075c67732.png') no-repeat;
 }
 
 /* line 9, ../../sass/panes/pane__coral_home_contribute.scss */
@@ -17,7 +17,7 @@
   display: block;
   float: left;
   margin: -5px 0 -1.25em 0;
-  background-position: 0 -740px;
+  background-position: 0 -846px;
   height: 25px;
   width: 42px;
 }
@@ -26,7 +26,7 @@
   display: block;
   float: left;
   margin: 2.3em 0 -1.25em 0;
-  background-position: 0 -1885px;
+  background-position: 0 -1991px;
   height: 29px;
   width: 39px;
 }

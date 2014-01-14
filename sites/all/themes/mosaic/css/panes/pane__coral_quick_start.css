@@ -1,6 +1,6 @@
-/* line 442, icons/*.png */
+/* line 450, icons/*.png */
 .icons-sprite, .pane-coral-quick-start .icon {
-  background: url('/images/icons-s90292af557.png') no-repeat;
+  background: url('/images/icons-s7075c67732.png') no-repeat;
 }
 
 /* line 9, ../../sass/panes/pane__coral_quick_start.scss */
@@ -20,7 +20,7 @@
   position: absolute;
   top: 0.625em;
   left: 0;
-  background-position: 0 -554px;
+  background-position: 0 -660px;
   height: 48px;
   width: 48px;
 }

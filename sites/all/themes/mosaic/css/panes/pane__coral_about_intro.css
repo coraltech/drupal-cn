@@ -1,16 +1,50 @@
-/* line 6, ../../sass/panes/pane__coral_about_intro.scss */
+/* line 450, icons/*.png */
+.icons-sprite, .pane-coral-about-intro .cloud-case {
+  background: url('/images/icons-s7075c67732.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_about_intro.scss */
+h1.page-title {
+  color: #e17d2c;
+  font-size: 2em;
+  line-height: 1.4em;
+  margin-top: .3125em;
+  margin-bottom: .3125em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+/* line 20, ../../sass/panes/pane__coral_about_intro.scss */
 .pane-coral-about-intro {
-  padding-left: 1em;
+  position: relative;
 }
-/* line 9, ../../sass/panes/pane__coral_about_intro.scss */
-.pane-coral-about-intro h1 {
-  font-size: 185%;
-  line-height: 125%;
-  margin: 0.25em 0 0.625em 0;
-}
-/* line 15, ../../sass/panes/pane__coral_about_intro.scss */
-.pane-coral-about-intro h2 {
-  font-size: 165%;
+/* line 23, ../../sass/panes/pane__coral_about_intro.scss */
+.pane-coral-about-intro h3 {
+  font-size: 1.375em;
+  line-height: 1.8182em;
+  margin-top: 0.4545em;
+  margin-bottom: 0.4545em;
+  font-weight: bold;
   line-height: 1.25em;
-  margin: 0 0 .9em 0;
+  margin-bottom: 1.25em;
+  margin-left: 100px;
+}
+/* line 31, ../../sass/panes/pane__coral_about_intro.scss */
+.pane-coral-about-intro h4 {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-bottom: 1.25em;
+  line-height: 1.25em;
+}
+/* line 37, ../../sass/panes/pane__coral_about_intro.scss */
+.pane-coral-about-intro .cloud-case {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: 0 -545px;
+  height: 65px;
+  width: 85px;
 }

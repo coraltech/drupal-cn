@@ -1,0 +1,64 @@
+/* line 7, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about {
+  border: 1px solid #cad5e2;
+  background: #eaeaea url("../../assets/images/diag-tile.png");
+  padding: 5px;
+  margin-bottom: 2.5em;
+}
+/* line 13, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about ul {
+  margin: 0;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.75);
+}
+/* line 18, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+}
+/* line 24, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about ul li a {
+  border: 1px solid #f7f7f7;
+  position: relative;
+  display: block;
+  height: 40px;
+  color: #565656;
+  line-height: 40px;
+  padding: 0 .5em;
+  font-size: 1.5em;
+}
+/* line 36, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about ul li a:hover, .pane-menu-about ul li a.active, .pane-menu-about ul li a:active {
+  background: white;
+  border: 1px solid #dddddd;
+  width: 210px;
+  color: #3f3f3f;
+}
+/* line 42, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about ul li a:hover .ar-out, .pane-menu-about ul li a.active .ar-out, .pane-menu-about ul li a:active .ar-out {
+  display: block;
+  position: absolute;
+  top: -1px;
+  right: -43px;
+  width: 0;
+  height: 0;
+  border-right: 21px solid transparent;
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  border-left: 21px solid #dddddd;
+}
+/* line 50, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about ul li a:hover .ar-out .ar-in, .pane-menu-about ul li a.active .ar-out .ar-in, .pane-menu-about ul li a:active .ar-out .ar-in {
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: -18px;
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid white;
+}
