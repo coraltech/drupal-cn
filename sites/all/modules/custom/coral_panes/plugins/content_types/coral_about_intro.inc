@@ -26,7 +26,7 @@ $plugin = array(
   'category' => array(t('Coral'), -9), // We can change this category at will
 
   //NOTE--->> Un-comment the next line to add configs.  Talk to me if this is not clear ;-) (DW)
-  //'edit form' => 'coral_about_intro_pane_content_type_edit_form',    // Edit form callback
+  'edit form' => 'coral_about_intro_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
   'render callback' => 'coral_about_intro_pane_content_type_render'  // Render callback
@@ -38,11 +38,18 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $output = <<<EOF
+  /*$output = <<<EOF
 <h1>About Coral Nexus</h1>
 <h2>Coral Nexus tools allow your technology clusters to be portable and pluggable.</h2>
 <p>Are you ready to simplify the way you work with technology clusters? The Coral Nexus platform provides a free and open source framework that enables you to rapidly spin up and configure sophisticated cluster architectures.</p>
 <p>You can start from scratch or <a href='#'>find</a> an open source <a href='#'>cluster</a>, <a href='#'>module</a>, or <a href='#'>snippet</a>, to help you on your way to cluster bliss.</p>
+EOF;*/
+
+  $output = <<<EOF
+<div class="cloud-case"></div>
+<h3>The Coral framework is designed to provide a flexible, easy to use, free and open source cloud development and deployment framework.</h3>
+<h4>Coral connects several key technologies, such as Vagrant, Puppet, Heira, and Fog, together to create seamless workflows across all stages of development and deployment.</h4>
+<h4>Coral lets you say goodbuy to vendor lock-in. Using Coral you can build cluster architectures locally, test them out, and then push them to the hosting provider of your choice.</h4>
 EOF;
 
   $block->content = $output;
@@ -76,3 +83,4 @@ function coral_about_intro_pane_content_type_edit_form_submit($form, &$form_stat
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
 }
+
