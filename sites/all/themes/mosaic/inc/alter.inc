@@ -62,3 +62,11 @@ function mosaic_node_view_alter(&$build) {
   }
 }
 
+
+function mosaic_form_contact_site_form_alter(&$form, &$form_state) {
+  $form['subject']['#required'] = FALSE;
+  $form['name']['#title'] = t('Name');
+  $form['mail']['#title'] = t('Email');
+  //dpm($form);
+}
+
