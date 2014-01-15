@@ -39,7 +39,7 @@ $plugin = array(
 */
 function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   // Message stuff
-  $message = '';
+  $message = '<a id="ask-question"></a>'; // anchor at the top of the pane.
   if (isset($conf['welcome']) || isset($conf['welcome'])) {
     $message .= '<div class="qa-msg grid-8"><div class="cont">';  
     if (isset($conf['welcome'])) $message .= '<h3>'.$conf['welcome'].'</h3>';
