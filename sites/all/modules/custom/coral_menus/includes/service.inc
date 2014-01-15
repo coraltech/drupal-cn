@@ -22,11 +22,11 @@ function coral_menus_service_menu_loader() {
  **/
 function coral_menus_service_links_loader() {
   return array(
-    'pricing'=> array(
+    /*'pricing'=> array(
       'link_title' => t('Pricing'),
       'link_path'  => 'user',
       'weight'     => 1,
-    ),
+    ),*/
     'login' => array(
       'link_title' => t('Login'),
       'link_path'  => 'user/login',

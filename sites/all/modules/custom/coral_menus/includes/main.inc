@@ -25,7 +25,7 @@ function coral_menus_main_links_loader() {
   return array(
     'about'=> array(
       'link_title' => t('About'),
-      'link_path'  => 'node/916',
+      'link_path'  => 'node/929',
       'weight'     => 1,
     ),
     'download' => array(

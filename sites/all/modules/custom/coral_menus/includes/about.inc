@@ -34,7 +34,7 @@ function coral_menus_about_links_loader() {
     ),
     'support' => array(
       'link_title' => t('Support'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/931',
       'weight'     => 3,
     )
   );
