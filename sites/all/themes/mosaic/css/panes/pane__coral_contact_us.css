@@ -1,0 +1,43 @@
+/* line 5, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us {
+  margin-bottom: 2.5em;
+}
+/* line 8, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .pane-title {
+  color: #cc6b1d;
+  margin-top: 0.625em;
+}
+/* line 14, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-type-textfield label {
+  float: left;
+  clear: left;
+  margin: 0.42em 0 1.25em 0;
+}
+/* line 19, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-type-textfield input.form-text {
+  width: 75%;
+  font-size: 1em;
+  float: right;
+  margin: 0 0 1.25em 0;
+  border: 1px solid #dddddd;
+}
+/* line 28, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-type-textarea {
+  margin: 0;
+}
+/* line 30, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-type-textarea textarea {
+  border: 1px solid #dddddd;
+}
+/* line 33, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-type-textarea label {
+  clear: both;
+}
+/* line 38, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-type-checkbox {
+  margin: 0.625em 0;
+}
+/* line 43, ../../sass/panes/pane__coral_contact_us.scss */
+.secondary-content .pane-coral-contact-us .form-item-subject {
+  display: none;
+}

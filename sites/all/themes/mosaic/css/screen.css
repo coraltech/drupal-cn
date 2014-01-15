@@ -1893,12 +1893,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-1 {
+div.prepend-1 {
   margin-left: 4.16667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-1 {
+div.append-1 {
   margin-right: 4.16667%;
 }
 
@@ -1916,12 +1916,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-2 {
+div.prepend-2 {
   margin-left: 8.33333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-2 {
+div.append-2 {
   margin-right: 8.33333%;
 }
 
@@ -1939,12 +1939,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-3 {
+div.prepend-3 {
   margin-left: 12.5%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-3 {
+div.append-3 {
   margin-right: 12.5%;
 }
 
@@ -1962,12 +1962,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-4 {
+div.prepend-4 {
   margin-left: 16.66667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-4 {
+div.append-4 {
   margin-right: 16.66667%;
 }
 
@@ -1985,12 +1985,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-5 {
+div.prepend-5 {
   margin-left: 20.83333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-5 {
+div.append-5 {
   margin-right: 20.83333%;
 }
 
@@ -2008,12 +2008,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-6 {
+div.prepend-6 {
   margin-left: 25%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-6 {
+div.append-6 {
   margin-right: 25%;
 }
 
@@ -2031,12 +2031,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-7 {
+div.prepend-7 {
   margin-left: 29.16667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-7 {
+div.append-7 {
   margin-right: 29.16667%;
 }
 
@@ -2054,12 +2054,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-8 {
+div.prepend-8 {
   margin-left: 33.33333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-8 {
+div.append-8 {
   margin-right: 33.33333%;
 }
 
@@ -2077,12 +2077,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-9 {
+div.prepend-9 {
   margin-left: 37.5%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-9 {
+div.append-9 {
   margin-right: 37.5%;
 }
 
@@ -2100,12 +2100,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-10 {
+div.prepend-10 {
   margin-left: 41.66667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-10 {
+div.append-10 {
   margin-right: 41.66667%;
 }
 
@@ -2123,12 +2123,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-11 {
+div.prepend-11 {
   margin-left: 45.83333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-11 {
+div.append-11 {
   margin-right: 45.83333%;
 }
 
@@ -2146,12 +2146,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-12 {
+div.prepend-12 {
   margin-left: 50%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-12 {
+div.append-12 {
   margin-right: 50%;
 }
 
@@ -2169,12 +2169,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-13 {
+div.prepend-13 {
   margin-left: 54.16667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-13 {
+div.append-13 {
   margin-right: 54.16667%;
 }
 
@@ -2192,12 +2192,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-14 {
+div.prepend-14 {
   margin-left: 58.33333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-14 {
+div.append-14 {
   margin-right: 58.33333%;
 }
 
@@ -2215,12 +2215,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-15 {
+div.prepend-15 {
   margin-left: 62.5%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-15 {
+div.append-15 {
   margin-right: 62.5%;
 }
 
@@ -2238,12 +2238,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-16 {
+div.prepend-16 {
   margin-left: 66.66667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-16 {
+div.append-16 {
   margin-right: 66.66667%;
 }
 
@@ -2261,12 +2261,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-17 {
+div.prepend-17 {
   margin-left: 70.83333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-17 {
+div.append-17 {
   margin-right: 70.83333%;
 }
 
@@ -2284,12 +2284,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-18 {
+div.prepend-18 {
   margin-left: 75%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-18 {
+div.append-18 {
   margin-right: 75%;
 }
 
@@ -2307,12 +2307,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-19 {
+div.prepend-19 {
   margin-left: 79.16667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-19 {
+div.append-19 {
   margin-right: 79.16667%;
 }
 
@@ -2330,12 +2330,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-20 {
+div.prepend-20 {
   margin-left: 83.33333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-20 {
+div.append-20 {
   margin-right: 83.33333%;
 }
 
@@ -2353,12 +2353,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-21 {
+div.prepend-21 {
   margin-left: 87.5%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-21 {
+div.append-21 {
   margin-right: 87.5%;
 }
 
@@ -2376,12 +2376,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-22 {
+div.prepend-22 {
   margin-left: 91.66667%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-22 {
+div.append-22 {
   margin-right: 91.66667%;
 }
 
@@ -2399,12 +2399,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-23 {
+div.prepend-23 {
   margin-left: 95.83333%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-23 {
+div.append-23 {
   margin-right: 95.83333%;
 }
 
@@ -2421,12 +2421,12 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
 }
 
 /* line 19, ../sass/global/grid.scss */
-.prepend-24 {
+div.prepend-24 {
   margin-left: 100%;
 }
 
 /* line 20, ../sass/global/grid.scss */
-.append-24 {
+div.append-24 {
   margin-right: 100%;
 }
 
