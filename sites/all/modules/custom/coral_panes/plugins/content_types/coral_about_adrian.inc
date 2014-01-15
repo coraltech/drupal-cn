@@ -40,7 +40,7 @@ $plugin = array(
 function coral_about_adrian_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $output = <<<EOF
 <div class="teammate adrian">?</div>
-<p>Nam rutrum, libero vel pharetra tempor, enim ante congue mi, sed accumsan dolor nisl eget lectus. Ut non orci convallis, tempor felis vitae, condimentum sem. Proin commodo hendrerit viverra. Pellentesque iaculis blandit iaculis. Etiam auctor, libero sit amet accumsan molestie, elit mauris luctus arcu, at dapibus purus elit sed lectus. Duis eget condimentum ante. Mauris placerat imperdiet mauris.</p>
+<p>Nam rutrum, libero vel pharetra tempor, enim ante congue mi, sed accumsan dolor nisl eget lectus. Ut non orci convallis, tempor felis vitae, condimentum sem. Proin commodo hendrerit viverra. Pellentesque iaculis blandit iaculis. Etiam auctor, libero sit amet accumsan molestie, elit mauris luctus arcu, at dapibus purus elit sed lectus. Duis eget condimentum ante.</p>
 EOF;
 
   $block->title = t('Adrian Webb');
