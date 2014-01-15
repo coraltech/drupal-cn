@@ -1,0 +1,46 @@
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.secondary-content .pane-coral-contact-us { 
+  margin-bottom: 2 * $default_vert_unit;
+  
+  .pane-title {
+    color: darken($mdorange, 7%);
+    margin-top: $default_vert_unit / 2;
+  }
+
+  .form-type-textfield {
+    label {
+      float: left;
+      clear: left;
+      margin: .42em 0 $default_vert_unit 0;
+    }
+    input.form-text {
+      width: 75%;
+      font-size: 1em;
+      float: right;
+      margin: 0 0 $default_vert_unit 0;
+      border: 1px solid $ltgray;
+    }  
+  }
+  
+  .form-type-textarea {
+    margin: 0;
+    textarea {
+      border: 1px solid $ltgray;
+    }
+    label {
+      clear: both;
+    }
+  }
+  
+  .form-type-checkbox {
+    margin: ($default_vert_unit / 2) 0;
+  }
+
+  // Hide the optional subject field
+  .form-item-subject {
+    display: none;
+  }
+}

@@ -1,0 +1,34 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+
+.pane-coral-about-support {
+  .pane-title {
+    color: $mdorange;
+  
+    @include huge;
+  
+    font-weight: bold;
+    margin-bottom: .5em;
+  }
+  
+  h4 {
+    color: darken($mdorange, 7%);
+  }
+  
+  ul {
+    margin-top: ($default_vert_unit / 2);
+    margin-bottom: ($default_vert_unit / 2);
+    
+    li {
+      margin-top: ($default_vert_unit / 3);
+      margin-bottom: ($default_vert_unit / 3);
+      margin-left: .75em;
+    }
+  }
+}
