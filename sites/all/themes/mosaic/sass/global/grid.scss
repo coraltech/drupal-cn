@@ -16,8 +16,8 @@
     }
   }
   .grid-#{$i}-last { @include col($i, 'true'); }
-  .prepend-#{$i}   { @include prepend($i); }
-  .append-#{$i}    { @include append($i); }
+  div.prepend-#{$i}   { @include prepend($i); } // div. added to overcome margin on .grid-N
+  div.append-#{$i}    { @include append($i); }
 }
 .grid-last {
   @include last;
