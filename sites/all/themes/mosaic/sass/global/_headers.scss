@@ -25,6 +25,14 @@
   margin-top: 0.5555em;
   margin-bottom: 0.5555em;
 }
+
+@mixin h5() { 
+  font-size: 1.0625em; // 17px
+  line-height: 1.1764em; // 20px
+  margin-top: 0.5882em;
+  margin-bottom: 0.5882em;
+}
+
 @mixin h0() {
   font-size: 1em;
   line-height: 1.25em;
