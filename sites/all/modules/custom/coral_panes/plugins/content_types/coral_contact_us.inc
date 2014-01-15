@@ -26,7 +26,7 @@ $plugin = array(
   'category' => array(t('Coral'), -9), // We can change this category at will
 
   //NOTE--->> Un-comment the next line to add configs.  Talk to me if this is not clear ;-) (DW)
-  //'edit form' => 'coral_contact_us_pane_content_type_edit_form',    // Edit form callback
+  'edit form' => 'coral_contact_us_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
   'render callback' => 'coral_contact_us_pane_content_type_render'  // Render callback
