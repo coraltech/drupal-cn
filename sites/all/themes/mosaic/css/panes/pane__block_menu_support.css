@@ -6,7 +6,7 @@
 }
 
 /* line 20, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help {
+.html .pane-getting-help {
   background: -webkit-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -moz-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -o-linear-gradient(left, #dddddd 12em, white 12em, white);
@@ -17,23 +17,23 @@
   box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
 }
 /* line 25, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-top {
+.html .pane-getting-help .panel-col-top {
   background: #f1f1f1;
 }
 /* line 28, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-top .inside {
+.html .pane-getting-help .panel-col-top .inside {
   margin-bottom: 0;
 }
 /* line 32, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-top .title-msg {
+.html .pane-getting-help .panel-col-top .title-msg {
   font-size: 90%;
 }
 /* line 37, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-first {
+.html .pane-getting-help .panel-col-first {
   width: 12em;
 }
 /* line 40, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-first li {
+.html .pane-getting-help .panel-col-first li {
   background: #dddddd;
   /* Old browsers */
   background: -moz-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
@@ -52,44 +52,44 @@
   /* IE6-9 */
 }
 /* line 41, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-first li a {
+.html .pane-getting-help .panel-col-first li a {
   color: #2b486b;
 }
 /* line 46, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-first li a:hover, .pane-getting-help .panel-col-first li a:active, .pane-getting-help .panel-col-first li a.active {
+.html .pane-getting-help .panel-col-first li a:hover, .html .pane-getting-help .panel-col-first li a:active, .html .pane-getting-help .panel-col-first li a.active {
   color: black;
 }
 /* line 54, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last {
+.html .pane-getting-help .panel-col-last {
   width: 76%;
 }
 /* line 57, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last .pane-content {
+.html .pane-getting-help .panel-col-last .pane-content {
   border-top: 1px solid #777777;
   overflow-y: scroll;
   height: 366px;
   padding: 0 15px 15px;
 }
 /* line 64, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last > .inside {
+.html .pane-getting-help .panel-col-last > .inside {
   margin: 0;
 }
 /* line 67, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last > .inside h2 {
+.html .pane-getting-help .panel-col-last > .inside h2 {
   margin: 0;
   padding: 16px;
   line-height: 16px;
   background: #ebeff4;
 }
 /* line 76, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last .vertical-tabs,
-.pane-getting-help .panel-col-last .filter-wrapper {
+.html .pane-getting-help .panel-col-last .vertical-tabs,
+.html .pane-getting-help .panel-col-last .filter-wrapper {
   display: none;
 }
 /* line 82, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last #user-login .form-actions,
-.pane-getting-help .panel-col-last .contact-form .form-actions,
-.pane-getting-help .panel-col-last .node-question-form .form-actions {
+.html .pane-getting-help .panel-col-last #user-login .form-actions,
+.html .pane-getting-help .panel-col-last .contact-form .form-actions,
+.html .pane-getting-help .panel-col-last .node-question-form .form-actions {
   bottom: 6px;
   position: absolute;
   right: 5px;
@@ -98,13 +98,13 @@
   padding: 0;
 }
 /* line 90, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-last #user-login .form-actions input,
-.pane-getting-help .panel-col-last .contact-form .form-actions input,
-.pane-getting-help .panel-col-last .node-question-form .form-actions input {
+.html .pane-getting-help .panel-col-last #user-login .form-actions input,
+.html .pane-getting-help .panel-col-last .contact-form .form-actions input,
+.html .pane-getting-help .panel-col-last .node-question-form .form-actions input {
   font-weight: bold;
 }
 /* line 95, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .panel-col-bottom {
+.html .pane-getting-help .panel-col-bottom {
   position: absolute;
   bottom: 0px;
   height: 2.5em;
@@ -112,16 +112,16 @@
   border-top: 1px solid #d0d0d0;
 }
 /* line 102, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .help-header {
+.html .pane-getting-help .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
 /* line 106, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .help-header h2 {
+.html .pane-getting-help .help-header h2 {
   margin: 0;
 }
 /* line 110, ../../sass/panes/pane__block_menu_support.scss */
-.pane-getting-help .cls-help {
+.html .pane-getting-help .cls-help {
   margin-left: 5px;
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -156,11 +156,11 @@
   border-radius: 0px;
 }
 /* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-getting-help .cls-help:hover {
+.html .pane-getting-help .cls-help:hover {
   text-decoration: none;
 }
 /* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-getting-help .cls-help:hover {
+.html .pane-getting-help .cls-help:hover {
   background-color: #8d2516;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #9a2818), color-stop(75%, #8d2516));
   background: -webkit-linear-gradient(#9a2818 3%, #8d2516 75%);
@@ -169,13 +169,13 @@
   background: linear-gradient(#9a2818 3%, #8d2516 75%);
 }
 /* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-getting-help .cls-help:active {
+.html .pane-getting-help .cls-help:active {
   -webkit-box-shadow: #802114 0 1px 2px inset;
   -moz-box-shadow: #802114 0 1px 2px inset;
   box-shadow: #802114 0 1px 2px inset;
 }
 /* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-getting-help .cls-help.disabled, .pane-getting-help .cls-help[disabled] {
+.html .pane-getting-help .cls-help.disabled, .html .pane-getting-help .cls-help[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
   background: #a32b1a;
@@ -185,7 +185,7 @@
   box-shadow: none;
 }
 /* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
-.pane-getting-help .cls-help::-moz-focus-inner {
+.html .pane-getting-help .cls-help::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
