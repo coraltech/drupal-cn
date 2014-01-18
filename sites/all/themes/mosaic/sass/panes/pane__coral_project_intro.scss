@@ -1,0 +1,38 @@
+
+// Customizations of the about intro
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+
+h1.page-title {
+  color: $mdorange;
+  
+  @include huge;
+  
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+
+.pane-coral-project-intro {
+  position: relative;
+  margin-bottom: 3 * $default_vert_unit;
+  
+  p {
+    @include h3;
+    margin-bottom: $default_vert_unit;
+    line-height: 1.25em;
+  }
+  
+  .divider {
+    background: url('../../assets/images/coral-sep-long.png') bottom center no-repeat;
+    height: 25px;
+    width: 100%;
+    position: absolute;
+    bottom: -45px;
+  }
+}
+
