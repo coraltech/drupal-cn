@@ -12,7 +12,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         // At the moment there is not much to do here...
-        $nodeForms = $('.node-form:not(".mosmce-processed")');
+        var $nodeForms = $('.node-form:not(".mosmce-processed")');
         $nodeForms.each(function() {
           new Drupal.mosaic.mosaicMce($(this));
         });

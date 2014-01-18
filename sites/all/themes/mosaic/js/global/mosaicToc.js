@@ -28,7 +28,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         // Selectors we apply this to
         var selectors = ['.node .content:not(".toc-proc")', '.comment .content:not(".toc-proc")'];
         for (ind in selectors) {
-          $items = $(selectors[ind]);
+          var $items = $(selectors[ind]);
           $items.each(function(i) {
             if (!$(this).hasClass('toc-proc')) {
               $(this).addClass('toc-proc'); // no re-processing

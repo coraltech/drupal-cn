@@ -16,7 +16,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       try { // Use try to prevent systemic failure
         // gh-processed class added in pane__block_menu_support after it starts.
         //  Thus, this requirement prevents the assoc. events from getting re-bound. 
-        $panel = $('#pane-getting-help:not(".gh-processed")');
+        var $panel = $('#pane-getting-help:not(".gh-processed")');
         if ($panel.length > 0) {
           new Drupal.mosaic.helpPanelManager($panel);
         }

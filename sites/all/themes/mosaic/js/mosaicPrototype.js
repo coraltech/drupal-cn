@@ -13,7 +13,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       
       try { // Use try to prevent systemic failure
-        $panel = $('#pane-getting-help');
+        var $panel = $('#pane-getting-help');
         if ($panel.length > 0) {
           new Drupal.mosaic.helpPanelManager($panel);
         }
