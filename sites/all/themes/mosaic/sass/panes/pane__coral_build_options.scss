@@ -24,14 +24,17 @@
     .command-line .icon {
       @include icons-sprite('command-line');
     }
-    .web-portal .icon {
+    .coral-arch .icon {
       @include icons-sprite('logo-icon');
     }
-    .mobile-apps .icon {
-      @include icons-sprite('mobile-apps');
+    .integration .icon {
+      left: -44px;
+      @include icons-sprite('integration');
     }
-    .ruby-apps .icon {
-      @include icons-sprite('ruby-apps');
+    .requirements .icon {
+      left: -38px;
+      top: 4px;
+      @include icons-sprite('requirements');
     }
   }
   
