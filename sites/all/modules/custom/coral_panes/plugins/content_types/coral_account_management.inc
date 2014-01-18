@@ -54,8 +54,7 @@ EOF;
   // our little list
   $accnt_list['items'] = array(
     l('Manage your account', $user_manage),
-    l('Clusters', '<front>'),
-    l('Modules', '<front>')
+    l('Manage your subscriptions', '<front>')
   );
   $accnt_attr = array(
     'class' => 'account-list', // a string or indexed (string) array with the classes for the list tag
@@ -65,8 +64,8 @@ EOF;
   $accnt .= theme('item_list', array('items' => $accnt_list['items'], 'attributes' => $accnt_attr)).'</div>';
   
   $privacy_list['items'] = array(
-    l('Managing project keys', '<front'),
-    l('Privacy policy', '<front')
+    l('Privacy policy', '<front>'),
+    l('Posting guidelines', '<front>')
   );
   $privacy_attr = array(
     'class' => 'privacy-list', // a string or indexed (string) array with the classes for the list tag
