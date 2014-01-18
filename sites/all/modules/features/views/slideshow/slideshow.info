@@ -2,6 +2,7 @@ name = Slideshow
 description = Provides slideshow view and slideset content type. See coral_node_types for slide type definition.
 core = 7.x
 package = Features
+php = 5.2.4
 version = 7.x-1.0
 project = slideshow
 dependencies[] = ctools

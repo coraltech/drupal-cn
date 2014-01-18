@@ -257,8 +257,8 @@ function slideshow_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
 
-  /* Display: Reference dialog Search */
-  $handler = $view->new_display('references_dialog', 'Reference dialog Search', 'references_dialog_1');
+  /* Display: Reference dialog slide search */
+  $handler = $view->new_display('references_dialog', 'Reference dialog slide search', 'references_dialog_1');
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
