@@ -28,9 +28,9 @@ function coral_menus_main_links_loader() {
       'link_path'  => 'node/929',
       'weight'     => 1,
     ),
-    'download' => array(
-      'link_title' => t('Downloads'),
-      'link_path'  => '<front>',
+    'project' => array(
+      'link_title' => t('Project'),
+      'link_path'  => 'node/932',
       'weight'     => 2,
     ), 
     'community' => array(
