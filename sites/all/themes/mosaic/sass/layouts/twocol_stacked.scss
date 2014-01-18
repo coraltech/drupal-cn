@@ -1,0 +1,43 @@
+
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+
+.panel-2col-stacked { 
+/*  overflow: hidden;  */
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.panel-2col-stacked .panel-col-top,
+.panel-2col-stacked .panel-col-bottom { 
+  @include col(24, 'TRUE');
+  clear: both;
+}
+
+.panel-2col-stacked .panel-col-top .inside {
+  margin-bottom: $default_vert_unit;
+}
+
+.panel-2col-stacked .panel-col-first { 
+  @include col(12); 
+}
+* html .panel-2col-stacked .panel-col-first {
+  @include col(12);
+}
+
+.panel-2col-stacked .panel-col-first .inside { 
+  margin: 0 1em $default_vert_unit 0;
+}
+
+.panel-2col-stacked .panel-col-last { 
+  @include col(12, 'TRUE'); 
+}
+
+.panel-2col-stacked .panel-col-last .inside { 
+  margin: 0 0 $default_vert_unit 1em;
+}
+
+.panel-2col-stacked .panel-separator {
+  margin: 0 0 1em 0;
+}
