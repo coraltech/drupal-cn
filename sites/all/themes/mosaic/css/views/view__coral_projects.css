@@ -1,6 +1,6 @@
-/* line 450, icons/*.png */
+/* line 474, icons/*.png */
 .icons-sprite, .pane-coral-projects-panel-pane-1.proj-shell .icon, .pane-coral-projects-panel-pane-1.proj-drupal .icon, .pane-coral-projects-panel-pane-1.proj-vagrant .icon, .pane-coral-projects-panel-pane-1.proj-puppet .icon, .pane-coral-projects-panel-pane-1.proj-ruby .icon {
-  background: url('/images/icons-s7075c67732.png') no-repeat;
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
 }
 
 /* line 9, ../../sass/views/view__coral_projects.scss */
@@ -80,14 +80,14 @@
 /* line 80, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1.proj-shell .icon {
   top: 10px;
-  background-position: 0 -2242px;
+  background-position: 0 -2412px;
   height: 28px;
   width: 33px;
 }
 
 /* line 86, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1.proj-drupal .icon {
-  background-position: 0 -1110px;
+  background-position: 0 -1200px;
   height: 38px;
   width: 33px;
 }
@@ -101,7 +101,7 @@
 
 /* line 96, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1.proj-puppet .icon {
-  background-position: 0 -1308px;
+  background-position: 0 -1478px;
   height: 35px;
   width: 34px;
 }
@@ -109,7 +109,7 @@
 /* line 101, ../../sass/views/view__coral_projects.scss */
 .pane-coral-projects-panel-pane-1.proj-ruby .icon {
   top: 10px;
-  background-position: 0 -1750px;
+  background-position: 0 -1920px;
   height: 28px;
   width: 29px;
 }

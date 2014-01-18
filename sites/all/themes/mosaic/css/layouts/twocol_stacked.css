@@ -1,0 +1,52 @@
+/* line 6, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked {
+  /*  overflow: hidden;  */
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 13, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-col-top,
+.panel-2col-stacked .panel-col-bottom {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+
+/* line 18, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-col-top .inside {
+  margin-bottom: 1.25em;
+}
+
+/* line 22, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-col-first {
+  float: left;
+  width: 48%;
+}
+
+/* line 25, ../../sass/layouts/twocol_stacked.scss */
+* html .panel-2col-stacked .panel-col-first {
+  float: left;
+  width: 48%;
+}
+
+/* line 29, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-col-first .inside {
+  margin: 0 1em 1.25em 0;
+}
+
+/* line 33, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-col-last {
+  float: left;
+  width: 50%;
+}
+
+/* line 37, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-col-last .inside {
+  margin: 0 0 1.25em 1em;
+}
+
+/* line 41, ../../sass/layouts/twocol_stacked.scss */
+.panel-2col-stacked .panel-separator {
+  margin: 0 0 1em 0;
+}

@@ -1,6 +1,6 @@
-/* line 450, icons/*.png */
-.icons-sprite, .pane-coral-build-options .build-options .command-line .icon, .pane-coral-build-options .build-options .web-portal .icon, .pane-coral-build-options .build-options .mobile-apps .icon, .pane-coral-build-options .build-options .ruby-apps .icon {
-  background: url('/images/icons-s7075c67732.png') no-repeat;
+/* line 474, icons/*.png */
+.icons-sprite, .pane-coral-build-options .build-options .command-line .icon, .pane-coral-build-options .build-options .coral-arch .icon, .pane-coral-build-options .build-options .integration .icon, .pane-coral-build-options .build-options .requirements .icon {
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
 }
 
 /* line 10, ../../sass/panes/pane__coral_build_options.scss */
@@ -22,29 +22,32 @@
 }
 /* line 24, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .command-line .icon {
-  background-position: 0 -2242px;
+  background-position: 0 -2412px;
   height: 28px;
   width: 33px;
 }
 /* line 27, ../../sass/panes/pane__coral_build_options.scss */
-.pane-coral-build-options .build-options .web-portal .icon {
-  background-position: 0 -1828px;
+.pane-coral-build-options .build-options .coral-arch .icon {
+  background-position: 0 -1998px;
   height: 31px;
   width: 31px;
 }
 /* line 30, ../../sass/panes/pane__coral_build_options.scss */
-.pane-coral-build-options .build-options .mobile-apps .icon {
-  background-position: 0 -921px;
-  height: 39px;
-  width: 34px;
+.pane-coral-build-options .build-options .integration .icon {
+  left: -44px;
+  background-position: 0 -1398px;
+  height: 30px;
+  width: 32px;
 }
-/* line 33, ../../sass/panes/pane__coral_build_options.scss */
-.pane-coral-build-options .build-options .ruby-apps .icon {
-  background-position: 0 -1750px;
-  height: 28px;
-  width: 29px;
+/* line 34, ../../sass/panes/pane__coral_build_options.scss */
+.pane-coral-build-options .build-options .requirements .icon {
+  left: -38px;
+  top: 4px;
+  background-position: 0 -2490px;
+  height: 23px;
+  width: 23px;
 }
-/* line 40, ../../sass/panes/pane__coral_build_options.scss */
+/* line 43, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .format-usage .pane-title {
   color: white;
   background: #919191;
@@ -52,7 +55,7 @@
   margin-top: 0;
   line-height: .8em;
 }
-/* line 47, ../../sass/panes/pane__coral_build_options.scss */
+/* line 50, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .format-usage li {
   margin-left: 45px;
 }

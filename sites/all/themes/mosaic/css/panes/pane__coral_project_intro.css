@@ -1,0 +1,38 @@
+/* line 474, icons/*.png */
+.icons-sprite {
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_project_intro.scss */
+h1.page-title {
+  color: #e17d2c;
+  font-size: 2em;
+  line-height: 1.4em;
+  margin-top: .3125em;
+  margin-bottom: .3125em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+/* line 20, ../../sass/panes/pane__coral_project_intro.scss */
+.pane-coral-project-intro {
+  position: relative;
+  margin-bottom: 3.75em;
+}
+/* line 24, ../../sass/panes/pane__coral_project_intro.scss */
+.pane-coral-project-intro p {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-bottom: 1.25em;
+  line-height: 1.25em;
+}
+/* line 30, ../../sass/panes/pane__coral_project_intro.scss */
+.pane-coral-project-intro .divider {
+  background: url("../../assets/images/coral-sep-long.png") bottom center no-repeat;
+  height: 25px;
+  width: 100%;
+  position: absolute;
+  bottom: -45px;
+}

@@ -1,0 +1,65 @@
+/* line 474, icons/*.png */
+.icons-sprite, .pane-projects-project-group.vagrant-boxes .icon, .pane-projects-project-group.clusters .icon, .pane-projects-project-group.cluster-conf .icon, .pane-projects-project-group.ruby-comps .icon, .pane-projects-project-group.toolbox .icon, .pane-projects-project-group.puppet-comps .icon {
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
+}
+
+/* line 10, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group {
+  position: relative;
+  padding-bottom: 0.3125em;
+  margin-bottom: 2.1875em;
+  background: url("../../assets/images/coral-sep-med-simple.png") bottom center no-repeat;
+}
+/* line 16, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group .pane-title {
+  color: #cc6b1d;
+  margin-left: 45px;
+}
+/* line 21, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 27, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group a {
+  line-height: 1em;
+}
+/* line 31, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group.vagrant-boxes .icon {
+  background-position: 0 -758px;
+  height: 38px;
+  width: 37px;
+}
+/* line 34, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group.clusters .icon {
+  background-position: 0 -1110px;
+  height: 40px;
+  width: 40px;
+}
+/* line 37, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group.cluster-conf .icon {
+  background-position: 0 -1110px;
+  height: 40px;
+  width: 40px;
+}
+/* line 40, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group.ruby-comps .icon {
+  top: 3px;
+  background-position: 0 -1920px;
+  height: 28px;
+  width: 29px;
+}
+/* line 44, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group.toolbox .icon {
+  top: 3px;
+  background-position: 0 -2412px;
+  height: 28px;
+  width: 33px;
+}
+/* line 48, ../../sass/views/view__projects__project_group.scss */
+.pane-projects-project-group.puppet-comps .icon {
+  background-position: 0 -1478px;
+  height: 35px;
+  width: 34px;
+}

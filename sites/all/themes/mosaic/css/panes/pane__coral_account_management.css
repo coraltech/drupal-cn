@@ -1,6 +1,6 @@
-/* line 450, icons/*.png */
+/* line 474, icons/*.png */
 .icons-sprite, .pane-coral-account-management .icon {
-  background: url('/images/icons-s7075c67732.png') no-repeat;
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
 }
 
 /* line 9, ../../sass/panes/pane__coral_account_management.scss */
@@ -22,7 +22,7 @@
   position: absolute;
   top: 0.625em;
   left: 0;
-  background-position: 0 -2070px;
+  background-position: 0 -2240px;
   height: 52px;
   width: 35px;
 }
