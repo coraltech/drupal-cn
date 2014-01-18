@@ -45,7 +45,7 @@ function coral_on_github_pane_content_type_render($subtype, $conf, $args, $conte
 <p>You can start from scratch or <a href='#'>find</a> an open source <a href='#'>cluster</a>, <a href='#'>module</a>, or <a href='#'>snippet</a>, to help you on your way to cluster bliss.</p>
 EOF;*/
   
-  $git = l('https://github.com/coraltech', 'https://github.com/coraltech');
+  $git = l('https://github.com/coralnexus', 'https://github.com/coralnexus');
 
   $output = <<<EOF
 <div class="find-us">Find us on <strong>GitHub</strong></div>
