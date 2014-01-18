@@ -1,0 +1,53 @@
+
+// Styles for the project group view (lists projects in their categories)
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+@import 'global/gradients';
+
+
+.pane-projects-project-group {
+  position: relative;
+  padding-bottom: $default_vert_unit / 4;
+  margin-bottom: $default_vert_unit * 1.75;
+  background: url('../../assets/images/coral-sep-med-simple.png') bottom center no-repeat; 
+    
+  .pane-title {
+    color: darken($mdorange, 7%);
+    margin-left: 45px;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  a {
+    line-height: 1em;  
+  }
+  
+  &.vagrant-boxes .icon {
+    @include icons-sprite('vagrant');    
+  }
+  &.clusters .icon {
+    @include icons-sprite('cluster');    
+  }
+  &.cluster-conf .icon {
+    @include icons-sprite('cluster');    
+  }
+  &.ruby-comps .icon {
+    top: 3px;
+    @include icons-sprite('ruby-apps');    
+  }
+  &.toolbox .icon {
+    top: 3px;
+    @include icons-sprite('command-line');    
+  }
+  &.puppet-comps .icon {
+    @include icons-sprite('puppet');    
+  }
+  
+  
+}
