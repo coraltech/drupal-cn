@@ -64,8 +64,8 @@ function coral_about_support_community_support() {
   $output .= 'Someone may have already gotten an answer to that same question. If not, then simply add a '.$question.'.';
   $output .= '  Be as specific as you can. to help others help you diagnose the issue(s).</p>';
   
-  $bugz = l('Coral Tech GitHub account', 'https://github.com/coraltech');
-  $output .= '<p>'.l('Bug reporting', 'https://github.com/coraltech').'</p>';
+  $bugz = l('Coral Nexus GitHub account', 'https://github.com/coralnexus');
+  $output .= '<p>'.l('Bug reporting', 'https://github.com/coralnexus').'</p>';
   $output .= '<p>If you think you have found a bug, please report that by clicking the issues tab above, or by navigating to the ';
   $output .= $bugz.' and filing out a bug report on the applicable project. Please be as detailed as possible regarding the nature of the issue.</p>';
   return $output;
