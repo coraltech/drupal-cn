@@ -190,15 +190,9 @@ function mosaic_preprocess_panels_pane__entity_field___node_body(&$vars) {
 function mosaic_preprocess_panels_pane__views_panes___user_questions_user_questions_fields(&$vars) {
   // Build a nicer pane title than say, Questions...
   $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
-  $last = substr($user_name, -1);
   
   // Add icon holder for the cloud Q's and get a decent prefix to the name  
-  if ($last === 's') {
-    $title = '<span class="icon"></span>'.$user_name."' questions";
-  }
-  else {
-    $title = '<span class="icon"></span>'.$user_name."'s questions";
-  }
+  $title = '<span class="icon"></span>'.mosaic_possessive($user_name)." questions";
   $vars['title'] = $title;
 }
 
@@ -450,4 +444,18 @@ function mosaic_preprocess_user_profile(&$variables) {
 
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
+}
+
+
+// Determine possessiveness
+function mosaic_possessive($name) {
+  $last = substr($name, -1);
+  
+  // Add icon holder for the cloud Q's and get a decent prefix to the name  
+  if ($last === 's') {
+    return $name."'";
+  }
+  else {
+    return $name."'s";
+  }
 }
