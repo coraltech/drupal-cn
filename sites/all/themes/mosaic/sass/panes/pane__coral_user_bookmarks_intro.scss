@@ -1,0 +1,26 @@
+
+// Scss file for the user book marks intro pane
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+@import 'global/headers';
+
+.pane-coral-user-bookmarks-intro {
+  position: relative;
+  
+  h3 {
+    @include h2;
+    
+    margin-left: 40px;
+    color: $mdred;
+  }
+  
+  .star {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    @include icons-sprite('coral-star');
+  }
+}
