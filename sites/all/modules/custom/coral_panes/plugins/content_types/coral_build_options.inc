@@ -41,7 +41,7 @@ function coral_build_options_pane_content_type_render($subtype, $conf, $args, $c
 
   $build_options = coral_build_options_list();
   
-  $title = t('Usage methods');
+  $title = t('Coral overview');
   $output = <<<EOF
   <div class='format-usage'>
     <h2 class="pane-title">{$title}</h2>
