@@ -1,0 +1,19 @@
+
+// User name token pane scss file
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+
+.pane-token.pane-user-name {
+  margin-right: 1em;
+  color: darken($mdorange, 7%);
+  
+  .pane-content {
+    @include huge; // 2em/32px
+    font-weight: bold;
+    line-height: 3em; // 96px total
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

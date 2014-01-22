@@ -1,0 +1,33 @@
+
+// Last login user token pane styles
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/grid_mix';
+
+.pane-token.pane-user-last-login {
+  margin-right: 1em;
+  min-width: 17em;
+  white-space: nowrap;
+  color: darken($ltgray, 15%);
+  
+  &:before { 
+    float: left;
+    content:"Last login: ";
+    margin-right: .5em;
+    @include h4;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 5.8em;
+  }
+  
+  height: 50px;
+
+  .pane-content {
+    @include h4;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 5.8em;  
+  }
+}
