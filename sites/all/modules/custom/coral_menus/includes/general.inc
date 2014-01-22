@@ -24,12 +24,12 @@ function coral_menus_general_links_loader() {
   return array(
     'about_us'=> array(
       'link_title' => t('About us'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/929',
       'weight'     => 1,
     ),
     'contact_us' => array(
       'link_title' => t('Contact us'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/931',
       'weight'     => 2,
     ),
     'getting_started' => array(
@@ -44,7 +44,7 @@ function coral_menus_general_links_loader() {
     ),
     'qa' => array(
       'link_title' => t('Q&A'),
-      'link_path'  => 'node/8',
+      'link_path'  => 'node/55',
       'weight'     => 5,
     ),
     'sitemap' => array(
