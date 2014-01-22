@@ -1,0 +1,51 @@
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+@import "compass/utilities/general/clearfix";
+
+.view-user-bookmarks {
+  
+  .views-row {
+    margin: .625em 0;
+    border-bottom: 1px solid $ltgray;
+    padding: ($default_vert_unit / 2) 0 $default_vert_unit;
+  }
+  .views-row-odd {
+
+  }
+  .views-field-title {
+    margin-right: .5em;
+    
+    a {
+      color: $mdblue;
+      &:active, &.active { color: lighten($dkblue, 5%); }
+      &:hover { color: $dkblue; }
+    }
+  }
+  .views-field-body {
+    color: darken($mdgray, 7%);
+  }
+  .views-field-field-answer-count {
+    color: $mdgray;
+    float: right;
+    .cnt {
+      color: $mdgreen;
+      font-weight: bold;
+    }
+  }
+  .views-field-timestamp {
+    color: $dkorange;
+    font-size: .9em;
+  }
+  .precrp {
+    margin-bottom: 0;
+    margin-top: $default_vert_unit;
+  }
+  
+  .pager {
+    margin: 0;
+    color: $mdgray;
+  }
+}

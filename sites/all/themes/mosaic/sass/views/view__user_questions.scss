@@ -1,0 +1,63 @@
+
+// Scss file for the user questions view.
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+
+@import "compass/utilities/general/clearfix";
+
+.view-user-questions {
+  .views-row {
+    margin: .625em 0;
+    border-bottom: 1px solid $ltgray;
+    padding: ($default_vert_unit / 2) 0 $default_vert_unit;
+    //background: url('../../assets/images/coral-sep-med-simple.png') bottom center no-repeat;
+  }
+  .views-row-odd {
+    //background: lighten($ltyellow, 5%);
+  }
+  .views-field-title {
+    margin-right: 1em;
+    //margin-bottom: $default_vert_unit;
+  }
+  .views-field-body {
+    color: darken($mdgray, 7%);
+    //margin-top: ($default_vert_unit / 2);
+  }
+  .views-field-field-answer-count {
+    color: $mdgray;
+    float: right;
+    .cnt {
+      color: $mdgreen;
+      font-weight: bold;
+    }
+  }
+  .precrp {
+    margin-bottom: 0;
+    margin-top: $default_vert_unit;
+  }
+}
+
+// Cheating here (a little)
+.pane-user-questions-user-questions-fields {
+  position: relative;
+  margin-top: 3 * $default_vert_unit;
+  margin-bottom: 3 * $default_vert_unit;
+  
+  .pane-title {
+    padding-left: 100px;
+    //border-bottom: 1px solid $ltgray;
+    @include h1;
+    @include clearfix;
+  }
+  .icon {
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    
+    @include icons-sprite('coral-qa');
+  }
+}
