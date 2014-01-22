@@ -1823,7 +1823,84 @@ h3 .toc-top {
   /* Opera (13?) */
 }
 
-/* line 495, ../sass/global/_global.scss */
+/* line 494, ../sass/global/_global.scss */
+div.ui-tabs {
+  padding: 0;
+  font-size: 1em;
+  font-family: arial, helvetica, sans-serif;
+  margin: 3.75em 0 2.5em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 5px 3px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 5px 3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.125) 5px 3px 5px;
+}
+/* line 504, ../sass/global/_global.scss */
+div.ui-tabs .ui-tabs-nav {
+  margin: 0;
+  padding: .5em .5em 0;
+}
+/* line 509, ../sass/global/_global.scss */
+div.ui-tabs .ui-corner-all {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 513, ../sass/global/_global.scss */
+div.ui-tabs .ui-widget-header {
+  position: relative;
+  background: #cad5e2;
+  border-style: none none solid none;
+  border-color: #a2b6cc;
+  background: #bac8d9;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cad5e2), color-stop(50%, #bac8d9), color-stop(100%, #c0cddd));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
+  /* IE6-9 */
+  /*&:before {
+    position: absolute;
+    top: -1.75em;
+    left: .25em;
+    content: 'Your followed ';
+    color: $mdgray;
+    
+    @include h3;
+  }*/
+}
+/* line 532, ../sass/global/_global.scss */
+div.ui-tabs .ui-tabs-panel {
+  border-style: none solid solid solid;
+  border-color: #a2b6cc;
+  border-width: 1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 539, ../sass/global/_global.scss */
+div.ui-tabs .ui-state-default {
+  border-color: #a2b6cc;
+}
+
+/* line 547, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs {
   border: none;
   font-size: 1em;
@@ -1836,17 +1913,17 @@ body.vertical-panels-tabs .ui-tabs:after {
   display: table;
   clear: both;
 }
-/* line 503, ../sass/global/_global.scss */
+/* line 555, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs > .item-list {
   position: absolute;
   width: 12em;
 }
-/* line 508, ../sass/global/_global.scss */
+/* line 560, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-panel {
   margin-left: 12em;
   padding: 0 1em;
 }
-/* line 513, ../sass/global/_global.scss */
+/* line 565, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav {
   border: none;
   background: none;
@@ -1862,7 +1939,7 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav {
     @include linear-v-gradient(lighten($ltblue, 5%), darken($ltblue, 5%));
   }*/
 }
-/* line 517, ../sass/global/_global.scss */
+/* line 569, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li.ui-corner-top {
   border: none;
   background: none;
@@ -1872,7 +1949,7 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li.ui-corner-top {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 522, ../sass/global/_global.scss */
+/* line 574, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
   width: 10em;
   line-height: 2.5em;

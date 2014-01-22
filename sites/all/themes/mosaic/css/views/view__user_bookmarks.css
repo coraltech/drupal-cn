@@ -1,0 +1,56 @@
+/* line 474, icons/*.png */
+.icons-sprite {
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
+}
+
+/* line 10, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-row {
+  margin: .625em 0;
+  border-bottom: 1px solid #dddddd;
+  padding: 0.625em 0 1.25em;
+}
+/* line 18, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-title {
+  margin-right: .5em;
+}
+/* line 21, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-title a {
+  color: #446eac;
+}
+/* line 23, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-title a:active, .view-user-bookmarks .views-field-title a.active {
+  color: #32547d;
+}
+/* line 24, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-title a:hover {
+  color: #2b486b;
+}
+/* line 27, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-body {
+  color: #656565;
+}
+/* line 30, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-field-answer-count {
+  color: #777777;
+  float: right;
+}
+/* line 33, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-field-answer-count .cnt {
+  color: #36b048;
+  font-weight: bold;
+}
+/* line 38, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .views-field-timestamp {
+  color: #b9490d;
+  font-size: .9em;
+}
+/* line 42, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .precrp {
+  margin-bottom: 0;
+  margin-top: 1.25em;
+}
+/* line 47, ../../sass/views/view__user_bookmarks.scss */
+.view-user-bookmarks .pager {
+  margin: 0;
+  color: #777777;
+}

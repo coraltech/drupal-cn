@@ -1,0 +1,28 @@
+/* line 8, ../../sass/panes/pane__user_profile_user_profile.scss */
+.pane-user-profile {
+  margin-bottom: 2.5em;
+}
+/* line 11, ../../sass/panes/pane__user_profile_user_profile.scss */
+.pane-user-profile h3 {
+  font-size: 1.5em;
+  line-height: 1.6667em;
+  margin-top: 0.4167em;
+  margin-bottom: 0.4167em;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 16, ../../sass/panes/pane__user_profile_user_profile.scss */
+.pane-user-profile .profile {
+  margin: 0;
+}
+/* line 18, ../../sass/panes/pane__user_profile_user_profile.scss */
+.pane-user-profile .profile dt {
+  margin: 0;
+}
+/* line 19, ../../sass/panes/pane__user_profile_user_profile.scss */
+.pane-user-profile .profile dd {
+  margin: 0;
+}
+/* line 20, ../../sass/panes/pane__user_profile_user_profile.scss */
+.pane-user-profile .profile dl {
+  margin: 1.25em 0;
+}

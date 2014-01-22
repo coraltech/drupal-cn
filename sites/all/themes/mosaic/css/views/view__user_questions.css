@@ -1,0 +1,61 @@
+/* line 474, icons/*.png */
+.icons-sprite, .pane-user-questions-user-questions-fields .icon {
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
+}
+
+/* line 12, ../../sass/views/view__user_questions.scss */
+.view-user-questions .views-row {
+  margin: .625em 0;
+  border-bottom: 1px solid #dddddd;
+  padding: 0.625em 0 1.25em;
+}
+/* line 21, ../../sass/views/view__user_questions.scss */
+.view-user-questions .views-field-title {
+  margin-right: 1em;
+}
+/* line 25, ../../sass/views/view__user_questions.scss */
+.view-user-questions .views-field-body {
+  color: #656565;
+}
+/* line 29, ../../sass/views/view__user_questions.scss */
+.view-user-questions .views-field-field-answer-count {
+  color: #777777;
+  float: right;
+}
+/* line 32, ../../sass/views/view__user_questions.scss */
+.view-user-questions .views-field-field-answer-count .cnt {
+  color: #36b048;
+  font-weight: bold;
+}
+/* line 37, ../../sass/views/view__user_questions.scss */
+.view-user-questions .precrp {
+  margin-bottom: 0;
+  margin-top: 1.25em;
+}
+
+/* line 44, ../../sass/views/view__user_questions.scss */
+.pane-user-questions-user-questions-fields {
+  position: relative;
+  margin-top: 3.75em;
+  margin-bottom: 2.5em;
+}
+/* line 49, ../../sass/views/view__user_questions.scss */
+.pane-user-questions-user-questions-fields .pane-title {
+  padding-left: 100px;
+  font-size: 1.5em;
+  line-height: 1.6667em;
+  margin-top: 0.4167em;
+  margin-bottom: 0.4167em;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 55, ../../sass/views/view__user_questions.scss */
+.pane-user-questions-user-questions-fields .icon {
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  background-position: 0 -318px;
+  height: 52px;
+  width: 90px;
+}

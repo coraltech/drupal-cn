@@ -1,0 +1,28 @@
+/* line 474, icons/*.png */
+.icons-sprite, .pane-coral-user-bookmarks-intro .star {
+  background: url('/images/icons-sf4124cc822.png') no-repeat;
+}
+
+/* line 9, ../../sass/panes/pane__coral_user_bookmarks_intro.scss */
+.pane-coral-user-bookmarks-intro {
+  position: relative;
+}
+/* line 12, ../../sass/panes/pane__coral_user_bookmarks_intro.scss */
+.pane-coral-user-bookmarks-intro h3 {
+  font-size: 1.375em;
+  line-height: 1.8182em;
+  margin-top: 0.4545em;
+  margin-bottom: 0.4545em;
+  margin-left: 40px;
+  color: #b02e1c;
+}
+/* line 19, ../../sass/panes/pane__coral_user_bookmarks_intro.scss */
+.pane-coral-user-bookmarks-intro .star {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-position: 0 -1673px;
+  height: 29px;
+  width: 30px;
+}

@@ -1,4 +1,8 @@
-/* line 13, ../../sass/views/view__tags_popular.scss */
+/* line 12, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-question-tags {
+  margin-bottom: 1.25em;
+}
+/* line 15, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-title {
   color: white;
   padding-left: .5em;
@@ -13,49 +17,49 @@
   background: linear-gradient(to bottom, #4f7e56 0%, #5e8864 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 21, ../../sass/views/view__tags_popular.scss */
+/* line 23, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content {
   padding-top: .3em;
   background: #9d9d9d;
 }
-/* line 25, ../../sass/views/view__tags_popular.scss */
+/* line 27, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .view-content {
   color: #919191;
   font-weight: bold;
   margin-top: -.3em;
   background: #dddddd;
 }
-/* line 31, ../../sass/views/view__tags_popular.scss */
+/* line 33, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .view-content .views-row {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 32, ../../sass/views/view__tags_popular.scss */
+/* line 34, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .view-content .views-row-even {
   background: #cbcbcb;
 }
-/* line 35, ../../sass/views/view__tags_popular.scss */
+/* line 37, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .view-content .tag-active:after {
   content: "(x)";
   color: #c57d76;
   margin-left: 5px;
 }
-/* line 42, ../../sass/views/view__tags_popular.scss */
+/* line 44, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .view-content .tag-active:hover:after {
   color: #b02e1c;
 }
-/* line 48, ../../sass/views/view__tags_popular.scss */
+/* line 50, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more {
   margin: 0;
   padding: 3px;
   text-align: left;
 }
-/* line 53, ../../sass/views/view__tags_popular.scss */
+/* line 55, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li {
   margin: 0;
   padding: 0;
 }
-/* line 57, ../../sass/views/view__tags_popular.scss */
+/* line 59, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a {
   color: white;
   font-size: 12px;
@@ -124,7 +128,7 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 63, ../../sass/views/view__tags_popular.scss */
+/* line 65, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
   color: white;
 }
