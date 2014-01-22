@@ -490,6 +490,58 @@ h3 .toc-top {
 }
 
 
+// Default tabs for panels tabs
+div.ui-tabs {
+  padding: 0;
+  font-size: 1em;
+  font-family: $sans_fonts;
+  margin: (3 * $default_vert_unit) 0 (2 * $default_vert_unit);
+  border: none;
+  
+  @include border-radius(0);
+  @include box-shadow(rgba(0, 0, 0, 0.125) 5px 3px 5px);
+  
+  .ui-tabs-nav {
+    margin: 0;
+    padding: .5em .5em 0;
+  }
+  
+  .ui-corner-all {
+    @include border-radius(0);
+  }
+  
+  .ui-widget-header {
+    position: relative;
+    background: $ltblue;// url('../assets/images/diag-tile.png');
+    border-style: none none solid none;
+    border-color: darken($ltblue, 12%);
+    
+    @include reflected-v-gradient($ltblue, darken($ltblue, 5%), darken($ltblue, 3%));
+    
+    /*&:before {
+      position: absolute;
+      top: -1.75em;
+      left: .25em;
+      content: 'Your followed ';
+      color: $mdgray;
+      
+      @include h3;
+    }*/
+  }
+  
+  .ui-tabs-panel {
+    border-style: none solid solid solid;
+    border-color: darken($ltblue, 12%);
+    border-width: 1px;
+    @include border-radius(0);
+  }
+  
+  .ui-state-default {
+    border-color: darken($ltblue, 12%);
+  } 
+}
+
+
 // Vertically aligned panels_tabs
 // Add body class to reqd panelizer to use vertical tabs.
 body.vertical-panels-tabs .ui-tabs {
