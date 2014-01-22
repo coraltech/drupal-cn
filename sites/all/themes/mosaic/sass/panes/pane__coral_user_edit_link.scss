@@ -1,0 +1,15 @@
+
+// User edit link scss
+
+@import 'global/headers';
+@import 'global/buttons';
+
+.pane-coral-user-edit-link {
+  float: right;
+  line-height: 6em;
+  
+  .pane-content a {
+    @include btn-matte-inset;
+    @include btn-structure;
+  }
+}
