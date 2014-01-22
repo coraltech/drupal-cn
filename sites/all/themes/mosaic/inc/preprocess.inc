@@ -92,11 +92,24 @@ function mosaic_preprocess_views_view_fields(&$vars) {
   //dpm($vars);
 }
 
+
 // Preprocess for views field
 function mosaic_preprocess_views_view_field(&$vars) {
+  // By alias
   $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->field_alias;
+  
   if (function_exists($func)) $func($vars);
+  
+  // By real field name
+  if ($vars['field']->real_field != $vars['field']->field_alias) {
+    $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field;
+
+    if (function_exists($func)) $func($vars);
+  }
+  
+  
 }
+
 
 // Preprocess the comment - add thread class
 function mosaic_preprocess_comment(&$vars) {
@@ -126,14 +139,15 @@ function mosaic_preprocess_field(&$variables, $hook) {
     'field__'.$element['#field_name']
   );
   foreach ($files as $file) {
-//dpm($file);
     if (file_exists($path.'/css/fields/'.$file.'.css')) drupal_add_css($path.'/css/fields/'.$file.'.css', array('group' => CSS_THEME));
     if (file_exists($path.'/js/fields/'.$file.'.js')) drupal_add_js($path.'/js/fields/'.$file.'.js', array('group' => JS_THEME));
   }
 }
 
 // Ensure entity|node.tpl.php is in place: use if needed (e.g: submitted by...)
-function mosaic_preprocess_entity(&$vars) {}
+function mosaic_preprocess_entity(&$vars) {
+  
+}
 
 // Add some stuff to nodes... lots of stuff right?
 function mosaic_preprocess_node(&$vars) {
@@ -168,6 +182,30 @@ function mosaic_preprocess_panels_pane__entity_field___node_body(&$vars) {
     $nid = $vars['content']['#object']->nid;
     $vars['classes_array'][] = 'body-'.$nid;
   }
+}
+
+
+
+// Update user questions pane title to be possessive.
+function mosaic_preprocess_panels_pane__views_panes___user_questions_user_questions_fields(&$vars) {
+  // Build a nicer pane title than say, Questions...
+  $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
+  $last = substr($user_name, -1);
+  
+  // Add icon holder for the cloud Q's and get a decent prefix to the name  
+  if ($last === 's') {
+    $title = '<span class="icon"></span>'.$user_name."' questions";
+  }
+  else {
+    $title = '<span class="icon"></span>'.$user_name."'s questions";
+  }
+  $vars['title'] = $title;
+}
+
+
+// Answer count output manipulation - add prefix
+function mosaic__preprocess_views_views_field_field_answer_count_value(&$vars) {
+  $vars['output'] = '<span class="cnt">'.$vars['output'].'</span><span class="txt">'.format_plural($vars['output'], ' answer', ' answers').'</span>';
 }
 
 
@@ -344,7 +382,6 @@ function mosaic_preprocess_panelizer_view_mode(&$vars) {
   }
 }
 
-
 // The main "new" questions page as seen on q&a.
 function _preprocess_view__questions__new_questions(&$vars) {
   $g = $_GET;
@@ -389,4 +426,28 @@ function _preprocess_view__questions__new_questions(&$vars) {
     $output .= '<span class="reset-filter">'.$reset_all.'</span></div>';
     $vars['title'] = $output;
   }
+}
+
+
+/**
+ * Process variables for user-profile.tpl.php.
+ *
+ * The $variables array contains the following arguments:
+ * - $account
+ *
+ * @see user-profile.tpl.php
+ */
+function mosaic_preprocess_user_profile(&$variables) {
+  $account = $variables['elements']['#account'];
+
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($variables['elements']) as $key) {
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+  }
+
+  // Hide the user picture since we output it separately.
+  hide($variables['user_profile']['user_picture']);
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }
