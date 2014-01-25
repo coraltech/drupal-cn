@@ -1,0 +1,94 @@
+
+// Node search styles
+
+@import 'global/colors';
+@import 'global/headers';
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+// Ok so this may look like cheating but I need to style the 
+//  pane title (outside the view object) so this is ok by me.
+
+// Also the styles for the search page facets will live in here
+//  They have giberish pane names so it seems logical.
+.pane-node-search-node-search-results {
+  .pane-title {
+    @include h3;
+    
+    color: $mdred;
+  }
+  
+  .views-row {
+    margin-bottom: 2 * $default_vert_unit;
+  }
+  
+  // url and changed field should have line height rectified!
+  .views-field-url {
+    font-size: .85em;
+    line-height: 1.17em;
+    vertical-align: middle;
+    a {
+      color: $mdgreen;
+      
+      &:hover {
+        color: $dkgreen;
+      }
+    }
+  }
+  .views-field-changed {
+    color: $mdgray;
+    line-height: 1.17em;
+    vertical-align: middle;
+    font-size: .85em;
+  }
+}
+
+
+// Search status info
+.pane-current-search-standard {
+  .pane-title {
+    @include h3;
+    
+    color: $mdred;
+  }
+  
+  margin-bottom: 2 * $default_vert_unit;
+}
+
+
+// Facet block styles
+.facet-pane {
+  .pane-title {
+    @include h3;
+    
+    color: $mdgray;
+  }
+  
+  margin-bottom: 2 * $default_vert_unit;
+}
+
+
+// Layout modifications
+.page-search-node {
+  .main-content {
+    @include col(6);
+  }
+  .secondary-content {
+    @include col(18, 'TRUE');
+  }
+}
+
+// Search form in the content area (not the header)
+.secondary-content .pane-search-form {
+  margin-bottom: 2 * $default_vert_unit;
+
+  input.form-text {
+    width: 60%;
+  }
+  
+  input.form-submit {
+    font-size: 135%;
+  }
+}
+
+
