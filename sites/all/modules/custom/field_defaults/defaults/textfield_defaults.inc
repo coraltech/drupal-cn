@@ -7,7 +7,8 @@
 // Search block form defaults (header search)
 function field_defaults_search_block_form__textfield_defaults($form, &$matrix) {
   $matrix['search_block_form']['selectors'] = array(
-    '#search-block-form .form-text' => t('Search')
+    '#search-block-form .form-text' => t('Search'),
+    '#search-block-form--2 .form-text' => t('Search')
   );
 }
 
