@@ -29,15 +29,17 @@ function coral_home_login_pane_content_type_render($subtype, $conf, $args, $cont
   $wik = l('wiki docs', 'node/32');
   $com = l('community Q&A', 'node/55');
   
-  $output = '<div class="login-sep grid-24-last"></div>';
+  $output = '';
   
   if (!$user->uid) {
+    $block->title = t('Sign up');
+    
+    $output = '<div class="login-sep grid-24-last"></div>';
     $output .= '<div class="grid-4 prepend-2">'.l('Sign up', 'user/login', array('attributes' => array('class' => array('btn')))).'</div>';
     $output .= '<div class="grid-5"><ul><li>'.$log.'</li><li>'.$fog.'</li></ul></div>';
     $output .= '<div class="append-1 grid-12-last"><p>Signup to recieve updates, edit and discuss '.$wik.', and post to the '.$com.'. No registration required to use Coral.</p></div>';
   }
-  
-  $block->title = t('Sign up');
+
   $block->content = $output;
   return $block; 
 }
