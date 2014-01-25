@@ -1,0 +1,4 @@
+name = Coral Solr Fields
+description = Manages additional solr fields for use in Coral 
+package = "Coral"
+core = 7.x 

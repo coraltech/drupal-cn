@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function coral_solr_fields_entity_property_info_alter(&$info) {
+  $info['node']['properties']['user_image'] = array(
+    'type' => 'text',
+    'label' => t('User image'),
+    'sanitized' => TRUE,
+    'getter callback' => 'coral_solr_fields_user_image_getter_callback',
+  );
+}
+
+/**
+ * Getter callback for created_week_day property.
+ */
+function coral_solr_fields_user_image_getter_callback($item) {
+  dpm($item);  
+  return format_date($item->created, 'custom', 'D');
+}
