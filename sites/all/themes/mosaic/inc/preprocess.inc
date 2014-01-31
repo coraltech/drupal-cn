@@ -97,7 +97,7 @@ function mosaic_preprocess_views_view_fields(&$vars) {
 function mosaic_preprocess_views_view_field(&$vars) {
   // By alias
   $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->field_alias;
-  
+
   if (function_exists($func)) $func($vars);
   
   // By real field name
@@ -106,8 +106,6 @@ function mosaic_preprocess_views_view_field(&$vars) {
 
     if (function_exists($func)) $func($vars);
   }
-  
-  
 }
 
 
@@ -223,6 +221,30 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
       $vars['output'] = mosaic_compile_default_user_image($row->users_node_revision_uid, $image_style, $title);
     }
   }
+}
+
+
+// Processess the user image for the user_image search field
+// See coral_solr_fields module.
+function mosaic__preprocess_views_views_field_user_image(&$vars) {
+  $data = $vars['row']->_entity_properties;
+  
+  $allowed_types = array('answer', 'comment', 'question');
+  
+  if (in_array($data['type'], $allowed_types)) {
+    $user = user_load($data['author']);
+
+    if (isset($user->name)) {
+      $title = 'View '.mosaic_possessive($user->name).' profile';
+      $image_style = 'user_thumb_small';  
+      $vars['output'] = mosaic_compile_default_user_image($user, $image_style, $title);  
+    }
+    
+  }
+  else {
+    $vars['output'] = '';
+  }
+  
 }
 
 // Re-formulate the tag links to point to the page we are current on.
