@@ -1,0 +1,12 @@
+/* line 7, ../../sass/panes/pane__coral_authors.scss */
+.pane-coral-authors {
+  margin-bottom: 2.5em;
+}
+/* line 9, ../../sass/panes/pane__coral_authors.scss */
+.pane-coral-authors .pane-title {
+  color: #b02e1c;
+}
+/* line 10, ../../sass/panes/pane__coral_authors.scss */
+.pane-coral-authors a {
+  margin: 0 5px 5px 0;
+}

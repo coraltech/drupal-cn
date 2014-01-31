@@ -1,0 +1,13 @@
+
+// Coral authros pane scss file
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.pane-coral-authors {
+  margin-bottom: 2 * $default_vert_unit;
+  .pane-title { color: $mdred; }
+  a { margin: 0 5px 5px 0; }
+}
+
+
