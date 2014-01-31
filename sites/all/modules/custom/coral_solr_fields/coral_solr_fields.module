@@ -13,9 +13,20 @@ function coral_solr_fields_entity_property_info_alter(&$info) {
 }
 
 /**
- * Getter callback for created_week_day property.
+ * Getter callback for user image.
  */
 function coral_solr_fields_user_image_getter_callback($item) {
-  dpm($item);  
-  return format_date($item->created, 'custom', 'D');
+  $user = $item->uid;
+  $user = user_load($user);
+  
+  $uri = 'public://coraltechiconlg.png'; // default image
+  
+  // See also function mosaic_compile_default_user_image($user, $image_style, $title) {
+  if (is_object($user) && $user->uid) {
+    if (isset($user->picture->uri)) {
+      $uri = $user->picture->uri;
+    }
+  }
+  
+  return $uri;
 }
