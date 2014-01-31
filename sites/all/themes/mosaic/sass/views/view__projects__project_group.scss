@@ -24,6 +24,15 @@
     left: 0;
   }
   
+  .repo {
+    color: $mdgreen;
+    font-size: .85em;
+    
+    &:hover {
+      color: lighten($mdgreen, 7%);
+    }
+  }
+  
   a {
     line-height: 1em;  
   }
@@ -48,6 +57,4 @@
   &.puppet-comps .icon {
     @include icons-sprite('puppet');    
   }
-  
-  
 }
