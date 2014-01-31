@@ -25,12 +25,12 @@ function coral_menus_main_links_loader() {
   return array(
     'about'=> array(
       'link_title' => t('About'),
-      'link_path'  => 'node/929',
+      'link_path'  => 'node/920',
       'weight'     => 1,
     ),
     'project' => array(
       'link_title' => t('Project'),
-      'link_path'  => 'node/932',
+      'link_path'  => 'node/923',
       'weight'     => 2,
     ), 
     'community' => array(

@@ -24,17 +24,17 @@ function coral_menus_about_links_loader() {
   return array(
     'about_coral'=> array(
       'link_title' => t('About Coral'),
-      'link_path'  => 'node/929',
+      'link_path'  => 'node/920',
       'weight'     => 1,
     ),
     'team' => array(
       'link_title' => t('Team'),
-      'link_path'  => 'node/930',
+      'link_path'  => 'node/921',
       'weight'     => 2,
     ),
     'support' => array(
       'link_title' => t('Support'),
-      'link_path'  => 'node/931',
+      'link_path'  => 'node/922',
       'weight'     => 3,
     )
   );

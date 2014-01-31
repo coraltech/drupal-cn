@@ -24,27 +24,27 @@ function coral_menus_documentation_links_loader() {
   return array(
     'commands'=> array(
       'link_title' => t('Commands'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 1,
     ),
     'architecture' => array(
       'link_title' => t('Architecture'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 2,
     ),
     'requirements' => array(
       'link_title' => t('Requirements'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 3,
     ),
     'cluster' => array(
       'link_title' => t('Creating your first cluster'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 4,
     ),
     'plugins' => array(
       'link_title' => t('Adding new plugins'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 5,
     )
   );

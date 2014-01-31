@@ -26,17 +26,17 @@ function coral_menus_account_links_loader() {
       'link_title' => t('Manage account'),
       'link_path'  => 'user',
       'weight'     => 1,
-    ),
-    'manage_projects' => array(
-      'link_title' => t('Manage projects'),
-      'link_path'  => 'node/8',
-      'weight'     => 2,
-    ),
-    'upgrade_account' => array(
-      'link_title' => t('Upgrade account'),
-      'link_path'  => 'node/8',
-      'weight'     => 3,
     )
+    //'manage_projects' => array(
+    //  'link_title' => t('Manage projects'),
+    //  'link_path'  => '<front>',
+    //  'weight'     => 2,
+    //),
+    //'upgrade_account' => array(
+    // 'link_title' => t('Upgrade account'),
+    //  'link_path'  => 'node/8',
+    //  'weight'     => 3,
+    //)
   );
 }
 

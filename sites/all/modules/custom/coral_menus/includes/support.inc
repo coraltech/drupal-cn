@@ -24,13 +24,13 @@ function coral_menus_support_links_loader() {
   return array(
     'get_help'=> array(
       'link_title' => t('Get help'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 1,
       'options' => array('attributes' => array('class'=> array('get-help-tab'))),
     ),
     'issues' => array(
       'link_title' => t('Issues?'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 2,
       'options' => array('attributes' => array('class'=> array('issues-tab'))),
     ),

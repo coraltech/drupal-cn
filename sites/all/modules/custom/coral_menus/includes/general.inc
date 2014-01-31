@@ -24,22 +24,22 @@ function coral_menus_general_links_loader() {
   return array(
     'about_us'=> array(
       'link_title' => t('About us'),
-      'link_path'  => 'node/929',
+      'link_path'  => 'node/920',
       'weight'     => 1,
     ),
     'contact_us' => array(
       'link_title' => t('Contact us'),
-      'link_path'  => 'node/931',
+      'link_path'  => 'node/922',
       'weight'     => 2,
     ),
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 3,
     ),
     'sponsors' => array(
       'link_title' => t('Sponsors'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 4,
     ),
     'qa' => array(
@@ -49,18 +49,13 @@ function coral_menus_general_links_loader() {
     ),
     'sitemap' => array(
       'link_title' => t('Sitemap'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 6,
     ),
     'getting_help' => array(
       'link_title' => t('Getting help'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 7,
-    ),
-    'ssh_keys' => array(
-      'link_title' => t('Using SSH keys'),
-      'link_path'  => 'node/8',
-      'weight'     => 8,
     )
   );
 }
