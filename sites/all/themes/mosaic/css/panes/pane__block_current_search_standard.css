@@ -1,0 +1,70 @@
+/* line 14, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard {
+  overflow: hidden;
+  *zoom: 1;
+  margin-bottom: 1.25em;
+}
+/* line 17, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-text {
+  float: left;
+  margin-right: .5em;
+}
+/* line 21, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-text span {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: #b02e1c;
+}
+/* line 28, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active {
+  position: relative;
+}
+/* line 31, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active .item-list {
+  float: left;
+  padding-top: 0.625em;
+  width: 99.8%;
+}
+/* line 37, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 41, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active li {
+  float: left;
+  margin: 0 .5em .5em 0;
+  list-style: none;
+  list-style-image: none;
+  padding: 1px 5px 1px 2px;
+  position: relative;
+  top: -1px;
+}
+/* line 50, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active li a {
+  color: #777777;
+}
+/* line 53, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active li a:hover {
+  color: #515151;
+}
+/* line 58, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active li.active-item {
+  border: 1px solid #cbcbcb;
+  background: #fffada;
+  top: -3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+}
+/* line 67, ../../sass/panes/pane__block_current_search_standard.scss */
+.pane-current-search-standard .current-search-item-active li.active-item a:hover {
+  color: #2b486b;
+}

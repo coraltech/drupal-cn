@@ -122,6 +122,111 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 46, ../sass/global/_construct.scss */
+.white {
+  color: white;
+}
+
+/* line 47, ../sass/global/_construct.scss */
+.black {
+  color: black;
+}
+
+/* line 48, ../sass/global/_construct.scss */
+.ltgray {
+  color: #dddddd;
+}
+
+/* line 49, ../sass/global/_construct.scss */
+.mdgray {
+  color: #777777;
+}
+
+/* line 50, ../sass/global/_construct.scss */
+.dkgray {
+  color: #515151;
+}
+
+/* line 51, ../sass/global/_construct.scss */
+.silver {
+  color: silver;
+}
+
+/* line 52, ../sass/global/_construct.scss */
+.ltred {
+  color: #d9837b;
+}
+
+/* line 53, ../sass/global/_construct.scss */
+.mdred {
+  color: #b02e1c;
+}
+
+/* line 54, ../sass/global/_construct.scss */
+.dkred {
+  color: #762921;
+}
+
+/* line 55, ../sass/global/_construct.scss */
+.ltgreen {
+  color: #a2d4a9;
+}
+
+/* line 56, ../sass/global/_construct.scss */
+.mdgreen {
+  color: #36b048;
+}
+
+/* line 57, ../sass/global/_construct.scss */
+.dkgreen {
+  color: #20682a;
+}
+
+/* line 58, ../sass/global/_construct.scss */
+.ltblue {
+  color: #cad5e2;
+}
+
+/* line 59, ../sass/global/_construct.scss */
+.mdblue {
+  color: #446eac;
+}
+
+/* line 60, ../sass/global/_construct.scss */
+.dkblue {
+  color: #2b486b;
+}
+
+/* line 61, ../sass/global/_construct.scss */
+.ltorange {
+  color: #fdaa68;
+}
+
+/* line 62, ../sass/global/_construct.scss */
+.mdorange {
+  color: #e17d2c;
+}
+
+/* line 63, ../sass/global/_construct.scss */
+.dkorange {
+  color: #b9490d;
+}
+
+/* line 64, ../sass/global/_construct.scss */
+.ltyellow {
+  color: #fff6b6;
+}
+
+/* line 65, ../sass/global/_construct.scss */
+.mdyellow {
+  color: #e5d14a;
+}
+
+/* line 66, ../sass/global/_construct.scss */
+.dkyellow {
+  color: #ac9605;
+}
+
 /* line 8, ../sass/global/site_colors.scss */
 .white-txt {
   color: white;
@@ -1927,17 +2032,6 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-panel {
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav {
   border: none;
   background: none;
-  /*.ui-state-default {
-    border-color: $ltgray;
-    border-bottom: 1px solid darken($ltgray, 15%) !important;
-    
-    @include linear-v-gradient(lighten($ltgray, 10%), lighten($ltgray, 3%));
-  }
-  .ui-state-active {
-    border-color: $mdgray;
-    border-bottom: 1px solid $mdgray !important;
-    @include linear-v-gradient(lighten($ltblue, 5%), darken($ltblue, 5%));
-  }*/
 }
 /* line 569, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li.ui-corner-top {

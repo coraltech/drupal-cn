@@ -26,9 +26,10 @@ h1.page-title {
   margin-top: .5em;
   margin-bottom: .5em;
   margin-bottom: 1.25em;
+  color: #636363;
   line-height: 1.25em;
 }
-/* line 30, ../../sass/panes/pane__coral_project_intro.scss */
+/* line 31, ../../sass/panes/pane__coral_project_intro.scss */
 .pane-coral-project-intro .divider {
   background: url("../../assets/images/coral-sep-long.png") bottom center no-repeat;
   height: 25px;
