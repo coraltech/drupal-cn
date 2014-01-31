@@ -1,0 +1,75 @@
+
+// Styles for the current search block
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
+
+
+// Search status info
+.pane-current-search-standard {
+  @include clearfix;
+  
+  .current-search-item-text {
+    float: left;
+    margin-right: .5em; 
+    
+    span {
+      @include h3;
+      
+      color: $mdred;
+    }
+  }
+  
+  .current-search-item-active {
+    position: relative;
+    
+    .item-list {
+      float: left;
+      padding-top: ($default_vert_unit / 2);
+      width: 99.8%;
+    }
+    
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      float: left;
+      margin: 0 .5em .5em 0;
+      list-style: none;
+      list-style-image: none;
+      padding: 1px 5px 1px 2px;
+      position: relative;
+      top: -1px;
+      
+      a {
+        color: $mdgray;
+        
+        &:hover {
+          color: $dkgray;
+        }
+      }
+    }
+    li.active-item {
+      border: 1px solid darken($ltgray, 7%);
+      background: lighten($ltyellow, 7%);
+      top: -3px;
+      
+      @include border-radius(3px);
+      @include box-shadow(rgba(0, 0, 0, 0.15) 2px 2px 3px);
+      
+      a {
+        &:hover {
+          color: $dkblue;
+        }
+      }
+    }
+  }
+  
+  margin-bottom: $default_vert_unit;
+}
