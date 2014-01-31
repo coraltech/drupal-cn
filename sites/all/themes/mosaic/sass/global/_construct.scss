@@ -41,3 +41,26 @@
 .br {
   display: block;
 }
+
+// Color construct
+.white { color: $white; }
+.black { color: $black; }
+.ltgray { color: $ltgray; }
+.mdgray { color: $mdgray; }
+.dkgray { color: $dkgray; }
+.silver { color: $silver; }
+.ltred { color: $ltred; }
+.mdred { color: $mdred; }
+.dkred { color: $dkred; }
+.ltgreen { color: $ltgreen; }
+.mdgreen { color: $mdgreen; }
+.dkgreen { color: $dkgreen; }
+.ltblue { color: $ltblue; }
+.mdblue { color: $mdblue; }
+.dkblue { color: $dkblue; }
+.ltorange { color: $ltorange; }
+.mdorange { color: $mdorange; }
+.dkorange { color: $dkorange; }
+.ltyellow { color: $ltyellow; }
+.mdyellow { color: $mdyellow; }
+.dkyellow { color: $dkyellow; }
