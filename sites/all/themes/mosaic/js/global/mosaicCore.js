@@ -54,4 +54,42 @@ Drupal.mosaic = Drupal.mosaic || {};
     }
   };
   
+  Drupal.mosaic.mosaicCore.prototype.getQueryParams = function(url) {
+    try {
+      var result = {};
+      var searchIndex = url.indexOf("?");
+      if (searchIndex == -1 ) return result;
+      var sPageURL = url.substring(searchIndex +1);
+      var sURLVariables = sPageURL.split('&');
+      for (var i = 0; i < sURLVariables.length; i++)
+      {       
+          var sParameterName = sURLVariables[i].split('=');      
+          result[sParameterName[0]] = sParameterName[1];
+      }
+      return result;
+    }
+    catch (err) {
+      console.log('getQueryParams errored: '+err);
+    }
+  };
+  
+  
+  Drupal.mosaic.mosaicCore.prototype.ucFirst = function(str) {
+    try {
+      // From: http://phpjs.org/functions
+      // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+      // +   bugfixed by: Onno Marsman
+      // +   improved by: Brett Zamir (http://brett-zamir.me)
+      // *     example 1: ucfirst('kevin van zonneveld');
+      // *     returns 1: 'Kevin van zonneveld'
+      str += '';
+      var f = str.charAt(0).toUpperCase();
+      return f + str.substr(1);
+    }
+    catch (err) {
+      console.log('ucFirst errored: '+err);
+    }
+    
+  };
+  
 })(jQuery);
