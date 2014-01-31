@@ -1,10 +1,12 @@
 
 // Node search styles
-
+@import 'global/buttons';
 @import 'global/colors';
 @import 'global/headers';
 @import 'global/fonts';
 @import 'global/grid_mix';
+
+@import "compass/utilities/general/clearfix";
 
 // Ok so this may look like cheating but I need to style the 
 //  pane title (outside the view object) so this is ok by me.
@@ -19,7 +21,7 @@
   }
   
   .views-row {
-    margin-bottom: 2 * $default_vert_unit;
+    margin: (1.2 * $default_vert_unit) 0 (2 * $default_vert_unit) 0;
   }
   
   // url and changed field should have line height rectified!
@@ -41,34 +43,69 @@
     vertical-align: middle;
     font-size: .85em;
   }
-}
-
-
-// Search status info
-.pane-current-search-standard {
-  .pane-title {
-    @include h3;
-    
-    color: $mdred;
+  .views-field-user-image {
+    float: left;
+    img {
+      margin-right: .5em;
+      margin-top: .3em;
+    }
   }
-  
-  margin-bottom: 2 * $default_vert_unit;
 }
 
 
 // Facet block styles
 .facet-pane {
+  margin-bottom: $default_vert_unit;
+  border: 1px solid $mdgray;
+  
   .pane-title {
     @include h3;
-    
-    color: $mdgray;
+    margin: 0;
+    padding: .5em;
   }
   
-  margin-bottom: 2 * $default_vert_unit;
+  .item-list ul {
+    padding: $default_vert_unit .5em;
+    margin: 0;
+    
+    li.leaf {
+      margin: 0;
+      list-style-image: none;
+      list-style: none;
+    }
+  }
+  
+  // The more link
+  .facetapi-limit-link {
+    @include btn-matte-inset;
+    @include btn-structure(2px 5px, 14px, 0px);
+    
+    position: relative;
+    top: (-1 * ($default_vert_unit / 2));
+    left: .5em;
+  }
+  
+  &.facet-types {
+    background: lighten(desaturate($ltgreen, 15%), 20%);
+    border-bottom: none;
+    margin-bottom: 0;
+    .pane-title {
+      background: $mdblue;
+      color: $white;
+    }
+  }
+  &.facet-tags {
+    border-top: none;
+    .pane-title {
+      border-top: 1px solid $ltorange;
+      background: $mdorange;
+      color: $white;
+    }
+  }
 }
 
 
-// Layout modifications
+// Page layout modifications
 .page-search-node {
   .main-content {
     @include col(6);
@@ -78,16 +115,32 @@
   }
 }
 
+
 // Search form in the content area (not the header)
 .secondary-content .pane-search-form {
-  margin-bottom: 2 * $default_vert_unit;
-
-  input.form-text {
-    width: 60%;
-  }
+  @include clearfix;
   
-  input.form-submit {
-    font-size: 135%;
+  .pane-content {
+    background: url('../../assets/images/diag-tile.png');
+    margin-bottom:  .8 * $default_vert_unit;
+    padding: .35em 0 .3em .5em;
+    min-height: 2em;
+    
+    @include col(16);
+    
+    input.form-text {
+      font-size: 1em;
+      border: 1px solid $ltgray;
+      
+      @include col(18);
+    }
+    
+    input.form-submit {
+      font-size: 115%;
+      margin-top: 1px;
+      @include col(5.5);
+      @include prepend(.5);
+    }
   }
 }
 
