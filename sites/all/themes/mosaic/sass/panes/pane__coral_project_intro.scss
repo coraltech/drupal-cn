@@ -24,6 +24,7 @@ h1.page-title {
   p {
     @include h3;
     margin-bottom: $default_vert_unit;
+    color: lighten($dkgray, 7%);
     line-height: 1.25em;
   }
   
