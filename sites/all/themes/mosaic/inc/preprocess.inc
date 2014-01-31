@@ -103,7 +103,7 @@ function mosaic_preprocess_views_view_field(&$vars) {
   // By real field name
   if ($vars['field']->real_field != $vars['field']->field_alias) {
     $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field;
-
+//dpm($func);
     if (function_exists($func)) $func($vars);
   }
 }
@@ -245,6 +245,16 @@ function mosaic__preprocess_views_views_field_user_image(&$vars) {
     $vars['output'] = '';
   }
   
+}
+
+// Handles title field preprocessing
+function mosaic__preprocess_views_views_field_title(&$vars) {
+  if ($vars['view']->name == 'projects') {
+    if (isset($vars['row']->field_field_project_home_page[0]['raw']['url'])) {
+      $proj_home = $vars['row']->field_field_project_home_page[0]['raw']['url'];
+      $vars['output'] = l($vars['field']->last_render_text, $proj_home, array('attributes' => array('target'=>'_blank'))); 
+    }
+  }
 }
 
 // Re-formulate the tag links to point to the page we are current on.
