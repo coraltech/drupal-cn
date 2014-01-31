@@ -577,21 +577,5 @@ body.vertical-panels-tabs .ui-tabs {
       
       border: 1px solid $ltgray;      
     }
-    
-    
-    
-    
-    /*.ui-state-default {
-      border-color: $ltgray;
-      border-bottom: 1px solid darken($ltgray, 15%) !important;
-      
-      @include linear-v-gradient(lighten($ltgray, 10%), lighten($ltgray, 3%));
-    }
-    .ui-state-active {
-      border-color: $mdgray;
-      border-bottom: 1px solid $mdgray !important;
-      @include linear-v-gradient(lighten($ltblue, 5%), darken($ltblue, 5%));
-    }*/
   }
-  
 }
