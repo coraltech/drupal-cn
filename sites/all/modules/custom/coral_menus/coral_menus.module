@@ -19,6 +19,31 @@ function coral_menus_init() {
   coral_menus_run_updates();  
 }
 
+/**
+ * Implemenation of hook_menu_local_tasks_alter();
+ */
+// Restrict access to some menu items
+function coral_menus_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  global $user;
+  // Admin sees all links
+  if (user_access('Administer menus and menu items')) { return; }
+    
+  $tabs = $data['tabs'];  
+  $paths = variable_get('coral_menus_restricted_paths', array('search/user/%'));  
+  
+  foreach ($tabs as $id => $tabset) {
+    $output = $tabset['output'];
+    foreach ($output as $indx => $link) {
+      if (isset($link['#link']['path'])) {
+        if (in_array($link['#link']['path'], $paths)) {
+          $data['tabs'][$id]['count'] = $data['tabs'][$id]['count'] - 1;
+          unset($data['tabs'][$id]['output'][$indx]); 
+        }
+      }
+    }
+  }
+}
+
 
 /**
  * Core menu initialization! zaap!
