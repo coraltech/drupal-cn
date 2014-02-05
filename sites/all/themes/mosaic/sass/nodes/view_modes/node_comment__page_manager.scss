@@ -47,8 +47,8 @@
     position: relative;
     margin-top: .9 * $default_vert_unit;
     margin-bottom: $default_vert_unit;
-    padding-left: 1em;
-      
+    padding-left: 0;
+    padding-right: 5px;
      
     // "Comments" (view pane title)
     //& > h2.pane-title {
@@ -135,8 +135,8 @@
     // Nested targets!
     .pane-coral-comments-target {
       margin-bottom: -1px;
-      margin-right: -1px;
-      padding-left: 1em;
+      margin-right: -5px; // 5px for the inner padding
+      margin-left: ($default_vert_unit / 2);
     }
     .comments-tgt.empty {
       padding-top: $default_vert_unit;
