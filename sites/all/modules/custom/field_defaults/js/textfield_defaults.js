@@ -24,13 +24,13 @@ Drupal.field_defaults = Drupal.field_defaults || {};
   
   Drupal.behaviors.fieldDefaultsTextfieldInit = {    
     attach : function(context, settings) {
-      try { // use try to ensure that if this breaks/fails, it won't break other stuff.
+    	try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         if (Drupal.settings.field_defaults.textfieldDefaults) {
           var textfieldDefaults = Drupal.settings.field_defaults.textfieldDefaults;
-        
+
           for (selector in textfieldDefaults) {      
             var $formElement = $(selector);
-            //console.log(selector);
+
             for (var index = 0; index < $formElement.length; index++) {
               new Drupal.field_defaults.textfieldDefault($formElement[index], textfieldDefaults[selector]);
             }
