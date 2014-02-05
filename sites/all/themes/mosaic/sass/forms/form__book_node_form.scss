@@ -1,0 +1,17 @@
+
+// Scss file for the node answer form
+
+@import 'global/fonts';
+@import 'global/colors';
+
+.page-title {
+  color: $mdred;  
+}
+
+.node-book-form {
+  margin-bottom: $default_vert_unit;
+  
+  .form-item-book-bid {
+    display: none;
+  }
+}
