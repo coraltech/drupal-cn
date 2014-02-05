@@ -607,10 +607,12 @@ function hook_cron() {
  *   An associative array where the key is the queue name and the value is
  *   again an associative array. Possible keys are:
  *   - 'worker callback': The name of the function to call. It will be called
- *     with one argument, the item created via DrupalQueue::createItem() in
- *     hook_cron().
+ *     with one argument, the item created via DrupalQueue::createItem().
  *   - 'time': (optional) How much time Drupal should spend on calling this
  *     worker in seconds. Defaults to 15.
+ *   - 'skip on cron': (optional) Set to TRUE to avoid being processed during
+ *     cron runs (for example, if you want to control all queue execution
+ *     manually).
  *
  * @see hook_cron()
  * @see hook_cron_queue_info_alter()
@@ -707,9 +709,10 @@ function hook_element_info_alter(&$type) {
 /**
  * Perform cleanup tasks.
  *
- * This hook is run at the end of each page request. It is often used for
- * page logging and specialized cleanup. This hook MUST NOT print anything
- * because by the time it runs the response is already sent to the browser.
+ * This hook is run at the end of most regular page requests. It is often
+ * used for page logging and specialized cleanup. This hook MUST NOT print
+ * anything because by the time it runs the response is already sent to
+ * the browser.
  *
  * Only use this hook if your code must run even for cached page views.
  * If you have code which must run once on all non-cached pages, use
@@ -956,6 +959,7 @@ function hook_menu_get_item_alter(&$router_item, $path, $original_map) {
  * paths and whose values are an associative array of properties for each
  * path. (The complete list of properties is in the return value section below.)
  *
+ * @section sec_callback_funcs Callback Functions
  * The definition for each path may include a page callback function, which is
  * invoked when the registered path is requested. If there is no other
  * registered path that fits the requested path better, any further path
@@ -980,6 +984,7 @@ function hook_menu_get_item_alter(&$router_item, $path, $original_map) {
  * $jkl will be 'foo'. Note that this automatic passing of optional path
  * arguments applies only to page and theme callback functions.
  *
+ * @subsection sub_callback_arguments Callback Arguments
  * In addition to optional path arguments, the page callback and other callback
  * functions may specify argument lists as arrays. These argument lists may
  * contain both fixed/hard-coded argument values and integers that correspond
@@ -1022,6 +1027,8 @@ function hook_menu_get_item_alter(&$router_item, $path, $original_map) {
  * @endcode
  * See @link form_api Form API documentation @endlink for details.
  *
+ * @section sec_path_wildcards Wildcards in Paths
+ * @subsection sub_simple_wildcards Simple Wildcards
  * Wildcards within paths also work with integer substitution. For example,
  * your module could register path 'my-module/%/edit':
  * @code
@@ -1034,6 +1041,7 @@ function hook_menu_get_item_alter(&$router_item, $path, $original_map) {
  * with 'foo' and passed to the callback function. Note that wildcards may not
  * be used as the first component.
  *
+ * @subsection sub_autoload_wildcards Auto-Loader Wildcards
  * Registered paths may also contain special "auto-loader" wildcard components
  * in the form of '%mymodule_abc', where the '%' part means that this path
  * component is a wildcard, and the 'mymodule_abc' part defines the prefix for a
@@ -1065,6 +1073,7 @@ function hook_menu_get_item_alter(&$router_item, $path, $original_map) {
  * return FALSE for the path 'node/999/edit' if a node with a node ID of 999
  * does not exist. The menu routing system will return a 404 error in this case.
  *
+ * @subsection sub_argument_wildcards Argument Wildcards
  * You can also define a %wildcard_to_arg() function (for the example menu
  * entry above this would be 'mymodule_abc_to_arg()'). The _to_arg() function
  * is invoked to retrieve a value that is used in the path in place of the
@@ -1089,6 +1098,7 @@ function hook_menu_get_item_alter(&$router_item, $path, $original_map) {
  * are called when the menu system is generating links to related paths, such
  * as the tabs for a set of MENU_LOCAL_TASK items.
  *
+ * @section sec_render_tabs Rendering Menu Items As Tabs
  * You can also make groups of menu items to be rendered (by default) as tabs
  * on a page. To do that, first create one menu item of type MENU_NORMAL_ITEM,
  * with your chosen path, such as 'foo'. Then duplicate that menu item, using a
@@ -3090,37 +3100,39 @@ function hook_requirements($phase) {
 /**
  * Define the current version of the database schema.
  *
- * A Drupal schema definition is an array structure representing one or
- * more tables and their related keys and indexes. A schema is defined by
+ * A Drupal schema definition is an array structure representing one or more
+ * tables and their related keys and indexes. A schema is defined by
  * hook_schema() which must live in your module's .install file.
  *
- * This hook is called at install and uninstall time, and in the latter
- * case, it cannot rely on the .module file being loaded or hooks being known.
- * If the .module file is needed, it may be loaded with drupal_load().
+ * This hook is called at install and uninstall time, and in the latter case, it
+ * cannot rely on the .module file being loaded or hooks being known. If the
+ * .module file is needed, it may be loaded with drupal_load().
  *
- * The tables declared by this hook will be automatically created when
- * the module is first enabled, and removed when the module is uninstalled.
- * This happens before hook_install() is invoked, and after hook_uninstall()
- * is invoked, respectively.
+ * The tables declared by this hook will be automatically created when the
+ * module is first enabled, and removed when the module is uninstalled. This
+ * happens before hook_install() is invoked, and after hook_uninstall() is
+ * invoked, respectively.
  *
  * By declaring the tables used by your module via an implementation of
  * hook_schema(), these tables will be available on all supported database
  * engines. You don't have to deal with the different SQL dialects for table
  * creation and alteration of the supported database engines.
  *
- * See the Schema API Handbook at http://drupal.org/node/146843 for
- * details on schema definition structures.
+ * See the Schema API Handbook at http://drupal.org/node/146843 for details on
+ * schema definition structures.
  *
- * @return
+ * @return array
  *   A schema definition structure array. For each element of the
  *   array, the key is a table name and the value is a table structure
  *   definition.
+ *
+ * @see hook_schema_alter()
  *
  * @ingroup schemaapi
  */
 function hook_schema() {
   $schema['node'] = array(
-    // example (partial) specification for table "node"
+    // Example (partial) specification for table "node".
     'description' => 'The base table for nodes.',
     'fields' => array(
       'nid' => array(
@@ -4087,7 +4099,7 @@ function hook_date_format_types_alter(&$types) {
  *     declared in an implementation of hook_date_format_types().
  *   - 'format': A PHP date format string to use when formatting dates. It
  *     can contain any of the formatting options described at
- *     http://php.net/manual/en/function.date.php
+ *     http://php.net/manual/function.date.php
  *   - 'locales': (optional) An array of 2 and 5 character locale codes,
  *     defining which locales this format applies to (for example, 'en',
  *     'en-us', etc.). If your date format is not language-specific, leave this
