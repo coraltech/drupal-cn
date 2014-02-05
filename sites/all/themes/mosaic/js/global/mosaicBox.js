@@ -277,7 +277,6 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicBoxOverlay.prototype.updateOverlay = function(hide) {
     try {
       var boxHide = hide || false;
-    
       var width = $(document).width();
       var height = $(document).height();
       
