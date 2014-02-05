@@ -11,7 +11,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       try {// Use try to prevent systemic failure
         if (!Drupal.mosaic.hasOwnProperty('core')) {
           Drupal.mosaic.core = new Drupal.mosaic.mosaicCore();
-          Drupal.mosaic.core.objects = {};
+          Drupal.mosaic.core.objects = {}; // other components can add centralized objects here
         }
       } catch (err) {
         console.log('mosaicInit() reported errors. Error: ' + err);
@@ -20,9 +20,12 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
   
+  // Core core
   Drupal.mosaic.mosaicCore = function() {
     try {
-      // shared methods      
+      // Honestly, there is nothing to do here.
+      // This serves as a root for attaching 
+      // functionality to a common object.     
     }
     catch (err) {
       console.log('mosaicCore errored: '+err);
@@ -54,6 +57,23 @@ Drupal.mosaic = Drupal.mosaic || {};
     }
   };
   
+  
+  // Create a unique ID that can be applied to an element
+  Drupal.mosaic.mosaicCore.prototype.createID = function($obj) {
+    try {
+      var time = $.now();
+      var rand = Math.floor((Math.random() * 10000) + 1);
+      var id   = time+"-"+rand; 
+      if ($('#'+id).length) id = this.createID($obj); // already exists - create another
+      return id;
+    }
+    catch (err) {
+      console.log('createID errored: '+err);
+    }
+  };
+  
+  
+  // Get url query params
   Drupal.mosaic.mosaicCore.prototype.getQueryParams = function(url) {
     try {
       var result = {};
