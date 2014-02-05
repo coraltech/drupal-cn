@@ -13,6 +13,9 @@ Drupal.mosaic = Drupal.mosaic || {};
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         // At the moment there is not much to do here...
         var $nodeForms = $('.node-form:not(".mosmce-processed")');
+        // Filter out forms that have <body> as their parent.
+        //  it's a case of Panelitis!
+        $nodeForms = $nodeForms.filter(function() { return !$(this).parent('body').length; }); 
         $nodeForms.each(function() {
           new Drupal.mosaic.mosaicMce($(this));
         });
@@ -29,7 +32,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicMce = function($nodeForm) {
     try {
       this.$nodeForm = $nodeForm.addClass('mosmce-processed');
-      this.$textarea = $nodeForm.find('.text-full');
+      this.$textarea = $nodeForm.find('.field-name-body .text-full');
       this.$submit   = $nodeForm.find('.form-submit');
       this.$wysiLink;  // will hold the link after it is created
       this.$help;      // will hold the help info
