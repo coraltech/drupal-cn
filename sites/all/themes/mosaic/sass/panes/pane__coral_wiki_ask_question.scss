@@ -1,0 +1,94 @@
+
+// Scss file for the wiki ask questions form pane
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+
+@import "compass/utilities/general/clearfix";
+
+.page-node.node-type-book .secondary-content {
+  position: relative;
+}
+
+
+// General styles
+.pane-coral-wiki-ask-question {
+  
+  .ask-btn { 
+    color: lighten($mdgray, 10%);
+    cursor: pointer;
+    font-size: 90%;
+    font-weight: bold;
+    
+    .icon {
+      display: block;
+      float: right;
+      margin-top: 2px;
+      margin-left: 2px;
+      @include icons-sprite('help');
+    }
+  }
+  
+  .node-question-form {
+    
+    .form-item-title,
+    .field-name-field-tags {
+      margin: ($default_vert_unit/2) 0 $default_vert_unit 0;
+      
+      @include clearfix;
+      
+      label {
+        width: 20%;
+        float: left;
+        line-height: 2.5em;
+      }
+      .form-text {
+        width: 75%;
+        float: right;
+        border: 1px solid $ltgray;
+      }
+      .form-item {
+        margin: 0;
+      }
+      .description {
+        width: 76.25%;
+        float: right;
+        clear: both;
+      }
+    }
+    
+    .form-textarea {
+      border: 1px solid $ltgray;
+    }
+    
+    .ta-help,
+    .vertical-tabs,
+    .filter-wrapper,
+    .filter-guidelines {
+      display: none;
+    }
+  }
+}
+
+// Overrides and alterations
+.pane-coral-wiki-ask-question.top {
+  .ask-btn { 
+    position: absolute;
+    right: 0;
+    top: -1.25em;
+  }
+}
+
+.pane-coral-wiki-ask-question.bottom {
+  margin-bottom: $default_vert_unit;
+  
+  @include pie-clearfix;
+  
+  .ask-btn {
+    float: right;
+  }
+  .wiki-ask-question {
+    clear: both;
+  }
+}
