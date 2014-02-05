@@ -9,12 +9,11 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
   if (str_replace('_node_form', '', $form_id) != $form_id) _mosiac_be_node_load_by_type($form['#node']);
 
   // Add the js - basic type
-  $path = drupal_get_path('theme', 'mosaic').'/css/forms/form__'.$form_id;
+  $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__'.$form_id;
+  $js_path = drupal_get_path('theme', 'mosaic').'/js/forms/form__'.$form_id;
   
-  //dpm($form_id);
-  
-  if (file_exists($path.'.css')) drupal_add_css($path.'.css', array('group' => CSS_THEME)); // - targeted type
-  if (file_exists($path.'.js'))  drupal_add_js($path.'.js', array('group' => JS_THEME));
+  if (file_exists($css_path.'.css')) drupal_add_css($css_path.'.css', array('group' => CSS_THEME)); // - targeted type
+  if (file_exists($js_path.'.js'))  drupal_add_js($js_path.'.js', array('group' => JS_THEME));
 }
 
 
@@ -29,17 +28,32 @@ function mosaic_form_comment_node_book_form_alter(&$form, &$form_state) {
   $form['author']['_author']['#type'] = 'hidden';
 }
 
-
 function mosaic_form_user_login_alter(&$form, &$form_state) {
   $form['#attributes']['class'][] = 'user-login';
 }
 
 
+// Set Community documentation as the only possible parent book.
 function mosaic_form_book_node_form_alter(&$form, &$form_state) {
-  // Gets rid of book management tools for all but admin level users.
-  if (!user_access('administer book outlines') && user_access('add content to books')) {
-    $form['book']['bid']['#type'] = 'hidden';
+  $options = $form['book']['bid']['#options'];
+  foreach ($options as $id => $option) {
+    if ($option == t('Community documentation')) {
+      $default[$id] = $option;
+      $form['book']['bid']['#options'] = $default;
+      $form['book']['plid']['#title'] = t('Parent document');
+      break;
+    }
   }
+}
+
+
+// Hide the wiki reference. I wish there was a better way
+//  however I need to be able to add a value into that form
+//  via call-ups of the form itself (see coral_wiki_ask_question).
+//  So I can't use the value type. I just have to hide it...
+//  This is better than nothing.
+function mosaic_form_question_node_form_alter(&$form, &$form_state) {
+   
 }
 
 
