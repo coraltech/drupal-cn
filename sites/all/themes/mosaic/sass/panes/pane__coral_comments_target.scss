@@ -209,10 +209,11 @@
   .row,
   .leader {
     padding-left: 1em;
+    margin-bottom: ($default_vert_unit / 4);
   }
   
   
-  padding: ($default_vert_unit / 2) 0 0;
+  padding: ($default_vert_unit / 2) 5px 0 0;
   
   .pane-coral-page-title h2 {
     color: darken($mdblue, 7%);
