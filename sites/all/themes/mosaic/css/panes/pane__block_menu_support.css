@@ -62,6 +62,9 @@
 /* line 54, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last {
   width: 76%;
+  /*#user-login .form-actions,
+  .contact-form .form-actions,
+  .node-question-form*/
 }
 /* line 57, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .pane-content {
@@ -86,10 +89,8 @@
 .html .pane-getting-help .panel-col-last .filter-wrapper {
   display: none;
 }
-/* line 82, ../../sass/panes/pane__block_menu_support.scss */
-.html .pane-getting-help .panel-col-last #user-login .form-actions,
-.html .pane-getting-help .panel-col-last .contact-form .form-actions,
-.html .pane-getting-help .panel-col-last .node-question-form .form-actions {
+/* line 83, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-last .form-actions {
   bottom: 6px;
   position: absolute;
   right: 5px;
@@ -97,13 +98,11 @@
   margin: 0;
   padding: 0;
 }
-/* line 90, ../../sass/panes/pane__block_menu_support.scss */
-.html .pane-getting-help .panel-col-last #user-login .form-actions input,
-.html .pane-getting-help .panel-col-last .contact-form .form-actions input,
-.html .pane-getting-help .panel-col-last .node-question-form .form-actions input {
+/* line 91, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-last .form-actions input {
   font-weight: bold;
 }
-/* line 95, ../../sass/panes/pane__block_menu_support.scss */
+/* line 96, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-bottom {
   position: absolute;
   bottom: 0px;
@@ -111,16 +110,16 @@
   background: #f1f1f1;
   border-top: 1px solid #d0d0d0;
 }
-/* line 102, ../../sass/panes/pane__block_menu_support.scss */
+/* line 103, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 106, ../../sass/panes/pane__block_menu_support.scss */
+/* line 107, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .help-header h2 {
   margin: 0;
 }
-/* line 110, ../../sass/panes/pane__block_menu_support.scss */
+/* line 111, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .cls-help {
   margin-left: 5px;
   font-size: 16px;
@@ -188,4 +187,12 @@
 .html .pane-getting-help .cls-help::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
+}
+
+/* line 126, ../../sass/panes/pane__block_menu_support.scss */
+.pane-coral-ask-question .field-name-field-answer,
+.pane-coral-ask-question .field-name-field-comment-count,
+.pane-coral-ask-question .field-name-field-answer-count,
+.pane-coral-ask-question .field-type-file legend {
+  display: none;
 }

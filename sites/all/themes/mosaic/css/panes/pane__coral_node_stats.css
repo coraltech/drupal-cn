@@ -1,12 +1,12 @@
-/* line 474, icons/*.png */
+/* line 482, icons/*.png */
 .icons-sprite, .pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
-  background: url('/images/icons-sf4124cc822.png') no-repeat;
+  background: url('/images/icons-s3f57c7e400.png') no-repeat;
 }
 
 /* line 13, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-wrap {
   font-size: 95%;
-  margin: 0 1em 0.3125em 0;
+  margin: 0 1em 1.25em 0;
   padding: 0 0.3125em 0.3125em;
   color: #515151;
 }
@@ -67,7 +67,6 @@
   clear: left;
   width: 12em;
   float: left;
-  margin-bottom: 0.625em;
 }
 /* line 73, ../../sass/panes/pane__coral_node_stats.scss */
 .pane-coral-node-stats .statset-style-gray {
@@ -76,5 +75,4 @@
   clear: left;
   width: 12em;
   float: left;
-  margin-bottom: 0.625em;
 }

@@ -1,6 +1,6 @@
-/* line 474, icons/*.png */
+/* line 482, icons/*.png */
 .icons-sprite, .html div.pane-coral-comments-target .comment-node-pane-title .icon {
-  background: url('/images/icons-sf4124cc822.png') no-repeat;
+  background: url('/images/icons-s3f57c7e400.png') no-repeat;
 }
 
 /* line 16, ../../sass/panes/pane__coral_comments_target.scss */
@@ -283,7 +283,7 @@
 /* line 208, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment,
 .html div.node-teaser.node-comment {
-  padding: 0.625em 0 0;
+  padding: 0.625em 5px 0 0;
 }
 /* line 210, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .row,
@@ -291,15 +291,16 @@
 .html div.node-teaser.node-comment .row,
 .html div.node-teaser.node-comment .leader {
   padding-left: 1em;
+  margin-bottom: 0.3125em;
 }
-/* line 217, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 218, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-page-title h2,
 .html div.node-teaser.node-comment .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 226, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 227, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html .node-type-comment .pane-coral-add-comment,
 .html .node-type-comment .pane-coral-add-answer,
@@ -311,7 +312,7 @@
   float: right;
   height: 1.4em;
 }
-/* line 229, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 230, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links,
 .html .node-type-comment .pane-coral-add-comment .links,
 .html .node-type-comment .pane-coral-add-answer .links,
@@ -323,7 +324,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 233, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 234, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links li,
 .html .node-type-comment .pane-coral-add-comment .links li,
 .html .node-type-comment .pane-coral-add-answer .links li,
@@ -335,17 +336,17 @@
   margin: 0 5px 0 0;
   padding: 1px 6px 1px;
 }
-/* line 239, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 240, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html div.node-teaser.node-comment .pane-coral-flag-abuse-node {
   margin-right: 1em;
 }
-/* line 243, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 244, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-node-field-tags,
 .html div.node-teaser.node-comment .pane-node-field-tags {
   clear: left;
 }
-/* line 250, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 251, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .field-name-field-content,
 .html .node-type-comment .field-name-field-comment-count,
 .html .node-type-comment .field-type-file legend,

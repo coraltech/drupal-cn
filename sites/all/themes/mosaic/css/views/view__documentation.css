@@ -2,8 +2,9 @@
 .pane-documentation-related-node,
 .pane-documentation-related-view {
   margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
-/* line 16, ../../sass/views/view__documentation.scss */
+/* line 17, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-title,
 .pane-documentation-related-view .pane-title {
   color: white;
@@ -19,13 +20,13 @@
   background: linear-gradient(to bottom, #446eac 0%, #6382b1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 24, ../../sass/views/view__documentation.scss */
+/* line 25, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content,
 .pane-documentation-related-view .pane-content {
   padding-top: .3em;
   background: #9d9d9d;
 }
-/* line 28, ../../sass/views/view__documentation.scss */
+/* line 29, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .view-content,
 .pane-documentation-related-view .pane-content .view-content {
   color: #919191;
@@ -33,31 +34,31 @@
   margin-top: -.3em;
   background: #dddddd;
 }
-/* line 34, ../../sass/views/view__documentation.scss */
+/* line 35, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .view-content .views-row,
 .pane-documentation-related-view .pane-content .view-content .views-row {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 35, ../../sass/views/view__documentation.scss */
+/* line 36, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .view-content .views-row-even,
 .pane-documentation-related-view .pane-content .view-content .views-row-even {
   background: #cbcbcb;
 }
-/* line 38, ../../sass/views/view__documentation.scss */
+/* line 39, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .pager-load-more,
 .pane-documentation-related-view .pane-content .pager-load-more {
   margin: 0;
   padding: 3px;
   text-align: left;
 }
-/* line 43, ../../sass/views/view__documentation.scss */
+/* line 44, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .pager-load-more li,
 .pane-documentation-related-view .pane-content .pager-load-more li {
   margin: 0;
   padding: 0;
 }
-/* line 47, ../../sass/views/view__documentation.scss */
+/* line 48, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .pager-load-more li a,
 .pane-documentation-related-view .pane-content .pager-load-more li a {
   color: white;
@@ -133,7 +134,7 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 53, ../../sass/views/view__documentation.scss */
+/* line 54, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .pager-load-more li a:hover,
 .pane-documentation-related-view .pane-content .pager-load-more li a:hover {
   color: white;

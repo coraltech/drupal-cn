@@ -1,0 +1,98 @@
+/* line 482, icons/*.png */
+.icons-sprite, .pane-coral-wiki-ask-question .ask-btn .icon {
+  background: url('/images/icons-s3f57c7e400.png') no-repeat;
+}
+
+/* line 10, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.page-node.node-type-book .secondary-content {
+  position: relative;
+}
+
+/* line 18, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .ask-btn {
+  color: #919191;
+  cursor: pointer;
+  font-size: 90%;
+  font-weight: bold;
+}
+/* line 24, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .ask-btn .icon {
+  display: block;
+  float: right;
+  margin-top: 2px;
+  margin-left: 2px;
+  background-position: 0 -4438px;
+  height: 16px;
+  width: 16px;
+}
+/* line 36, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .form-item-title,
+.pane-coral-wiki-ask-question .node-question-form .field-name-field-tags {
+  margin: 0.625em 0 1.25em 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 41, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .form-item-title label,
+.pane-coral-wiki-ask-question .node-question-form .field-name-field-tags label {
+  width: 20%;
+  float: left;
+  line-height: 2.5em;
+}
+/* line 46, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .form-item-title .form-text,
+.pane-coral-wiki-ask-question .node-question-form .field-name-field-tags .form-text {
+  width: 75%;
+  float: right;
+  border: 1px solid #dddddd;
+}
+/* line 51, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .form-item-title .form-item,
+.pane-coral-wiki-ask-question .node-question-form .field-name-field-tags .form-item {
+  margin: 0;
+}
+/* line 54, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .form-item-title .description,
+.pane-coral-wiki-ask-question .node-question-form .field-name-field-tags .description {
+  width: 76.25%;
+  float: right;
+  clear: both;
+}
+/* line 61, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .form-textarea {
+  border: 1px solid #dddddd;
+}
+/* line 68, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question .node-question-form .ta-help,
+.pane-coral-wiki-ask-question .node-question-form .vertical-tabs,
+.pane-coral-wiki-ask-question .node-question-form .filter-wrapper,
+.pane-coral-wiki-ask-question .node-question-form .filter-guidelines {
+  display: none;
+}
+
+/* line 76, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question.top .ask-btn {
+  position: absolute;
+  right: 0;
+  top: -1.25em;
+}
+
+/* line 83, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question.bottom {
+  margin-bottom: 1.25em;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.pane-coral-wiki-ask-question.bottom:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 88, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question.bottom .ask-btn {
+  float: right;
+}
+/* line 91, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+.pane-coral-wiki-ask-question.bottom .wiki-ask-question {
+  clear: both;
+}

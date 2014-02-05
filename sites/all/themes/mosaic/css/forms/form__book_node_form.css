@@ -1,0 +1,13 @@
+/* line 7, ../../sass/forms/form__book_node_form.scss */
+.page-title {
+  color: #b02e1c;
+}
+
+/* line 11, ../../sass/forms/form__book_node_form.scss */
+.node-book-form {
+  margin-bottom: 1.25em;
+}
+/* line 14, ../../sass/forms/form__book_node_form.scss */
+.node-book-form .form-item-book-bid {
+  display: none;
+}

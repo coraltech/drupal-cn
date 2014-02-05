@@ -1,30 +1,30 @@
-/* line 8, ../../sass/fields/field__file.scss */
-.field-type-file .field-items {
-  margin: 0 0 1.25em;
-}
-/* line 10, ../../sass/fields/field__file.scss */
-.field-type-file .field-items table {
-  font-size: 90%;
-}
-/* line 12, ../../sass/fields/field__file.scss */
-.field-type-file .field-items table thead {
-  font-variant: small-caps;
-  color: #777777;
-  text-transform: lowercase;
-}
-/* line 17, ../../sass/fields/field__file.scss */
-.field-type-file .field-items table td {
-  padding: 4px 3px 2px;
+/*
+.field-type-file {
+  .field-items {
+    margin: 0 0 $default_vert_unit; 
+    table {
+      font-size: 90%;
+      thead {
+        font-variant: small-caps;
+        color: $mdgray;
+        text-transform: lowercase;
+      }
+      td {
+        padding: 4px 3px 2px;
+      }
+    }
+  }
 }
 
-/* line 25, ../../sass/fields/field__file.scss */
-.field-widget-file-generic .form-item.form-type-textfield {
-  clear: both;
-  margin: 0 0 5px 25px;
-  white-space: normal;
-  width: 75%;
+.field-widget-file-generic {
+  .form-item.form-type-textfield {
+    clear: both;
+    margin: 0 0 5px 25px;
+    white-space: normal;
+    width: 75%;
+  }
+  .form-managed-file {
+    padding-top: 7px;
+  }
 }
-/* line 31, ../../sass/fields/field__file.scss */
-.field-widget-file-generic .form-managed-file {
-  padding-top: 7px;
-}
+*/
