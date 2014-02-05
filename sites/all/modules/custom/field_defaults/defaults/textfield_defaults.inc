@@ -53,6 +53,11 @@ function field_defaults_comment_node_book_form__textfield_defaults($form, &$matr
 // Node question creation form
 function field_defaults_question_node_form__textfield_defaults($form, &$matrix) {
   $matrix['question_node_form']['selectors'] = array(
+    // for cases where we are looking at a node edit form
+    '.pane-coral-ask-question .form-item-title .form-text' => t('Question'),
+    '.pane-coral-ask-question .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two...'),
+    
+    // For most other cases
     '.node-question-form .form-item-title .form-text' => t('Question'),
     '.node-question-form .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two...')
   );
