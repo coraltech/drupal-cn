@@ -22,9 +22,9 @@ Drupal.field_defaults = Drupal.field_defaults || {};
 // Document loaded!
 (function($) {
   
-  Drupal.behaviors.fieldDefaultsTextfieldInit = {    
-    attach : function(context, settings) {
-    	try { // use try to ensure that if this breaks/fails, it won't break other stuff.
+	Drupal.behaviors.fieldDefaultsTextfieldInit = {    
+		attach : function(context, settings) {
+			try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         if (Drupal.settings.field_defaults.textfieldDefaults) {
           var textfieldDefaults = Drupal.settings.field_defaults.textfieldDefaults;
 
@@ -36,12 +36,12 @@ Drupal.field_defaults = Drupal.field_defaults || {};
             }
           }
         }
-      }
-      catch (err) {
-        console.log('fieldDefaultsTextfieldInit() reported errors! Error: '+err);
-      }
-    }
-  };
+			}
+			catch (err) {
+				console.log('fieldDefaultsTextfieldInit() reported errors! Error: '+err);
+			}
+		}
+	};
 
   // Mosaic textfieldDefault takes one textfield and ensures it is
   //  set as it should be according to the specs in textfield_defaults.inc
