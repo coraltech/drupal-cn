@@ -23,7 +23,7 @@ function coral_menus_about_menu_loader() {
 function coral_menus_about_links_loader() {
   return array(
     'about_coral'=> array(
-      'link_title' => t('About Coral'),
+      'link_title' => t('About COR'),
       'link_path'  => 'node/920',
       'weight'     => 1,
     ),
