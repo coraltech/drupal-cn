@@ -4,6 +4,12 @@ function mosaic_preprocess(&$vars, $hook) {
 //dpm($hook);
 }
 
+
+// Add form id theme hook suggestions.
+function mosaic_preprocess_form(&$vars) {
+  $vars['theme_hook_suggestions'][] = 'form_'.$vars['element']['#form_id'];
+}
+
 /**
  * Pane css and js file attachment:
  * 
@@ -136,6 +142,7 @@ function mosaic_preprocess_field(&$variables, $hook) {
     'field__'.$element['#field_type'],
     'field__'.$element['#field_name']
   );
+//dpm($files);
   foreach ($files as $file) {
     if (file_exists($path.'/css/fields/'.$file.'.css')) drupal_add_css($path.'/css/fields/'.$file.'.css', array('group' => CSS_THEME));
     if (file_exists($path.'/js/fields/'.$file.'.js')) drupal_add_js($path.'/js/fields/'.$file.'.js', array('group' => JS_THEME));
