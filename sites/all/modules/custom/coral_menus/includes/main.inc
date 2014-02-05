@@ -28,20 +28,45 @@ function coral_menus_main_links_loader() {
       'link_path'  => 'node/920',
       'weight'     => 1,
     ),
+    /*
+      'about_project'=> array(
+        'link_title' => t('About COR'),
+        'link_path'  => 'node/920',
+        'weight'     => 1,
+        'plid'       => 'about',
+      ),
+      'about_team'=> array(
+        'link_title' => t('About us'),
+        'link_path'  => 'node/921',
+        'weight'     => 1,
+        'plid'       => 'about',
+      ),
+      'about_support'=> array(
+        'link_title' => t('Support'),
+        'link_path'  => 'node/922',
+        'weight'     => 1,
+        'plid'       => 'about',
+      ),
+    */
     'project' => array(
       'link_title' => t('Project'),
       'link_path'  => 'node/923',
       'weight'     => 2,
+    ),
+    'snippets' => array(
+      'link_title' => t('Snippets'),
+      'link_path'  => 'node/1037',
+      'weight'     => 3, 
     ), 
     'community' => array(
       'link_title' => t('Community'),
       'link_path'  => 'node/32',
-      'weight'     => 3,
+      'weight'     => 4,
     ),
     'find' => array(
       'link_title' => t('Find'),
       'link_path'  => 'search/node/all',  
-      'weight'     => 4,
+      'weight'     => 5,
     )
     //'build' => array(
     //  'link_title' => t('Build'),
