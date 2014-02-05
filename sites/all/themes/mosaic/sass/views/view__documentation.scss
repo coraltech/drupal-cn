@@ -12,7 +12,8 @@
 .pane-documentation-related-node,
 .pane-documentation-related-view {
   margin-top: $default_vert_unit;
-  
+  margin-bottom: $default_vert_unit;
+
   .pane-title {
     color: $white;
     padding-left: .5em;
