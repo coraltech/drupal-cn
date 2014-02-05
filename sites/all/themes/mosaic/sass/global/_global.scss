@@ -176,7 +176,7 @@ header .coral-cloud {
     font-size: 90%;
     color: $mdgray;
     font-weight: bold;
-    padding: ($default_vert_unit / 8) ($default_vert_unit / 4);
+    padding: ($default_vert_unit / 8) ($default_vert_unit / 6);
   }
   .toc-tog-state { margin-left: .5em; }
   .toc-tog-state span {
@@ -196,7 +196,10 @@ header .coral-cloud {
   }  
 }
 // Override the toc margin in a few places
-.node-book .toc-wrapper { margin-top: -1 * ($default_vert_unit / 2); }
+.node-book .toc-wrapper { 
+  margin-top: -1 * $default_vert_unit; 
+  margin-bottom: $default_vert_unit;  
+}
 .node-talk .toc-wrapper { margin-top: 0; }
 
 // Back to top links
@@ -577,5 +580,48 @@ body.vertical-panels-tabs .ui-tabs {
       
       border: 1px solid $ltgray;      
     }
+  }
+}
+
+
+// File input styles
+form .field-type-file {
+  .file-widget {
+    padding: ($default_vert_unit / 4);
+  }
+  label {
+    clear: both;
+  }
+  input.form-text {
+    font-size: 100%;
+    width: auto;
+  }
+  table {
+    width: 100%;
+    font-size: 90%;
+
+    td .form-submit {
+      margin-top: 1em;
+    }
+  }
+  .form-item .description {
+    background: $ltyellow;
+  }
+  table .description {
+    background: none;
+  }
+}
+// file display
+.pane-node-file {
+  margin-bottom: $default_vert_unit;
+  table {
+    font-size: 90%;
+    td {
+      padding: 4px 3px 2px;
+    }
+  }
+  thead th {
+    text-transform: lowercase;
+    font-variant: small-caps;
   }
 }
