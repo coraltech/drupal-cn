@@ -16,7 +16,7 @@
   }
 }
 
-// mfp is the magnific popup container
+// Getting help pane
 .html .pane-getting-help {
   
   @include col-gradient;
@@ -76,10 +76,8 @@
     .filter-wrapper {
       display: none;
     }
-    
-    #user-login .form-actions,
-    .contact-form .form-actions,
-    .node-question-form .form-actions {
+
+    .form-actions {
       bottom: 6px;
       position: absolute;
       right: 5px;
@@ -112,4 +110,17 @@
     @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%), $white);
     @include btn-structure;
   }
+}
+
+// This is here so that when we are
+// looking at a node edit page, and panels
+// has totally boinked form output, we can still
+// muddle through.
+.pane-coral-ask-question {
+  .field-name-field-answer,
+  .field-name-field-comment-count,
+  .field-name-field-answer-count,
+  .field-type-file legend {
+    display: none;
+  } 
 }
