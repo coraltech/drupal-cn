@@ -1,0 +1,17 @@
+
+// Field locked scss file
+// Loads on wiki book pages that have the locked field set
+
+@import 'global/icons';
+
+.field-name-field-locked .field-locked {
+  color: transparent;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  float: right;
+  cursor: default;
+  margin-left: 5px;
+  
+  @include icons-sprite('locked');
+}
