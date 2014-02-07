@@ -25,11 +25,20 @@ function coral_menus_init() {
 // Restrict access to some menu items
 function coral_menus_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   global $user;
+
   // Admin sees all links
   if (user_access('Administer menus and menu items')) { return; }
     
   $tabs = $data['tabs'];  
   $paths = variable_get('coral_menus_restricted_paths', array('search/user/%'));  
+  
+  $item = menu_get_object();
+  if (is_object($item) && $item->nid) {
+    $edit_locked = field_get_items('node', $item, 'field_locked');
+    if (count($edit_locked) && $edit_locked[0]['value'] === '1') {
+      $paths[] = 'node/%/edit'; // add node edit as a restricted path
+    }
+  }
   
   foreach ($tabs as $id => $tabset) {
     $output = $tabset['output'];
@@ -37,7 +46,7 @@ function coral_menus_menu_local_tasks_alter(&$data, $router_item, $root_path) {
       if (isset($link['#link']['path'])) {
         if (in_array($link['#link']['path'], $paths)) {
           $data['tabs'][$id]['count'] = $data['tabs'][$id]['count'] - 1;
-          unset($data['tabs'][$id]['output'][$indx]); 
+          unset($data['tabs'][$id]['output'][$indx]);
         }
       }
     }
