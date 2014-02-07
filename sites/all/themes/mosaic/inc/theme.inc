@@ -621,3 +621,4 @@ function mosaic_facetapi_link_active($variables) {
 function mosaic_facetapi_deactivate_widget(&$vars) {
   return '(<span class="mdred">x</span>) ';
 }
+
