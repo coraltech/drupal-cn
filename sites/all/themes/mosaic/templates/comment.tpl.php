@@ -84,7 +84,7 @@
       print render($content);
     ?>
     <?php if ($signature): ?>
-    <div class="user-signature clearfix">
+    <div class="user-signature">
       <?php print $signature ?>
     </div>
     <?php endif; ?>
