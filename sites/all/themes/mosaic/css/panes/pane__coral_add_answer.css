@@ -1,6 +1,6 @@
-/* line 482, icons/*.png */
+/* line 490, icons/*.png */
 .icons-sprite, .pane-coral-add-answer .btn.answer .icon, .pane-coral-add-answer .btn.answers-hidden .icon, .pane-coral-add-answer .btn.answers-hidden:hover .icon {
-  background: url('/images/icons-s3f57c7e400.png') no-repeat;
+  background: url('/images/icons-s9e2153c174.png') no-repeat;
 }
 
 /* line 14, ../../sass/panes/pane__coral_add_answer.scss */
@@ -63,33 +63,33 @@
   height: 15px;
   width: 15px;
 }
-/* line 56, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 57, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer:hover {
   color: #919191;
 }
-/* line 61, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 62, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-/* line 66, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 67, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden .icon {
   background-position: 0 -3247px;
   height: 15px;
   width: 15px;
 }
-/* line 70, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 71, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden:hover .icon {
   background-position: 0 -3312px;
   height: 15px;
   width: 15px;
 }
 
-/* line 82, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 83, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .pager,
 .view-answers.view-display-id-new_answers .pager {
   display: none;
 }
-/* line 84, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 85, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .views-row,
 .view-answers.view-display-id-new_answers .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;

@@ -62,9 +62,6 @@
 /* line 54, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last {
   width: 76%;
-  /*#user-login .form-actions,
-  .contact-form .form-actions,
-  .node-question-form*/
 }
 /* line 57, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .pane-content {
@@ -89,7 +86,7 @@
 .html .pane-getting-help .panel-col-last .filter-wrapper {
   display: none;
 }
-/* line 83, ../../sass/panes/pane__block_menu_support.scss */
+/* line 80, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .form-actions {
   bottom: 6px;
   position: absolute;
@@ -98,11 +95,11 @@
   margin: 0;
   padding: 0;
 }
-/* line 91, ../../sass/panes/pane__block_menu_support.scss */
+/* line 88, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .form-actions input {
   font-weight: bold;
 }
-/* line 96, ../../sass/panes/pane__block_menu_support.scss */
+/* line 93, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-bottom {
   position: absolute;
   bottom: 0px;
@@ -110,16 +107,16 @@
   background: #f1f1f1;
   border-top: 1px solid #d0d0d0;
 }
-/* line 103, ../../sass/panes/pane__block_menu_support.scss */
+/* line 100, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 107, ../../sass/panes/pane__block_menu_support.scss */
+/* line 104, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .help-header h2 {
   margin: 0;
 }
-/* line 111, ../../sass/panes/pane__block_menu_support.scss */
+/* line 108, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .cls-help {
   margin-left: 5px;
   font-size: 16px;
@@ -189,7 +186,7 @@
   margin: -1px !important;
 }
 
-/* line 126, ../../sass/panes/pane__block_menu_support.scss */
+/* line 123, ../../sass/panes/pane__block_menu_support.scss */
 .pane-coral-ask-question .field-name-field-answer,
 .pane-coral-ask-question .field-name-field-comment-count,
 .pane-coral-ask-question .field-name-field-answer-count,
