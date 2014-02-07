@@ -143,6 +143,13 @@ function mosaic_preprocess_field(&$variables, $hook) {
     'field__'.$element['#field_name']
   );
 //dpm($files);
+
+  $func = 'mosaic_preprocess_'.$element['#field_type'];
+  if (function_exists($func)) $func($vars);
+
+  $func = 'mosaic_preprocess_'.$element['#field_name'];
+  if (function_exists($func)) $func($variables);
+//dpm($func);
   foreach ($files as $file) {
     if (file_exists($path.'/css/fields/'.$file.'.css')) drupal_add_css($path.'/css/fields/'.$file.'.css', array('group' => CSS_THEME));
     if (file_exists($path.'/js/fields/'.$file.'.js')) drupal_add_js($path.'/js/fields/'.$file.'.js', array('group' => JS_THEME));
@@ -315,6 +322,18 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   return;
 }
 
+
+// Preprocess the field locked field to present itself as an icon with hover text.
+function mosaic_preprocess_field_locked(&$vars) {
+  if ($vars['items'][0]['#markup'] == 'Lock') {
+    $vars['items'][0]['#markup'] = '<span class="icon field-locked" title="Node editing locked">Node editing locked</span>';
+  }
+  else {
+    $vars['items'][0]['#markup'] = ''; // show nothing if unlocked...
+  }
+}
+
+
 // Compile a default user picture and link
 function mosaic_preprocess_user_picture(&$vars) {
   $a0 = arg(0); $a1 = arg(1); $a2 = arg(2);
@@ -480,7 +499,10 @@ function mosaic_preprocess_user_profile(&$variables) {
 
   // Hide the user picture since we output it separately.
   hide($variables['user_profile']['user_picture']);
-
+  
+  // Hide the useless gigya site profile info...
+  hide($variables['user_profile']['gigya']['site']);
+  
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }
