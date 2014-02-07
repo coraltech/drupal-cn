@@ -10,12 +10,22 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicBookFormInit = {    
     attach : function(context, settings) {
       try { // Use try to prevent systemic failure
-        var $formElem = $('.form-item-book-bid select');
+        var $formElem = $('.form-item-book-bid select:not(".bfproc")');
         if ($formElem.length > 0) {
         	// Set the community documentation link to be selected (nid:32).
         	//  Then trigger a change event (to load book lineage),
         	//   and disable main select.
-          $formElem.val(32).trigger('change').attr('disabled', 'disabled');
+          $formElem.addClass('bfproc').val(32).trigger('change');
+
+					// This gets around a bug in panels/drupal where book pages 
+					//  vertical tab displays the title of our parent book
+					//  twice... It is not a huge deal but in the future should
+					//  be resolved in a cleaner fashion. 
+          $('.vertical-tabs-list span.summary').each(function() {
+          	if ($(this).text() == 'Community documentationCommunity documentation') {
+          		$(this).before('<span class="summary mbsummary">Community documentation</span>').hide();
+          	}
+          });
         }
       }
       catch(err) {
