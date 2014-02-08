@@ -912,7 +912,9 @@ Drupal.coralQA = Drupal.coralQA || {};
               }
             },
             // @TODO: process errors (missing fields etc)
-            function(err) {}
+            function (jqXHR, status, err) {
+							console.log('Comment creation errored: '+err);
+						}
           );
         };
         
