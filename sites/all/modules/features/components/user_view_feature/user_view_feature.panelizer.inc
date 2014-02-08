@@ -38,10 +38,10 @@ function user_view_feature_panelizer_defaults() {
       'leader' => NULL,
       'main' => NULL,
       'secondary' => NULL,
+      'follower' => NULL,
       'sub_footer' => array(
         'panel_tab_id_pattern' => 'region',
       ),
-      'follower' => NULL,
     ),
     'follower' => array(
       'style' => 'default',
@@ -249,7 +249,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'prepend-2',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

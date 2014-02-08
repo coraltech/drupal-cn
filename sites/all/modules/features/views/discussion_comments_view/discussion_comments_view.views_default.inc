@@ -10,7 +10,7 @@
 function discussion_comments_view_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'discussion_comments';
   $view->description = '';
   $view->tag = 'default';
@@ -23,10 +23,10 @@ function discussion_comments_view_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Discussion';
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
@@ -35,30 +35,20 @@ function discussion_comments_view_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Comments / page';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 50';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   /* Relationship: Comment: Content */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['required'] = 1;
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   /* Field: Comment: Title */
   $handler->display->display_options['fields']['subject']['id'] = 'subject';
   $handler->display->display_options['fields']['subject']['table'] = 'comment';
   $handler->display->display_options['fields']['subject']['field'] = 'subject';
   $handler->display->display_options['fields']['subject']['label'] = '';
-  $handler->display->display_options['fields']['subject']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['subject']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['subject']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['subject']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['subject']['link_to_comment'] = 1;
+  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Comment: Thread */
   $handler->display->display_options['sorts']['thread']['id'] = 'thread';
   $handler->display->display_options['sorts']['thread']['table'] = 'comment';
@@ -77,12 +67,9 @@ function discussion_comments_view_views_default_views() {
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
   $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['nid']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['nid']['not'] = 0;
   /* Filter criterion: Comment: Approved */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';

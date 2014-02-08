@@ -7,8 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function coral_projects_feature_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function coral_projects_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -17,7 +16,7 @@ function coral_projects_feature_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function coral_projects_feature_views_api() {
+function coral_projects_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -29,7 +28,7 @@ function coral_projects_feature_node_info() {
     'project' => array(
       'name' => t('Project'),
       'base' => 'node_content',
-      'description' => t('A project refers to a Coral Nexus based project that is hosted at GitHub.'),
+      'description' => t('A project node is used for listing Coral framework components.'),
       'has_title' => '1',
       'title_label' => t('Project name'),
       'help' => '',

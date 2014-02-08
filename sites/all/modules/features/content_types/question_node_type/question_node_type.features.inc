@@ -7,8 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function question_node_type_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function question_node_type_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -24,7 +23,7 @@ function question_node_type_node_info() {
       'base' => 'node_content',
       'description' => t('A <em>Questions</em> is a content type used to query the community for information or input.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Question'),
       'help' => '',
     ),
   );

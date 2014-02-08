@@ -7,12 +7,10 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function user_view_feature_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function user_view_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ctools_custom_content" && $api == "ctools_content") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
@@ -21,7 +19,7 @@ function user_view_feature_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function user_view_feature_views_api() {
+function user_view_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -66,11 +64,11 @@ function user_view_feature_flag_default_flags() {
     'show_on_teaser' => 1,
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'user_view_feature',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
