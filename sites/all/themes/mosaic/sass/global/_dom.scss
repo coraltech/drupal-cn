@@ -237,10 +237,11 @@ input#edit-delete {
   }
 }
 
+.form-wrapper .description,
 .form-item .description {
- background: lighten($ltgreen, 20%);
- font-size: 0.85em;
- padding: 0 3px;
+  background: lighten($ltgreen, 20%);
+  font-size: 0.85em;
+  padding: 0 3px;
 }
 
 input.form-text {
