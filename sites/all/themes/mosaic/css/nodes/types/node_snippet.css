@@ -1,0 +1,74 @@
+/* line 490, icons/*.png */
+.icons-sprite {
+  background: url('/images/icons-s9e2153c174.png') no-repeat;
+}
+
+/* line 12, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet .layout-landing-1 .grid-11 {
+  float: left;
+  width: 23%;
+}
+/* line 15, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet .layout-landing-1 .grid-13-last {
+  float: left;
+  width: 75%;
+}
+/* line 21, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet .snippet-node-pane-title {
+  font-size: 1.5em;
+  line-height: 1.6667em;
+  margin-top: 0.4167em;
+  margin-bottom: 0.4167em;
+}
+/* line 22, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet .snippet-node-pane-title a {
+  color: #b02e1c;
+  cursor: text;
+  font-weight: normal;
+}
+
+/* line 32, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-container {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 37, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view {
+  padding: 0 0 1.25em;
+  margin: 1.25em 0 1.25em;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 42, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .field-name-field-component-label {
+  font-size: 1.125em;
+  line-height: 1.1111em;
+  margin-top: 0.5555em;
+  margin-bottom: 0.5555em;
+  color: #cc6b1d;
+  float: left;
+}
+/* line 47, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .field-name-field-component-language {
+  float: left;
+  color: #898989;
+  line-height: 2.5em;
+  margin-left: 1em;
+}
+/* line 53, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .field-name-field-component-description {
+  clear: both;
+}
+/* line 55, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .field-name-field-component-description .field-item {
+  margin: 1.25em 0;
+}
+/* line 59, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .field-collection-view-links {
+  display: none;
+}
+/* line 64, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-description,
+.node-snippet .action-links-field-collection-add {
+  display: none;
+}

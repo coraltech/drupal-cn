@@ -21,13 +21,13 @@
 /* line 22, ../../sass/layouts/twocol_stacked.scss */
 .panel-2col-stacked .panel-col-first {
   float: left;
-  width: 48%;
+  width: 50%;
 }
 
 /* line 25, ../../sass/layouts/twocol_stacked.scss */
 * html .panel-2col-stacked .panel-col-first {
   float: left;
-  width: 48%;
+  width: 50%;
 }
 
 /* line 29, ../../sass/layouts/twocol_stacked.scss */

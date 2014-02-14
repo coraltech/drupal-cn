@@ -1,0 +1,117 @@
+/* line 8, ../../sass/forms/form__snippet_node_form.scss */
+.page-title {
+  color: #b02e1c;
+}
+
+/* line 14, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form textarea,
+.pane-page-content .node-snippet-form input.form-text {
+  border: 1px solid #898989;
+  margin: 0;
+}
+/* line 19, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .ta-help {
+  display: none;
+}
+/* line 28, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-body {
+  position: relative;
+}
+/* line 31, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-body .form-item {
+  margin-bottom: 0;
+}
+/* line 34, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-body .description {
+  margin: 0 0 0.625em 0;
+}
+/* line 38, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-body .filter-guidelines {
+  position: absolute;
+  width: 100%;
+  left: -50%;
+  background: #fffce9;
+  padding: 1.25em;
+  z-index: 6;
+}
+/* line 46, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-body .filter-guidelines .more {
+  display: block;
+  float: right;
+  margin-top: 1.25em;
+}
+/* line 55, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components table {
+  width: 99.98%;
+}
+/* line 58, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components table .form-item {
+  margin: 1.25em 0;
+}
+/* line 61, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components table .form-item .description {
+  width: 95.5%;
+}
+/* line 66, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components input.form-text {
+  width: 95%;
+}
+/* line 69, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components label {
+  margin-bottom: .25em;
+}
+/* line 73, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components .grippie,
+.pane-page-content .node-snippet-form .field-name-field-snippet-components textarea.form-textarea {
+  width: 96.5%;
+}
+/* line 76, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components .tabledrag-toggle-weight {
+  display: block;
+  float: right;
+  margin-bottom: -1.25em;
+}
+/* line 81, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components th.tabledrag-hide {
+  display: none;
+}
+/* line 84, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components tr.draggable td {
+  border-bottom: 16px solid white;
+}
+/* line 87, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components tr.draggable.last td {
+  border-bottom: none;
+}
+/* line 90, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components input.form-submit {
+  margin-bottom: 1.25em;
+}
+/* line 93, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components input.field-add-more-submit {
+  margin-top: 1.25em;
+  margin-bottom: 0;
+}
+/* line 97, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components .field-name-field-component-language {
+  margin-left: 12em;
+  margin-bottom: -2.6em;
+}
+/* line 101, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .field-name-field-snippet-components .field-name-field-component-language label {
+  display: inline;
+  color: #7f700f;
+  font-size: 85%;
+}
+/* line 109, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .panel-2col-stacked .panel-col-top .inside {
+  margin-bottom: 0;
+}
+/* line 113, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .form-actions {
+  margin-bottom: 1.25em;
+}
+/* line 115, ../../sass/forms/form__snippet_node_form.scss */
+.pane-page-content .node-snippet-form .form-actions .form-submit {
+  margin-right: 5px;
+}
