@@ -13,8 +13,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         var $formElem = $('.form-item-book-bid select:not(".bfproc")');
         if ($formElem.length > 0) {
         	// Set the community documentation link to be selected (nid:32).
-        	//  Then trigger a change event (to load book lineage),
-        	//   and disable main select.
+        	//  Then trigger a change event (to load book lineage)
           $formElem.addClass('bfproc').val(32).trigger('change');
 
 					// This gets around a bug in panels/drupal where book pages 
