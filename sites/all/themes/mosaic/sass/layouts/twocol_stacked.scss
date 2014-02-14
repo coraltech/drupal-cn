@@ -20,10 +20,10 @@
 }
 
 .panel-2col-stacked .panel-col-first { 
-  @include col(12); 
+  @include col(12, 'TRUE'); 
 }
 * html .panel-2col-stacked .panel-col-first {
-  @include col(12);
+  @include col(12, 'TRUE');
 }
 
 .panel-2col-stacked .panel-col-first .inside { 
