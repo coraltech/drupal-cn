@@ -290,3 +290,6 @@
 [submodule "sites/all/themes/mosaic/js/lib/ace"]
 	path = sites/all/themes/mosaic/js/lib/ace
 	url = https://github.com/ajaxorg/ace-builds.git
+[submodule "sites/all/modules/contrib/field_collection"]
+	path = sites/all/modules/contrib/field_collection
+	url = http://git.drupal.org/project/field_collection.git
