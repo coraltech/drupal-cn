@@ -1,0 +1,119 @@
+
+// Snippet node form scss file
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+.page-title {
+  color: $mdred;
+}
+
+.pane-page-content .node-snippet-form {
+  textarea,
+  input.form-text {
+    border: 1px solid lighten($mdgray, 7%);
+    margin: 0;
+  }
+  
+  .ta-help {
+    display: none;
+  }
+  
+  .field-name-body,
+  .field-name-field-tags,
+  .form-item-title {
+    
+  }
+  .field-name-body {
+    position: relative;
+    
+    .form-item {
+      margin-bottom: 0;
+    }
+    .description {
+      margin: 0 0 ($default_vert_unit / 2) 0;
+    }
+    
+    .filter-guidelines {
+      position: absolute;
+      width: 100%;
+      left: -50%;
+      background: lighten($ltyellow, 10%);
+      padding: $default_vert_unit;
+      z-index: 6;
+      
+      .more {
+        display: block;
+        float: right;
+        margin-top: $default_vert_unit;
+      }
+    }
+  }
+  
+  .field-name-field-snippet-components {
+    table {
+      width: 99.98%;
+      
+      .form-item {
+        margin: 1.25em 0;
+      
+        .description {
+          width: 95.5%;
+        }
+      }
+    }
+    input.form-text {
+      width: 95%;
+    }
+    label {
+      margin-bottom: .25em;
+    }
+    .grippie,
+    textarea.form-textarea {
+      width: 96.5%;
+    }
+    .tabledrag-toggle-weight {
+      display: block;
+      float: right;
+      margin-bottom: -1 * $default_vert_unit;
+    }
+    th.tabledrag-hide {
+      display: none;
+    }
+    tr.draggable td {
+      border-bottom: 16px solid $white;
+    }
+    tr.draggable.last td {
+      border-bottom: none;
+    }
+    input.form-submit {
+      margin-bottom: $default_vert_unit;
+    }
+    input.field-add-more-submit {
+      margin-top: $default_vert_unit;
+      margin-bottom: 0;
+    }
+    .field-name-field-component-language {
+      margin-left: 12em;
+      margin-bottom: -2.6em;
+
+      label {
+        display: inline;
+        color: desaturate(darken($dkyellow, 7%), 15%);
+        font-size: 85%;
+      }
+    }
+  }
+
+  .panel-2col-stacked .panel-col-top .inside {
+    margin-bottom: 0;
+  }
+  
+  .form-actions {
+    margin-bottom: $default_vert_unit;
+    .form-submit {
+      margin-right: 5px;
+    }
+  }
+}
