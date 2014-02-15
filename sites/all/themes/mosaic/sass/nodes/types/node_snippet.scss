@@ -1,0 +1,67 @@
+
+// Snippet node scss file
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/headers';
+@import 'global/icons';
+
+.page-node.node-type-snippet {
+  .layout-landing-1 {
+    .grid-11 {
+      @include col(6);
+    };
+    .grid-13-last {
+      @include col(18, true);
+    };
+  }
+  
+  // Only apply to full-node display
+  .snippet-node-pane-title {
+    a {
+      color: $mdred;
+      cursor: text;
+      font-weight: normal;
+    }
+    @include h1;
+  }
+}
+
+.node-snippet {
+  .field-collection-container {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+  }
+  .field-collection-view {
+    padding: 0 0 $default_vert_unit;
+    margin: $default_vert_unit 0 $default_vert_unit;
+    border-bottom: 1px solid $ltgray;
+    
+    .field-name-field-component-label {
+      @include h4;
+      color: darken($mdorange, 7%);
+      float: left;
+    }
+    .field-name-field-component-language {
+      float: left;
+      color: lighten($mdgray, 7%);
+      line-height: 2.5em;
+      margin-left: 1em;
+    }
+    .field-name-field-component-description {
+      clear: both;
+      .field-item {
+        margin: $default_vert_unit 0;
+      }
+    }
+    .field-collection-view-links {
+      display: none;
+    }
+  }
+  .field-collection-description,
+  .action-links-field-collection-add {
+    display: none;
+  }
+}
