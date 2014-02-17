@@ -6,11 +6,10 @@
  * @param type $query 
  */
 function mosaic_be_views_query_alter(&$view, &$query) {
-  
-  if ($view->name == 'questions' || $view->name == 'documentation') {
+  //dpm($view->name);
+  if ($view->name == 'related_qa' || $view->name == 'questions' || $view->name == 'documentation' || $view->name == 'snippets') {
            
     $tags = '';
-    
     if ($view->current_display != 'related_node') {
       // if we have a tag set the view conditions
       if (isset($_GET['tag'])) $tags = $_GET['tag'];
