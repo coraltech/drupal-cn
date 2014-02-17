@@ -276,7 +276,7 @@ function mosaic__preprocess_views_views_field_title(&$vars) {
 function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   $tags = '';
   $found = FALSE;
-  
+
   if (isset($_GET['tag'])) {
     $tags = $_GET['tag'];
     if ($tags && $tags != '') {
@@ -301,14 +301,17 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   }
     
   // Popular question tags should point to the questions page
-  if ($vars['view']->name == 'tags_popular') {
-    $path = drupal_get_path_alias(); 
-  }
+  $path = drupal_get_path_alias(); 
   if ($vars['view']->name == 'tags_popular' && 
       $vars['view']->current_display == 'popular_question_tags') {
     $path = 'content/questions-and-answers';
   }
-  
+
+  if ($vars['view']->name == 'tags_popular' && 
+    $vars['view']->current_display == 'popular_snippet_tags') {
+    $path = 'content/snippets';
+  }
+
   $class = 'tag-term';
   if ($found) $class = 'tag-active';
 
@@ -434,6 +437,7 @@ function mosaic_preprocess_panelizer_view_mode(&$vars) {
   }
 }
 
+
 // The main "new" questions page as seen on q&a.
 function _preprocess_view__questions__new_questions(&$vars) {
   $g = $_GET;
@@ -446,7 +450,7 @@ function _preprocess_view__questions__new_questions(&$vars) {
     $reset = array();
     $tag_links = array();
     $path = drupal_get_path_alias();
-    
+
     // foreach tags
     foreach ($tags as $id => $tag) {
       $reset = array();
@@ -478,6 +482,13 @@ function _preprocess_view__questions__new_questions(&$vars) {
     $output .= '<span class="reset-filter">'.$reset_all.'</span></div>';
     $vars['title'] = $output;
   }
+}
+
+
+// The main "new" snippets page views
+function _preprocess_view__snippets__new_snippets(&$vars) {
+  // we are simply using the same tag processing method from the questions view
+  _preprocess_view__questions__new_questions($vars);
 }
 
 
