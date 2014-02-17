@@ -1,0 +1,65 @@
+
+// Primary Scss file for the small list display of the related qa view
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+.pane-related-qa-small-list,
+.pane-related-qa-related-view {
+  margin-bottom: $default_vert_unit;
+  
+  .pane-title {
+    color: $white;
+    padding: 0.625em;
+    margin: 0 0 3px;
+    line-height: .8em;
+    
+    @include linear-v-gradient($mdgray, lighten($mdgray, 7%));
+  }
+  
+  .pane-content {
+    background: lighten($mdgray, 15%);
+    
+    .view-content {
+      color: lighten($mdgray, 10%);
+      font-weight: bold;
+      margin-top: -.3em;
+      background: $ltgray;
+
+      .views-row { padding-left: 1em; padding-right: 1em; }
+      .views-row-even { background: darken($ltgray, 7%); }
+    }
+    
+    .views-row {
+      background: $ltgray;
+      padding: .1562em .5em;
+    }
+    .views-row-even {
+      background: lighten($ltgray, 5%);
+    }
+    
+    .pager-load-more {
+      margin: 0;
+      padding: 3px;
+      text-align: left;
+      
+      li {
+        margin: 0;
+        padding: 0;
+      
+        a { 
+          color: $white; 
+          
+          @include btn-matte-inset(0px, 12px, $mdblue, darken($mdblue, 3%), $white);
+          @include btn-structure(2px 5px, 12px, $radius: 0px);
+          
+          &:hover { 
+            color: $white; 
+          }
+        }
+      }
+    }
+  }
+}
