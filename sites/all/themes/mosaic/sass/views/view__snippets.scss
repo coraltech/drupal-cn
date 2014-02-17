@@ -1,0 +1,66 @@
+
+// Snippets view scss file
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+
+
+// Note the proper scope of these styles
+.view-snippets.view-display-id-new_snippets {
+  position: relative;
+  .q-filtered-tag {
+    position: absolute;
+    top: -2.75em;
+    left: 7.5em;
+    color: $mdgray;
+    background: $ltyellow;
+    padding: 3px 5px;
+    
+    .filtered-by {
+      margin-right: .75em;
+      line-height: 1em;
+    }
+    .reset-filter a {
+      @include btn-matte-inset(0px, 12px, $mdblue, darken($mdblue, 3%), $white);
+      @include btn-structure(2px 5px, 12px, $radius: 0px);
+    }
+    .ftag {
+      color: darken($mdgray, 5%);
+      font-weight: bold;
+      
+      small {
+        color: $mdgray;
+        margin-left: 3px;
+        position: relative;
+        top: -1px;
+      }
+      
+      a:hover small {
+        color: $mdred;
+      }
+    }
+  }
+  .views-row {
+    padding: 0 0 1px;
+    
+    background: url('../../assets/images/coral-sep-med-simple.png') bottom center no-repeat;
+    
+    .node-snippet {
+      margin-left: -7px;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+    .snippet-node-pane-title {
+      margin-top: 0;
+      padding-top: .4545em;
+    }
+  }
+  .views-row-even {
+    .node-snippet {
+      background: lighten($ltgray, 7%);
+    }
+  }
+  .views-row-first {}
+
+}
