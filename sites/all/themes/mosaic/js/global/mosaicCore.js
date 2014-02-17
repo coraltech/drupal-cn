@@ -85,13 +85,15 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       var result = {};
       var searchIndex = url.indexOf("?");
+      
       if (searchIndex == -1 ) return result;
-      var sPageURL = url.substring(searchIndex +1);
-      var sURLVariables = sPageURL.split('&');
-      for (var i = 0; i < sURLVariables.length; i++)
-      {       
-          var sParameterName = sURLVariables[i].split('=');      
-          result[sParameterName[0]] = sParameterName[1];
+      
+      var pageURL = url.substring(searchIndex +1);
+      var URLVariables = pageURL.split('&');
+      
+      for (var i = 0; i < URLVariables.length; i++) {       
+          var parameterName = URLVariables[i].split('=');      
+          result[parameterName[0]] = parameterName[1];
       }
       return result;
     }
@@ -116,7 +118,6 @@ Drupal.mosaic = Drupal.mosaic || {};
     catch (err) {
       console.log('ucFirst errored: '+err);
     }
-    
   };
   
   // Adapted from a post: https://gist.github.com/bradvin/2313262
@@ -157,15 +158,10 @@ Drupal.mosaic = Drupal.mosaic || {};
 	};
   
   
+  // Fetch the number of items that are native to this object
   Drupal.mosaic.mosaicCore.prototype.objCount = function(obj) {
   	var count = 0;
-
-		for (var i in obj) {
-		  if (obj.hasOwnProperty(i)) {
-		    count++;
-		  }
-		}
-
+		for (var i in obj) { if (obj.hasOwnProperty(i)) count++; }
 		return count;
   };
 
