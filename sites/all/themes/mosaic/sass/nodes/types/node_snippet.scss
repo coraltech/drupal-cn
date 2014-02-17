@@ -10,10 +10,10 @@
 .page-node.node-type-snippet {
   .layout-landing-1 {
     .grid-11 {
-      @include col(6);
+      @include col(8);
     };
     .grid-13-last {
-      @include col(18, true);
+      @include col(16, true);
     };
   }
   
@@ -29,6 +29,38 @@
 }
 
 .node-snippet {
+  padding-bottom: $default_vert_unit;
+  
+  .snippet-node-pane-title {
+    .icon {
+      display: block;
+      float: left;
+      margin-top: 7px;
+      margin-right: 5px;
+      @include icons-sprite('coral-snippet-tools');
+    }
+  }
+  .pane-node-links {
+    float: right;
+    margin-bottom: $default_vert_unit;
+    li.first {
+      border-right: none;
+    }
+  }
+  .pane-coral-snippet-components {
+    float: right;
+    li.comp_count {
+      padding-right: 5px;
+    }
+    a {
+      color: lighten($mdgray,15%);
+      
+      &:hover {
+        color: darken($mdgray, 10%);
+      }
+    }
+  }
+  
   .field-collection-container {
     border-bottom: none;
     margin: 0;
@@ -64,4 +96,8 @@
   .action-links-field-collection-add {
     display: none;
   }
+}
+
+.pane-coral-wiki-ask-question .ask-btn .icon {
+  margin-top: 0;
 }
