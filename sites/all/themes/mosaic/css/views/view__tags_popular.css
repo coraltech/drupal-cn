@@ -1,8 +1,10 @@
-/* line 12, ../../sass/views/view__tags_popular.scss */
+/* line 13, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags,
 .pane-tags-popular-popular-question-tags {
   margin-bottom: 1.25em;
 }
-/* line 15, ../../sass/views/view__tags_popular.scss */
+/* line 16, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-title,
 .pane-tags-popular-popular-question-tags .pane-title {
   color: white;
   padding-left: .5em;
@@ -17,49 +19,58 @@
   background: linear-gradient(to bottom, #4f7e56 0%, #5e8864 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 23, ../../sass/views/view__tags_popular.scss */
+/* line 24, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content,
 .pane-tags-popular-popular-question-tags .pane-content {
   padding-top: .3em;
   background: #9d9d9d;
 }
-/* line 27, ../../sass/views/view__tags_popular.scss */
+/* line 28, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .view-content,
 .pane-tags-popular-popular-question-tags .pane-content .view-content {
   color: #919191;
   font-weight: bold;
   margin-top: -.3em;
   background: #dddddd;
 }
-/* line 33, ../../sass/views/view__tags_popular.scss */
+/* line 34, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .view-content .views-row,
 .pane-tags-popular-popular-question-tags .pane-content .view-content .views-row {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 34, ../../sass/views/view__tags_popular.scss */
+/* line 35, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .view-content .views-row-even,
 .pane-tags-popular-popular-question-tags .pane-content .view-content .views-row-even {
   background: #cbcbcb;
 }
-/* line 37, ../../sass/views/view__tags_popular.scss */
+/* line 38, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .view-content .tag-active:after,
 .pane-tags-popular-popular-question-tags .pane-content .view-content .tag-active:after {
   content: "(x)";
   color: #c57d76;
   margin-left: 5px;
 }
-/* line 44, ../../sass/views/view__tags_popular.scss */
+/* line 45, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .view-content .tag-active:hover:after,
 .pane-tags-popular-popular-question-tags .pane-content .view-content .tag-active:hover:after {
   color: #b02e1c;
 }
-/* line 50, ../../sass/views/view__tags_popular.scss */
+/* line 51, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more {
   margin: 0;
   padding: 3px;
   text-align: left;
 }
-/* line 55, ../../sass/views/view__tags_popular.scss */
+/* line 56, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li {
   margin: 0;
   padding: 0;
 }
-/* line 59, ../../sass/views/view__tags_popular.scss */
+/* line 60, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a {
   color: white;
   font-size: 12px;
@@ -95,10 +106,12 @@
   border-radius: 0px;
 }
 /* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a:hover,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
   text-decoration: none;
 }
 /* line 18, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a:hover,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
   background-color: #385b8f;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #3d629a), color-stop(75%, #385b8f));
@@ -108,13 +121,16 @@
   background: linear-gradient(#3d629a 3%, #385b8f 75%);
 }
 /* line 21, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a:active,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:active {
   -webkit-box-shadow: #345484 0 1px 2px inset;
   -moz-box-shadow: #345484 0 1px 2px inset;
   box-shadow: #345484 0 1px 2px inset;
 }
 /* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a.disabled, .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a[disabled] {
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a.disabled, .pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a[disabled],
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a.disabled,
+.pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
   background: #4067a1;
@@ -124,11 +140,13 @@
   box-shadow: none;
 }
 /* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a::-moz-focus-inner,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 65, ../../sass/views/view__tags_popular.scss */
+/* line 66, ../../sass/views/view__tags_popular.scss */
+.pane-tags-popular-popular-snippet-tags .pane-content .pager-load-more li a:hover,
 .pane-tags-popular-popular-question-tags .pane-content .pager-load-more li a:hover {
   color: white;
 }

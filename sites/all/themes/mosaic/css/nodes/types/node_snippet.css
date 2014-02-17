@@ -1,17 +1,17 @@
-/* line 490, icons/*.png */
-.icons-sprite {
-  background: url('/images/icons-s9e2153c174.png') no-repeat;
+/* line 498, icons/*.png */
+.icons-sprite, .node-snippet .snippet-node-pane-title .icon {
+  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
 }
 
 /* line 12, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .layout-landing-1 .grid-11 {
   float: left;
-  width: 23%;
+  width: 31.33333%;
 }
 /* line 15, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .layout-landing-1 .grid-13-last {
   float: left;
-  width: 75%;
+  width: 66.66667%;
 }
 /* line 21, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .snippet-node-pane-title {
@@ -27,19 +27,58 @@
   font-weight: normal;
 }
 
-/* line 32, ../../../sass/nodes/types/node_snippet.scss */
+/* line 31, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet {
+  padding-bottom: 1.25em;
+}
+/* line 35, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .snippet-node-pane-title .icon {
+  display: block;
+  float: left;
+  margin-top: 7px;
+  margin-right: 5px;
+  background-position: 0 -3581px;
+  height: 24px;
+  width: 24px;
+}
+/* line 43, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .pane-node-links {
+  float: right;
+  margin-bottom: 1.25em;
+}
+/* line 46, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .pane-node-links li.first {
+  border-right: none;
+}
+/* line 50, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .pane-coral-snippet-components {
+  float: right;
+}
+/* line 52, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .pane-coral-snippet-components li.comp_count {
+  padding-right: 5px;
+}
+/* line 55, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .pane-coral-snippet-components a {
+  color: #9d9d9d;
+}
+/* line 58, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .pane-coral-snippet-components a:hover {
+  color: #5e5e5e;
+}
+/* line 64, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-container {
   border-bottom: none;
   margin: 0;
   padding: 0;
 }
-/* line 37, ../../../sass/nodes/types/node_snippet.scss */
+/* line 69, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view {
   padding: 0 0 1.25em;
   margin: 1.25em 0 1.25em;
   border-bottom: 1px solid #dddddd;
 }
-/* line 42, ../../../sass/nodes/types/node_snippet.scss */
+/* line 74, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-label {
   font-size: 1.125em;
   line-height: 1.1111em;
@@ -48,27 +87,32 @@
   color: #cc6b1d;
   float: left;
 }
-/* line 47, ../../../sass/nodes/types/node_snippet.scss */
+/* line 79, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-language {
   float: left;
   color: #898989;
   line-height: 2.5em;
   margin-left: 1em;
 }
-/* line 53, ../../../sass/nodes/types/node_snippet.scss */
+/* line 85, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description {
   clear: both;
 }
-/* line 55, ../../../sass/nodes/types/node_snippet.scss */
+/* line 87, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description .field-item {
   margin: 1.25em 0;
 }
-/* line 59, ../../../sass/nodes/types/node_snippet.scss */
+/* line 91, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-collection-view-links {
   display: none;
 }
-/* line 64, ../../../sass/nodes/types/node_snippet.scss */
+/* line 96, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-description,
 .node-snippet .action-links-field-collection-add {
   display: none;
+}
+
+/* line 101, ../../../sass/nodes/types/node_snippet.scss */
+.pane-coral-wiki-ask-question .ask-btn .icon {
+  margin-top: 0;
 }
