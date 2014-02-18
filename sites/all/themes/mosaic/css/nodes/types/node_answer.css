@@ -1,9 +1,9 @@
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, div.node-type-answer .pane-coral-page-title .icon,
 div.node-type-answer .answer-node-teaser-pane-title .icon,
 div.node-teaser.node-answer .pane-coral-page-title .icon,
 div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s28946c07b9.png') no-repeat;
 }
 
 /* line 15, ../../../sass/nodes/types/node_answer.scss */
@@ -19,7 +19,7 @@ div.node-teaser.node-answer .answer-node-teaser-pane-title .icon {
   display: block;
   float: left;
   margin: 3px .5em 0 0;
-  background-position: 0 -2563px;
+  background-position: 0 -2663px;
   height: 26px;
   width: 25px;
 }

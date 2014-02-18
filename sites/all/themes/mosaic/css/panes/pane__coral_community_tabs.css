@@ -1,6 +1,6 @@
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, .pane-coral-community-tabs ul li a.lcom .icon, .pane-coral-community-tabs ul li a.lqa .icon {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s28946c07b9.png') no-repeat;
 }
 
 /* line 15, ../../sass/panes/pane__coral_community_tabs.scss */
@@ -97,7 +97,7 @@
 }
 /* line 81, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.lcom .icon {
-  background-position: 0 -1010px;
+  background-position: 0 -1110px;
   height: 50px;
   width: 50px;
 }

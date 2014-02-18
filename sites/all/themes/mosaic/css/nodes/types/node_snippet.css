@@ -1,6 +1,6 @@
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, .node-snippet .snippet-node-pane-title .icon {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s28946c07b9.png') no-repeat;
 }
 
 /* line 12, ../../../sass/nodes/types/node_snippet.scss */
@@ -37,7 +37,7 @@
   float: left;
   margin-top: 7px;
   margin-right: 5px;
-  background-position: 0 -3581px;
+  background-position: 0 -3681px;
   height: 24px;
   width: 24px;
 }

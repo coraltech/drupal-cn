@@ -78,3 +78,7 @@
 .pane-tagclouds-1 a.level10:hover {
   color: #444444;
 }
+/* line 20, ../../sass/panes/pane__block_tagclouds_1.scss */
+.pane-tagclouds-1 .more-link {
+  display: none;
+}

@@ -1,6 +1,6 @@
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, .html div.pane-coral-comments-target .comment-node-pane-title .icon {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s68a042dd47.png') no-repeat;
 }
 
 /* line 16, ../../sass/panes/pane__coral_comments_target.scss */
@@ -107,7 +107,7 @@
   margin-right: 5px;
   margin-left: -5px;
   margin-top: 3px;
-  background-position: 0 -3120px;
+  background-position: 0 -3220px;
   height: 12px;
   width: 19px;
 }
@@ -291,7 +291,7 @@
 .html div.node-teaser.node-comment .row,
 .html div.node-teaser.node-comment .leader {
   padding-left: 1em;
-  margin-bottom: 0.3125em;
+  margin: 0;
 }
 /* line 218, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-page-title h2,

@@ -1,6 +1,6 @@
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, .pane-coral-build-options .build-options .command-line .icon, .pane-coral-build-options .build-options .coral-arch .icon, .pane-coral-build-options .build-options .integration .icon, .pane-coral-build-options .build-options .requirements .icon {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s28946c07b9.png') no-repeat;
 }
 
 /* line 10, ../../sass/panes/pane__coral_build_options.scss */
@@ -22,20 +22,20 @@
 }
 /* line 24, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .command-line .icon {
-  background-position: 0 -2412px;
+  background-position: 0 -2512px;
   height: 28px;
   width: 33px;
 }
 /* line 27, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .coral-arch .icon {
-  background-position: 0 -1998px;
+  background-position: 0 -2098px;
   height: 31px;
   width: 31px;
 }
 /* line 30, ../../sass/panes/pane__coral_build_options.scss */
 .pane-coral-build-options .build-options .integration .icon {
   left: -44px;
-  background-position: 0 -1398px;
+  background-position: 0 -1498px;
   height: 30px;
   width: 32px;
 }
@@ -43,7 +43,7 @@
 .pane-coral-build-options .build-options .requirements .icon {
   left: -38px;
   top: 4px;
-  background-position: 0 -2490px;
+  background-position: 0 -2590px;
   height: 23px;
   width: 23px;
 }

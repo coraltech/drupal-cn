@@ -949,18 +949,18 @@ table a.tabledrag-handle .handle {
   padding: 0.5em 0.2em;
 }
 
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s28946c07b9.png') no-repeat;
 }
 
-/* line 498, icons/*.png */
+/* line 506, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s0f9d5baa7a.png') no-repeat;
+  background: url('/images/icons-s28946c07b9.png') no-repeat;
 }
 
 /* line 9, ../sass/global/comments.scss */
@@ -1058,37 +1058,37 @@ table a.tabledrag-handle .handle {
 }
 /* line 89, ../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
-  background-position: 0 -4392px;
+  background-position: 0 -4492px;
   height: 15px;
   width: 15px;
 }
 /* line 92, ../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
-  background-position: 0 -4327px;
+  background-position: 0 -4427px;
   height: 15px;
   width: 15px;
 }
 /* line 95, ../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
-  background-position: 0 -3120px;
+  background-position: 0 -3220px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
-  background-position: 0 -4457px;
+  background-position: 0 -4557px;
   height: 15px;
   width: 15px;
 }
 /* line 101, ../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
-  background-position: 0 -3182px;
+  background-position: 0 -3282px;
   height: 15px;
   width: 15px;
 }
 /* line 104, ../sass/global/comments.scss */
 .comment li.comment-reply a:hover span.icon {
-  background-position: 0 -3058px;
+  background-position: 0 -3158px;
   height: 12px;
   width: 19px;
 }
@@ -1513,13 +1513,13 @@ h3 .toc-top {
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -3980px;
+  background-position: 0 -4080px;
   height: 15px;
   width: 15px;
 }
 /* line 278, ../sass/global/_global.scss */
 .html ul.links li.flag-follow a:hover .icon {
-  background-position: 0 -3915px;
+  background-position: 0 -4015px;
   height: 15px;
   width: 15px;
 }
@@ -1547,7 +1547,7 @@ h3 .toc-top {
   display: block;
   float: left;
   margin: 3px 0 0 0;
-  background-position: 0 -2716px;
+  background-position: 0 -2816px;
   height: 16px;
   width: 15px;
 }
@@ -1559,20 +1559,20 @@ h3 .toc-top {
 /* line 308, ../sass/global/_global.scss */
 .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon {
-  background-position: 0 -2782px;
+  background-position: 0 -2882px;
   height: 16px;
   width: 15px;
 }
 /* line 314, ../sass/global/_global.scss */
 .flag-abuse-node a.unflag-action .icon {
-  background-position: 0 -2914px;
+  background-position: 0 -3014px;
   height: 16px;
   width: 15px;
 }
 /* line 317, ../sass/global/_global.scss */
 .flag-abuse-node a.unflag-action:hover .icon {
   color: #919191;
-  background-position: 0 -2848px;
+  background-position: 0 -2948px;
   height: 16px;
   width: 15px;
 }
@@ -1606,7 +1606,7 @@ h3 .toc-top {
   margin: 5px -.75em 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  background-position: 0 -4153px;
+  background-position: 0 -4253px;
   height: 16px;
   width: 16px;
 }

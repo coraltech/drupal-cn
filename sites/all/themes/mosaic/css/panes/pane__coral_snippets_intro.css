@@ -1,0 +1,130 @@
+/* line 506, icons/*.png */
+.icons-sprite, .pane-coral-snippets-intro .pane-content .info {
+  background: url('/images/icons-s68a042dd47.png') no-repeat;
+}
+
+/* line 15, ../../sass/panes/pane__coral_snippets_intro.scss */
+.pane-coral-snippets-intro {
+  margin-bottom: 1.25em;
+  color: #777777;
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #eaeaea 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #eaeaea));
+  background: -webkit-linear-gradient(top, white 0%, #eaeaea 100%);
+  background: -o-linear-gradient(top, white 0%, #eaeaea 100%);
+  background: -ms-linear-gradient(top, white 0%, #eaeaea 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #eaeaea 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 20, ../../sass/panes/pane__coral_snippets_intro.scss */
+.pane-coral-snippets-intro .pane-content {
+  background: url("../../assets/images/diag-tile.png");
+  padding: 0.625em;
+}
+/* line 24, ../../sass/panes/pane__coral_snippets_intro.scss */
+.pane-coral-snippets-intro .pane-content p {
+  margin-bottom: 0;
+  font-size: 1.125em;
+  line-height: 1.1111em;
+  margin-top: 0.5555em;
+  margin-bottom: 0.5555em;
+}
+/* line 29, ../../sass/panes/pane__coral_snippets_intro.scss */
+.pane-coral-snippets-intro .pane-content .container {
+  padding: 0.625em;
+  background: rgba(255, 255, 255, 0.75);
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.pane-coral-snippets-intro .pane-content .container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 35, ../../sass/panes/pane__coral_snippets_intro.scss */
+.pane-coral-snippets-intro .pane-content .info {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-position: 0 -846px;
+  height: 50px;
+  width: 50px;
+}
+/* line 43, ../../sass/panes/pane__coral_snippets_intro.scss */
+.pane-coral-snippets-intro .pane-content .add {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF446EAC', endColorstr='#FF273F63');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #5b83be), color-stop(51%, #446eac));
+  background: -webkit-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: -moz-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: -o-linear-gradient(#5b83be 50%, #446eac 51%);
+  background: linear-gradient(#5b83be 50%, #446eac 51%);
+  -webkit-box-shadow: #92acd4 0 1px 0 inset;
+  -moz-box-shadow: #92acd4 0 1px 0 inset;
+  box-shadow: #92acd4 0 1px 0 inset;
+  border: 1px solid #507bba;
+  color: white;
+  text-shadow: #2c476f 0 -1px 0;
+  font-size: 16px;
+  padding: 2px 5px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  float: left;
+  width: 14.04167%;
+  margin-top: 16px;
+  font-size: 1.15em;
+  min-height: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+/* line 15, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-snippets-intro .pane-content .add:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-snippets-intro .pane-content .add:hover {
+  background-color: #4875b7;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4570b0), color-stop(51%, #4875b7));
+  background: -webkit-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: -moz-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: -o-linear-gradient(#4570b0 50%, #4875b7 51%);
+  background: linear-gradient(#4570b0 50%, #4875b7 51%);
+}
+/* line 33, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-snippets-intro .pane-content .add:active {
+  -webkit-box-shadow: #4773b3 0 1px 2px inset;
+  -moz-box-shadow: #4773b3 0 1px 2px inset;
+  box-shadow: #4773b3 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.pane-coral-snippets-intro .pane-content .add.disabled, .pane-coral-snippets-intro .pane-content .add[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #6288c1;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../../../../../../../../lib/gems/1.9.1/gems/sassy-buttons-0.2.6/stylesheets/_sassy-buttons.sass */
+.pane-coral-snippets-intro .pane-content .add::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
