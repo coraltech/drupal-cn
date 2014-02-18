@@ -13,7 +13,7 @@ $plugin = array(
   ),
   'category' => t('Coral'),
   'edit form' => 'coral_snippet_components_pane_content_type_edit_form',    // Edit form callback
-  'render callback'  => 'coral_snippet_components_pane_content_type_render',
+  'render callback'  => 'coral_snippet_components_pane_content_type_render'
   //'defaults' => array('anon_links' => false),
 );
 
