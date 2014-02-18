@@ -38,7 +38,6 @@
   Drupal.coral_ajax.update = function(type, id, entity, success, error) {
     var obj = {};
     obj[type] = entity;
-    
     this.get_token( // CSRF token validation now required
 			function(data, msg, xhr) {
 				token = data; // data loaded ok
@@ -46,7 +45,7 @@
 		      url:'/system/'+type+'/'+id+'.json',
 		      type: "PUT",
 		      beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token', token); },
-		      data: JSON.stringify(data),
+		      data: JSON.stringify(obj),
 		      contentType: 'application/json',
 		      dataType: 'json',      
 		      success: success,
