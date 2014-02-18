@@ -38,6 +38,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 	    				Drupal.mosaic.core.objects['snippetNodes'] = {};
 	    			}
 
+						// First load
 	    			if (typeof ace === 'undefined') { // where is ace
 	    				Drupal.mosaic.core.loadScript(acePath + '/ace.js', true,
 	    					function(script, textStatus, jqXHR) { /* ace is loaded! */
@@ -47,6 +48,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 	    					}
 	    				);
 	    			}
+	    			// Updates after first load (Drupal.)
 	    			else {
 	    				snippetNodes.updateNodes($snippetNodes);
 	    			}
@@ -127,7 +129,6 @@ Drupal.mosaic = Drupal.mosaic || {};
 	//-------------
 	// Prototypes
 	//-------------
-
 
 	// Snippet Node(s) 
 	// ----------------
@@ -347,16 +348,24 @@ Drupal.mosaic = Drupal.mosaic || {};
   		// Finally, add a more link to the node (teaser)
   		if (this.$node.hasClass('node-teaser')) {
   			var $nodeLinks = this.$node.find('.pane-node-links ul.links');
-  			var $links = $nodeLinks.find('li').removeClass('first');
-  			var hasMore = false;
-  			
-  			$links.each(function() {
-  				if ($(this).find('a').text() === Drupal.t('Read more')) hasMore = true;	
-  			});
-  			
-  			if (!hasMore) {
-  				var href = this.$node.find('.snippet-node-pane-title a').attr('href');
-  				$nodeLinks.prepend('<li class="read-more first"><a href="'+href+'"><span class="icon"></span>Read more</a></li>');
+  			var href = this.$node.find('.snippet-node-pane-title a').attr('href');
+	  		var readMore = '<li class="read-more first"><a href="'+href+'"><span class="icon"></span>Read more</a></li>';
+	  			
+  			if ($nodeLinks.length) {
+	  			var $links = $nodeLinks.find('li').removeClass('first');
+	  			var hasMore = false;
+	  			
+	  			$links.each(function() {
+	  				if ($(this).find('a').text() === Drupal.t('Read more')) hasMore = true;	
+	  			});
+	  			
+	  			if (!hasMore) {
+	  				$nodeLinks.prepend(readMore);
+  				}
+  			}
+  			else {
+  				var $comp = this.$node.find('.pane-node-links .pane-content');
+  				$comp.prepend('<ul class="links inline">'+readMore+'</ul>');
   			}
   		}
   	}
