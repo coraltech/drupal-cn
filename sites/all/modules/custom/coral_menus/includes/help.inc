@@ -39,53 +39,53 @@ function coral_menus_help_links_loader() {
       'options'    => array('attributes' => array('class'=>array('documentation'))),
       'weight'     => 3,
     ),
-      'command_line' => array(
+    /*  'command_line' => array(
         'link_title' => t('Command line usage'),
-        'link_path'  => 'node/8',
+        'link_path'  => '<front>',
         'options'    => array('attributes' => array('class'=>array('command-line'))),
         'plid'       => 'documentation',
         'weight'     => 1,
       ),
       'web_portal' => array(
         'link_title' => t('Website usage'),
-        'link_path'  => 'node/8',
+        'link_path'  => '<front>',
         'options'    => array('attributes' => array('class'=>array('web-portal'))),
         'plid'       => 'documentation',
         'weight'     => 2,
       ),
       'restful_api' => array(
         'link_title' => t('Restful API usage'),
-        'link_path'  => 'node/8',
+        'link_path'  => '<front>',
         'options'    => array('attributes' => array('class'=>array('restful-api'))),
         'plid'       => 'documentation',
         'weight'     => 3,
       ),
       'ruby_api' => array(
         'link_title' => t('Ruby API usage'),
-        'link_path'  => 'node/8',
+        'link_path'  => '<front>',
         'options'    => array('attributes' => array('class'=>array('ruby-api'))),
         'plid'       => 'documentation',
         'weight'     => 4,
-      ),
+      ), */
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 4,
     ),
     'bug_report' => array(
       'link_title' => t('Issues and bugs!'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'options' => array('attributes' => array('class'=>array('bug-report'))),
       'weight'     => 5,
     ),
     'sitemap' => array(
       'link_title' => t('Using SSH keys'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 6,
     ),
     'upgrading_account' => array(
       'link_title' => t('Upgrading account'),
-      'link_path'  => 'node/8',
+      'link_path'  => '<front>',
       'weight'     => 7,
     )
   );
