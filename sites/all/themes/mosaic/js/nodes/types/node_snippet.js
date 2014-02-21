@@ -11,7 +11,6 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicSnippetInit = {    
     attach : function(context, settings) {
     	try {
-
  				// Get the id of the context element
  				var contextID = $(context).prop('id');
 
@@ -44,13 +43,13 @@ Drupal.mosaic = Drupal.mosaic || {};
 	    					function(script, textStatus, jqXHR) { /* ace is loaded! */
 	    						// Ensure proper base Path on intial load
 	    						ace.config.set("basePath", acePath);
-	    						snippetNodes.updateNodes($snippetNodes);
+	    						snippetNodes.initNodes($snippetNodes);
 	    					}
 	    				);
 	    			}
 	    			// Updates after first load (Drupal.)
 	    			else {
-	    				snippetNodes.updateNodes($snippetNodes);
+	    				snippetNodes.initNodes($snippetNodes);
 	    			}
 	    		}
     		}
@@ -132,6 +131,17 @@ Drupal.mosaic = Drupal.mosaic || {};
 
 	// Snippet Node(s) 
 	// ----------------
+	
+	// Kickstart the snippetNode processing
+	Drupal.mosaic.snippetNodes.prototype.initNodes = function($snippetNodes) {
+		try {
+			this.updateNodes($snippetNodes);
+	    this.loadZeroClip($snippetNodes);
+		}
+		catch (err) {
+			console.log('initNodes errored: '+err);
+		}
+	};
 
 	// Update all nodes
 	Drupal.mosaic.snippetNodes.prototype.updateNodes = function($nodes) {
@@ -155,6 +165,22 @@ Drupal.mosaic = Drupal.mosaic || {};
 		try { Drupal.mosaic.core.objects.snippetNodes = {}; }
 		catch (err) { console.log('snippetNodes errored: '+err); }
 	};
+
+
+	// zeroclipboard initialization
+	Drupal.mosaic.snippetNodes.prototype.loadZeroClip = function($nodes) {
+		try {
+			// Load up the snippet copy functionality
+			Drupal.mosaic.core.loadScript('/sites/all/themes/mosaic/js/load/snippet_copy.js', true, 
+				function(script, textStatus, jqXHR) { 
+					Drupal.attachBehaviors('#snippet-copy');
+				}
+			);
+		}
+		catch (err) {
+			console.log("startZeroClip errored: "+err);
+		}
+	} 
 
 
 	// Snippet Node 
@@ -190,7 +216,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         editor.getSession().setValue(textareaValue);
         editor.getSession().setMode(mode);
 
-  			//@TODO: find a cool theme
+  			// set theme
   			editor.setTheme("ace/theme/github");
 
   			// Save the editor!
@@ -400,3 +426,4 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
 
 })(jQuery);
+
