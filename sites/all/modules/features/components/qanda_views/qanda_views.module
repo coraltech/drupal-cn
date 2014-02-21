@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Question and answer views feature.
+ */
+
+include_once 'qanda_views.features.inc';

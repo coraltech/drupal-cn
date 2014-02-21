@@ -1,0 +1,17 @@
+name = Question and answer views
+description = Q&A related view displays in a common feature.
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = qanda_views
+dependencies[] = entity
+dependencies[] = views
+dependencies[] = views_content
+dependencies[] = views_load_more
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = answers
+features[views_view][] = comments
+features[views_view][] = questions
+features[views_view][] = related_qa
+features_exclude[dependencies][ctools] = ctools
