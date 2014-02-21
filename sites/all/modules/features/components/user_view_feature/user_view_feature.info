@@ -4,6 +4,7 @@ core = 7.x
 package = Features
 version = 7.x-1.0
 project = user_view_feature
+dependencies[] = ctools
 dependencies[] = ctools_custom_content
 dependencies[] = flag
 dependencies[] = panelizer
