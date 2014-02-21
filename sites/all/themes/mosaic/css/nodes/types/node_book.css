@@ -1,7 +1,7 @@
-/* line 506, icons/*.png */
+/* line 514, icons/*.png */
 .icons-sprite, .page-comment-reply .pane-node-title .icon,
 .node-type-book .pane-node-title .icon, .node-type-book .links .discussion a .icon, .node-type-book .links .discussion a.active .icon, .node-type-book .links .discussion a:hover .icon, .node-type-book .links .book_printer a .icon, .node-type-book .links .book_printer a.active .icon, .node-type-book .links .book_printer a:hover .icon, .node-type-book .links .book_add_child a .icon, .node-type-book .links .book_add_child a.active .icon, .node-type-book .links .book_add_child a:hover .icon {
-  background: url('/images/icons-s28946c07b9.png') no-repeat;
+  background: url('/images/icons-s5a349c9b21.png') no-repeat;
 }
 
 /* line 13, ../../../sass/nodes/types/node_book.scss */
@@ -52,7 +52,7 @@
 }
 /* line 52, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .discussion a .icon {
-  background-position: 0 -3220px;
+  background-position: 0 -3290px;
   height: 12px;
   width: 19px;
 }
@@ -64,25 +64,25 @@
 }
 /* line 63, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_printer a .icon {
-  background-position: 0 -3885px;
+  background-position: 0 -3955px;
   height: 15px;
   width: 15px;
 }
 /* line 68, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_printer a.active .icon, .node-type-book .links .book_printer a:hover .icon {
-  background-position: 0 -3950px;
+  background-position: 0 -4020px;
   height: 15px;
   width: 15px;
 }
 /* line 74, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_add_child a .icon {
-  background-position: 0 -3820px;
+  background-position: 0 -3890px;
   height: 15px;
   width: 15px;
 }
 /* line 79, ../../../sass/nodes/types/node_book.scss */
 .node-type-book .links .book_add_child a.active .icon, .node-type-book .links .book_add_child a:hover .icon {
-  background-position: 0 -3755px;
+  background-position: 0 -3825px;
   height: 15px;
   width: 15px;
 }

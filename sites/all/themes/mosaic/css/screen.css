@@ -949,18 +949,18 @@ table a.tabledrag-handle .handle {
   padding: 0.5em 0.2em;
 }
 
-/* line 506, icons/*.png */
+/* line 514, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s28946c07b9.png') no-repeat;
+  background: url('/images/icons-s5a349c9b21.png') no-repeat;
 }
 
-/* line 506, icons/*.png */
+/* line 514, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s28946c07b9.png') no-repeat;
+  background: url('/images/icons-s5a349c9b21.png') no-repeat;
 }
 
 /* line 9, ../sass/global/comments.scss */
@@ -1058,31 +1058,31 @@ table a.tabledrag-handle .handle {
 }
 /* line 89, ../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
-  background-position: 0 -4492px;
+  background-position: 0 -4562px;
   height: 15px;
   width: 15px;
 }
 /* line 92, ../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
-  background-position: 0 -4427px;
+  background-position: 0 -4497px;
   height: 15px;
   width: 15px;
 }
 /* line 95, ../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
-  background-position: 0 -3220px;
+  background-position: 0 -3290px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
-  background-position: 0 -4557px;
+  background-position: 0 -4627px;
   height: 15px;
   width: 15px;
 }
 /* line 101, ../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
-  background-position: 0 -3282px;
+  background-position: 0 -3352px;
   height: 15px;
   width: 15px;
 }
@@ -1513,13 +1513,13 @@ h3 .toc-top {
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -4080px;
+  background-position: 0 -4150px;
   height: 15px;
   width: 15px;
 }
 /* line 278, ../sass/global/_global.scss */
 .html ul.links li.flag-follow a:hover .icon {
-  background-position: 0 -4015px;
+  background-position: 0 -4085px;
   height: 15px;
   width: 15px;
 }
@@ -1606,7 +1606,7 @@ h3 .toc-top {
   margin: 5px -.75em 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  background-position: 0 -4253px;
+  background-position: 0 -4323px;
   height: 16px;
   width: 16px;
 }

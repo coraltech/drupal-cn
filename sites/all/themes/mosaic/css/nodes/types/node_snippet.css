@@ -1,84 +1,84 @@
-/* line 506, icons/*.png */
-.icons-sprite, .node-snippet .snippet-node-pane-title .icon {
-  background: url('/images/icons-s28946c07b9.png') no-repeat;
+/* line 514, icons/*.png */
+.icons-sprite, .node-snippet .snippet-node-pane-title .icon, .node-snippet .field-collection-view .cp-cont .copy-btn {
+  background: url('/images/icons-s5a349c9b21.png') no-repeat;
 }
 
-/* line 12, ../../../sass/nodes/types/node_snippet.scss */
+/* line 13, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .layout-landing-1 .grid-11 {
   float: left;
   width: 31.33333%;
 }
-/* line 15, ../../../sass/nodes/types/node_snippet.scss */
+/* line 16, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .layout-landing-1 .grid-13-last {
   float: left;
   width: 66.66667%;
 }
-/* line 21, ../../../sass/nodes/types/node_snippet.scss */
+/* line 22, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .snippet-node-pane-title {
   font-size: 1.5em;
   line-height: 1.6667em;
   margin-top: 0.4167em;
   margin-bottom: 0.4167em;
 }
-/* line 22, ../../../sass/nodes/types/node_snippet.scss */
+/* line 23, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .snippet-node-pane-title a {
   color: #b02e1c;
   cursor: text;
   font-weight: normal;
 }
 
-/* line 31, ../../../sass/nodes/types/node_snippet.scss */
+/* line 32, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet {
   padding-bottom: 1.25em;
 }
-/* line 35, ../../../sass/nodes/types/node_snippet.scss */
+/* line 36, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .snippet-node-pane-title .icon {
   display: block;
   float: left;
   margin-top: 7px;
   margin-right: 5px;
-  background-position: 0 -3681px;
+  background-position: 0 -3751px;
   height: 24px;
   width: 24px;
 }
-/* line 43, ../../../sass/nodes/types/node_snippet.scss */
+/* line 44, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links {
   float: right;
   margin-bottom: 1.25em;
 }
-/* line 46, ../../../sass/nodes/types/node_snippet.scss */
+/* line 47, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.first {
   border-right: none;
 }
-/* line 50, ../../../sass/nodes/types/node_snippet.scss */
+/* line 51, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components {
   float: right;
 }
-/* line 52, ../../../sass/nodes/types/node_snippet.scss */
+/* line 53, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components li.comp_count {
   padding-right: 5px;
 }
-/* line 55, ../../../sass/nodes/types/node_snippet.scss */
+/* line 56, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components a {
   color: #9d9d9d;
 }
-/* line 58, ../../../sass/nodes/types/node_snippet.scss */
+/* line 59, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components a:hover {
   color: #5e5e5e;
 }
-/* line 64, ../../../sass/nodes/types/node_snippet.scss */
+/* line 65, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-container {
   border-bottom: none;
   margin: 0;
   padding: 0;
 }
-/* line 69, ../../../sass/nodes/types/node_snippet.scss */
+/* line 70, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view {
   padding: 0 0 1.25em;
   margin: 1.25em 0 1.25em;
   border-bottom: 1px solid #dddddd;
 }
-/* line 74, ../../../sass/nodes/types/node_snippet.scss */
+/* line 75, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-label {
   font-size: 1.125em;
   line-height: 1.1111em;
@@ -87,32 +87,71 @@
   color: #cc6b1d;
   float: left;
 }
-/* line 79, ../../../sass/nodes/types/node_snippet.scss */
+/* line 80, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-language {
   float: left;
   color: #898989;
   line-height: 2.5em;
   margin-left: 1em;
 }
-/* line 85, ../../../sass/nodes/types/node_snippet.scss */
+/* line 86, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description {
   clear: both;
 }
-/* line 87, ../../../sass/nodes/types/node_snippet.scss */
+/* line 88, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description .field-item {
   margin: 1.25em 0;
 }
-/* line 91, ../../../sass/nodes/types/node_snippet.scss */
+/* line 93, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-collection-view-links {
   display: none;
 }
-/* line 96, ../../../sass/nodes/types/node_snippet.scss */
+/* line 97, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .cp-cont {
+  height: 1.25em;
+  margin: 0 0 10px;
+  position: relative;
+}
+/* line 102, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .cp-cont .copy-btn {
+  color: transparent;
+  text-indent: -9999em;
+  display: block;
+  float: right;
+  background-position: 0 -3220px;
+  height: 20px;
+  width: 17px;
+}
+/* line 110, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .cp-cont .copy-msg {
+  position: absolute;
+  top: 25px;
+  right: -56px;
+  background: #cad5e2;
+  z-index: 8;
+  min-width: 125px;
+  text-align: center;
+}
+/* line 119, ../../../sass/nodes/types/node_snippet.scss */
+.node-snippet .field-collection-view .cp-cont .copy-msg .arrow-up {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 58px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #cad5e2;
+}
+/* line 130, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-description,
 .node-snippet .action-links-field-collection-add {
   display: none;
 }
 
-/* line 101, ../../../sass/nodes/types/node_snippet.scss */
+/* line 135, ../../../sass/nodes/types/node_snippet.scss */
 .pane-coral-wiki-ask-question .ask-btn .icon {
   margin-top: 0;
 }

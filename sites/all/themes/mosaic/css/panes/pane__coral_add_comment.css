@@ -1,6 +1,6 @@
-/* line 506, icons/*.png */
+/* line 514, icons/*.png */
 .icons-sprite, .pane-coral-add-comment .btn.comment .icon, .pane-coral-add-comment .btn.comments-hidden .icon, .pane-coral-add-comment .btn.comments-hidden:hover .icon {
-  background: url('/images/icons-s28946c07b9.png') no-repeat;
+  background: url('/images/icons-s5a349c9b21.png') no-repeat;
 }
 
 /* line 15, ../../sass/panes/pane__coral_add_comment.scss */
@@ -73,7 +73,7 @@
 }
 /* line 70, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comments-hidden .icon {
-  background-position: 0 -3220px;
+  background-position: 0 -3290px;
   height: 12px;
   width: 19px;
 }
