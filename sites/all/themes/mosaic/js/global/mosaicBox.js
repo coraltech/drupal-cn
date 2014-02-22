@@ -147,7 +147,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       var color    = (boxState) ? '#FFFFFF': 'transparent';
       var position = (boxState) ? 'relative': 'inherit';
       var padding  = (boxState) ? 15 : 0;
-      var zIndex   = (boxState) ? '6' : 'auto';
+      var zIndex   = (boxState) ? '7' : 'auto';
       
       if (boxState) {
         this.$question.addClass('boxopen');  
@@ -174,7 +174,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.$close.css({
         'cursor': 'pointer',
         'position': 'absolute',
-        'z-index': 7,
+        'z-index': 9,
         'font-size': '2em',
         'right': '-14px',
         'top': '-14px',
@@ -289,7 +289,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         'position': 'absolute',
         'top': 0,
         'left': 0,
-        'z-index': 5,
+        'z-index': 7,
         'display': display
       });
     }

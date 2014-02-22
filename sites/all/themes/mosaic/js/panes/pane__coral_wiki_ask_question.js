@@ -127,7 +127,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         return {
           'padding':'1em 1.5em',
           'position':'relative',
-          'z-index':'6',
+          'z-index':'8',
           'background-color':'#fff'
         }
       }
