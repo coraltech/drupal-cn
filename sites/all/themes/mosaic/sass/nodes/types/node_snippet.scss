@@ -1,6 +1,7 @@
 
 // Snippet node scss file
 
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/grid_mix';
@@ -73,7 +74,7 @@
     
     .field-name-field-component-label {
       @include h4;
-      color: darken($mdorange, 7%);
+      color: desaturate($mdblue, 15%);
       float: left;
     }
     .field-name-field-component-language {
@@ -88,8 +89,41 @@
         margin: $default_vert_unit 0;
       }
     }
+    
     .field-collection-view-links {
       display: none;
+    }
+    
+    .cp-cont {
+      height: $default_vert_unit;
+      margin: 0 0 10px;
+      position: relative;
+      
+      .copy-btn {
+        color: transparent;
+        text-indent: -9999em;
+        display: block;
+        float: right;
+        
+        @include icons-sprite('copy-clip'); 
+      }
+      .copy-msg {
+        position: absolute;
+        top: 25px;
+        right: -56px;
+        background: $ltblue;
+        z-index: 8;
+        min-width: 125px;
+        text-align: center;
+        
+        .arrow-up {
+          display: block;
+          position: absolute;
+          top: -10px;
+          right: 58px;
+          @include arrow-up(5px, $ltblue)
+        }
+      }
     }
   }
   .field-collection-description,
