@@ -140,6 +140,7 @@ function search_feature_views_default_views() {
     'page' => 'page',
     'project' => 'project',
     'question' => 'question',
+    'snippet' => 'snippet',
     'book' => 'book',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;

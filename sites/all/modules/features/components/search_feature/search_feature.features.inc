@@ -7,12 +7,10 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function search_feature_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function search_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
@@ -21,7 +19,7 @@ function search_feature_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function search_feature_views_api() {
+function search_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -51,6 +49,7 @@ function search_feature_default_search_api_index() {
               "page" : "page",
               "project" : "project",
               "question" : "question",
+              "snippet" : "snippet",
               "book" : "book"
             }
           }
