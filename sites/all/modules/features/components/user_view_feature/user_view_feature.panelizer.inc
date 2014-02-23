@@ -38,10 +38,10 @@ function user_view_feature_panelizer_defaults() {
       'leader' => NULL,
       'main' => NULL,
       'secondary' => NULL,
-      'follower' => NULL,
       'sub_footer' => array(
         'panel_tab_id_pattern' => 'region',
       ),
+      'follower' => NULL,
     ),
     'follower' => array(
       'style' => 'default',
@@ -57,11 +57,14 @@ function user_view_feature_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'follower';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'user_questions-user_questions_fields';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'user_content';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -87,7 +90,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clear',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -345,6 +351,27 @@ function user_view_feature_panelizer_defaults() {
     $pane->locks = array();
     $display->content['new-13'] = $pane;
     $display->panels['sub_footer'][3] = 'new-13';
+    $pane = new stdClass();
+    $pane->pid = 'new-14';
+    $pane->panel = 'sub_footer';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_bookmarks-user_bookmarked_snippets';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Snippets',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-14'] = $pane;
+    $display->panels['sub_footer'][4] = 'new-14';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
