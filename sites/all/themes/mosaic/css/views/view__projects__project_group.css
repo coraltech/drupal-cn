@@ -1,6 +1,6 @@
-/* line 514, icons/*.png */
+/* line 522, icons/*.png */
 .icons-sprite, .pane-projects-project-group.vagrant-boxes .icon, .pane-projects-project-group.clusters .icon, .pane-projects-project-group.cluster-conf .icon, .pane-projects-project-group.ruby-comps .icon, .pane-projects-project-group.toolbox .icon, .pane-projects-project-group.puppet-comps .icon {
-  background: url('/images/icons-s5a349c9b21.png') no-repeat;
+  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
 }
 
 /* line 10, ../../sass/views/view__projects__project_group.scss */
@@ -62,7 +62,7 @@
 /* line 53, ../../sass/views/view__projects__project_group.scss */
 .pane-projects-project-group.toolbox .icon {
   top: 3px;
-  background-position: 0 -2512px;
+  background-position: 0 -2608px;
   height: 28px;
   width: 33px;
 }

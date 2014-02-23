@@ -949,18 +949,18 @@ table a.tabledrag-handle .handle {
   padding: 0.5em 0.2em;
 }
 
-/* line 514, icons/*.png */
+/* line 522, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s5a349c9b21.png') no-repeat;
+  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
 }
 
-/* line 514, icons/*.png */
+/* line 522, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-s5a349c9b21.png') no-repeat;
+  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
 }
 
 /* line 9, ../sass/global/comments.scss */
@@ -1058,37 +1058,37 @@ table a.tabledrag-handle .handle {
 }
 /* line 89, ../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
-  background-position: 0 -4562px;
+  background-position: 0 -4658px;
   height: 15px;
   width: 15px;
 }
 /* line 92, ../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
-  background-position: 0 -4497px;
+  background-position: 0 -4593px;
   height: 15px;
   width: 15px;
 }
 /* line 95, ../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
-  background-position: 0 -3290px;
+  background-position: 0 -3386px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
-  background-position: 0 -4627px;
+  background-position: 0 -4723px;
   height: 15px;
   width: 15px;
 }
 /* line 101, ../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
-  background-position: 0 -3352px;
+  background-position: 0 -3448px;
   height: 15px;
   width: 15px;
 }
 /* line 104, ../sass/global/comments.scss */
 .comment li.comment-reply a:hover span.icon {
-  background-position: 0 -3158px;
+  background-position: 0 -3254px;
   height: 12px;
   width: 19px;
 }
@@ -1513,13 +1513,13 @@ h3 .toc-top {
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -4150px;
+  background-position: 0 -4246px;
   height: 15px;
   width: 15px;
 }
 /* line 278, ../sass/global/_global.scss */
 .html ul.links li.flag-follow a:hover .icon {
-  background-position: 0 -4085px;
+  background-position: 0 -4181px;
   height: 15px;
   width: 15px;
 }
@@ -1547,7 +1547,7 @@ h3 .toc-top {
   display: block;
   float: left;
   margin: 3px 0 0 0;
-  background-position: 0 -2816px;
+  background-position: 0 -2912px;
   height: 16px;
   width: 15px;
 }
@@ -1559,20 +1559,20 @@ h3 .toc-top {
 /* line 308, ../sass/global/_global.scss */
 .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon {
-  background-position: 0 -2882px;
+  background-position: 0 -2978px;
   height: 16px;
   width: 15px;
 }
 /* line 314, ../sass/global/_global.scss */
 .flag-abuse-node a.unflag-action .icon {
-  background-position: 0 -3014px;
+  background-position: 0 -3110px;
   height: 16px;
   width: 15px;
 }
 /* line 317, ../sass/global/_global.scss */
 .flag-abuse-node a.unflag-action:hover .icon {
   color: #919191;
-  background-position: 0 -2948px;
+  background-position: 0 -3044px;
   height: 16px;
   width: 15px;
 }
@@ -1606,7 +1606,7 @@ h3 .toc-top {
   margin: 5px -.75em 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  background-position: 0 -4323px;
+  background-position: 0 -4419px;
   height: 16px;
   width: 16px;
 }
@@ -1970,19 +1970,19 @@ div.ui-tabs .ui-widget-header {
   background: #cad5e2;
   border-style: none none solid none;
   border-color: #a2b6cc;
-  background: #bac8d9;
+  background: #5780bd;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  background: -moz-linear-gradient(top, #507bba 0%, #5780bd 50%, #4875b7 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cad5e2), color-stop(50%, #bac8d9), color-stop(100%, #c0cddd));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #507bba), color-stop(50%, #5780bd), color-stop(100%, #4875b7));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  background: -webkit-linear-gradient(top, #507bba 0%, #5780bd 50%, #4875b7 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  background: -o-linear-gradient(top, #507bba 0%, #5780bd 50%, #4875b7 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  background: -ms-linear-gradient(top, #507bba 0%, #5780bd 50%, #4875b7 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, #cad5e2 0%, #bac8d9 50%, #c0cddd 100%);
+  background: linear-gradient(to bottom, #507bba 0%, #5780bd 50%, #4875b7 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
   /* IE6-9 */
@@ -2001,18 +2001,19 @@ div.ui-tabs .ui-tabs-panel {
   border-style: none solid solid solid;
   border-color: #a2b6cc;
   border-width: 1px;
+  padding: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 542, ../sass/global/_global.scss */
+/* line 543, ../sass/global/_global.scss */
 div.ui-tabs .ui-state-default {
   border-color: #a2b6cc;
 }
 
-/* line 550, ../sass/global/_global.scss */
+/* line 551, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs {
   border: none;
   font-size: 1em;
@@ -2025,22 +2026,22 @@ body.vertical-panels-tabs .ui-tabs:after {
   display: table;
   clear: both;
 }
-/* line 558, ../sass/global/_global.scss */
+/* line 559, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs > .item-list {
   position: absolute;
   width: 12em;
 }
-/* line 563, ../sass/global/_global.scss */
+/* line 564, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-panel {
   margin-left: 12em;
   padding: 0 1em;
 }
-/* line 568, ../sass/global/_global.scss */
+/* line 569, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav {
   border: none;
   background: none;
 }
-/* line 572, ../sass/global/_global.scss */
+/* line 573, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li.ui-corner-top {
   border: none;
   background: none;
@@ -2050,57 +2051,57 @@ body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li.ui-corner-top {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 577, ../sass/global/_global.scss */
+/* line 578, ../sass/global/_global.scss */
 body.vertical-panels-tabs .ui-tabs .ui-tabs-nav li a {
   width: 10em;
   line-height: 2.5em;
   border: 1px solid #dddddd;
 }
 
-/* line 589, ../sass/global/_global.scss */
+/* line 590, ../sass/global/_global.scss */
 form .field-type-file .file-widget {
   padding: 0.3125em;
 }
-/* line 592, ../sass/global/_global.scss */
+/* line 593, ../sass/global/_global.scss */
 form .field-type-file label {
   clear: both;
 }
-/* line 595, ../sass/global/_global.scss */
+/* line 596, ../sass/global/_global.scss */
 form .field-type-file input.form-text {
   font-size: 100%;
   width: auto;
 }
-/* line 599, ../sass/global/_global.scss */
+/* line 600, ../sass/global/_global.scss */
 form .field-type-file table {
   width: 100%;
   font-size: 90%;
 }
-/* line 603, ../sass/global/_global.scss */
+/* line 604, ../sass/global/_global.scss */
 form .field-type-file table td .form-submit {
   margin-top: 1em;
 }
-/* line 607, ../sass/global/_global.scss */
+/* line 608, ../sass/global/_global.scss */
 form .field-type-file .form-item .description {
   background: #fff6b6;
 }
-/* line 610, ../sass/global/_global.scss */
+/* line 611, ../sass/global/_global.scss */
 form .field-type-file table .description {
   background: none;
 }
 
-/* line 615, ../sass/global/_global.scss */
+/* line 616, ../sass/global/_global.scss */
 .pane-node-file {
   margin-bottom: 1.25em;
 }
-/* line 617, ../sass/global/_global.scss */
+/* line 618, ../sass/global/_global.scss */
 .pane-node-file table {
   font-size: 90%;
 }
-/* line 619, ../sass/global/_global.scss */
+/* line 620, ../sass/global/_global.scss */
 .pane-node-file table td {
   padding: 4px 3px 2px;
 }
-/* line 623, ../sass/global/_global.scss */
+/* line 624, ../sass/global/_global.scss */
 .pane-node-file thead th {
   text-transform: lowercase;
   font-variant: small-caps;
