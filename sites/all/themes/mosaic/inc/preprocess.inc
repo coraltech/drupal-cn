@@ -103,13 +103,13 @@ function mosaic_preprocess_views_view_fields(&$vars) {
 function mosaic_preprocess_views_view_field(&$vars) {
   // By alias
   $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->field_alias;
-
+//dpm($func);
   if (function_exists($func)) $func($vars);
   
   // By real field name
   if ($vars['field']->real_field != $vars['field']->field_alias) {
     $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field;
-//dpm($func);
+
     if (function_exists($func)) $func($vars);
   }
 }
@@ -199,7 +199,7 @@ function mosaic_preprocess_panels_pane__entity_field___node_body(&$vars) {
 
 
 // Update user questions pane title to be possessive.
-function mosaic_preprocess_panels_pane__views_panes___user_questions_user_questions_fields(&$vars) {
+function mosaic_preprocess_panels_pane__views_panes___user_content_user_questions_fields(&$vars) {
   // Build a nicer pane title than say, Questions...
   $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
   
@@ -208,10 +208,29 @@ function mosaic_preprocess_panels_pane__views_panes___user_questions_user_questi
   $vars['title'] = $title;
 }
 
+function mosaic_preprocess_panels_pane__views_panes___user_content_user_snippets_fields(&$vars) {
+    // Build a nicer pane title than say, Questions...
+  $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
+  
+  // Add icon holder for the cloud Q's and get a decent prefix to the name  
+  $title = '<span class="icon"></span>'.mosaic_possessive($user_name)." snippets";
+  $vars['title'] = $title;
+}
+
 
 // Answer count output manipulation - add prefix
 function mosaic__preprocess_views_views_field_field_answer_count_value(&$vars) {
   $vars['output'] = '<span class="cnt">'.$vars['output'].'</span><span class="txt">'.format_plural($vars['output'], ' answer', ' answers').'</span>';
+}
+
+
+// Answer count output manipulation - add prefix
+function mosaic__preprocess_views_views_field_field_data_field_snippet_components_delta(&$vars) {
+  //dpm($vars['field']);
+  //dpm($vars['row']);
+  $out = $vars['output'];
+  $cnt = 1 + $out;
+  $vars['output'] = '<span class="cnt">'.$cnt.'</span><span class="txt">'.format_plural($cnt, ' component', ' components').'</span>';
 }
 
 
