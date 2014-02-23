@@ -519,7 +519,7 @@ div.ui-tabs {
     border-style: none none solid none;
     border-color: darken($ltblue, 12%);
     
-    @include reflected-v-gradient($ltblue, darken($ltblue, 5%), darken($ltblue, 3%));
+    @include reflected-v-gradient(lighten($mdblue, 5%), lighten($mdblue, 7%), lighten($mdblue, 3%));
     
     /*&:before {
       position: absolute;
@@ -536,6 +536,7 @@ div.ui-tabs {
     border-style: none solid solid solid;
     border-color: darken($ltblue, 12%);
     border-width: 1px;
+    padding: 0;
     @include border-radius(0);
   }
   
