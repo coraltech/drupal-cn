@@ -8,9 +8,9 @@
 .view-user-bookmarks {
   
   .views-row {
-    margin: .625em 0;
-    border-bottom: 1px solid $ltgray;
-    padding: ($default_vert_unit / 2) 0 $default_vert_unit;
+    margin: 0 1em;
+    border-bottom: 1px solid #dddddd;
+    padding: $default_vert_unit 0;
   }
   .views-row-odd {
 
@@ -26,6 +26,7 @@
   }
   .views-field-body {
     color: darken($mdgray, 7%);
+    margin: ($default_vert_unit / 2) 0;
   }
   .views-field-field-answer-count {
     color: $mdgray;
@@ -39,6 +40,34 @@
     color: $dkorange;
     font-size: .9em;
   }
+
+  .views-field-field-tags {
+    //float: right;
+    margin: ($default_vert_unit / 2) 0 0;
+    //white-space: nowrap;
+
+    .views-label {
+      float: left;
+      display: block;
+      text-indent: -9999em;
+      color: transparent;
+      margin-top: 3px;
+      margin-right: 5px;
+      @include icons-sprite('coral-tag');
+    }
+    a {
+      background: $ltgray;
+      color: $mdgray;
+      font-size: 85%;
+      margin: 0 0 5px;
+      padding: 0 3px;
+       
+      &:hover {
+        color: $dkgray;
+      }
+    }
+  }
+
   .precrp {
     margin-bottom: 0;
     margin-top: $default_vert_unit;
