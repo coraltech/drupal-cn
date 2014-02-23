@@ -202,6 +202,10 @@ Drupal.coralQA = Drupal.coralQA || {};
 
           // Answers that live in the additional answers target
           $answersTgt = cba.$question.find('.pane-coral-answers-target');
+          
+          // Add additional answers title
+          if (!$bestAnswer.length) $answersTgt.prepend('<h2 class="pane-title">Additional answers</h2>')
+          
           $answers = $answersTgt.find('.node-answer');
           $answers.each(function() { // un-hide the best answer button
             if (!$(this).hasClass('node-'+answerID)) { // if this isnt the selected answer
