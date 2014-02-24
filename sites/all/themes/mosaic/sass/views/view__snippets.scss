@@ -3,16 +3,19 @@
 
 @import 'global/buttons';
 @import 'global/colors';
+@import 'global/headers';
 @import 'global/fonts';
-
+@import 'global/icons';
 
 // Note the proper scope of these styles
 .view-snippets.view-display-id-new_snippets {
   position: relative;
+  margin-bottom: $default_vert_unit;
+
   .q-filtered-tag {
     position: absolute;
     top: -2.75em;
-    left: 7.5em;
+    left: 12em;
     color: $mdgray;
     background: $ltyellow;
     padding: 3px 5px;
@@ -62,5 +65,20 @@
     }
   }
   .views-row-first {}
+}
 
+// This assumes we are looking at the snippets page
+.page-node .pane-coral-page-title {
+  h1 {
+    color: $mdred;
+    //@include huge;
+    //margin-bottom: .2em;
+  }
+
+  .icon {
+    display: block;
+    float: left;
+    margin: -3px 10px 0 0;
+    @include icons-sprite('coral-snippet');
+  }
 }

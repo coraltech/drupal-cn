@@ -44,7 +44,7 @@
 /* line 44, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links {
   float: right;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.625em;
 }
 /* line 47, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.first {
@@ -84,35 +84,36 @@
   line-height: 1.1111em;
   margin-top: 0.5555em;
   margin-bottom: 0.5555em;
+  margin-top: 0;
   color: #56719a;
   float: left;
 }
-/* line 80, ../../../sass/nodes/types/node_snippet.scss */
+/* line 81, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-language {
   float: left;
   color: #898989;
   line-height: 2.5em;
   margin-left: 1em;
 }
-/* line 86, ../../../sass/nodes/types/node_snippet.scss */
+/* line 87, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description {
   clear: both;
 }
-/* line 88, ../../../sass/nodes/types/node_snippet.scss */
+/* line 89, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description .field-item {
   margin: 1.25em 0;
 }
-/* line 93, ../../../sass/nodes/types/node_snippet.scss */
+/* line 94, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-collection-view-links {
   display: none;
 }
-/* line 97, ../../../sass/nodes/types/node_snippet.scss */
+/* line 98, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont {
   height: 1.25em;
   margin: 0 0 10px;
   position: relative;
 }
-/* line 102, ../../../sass/nodes/types/node_snippet.scss */
+/* line 103, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont .copy-btn {
   color: transparent;
   text-indent: -9999em;
@@ -122,7 +123,7 @@
   height: 20px;
   width: 17px;
 }
-/* line 110, ../../../sass/nodes/types/node_snippet.scss */
+/* line 111, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont .copy-msg {
   position: absolute;
   top: 25px;
@@ -132,7 +133,7 @@
   min-width: 125px;
   text-align: center;
 }
-/* line 119, ../../../sass/nodes/types/node_snippet.scss */
+/* line 120, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont .copy-msg .arrow-up {
   display: block;
   position: absolute;
@@ -145,13 +146,13 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #cad5e2;
 }
-/* line 130, ../../../sass/nodes/types/node_snippet.scss */
+/* line 131, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-description,
 .node-snippet .action-links-field-collection-add {
   display: none;
 }
 
-/* line 135, ../../../sass/nodes/types/node_snippet.scss */
+/* line 136, ../../../sass/nodes/types/node_snippet.scss */
 .pane-coral-wiki-ask-question .ask-btn .icon {
   margin-top: 0;
 }

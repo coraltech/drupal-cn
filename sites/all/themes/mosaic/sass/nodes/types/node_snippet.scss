@@ -43,7 +43,7 @@
   }
   .pane-node-links {
     float: right;
-    margin-bottom: $default_vert_unit;
+    margin-bottom: $default_vert_unit / 2;
     li.first {
       border-right: none;
     }
@@ -74,6 +74,7 @@
     
     .field-name-field-component-label {
       @include h4;
+      margin-top: 0;
       color: desaturate($mdblue, 15%);
       float: left;
     }
