@@ -1,5 +1,6 @@
-/* line 6, ../../sass/forms/form__answer_node_form.scss */
+/* line 7, ../../sass/forms/form__answer_node_form.scss */
 .node-answer-form .field-name-field-tags,
-.node-answer-form .field-name-field-question {
+.node-answer-form .field-name-field-question,
+.node-answer-form .field-name-field-comment-count {
   display: none;
 }
