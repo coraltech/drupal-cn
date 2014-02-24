@@ -226,8 +226,6 @@ function mosaic__preprocess_views_views_field_field_answer_count_value(&$vars) {
 
 // Answer count output manipulation - add prefix
 function mosaic__preprocess_views_views_field_field_data_field_snippet_components_delta(&$vars) {
-  //dpm($vars['field']);
-  //dpm($vars['row']);
   $out = $vars['output'];
   $cnt = 1 + $out;
   $vars['output'] = '<span class="cnt">'.$cnt.'</span><span class="txt">'.format_plural($cnt, ' component', ' components').'</span>';
