@@ -112,6 +112,11 @@
   float: none;
   width: 100%;
 }
+/* line 110, ../../../sass/nodes/types/node_book.scss */
+.page-comment-reply .layout-node-1 .main-content h1.page-title,
+.node-type-book.node-talk .layout-node-1 .main-content h1.page-title {
+  margin-bottom: 0;
+}
 /* line 114, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-node-title,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-node-title {

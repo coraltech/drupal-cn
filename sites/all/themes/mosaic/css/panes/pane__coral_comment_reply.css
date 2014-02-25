@@ -19,13 +19,13 @@
 /* line 25, ../../sass/panes/pane__coral_comment_reply.scss */
 .page-comment-reply .pane-coral-comment-reply .pane-content {
   padding: 1em 1.25em;
-  background: #cad5e2;
-  background: -moz-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cad5e2), color-stop(100%, #c4c4c4));
-  background: -webkit-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
-  background: -o-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
-  background: -ms-linear-gradient(top, #cad5e2 0%, #c4c4c4 100%);
-  background: linear-gradient(to bottom, #cad5e2 0%, #c4c4c4 100%);
+  background: #e1e7ef;
+  background: -moz-linear-gradient(top, #e1e7ef 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e1e7ef), color-stop(100%, #dddddd));
+  background: -webkit-linear-gradient(top, #e1e7ef 0%, #dddddd 100%);
+  background: -o-linear-gradient(top, #e1e7ef 0%, #dddddd 100%);
+  background: -ms-linear-gradient(top, #e1e7ef 0%, #dddddd 100%);
+  background: linear-gradient(to bottom, #e1e7ef 0%, #dddddd 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
 /* line 30, ../../sass/panes/pane__coral_comment_reply.scss */
@@ -41,7 +41,7 @@
 /* line 39, ../../sass/panes/pane__coral_comment_reply.scss */
 .page-comment-reply .pane-coral-comment-reply input.form-text {
   font-size: 130%;
-  width: 99.8%;
+  width: 98.8%;
 }
 
 /* line 46, ../../sass/panes/pane__coral_comment_reply.scss */
