@@ -1,0 +1,26 @@
+/* line 11, ../../sass/forms/form__node_form.scss */
+.node-form .field-name-body .form-item {
+  margin-bottom: 0;
+}
+/* line 14, ../../sass/forms/form__node_form.scss */
+.node-form .field-name-body .description {
+  margin: 0 0 0.625em 0;
+}
+/* line 18, ../../sass/forms/form__node_form.scss */
+.node-form .field-name-body .filter-guidelines {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -175px;
+  width: 350px;
+  background: #fffce9;
+  padding: 1.25em;
+  z-index: 8;
+}
+/* line 31, ../../sass/forms/form__node_form.scss */
+.node-form .field-name-body .filter-guidelines .more {
+  display: block;
+  float: right;
+  margin-top: 1.25em;
+}
