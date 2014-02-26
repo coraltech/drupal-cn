@@ -24,7 +24,7 @@
   }
   .pane-content {
     padding: 1em $default_vert_unit;
-    @include linear-v-gradient($ltblue, darken($ltgray, 10%));
+    @include linear-v-gradient(lighten($ltblue, 7%), $ltgray);
   }
   .form-item-subject label, 
   .filter-wrapper {
@@ -38,7 +38,7 @@
   
   input.form-text {
     font-size: 130%;
-    width: 99.8%;
+    width: 98.8%;
   }
 }
 // Controls form layout style
