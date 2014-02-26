@@ -1,0 +1,37 @@
+
+// This is a generic node form scss file
+//  It is the scss compliment to form__node_form.js
+
+// At present it only serves to style the filter guidelines
+
+@import 'global/colors';
+@import 'global/fonts';
+
+.node-form .field-name-body {
+  .form-item {
+    margin-bottom: 0;
+  }
+  .description {
+    margin: 0 0 ($default_vert_unit / 2) 0;
+  }
+  
+  .filter-guidelines {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -175px;
+    
+    width: 350px;
+    //left: -50%;
+    background: lighten($ltyellow, 10%);
+    padding: $default_vert_unit;
+    z-index: 8;
+    
+    .more {
+      display: block;
+      float: right;
+      margin-top: $default_vert_unit;
+    }
+  }
+}
