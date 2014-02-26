@@ -42,11 +42,23 @@ function field_defaults_coral_tag_search_form__textfield_defaults($form, &$matri
 function field_defaults_comment_node_book_form__textfield_defaults($form, &$matrix) {
   // Selectors  
   $matrix['comment_node_book_form']['selectors'] = array(
-    '.pane-node-comment-form .form-item-subject .form-text' => 'Optional title',
-    '.pane-coral-comment-reply .form-item-subject .form-text' => 'Optional title'
+    '.node-type-book .pane-node-comment-form .form-item-subject .form-text' => 'Optional title',
+    '.page-comment-reply .pane-coral-comment-reply .form-item-subject .form-text' => 'Optional title'
   );
   // Custom validation
   $matrix['comment_node_book_form']['validate'] = array('field_defaults_textfield_comment_node_book_form_validate');
+}
+
+
+// Node snippet comment form
+function field_defaults_comment_node_snippet_form__textfield_defaults($form, &$matrix) {
+  // Selectors 
+  $matrix['comment_node_snippet_form']['selectors'] = array(
+    '.node-type-snippet .pane-node-comment-form .form-item-subject .form-text' => 'Optional title',
+    '.page-comment-reply .pane-coral-comment-reply .form-item-subject .form-text' => 'Optional title'
+  );
+  // Custom validation
+  $matrix['comment_node_snippet_form']['validate'] = array('field_defaults_textfield_comment_node_snippet_form_validate');
 }
 
 
@@ -125,7 +137,17 @@ function field_defaults_search_form__search_user__textfield_options($form) {
 //  added above ^
 function field_defaults_textfield_comment_node_book_form_validate($form, &$form_state) {
   $matrix = variable_get('field_defaults_textfield_matrix', array());
-  if ($form_state['values']['subject'] == $matrix[$form['#form_id']]['selectors']['.pane-node-comment-form .form-item-subject .form-text']) {
+  if ($form_state['values']['subject'] == $matrix[$form['#form_id']]['selectors']['.node-type-book .pane-node-comment-form .form-item-subject .form-text']) {
+    form_set_value($form['subject'], '', $form_state);  //reset the input - dont feed in the default
+  }
+}
+
+
+// Validator for the comment node snippet form defaults.
+//  added above ^
+function field_defaults_textfield_comment_node_snippet_form_validate($form, &$form_state) {
+  $matrix = variable_get('field_defaults_textfield_matrix', array());
+  if ($form_state['values']['subject'] == $matrix[$form['#form_id']]['selectors']['.node-type-snippet .pane-node-comment-form .form-item-subject .form-text']) {
     form_set_value($form['subject'], '', $form_state);  //reset the input - dont feed in the default
   }
 }
