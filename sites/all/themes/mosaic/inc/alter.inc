@@ -6,7 +6,17 @@
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Lets see if this is a node type edit form.
   //  if so, lets add the type's css  
-  if (str_replace('_node_form', '', $form_id) != $form_id) _mosiac_be_node_load_by_type($form['#node']);
+  if (str_replace('_node_form', '', $form_id) != $form_id) {
+    // Load type related styles and js  
+    _mosiac_be_node_load_by_type($form['#node']);
+    
+    // Load default node form and css styles
+    $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__node_form';
+    $js_path = drupal_get_path('theme', 'mosaic').'/js/forms/form__node_form';
+    
+    if (file_exists($css_path.'.css')) drupal_add_css($css_path.'.css', array('group' => CSS_THEME)); // - targeted type
+    if (file_exists($js_path.'.js'))  drupal_add_js($js_path.'.js', array('group' => JS_THEME));
+  }
 
   // Add the js - basic type
   $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__'.$form_id;
