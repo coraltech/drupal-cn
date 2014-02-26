@@ -11,7 +11,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       try { // Use try to prevent systemic failure
         $('.pane-node-comment-form, .pane-coral-comment-reply').each(function(i) {
-          new Drupal.mosaic.manageCommentForm($(this));
+          new Drupal.mosaic.manageCommentBookForm($(this));
         })
       }
       catch(err) {
@@ -19,7 +19,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       }
       
       try {
-        new Drupal.mosaic.manageCommentTitles();
+        new Drupal.mosaic.manageCommentBookTitles();
       }
       catch(err) {
         console.log('mosaicCommentsBookInit reported errors! Error: '+err);
@@ -28,7 +28,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
   // Removed unneeded comment titles
-  Drupal.mosaic.manageCommentTitles = function() {
+  Drupal.mosaic.manageCommentBookTitles = function() {
     $comments = $('.comment');
     if ($comments.length) {
       $comments.each(function(i) {
@@ -49,7 +49,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   }
   
   // Manages comment form layout
-  Drupal.mosaic.manageCommentForm = function($form) {
+  Drupal.mosaic.manageCommentBookForm = function($form) {
     if ( // Comments can happen on these two types (body classes) so far
       $form.parents('.page-node-talk').length || 
       $form.parents('.page-comment-reply').length
