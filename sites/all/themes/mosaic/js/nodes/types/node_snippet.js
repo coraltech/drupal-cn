@@ -370,30 +370,6 @@ Drupal.mosaic = Drupal.mosaic || {};
 
   		// Button to add a new resource
   		if (this.mode === 'edit') this.$addMore = $node.find('.field-add-more-submit');
-  		
-  		// Finally, add a more link to the node (teaser)
-  		if (this.$node.hasClass('node-teaser')) {
-  			var $nodeLinks = this.$node.find('.pane-node-links ul.links');
-  			var href = this.$node.find('.snippet-node-pane-title a').attr('href');
-	  		var readMore = '<li class="read-more first"><a href="'+href+'"><span class="icon"></span>Read more</a></li>';
-	  			
-  			if ($nodeLinks.length) {
-	  			var $links = $nodeLinks.find('li').removeClass('first');
-	  			var hasMore = false;
-	  			
-	  			$links.each(function() {
-	  				if ($(this).find('a').text() === Drupal.t('Read more')) hasMore = true;	
-	  			});
-	  			
-	  			if (!hasMore) {
-	  				$nodeLinks.prepend(readMore);
-  				}
-  			}
-  			else {
-  				var $comp = this.$node.find('.pane-node-links .pane-content');
-  				$comp.prepend('<ul class="links inline">'+readMore+'</ul>');
-  			}
-  		}
   	}
   	catch (err) {
   		console.log('initNode errored: '+err);
