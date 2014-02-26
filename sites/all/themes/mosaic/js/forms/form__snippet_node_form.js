@@ -125,7 +125,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.$close.css({
         'cursor': 'pointer',
         'position': 'absolute',
-        'z-index': 7,
+        'z-index': 9,
         'font-size': '2em',
         'right': '-14px',
         'top': '-14px',
