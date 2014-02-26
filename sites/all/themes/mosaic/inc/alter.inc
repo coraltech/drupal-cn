@@ -27,6 +27,10 @@ function mosaic_form_comment_node_book_form_alter(&$form, &$form_state) {
   $form['#action'] = '/'.current_path();  
   $form['author']['_author']['#type'] = 'hidden';
 }
+function mosaic_form_comment_node_snippet_form_alter(&$form, &$form_state) {
+  mosaic_form_comment_node_book_form_alter($form, $form_state);
+}
+
 
 function mosaic_form_user_login_alter(&$form, &$form_state) {
   $form['#attributes']['class'][] = 'user-login';
@@ -59,12 +63,14 @@ function mosaic_form_question_node_form_alter(&$form, &$form_state) {
 
 function mosaic_node_view_alter(&$build) {
   // Change book node links (send add comment to discussion page)
+  // Note: this only works on non-panelized displays, for changing links in
+  // panelized nodes, see function mosaic_preprocess_panels_pane__node_links(&$vars)
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'book') {
     $node = $build['#node'];
+    
     if (isset($build['links']['comment']) && $build['links']['comment']['#links']) {
       $links = $build['links']['comment']['#links'];
       unset($build['links']['comment']['#links']);
-      
       $new_links = array();
       foreach ($links as $i => $link) {
         if ($link['title'] == 'Discussion') {
@@ -81,6 +87,5 @@ function mosaic_form_contact_site_form_alter(&$form, &$form_state) {
   $form['subject']['#required'] = FALSE;
   $form['name']['#title'] = t('Name');
   $form['mail']['#title'] = t('Email');
-  //dpm($form);
 }
 
