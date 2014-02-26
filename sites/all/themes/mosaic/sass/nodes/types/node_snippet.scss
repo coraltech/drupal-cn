@@ -47,6 +47,47 @@
     li.first {
       border-right: none;
     }
+    .icon {
+      display: block;
+      float: left;
+      margin: 2px 2px 0 0;
+    }
+    li.discussion a {
+      .icon {
+        @include icons-sprite('coral-comment');
+      }
+    
+      &.active .icon,
+      &:hover .icon {
+        @include icons-sprite('coral-comment-on');
+      }
+    }
+    li.node-readmore {
+      .icon {
+        @include icons-sprite('coral-new-page-off');
+      }
+    
+      &.active .icon,
+      &:hover .icon {
+        @include icons-sprite('coral-new-page');
+      }
+    }
+    li.comp_count .cmpcnt {
+      color: $mdgreen;
+    }
+  }
+
+  .pane-coral-flag-abuse-node {
+    font-size: .9em;
+    float: right;
+    padding: 0 0 0 4px;
+    a {
+      color: lighten($mdgray,15%);
+      
+      &:hover {
+        color: darken($mdgray, 10%);
+      }
+    }
   }
   .pane-coral-snippet-components {
     float: right;
@@ -81,7 +122,6 @@
     .field-name-field-component-language {
       float: left;
       color: lighten($mdgray, 7%);
-      line-height: 2.5em;
       margin-left: 1em;
     }
     .field-name-field-component-description {
@@ -135,4 +175,61 @@
 
 .pane-coral-wiki-ask-question .ask-btn .icon {
   margin-top: 0;
+}
+
+
+// Talk section styles - see Discussion (talk) tab
+.page-comment-reply .layout-node-1 .main-content,
+.node-type-snippet.node-talk .layout-node-1 .main-content { 
+  position: relative;
+  
+  h1.page-title {
+    margin-bottom: 0;
+  }
+
+  .pane-entity-view.pane-node {
+    background: lighten($ltgray, 10%);
+    margin-left: 1em;
+    margin-bottom: $default_vert_unit;
+
+    h2.node-title {
+      display: none;
+    }
+
+    .snippet-node-pane-title {
+      background: $mdblue;
+      @include h0;
+      padding: ($default_vert_unit / 2);
+      margin: -16px -16px 0;
+      
+      .icon {
+        margin-top: 0;
+      }
+      a {
+        font-weight: bold;
+        color: $white;
+      }
+    }
+
+    & > .pane-content {
+      border: 1px solid $mdgray;
+      padding: 16px 16px;
+      .node-snippet > .panel-display { margin-top: $default_vert_unit; }
+    }
+    ul.links.inline {
+      margin: 0;
+
+      &:after {
+        display: none;
+      }
+
+      li.first {
+        border-right: none;
+      }
+    }
+
+    @include col(10, false, right);   
+  }
+
+  @include col(24, true, none); 
 }
