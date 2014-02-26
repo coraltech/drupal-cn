@@ -179,11 +179,42 @@ function mosaic_preprocess_panels_pane__node_title(&$vars) {
 
 // Ugh, more links!
 function mosaic_preprocess_panels_pane__node_links(&$vars) {
-  if (isset($vars['content']['node']['#links']['node-readmore'])) {
-    unset($vars['content']['node']['#links']['node-readmore']);
-  }
-  if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
-    unset($vars['content']['flag']['#links']['flag-abuse_node']);
+  $node = $vars['display']->context['panelizer']->data;
+
+  switch ($node->type) {
+    case 'question': 
+    case 'answer': 
+    case 'comment':
+      if (isset($vars['content']['node']['#links']['node-readmore'])) {
+        unset($vars['content']['node']['#links']['node-readmore']);
+      }
+      if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
+        unset($vars['content']['flag']['#links']['flag-abuse_node']);
+      }  
+      break;
+
+    case 'snippet':
+      // Rem flag link for re-addition via pane.
+      if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
+        unset($vars['content']['flag']['#links']['flag-abuse_node']);
+      } 
+      
+      //Modify comment links - rem Add comment
+      if (isset($vars['content']['comment']['#links'])) {
+        $links = $vars['content']['comment']['#links'];
+      }
+      
+      unset($vars['content']['comment']['#links']);
+      $new_links = array();
+      foreach ($links as $i => $link) {
+        if ($link['title'] == 'Discussion') {
+          $new_links['discussion'] = $link; 
+        }
+      }
+      $vars['content']['comment']['#links'] = $new_links;
+      break;
+
+    default: break;
   }
 }
 
