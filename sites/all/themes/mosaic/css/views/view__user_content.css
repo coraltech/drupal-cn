@@ -1,6 +1,6 @@
-/* line 522, icons/*.png */
-.icons-sprite, .view-user-content .views-field-field-tags .views-label, .pane-user-content-user-questions-fields .icon, .pane-user-content-user-snippets-fields .icon {
-  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
+/* line 586, icons/*.png */
+.icons-sprite, .view-user-content .views-field-field-tags .views-label, .pane-user-content-user-questions-fields .pane-title .icon, .pane-user-content-user-snippets-fields .pane-title .icon {
+  background: url('/images/icons-sfc34dd85de.png') no-repeat;
 }
 
 /* line 11, ../../sass/views/view__user_content.scss */
@@ -61,7 +61,7 @@
   color: transparent;
   margin-top: 3px;
   margin-right: 5px;
-  background-position: 0 -3643px;
+  background-position: 0 -4203px;
   height: 14px;
   width: 11px;
 }
@@ -103,7 +103,7 @@
   padding-top: 1em;
 }
 /* line 95, ../../sass/views/view__user_content.scss */
-.pane-user-content-user-questions-fields .icon {
+.pane-user-content-user-questions-fields .pane-title .icon {
   margin: -8px .5em 0;
   display: block;
   float: left;
@@ -112,13 +112,13 @@
   width: 90px;
 }
 
-/* line 104, ../../sass/views/view__user_content.scss */
+/* line 105, ../../sass/views/view__user_content.scss */
 .pane-user-content-user-snippets-fields .pane-title {
   margin-top: 0;
   padding-top: 1em;
 }
 /* line 109, ../../sass/views/view__user_content.scss */
-.pane-user-content-user-snippets-fields .icon {
+.pane-user-content-user-snippets-fields .pane-title .icon {
   margin: -3px .5em 0;
   display: block;
   float: left;

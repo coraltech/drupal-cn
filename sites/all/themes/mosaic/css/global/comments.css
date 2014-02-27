@@ -1,6 +1,6 @@
-/* line 522, icons/*.png */
+/* line 586, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon {
-  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
+  background: url('/images/icons-sfc34dd85de.png') no-repeat;
 }
 
 /* line 9, ../../sass/global/comments.scss */
@@ -98,37 +98,37 @@
 }
 /* line 89, ../../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
-  background-position: 0 -4658px;
+  background-position: 0 -5218px;
   height: 15px;
   width: 15px;
 }
 /* line 92, ../../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
-  background-position: 0 -4593px;
+  background-position: 0 -5153px;
   height: 15px;
   width: 15px;
 }
 /* line 95, ../../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
-  background-position: 0 -3386px;
+  background-position: 0 -3946px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
-  background-position: 0 -4723px;
+  background-position: 0 -5283px;
   height: 15px;
   width: 15px;
 }
 /* line 101, ../../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
-  background-position: 0 -3448px;
+  background-position: 0 -4008px;
   height: 15px;
   width: 15px;
 }
 /* line 104, ../../sass/global/comments.scss */
 .comment li.comment-reply a:hover span.icon {
-  background-position: 0 -3254px;
+  background-position: 0 -3814px;
   height: 12px;
   width: 19px;
 }

@@ -949,18 +949,18 @@ table a.tabledrag-handle .handle {
   padding: 0.5em 0.2em;
 }
 
-/* line 522, icons/*.png */
+/* line 586, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
-.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
+.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
+  background: url('/images/icons-sfc34dd85de.png') no-repeat;
 }
 
-/* line 522, icons/*.png */
+/* line 586, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
-.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim {
-  background: url('/images/icons-sc2c1ad0921.png') no-repeat;
+.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
+  background: url('/images/icons-sfc34dd85de.png') no-repeat;
 }
 
 /* line 9, ../sass/global/comments.scss */
@@ -1058,37 +1058,37 @@ table a.tabledrag-handle .handle {
 }
 /* line 89, ../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
-  background-position: 0 -4658px;
+  background-position: 0 -5218px;
   height: 15px;
   width: 15px;
 }
 /* line 92, ../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
-  background-position: 0 -4593px;
+  background-position: 0 -5153px;
   height: 15px;
   width: 15px;
 }
 /* line 95, ../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
-  background-position: 0 -3386px;
+  background-position: 0 -3946px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
-  background-position: 0 -4723px;
+  background-position: 0 -5283px;
   height: 15px;
   width: 15px;
 }
 /* line 101, ../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
-  background-position: 0 -3448px;
+  background-position: 0 -4008px;
   height: 15px;
   width: 15px;
 }
 /* line 104, ../sass/global/comments.scss */
 .comment li.comment-reply a:hover span.icon {
-  background-position: 0 -3254px;
+  background-position: 0 -3814px;
   height: 12px;
   width: 19px;
 }
@@ -1513,13 +1513,13 @@ h3 .toc-top {
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -4246px;
+  background-position: 0 -4806px;
   height: 15px;
   width: 15px;
 }
 /* line 278, ../sass/global/_global.scss */
 .html ul.links li.flag-follow a:hover .icon {
-  background-position: 0 -4181px;
+  background-position: 0 -4741px;
   height: 15px;
   width: 15px;
 }
@@ -1606,7 +1606,7 @@ h3 .toc-top {
   margin: 5px -.75em 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  background-position: 0 -4419px;
+  background-position: 0 -4979px;
   height: 16px;
   width: 16px;
 }
@@ -2105,6 +2105,134 @@ form .field-type-file table .description {
 .pane-node-file thead th {
   text-transform: lowercase;
   font-variant: small-caps;
+}
+
+/* line 631, ../sass/global/_global.scss */
+.item-list ul.pager {
+  margin: 0.625em 0 1.25em;
+}
+/* line 634, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-current {
+  background: #dddddd;
+  padding: 0 5px;
+  color: #777777;
+  border: 2px solid #dddddd;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+/* line 643, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-item a {
+  background: #7496c8;
+  background: -moz-linear-gradient(top, #7496c8 0%, #446eac 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7496c8), color-stop(100%, #446eac));
+  background: -webkit-linear-gradient(top, #7496c8 0%, #446eac 100%);
+  background: -o-linear-gradient(top, #7496c8 0%, #446eac 100%);
+  background: -ms-linear-gradient(top, #7496c8 0%, #446eac 100%);
+  background: linear-gradient(to bottom, #7496c8 0%, #446eac 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  padding: 0 5px;
+  color: white;
+  border: 2px solid #446eac;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+/* line 651, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-item a:hover {
+  color: #e17d2c;
+  background: white;
+}
+/* line 658, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-first .icon {
+  background-position: 0 -3596px;
+  height: 20px;
+  width: 14px;
+}
+/* line 663, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-first a:hover .icon {
+  background-position: 0 -3744px;
+  height: 20px;
+  width: 14px;
+}
+/* line 669, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-previous .icon {
+  background-position: 0 -3176px;
+  height: 20px;
+  width: 19px;
+}
+/* line 674, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-previous a:hover .icon {
+  background-position: 0 -3386px;
+  height: 20px;
+  width: 19px;
+}
+/* line 679, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-previous .ajax-progress {
+  top: 5px;
+  right: -11px;
+}
+/* line 685, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-next .icon {
+  background-position: 0 -3246px;
+  height: 20px;
+  width: 19px;
+}
+/* line 690, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-next a:hover .icon {
+  background-position: 0 -3316px;
+  height: 20px;
+  width: 19px;
+}
+/* line 695, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-next .ajax-progress {
+  top: 5px;
+  left: -10px;
+}
+/* line 701, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-last .icon {
+  background-position: 0 -3526px;
+  height: 20px;
+  width: 14px;
+}
+/* line 706, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-last a:hover .icon {
+  background-position: 0 -3456px;
+  height: 20px;
+  width: 14px;
+}
+/* line 711, ../sass/global/_global.scss */
+.item-list ul.pager li.pager-ellipsis {
+  font-weight: bold;
+}
+/* line 714, ../sass/global/_global.scss */
+.item-list ul.pager li {
+  padding: 0;
+  margin: 0 5px;
+  display: inline-block;
+}
+/* line 719, ../sass/global/_global.scss */
+.item-list ul.pager li .icon {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+}
+
+/* line 727, ../sass/global/_global.scss */
+.item-list ul.pager-mini li {
+  position: relative;
+}
+/* line 730, ../sass/global/_global.scss */
+.item-list ul.pager-mini li .icon {
+  margin: 0 .5em;
+}
+/* line 734, ../sass/global/_global.scss */
+.item-list ul.pager-mini li .ajax-progress {
+  position: absolute;
 }
 
 /* line 12, ../sass/global/grid.scss */
