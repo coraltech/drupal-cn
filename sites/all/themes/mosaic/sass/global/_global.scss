@@ -626,3 +626,113 @@ form .field-type-file {
     font-variant: small-caps;
   }
 }
+
+
+.item-list ul.pager {
+  margin: ($default_vert_unit / 2) 0 $default_vert_unit;
+
+  li.pager-current {
+    background: $ltgray;
+    padding: 0 5px;
+    color: $mdgray;
+    border: 2px solid $ltgray;
+    @include border-radius(15px);
+  }
+  // the numbered items
+  li.pager-item {
+    a {
+      @include linear-v-gradient(lighten($mdblue, 15%), $mdblue);
+      //background: lighten($mdblue, 10%);
+      padding: 0 5px;
+      color: $white;
+      border: 2px solid $mdblue;
+      @include border-radius(15px);
+      
+      &:hover {
+        color: $mdorange;
+        background: $white;
+      }
+    }
+  }
+  li.pager-first {
+    .icon {
+      @include icons-sprite('first');
+    }
+    
+    a:hover {
+      .icon {
+        @include icons-sprite('first-hover');
+      }
+    }
+  }
+  li.pager-previous {
+    .icon {
+      @include icons-sprite('previous');
+    }
+    
+    a:hover {
+      .icon {
+        @include icons-sprite('prev-hover');
+      }
+    }
+    
+    .ajax-progress {
+      top: 5px;
+      right: -11px;
+    }
+  }
+  li.pager-next {
+    .icon {
+      @include icons-sprite('next');
+    }
+    
+    a:hover {
+      .icon {
+        @include icons-sprite('next-hover');
+      }
+    }
+    
+    .ajax-progress {
+      top: 5px;
+      left: -10px;
+    }
+  }
+  li.pager-last {
+    .icon {
+      @include icons-sprite('last');
+    }
+    
+    a:hover {
+      .icon {
+        @include icons-sprite('last-hover');
+      }
+    }
+  }
+  li.pager-ellipsis {
+    font-weight: bold;
+  }
+  li {
+    padding: 0;
+    margin: 0 5px;
+    display: inline-block;
+        
+    .icon {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+    }
+  }
+}
+.item-list ul.pager-mini {
+  li {
+    position: relative;
+    
+    .icon {
+      margin: 0 .5em;
+    }
+    
+    .ajax-progress {
+      position: absolute;
+    }
+  }  
+}
