@@ -91,12 +91,13 @@
   .pane-title {
     margin-top: 0;
     padding-top: 1em;
-  }
-  .icon {
-    margin: -8px .5em 0;
-    display: block;
-    float: left;
-    @include icons-sprite('coral-qa');
+    
+    .icon {
+      margin: -8px .5em 0;
+      display: block;
+      float: left;
+      @include icons-sprite('coral-qa');
+    }
   }
 }
 .pane-user-content-user-snippets-fields {
@@ -104,12 +105,12 @@
   .pane-title {
     margin-top: 0;
     padding-top: 1em;
-  }
-  
-  .icon {
-    margin: -3px .5em 0;
-    display: block;
-    float: left;
-    @include icons-sprite('coral-snippet');
+    
+    .icon {
+      margin: -3px .5em 0;
+      display: block;
+      float: left;
+      @include icons-sprite('coral-snippet');
+    }
   }
 }
