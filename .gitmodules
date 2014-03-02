@@ -296,3 +296,12 @@
 [submodule "sites/all/themes/mosaic/js/lib/ZeroClipboard"]
 	path = sites/all/themes/mosaic/js/lib/ZeroClipboard
 	url = git@github.com:zeroclipboard/zeroclipboard.git
+[submodule "sites/all/modules/contrib/sharethis"]
+	path = sites/all/modules/contrib/sharethis
+	url = http://git.drupal.org/project/sharethis.git
+[submodule "sites/all/modules/contrib/metatag"]
+	path = sites/all/modules/contrib/metatag
+	url = http://git.drupal.org/project/metatag
+[submodule "sites/all/modules/contrib/hybridauth"]
+	path = sites/all/modules/contrib/hybridauth
+	url = http://git.drupal.org/project/hybridauth.git
