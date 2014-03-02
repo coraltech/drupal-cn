@@ -114,30 +114,46 @@ header .coral-cloud {
 }
 // end not used comp
 
-
-// -- Gigya
-.pane-gigya-gigya-login {
-  float: right;
-  position: relative;
-  
-  .pane-title {
-    text-align: center;
+// Hybrid auth
+.hybridauth-widget-wrapper {
+  h3 {
+    float: left;
+    margin-right: 5px;
     color: $mdgray;
-    
-    @include font(70%, bold);
+
+    @include h4;
   }
-  #divGigyaLogin_bottomLink,
-  #divGigyaLogin-1_bottomLink,
-  #divGigyaLogin-2_bottomLink {
-    margin-top: -21px;
-    
-    table td { text-align: center; }
-    
-    @include opacity(.85);
+  .hybridauth-widget {
+    float: left;
+  }
+  a.hybridauth-widget-provider {
+    .hybridauth-icon-hybridauth-32 {
+        opacity: .65;
+    }
+    &:hover {
+      .hybridauth-icon-hybridauth-32 {
+        opacity: .85;
+      }
+    }
+    &.hybridauth-last-provider .hybridauth-icon-hybridauth-32 {
+      opacity: 1;
+    }
   }
 }
-// Gigya or coral_user take the 
-//  same spot in the header:
+.pane-header .hybridauth-widget-wrapper {
+  margin-top: $default_vert_unit;
+  
+  h3 {
+    display: none;
+  }
+  .item-list:before {
+    color: darken($ltgray, 7%);
+    content: "Social login | ";
+    font-weight: bold;
+    float: left;
+    margin: .5em .25em 0 0;
+  }
+}
 
 // User welcome in the header
 .pane-coral-user {
