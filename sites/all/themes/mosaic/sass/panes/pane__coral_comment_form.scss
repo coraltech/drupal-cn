@@ -3,6 +3,7 @@
 
 @import 'global/buttons';
 @import 'global/colors';
+@import 'global/grid_mix';
 @import 'global/headers';
 @import 'global/fonts';
 @import 'global/gradients';
@@ -87,61 +88,45 @@
   input.form-text {
     width: 97.5%;
   }
-  
+
+  .comment-form > h3 {
+    margin-left: .45em;
+    @include h4;
+  }
+
   // user login (anon. user)
   .user-login {
-    & > h3 {
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-bottom: 1em;
-    }
-    
+    padding: (2 * $default_vert_unit) .5em ($default_vert_unit / 2) .5em;
     border: 1px solid $ltblue;
+    margin-top: (-2 * $default_vert_unit); // absorb the title above
     
     @include linear-v-gradient(lighten($ltblue, 7%), lighten($ltblue, 4%));
     @include box-shadow(rgba(0, 0, 0, 0.35) 0px 2px 3px);
     @include pie-clearfix;
     
-    label { display: none; }
-    
-    h2 {
-      @include h3;
-      margin-top: 1em;
-      margin-left: 2%;
-      margin-right: 2%;
-    }
-    .gigya-login {
-      margin-top: .5em;
-    }
-    form h2,
-    .gigya-login {
-      clear: left; 
-      float: left;
-      margin-right: 2%;
-      margin-left: 2%;
-      width: 44%;
-    }
     .form-item {
       margin: 0;
     }
-    .form-type-textfield {
-      margin-top: (-1 * 1.8 * $default_vert_unit);
-      clear: right;
-      float: right;
-      width: 45%;
-      margin-right: 2%;
-    }
+    .form-type-textfield,
     .form-type-password {
-      clear: right;
-      float: right;
-      width: 45%;
-      margin-right: 2%;
+      margin-bottom: $default_vert_unit;
+      
+      @include pie-clearfix;
+      label { 
+        margin-top: ($default_vert_unit / 2);
+        @include col(6);
+      }
+      .form-text {
+        @include col(17.5, 'true');
+      }
+      .description {
+        @include col(18, 'true');
+        @include prepend(5.5);
+        clear: both;
+      }
     }
     .form-actions {
-      clear: both;
-      width: 95.5%;
-      margin-left: 2%;
-      margin-right: 2%;
+      float: right;
     }
   }
 }
