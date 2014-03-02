@@ -114,14 +114,15 @@ small {
 // --- Lists
 ul,
 .item-list ul {
-  margin: $default_vert_unit .5em;
+  margin: $default_vert_unit 0;
   
   li,
   li.leaf {
     list-style: disc;
     list-style-image: url('/sites/all/themes/mosaic/assets/images/li-red.png');
     margin: 0 0 0 1em;
-    padding-top: 0;  
+    padding-top: 0;
+    list-style-position: inside;
   }
   li.collapsed {
     margin: 0 0 0 1em;
