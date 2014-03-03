@@ -1,0 +1,20 @@
+
+// sharethis block default styles
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/grid_mix';
+
+.pane-sharethis-sharethis-block {
+  margin: $default_vert_unit 0;
+  
+  .pane-title {
+    @include h0;
+    
+    float: left;
+    margin-top: ($default_vert_unit / 8);
+    margin-right: .25em;
+    color: $mdblue;
+  }
+}
