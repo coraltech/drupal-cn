@@ -1,0 +1,14 @@
+/* line 9, ../../sass/panes/pane__block_sharethis_sharethis_block.scss */
+.pane-sharethis-sharethis-block {
+  margin: 1.25em 0;
+}
+/* line 12, ../../sass/panes/pane__block_sharethis_sharethis_block.scss */
+.pane-sharethis-sharethis-block .pane-title {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0;
+  float: left;
+  margin-top: 0.15625em;
+  margin-right: .25em;
+  color: #446eac;
+}
