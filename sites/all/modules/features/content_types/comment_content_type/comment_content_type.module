@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Comment content type feature.
+ */
+
+include_once 'comment_content_type.features.inc';
