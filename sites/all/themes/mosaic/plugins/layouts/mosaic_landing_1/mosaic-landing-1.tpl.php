@@ -1,5 +1,5 @@
 <div class="layout-landing-1">
-  <div class='site-width'>
+  <div class='site-width clearfix'>
     
     <?php if (!empty($content['leader'])): ?>
     <div class="container grid-24-last leader clear">
