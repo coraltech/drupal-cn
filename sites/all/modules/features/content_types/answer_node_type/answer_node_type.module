@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Answer node type feature.
+ */
+
+include_once 'answer_node_type.features.inc';
