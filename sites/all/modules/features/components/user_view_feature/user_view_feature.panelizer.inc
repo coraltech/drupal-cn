@@ -220,28 +220,6 @@ function user_view_feature_panelizer_defaults() {
     $display->panels['main'][0] = 'new-7';
     $pane = new stdClass();
     $pane->pid = 'new-8';
-    $pane->panel = 'main';
-    $pane->type = 'user_signature';
-    $pane->subtype = 'user_signature';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'panelizer',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['main'][1] = 'new-8';
-    $pane = new stdClass();
-    $pane->pid = 'new-9';
     $pane->panel = 'secondary';
     $pane->type = 'block';
     $pane->subtype = 'menu-general';
@@ -257,13 +235,38 @@ function user_view_feature_panelizer_defaults() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'prepend-2',
+      'css_class' => 'prepend-2 grid-8',
     );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $display->content['new-8'] = $pane;
+    $display->panels['secondary'][0] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'secondary';
+    $pane->type = 'user_signature';
+    $pane->subtype = 'user_signature';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => 'Signature',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'prepend-2 grid-12',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $display->content['new-9'] = $pane;
-    $display->panels['secondary'][0] = 'new-9';
+    $display->panels['secondary'][1] = 'new-9';
     $pane = new stdClass();
     $pane->pid = 'new-10';
     $pane->panel = 'sub_footer';
