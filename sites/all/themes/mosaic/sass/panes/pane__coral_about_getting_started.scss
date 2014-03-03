@@ -12,7 +12,7 @@
 
 .pane-coral-about-getting-started {
   position: relative;
-  margin-bottom: 2 * $default_vert_unit;
+  margin-bottom: $default_vert_unit;
   
   @include pie-clearfix;
   
