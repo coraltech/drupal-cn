@@ -514,7 +514,7 @@ div.ui-tabs {
   padding: 0;
   font-size: 1em;
   font-family: $sans_fonts;
-  margin: (3 * $default_vert_unit) 0 (2 * $default_vert_unit);
+  margin: 0 0 (2 * $default_vert_unit);
   border: none;
   
   @include border-radius(0);
