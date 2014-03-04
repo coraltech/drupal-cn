@@ -17,12 +17,11 @@
   
   .filter-guidelines {
     position: fixed;
-    top: 50%;
+    top: 20%;
     left: 50%;
-    margin-top: -100px;
-    margin-left: -175px;
+    margin-left: -225px;
     
-    width: 350px;
+    width: 450px;
     //left: -50%;
     background: lighten($ltyellow, 10%);
     padding: $default_vert_unit;
