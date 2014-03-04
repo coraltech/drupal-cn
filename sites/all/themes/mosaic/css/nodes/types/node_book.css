@@ -23,7 +23,7 @@
 /* line 24, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .pane-node-title h1,
 .node-type-book .pane-node-title h1 {
-  margin: .75em 0;
+  margin: -.15em 0 .5em 0;
   line-height: 16px;
 }
 /* line 29, ../../../sass/nodes/types/node_book.scss */
