@@ -4,8 +4,11 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/headers';
+@import 'global/site_vars';
 
 @import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
 
 // Hide a few things when mce is in fullscreen mode
 .mce-fullscreen {
@@ -18,12 +21,28 @@
 
 // Getting help pane
 .html .pane-getting-help {
-  
+  margin: 30px 20%;
+  width: 60%;
   @include col-gradient;
   @include box-shadow(rgba(0, 0, 0, 0.5) 10px 10px 20px);
   
   .panel-col-top {
     background: lighten($ltgray, 8%);
+    
+    display: table;
+      
+    h2.grid-6 {
+      display: table-cell;
+      float: none;
+      width: 10em;
+      
+      @include h4;
+    }
+    .title-msg {
+      float: none;
+      display: table-cell;
+      width: auto;
+    }
     
     .inside {
       margin-bottom: 0;
@@ -31,11 +50,20 @@
     
     .title-msg {
       font-size: 90%;
-      //padding: 0 $default_vert_unit;
     }
   }
+  .center-wrapper {
+    display: table;
+  }
   .panel-col-first {
+    display: table-cell;
+    float: none;
     width: 12em;
+    vertical-align: top;
+
+    .inside {
+      margin: 0;
+    }
     
     li {
       a {
@@ -48,12 +76,19 @@
         }
       }
       
-      @include linear-h-gradient($ltgray, darken($ltgray, 3%));      
+      @include linear-h-gradient($ltgray, darken($ltgray, 7%));      
+    }
+    
+    select {
+      margin: 5px 1em 0;
     }
   }
   .panel-col-last {
-    width: 76%;
-    
+    display: table-cell;
+    vertical-align: top;
+    float: none;
+    width: 100%;
+
     .pane-content {
       border-top: 1px solid $mdgray;
       overflow-y: scroll;
@@ -109,6 +144,87 @@
     margin-left: 5px;
     @include btn-matte-inset(0px, 16px, $mdred, darken($mdred, 3%), $white);
     @include btn-structure;
+  }
+}
+
+
+@media screen and (max-width: $desktopw) {
+  .html .pane-getting-help {
+    margin: 30px 12.5%;
+    width: 75%;
+  } 
+}
+@media screen and (max-width: $tabletw) {
+  .html .pane-getting-help {
+    margin: 10px 5%;
+    width: 90%;
+    background: lighten($ltblue, 10%);
+
+    .center-wrapper {
+      display: block;
+    }
+    .panel-col-top {
+      .title-msg {
+        display: none;
+      }
+    }
+    .panel-col-first {
+      display: block;
+      width: 100%;
+      
+      ul.sf-vertical {
+        width: 100%;
+        
+        li {
+          width: auto;
+          background: $mdgray;
+          margin: 5px 0 0 5px;
+          
+          @include border-radius(5px);
+          
+          a {
+            color: $white;
+            padding: ($default_vert_unit / 4);
+            
+            &:hover {
+              color: $ltgray;
+            }
+          }
+        }
+      }
+    }
+    .panel-col-last {
+      display: block;
+      width: 100%;
+
+      .pane-content {
+        background: $white;
+      }
+      & > .inside {
+        h2 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $phonew) {
+  .html .pane-getting-help {
+    margin: 10px 3%;
+    width: 94%;
+    
+    .panel-col-top {
+      background: lighten($ltgray, 8%);
+      display: block;
+
+      h2.grid-6 {
+        display: block;
+        float: none;
+        width: 100%;
+      
+        @include h4;
+      }
+    }
   }
 }
 

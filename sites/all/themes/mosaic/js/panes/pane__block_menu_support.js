@@ -166,10 +166,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         'z-index': '20'
       });
       this.$tool.css({ // the tool
-        'position':'absolute',
-        'width':'810px',
-        'height': '542px',
-        'margin':  ((ha-542)/2)+'px '+((w-750)/2)+'px 0'
+        'position':'fixed'
       });
     }
     catch (err) {
