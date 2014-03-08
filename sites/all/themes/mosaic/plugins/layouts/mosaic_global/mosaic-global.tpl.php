@@ -9,7 +9,7 @@
     <?php endif; ?>
     <div class="mosaic-cont">
       <?php if (!empty($content['main'])): ?>
-      <div class="container main-global clearfix" id="main-content">
+      <div class="container main-global site-width clearfix" id="main-content">
         <div class="limiter">
           <?php print render($content['main']); ?>
         </div>
