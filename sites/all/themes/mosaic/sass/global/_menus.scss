@@ -20,11 +20,12 @@
 // -- Utility 
 .pane-menu-support {
   position: relative;
+  z-index: 1;
   
   ul.menu {
     position: absolute; // we put this to the top
     top: -.5em;         // make up for some padding in the site header (.5em worth)
-    right: 285px;
+    right: 27%;
     margin-top: 0;
     
     li.leaf {
@@ -90,7 +91,19 @@
     }
   }
 }
-
+@media screen and (max-width: $tabletw){
+  .pane-menu-support {
+    ul.menu {
+      right: 44%;
+      li.leaf {
+        width: 70px;
+        a {
+          width: 70px;  
+        }
+      }
+    }
+  }
+}
 
 // Main -- bg coloration
 .pane-top-menus { 
@@ -110,7 +123,7 @@
 
 
 // Main -- sizing
-#mini-panel-top_menus { height: 37px; }
+#mini-panel-top_menus { }
 #mini-panel-top_menus .inside { margin: 0; }
 
 
