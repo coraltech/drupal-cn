@@ -1,12 +1,14 @@
-/* line 13, ../../sass/panes/pane__block_menu_support.scss */
+/* line 16, ../../sass/panes/pane__block_menu_support.scss */
 .mce-fullscreen .sf-menu,
 .mce-fullscreen .navbar .bar {
   position: fixed;
   z-index: 1;
 }
 
-/* line 20, ../../sass/panes/pane__block_menu_support.scss */
+/* line 23, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help {
+  margin: 30px 20%;
+  width: 60%;
   background: -webkit-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -moz-linear-gradient(left, #dddddd 12em, white 12em, white);
   background: -o-linear-gradient(left, #dddddd 12em, white 12em, white);
@@ -16,77 +18,112 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
   box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
 }
-/* line 25, ../../sass/panes/pane__block_menu_support.scss */
+/* line 29, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-top {
   background: #f1f1f1;
+  display: table;
 }
-/* line 28, ../../sass/panes/pane__block_menu_support.scss */
+/* line 34, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-top h2.grid-6 {
+  display: table-cell;
+  float: none;
+  width: 10em;
+  font-size: 1.125em;
+  line-height: 1.1111em;
+  margin-top: 0.5555em;
+  margin-bottom: 0.5555em;
+}
+/* line 41, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-top .title-msg {
+  float: none;
+  display: table-cell;
+  width: auto;
+}
+/* line 47, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-top .inside {
   margin-bottom: 0;
 }
-/* line 32, ../../sass/panes/pane__block_menu_support.scss */
+/* line 51, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-top .title-msg {
   font-size: 90%;
 }
-/* line 37, ../../sass/panes/pane__block_menu_support.scss */
-.html .pane-getting-help .panel-col-first {
-  width: 12em;
+/* line 55, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .center-wrapper {
+  display: table;
 }
-/* line 40, ../../sass/panes/pane__block_menu_support.scss */
+/* line 58, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-first {
+  display: table-cell;
+  float: none;
+  width: 12em;
+  vertical-align: top;
+}
+/* line 64, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-first .inside {
+  margin: 0;
+}
+/* line 68, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-first li {
   background: #dddddd;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  background: -moz-linear-gradient(left, #dddddd 0%, #cbcbcb 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dddddd), color-stop(100%, #d5d5d5));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dddddd), color-stop(100%, #cbcbcb));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  background: -webkit-linear-gradient(left, #dddddd 0%, #cbcbcb 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  background: -o-linear-gradient(left, #dddddd 0%, #cbcbcb 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #dddddd 0%, #d5d5d5 100%);
+  background: -ms-linear-gradient(left, #dddddd 0%, #cbcbcb 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #dddddd 0%, #d5d5d5 100%);
+  background: linear-gradient(to right, #dddddd 0%, #cbcbcb 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right,GradientType=1 );
   /* IE6-9 */
 }
-/* line 41, ../../sass/panes/pane__block_menu_support.scss */
+/* line 69, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-first li a {
   color: #2b486b;
 }
-/* line 46, ../../sass/panes/pane__block_menu_support.scss */
+/* line 74, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-first li a:hover, .html .pane-getting-help .panel-col-first li a:active, .html .pane-getting-help .panel-col-first li a.active {
   color: black;
 }
-/* line 54, ../../sass/panes/pane__block_menu_support.scss */
-.html .pane-getting-help .panel-col-last {
-  width: 76%;
+/* line 82, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-first select {
+  margin: 5px 1em 0;
 }
-/* line 57, ../../sass/panes/pane__block_menu_support.scss */
+/* line 86, ../../sass/panes/pane__block_menu_support.scss */
+.html .pane-getting-help .panel-col-last {
+  display: table-cell;
+  vertical-align: top;
+  float: none;
+  width: 100%;
+}
+/* line 92, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .pane-content {
   border-top: 1px solid #777777;
   overflow-y: scroll;
   height: 366px;
   padding: 0 15px 15px;
 }
-/* line 64, ../../sass/panes/pane__block_menu_support.scss */
+/* line 99, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last > .inside {
   margin: 0;
 }
-/* line 67, ../../sass/panes/pane__block_menu_support.scss */
+/* line 102, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last > .inside h2 {
   margin: 0;
   padding: 16px;
   line-height: 16px;
   background: #ebeff4;
 }
-/* line 76, ../../sass/panes/pane__block_menu_support.scss */
+/* line 111, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .vertical-tabs,
 .html .pane-getting-help .panel-col-last .filter-wrapper {
   display: none;
 }
-/* line 80, ../../sass/panes/pane__block_menu_support.scss */
+/* line 115, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .form-actions {
   bottom: 6px;
   position: absolute;
@@ -95,11 +132,11 @@
   margin: 0;
   padding: 0;
 }
-/* line 88, ../../sass/panes/pane__block_menu_support.scss */
+/* line 123, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-last .form-actions input {
   font-weight: bold;
 }
-/* line 93, ../../sass/panes/pane__block_menu_support.scss */
+/* line 128, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .panel-col-bottom {
   position: absolute;
   bottom: 0px;
@@ -107,16 +144,16 @@
   background: #f1f1f1;
   border-top: 1px solid #d0d0d0;
 }
-/* line 100, ../../sass/panes/pane__block_menu_support.scss */
+/* line 135, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .help-header {
   padding: 15px 20px;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 104, ../../sass/panes/pane__block_menu_support.scss */
+/* line 139, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .help-header h2 {
   margin: 0;
 }
-/* line 108, ../../sass/panes/pane__block_menu_support.scss */
+/* line 143, ../../sass/panes/pane__block_menu_support.scss */
 .html .pane-getting-help .cls-help {
   margin-left: 5px;
   font-size: 16px;
@@ -186,7 +223,94 @@
   margin: -1px !important;
 }
 
-/* line 123, ../../sass/panes/pane__block_menu_support.scss */
+@media screen and (max-width: 1024px) {
+  /* line 152, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help {
+    margin: 30px 12.5%;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 158, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help {
+    margin: 10px 5%;
+    width: 90%;
+    background: #ebeff4;
+  }
+  /* line 163, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .center-wrapper {
+    display: block;
+  }
+  /* line 167, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-top .title-msg {
+    display: none;
+  }
+  /* line 171, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-first {
+    display: block;
+    width: 100%;
+  }
+  /* line 175, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-first ul.sf-vertical {
+    width: 100%;
+  }
+  /* line 178, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-first ul.sf-vertical li {
+    width: auto;
+    background: #777777;
+    margin: 5px 0 0 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+  }
+  /* line 185, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-first ul.sf-vertical li a {
+    color: white;
+    padding: 0.3125em;
+  }
+  /* line 189, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-first ul.sf-vertical li a:hover {
+    color: #dddddd;
+  }
+  /* line 196, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-last {
+    display: block;
+    width: 100%;
+  }
+  /* line 200, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-last .pane-content {
+    background: white;
+  }
+  /* line 204, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-last > .inside h2 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 212, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help {
+    margin: 10px 3%;
+    width: 94%;
+  }
+  /* line 216, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-top {
+    background: #f1f1f1;
+    display: block;
+  }
+  /* line 220, ../../sass/panes/pane__block_menu_support.scss */
+  .html .pane-getting-help .panel-col-top h2.grid-6 {
+    display: block;
+    float: none;
+    width: 100%;
+    font-size: 1.125em;
+    line-height: 1.1111em;
+    margin-top: 0.5555em;
+    margin-bottom: 0.5555em;
+  }
+}
+/* line 239, ../../sass/panes/pane__block_menu_support.scss */
 .pane-coral-ask-question .field-name-field-answer,
 .pane-coral-ask-question .field-name-field-comment-count,
 .pane-coral-ask-question .field-name-field-answer-count,

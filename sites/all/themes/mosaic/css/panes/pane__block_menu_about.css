@@ -33,7 +33,7 @@
 .pane-menu-about ul li a:hover, .pane-menu-about ul li a.active, .pane-menu-about ul li a:active {
   background: white;
   border: 1px solid #dddddd;
-  width: 210px;
+  width: 95%;
   color: #3f3f3f;
 }
 /* line 42, ../../sass/panes/pane__block_menu_about.scss */
