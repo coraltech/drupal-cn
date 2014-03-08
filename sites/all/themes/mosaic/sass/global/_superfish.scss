@@ -32,6 +32,14 @@
   border-bottom-left-radius: 0;
 }
 
+#mini-panel-top_menus {
+  .panel-col-first {
+    width: 65%;
+  }
+  .panel-col-last {
+    width: 35%;
+  }
+}
 
 #mini-panel-top_menus .sf-menu {
   float: left;
@@ -219,5 +227,14 @@
   }
 }
 
+@media screen and (max-width: $desktopw) {
+  
+  #mini-panel-top_menus .pane-superfish-1 .sf-menu,
+  #mini-panel-top_menus .pane-superfish-2 .sf-menu {
+    a {
+      font-size: .85em;
+    }
+  }
+}
 
 
