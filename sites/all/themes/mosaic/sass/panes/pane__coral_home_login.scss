@@ -6,12 +6,13 @@
 @import "global/fonts";
 @import "global/icons";
 @import "global/gradients";
+@import "global/site_vars";
 
 @import "compass/utilities/general/clearfix";
 
 .pane-coral-home-login {
   position: relative;
-  margin-bottom: $default_vert_unit;
+  margin: $default_vert_unit 0;
     
   @include pie-clearfix;  
   //@include reflected-v-gradient(lighten($ltgray, 5%), darken($ltgray, 7%), $ltgray);
@@ -27,8 +28,34 @@
     margin-top: 3px;
   }
   
-  .login-sep {
-    height: 25px;
-    background: url('../../assets/images/coral-sep-long.png') top center no-repeat;
+  
+  .grid-15-last {
+    float: right;
+  }
+}
+
+@media screen and (max-width: $desktopw + 100) {
+  .pane-coral-home-login {
+    .grid-4 {
+      float: left;
+      display: block;
+      width: auto;
+      padding-top: 4px;
+    }
+    .grid-15-last {
+      display: inline;
+      float: none;
+      width: auto;
+    }
+    .grid-5 {
+      width: 100%;
+      margin: 0;
+      
+      ul li {
+        float: left;
+        margin-right: 1em;
+        margin-left: 0;
+      }
+    }
   }
 }

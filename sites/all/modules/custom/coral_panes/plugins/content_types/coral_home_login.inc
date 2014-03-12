@@ -35,9 +35,9 @@ function coral_home_login_pane_content_type_render($subtype, $conf, $args, $cont
     $block->title = t('Sign up');
     
     $output = '<div class="login-sep grid-24-last"></div>';
-    $output .= '<div class="grid-4">'.l('Sign up', 'user/login', array('attributes' => array('class' => array('btn')))).'</div>';
-    $output .= '<div class="grid-5"><ul><li>'.$log.'</li><li>'.$fog.'</li></ul></div>';
+    $output .= '<div class="grid-4">'.l('Sign up', 'user/login', array('attributes' => array('class' => array('btn', 'nowrap')))).'</div>';
     $output .= '<div class="grid-15-last"><p>Signup to recieve updates, edit and discuss '.$wik.', and post to the '.$com.'. No registration required to use CORL.</p></div>';
+    $output .= '<div class="grid-5"><ul><li>'.$log.'</li><li>'.$fog.'</li></ul></div>';
   }
 
   $block->content = $output;
