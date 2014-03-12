@@ -161,5 +161,22 @@ footer {
     }
   }
 }
-
+@media screen and (max-width: $tabletw - 150px) {
+  #mini-panel-footer .panel-col-first,
+  #mini-panel-footer .panel-col-last {
+    float: none;
+    width: 100%;
+    
+    .inside {
+      margin: 0 0 1em 0;
+    }
+    
+    .pane-panels-mini {
+      @include col(11);
+    }
+    .pane-coral-footer {
+      @include col(13);
+    }
+  }
+}
 
