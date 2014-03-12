@@ -4,12 +4,13 @@
 @import "global/colors";
 @import "global/fonts";
 @import "global/icons";
-
+@import 'global/site_vars';
 
 .pane-coral-home-contribute {
   position: relative;
-  margin-bottom: 2 * $default_vert_unit;
-  
+  margin-bottom: $default_vert_unit;
+  float: right;
+
   .pane-title {
     font-weight: bold;
   }
@@ -33,4 +34,24 @@
     margin-left: 3em;
   }
   
+}
+
+@media screen and (max-width: $desktopw) {
+  .pane-coral-home-contribute {
+    width: 48%;
+    margin-left: 2%;
+    float: right;
+  }
+}
+@media screen and (max-width: $tabletw) {
+  .pane-coral-home-contribute {
+    width: 100%;
+    float: left;
+    margin: 0 0 $default_vert_unit 0;
+    & > h2,
+    & > div {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
 }
