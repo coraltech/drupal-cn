@@ -41,7 +41,7 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
   $output = <<<EOF
 <div class="home-intro-container">
   <div class="home-intro-content">
-    <h2>Coral is a free and open source cloud development framework.</h2>
+    <h2>Coral is a free and open source cloud <span class="nowrap">development framework.</span></h2>
     <div class="clearfix">
       <div class="left grid-12">
         <ul>
@@ -59,10 +59,9 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
         <a class="more" href="/">Learn more</a>
       </div>
     </div>
-    <div class="shade-line"></div>
-    <div class="home-intro-left"></div>
-    <div class="home-intro-right"></div>
   </div>
+  <div class="home-intro-left"><span class="top"></span><span class="bottom"></span><span class="angle"></span></div>
+  <div class="home-intro-right"><span class="top"></span><span class="bottom"></span><span class="angle"></span></div>
 </div>
 EOF;
 
