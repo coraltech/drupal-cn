@@ -302,3 +302,6 @@
 [submodule "sites/all/modules/contrib/hybridauth"]
 	path = sites/all/modules/contrib/hybridauth
 	url = http://git.drupal.org/project/hybridauth.git
+[submodule "sites/all/modules/contrib/bxslider_views_slideshow"]
+	path = sites/all/modules/contrib/bxslider_views_slideshow
+	url = http://git.drupal.org/project/bxslider_views_slideshow
