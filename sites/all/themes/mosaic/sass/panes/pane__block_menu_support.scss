@@ -54,6 +54,7 @@
   }
   .center-wrapper {
     display: table;
+    clear: both;
   }
   .panel-col-first {
     display: table-cell;
@@ -221,8 +222,6 @@
         display: block;
         float: none;
         width: 100%;
-      
-        @include h4;
       }
     }
   }
