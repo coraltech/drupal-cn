@@ -39,6 +39,10 @@
   line-height: 1.25em;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 // Simulated (override-able ;-) break tags
 .br {
   display: block;
