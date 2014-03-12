@@ -1,9 +1,9 @@
 /* line 594, icons/*.png */
 .icons-sprite, .pane-coral-home-community .team {
-  background: url('/images/icons-sd26d1d21d3.png') no-repeat;
+  background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 11, ../../sass/panes/pane__coral_home_community.scss */
+/* line 12, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community {
   position: relative;
   margin-bottom: 2.5em;
@@ -25,38 +25,38 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
   /* IE6-9 */
 }
-/* line 16, ../../sass/panes/pane__coral_home_community.scss */
+/* line 17, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community p, .pane-coral-home-community h2, .pane-coral-home-community h4 {
   padding-left: 16px;
   padding-right: 16px;
 }
-/* line 23, ../../sass/panes/pane__coral_home_community.scss */
+/* line 24, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .pane-title {
   font-weight: bold;
 }
-/* line 27, ../../sass/panes/pane__coral_home_community.scss */
+/* line 28, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .team {
   display: block;
   font-size: 130%;
-  right: 85px;
-  top: -28px;
+  left: 7.5em;
+  top: -23px;
   position: absolute;
   background-position: 0 -420px;
   height: 75px;
   width: 65px;
 }
-/* line 40, ../../sass/panes/pane__coral_home_community.scss */
+/* line 41, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .bgr-wr,
 .pane-coral-home-community .bgr-gr,
 .pane-coral-home-community .bgr-wl,
 .pane-coral-home-community .bgr-gl {
-  height: 300px;
+  height: 100%;
   width: 1px;
   background: #446eac;
   position: absolute;
   top: 15px;
 }
-/* line 48, ../../sass/panes/pane__coral_home_community.scss */
+/* line 49, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .bgr-wr {
   left: -1px;
   background: #e5e5e5;
@@ -76,7 +76,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
   /* IE6-9 */
 }
-/* line 52, ../../sass/panes/pane__coral_home_community.scss */
+/* line 53, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .bgr-gr {
   left: -2px;
   background: #898989;
@@ -96,7 +96,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
   /* IE6-9 */
 }
-/* line 56, ../../sass/panes/pane__coral_home_community.scss */
+/* line 57, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .bgr-wl {
   right: -1px;
   background: #e5e5e5;
@@ -116,7 +116,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
   /* IE6-9 */
 }
-/* line 60, ../../sass/panes/pane__coral_home_community.scss */
+/* line 61, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community .bgr-gl {
   right: -2px;
   background: #898989;
@@ -136,7 +136,16 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bottom,GradientType=0 );
   /* IE6-9 */
 }
-/* line 66, ../../sass/panes/pane__coral_home_community.scss */
+/* line 67, ../../sass/panes/pane__coral_home_community.scss */
 .pane-coral-home-community h4 {
   color: #e17d2c;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 74, ../../sass/panes/pane__coral_home_community.scss */
+  .pane-coral-home-community {
+    width: 100%;
+    float: left;
+    margin: 1.25em 0;
+  }
 }

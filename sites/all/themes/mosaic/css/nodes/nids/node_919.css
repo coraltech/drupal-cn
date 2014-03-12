@@ -1,35 +1,93 @@
-/* line 6, ../../../sass/nodes/nids/node_919.scss */
+/* line 8, ../../../sass/nodes/nids/node_919.scss */
 .coral-slide.coral-diagram {
-  position: relative;
+  background: #e0ecf7;
 }
-/* line 9, ../../../sass/nodes/nids/node_919.scss */
+/* line 11, ../../../sass/nodes/nids/node_919.scss */
+.coral-slide.coral-diagram .rem-11 {
+  margin-left: -45.83333%;
+}
+/* line 14, ../../../sass/nodes/nids/node_919.scss */
 .coral-slide.coral-diagram h2 {
-  position: absolute;
-  top: .25em;
-  right: 48px;
-  width: 585px;
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1.35em;
+  clear: none;
   text-align: center;
+  padding: 0 1em;
 }
-/* line 20, ../../../sass/nodes/nids/node_919.scss */
-.coral-slide.coral-diagram ul {
-  position: absolute;
-  top: 100px;
-  width: 415px;
-  right: 20px;
+/* line 23, ../../../sass/nodes/nids/node_919.scss */
+.coral-slide.coral-diagram ul.grid-14-last {
+  margin: 0;
+  margin-left: -29.16667%;
 }
 /* line 26, ../../../sass/nodes/nids/node_919.scss */
-.coral-slide.coral-diagram ul li {
+.coral-slide.coral-diagram ul.grid-14-last li {
   font-weight: bold;
-  margin-bottom: .65em;
-  font-size: .9em;
+  margin: 0 .5em .65em;
+  font-size: 1.2em;
+  list-style-position: outside;
   color: #6a6a6a;
 }
 /* line 35, ../../../sass/nodes/nids/node_919.scss */
-.coral-slide.coral-diagram a {
-  position: absolute;
-  bottom: 15px;
-  right: 22px;
+.coral-slide.coral-diagram ul.sm,
+.coral-slide.coral-diagram ul.md {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 41, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram h2 {
+    font-size: 1.2em;
+  }
+  /* line 44, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.md {
+    display: inherit;
+  }
+  /* line 47, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.lg {
+    display: none;
+  }
+  /* line 51, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.grid-14-last li {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 889px) {
+  /* line 59, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram h2 {
+    font-size: 1em;
+  }
+  /* line 63, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.grid-14-last li {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 71, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram h2 {
+    font-size: .9em;
+  }
+  /* line 74, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.sm {
+    display: inherit;
+  }
+  /* line 77, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.md {
+    display: none;
+  }
+  /* line 81, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.grid-14-last li {
+    margin: 0 0 .25em 1.5em;
+    font-size: .85em;
+  }
+}
+@media screen and (max-width: 450px) {
+  /* line 90, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram h2 {
+    font-size: .85em;
+  }
+  /* line 94, ../../../sass/nodes/nids/node_919.scss */
+  .coral-slide.coral-diagram ul.grid-14-last li {
+    font-size: .75em;
+  }
 }

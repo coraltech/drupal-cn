@@ -1,12 +1,12 @@
 /* line 594, icons/*.png */
 .icons-sprite {
-  background: url('/images/icons-sd26d1d21d3.png') no-repeat;
+  background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 12, ../../sass/panes/pane__coral_home_login.scss */
+/* line 13, ../../sass/panes/pane__coral_home_login.scss */
 .pane-coral-home-login {
   position: relative;
-  margin-bottom: 1.25em;
+  margin: 1.25em 0;
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -15,7 +15,7 @@
   display: table;
   clear: both;
 }
-/* line 19, ../../sass/panes/pane__coral_home_login.scss */
+/* line 20, ../../sass/panes/pane__coral_home_login.scss */
 .pane-coral-home-login a.btn {
   font-size: 22px;
   padding: 0.5em 1.5em;
@@ -85,12 +85,38 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 26, ../../sass/panes/pane__coral_home_login.scss */
+/* line 27, ../../sass/panes/pane__coral_home_login.scss */
 .pane-coral-home-login ul, .pane-coral-home-login p {
   margin-top: 3px;
 }
-/* line 30, ../../sass/panes/pane__coral_home_login.scss */
-.pane-coral-home-login .login-sep {
-  height: 25px;
-  background: url("../../assets/images/coral-sep-long.png") top center no-repeat;
+/* line 32, ../../sass/panes/pane__coral_home_login.scss */
+.pane-coral-home-login .grid-15-last {
+  float: right;
+}
+
+@media screen and (max-width: 1124px) {
+  /* line 39, ../../sass/panes/pane__coral_home_login.scss */
+  .pane-coral-home-login .grid-4 {
+    float: left;
+    display: block;
+    width: auto;
+    padding-top: 4px;
+  }
+  /* line 45, ../../sass/panes/pane__coral_home_login.scss */
+  .pane-coral-home-login .grid-15-last {
+    display: inline;
+    float: none;
+    width: auto;
+  }
+  /* line 50, ../../sass/panes/pane__coral_home_login.scss */
+  .pane-coral-home-login .grid-5 {
+    width: 100%;
+    margin: 0;
+  }
+  /* line 54, ../../sass/panes/pane__coral_home_login.scss */
+  .pane-coral-home-login .grid-5 ul li {
+    float: left;
+    margin-right: 1em;
+    margin-left: 0;
+  }
 }

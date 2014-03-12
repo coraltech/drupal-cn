@@ -1,18 +1,19 @@
 /* line 594, icons/*.png */
 .icons-sprite, .pane-coral-home-contribute .public-work, .pane-coral-home-contribute .troubleshoot {
-  background: url('/images/icons-sd26d1d21d3.png') no-repeat;
+  background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
 /* line 9, ../../sass/panes/pane__coral_home_contribute.scss */
 .pane-coral-home-contribute {
   position: relative;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.25em;
+  float: right;
 }
-/* line 13, ../../sass/panes/pane__coral_home_contribute.scss */
+/* line 14, ../../sass/panes/pane__coral_home_contribute.scss */
 .pane-coral-home-contribute .pane-title {
   font-weight: bold;
 }
-/* line 17, ../../sass/panes/pane__coral_home_contribute.scss */
+/* line 18, ../../sass/panes/pane__coral_home_contribute.scss */
 .pane-coral-home-contribute .public-work {
   display: block;
   float: left;
@@ -21,7 +22,7 @@
   height: 25px;
   width: 42px;
 }
-/* line 24, ../../sass/panes/pane__coral_home_contribute.scss */
+/* line 25, ../../sass/panes/pane__coral_home_contribute.scss */
 .pane-coral-home-contribute .troubleshoot {
   display: block;
   float: left;
@@ -30,8 +31,30 @@
   height: 29px;
   width: 39px;
 }
-/* line 31, ../../sass/panes/pane__coral_home_contribute.scss */
+/* line 32, ../../sass/panes/pane__coral_home_contribute.scss */
 .pane-coral-home-contribute h4 {
   color: #e17d2c;
   margin-left: 3em;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 40, ../../sass/panes/pane__coral_home_contribute.scss */
+  .pane-coral-home-contribute {
+    width: 48%;
+    margin-left: 2%;
+    float: right;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 47, ../../sass/panes/pane__coral_home_contribute.scss */
+  .pane-coral-home-contribute {
+    width: 100%;
+    float: left;
+    margin: 0 0 1.25em 0;
+  }
+  /* line 52, ../../sass/panes/pane__coral_home_contribute.scss */
+  .pane-coral-home-contribute > h2, .pane-coral-home-contribute > div {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
