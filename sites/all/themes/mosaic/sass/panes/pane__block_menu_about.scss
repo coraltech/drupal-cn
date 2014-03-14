@@ -3,12 +3,18 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/headers';
+@import 'global/site_vars';
+
+@import "compass/utilities/general/clearfix";
 
 .pane-menu-about {
   border: 1px solid $ltblue;
   background: lighten($ltgray, 5%) url('../../assets/images/diag-tile.png');
-  padding: 5px;
   margin-bottom: 2 * $default_vert_unit;
+  
+  .pane-content {
+    padding: 5px;
+  }
   
   ul {
     margin: 0;
@@ -58,6 +64,65 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: $desktopw) {
+  .layout-landing-responsive {
+    .row {
+      position: relative; // ready for menu placement
+      
+      .main-content.grid-13-last {
+        margin-top: 4 * $default_vert_unit; // make some room
+      }  
+    }  
+  }
+  
+    
+  .pane-menu-about {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    
+    ul {
+      @include pie-clearfix;
+      padding: 5px 0px 5px 5px;
+      li {
+        float: left;
+        width: 33.3%;
+      
+        a {
+          text-align: center;
+          margin: 0 5px 0 0;
+          &:hover,
+          &.active,
+          &:active {
+            width: auto;
+            .ar-out {
+              top: 40px;
+              right: 44%;
+              
+              @include arrow-down(15px, $ltgray);
+              
+              .ar-in {
+                top: -16px;
+                right: -14px;
+                
+                @include arrow-down(14px, $white);
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-menu-about {
+    ul li a {
+      font-size: 1.2em;
     }
   }
 }
