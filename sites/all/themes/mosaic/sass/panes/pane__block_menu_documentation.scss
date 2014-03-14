@@ -2,8 +2,10 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/headers';
+@import 'global/grid_mix';
+@import 'global/site_vars';
 
-.main-content .pane-menu-documentation {
+.secondary-content .pane-menu-documentation {
   margin-bottom: 2 * $default_vert_unit;
   padding-left: 10px;
   
@@ -23,5 +25,17 @@
       margin-left: .75em;
     }
     
+  }
+}
+
+@media screen and (max-width: $desktopw) {
+  .secondary-content .pane-menu-documentation {
+    @include col(12);
+  }
+}
+@media screen and (max-width: $tabletw - 100px) {
+  .secondary-content .pane-menu-documentation {
+    float: none;
+    width: auto;
   }
 }
