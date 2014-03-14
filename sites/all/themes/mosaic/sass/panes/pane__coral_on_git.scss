@@ -3,6 +3,8 @@
 
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/site_vars';
 
 @import "compass/css3/border-radius";
 
@@ -30,5 +32,16 @@
         color: lighten($ltyellow, 5%);
       }
     }
+  }
+}
+
+@media screen and (max-width: $desktopw) {
+  .secondary-content .pane-coral-on-git {
+    @include col(12, 'true');
+  }
+}
+@media screen and (max-width: $tabletw - 50px) {
+  .secondary-content .pane-coral-on-git {
+    @include col(24, 'true');
   }
 }
