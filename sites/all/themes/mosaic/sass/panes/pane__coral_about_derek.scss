@@ -4,8 +4,9 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/headers';
+@import 'global/grid_mix';
 @import 'global/icons';
-
+@import 'global/site_vars';
 
 .pane-coral-about-derek {
   position: relative;
@@ -24,5 +25,10 @@
     width: 100px;
     line-height: 100px;
     text-align: center;
+  }
+}
+@media screen and (max-width: $tabletw) {
+  .pane-coral-about-derek {
+    @include col($columns, 'true'); // full w
   }
 }
