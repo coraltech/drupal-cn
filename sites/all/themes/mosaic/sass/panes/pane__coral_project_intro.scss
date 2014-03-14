@@ -5,6 +5,8 @@
 @import 'global/fonts';
 @import 'global/headers';
 @import 'global/icons';
+@import 'global/site_vars';
+@import 'global/grid_mix';
 
 
 h1.page-title {
@@ -37,3 +39,18 @@ h1.page-title {
   }
 }
 
+@media screen and (max-width: $tabletw) {
+  h1.page-title {
+    
+  }
+  
+  .pane-coral-project-intro {
+    margin: 0 0 (3 * $default_vert_unit);
+    .divider {
+      background: url('../../assets/images/coral-sep-med.png') bottom center no-repeat;
+    }
+    p {
+      @include h4; 
+    }
+  }
+}
