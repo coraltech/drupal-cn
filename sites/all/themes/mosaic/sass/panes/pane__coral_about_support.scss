@@ -5,7 +5,8 @@
 @import 'global/fonts';
 @import 'global/headers';
 @import 'global/icons';
-
+@import 'global/grid_mix';
+@import 'global/site_vars';
 
 .pane-coral-about-support {
   .pane-title {
@@ -30,5 +31,11 @@
       margin-bottom: ($default_vert_unit / 3);
       margin-left: .75em;
     }
+  }
+}
+@media screen and (max-width: $tabletw) {
+  .pane-coral-about-support {
+    @include col($columns, 'true'); // full w
+    margin-bottom: 2 * $default_vert_unit;
   }
 }
