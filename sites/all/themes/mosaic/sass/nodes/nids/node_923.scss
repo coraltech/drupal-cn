@@ -1,0 +1,18 @@
+// Main project page
+
+@import 'global/grid_mix';
+@import 'global/site_vars';
+
+
+@media screen and (max-width: $tabletw) {
+  #main-content .pane-content > .panel-2col-stacked {
+    .panel-col-first,
+    .panel-col-last {
+      @include col($columns, 'true');
+      
+      .inside {
+        margin: 0;
+      }
+    }
+  }
+}
