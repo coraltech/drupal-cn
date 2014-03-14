@@ -1,9 +1,26 @@
 
+@import 'global/fonts';
+@import 'global/site_vars';
+
 .pane-about-coral-sections {
   .panel-col-first .inside {
     margin: 0 1em 0 0;
   }
   .panel-col-last .inside {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: $tabletw + 25px) {
+  .pane-about-coral-sections {
+    .panel-col-first,
+    .panel-col-last {
+      float: none;
+      width: auto;
+      
+      .panel-pane {
+        margin-bottom: 2 * $default_vert_unit;
+      }
+    }
   }
 }
