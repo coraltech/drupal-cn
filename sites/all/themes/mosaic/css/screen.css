@@ -957,17 +957,52 @@ table a.tabledrag-handle .handle {
   padding: 0.5em 0.2em;
 }
 
+/* line 316, ../sass/global/_dom.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 323, ../sass/global/_dom.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 331, ../sass/global/_dom.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 338, ../sass/global/_dom.scss */
+[hidden] {
+  display: none;
+}
+
 /* line 594, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .pane-search-form .form-wrapper, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
-.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
+.flag-abuse-node a.unflag-action:hover .icon, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
 /* line 594, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .pane-search-form .form-wrapper, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
-.flag-abuse-node a.unflag-action:hover .icon, .pane-page-tabs .icoprim, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
+.flag-abuse-node a.unflag-action:hover .icon, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
@@ -1700,7 +1735,7 @@ h3 .toc-top {
 
 /* line 428, ../sass/global/_global.scss */
 .pane-page-tabs {
-  padding: 0 0 1.25em;
+  padding: 0;
   margin-top: -1.1em;
   *zoom: 1;
 }
@@ -1709,17 +1744,6 @@ h3 .toc-top {
   content: "";
   display: table;
   clear: both;
-}
-/* line 434, ../sass/global/_global.scss */
-.pane-page-tabs .icoprim {
-  display: block;
-  float: right;
-  margin: 5px -.75em 0 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
-  background-position: 0 -5056px;
-  height: 16px;
-  width: 16px;
 }
 /* line 442, ../sass/global/_global.scss */
 .pane-page-tabs ul {

@@ -1,24 +1,27 @@
-/* line 7, ../../sass/panes/pane__block_menu_about.scss */
+/* line 10, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about {
   border: 1px solid #cad5e2;
   background: #eaeaea url("../../assets/images/diag-tile.png");
-  padding: 5px;
   margin-bottom: 2.5em;
 }
-/* line 13, ../../sass/panes/pane__block_menu_about.scss */
+/* line 15, ../../sass/panes/pane__block_menu_about.scss */
+.pane-menu-about .pane-content {
+  padding: 5px;
+}
+/* line 19, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about ul {
   margin: 0;
   padding: 5px;
   background: rgba(255, 255, 255, 0.75);
 }
-/* line 18, ../../sass/panes/pane__block_menu_about.scss */
+/* line 24, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about ul li {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-image: none;
 }
-/* line 24, ../../sass/panes/pane__block_menu_about.scss */
+/* line 30, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about ul li a {
   border: 1px solid #f7f7f7;
   position: relative;
@@ -29,14 +32,14 @@
   padding: 0 .5em;
   font-size: 1.5em;
 }
-/* line 36, ../../sass/panes/pane__block_menu_about.scss */
+/* line 42, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about ul li a:hover, .pane-menu-about ul li a.active, .pane-menu-about ul li a:active {
   background: white;
   border: 1px solid #dddddd;
   width: 95%;
   color: #3f3f3f;
 }
-/* line 42, ../../sass/panes/pane__block_menu_about.scss */
+/* line 48, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about ul li a:hover .ar-out, .pane-menu-about ul li a.active .ar-out, .pane-menu-about ul li a:active .ar-out {
   display: block;
   position: absolute;
@@ -49,7 +52,7 @@
   border-bottom: 21px solid transparent;
   border-left: 21px solid #dddddd;
 }
-/* line 50, ../../sass/panes/pane__block_menu_about.scss */
+/* line 56, ../../sass/panes/pane__block_menu_about.scss */
 .pane-menu-about ul li a:hover .ar-out .ar-in, .pane-menu-about ul li a.active .ar-out .ar-in, .pane-menu-about ul li a:active .ar-out .ar-in {
   display: block;
   position: absolute;
@@ -61,4 +64,75 @@
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid white;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 73, ../../sass/panes/pane__block_menu_about.scss */
+  .layout-landing-responsive .row {
+    position: relative;
+  }
+  /* line 76, ../../sass/panes/pane__block_menu_about.scss */
+  .layout-landing-responsive .row .main-content.grid-13-last {
+    margin-top: 5em;
+  }
+
+  /* line 83, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  /* line 88, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul {
+    *zoom: 1;
+    padding: 5px 0px 5px 5px;
+  }
+  /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .pane-menu-about ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 91, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul li {
+    float: left;
+    width: 33.3%;
+  }
+  /* line 95, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul li a {
+    text-align: center;
+    margin: 0 5px 0 0;
+  }
+  /* line 100, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul li a:hover, .pane-menu-about ul li a.active, .pane-menu-about ul li a:active {
+    width: auto;
+  }
+  /* line 102, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul li a:hover .ar-out, .pane-menu-about ul li a.active .ar-out, .pane-menu-about ul li a:active .ar-out {
+    top: 40px;
+    right: 44%;
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #dddddd;
+  }
+  /* line 108, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul li a:hover .ar-out .ar-in, .pane-menu-about ul li a.active .ar-out .ar-in, .pane-menu-about ul li a:active .ar-out .ar-in {
+    top: -16px;
+    right: -14px;
+    width: 0;
+    height: 0;
+    border-bottom: 14px solid transparent;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid white;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 124, ../../sass/panes/pane__block_menu_about.scss */
+  .pane-menu-about ul li a {
+    font-size: 1.2em;
+  }
 }

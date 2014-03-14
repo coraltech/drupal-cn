@@ -1,0 +1,13 @@
+@media screen and (max-width: 768px) {
+  /* line 10, ../../../sass/nodes/nids/node_923.scss */
+  #main-content .pane-content > .panel-2col-stacked .panel-col-first,
+  #main-content .pane-content > .panel-2col-stacked .panel-col-last {
+    float: left;
+    width: 100%;
+  }
+  /* line 13, ../../../sass/nodes/nids/node_923.scss */
+  #main-content .pane-content > .panel-2col-stacked .panel-col-first .inside,
+  #main-content .pane-content > .panel-2col-stacked .panel-col-last .inside {
+    margin: 0;
+  }
+}

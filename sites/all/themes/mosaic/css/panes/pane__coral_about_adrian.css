@@ -3,15 +3,15 @@
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 10, ../../sass/panes/pane__coral_about_adrian.scss */
+/* line 11, ../../sass/panes/pane__coral_about_adrian.scss */
 .pane-coral-about-adrian {
   position: relative;
 }
-/* line 13, ../../sass/panes/pane__coral_about_adrian.scss */
+/* line 14, ../../sass/panes/pane__coral_about_adrian.scss */
 .pane-coral-about-adrian .pane-title {
   color: #cc6b1d;
 }
-/* line 17, ../../sass/panes/pane__coral_about_adrian.scss */
+/* line 18, ../../sass/panes/pane__coral_about_adrian.scss */
 .pane-coral-about-adrian .teammate {
   display: block;
   float: left;
@@ -22,4 +22,12 @@
   width: 100px;
   line-height: 100px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 31, ../../sass/panes/pane__coral_about_adrian.scss */
+  .pane-coral-about-adrian {
+    float: left;
+    width: 100%;
+  }
 }

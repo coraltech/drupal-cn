@@ -1,15 +1,15 @@
-/* line 9, ../../sass/panes/pane__coral_on_git.scss */
+/* line 11, ../../sass/panes/pane__coral_on_git.scss */
 .pane-coral-on-git {
   position: relative;
   margin-bottom: 2.5em;
 }
-/* line 13, ../../sass/panes/pane__coral_on_git.scss */
+/* line 15, ../../sass/panes/pane__coral_on_git.scss */
 .pane-coral-on-git .find-us {
   font-size: 90%;
   margin-left: 1em;
   color: #777777;
 }
-/* line 18, ../../sass/panes/pane__coral_on_git.scss */
+/* line 20, ../../sass/panes/pane__coral_on_git.scss */
 .pane-coral-on-git .git-link {
   background: #36b048;
   -webkit-border-radius: 20px;
@@ -18,14 +18,29 @@
   -o-border-radius: 20px;
   border-radius: 20px;
 }
-/* line 23, ../../sass/panes/pane__coral_on_git.scss */
+/* line 25, ../../sass/panes/pane__coral_on_git.scss */
 .pane-coral-on-git .git-link a {
   color: white;
   display: block;
   padding: 0.625em 0em 0.625em 1em;
   font-size: 90%;
 }
-/* line 29, ../../sass/panes/pane__coral_on_git.scss */
+/* line 31, ../../sass/panes/pane__coral_on_git.scss */
 .pane-coral-on-git .git-link a:hover {
   color: #fff9d0;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 39, ../../sass/panes/pane__coral_on_git.scss */
+  .secondary-content .pane-coral-on-git {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 718px) {
+  /* line 44, ../../sass/panes/pane__coral_on_git.scss */
+  .secondary-content .pane-coral-on-git {
+    float: left;
+    width: 100%;
+  }
 }

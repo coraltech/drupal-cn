@@ -1,8 +1,22 @@
-/* line 3, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
+/* line 6, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
 .pane-about-coral-sections .panel-col-first .inside {
   margin: 0 1em 0 0;
 }
-/* line 6, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
+/* line 9, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
 .pane-about-coral-sections .panel-col-last .inside {
   margin: 0;
+}
+
+@media screen and (max-width: 793px) {
+  /* line 17, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
+  .pane-about-coral-sections .panel-col-first,
+  .pane-about-coral-sections .panel-col-last {
+    float: none;
+    width: auto;
+  }
+  /* line 21, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
+  .pane-about-coral-sections .panel-col-first .panel-pane,
+  .pane-about-coral-sections .panel-col-last .panel-pane {
+    margin-bottom: 2.5em;
+  }
 }

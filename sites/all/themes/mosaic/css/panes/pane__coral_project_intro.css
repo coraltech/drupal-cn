@@ -3,7 +3,7 @@
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 10, ../../sass/panes/pane__coral_project_intro.scss */
+/* line 12, ../../sass/panes/pane__coral_project_intro.scss */
 h1.page-title {
   color: #e17d2c;
   font-size: 2em;
@@ -14,12 +14,12 @@ h1.page-title {
   margin-bottom: .5em;
 }
 
-/* line 20, ../../sass/panes/pane__coral_project_intro.scss */
+/* line 22, ../../sass/panes/pane__coral_project_intro.scss */
 .pane-coral-project-intro {
   position: relative;
   margin-bottom: 3.75em;
 }
-/* line 24, ../../sass/panes/pane__coral_project_intro.scss */
+/* line 26, ../../sass/panes/pane__coral_project_intro.scss */
 .pane-coral-project-intro p {
   font-size: 1.25em;
   line-height: 1em;
@@ -29,11 +29,29 @@ h1.page-title {
   color: #636363;
   line-height: 1.25em;
 }
-/* line 31, ../../sass/panes/pane__coral_project_intro.scss */
+/* line 33, ../../sass/panes/pane__coral_project_intro.scss */
 .pane-coral-project-intro .divider {
   background: url("../../assets/images/coral-sep-long.png") bottom center no-repeat;
   height: 25px;
   width: 100%;
   position: absolute;
   bottom: -45px;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 47, ../../sass/panes/pane__coral_project_intro.scss */
+  .pane-coral-project-intro {
+    margin: 0 0 3.75em;
+  }
+  /* line 49, ../../sass/panes/pane__coral_project_intro.scss */
+  .pane-coral-project-intro .divider {
+    background: url("../../assets/images/coral-sep-med.png") bottom center no-repeat;
+  }
+  /* line 52, ../../sass/panes/pane__coral_project_intro.scss */
+  .pane-coral-project-intro p {
+    font-size: 1.125em;
+    line-height: 1.1111em;
+    margin-top: 0.5555em;
+    margin-bottom: 0.5555em;
+  }
 }

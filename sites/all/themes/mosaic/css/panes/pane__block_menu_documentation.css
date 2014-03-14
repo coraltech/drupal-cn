@@ -1,24 +1,39 @@
-/* line 6, ../../sass/panes/pane__block_menu_documentation.scss */
-.main-content .pane-menu-documentation {
+/* line 8, ../../sass/panes/pane__block_menu_documentation.scss */
+.secondary-content .pane-menu-documentation {
   margin-bottom: 2.5em;
   padding-left: 10px;
 }
-/* line 10, ../../sass/panes/pane__block_menu_documentation.scss */
-.main-content .pane-menu-documentation .pane-title {
+/* line 12, ../../sass/panes/pane__block_menu_documentation.scss */
+.secondary-content .pane-menu-documentation .pane-title {
   color: #cc6b1d;
   font-size: 1.125em;
   line-height: 1.1111em;
   margin-top: 0.5555em;
   margin-bottom: 0.5555em;
 }
-/* line 16, ../../sass/panes/pane__block_menu_documentation.scss */
-.main-content .pane-menu-documentation ul {
+/* line 18, ../../sass/panes/pane__block_menu_documentation.scss */
+.secondary-content .pane-menu-documentation ul {
   margin-top: 0.41667em;
   margin-bottom: 0.41667em;
 }
-/* line 20, ../../sass/panes/pane__block_menu_documentation.scss */
-.main-content .pane-menu-documentation ul li {
+/* line 22, ../../sass/panes/pane__block_menu_documentation.scss */
+.secondary-content .pane-menu-documentation ul li {
   margin-top: 0.41667em;
   margin-bottom: 0.41667em;
   margin-left: .75em;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 32, ../../sass/panes/pane__block_menu_documentation.scss */
+  .secondary-content .pane-menu-documentation {
+    float: left;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 668px) {
+  /* line 37, ../../sass/panes/pane__block_menu_documentation.scss */
+  .secondary-content .pane-menu-documentation {
+    float: none;
+    width: auto;
+  }
 }

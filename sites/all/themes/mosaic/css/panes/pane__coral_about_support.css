@@ -3,7 +3,7 @@
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 11, ../../sass/panes/pane__coral_about_support.scss */
+/* line 12, ../../sass/panes/pane__coral_about_support.scss */
 .pane-coral-about-support .pane-title {
   color: #e17d2c;
   font-size: 2em;
@@ -13,18 +13,27 @@
   font-weight: bold;
   margin-bottom: .5em;
 }
-/* line 20, ../../sass/panes/pane__coral_about_support.scss */
+/* line 21, ../../sass/panes/pane__coral_about_support.scss */
 .pane-coral-about-support h4 {
   color: #cc6b1d;
 }
-/* line 24, ../../sass/panes/pane__coral_about_support.scss */
+/* line 25, ../../sass/panes/pane__coral_about_support.scss */
 .pane-coral-about-support ul {
   margin-top: 0.625em;
   margin-bottom: 0.625em;
 }
-/* line 28, ../../sass/panes/pane__coral_about_support.scss */
+/* line 29, ../../sass/panes/pane__coral_about_support.scss */
 .pane-coral-about-support ul li {
   margin-top: 0.41667em;
   margin-bottom: 0.41667em;
   margin-left: .75em;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 37, ../../sass/panes/pane__coral_about_support.scss */
+  .pane-coral-about-support {
+    float: left;
+    width: 100%;
+    margin-bottom: 2.5em;
+  }
 }

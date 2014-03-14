@@ -511,6 +511,41 @@ table a.tabledrag-handle .handle {
   padding: 0.5em 0.2em;
 }
 
+/* line 316, ../../sass/global/_dom.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 323, ../../sass/global/_dom.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 331, ../../sass/global/_dom.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 338, ../../sass/global/_dom.scss */
+[hidden] {
+  display: none;
+}
+
 /* line 6, ../../sass/global/mce_content.scss */
 body.mce-content-body {
   background-color: #fff;
