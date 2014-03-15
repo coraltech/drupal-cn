@@ -126,7 +126,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       if (state == 'show') {
         return {
           'padding':'1em 1.5em',
-          'position':'relative',
+          'position':'fixed',
           'z-index':'8',
           'background-color':'#fff'
         }

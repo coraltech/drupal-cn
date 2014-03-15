@@ -4,6 +4,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/icons';
+@import 'global/site_vars';
 
 @import "compass/utilities/general/clearfix";
 
@@ -15,7 +16,7 @@
 // General styles
 .pane-coral-wiki-ask-question {
   margin-bottom: $default_vert_unit;
-  
+
   .ask-btn {
     position: relative;
     color: lighten($mdgray, 10%);
@@ -36,7 +37,14 @@
   }
   
   .wiki-ask-question {
-    min-width: 600px;
+    //min-width: 600px;
+    width: 60%;
+    left: 20%;
+    top: 10%;
+    display: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
   
   .node-question-form {
@@ -76,6 +84,26 @@
     .filter-wrapper,
     .filter-guidelines {
       display: none;
+    }
+  }
+}
+@media screen and (max-width: $tabletw) {
+  .pane-coral-wiki-ask-question {
+    .wiki-ask-question {
+      top: 5%;
+      left: 10%;
+      width: 80%;
+      font-size: .9em;
+    }
+  }
+}
+@media screen and (max-width: $phonew) {
+  .pane-coral-wiki-ask-question {
+    .wiki-ask-question {
+      top: 2%;
+      left: 2%;
+      width: 96%;
+      font-size: .85em;
     }
   }
 }
