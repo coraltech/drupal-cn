@@ -7,14 +7,16 @@
 @import 'global/grid_mix';
 @import 'global/headers';
 @import 'global/icons';
+@import 'global/site_vars';
 
 .page-node.node-type-snippet {
-  .layout-landing-1 {
-    .grid-11 {
+  .layout-landing-responsive {
+    .secondary-content {
       @include col(8);
     };
-    .grid-13-last {
+    .main-content {
       @include col(16, true);
+      float: right;
     };
   }
   
@@ -28,6 +30,36 @@
     @include h1;
   }
 }
+
+@media screen and (max-width: $tabletw) {
+  .page-node.node-type-snippet {
+    .layout-landing-responsive .secondary-content { 
+      @include col($columns, 'true');
+    
+      .panel-pane {
+        @include col($columns, 'true');
+        margin-right: 0;
+      }
+      
+      .pane-documentation-related-node {
+        margin-top: 0;
+      }
+      
+      .pane-related-qa-small-list {
+        @include col($columns, 'true');
+        margin-right: 0;
+      }
+    }
+    .layout-landing-responsive .main-content { 
+      @include col($columns, 'true');
+      
+      & > .prepend-1 {
+        margin: 0;
+      }
+    }
+  }
+}
+
 
 .node-snippet {
   padding-bottom: $default_vert_unit;
