@@ -42,11 +42,10 @@
     
     .add {
       display: block;
-      float: left;
+      float: right;
       
       @include btn-glass-ltn;
       @include btn-structure;
-      @include col(3.85);
       
       margin-top: 16px;
       font-size: 1.15em;

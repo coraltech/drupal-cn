@@ -42,19 +42,19 @@ function coral_snippets_intro_pane_content_type_render($subtype, $conf, $args, $
   
   $btn = FALSE;
   if (node_access('create', 'snippet', $user)) {
-    $btn = l('Add a snippet', 'node/add/snippet', array('attributes' => array('class' => array('add'))));
+    $btn = l('Add a snippet', 'node/add/snippet', array('attributes' => array('class' => array('add', 'nowrap'))));
   }
   else {
-    $btn = l('Add a snippet', 'user/login', array('attributes' => array('class' => array('add'))));  
+    $btn = l('Add a snippet', 'user/login', array('attributes' => array('class' => array('add', 'nowrap'))));  
   }
 
   $output = <<<EOF
   <div class="container">
-    <div class="grid-20">
+    <div class="grid-24">
       <span class="info"></span>
+      {$btn}
       <p>Snippets are educational code resources that should be helpful in understanding the COR framework. Snippets shave time off adding features to your cloud definitions, modules, profiles, etc. Snippets should be tagged by language(s) and purpose.</p>
     </div>
-    {$btn}
   </div>
 EOF;
   $block->title = t('Snippet intro');
