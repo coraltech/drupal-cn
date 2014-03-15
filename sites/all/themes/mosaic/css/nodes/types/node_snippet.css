@@ -3,35 +3,68 @@
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 13, ../../../sass/nodes/types/node_snippet.scss */
-.page-node.node-type-snippet .layout-landing-1 .grid-11 {
+/* line 14, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet .layout-landing-responsive .secondary-content {
   float: left;
   width: 31.33333%;
 }
-/* line 16, ../../../sass/nodes/types/node_snippet.scss */
-.page-node.node-type-snippet .layout-landing-1 .grid-13-last {
+/* line 17, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet .layout-landing-responsive .main-content {
   float: left;
   width: 66.66667%;
+  float: right;
 }
-/* line 22, ../../../sass/nodes/types/node_snippet.scss */
+/* line 24, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .snippet-node-pane-title {
   font-size: 1.5em;
   line-height: 1.6667em;
   margin-top: 0.4167em;
   margin-bottom: 0.4167em;
 }
-/* line 23, ../../../sass/nodes/types/node_snippet.scss */
+/* line 25, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .snippet-node-pane-title a {
   color: #b02e1c;
   cursor: text;
   font-weight: normal;
 }
 
-/* line 32, ../../../sass/nodes/types/node_snippet.scss */
+@media screen and (max-width: 768px) {
+  /* line 36, ../../../sass/nodes/types/node_snippet.scss */
+  .page-node.node-type-snippet .layout-landing-responsive .secondary-content {
+    float: left;
+    width: 100%;
+  }
+  /* line 39, ../../../sass/nodes/types/node_snippet.scss */
+  .page-node.node-type-snippet .layout-landing-responsive .secondary-content .panel-pane {
+    float: left;
+    width: 100%;
+    margin-right: 0;
+  }
+  /* line 44, ../../../sass/nodes/types/node_snippet.scss */
+  .page-node.node-type-snippet .layout-landing-responsive .secondary-content .pane-documentation-related-node {
+    margin-top: 0;
+  }
+  /* line 48, ../../../sass/nodes/types/node_snippet.scss */
+  .page-node.node-type-snippet .layout-landing-responsive .secondary-content .pane-related-qa-small-list {
+    float: left;
+    width: 100%;
+    margin-right: 0;
+  }
+  /* line 53, ../../../sass/nodes/types/node_snippet.scss */
+  .page-node.node-type-snippet .layout-landing-responsive .main-content {
+    float: left;
+    width: 100%;
+  }
+  /* line 56, ../../../sass/nodes/types/node_snippet.scss */
+  .page-node.node-type-snippet .layout-landing-responsive .main-content > .prepend-1 {
+    margin: 0;
+  }
+}
+/* line 64, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet {
   padding-bottom: 1.25em;
 }
-/* line 36, ../../../sass/nodes/types/node_snippet.scss */
+/* line 68, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .snippet-node-pane-title .icon {
   display: block;
   float: left;
@@ -41,92 +74,92 @@
   height: 24px;
   width: 24px;
 }
-/* line 44, ../../../sass/nodes/types/node_snippet.scss */
+/* line 76, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links {
   float: right;
   margin-bottom: 0.625em;
 }
-/* line 47, ../../../sass/nodes/types/node_snippet.scss */
+/* line 79, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.first {
   border-right: none;
 }
-/* line 50, ../../../sass/nodes/types/node_snippet.scss */
+/* line 82, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links .icon {
   display: block;
   float: left;
   margin: 2px 2px 0 0;
 }
-/* line 56, ../../../sass/nodes/types/node_snippet.scss */
+/* line 88, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.discussion a .icon {
   background-position: 0 -3946px;
   height: 12px;
   width: 19px;
 }
-/* line 61, ../../../sass/nodes/types/node_snippet.scss */
+/* line 93, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.discussion a.active .icon, .node-snippet .pane-node-links li.discussion a:hover .icon {
   background-position: 0 -3814px;
   height: 12px;
   width: 19px;
 }
-/* line 66, ../../../sass/nodes/types/node_snippet.scss */
+/* line 98, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.node-readmore .icon {
   background-position: 0 -4546px;
   height: 15px;
   width: 15px;
 }
-/* line 71, ../../../sass/nodes/types/node_snippet.scss */
+/* line 103, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.node-readmore.active .icon, .node-snippet .pane-node-links li.node-readmore:hover .icon {
   background-position: 0 -4481px;
   height: 15px;
   width: 15px;
 }
-/* line 75, ../../../sass/nodes/types/node_snippet.scss */
+/* line 107, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.comp_count .cmpcnt {
   color: #36b048;
 }
-/* line 80, ../../../sass/nodes/types/node_snippet.scss */
+/* line 112, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-flag-abuse-node {
   font-size: .9em;
   float: right;
   padding: 0 0 0 4px;
 }
-/* line 84, ../../../sass/nodes/types/node_snippet.scss */
+/* line 116, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-flag-abuse-node a {
   color: #9d9d9d;
 }
-/* line 87, ../../../sass/nodes/types/node_snippet.scss */
+/* line 119, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-flag-abuse-node a:hover {
   color: #5e5e5e;
 }
-/* line 92, ../../../sass/nodes/types/node_snippet.scss */
+/* line 124, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components {
   float: right;
 }
-/* line 94, ../../../sass/nodes/types/node_snippet.scss */
+/* line 126, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components li.comp_count {
   padding-right: 5px;
 }
-/* line 97, ../../../sass/nodes/types/node_snippet.scss */
+/* line 129, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components a {
   color: #9d9d9d;
 }
-/* line 100, ../../../sass/nodes/types/node_snippet.scss */
+/* line 132, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-coral-snippet-components a:hover {
   color: #5e5e5e;
 }
-/* line 106, ../../../sass/nodes/types/node_snippet.scss */
+/* line 138, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-container {
   border-bottom: none;
   margin: 0;
   padding: 0;
 }
-/* line 111, ../../../sass/nodes/types/node_snippet.scss */
+/* line 143, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view {
   padding: 0 0 1.25em;
   margin: 1.25em 0 1.25em;
   border-bottom: 1px solid #dddddd;
 }
-/* line 116, ../../../sass/nodes/types/node_snippet.scss */
+/* line 148, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-label {
   font-size: 1.125em;
   line-height: 1.1111em;
@@ -136,31 +169,31 @@
   color: #56719a;
   float: left;
 }
-/* line 122, ../../../sass/nodes/types/node_snippet.scss */
+/* line 154, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-language {
   float: left;
   color: #898989;
   margin-left: 1em;
 }
-/* line 127, ../../../sass/nodes/types/node_snippet.scss */
+/* line 159, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description {
   clear: both;
 }
-/* line 129, ../../../sass/nodes/types/node_snippet.scss */
+/* line 161, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-name-field-component-description .field-item {
   margin: 1.25em 0;
 }
-/* line 134, ../../../sass/nodes/types/node_snippet.scss */
+/* line 166, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .field-collection-view-links {
   display: none;
 }
-/* line 138, ../../../sass/nodes/types/node_snippet.scss */
+/* line 170, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont {
   height: 1.25em;
   margin: 0 0 10px;
   position: relative;
 }
-/* line 143, ../../../sass/nodes/types/node_snippet.scss */
+/* line 175, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont .copy-btn {
   color: transparent;
   text-indent: -9999em;
@@ -170,7 +203,7 @@
   height: 20px;
   width: 17px;
 }
-/* line 151, ../../../sass/nodes/types/node_snippet.scss */
+/* line 183, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont .copy-msg {
   position: absolute;
   top: 25px;
@@ -180,7 +213,7 @@
   min-width: 125px;
   text-align: center;
 }
-/* line 160, ../../../sass/nodes/types/node_snippet.scss */
+/* line 192, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-view .cp-cont .copy-msg .arrow-up {
   display: block;
   position: absolute;
@@ -193,30 +226,30 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #cad5e2;
 }
-/* line 171, ../../../sass/nodes/types/node_snippet.scss */
+/* line 203, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .field-collection-description,
 .node-snippet .action-links-field-collection-add {
   display: none;
 }
 
-/* line 176, ../../../sass/nodes/types/node_snippet.scss */
+/* line 208, ../../../sass/nodes/types/node_snippet.scss */
 .pane-coral-wiki-ask-question .ask-btn .icon {
   margin-top: 0;
 }
 
-/* line 183, ../../../sass/nodes/types/node_snippet.scss */
+/* line 215, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content,
 .node-type-snippet.node-talk .layout-node-1 .main-content {
   position: relative;
   float: none;
   width: 100%;
 }
-/* line 186, ../../../sass/nodes/types/node_snippet.scss */
+/* line 218, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content h1.page-title,
 .node-type-snippet.node-talk .layout-node-1 .main-content h1.page-title {
   margin-bottom: 0;
 }
-/* line 190, ../../../sass/nodes/types/node_snippet.scss */
+/* line 222, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node {
   background: #f7f7f7;
@@ -225,12 +258,12 @@
   float: right;
   width: 41.66667%;
 }
-/* line 195, ../../../sass/nodes/types/node_snippet.scss */
+/* line 227, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title {
   display: none;
 }
-/* line 199, ../../../sass/nodes/types/node_snippet.scss */
+/* line 231, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node .snippet-node-pane-title,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node .snippet-node-pane-title {
   background: #446eac;
@@ -240,39 +273,39 @@
   padding: 0.625em;
   margin: -16px -16px 0;
 }
-/* line 205, ../../../sass/nodes/types/node_snippet.scss */
+/* line 237, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node .snippet-node-pane-title .icon,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node .snippet-node-pane-title .icon {
   margin-top: 0;
 }
-/* line 208, ../../../sass/nodes/types/node_snippet.scss */
+/* line 240, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node .snippet-node-pane-title a,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node .snippet-node-pane-title a {
   font-weight: bold;
   color: white;
 }
-/* line 214, ../../../sass/nodes/types/node_snippet.scss */
+/* line 246, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content {
   border: 1px solid #777777;
   padding: 16px 16px;
 }
-/* line 217, ../../../sass/nodes/types/node_snippet.scss */
+/* line 249, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content .node-snippet > .panel-display,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content .node-snippet > .panel-display {
   margin-top: 1.25em;
 }
-/* line 219, ../../../sass/nodes/types/node_snippet.scss */
+/* line 251, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline {
   margin: 0;
 }
-/* line 222, ../../../sass/nodes/types/node_snippet.scss */
+/* line 254, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after {
   display: none;
 }
-/* line 226, ../../../sass/nodes/types/node_snippet.scss */
+/* line 258, ../../../sass/nodes/types/node_snippet.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li.first,
 .node-type-snippet.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li.first {
   border-right: none;

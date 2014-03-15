@@ -3,16 +3,16 @@
   background: url('/images/icons-s8e17eae33f.png') no-repeat;
 }
 
-/* line 10, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 11, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .page-node.node-type-book .secondary-content {
   position: relative;
 }
 
-/* line 16, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 17, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question {
   margin-bottom: 1.25em;
 }
-/* line 19, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 20, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .ask-btn {
   position: relative;
   color: #919191;
@@ -21,7 +21,7 @@
   font-weight: bold;
   padding-left: 20px;
 }
-/* line 27, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 28, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .ask-btn .icon {
   display: block;
   position: absolute;
@@ -33,48 +33,54 @@
   height: 16px;
   width: 16px;
 }
-/* line 38, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 39, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .wiki-ask-question {
-  min-width: 600px;
+  width: 60%;
+  left: 20%;
+  top: 10%;
+  display: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
-/* line 45, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 53, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .form-item-title,
 .pane-coral-wiki-ask-question .node-question-form .field-name-field-tags {
   margin: 0.625em 0 1.25em 0;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 50, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 58, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .form-item-title label,
 .pane-coral-wiki-ask-question .node-question-form .field-name-field-tags label {
   width: 20%;
   float: left;
   line-height: 2.5em;
 }
-/* line 55, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 63, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .form-item-title .form-text,
 .pane-coral-wiki-ask-question .node-question-form .field-name-field-tags .form-text {
   width: 75%;
   float: right;
   border: 1px solid #dddddd;
 }
-/* line 60, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 68, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .form-item-title .form-item,
 .pane-coral-wiki-ask-question .node-question-form .field-name-field-tags .form-item {
   margin: 0;
 }
-/* line 63, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 71, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .form-item-title .description,
 .pane-coral-wiki-ask-question .node-question-form .field-name-field-tags .description {
   width: 76.25%;
   float: right;
   clear: both;
 }
-/* line 70, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 78, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .form-textarea {
   border: 1px solid #dddddd;
 }
-/* line 77, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 85, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question .node-question-form .ta-help,
 .pane-coral-wiki-ask-question .node-question-form .vertical-tabs,
 .pane-coral-wiki-ask-question .node-question-form .filter-wrapper,
@@ -82,14 +88,32 @@
   display: none;
 }
 
-/* line 85, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+@media screen and (max-width: 768px) {
+  /* line 92, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+  .pane-coral-wiki-ask-question .wiki-ask-question {
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    font-size: .9em;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 102, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+  .pane-coral-wiki-ask-question .wiki-ask-question {
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    font-size: .85em;
+  }
+}
+/* line 113, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question.top .ask-btn {
   position: absolute;
   right: 0;
   top: -1.25em;
 }
 
-/* line 92, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 120, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question.bottom {
   margin-bottom: 1.25em;
   *zoom: 1;
@@ -100,11 +124,11 @@
   display: table;
   clear: both;
 }
-/* line 97, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 125, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question.bottom .ask-btn {
   float: right;
 }
-/* line 100, ../../sass/panes/pane__coral_wiki_ask_question.scss */
+/* line 128, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question.bottom .wiki-ask-question {
   clear: both;
 }

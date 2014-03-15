@@ -1,6 +1,5 @@
-/* line 12, ../../sass/panes/pane__coral_tag_search.scss */
+/* line 13, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search {
-  padding: 5px;
   position: relative;
   border: 1px solid #aaaaaa;
   margin-bottom: 1.25em;
@@ -17,7 +16,11 @@
 .pane-coral-tag-search .pane-title {
   display: none;
 }
-/* line 23, ../../sass/panes/pane__coral_tag_search.scss */
+/* line 21, ../../sass/panes/pane__coral_tag_search.scss */
+.pane-coral-tag-search .pane-content {
+  padding: 5px;
+}
+/* line 26, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .arrow-ring {
   position: absolute;
   display: block;
@@ -43,7 +46,7 @@
   background: linear-gradient(to bottom, #9d9d9d 0%, #777777 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 38, ../../sass/panes/pane__coral_tag_search.scss */
+/* line 41, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .arrow {
   position: absolute;
   display: block;
@@ -56,19 +59,22 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid white;
 }
-/* line 45, ../../sass/panes/pane__coral_tag_search.scss */
+/* line 48, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .form-item {
   margin: 0;
 }
-/* line 48, ../../sass/panes/pane__coral_tag_search.scss */
-.pane-coral-tag-search form .form-text {
-  width: 94.5%;
-}
 /* line 51, ../../sass/panes/pane__coral_tag_search.scss */
+.pane-coral-tag-search form .form-text {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+/* line 57, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .form-submit {
   position: absolute;
-  top: 10px;
-  right: -1em;
+  top: 17px;
+  right: -1.25em;
   border: none;
   background: none;
   -webkit-box-shadow: none;
@@ -79,4 +85,16 @@
   width: 22px;
   height: 22px;
   text-indent: -9999em;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 79, ../../sass/panes/pane__coral_tag_search.scss */
+  .pane-coral-tag-search form .arrow-ring,
+  .pane-coral-tag-search form .form-submit {
+    left: -1px;
+  }
+  /* line 80, ../../sass/panes/pane__coral_tag_search.scss */
+  .pane-coral-tag-search form .form-text {
+    padding: .25em .25em .25em .75em;
+  }
 }

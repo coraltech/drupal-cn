@@ -7,4 +7,23 @@
 .page-node.node-type-question .main-global .grid-13-last {
   float: left;
   width: 66.66667%;
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 17, ../../../sass/nodes/view_modes/node_question__page_manager.scss */
+  .page-node.node-type-question .main-global .grid-11 {
+    float: left;
+    width: 100%;
+  }
+
+  /* line 20, ../../../sass/nodes/view_modes/node_question__page_manager.scss */
+  .page-node.node-type-question .main-global .grid-13-last {
+    float: left;
+    width: 100%;
+  }
+  /* line 23, ../../../sass/nodes/view_modes/node_question__page_manager.scss */
+  .page-node.node-type-question .main-global .grid-13-last > .prepend-1 {
+    margin: 0;
+  }
 }

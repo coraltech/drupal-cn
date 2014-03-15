@@ -54,7 +54,7 @@
 /* line 43, ../../sass/panes/pane__coral_snippets_intro.scss */
 .pane-coral-snippets-intro .pane-content .add {
   display: block;
-  float: left;
+  float: right;
   font-size: 16px;
   padding: 0.5em 1.5em;
   display: inline-block;
@@ -86,8 +86,6 @@
   -ms-border-radius: 0px;
   -o-border-radius: 0px;
   border-radius: 0px;
-  float: left;
-  width: 14.04167%;
   margin-top: 16px;
   font-size: 1.15em;
   min-height: 2em;
