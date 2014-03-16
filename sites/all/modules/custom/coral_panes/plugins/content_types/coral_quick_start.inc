@@ -40,6 +40,7 @@ $plugin = array(
 function coral_quick_start_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $output = <<<EOF
 <span class='icon'></span>
+<span class='icon-sml'></span>
 <h2 class='pane-title'>Get started with the 5 minute tutorial</h2>
 <p class='small'>Try out the 5 minute tutorial and have a working local cluster in minutes</p>
 <div class='tout clearfix'>

@@ -5,6 +5,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/icons';
+@import 'global/site_vars';
 
 .pane-coral-quick-start {
   margin-bottom: $default_vert_unit;
@@ -16,13 +17,18 @@
     line-height: 1.25em;
   }
   
-  .icon {
+  .icon,
+  .icon-sml {
     display: block;
     position: absolute;
     top: ($default_vert_unit / 2);
     left: 0;
     
     @include icons-sprite('getting-started');
+  }
+  .icon-sml {
+    display: none;
+    @include icons-sprite('getting-started-sml');
   }
   
   .small {
@@ -49,5 +55,20 @@
     display: block;
     width: 6em;
     text-align: center;
+  }
+}
+
+
+@media screen and (max-width: $tabletw - 100px) { // breakpoint also used on main doumentation page
+  .pane-coral-quick-start {
+    .pane-title {
+      margin-left: 45px;
+    }
+    .icon {
+      display: none;
+    }
+    .icon-sml {
+      display: block;
+    }
   }
 }
