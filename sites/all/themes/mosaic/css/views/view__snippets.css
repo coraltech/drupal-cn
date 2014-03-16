@@ -1,6 +1,6 @@
-/* line 594, icons/*.png */
+/* line 634, icons/*.png */
 .icons-sprite, .page-node .pane-coral-page-title .icon {
-  background: url('/images/icons-s8e17eae33f.png') no-repeat;
+  background: url('/images/icons-s08b49ed57a.png') no-repeat;
 }
 
 /* line 11, ../../sass/views/view__snippets.scss */
@@ -136,7 +136,7 @@
   display: block;
   float: left;
   margin: -3px 10px 0 0;
-  background-position: 0 -2340px;
+  background-position: 0 -2420px;
   height: 46px;
   width: 71px;
 }

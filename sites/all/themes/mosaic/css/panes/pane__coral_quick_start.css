@@ -1,21 +1,23 @@
-/* line 594, icons/*.png */
-.icons-sprite, .pane-coral-quick-start .icon {
-  background: url('/images/icons-s8e17eae33f.png') no-repeat;
+/* line 634, icons/*.png */
+.icons-sprite, .pane-coral-quick-start .icon,
+.pane-coral-quick-start .icon-sml {
+  background: url('/images/icons-s08b49ed57a.png') no-repeat;
 }
 
-/* line 9, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 10, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start {
   margin-bottom: 1.25em;
   position: relative;
 }
-/* line 13, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 14, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .pane-title {
   margin: 0.625em 2em 0.625em 65px;
   font-size: 130%;
   line-height: 1.25em;
 }
-/* line 19, ../../sass/panes/pane__coral_quick_start.scss */
-.pane-coral-quick-start .icon {
+/* line 21, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .icon,
+.pane-coral-quick-start .icon-sml {
   display: block;
   position: absolute;
   top: 0.625em;
@@ -24,22 +26,29 @@
   height: 48px;
   width: 48px;
 }
-/* line 28, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 29, ../../sass/panes/pane__coral_quick_start.scss */
+.pane-coral-quick-start .icon-sml {
+  display: none;
+  background-position: 0 -2516px;
+  height: 35px;
+  width: 35px;
+}
+/* line 34, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .small {
   padding: 0 1em;
 }
-/* line 32, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 38, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .tout {
   border-top: 5px solid #777777;
   background: #dddddd;
 }
-/* line 36, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 42, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .tout p {
   margin: 0;
   padding: 1.25em 1em;
   text-align: center;
 }
-/* line 43, ../../sass/panes/pane__coral_quick_start.scss */
+/* line 49, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .btn {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -110,4 +119,19 @@
 .pane-coral-quick-start .btn::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
+}
+
+@media screen and (max-width: 668px) {
+  /* line 64, ../../sass/panes/pane__coral_quick_start.scss */
+  .pane-coral-quick-start .pane-title {
+    margin-left: 45px;
+  }
+  /* line 67, ../../sass/panes/pane__coral_quick_start.scss */
+  .pane-coral-quick-start .icon {
+    display: none;
+  }
+  /* line 70, ../../sass/panes/pane__coral_quick_start.scss */
+  .pane-coral-quick-start .icon-sml {
+    display: block;
+  }
 }

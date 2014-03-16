@@ -1,46 +1,70 @@
-/* line 594, icons/*.png */
-.icons-sprite, .pane-coral-account-management .icon {
-  background: url('/images/icons-s8e17eae33f.png') no-repeat;
+/* line 634, icons/*.png */
+.icons-sprite, .pane-coral-account-management .icon,
+.pane-coral-account-management .icon-sml {
+  background: url('/images/icons-s08b49ed57a.png') no-repeat;
 }
 
-/* line 9, ../../sass/panes/pane__coral_account_management.scss */
+/* line 10, ../../sass/panes/pane__coral_account_management.scss */
 .pane-coral-account-management {
   margin-left: 2%;
   margin-right: 0;
   margin-bottom: 1.25em;
   position: relative;
 }
-/* line 15, ../../sass/panes/pane__coral_account_management.scss */
+/* line 16, ../../sass/panes/pane__coral_account_management.scss */
 .pane-coral-account-management .pane-title {
   margin: 0.625em 0 0.625em 55px;
   font-size: 130%;
   line-height: 1.25em;
 }
-/* line 21, ../../sass/panes/pane__coral_account_management.scss */
-.pane-coral-account-management .icon {
+/* line 23, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management .icon,
+.pane-coral-account-management .icon-sml {
   display: block;
   position: absolute;
   top: 0.625em;
   left: 0;
-  background-position: 0 -2436px;
+  background-position: 0 -2601px;
   height: 52px;
   width: 35px;
 }
 /* line 30, ../../sass/panes/pane__coral_account_management.scss */
+.pane-coral-account-management .icon-sml {
+  display: none;
+  background-position: 0 -3511px;
+  height: 35px;
+  width: 24px;
+}
+/* line 35, ../../sass/panes/pane__coral_account_management.scss */
 .pane-coral-account-management .small {
   padding: 0 1em;
 }
-/* line 34, ../../sass/panes/pane__coral_account_management.scss */
+/* line 39, ../../sass/panes/pane__coral_account_management.scss */
 .pane-coral-account-management .set {
   margin-left: .5em;
 }
-/* line 38, ../../sass/panes/pane__coral_account_management.scss */
+/* line 43, ../../sass/panes/pane__coral_account_management.scss */
 .pane-coral-account-management h4 {
   font-size: 1em;
   font-weight: bold;
   margin: 0;
 }
-/* line 43, ../../sass/panes/pane__coral_account_management.scss */
+/* line 48, ../../sass/panes/pane__coral_account_management.scss */
 .pane-coral-account-management ul {
   margin: 0.35em 0 1.25em 0.125em;
+}
+
+@media screen and (max-width: 668px) {
+  /* line 56, ../../sass/panes/pane__coral_account_management.scss */
+  .pane-coral-account-management .pane-title {
+    margin-left: 35px;
+  }
+  /* line 59, ../../sass/panes/pane__coral_account_management.scss */
+  .pane-coral-account-management .icon {
+    display: none;
+  }
+  /* line 62, ../../sass/panes/pane__coral_account_management.scss */
+  .pane-coral-account-management .icon-sml {
+    display: block;
+  }
 }

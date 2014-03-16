@@ -23,7 +23,7 @@
 .pane-tags-popular-popular-snippet-tags .pane-content,
 .pane-tags-popular-popular-question-tags .pane-content {
   padding-top: .3em;
-  background: #9d9d9d;
+  background: #d0d0d0;
 }
 /* line 28, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-snippet-tags .pane-content .view-content,
@@ -42,13 +42,13 @@
 /* line 35, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-snippet-tags .pane-content .view-content .views-row-even,
 .pane-tags-popular-popular-question-tags .pane-content .view-content .views-row-even {
-  background: #cbcbcb;
+  background: #efefef;
 }
 /* line 38, ../../sass/views/view__tags_popular.scss */
 .pane-tags-popular-popular-snippet-tags .pane-content .view-content .tag-active:after,
 .pane-tags-popular-popular-question-tags .pane-content .view-content .tag-active:after {
   content: "(x)";
-  color: #c57d76;
+  color: #a63626;
   margin-left: 5px;
 }
 /* line 45, ../../sass/views/view__tags_popular.scss */

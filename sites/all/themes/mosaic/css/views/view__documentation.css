@@ -24,7 +24,7 @@
 .pane-documentation-related-node .pane-content,
 .pane-documentation-related-view .pane-content {
   padding-top: .3em;
-  background: #9d9d9d;
+  background: #d0d0d0;
 }
 /* line 29, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .view-content,
@@ -43,7 +43,7 @@
 /* line 36, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .view-content .views-row-even,
 .pane-documentation-related-view .pane-content .view-content .views-row-even {
-  background: #cbcbcb;
+  background: #efefef;
 }
 /* line 39, ../../sass/views/view__documentation.scss */
 .pane-documentation-related-node .pane-content .pager-load-more,

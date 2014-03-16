@@ -1,13 +1,13 @@
-/* line 594, icons/*.png */
-.icons-sprite, .pane-coral-community-tabs ul li a.lcom .icon, .pane-coral-community-tabs ul li a.lqa .icon {
-  background: url('/images/icons-s8e17eae33f.png') no-repeat;
+/* line 634, icons/*.png */
+.icons-sprite, .pane-coral-community-tabs ul li a.lcom .icon, .pane-coral-community-tabs ul li a.lcom .icon-sml, .pane-coral-community-tabs ul li a.lqa .icon, .pane-coral-community-tabs ul li a.lqa .icon-sml {
+  background: url('/images/icons-s08b49ed57a.png') no-repeat;
 }
 
-/* line 15, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 17, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs {
   margin-bottom: 1.25em;
 }
-/* line 18, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 20, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul {
   font-size: 150%;
   border-bottom: 1px solid #777777;
@@ -15,7 +15,7 @@
   padding: 0 1em;
   height: 3em;
 }
-/* line 25, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 27, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li {
   list-style: none;
   list-style-image: none;
@@ -24,7 +24,7 @@
   width: 49.9%;
   float: left;
 }
-/* line 33, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 35, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a {
   height: 2.5em;
   display: block;
@@ -35,9 +35,12 @@
   border-color: #777777;
   position: relative;
   padding-left: 80px;
-  top: -1px;
+  top: 1px;
   line-height: 2.5em;
   color: #777777;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1px -2px 4px;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 1px -2px 4px;
   box-shadow: rgba(0, 0, 0, 0.15) 1px -2px 4px;
@@ -50,8 +53,9 @@
   background: linear-gradient(to bottom, #dddddd 0%, #efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 50, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 55, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a:hover {
+  height: 3em;
   margin-top: 0.25em;
   height: 2.75em;
   line-height: 2.75em;
@@ -64,16 +68,15 @@
   background: linear-gradient(to bottom, #bee1c3 0%, #e8f4ea 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 54, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 60, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a:hover .icon {
   top: .2em !important;
 }
-/* line 60, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 66, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.tab-active {
   height: 3em;
   margin-top: 0;
   border-width: 1px 1px 0 1px;
-  top: 0;
   line-height: 3em;
   background: #eaeaea;
   background: -moz-linear-gradient(top, #eaeaea 0%, white 100%);
@@ -84,31 +87,176 @@
   background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 67, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 71, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.tab-active .icon {
   top: .5em !important;
 }
-/* line 73, ../../sass/panes/pane__coral_community_tabs.scss */
-.pane-coral-community-tabs ul li a .icon {
+/* line 78, ../../sass/panes/pane__coral_community_tabs.scss */
+.pane-coral-community-tabs ul li a .icon,
+.pane-coral-community-tabs ul li a .icon-sml {
   display: block;
   position: absolute;
   top: .2em;
   left: 15px;
 }
-/* line 81, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 84, ../../sass/panes/pane__coral_community_tabs.scss */
+.pane-coral-community-tabs ul li a .icon-sml {
+  left: 3px;
+  top: 3px;
+}
+/* line 90, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.lcom .icon {
   background-position: 0 -1110px;
   height: 50px;
   width: 50px;
 }
-/* line 87, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 93, ../../sass/panes/pane__coral_community_tabs.scss */
+.pane-coral-community-tabs ul li a.lcom .icon-sml {
+  display: none;
+  background-position: 0 -2788px;
+  height: 35px;
+  width: 35px;
+}
+/* line 100, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.lqa {
   padding-left: 115px;
 }
-/* line 89, ../../sass/panes/pane__coral_community_tabs.scss */
+/* line 102, ../../sass/panes/pane__coral_community_tabs.scss */
 .pane-coral-community-tabs ul li a.lqa .icon {
   top: .1em;
   background-position: 0 -318px;
   height: 52px;
   width: 90px;
+}
+/* line 106, ../../sass/panes/pane__coral_community_tabs.scss */
+.pane-coral-community-tabs ul li a.lqa .icon-sml {
+  display: none;
+  background-position: 0 -2261px;
+  height: 30px;
+  width: 52px;
+}
+
+@media screen and (max-width: 1124px) {
+  /* line 118, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul {
+    font-size: 120%;
+    height: 3em;
+  }
+  /* line 123, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a {
+    margin: 0.5em 5px 0;
+    padding-left: 45px;
+  }
+  /* line 129, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a .icon-sml {
+    left: 3px;
+    top: 5px;
+  }
+  /* line 133, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a:hover {
+    margin-top: 0.25em;
+    height: 2.75em;
+    line-height: 2.75em;
+    background: #bee1c3;
+    background: -moz-linear-gradient(top, #bee1c3 0%, #e8f4ea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bee1c3), color-stop(100%, #e8f4ea));
+    background: -webkit-linear-gradient(top, #bee1c3 0%, #e8f4ea 100%);
+    background: -o-linear-gradient(top, #bee1c3 0%, #e8f4ea 100%);
+    background: -ms-linear-gradient(top, #bee1c3 0%, #e8f4ea 100%);
+    background: linear-gradient(to bottom, #bee1c3 0%, #e8f4ea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  }
+  /* line 137, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a:hover .icon-sml {
+    top: 5px !important;
+  }
+  /* line 143, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.tab-active {
+    height: 3em;
+    margin-top: 0;
+    border-width: 1px 1px 0 1px;
+    line-height: 3em;
+    background: #eaeaea;
+    background: -moz-linear-gradient(top, #eaeaea 0%, white 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, white));
+    background: -webkit-linear-gradient(top, #eaeaea 0%, white 100%);
+    background: -o-linear-gradient(top, #eaeaea 0%, white 100%);
+    background: -ms-linear-gradient(top, #eaeaea 0%, white 100%);
+    background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+  }
+  /* line 149, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.tab-active .icon-sml {
+    top: 8px !important;
+  }
+  /* line 155, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.lqa {
+    padding-left: 60px;
+  }
+  /* line 157, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.lqa .icon {
+    display: none;
+  }
+  /* line 160, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.lqa .icon-sml {
+    display: block;
+  }
+  /* line 165, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.lcom .icon {
+    display: none;
+  }
+  /* line 168, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.lcom .icon-sml {
+    display: block;
+  }
+}
+@media screen and (max-width: 949px) {
+  /* line 180, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul {
+    font-size: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 187, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs {
+    padding: 5px;
+    background: url("../../assets/images/diag-tile.png");
+  }
+  /* line 190, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul {
+    border-bottom: none;
+    height: auto;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    *zoom: 1;
+  }
+  /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .pane-coral-community-tabs ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 198, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li {
+    width: 100%;
+  }
+  /* line 200, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a {
+    margin-top: 5px;
+    margin: 5px;
+    height: 3em;
+    line-height: 3em;
+  }
+  /* line 205, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a:hover {
+    margin-top: 5px;
+    height: 3em;
+    line-height: 3em;
+  }
+  /* line 210, ../../sass/panes/pane__coral_community_tabs.scss */
+  .pane-coral-community-tabs ul li a.tab-active {
+    margin-top: 5px;
+    border-width: 1px;
+    height: 3em;
+  }
 }

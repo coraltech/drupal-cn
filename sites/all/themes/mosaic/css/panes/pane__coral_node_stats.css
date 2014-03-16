@@ -1,6 +1,6 @@
-/* line 594, icons/*.png */
+/* line 634, icons/*.png */
 .icons-sprite, .pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
-  background: url('/images/icons-s8e17eae33f.png') no-repeat;
+  background: url('/images/icons-s08b49ed57a.png') no-repeat;
 }
 
 /* line 13, ../../sass/panes/pane__coral_node_stats.scss */
@@ -46,7 +46,7 @@
 .pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
   padding: 0 14px;
   margin: 0 0 0 5px;
-  background-position: 0 -4342px;
+  background-position: 0 -4762px;
   height: 15px;
   width: 18px;
 }

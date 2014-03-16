@@ -1,6 +1,6 @@
-/* line 594, icons/*.png */
+/* line 634, icons/*.png */
 .icons-sprite, .node-snippet .snippet-node-pane-title .icon, .node-snippet .pane-node-links li.discussion a .icon, .node-snippet .pane-node-links li.discussion a.active .icon, .node-snippet .pane-node-links li.discussion a:hover .icon, .node-snippet .pane-node-links li.node-readmore .icon, .node-snippet .pane-node-links li.node-readmore.active .icon, .node-snippet .pane-node-links li.node-readmore:hover .icon, .node-snippet .field-collection-view .cp-cont .copy-btn {
-  background: url('/images/icons-s8e17eae33f.png') no-repeat;
+  background: url('/images/icons-s08b49ed57a.png') no-repeat;
 }
 
 /* line 14, ../../../sass/nodes/types/node_snippet.scss */
@@ -70,7 +70,7 @@
   float: left;
   margin-top: 7px;
   margin-right: 5px;
-  background-position: 0 -4407px;
+  background-position: 0 -4827px;
   height: 24px;
   width: 24px;
 }
@@ -91,25 +91,25 @@
 }
 /* line 88, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.discussion a .icon {
-  background-position: 0 -3946px;
+  background-position: 0 -4366px;
   height: 12px;
   width: 19px;
 }
 /* line 93, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.discussion a.active .icon, .node-snippet .pane-node-links li.discussion a:hover .icon {
-  background-position: 0 -3814px;
+  background-position: 0 -4234px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.node-readmore .icon {
-  background-position: 0 -4546px;
+  background-position: 0 -4966px;
   height: 15px;
   width: 15px;
 }
 /* line 103, ../../../sass/nodes/types/node_snippet.scss */
 .node-snippet .pane-node-links li.node-readmore.active .icon, .node-snippet .pane-node-links li.node-readmore:hover .icon {
-  background-position: 0 -4481px;
+  background-position: 0 -4901px;
   height: 15px;
   width: 15px;
 }
@@ -199,7 +199,7 @@
   text-indent: -9999em;
   display: block;
   float: right;
-  background-position: 0 -3876px;
+  background-position: 0 -4296px;
   height: 20px;
   width: 17px;
 }
