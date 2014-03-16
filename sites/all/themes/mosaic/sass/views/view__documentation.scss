@@ -24,7 +24,7 @@
   }
   .pane-content {
     padding-top: .3em;
-    background: lighten($mdgray, 15%);
+    background: lighten($mdgray, 35%);
     
     .view-content {
       color: lighten($mdgray, 10%);
@@ -33,7 +33,7 @@
       background: $ltgray;
 
       .views-row { padding-left: 1em; padding-right: 1em; }
-      .views-row-even { background: darken($ltgray, 7%); }
+      .views-row-even { background: lighten($ltgray, 7%); }
     }
     
     .pager-load-more {
