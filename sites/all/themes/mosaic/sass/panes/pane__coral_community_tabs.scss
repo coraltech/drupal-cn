@@ -6,8 +6,10 @@
 @import 'global/gradients';
 @import 'global/grid_mix';
 @import 'global/icons';
+@import 'global/site_vars';
 
 @import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
 
 $tab_height_variance: .5em; // variance between active and inactive
 
@@ -40,14 +42,18 @@ $tab_height_variance: .5em; // variance between active and inactive
         border-color: $mdgray;
         position: relative;
         padding-left: 80px;
-        top: -1px;
+        top: 1px;
         line-height: (2 * $default_vert_unit);
         color: $mdgray;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
 
         @include box-shadow(rgba(0,0,0,.15) 1px -2px 4px);
         @include linear-v-gradient($ltgray, lighten($ltgray, 7%));
         
         &:hover {
+          height: (2 * $default_vert_unit) + $tab_height_variance;
           margin-top: ($tab_height_variance / 2);
           height: (2 * $default_vert_unit) + ($tab_height_variance / 2);
           line-height: (2 * $default_vert_unit) + ($tab_height_variance / 2);
@@ -61,25 +67,32 @@ $tab_height_variance: .5em; // variance between active and inactive
           height: (2 * $default_vert_unit) + $tab_height_variance;
           margin-top: 0;
           border-width: 1px 1px 0 1px;
-          top: 0;
           line-height: (2 * $default_vert_unit) + $tab_height_variance;
-          
           .icon { // shift icon loc when the tab size increases
             top: .5em !important;
           }
           
           @include linear-v-gradient(lighten($ltgray, 5%), $white);
         }
-        .icon {
+        .icon,
+        .icon-sml {
           display: block;
           position: absolute;
           top: .2em;
           left: 15px;
         }
+        .icon-sml {
+          left: 3px;
+          top: 3px;
+        }
         // community
         &.lcom {
           .icon {
             @include icons-sprite('coral-community');
+          }
+          .icon-sml {
+            display: none;
+            @include icons-sprite('coral-community-sml');
           }
         }
         
@@ -90,8 +103,117 @@ $tab_height_variance: .5em; // variance between active and inactive
             top: .1em;
             @include icons-sprite('coral-qa');
           }
+          .icon-sml {
+            display: none;
+            @include icons-sprite('coral-qa-sml');
+          }
         }
       }
     }
   }  
+}
+
+@media screen and (max-width: $desktopw + 100px) {
+  .pane-coral-community-tabs {
+    ul {
+      font-size: 120%;
+      height: (2 * $default_vert_unit) + $tab_height_variance;
+
+      li {
+        a {
+          //line-height: (2 * $default_vert_unit);
+          //height: (2 * $default_vert_unit);
+          margin: $tab_height_variance 5px 0;
+          padding-left: 45px;
+          
+          .icon-sml {
+            left: 3px;
+            top: 5px;
+          }
+          &:hover {
+            margin-top: ($tab_height_variance / 2);
+            height: (2 * $default_vert_unit) + ($tab_height_variance / 2);
+            line-height: (2 * $default_vert_unit) + ($tab_height_variance / 2);
+            .icon-sml {
+              top: 5px !important;
+            }
+            
+            @include linear-v-gradient(lighten($ltgreen, 8%), lighten($ltgreen, 20%));
+          }
+          &.tab-active {
+            height: (2 * $default_vert_unit) + $tab_height_variance;
+            margin-top: 0;
+            border-width: 1px 1px 0 1px;
+            line-height: (2 * $default_vert_unit) + $tab_height_variance;
+            
+            .icon-sml { // shift icon loc when the tab size increases
+              top: 8px !important;
+            }
+            
+            @include linear-v-gradient(lighten($ltgray, 5%), $white);
+          }
+          &.lqa {
+            padding-left: 60px;
+            .icon {
+              display: none;
+            }
+            .icon-sml {
+              display: block;
+            }
+          }
+          &.lcom {
+            .icon {
+              display: none;
+            }
+            .icon-sml {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktopw - 75px) {
+  .pane-coral-community-tabs {
+    ul {
+      font-size: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-coral-community-tabs {
+    padding: 5px;
+    background: url('../../assets/images/diag-tile.png');
+    ul {
+      border-bottom: none;
+      height: auto;
+      padding: 5px;
+      background: rgba(255,255,255,.5);
+      
+      @include pie-clearfix;
+      
+      li {
+        width: 100%;
+        a {
+          margin-top: 5px; // dont rem.
+          margin: 5px;
+          height: (2 * $default_vert_unit) + $tab_height_variance;
+          line-height: (2 * $default_vert_unit) + $tab_height_variance;
+          &:hover {
+            margin-top: 5px;
+            height: (2 * $default_vert_unit) + $tab_height_variance;
+            line-height: (2 * $default_vert_unit) + $tab_height_variance;
+          }
+          &.tab-active {
+            margin-top: 5px;
+            border-width: 1px;
+            height: (2 * $default_vert_unit) + $tab_height_variance;
+          }
+        }
+      }
+    }
+  }
 }

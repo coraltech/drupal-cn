@@ -36,8 +36,8 @@ function coral_community_tabs_pane_content_type_render($subtype, $conf, $args, $
   }
   
   $items['items'] = array(
-    l('<span class="icon"></span>Community documentation', 'node/32', array('html' => true, 'attributes' => array('class' => $com_class))),
-    l('<span class="icon"></span>Questions and answers', 'node/55', array('html' => true, 'attributes' => array('class' => $lqa_class)))
+    l('<span class="icon"></span><span class="icon-sml"></span>Community documentation', 'node/32', array('html' => true, 'attributes' => array('class' => $com_class))),
+    l('<span class="icon"></span><span class="icon-sml"></span>Questions and answers', 'node/55', array('html' => true, 'attributes' => array('class' => $lqa_class)))
   );
   
   $attributes = array(
