@@ -3,19 +3,81 @@
 
 @import 'global/fonts';
 @import 'global/grid_mix';
+@import 'global/site_vars';
 
 // Re-adjust the grid ;-)
-.layout-landing-1 .main-content      { @include col(8); }
-.layout-landing-1 .secondary-content { 
+.layout-landing-responsive .secondary-content { @include col(8); }
+.layout-landing-responsive .main-content {
+  
   .limiter.prepend-1 {
     margin-left: $default_vert_unit / 2;
   }
   
-  @include col(16, true); 
+  @include col(16, true);
+  float: right; 
 }
 
 .cont-sep {
   margin-top: $default_vert_unit / 2;
   width: 100%;
   height: 20px;
+}
+
+@media screen and (max-width: $desktopw - 100px) {
+  .layout-landing-responsive .secondary-content { 
+    @include col($columns, true);
+    margin-top: 2 * $default_vert_unit;
+
+    .pane-coral-tag-search,
+    .pane-book-explorer-book-explorer {
+      @include col(12);
+      margin-right: 2%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    .pane-tagclouds-1 {
+      float: right;
+      @include col(12);
+      margin-right: 0;
+      margin-left: 2%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    .pane-coral-tag-search {
+      margin-left: 2%;
+      margin-right: 0;
+    }
+    
+  }
+  .layout-landing-responsive .main-content { 
+    @include col($columns, true);
+    
+    .prepend-1 {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .layout-landing-responsive .secondary-content { 
+    @include col($columns, true); 
+  }
+  .layout-landing-responsive .main-content { 
+    @include col($columns, true);
+    
+    .pane-coral-puppet-overview ul {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw - 100px) {
+  .layout-landing-responsive .secondary-content,
+  .layout-landing-responsive .main-content {
+    margin-top: 0;
+    .panel-pane { @include col($columns, true); margin-left: 0; margin-bottom: $default_vert_unit; } 
+    .sep-long { display: none; }
+  }
 }
