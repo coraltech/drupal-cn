@@ -28,7 +28,7 @@ function coral_documentation_welcome_pane_content_type_render($subtype, $conf, $
   $be_bold = l('be bold', 'http://en.wikipedia.org/wiki/Wikipedia:Be_bold', array('attributes' => array('target' => '_blank')));
   $output = <<<EOF
 <div class="doc-welcome">
-  Welcome to the documentation wiki! This wiki is made by people just like you so {$be_bold}.
+  Welcome to the documentation wiki! This wiki is made by people just like you <span class="nowrap">so {$be_bold}</span>.
 </div>
 EOF;
 
