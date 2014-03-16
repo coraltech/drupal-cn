@@ -47,6 +47,7 @@ function coral_account_management_pane_content_type_render($subtype, $conf, $arg
     
   $output = <<<EOF
 <span class='icon'></span>
+<span class="icon-sml"></span>
 <h2 class='pane-title'>Account manangement and privacy</h2>
 <p class='small'>Account and projects secured with SSL encryption.</p>
 EOF;

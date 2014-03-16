@@ -5,6 +5,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/icons';
+@import 'global/site_vars';
 
 .pane-coral-account-management {
   margin-left: 2%;
@@ -18,13 +19,17 @@
     line-height: 1.25em;
   }
   
-  .icon {
+  .icon,
+  .icon-sml {
     display: block;
     position: absolute;
     top: ($default_vert_unit / 2);
     left: 0;
-    
     @include icons-sprite('coral-key');
+  }
+  .icon-sml {
+    display: none;
+    @include icons-sprite('coral-key-sml');
   }
   
   .small {
@@ -42,5 +47,20 @@
   }
   ul {
     margin: .35em 0 $default_vert_unit .125em;
+  }
+}
+
+
+@media screen and (max-width: $tabletw - 100px) { // breakpoint also used on main doumentation page
+  .pane-coral-account-management {
+    .pane-title {
+      margin-left: 35px;
+    }
+    .icon {
+      display: none;
+    }
+    .icon-sml {
+      display: block;
+    }
   }
 }
