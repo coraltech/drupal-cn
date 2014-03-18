@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 9, ../sass/global/_construct.scss */
 .hide {
-  position: absolute;
+  position: absolute !important;
   left: -9999em;
 }
 
@@ -3087,7 +3087,7 @@ div.append-24 {
 @media screen and (max-width: 768px) {
   /* line 96, ../sass/global/_menus.scss */
   .pane-menu-support ul.menu {
-    right: 44%;
+    right: 22%;
   }
   /* line 98, ../sass/global/_menus.scss */
   .pane-menu-support ul.menu li.leaf {
