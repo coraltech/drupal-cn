@@ -6,7 +6,7 @@
 @import 'global/site_vars';
 
 // hides
-.hide { position: absolute; left: -9999em; }
+.hide { position: absolute !important; left: -9999em; }
 
 // floats
 .left, div.left  { float: left;  }
