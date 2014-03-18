@@ -277,14 +277,13 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicBoxOverlay.prototype.updateOverlay = function(hide) {
     try {
       var boxHide = hide || false;
-      var width = $(document).width();
       var height = $(document).height();
       
       var display = (this.$overlay.hasClass('hidden') || boxHide) ? 'none' : 'block';
       
       this.$overlay.css({
         'height': height+'px',
-        'width': width+'px',
+        'width': '100%',
         'background': '#000000',
         'position': 'absolute',
         'top': 0,
