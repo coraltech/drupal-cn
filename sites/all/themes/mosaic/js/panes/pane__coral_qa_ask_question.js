@@ -11,32 +11,69 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicQAInit = {
     attach : function(context, settings) {
       try {
-        // Any part of this that gets a mouse down we want
+      	var winW = $(window).width();
+      	
+      	// Any part of this that gets a mouse down we want
         //  to focus the user on the textfield 
         $('.pane-coral-qa-ask-question .field-name-body .text-full').attr('rows', '5'); // reset rows
-        $('.pane-coral-qa-ask-question .node-question-form .form-actions .form-submit').attr('value', Drupal.t('Submit question')); // reset submit text
+        var $submit = $('.pane-coral-qa-ask-question .node-question-form .form-actions .form-submit').attr('value', Drupal.t('Submit question')); // reset submit text
         
+        var $pane = $('.pane-coral-qa-ask-question');
         var $form = $('.pane-coral-qa-ask-question form');
-        var userLogin = $form.hasClass('user-login');
-        var currentHeight = $form.height();
-        
-        if (userLogin) {
-          if (currentHeight < 165) currentHeight = 165;
-          $form.height(currentHeight - $form.siblings('h3').outerHeight() - parseInt($form.css('padding-top'), 10) - parseInt($form.css('padding-bottom'), 10));
+        var $msg  = $('.pane-coral-qa-ask-question .qa-msg');
+        var $btn  = $('.pane-coral-qa-ask-question .ask.btn');
+
+        if (winW > 768) {
+        	$form.removeClass('hide');
+        	$('.pane-coral-qa-ask-question .ask.btn').addClass('hide');
+        	
+        	if (winW < 850) {
+        		$submit.attr('value', Drupal.t('Submit'));
+        	}
         }
         else {
-          if (currentHeight < 235) currentHeight = 235;  
+        	$form.addClass('hide');
+        	$('.pane-coral-qa-ask-question .ask.btn').removeClass('hide');
         }
         
-        $('.pane-coral-qa-ask-question').height(currentHeight + 30);  
-        $('.pane-coral-qa-ask-question .qa-msg .cont').height(currentHeight); // resize height of msg box
-
-        // add little icon holder - if it doesnt exist yet
+        
+        $( window ).resize(function() {
+  				var winW = $( window ).width();
+  				if (winW > 768) {
+  					if (winW < 875) {
+        			$submit.attr('value', Drupal.t('Submit'));
+        		}
+        		else {
+        			$submit.attr('value', Drupal.t('Submit question'));
+        		}
+        		$btn.addClass('hide');
+  					$form.removeClass('hide');
+   				}
+  				else {
+  					$submit.attr('value', Drupal.t('Submit question'));
+  					$btn.removeClass('hide');
+  					$form.addClass('hide');
+  				}
+				});
+				
+				// Show and hide the form
+				$('.pane-coral-qa-ask-question .ask.btn').click(function(ev) {
+					ev.preventDefault();
+					if ($form.hasClass('hide')) { 
+						$form.removeClass('hide');
+					}
+					else {
+						$form.addClass('hide');
+					}
+				});
+				
+				
+				
+				// add little icon holder - if it doesnt exist yet
         if (!$('.pane-coral-qa-ask-question .field-name-field-tags .icon').length) {
           $('.pane-coral-qa-ask-question .field-name-field-tags').prepend('<span class="icon"></span>');  
         }
-        
-      }
+			}
       catch (err) {
         console.log('mosaicQAInit() reported errors. Error: '+err);
       }
