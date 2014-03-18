@@ -4,8 +4,10 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/grid_mix';
 @import 'global/headers';
 @import 'global/icons';
+@import 'global/site_vars';
 
 @import 'compass/utilities/general/clearfix';
 @import 'compass/css3/opacity';
@@ -14,16 +16,26 @@
   
   @include linear-v-gradient(lighten($ltgray, 5%), darken($ltgray, 5%));
   margin: $default_vert_unit 0;
-  padding: ($default_vert_unit / 2) ($default_vert_unit / 2) 0;
+  padding: ($default_vert_unit / 2);
   border: 1px solid $mdgray;
-  
+  //min-height: 250px;
   @include pie-clearfix;
   
+  & > .pane-content {
+    
+  }
+  .qa-form.ask {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
   .qa-msg {
     background: lighten($ltgreen,20%);
-    
+    border: 1px solid $ltgreen;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     .cont {
-      border: 1px solid $ltgreen;
       padding: ($default_vert_unit / 2);
     }
   }
@@ -69,6 +81,8 @@
     .description {
       position: relative;
       top: 14px;
+      height: 1.5em;
+      overflow: auto;
     }
   }
   .description{
@@ -90,6 +104,7 @@
     position: relative;
     background-color: rgba(208, 208, 208, .5);
     margin-top: 2.85em;
+    margin-bottom: $default_vert_unit / 2;
     
     .icon {
       position: absolute;
@@ -103,25 +118,22 @@
   .vertical-tabs { display: none; }
   
   // anonymous (login form)
-  .user-login {
-    border: 1px solid lighten($ltgray, 5%);
-    background: rgba(255,255,255,.75) url(../../assets/images/diag-tile.png);
-    padding: ($default_vert_unit / 2) .5em;
+  .qa-form.login {
     
-    @include pie-clearfix;
-    
-    h2 { // use h3 settings
-      color: $mdgray;
-      float: left;
-      margin-left: 2em;
-      position: relative;
-      
-      width: 40%;
-      
-      @include h3;
-      
-      margin-top: 1em;
+    form {
+      border: 1px solid lighten($ltgray, 5%);
+      background: rgba(255,255,255,.75) url(../../assets/images/diag-tile.png);
+      padding: ($default_vert_unit / 2) .5em;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      min-height: 173px;
+      @include pie-clearfix;
     }
+    h3 { // use h3 settings
+      color: $mdgray;
+    }
+    
     label {
       float: left;
       margin-top: 7px;
@@ -141,6 +153,60 @@
     
     .hybridauth-widget {
       float: left;
+    }
+  }
+}
+@media screen and (max-width: $tabletw + 150px) {
+  .html .pane-coral-qa-ask-question {
+    .qa-form {
+      &.login {
+        .hybridauth-widget {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletw) {
+  .html .pane-coral-qa-ask-question {
+    .qa-msg {
+      @include col($columns, true);
+      display: block;
+      float: none;
+      //margin-bottom: $default_vert_unit / 2;
+    }
+    .qa-form {
+      @include col($columns, true);
+      display: block;
+      float: none;
+      
+      .form-type-password .form-text,
+      .form-type-textfield .form-text {
+        font-size: 1em;
+      }
+      
+      input.form-autocomplete {
+        background-position: 99.5% 6px;
+      }
+      input.throbbing {
+        background-position: 99.5% -128px;
+      }
+      .icon {
+        top: -3em;
+        right: 48.25%;
+      }
+      .node-question-form {
+        margin-top: 3 * $default_vert_unit;
+      }
+      
+      &.login {
+        form {
+          margin-top: $default_vert_unit / 2;
+        }
+        .hybridauth-widget {
+          width: 100%;
+        }
+      }
     }
   }
 }

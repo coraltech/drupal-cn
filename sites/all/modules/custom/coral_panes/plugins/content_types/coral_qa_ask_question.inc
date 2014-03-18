@@ -45,24 +45,30 @@ function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $args, 
     if (isset($conf['welcome'])) $message .= '<h3>'.$conf['welcome'].'</h3>';
     if (isset($conf['message'])) {
       $message .= '<p>'.check_markup($conf['message']['value'], $conf['message']['format']).'</p>';
-      
+      $message .= '<a href="#" class="ask btn hide">Ask a question</a>';
     }
     $message .= '</div></div>';
   } // end msg
   
   // Form stuff
   global $user;
-  $form = '<div class="qa-form grid-16-last">';
+  $form = '<div class="qa-form grid-16-last '.(($user->uid)?'ask':'login').'">';
   if (!$user->uid) {
-    $user_login = render(drupal_get_form('user_login'));
-    $question_form = '<h3>Please login or '.l('register', 'user/register')." to ask questions.</h3>";
-    $question_form .= $user_login;
+    $user_form = drupal_get_form('user_login');
+    $user_form['#attributes']['class'][] = 'hide';
+    
+    $user_form['msg'] = array(
+      '#markup' => '<h3>Please login or '.l('register', 'user/register')." to ask questions.</h3>",
+      '#weight' => -15
+    );
+    $question_form = render($user_form);
   }
   else {
     $node = (object) array('uid' => $user->uid, 'name' => (isset($user->name) ? $user->name : ''), 'type' => 'question', 'language' => LANGUAGE_NONE);
     $form_state['build_info']['args'] = array($node);
     form_load_include($form_state, 'inc', 'node', 'node.pages');
     $question_form = drupal_build_form('question_node_form', $form_state);
+    $question_form['#attributes']['class'][] = 'hide';
   }
   $form .= render($question_form).'</div>'; // end form
 
