@@ -243,7 +243,7 @@
 	url = http://git.drupal.org/project/talk.git
 [submodule "sites/all/modules/contrib/freelinking"]
 	path = sites/all/modules/contrib/freelinking
-	url = http://git.drupal.org/project/freelinking.git
+	url = https://github.com/coraltech/freelinking.git 
 [submodule "sites/all/modules/contrib/pathauto"]
 	path = sites/all/modules/contrib/pathauto
 	url = http://git.drupal.org/project/pathauto.git
