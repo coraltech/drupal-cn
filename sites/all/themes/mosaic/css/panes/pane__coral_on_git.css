@@ -37,10 +37,9 @@
     width: 50%;
   }
 }
-@media screen and (max-width: 718px) {
+@media screen and (max-width: 717px) {
   /* line 44, ../../sass/panes/pane__coral_on_git.scss */
   .secondary-content .pane-coral-on-git {
-    float: left;
     width: 100%;
   }
 }

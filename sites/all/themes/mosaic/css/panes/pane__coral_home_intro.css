@@ -165,7 +165,7 @@
     font-size: 1.3em;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 152, ../../sass/panes/pane__coral_home_intro.scss */
   .home-intro-container h2 {
     font-size: 1.15em;
@@ -193,7 +193,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 618px) {
+@media screen and (max-width: 617px) {
   /* line 179, ../../sass/panes/pane__coral_home_intro.scss */
   .home-intro-container .home-intro-content .left {
     width: 100%;

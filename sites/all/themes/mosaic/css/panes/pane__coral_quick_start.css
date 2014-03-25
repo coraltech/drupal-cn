@@ -1,7 +1,7 @@
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite, .pane-coral-quick-start .icon,
 .pane-coral-quick-start .icon-sml {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
 /* line 10, ../../sass/panes/pane__coral_quick_start.scss */
@@ -29,7 +29,7 @@
 /* line 29, ../../sass/panes/pane__coral_quick_start.scss */
 .pane-coral-quick-start .icon-sml {
   display: none;
-  background-position: 0 -2516px;
+  background-position: 0 -2606px;
   height: 35px;
   width: 35px;
 }
@@ -121,7 +121,7 @@
   margin: -1px !important;
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 667px) {
   /* line 64, ../../sass/panes/pane__coral_quick_start.scss */
   .pane-coral-quick-start .pane-title {
     margin-left: 45px;

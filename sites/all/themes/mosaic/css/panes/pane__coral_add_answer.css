@@ -1,14 +1,14 @@
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite, .pane-coral-add-answer .btn.answer .icon, .pane-coral-add-answer .btn.answers-hidden .icon, .pane-coral-add-answer .btn.answers-hidden:hover .icon {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
-/* line 14, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 15, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer {
   float: left;
   margin: 0 5px 0 0;
 }
-/* line 18, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 19, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer {
   padding-left: 0;
   padding-right: 18px;
@@ -22,7 +22,7 @@
   color: #777777;
   font-size: .9em;
 }
-/* line 28, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 29, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .circle {
   cursor: pointer;
   display: block;
@@ -32,7 +32,7 @@
   height: 16px;
   width: 16px;
 }
-/* line 37, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 38, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .circle .arrow {
   display: block;
   margin: 3px 0 0 2px;
@@ -43,7 +43,7 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #515151;
 }
-/* line 42, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 43, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .circle .arrow-down {
   margin: 6px 0 0 -1px;
   width: 0;
@@ -53,44 +53,52 @@
   border-right: 5px solid transparent;
   border-top: 5px solid #515151;
 }
-/* line 48, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 49, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .icon {
   display: block;
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -4558px;
+  background-position: 0 -4648px;
   height: 15px;
   width: 15px;
 }
-/* line 57, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 58, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer:hover {
   color: #919191;
 }
-/* line 62, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 63, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-/* line 67, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 68, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden .icon {
-  background-position: 0 -4493px;
+  background-position: 0 -4583px;
   height: 15px;
   width: 15px;
 }
-/* line 71, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 72, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden:hover .icon {
-  background-position: 0 -4558px;
+  background-position: 0 -4648px;
   height: 15px;
   width: 15px;
 }
 
-/* line 83, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 84, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .pager,
 .view-answers.view-display-id-new_answers .pager {
   display: none;
 }
-/* line 85, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 86, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .views-row,
 .view-answers.view-display-id-new_answers .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.view-answers.view-display-id-this_answer .views-row:after,
+.view-answers.view-display-id-new_answers .views-row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

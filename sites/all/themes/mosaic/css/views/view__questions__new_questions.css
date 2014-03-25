@@ -1,13 +1,13 @@
-/* line 10, ../../sass/views/view__questions__new_questions.scss */
+/* line 12, ../../sass/views/view__questions__new_questions.scss */
 .pane-questions-new-questions > h2 {
   margin-bottom: 1em;
 }
 
-/* line 17, ../../sass/views/view__questions__new_questions.scss */
+/* line 19, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions {
   position: relative;
 }
-/* line 19, ../../sass/views/view__questions__new_questions.scss */
+/* line 21, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .q-filtered-tag {
   position: absolute;
   top: -3.35em;
@@ -16,12 +16,12 @@
   background: #fff6b6;
   padding: 3px 5px;
 }
-/* line 27, ../../sass/views/view__questions__new_questions.scss */
+/* line 29, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .q-filtered-tag .filtered-by {
   margin-right: .75em;
   line-height: 1em;
 }
-/* line 31, ../../sass/views/view__questions__new_questions.scss */
+/* line 33, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .q-filtered-tag .reset-filter a {
   font-size: 12px;
   padding: 0.5em 1.5em;
@@ -89,23 +89,37 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 35, ../../sass/views/view__questions__new_questions.scss */
+/* line 37, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .q-filtered-tag .ftag {
   color: #6a6a6a;
   font-weight: bold;
 }
-/* line 39, ../../sass/views/view__questions__new_questions.scss */
+/* line 41, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .q-filtered-tag .ftag small {
   color: #777777;
   margin-left: 3px;
   position: relative;
   top: -1px;
 }
-/* line 46, ../../sass/views/view__questions__new_questions.scss */
+/* line 48, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .q-filtered-tag .ftag a:hover small {
   color: #b02e1c;
 }
-/* line 56, ../../sass/views/view__questions__new_questions.scss */
+/* line 53, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .views-row {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.view-questions.view-display-id-new_questions .views-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 57, ../../sass/views/view__questions__new_questions.scss */
+.view-questions.view-display-id-new_questions .views-row .follower {
+  background: url("../../assets/images/coral-sep-med.png") top center no-repeat;
+}
+/* line 63, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more .btn {
   margin: 0.625em 0.5em 0.625em 0;
   position: relative;
@@ -141,7 +155,7 @@
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 59, ../../sass/views/view__questions__new_questions.scss */
+/* line 66, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more .btn .ajax-progress {
   position: absolute;
   top: 20%;

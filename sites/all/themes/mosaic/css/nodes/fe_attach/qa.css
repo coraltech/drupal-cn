@@ -11,15 +11,13 @@
   float: right;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 16, ../../../sass/nodes/fe_attach/qa.scss */
   .layout-landing-responsive .secondary-content {
-    float: left;
     width: 100%;
   }
   /* line 19, ../../../sass/nodes/fe_attach/qa.scss */
   .layout-landing-responsive .secondary-content .panel-pane {
-    float: left;
     width: 100%;
   }
   /* line 23, ../../../sass/nodes/fe_attach/qa.scss */
@@ -28,14 +26,12 @@
   }
   /* line 27, ../../../sass/nodes/fe_attach/qa.scss */
   .layout-landing-responsive .secondary-content .pane-related-qa-related-view {
-    float: left;
     width: 100%;
     margin-right: 0;
   }
 
   /* line 32, ../../../sass/nodes/fe_attach/qa.scss */
   .layout-landing-responsive .main-content {
-    float: left;
     width: 100%;
   }
   /* line 35, ../../../sass/nodes/fe_attach/qa.scss */

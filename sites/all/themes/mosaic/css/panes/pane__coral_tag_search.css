@@ -66,11 +66,11 @@
 /* line 51, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .form-text {
   width: 100%;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 57, ../../sass/panes/pane__coral_tag_search.scss */
+/* line 55, ../../sass/panes/pane__coral_tag_search.scss */
 .pane-coral-tag-search form .form-submit {
   position: absolute;
   top: 17px;
@@ -87,13 +87,13 @@
   text-indent: -9999em;
 }
 
-@media screen and (max-width: 768px) {
-  /* line 79, ../../sass/panes/pane__coral_tag_search.scss */
+@media screen and (max-width: 767px) {
+  /* line 77, ../../sass/panes/pane__coral_tag_search.scss */
   .pane-coral-tag-search form .arrow-ring,
   .pane-coral-tag-search form .form-submit {
     left: -1px;
   }
-  /* line 80, ../../sass/panes/pane__coral_tag_search.scss */
+  /* line 78, ../../sass/panes/pane__coral_tag_search.scss */
   .pane-coral-tag-search form .form-text {
     padding: .25em .25em .25em .75em;
   }

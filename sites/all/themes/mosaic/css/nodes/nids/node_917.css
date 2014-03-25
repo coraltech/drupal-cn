@@ -21,7 +21,7 @@
     font-size: 2.5em;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 28, ../../../sass/nodes/nids/node_917.scss */
   .coral-slide.cloud-handle h2 {
     font-size: 1.75em;
@@ -46,7 +46,7 @@
   padding-bottom: 25px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 48, ../../../sass/nodes/nids/node_917.scss */
   .html .view-slideshow .view-content {
     background: url("../../../assets/images/coral-sep-med.png") top center no-repeat;

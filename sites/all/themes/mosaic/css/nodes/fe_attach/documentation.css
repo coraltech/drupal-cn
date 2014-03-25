@@ -1,21 +1,21 @@
-/* line 9, ../../../sass/nodes/fe_attach/documentation.scss */
+/* line 11, ../../../sass/nodes/fe_attach/documentation.scss */
 .layout-landing-responsive .secondary-content {
   float: left;
   width: 31.33333%;
 }
 
-/* line 10, ../../../sass/nodes/fe_attach/documentation.scss */
+/* line 12, ../../../sass/nodes/fe_attach/documentation.scss */
 .layout-landing-responsive .main-content {
   float: left;
   width: 66.66667%;
   float: right;
 }
-/* line 12, ../../../sass/nodes/fe_attach/documentation.scss */
+/* line 14, ../../../sass/nodes/fe_attach/documentation.scss */
 .layout-landing-responsive .main-content .limiter.prepend-1 {
   margin-left: 0.625em;
 }
 
-/* line 20, ../../../sass/nodes/fe_attach/documentation.scss */
+/* line 22, ../../../sass/nodes/fe_attach/documentation.scss */
 .cont-sep {
   margin-top: 0.625em;
   width: 100%;
@@ -23,32 +23,31 @@
 }
 
 @media screen and (max-width: 924px) {
-  /* line 27, ../../../sass/nodes/fe_attach/documentation.scss */
+  /* line 29, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content {
-    float: left;
     width: 100%;
     margin-top: 2.5em;
   }
-  /* line 32, ../../../sass/nodes/fe_attach/documentation.scss */
+  /* line 34, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content .pane-coral-tag-search,
   .layout-landing-responsive .secondary-content .pane-book-explorer-book-explorer {
     float: left;
     width: 48%;
     margin-right: 2%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
-  /* line 39, ../../../sass/nodes/fe_attach/documentation.scss */
+  /* line 40, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content .pane-tagclouds-1 {
     float: right;
     float: left;
     width: 48%;
     margin-right: 0;
     margin-left: 2%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   /* line 48, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content .pane-coral-tag-search {
@@ -58,7 +57,6 @@
 
   /* line 54, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .main-content {
-    float: left;
     width: 100%;
   }
   /* line 57, ../../../sass/nodes/fe_attach/documentation.scss */
@@ -66,16 +64,14 @@
     margin-left: 0 !important;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 64, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content {
-    float: left;
     width: 100%;
   }
 
   /* line 67, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .main-content {
-    float: left;
     width: 100%;
   }
   /* line 70, ../../../sass/nodes/fe_attach/documentation.scss */
@@ -83,7 +79,7 @@
     margin-bottom: 0;
   }
 }
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 667px) {
   /* line 78, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content,
   .layout-landing-responsive .main-content {
@@ -92,7 +88,6 @@
   /* line 80, ../../../sass/nodes/fe_attach/documentation.scss */
   .layout-landing-responsive .secondary-content .panel-pane,
   .layout-landing-responsive .main-content .panel-pane {
-    float: left;
     width: 100%;
     margin-left: 0;
     margin-bottom: 1.25em;

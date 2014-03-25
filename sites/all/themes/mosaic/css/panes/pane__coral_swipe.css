@@ -1,0 +1,126 @@
+/* line 642, icons/*.png */
+.icons-sprite, .pane-coral-swipe.search {
+  background: url('/images/icons-s03a4934389.png') no-repeat;
+}
+
+/* line 9, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-top: .35em;
+  display: none;
+  text-align: center;
+  color: #515151;
+  background: url("../../assets/images/coral-sep-med.png") top center no-repeat;
+  cursor: pointer;
+  padding-top: 1px;
+}
+/* line 19, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe div {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 28, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe .pane-content {
+  background: url("../../assets/images/coral-sep-med.png") bottom center no-repeat;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+/* line 34, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe .msg {
+  background: #eaeaea;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #f7f7f7 0%, #eaeaea 50%, #f7f7f7 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f7f7f7), color-stop(50%, #eaeaea), color-stop(100%, #f7f7f7));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #f7f7f7 0%, #eaeaea 50%, #f7f7f7 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #f7f7f7 0%, #eaeaea 50%, #f7f7f7 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #f7f7f7 0%, #eaeaea 50%, #f7f7f7 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #f7f7f7 0%, #eaeaea 50%, #f7f7f7 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right ,GradientType=1 );
+  /* IE6-9 */
+  line-height: 1.25em;
+  padding: .25em .5em;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 48, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe .icon {
+  display: block;
+  float: left;
+  margin-right: -24px;
+  margin-left: 0;
+  position: relative;
+  top: .27em;
+}
+/* line 56, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe .arrow-left {
+  left: 5%;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #446eac;
+}
+/* line 60, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe .arrow-right {
+  right: 5%;
+  float: right;
+  margin-left: -24px;
+  margin-right: 0;
+  width: 0;
+  height: 0;
+  border-right: 12px solid transparent;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #446eac;
+}
+
+/* line 69, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe.search {
+  background-position: 0 -1935px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 6.5em;
+  left: 0;
+  margin: .15em 0 0;
+}
+/* line 75, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe.search .pane-content {
+  background: none;
+}
+/* line 77, ../../sass/panes/pane__coral_swipe.scss */
+.pane-coral-swipe.search .pane-content .swipeit {
+  height: 2em;
+  width: 2em;
+}
+
+/* line 84, ../../sass/panes/pane__coral_swipe.scss */
+.navbar-administration .pane-coral-swipe.search {
+  top: 9.5em;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 89, ../../sass/panes/pane__coral_swipe.scss */
+  .pane-coral-swipe {
+    display: block;
+  }
+}

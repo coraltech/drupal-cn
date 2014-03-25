@@ -7,22 +7,23 @@
 .pane-related-qa-small-list .pane-title,
 .pane-related-qa-related-view .pane-title {
   color: white;
-  padding: 0.625em;
-  margin: 0 0 3px;
-  line-height: .8em;
-  background: #777777;
-  background: -moz-linear-gradient(top, #777777 0%, #898989 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #898989));
-  background: -webkit-linear-gradient(top, #777777 0%, #898989 100%);
-  background: -o-linear-gradient(top, #777777 0%, #898989 100%);
-  background: -ms-linear-gradient(top, #777777 0%, #898989 100%);
-  background: linear-gradient(to bottom, #777777 0%, #898989 100%);
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-bottom: .1545em;
+  background: #919191;
+  background: -moz-linear-gradient(top, #919191 0%, #898989 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #919191), color-stop(100%, #898989));
+  background: -webkit-linear-gradient(top, #919191 0%, #898989 100%);
+  background: -o-linear-gradient(top, #919191 0%, #898989 100%);
+  background: -ms-linear-gradient(top, #919191 0%, #898989 100%);
+  background: linear-gradient(to bottom, #919191 0%, #898989 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
 }
-/* line 22, ../../sass/views/view__related_qa.scss */
+/* line 21, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content,
 .pane-related-qa-related-view .pane-content {
-  background: #9d9d9d;
+  padding-top: .3em;
+  background: #d0d0d0;
 }
 /* line 25, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content .view-content,
@@ -41,33 +42,34 @@
 /* line 32, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content .view-content .views-row-even,
 .pane-related-qa-related-view .pane-content .view-content .views-row-even {
-  background: #cbcbcb;
+  background: #efefef;
 }
 /* line 35, ../../sass/views/view__related_qa.scss */
-.pane-related-qa-small-list .pane-content .views-row,
-.pane-related-qa-related-view .pane-content .views-row {
-  background: #dddddd;
-  padding: .1562em .5em;
+.pane-related-qa-small-list .pane-content .view-content .tag-active:after,
+.pane-related-qa-related-view .pane-content .view-content .tag-active:after {
+  content: "(x)";
+  color: #a63626;
+  margin-left: 5px;
 }
-/* line 39, ../../sass/views/view__related_qa.scss */
-.pane-related-qa-small-list .pane-content .views-row-even,
-.pane-related-qa-related-view .pane-content .views-row-even {
-  background: #eaeaea;
+/* line 42, ../../sass/views/view__related_qa.scss */
+.pane-related-qa-small-list .pane-content .view-content .tag-active:hover:after,
+.pane-related-qa-related-view .pane-content .view-content .tag-active:hover:after {
+  color: #b02e1c;
 }
-/* line 43, ../../sass/views/view__related_qa.scss */
+/* line 48, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content .pager-load-more,
 .pane-related-qa-related-view .pane-content .pager-load-more {
   margin: 0;
   padding: 3px;
   text-align: left;
 }
-/* line 48, ../../sass/views/view__related_qa.scss */
+/* line 53, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content .pager-load-more li,
 .pane-related-qa-related-view .pane-content .pager-load-more li {
   margin: 0;
   padding: 0;
 }
-/* line 52, ../../sass/views/view__related_qa.scss */
+/* line 57, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content .pager-load-more li a,
 .pane-related-qa-related-view .pane-content .pager-load-more li a {
   color: white;
@@ -143,7 +145,7 @@
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 58, ../../sass/views/view__related_qa.scss */
+/* line 63, ../../sass/views/view__related_qa.scss */
 .pane-related-qa-small-list .pane-content .pager-load-more li a:hover,
 .pane-related-qa-related-view .pane-content .pager-load-more li a:hover {
   color: white;

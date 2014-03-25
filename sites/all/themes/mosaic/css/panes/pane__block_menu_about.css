@@ -130,7 +130,7 @@
     border-top: 14px solid white;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 124, ../../sass/panes/pane__block_menu_about.scss */
   .pane-menu-about ul li a {
     font-size: 1.2em;

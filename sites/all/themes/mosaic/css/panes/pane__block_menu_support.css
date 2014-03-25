@@ -231,7 +231,7 @@
     width: 75%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 159, ../../sass/panes/pane__block_menu_support.scss */
   .html .pane-getting-help {
     margin: 10px 5%;

@@ -1,6 +1,6 @@
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite, .pane-coral-home-contribute .public-work, .pane-coral-home-contribute .troubleshoot {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
 /* line 9, ../../sass/panes/pane__coral_home_contribute.scss */
@@ -27,7 +27,7 @@
   display: block;
   float: left;
   margin: 2.3em 0 -1.25em 0;
-  background-position: 0 -2341px;
+  background-position: 0 -2431px;
   height: 29px;
   width: 39px;
 }
@@ -45,7 +45,7 @@
     float: right;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 47, ../../sass/panes/pane__coral_home_contribute.scss */
   .pane-coral-home-contribute {
     width: 100%;

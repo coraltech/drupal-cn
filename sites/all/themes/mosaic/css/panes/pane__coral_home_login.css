@@ -1,12 +1,12 @@
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
 /* line 13, ../../sass/panes/pane__coral_home_login.scss */
 .pane-coral-home-login {
   position: relative;
-  margin: 1.25em 0;
+  margin: 1.25em 0 0 0;
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -88,32 +88,42 @@
 /* line 27, ../../sass/panes/pane__coral_home_login.scss */
 .pane-coral-home-login ul, .pane-coral-home-login p {
   margin-top: 3px;
+  margin-bottom: 0;
 }
-/* line 32, ../../sass/panes/pane__coral_home_login.scss */
+/* line 33, ../../sass/panes/pane__coral_home_login.scss */
 .pane-coral-home-login .grid-15-last {
   float: right;
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 39, ../../sass/panes/pane__coral_home_login.scss */
+  /* line 40, ../../sass/panes/pane__coral_home_login.scss */
   .pane-coral-home-login .grid-4 {
     float: left;
     display: block;
     width: auto;
     padding-top: 4px;
   }
-  /* line 45, ../../sass/panes/pane__coral_home_login.scss */
+  /* line 46, ../../sass/panes/pane__coral_home_login.scss */
   .pane-coral-home-login .grid-15-last {
     display: inline;
     float: none;
     width: auto;
   }
-  /* line 50, ../../sass/panes/pane__coral_home_login.scss */
+  /* line 51, ../../sass/panes/pane__coral_home_login.scss */
+  .pane-coral-home-login .grid-15-last p {
+    position: relative;
+    top: 5px;
+  }
+  /* line 56, ../../sass/panes/pane__coral_home_login.scss */
   .pane-coral-home-login .grid-5 {
     width: 100%;
     margin: 0;
   }
-  /* line 54, ../../sass/panes/pane__coral_home_login.scss */
+  /* line 60, ../../sass/panes/pane__coral_home_login.scss */
+  .pane-coral-home-login .grid-5 ul {
+    margin-top: 0.625em;
+  }
+  /* line 62, ../../sass/panes/pane__coral_home_login.scss */
   .pane-coral-home-login .grid-5 ul li {
     float: left;
     margin-right: 1em;

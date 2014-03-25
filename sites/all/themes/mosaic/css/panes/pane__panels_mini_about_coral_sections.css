@@ -7,7 +7,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 793px) {
+@media screen and (max-width: 792px) {
   /* line 17, ../../sass/panes/pane__panels_mini_about_coral_sections.scss */
   .pane-about-coral-sections .panel-col-first,
   .pane-about-coral-sections .panel-col-last {

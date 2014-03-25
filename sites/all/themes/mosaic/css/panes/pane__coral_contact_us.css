@@ -42,10 +42,9 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 50, ../../sass/panes/pane__coral_contact_us.scss */
   .pane-coral-contact-us {
-    float: left;
     width: 100%;
   }
 }

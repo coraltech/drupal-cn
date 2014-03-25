@@ -992,18 +992,18 @@ audio:not([controls]) {
   display: none;
 }
 
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .pane-search-form .form-wrapper, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite, .comment li.comment-delete span.icon, .comment li.comment-edit span.icon, .comment li.comment-reply span.icon, .comment li.comment-delete a:hover span.icon, .comment li.comment-edit a:hover span.icon, .comment li.comment-reply a:hover span.icon, header .pane-search-form .form-wrapper, header .coral-cloud .icon, .html ul.links li.flag-follow a .icon, .html ul.links li.flag-follow a:hover .icon, .flag-abuse-node a.flag-action .icon,
 .flag-abuse-node a.unflag-action .icon, .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon, .item-list ul.pager li.pager-first .icon, .item-list ul.pager li.pager-first a:hover .icon, .item-list ul.pager li.pager-previous .icon, .item-list ul.pager li.pager-previous a:hover .icon, .item-list ul.pager li.pager-next .icon, .item-list ul.pager li.pager-next a:hover .icon, .item-list ul.pager li.pager-last .icon, .item-list ul.pager li.pager-last a:hover .icon {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
 /* line 9, ../sass/global/comments.scss */
@@ -1101,37 +1101,37 @@ audio:not([controls]) {
 }
 /* line 89, ../sass/global/comments.scss */
 .comment li.comment-delete span.icon {
-  background-position: 0 -5715px;
+  background-position: 0 -5805px;
   height: 15px;
   width: 15px;
 }
 /* line 92, ../sass/global/comments.scss */
 .comment li.comment-edit span.icon {
-  background-position: 0 -5650px;
+  background-position: 0 -5740px;
   height: 15px;
   width: 15px;
 }
 /* line 95, ../sass/global/comments.scss */
 .comment li.comment-reply span.icon {
-  background-position: 0 -4366px;
+  background-position: 0 -4456px;
   height: 12px;
   width: 19px;
 }
 /* line 98, ../sass/global/comments.scss */
 .comment li.comment-delete a:hover span.icon {
-  background-position: 0 -5780px;
+  background-position: 0 -5870px;
   height: 15px;
   width: 15px;
 }
 /* line 101, ../sass/global/comments.scss */
 .comment li.comment-edit a:hover span.icon {
-  background-position: 0 -4428px;
+  background-position: 0 -4518px;
   height: 15px;
   width: 15px;
 }
 /* line 104, ../sass/global/comments.scss */
 .comment li.comment-reply a:hover span.icon {
-  background-position: 0 -4234px;
+  background-position: 0 -4324px;
   height: 12px;
   width: 19px;
 }
@@ -1268,7 +1268,7 @@ header .pane-search-form .form-text {
 }
 /* line 84, ../sass/global/_global.scss */
 header .pane-search-form .form-wrapper {
-  background-position: 0 -5291px;
+  background-position: 0 -5381px;
   height: 27px;
   width: 27px;
   border: 1px solid #2b486b;
@@ -1456,7 +1456,7 @@ header .coral-cloud .icon {
     content: "Login | ";
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 205, ../sass/global/_global.scss */
   .pane-header .hybridauth-widget-wrapper {
     margin-top: -0.625em;
@@ -1484,7 +1484,7 @@ header .coral-cloud .icon {
   margin: 0.3125em 0.5em 0 0.5em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 235, ../sass/global/_global.scss */
   .pane-coral-user {
     margin-top: -4px;
@@ -1652,13 +1652,13 @@ h3 .toc-top {
   float: left;
   margin-top: 1px;
   margin-right: 2px;
-  background-position: 0 -5226px;
+  background-position: 0 -5316px;
   height: 15px;
   width: 15px;
 }
 /* line 363, ../sass/global/_global.scss */
 .html ul.links li.flag-follow a:hover .icon {
-  background-position: 0 -5161px;
+  background-position: 0 -5251px;
   height: 15px;
   width: 15px;
 }
@@ -1686,7 +1686,7 @@ h3 .toc-top {
   display: block;
   float: left;
   margin: 3px 0 0 0;
-  background-position: 0 -3247px;
+  background-position: 0 -3337px;
   height: 16px;
   width: 15px;
 }
@@ -1698,20 +1698,20 @@ h3 .toc-top {
 /* line 393, ../sass/global/_global.scss */
 .flag-abuse-node a.flag-action:hover .icon,
 .flag-abuse-node a.unflag-action:hover .icon {
-  background-position: 0 -3313px;
+  background-position: 0 -3403px;
   height: 16px;
   width: 15px;
 }
 /* line 399, ../sass/global/_global.scss */
 .flag-abuse-node a.unflag-action .icon {
-  background-position: 0 -3445px;
+  background-position: 0 -3535px;
   height: 16px;
   width: 15px;
 }
 /* line 402, ../sass/global/_global.scss */
 .flag-abuse-node a.unflag-action:hover .icon {
   color: #919191;
-  background-position: 0 -3379px;
+  background-position: 0 -3469px;
   height: 16px;
   width: 15px;
 }
@@ -2284,25 +2284,25 @@ form .field-type-file table .description {
 }
 /* line 745, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-first .icon {
-  background-position: 0 -4016px;
+  background-position: 0 -4106px;
   height: 20px;
   width: 14px;
 }
 /* line 750, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-first a:hover .icon {
-  background-position: 0 -4164px;
+  background-position: 0 -4254px;
   height: 20px;
   width: 14px;
 }
 /* line 756, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-previous .icon {
-  background-position: 0 -3596px;
+  background-position: 0 -3686px;
   height: 20px;
   width: 19px;
 }
 /* line 761, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-previous a:hover .icon {
-  background-position: 0 -3806px;
+  background-position: 0 -3896px;
   height: 20px;
   width: 19px;
 }
@@ -2313,13 +2313,13 @@ form .field-type-file table .description {
 }
 /* line 772, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-next .icon {
-  background-position: 0 -3666px;
+  background-position: 0 -3756px;
   height: 20px;
   width: 19px;
 }
 /* line 777, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-next a:hover .icon {
-  background-position: 0 -3736px;
+  background-position: 0 -3826px;
   height: 20px;
   width: 19px;
 }
@@ -2330,13 +2330,13 @@ form .field-type-file table .description {
 }
 /* line 788, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-last .icon {
-  background-position: 0 -3946px;
+  background-position: 0 -4036px;
   height: 20px;
   width: 14px;
 }
 /* line 793, ../sass/global/_global.scss */
 .item-list ul.pager li.pager-last a:hover .icon {
-  background-position: 0 -3876px;
+  background-position: 0 -3966px;
   height: 20px;
   width: 14px;
 }
@@ -2901,13 +2901,11 @@ div.append-23 {
 
 /* line 12, ../sass/global/grid.scss */
 .grid-24 {
-  float: left;
   width: 98%;
 }
 
 /* line 18, ../sass/global/grid.scss */
 .grid-24-last {
-  float: left;
   width: 100%;
 }
 
@@ -3084,7 +3082,7 @@ div.append-24 {
   border-bottom: 2px solid #762921;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 96, ../sass/global/_menus.scss */
   .pane-menu-support ul.menu {
     right: 22%;
@@ -3169,7 +3167,7 @@ footer {
   color: #fff6b6;
 }
 
-@media screen and (max-width: 618px) {
+@media screen and (max-width: 617px) {
   /* line 166, ../sass/global/_menus.scss */
   #mini-panel-footer .panel-col-first,
   #mini-panel-footer .panel-col-last {
@@ -3677,5 +3675,11 @@ pre.prettyprint .dec {
   #mini-panel-top_menus .pane-superfish-1 .sf-menu a,
   #mini-panel-top_menus .pane-superfish-2 .sf-menu a {
     font-size: .85em;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 241, ../sass/global/_superfish.scss */
+  #mini-panel-top_menus {
+    padding: 0.3125em 0;
   }
 }

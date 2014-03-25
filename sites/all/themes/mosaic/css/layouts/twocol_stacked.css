@@ -8,7 +8,6 @@
 /* line 13, ../../sass/layouts/twocol_stacked.scss */
 .panel-2col-stacked .panel-col-top,
 .panel-2col-stacked .panel-col-bottom {
-  float: left;
   width: 100%;
   clear: both;
 }

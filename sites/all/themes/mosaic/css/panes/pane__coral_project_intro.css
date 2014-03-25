@@ -1,6 +1,6 @@
-/* line 634, icons/*.png */
+/* line 642, icons/*.png */
 .icons-sprite {
-  background: url('/images/icons-s08b49ed57a.png') no-repeat;
+  background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
 /* line 12, ../../sass/panes/pane__coral_project_intro.scss */
@@ -38,7 +38,7 @@ h1.page-title {
   bottom: -45px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 47, ../../sass/panes/pane__coral_project_intro.scss */
   .pane-coral-project-intro {
     margin: 0 0 3.75em;
