@@ -1,5 +1,5 @@
 <div class="layout-node-1">
-  <div class='site-width'>
+  <div class='grid-24-last'>
     
     <?php if (!empty($content['leader'])): ?>
     <div class="container grid-24-last leader clear">
@@ -34,8 +34,8 @@
   </div>
   
   <?php if (!empty($content['sub_footer'])): ?>
-  <div class="container sub_footer clear">
-    <div class="limiter site-width">
+  <div class="container grid-24-last sub_footer clear">
+    <div class="limiter">
       <?php print render($content['sub_footer']); ?>
     </div>
   </div>
