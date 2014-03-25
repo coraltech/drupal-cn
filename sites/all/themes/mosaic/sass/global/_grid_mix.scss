@@ -14,7 +14,9 @@ $col_margin: 2%; // margin (%) between columns
 
 // create a column div 
 @mixin col($n: 1, $last:'false', $dir: left) { 
-  float: $dir; 
+  @if $n != $columns {
+    float: $dir;
+  } 
   @include span($n, $last); 
 } 
 
