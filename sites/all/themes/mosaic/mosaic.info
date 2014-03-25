@@ -15,6 +15,7 @@ scripts[] = js/lib/prettify/src/prettify.js
 scripts[] = js/lib/tinymce/js/tinymce/tinymce.js
 scripts[] = js/lib/TableOfContents/js/jquery.tableofcontents.js
 scripts[] = js/lib/color/jquery.color.min.js
+scripts[] = js/lib/tocca/Tocca.min.js
 
 ; -- Custom
 scripts[] = js/global/mosaicCore.js
