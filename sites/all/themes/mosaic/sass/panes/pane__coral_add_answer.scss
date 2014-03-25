@@ -10,6 +10,7 @@
 
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
 
 .pane-coral-add-answer {
   float: left;
@@ -84,6 +85,7 @@
   
   .views-row {
     background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+    @include pie-clearfix; 
   }
   .views-row-first { }
 }
