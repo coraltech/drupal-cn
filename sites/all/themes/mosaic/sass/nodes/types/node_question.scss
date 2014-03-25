@@ -71,5 +71,6 @@
   margin-left: -1 * ($default_vert_unit);
   margin-right: -1 * ($default_vert_unit);
   padding: ($default_vert_unit / 2) $default_vert_unit;
+  @include pie-clearfix;
 }
 
