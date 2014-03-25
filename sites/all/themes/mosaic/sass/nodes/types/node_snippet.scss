@@ -31,36 +31,6 @@
   }
 }
 
-@media screen and (max-width: $tabletw) {
-  .page-node.node-type-snippet {
-    .layout-landing-responsive .secondary-content { 
-      @include col($columns, 'true');
-    
-      .panel-pane {
-        @include col($columns, 'true');
-        margin-right: 0;
-      }
-      
-      .pane-documentation-related-node {
-        margin-top: 0;
-      }
-      
-      .pane-related-qa-small-list {
-        @include col($columns, 'true');
-        margin-right: 0;
-      }
-    }
-    .layout-landing-responsive .main-content { 
-      @include col($columns, 'true');
-      
-      & > .prepend-1 {
-        margin: 0;
-      }
-    }
-  }
-}
-
-
 .node-snippet {
   padding-bottom: $default_vert_unit;
   
@@ -264,4 +234,52 @@
   }
 
   @include col(24, true, none); 
+}
+
+
+@media screen and (max-width: $tabletw) {
+  .page-comment.page-comment-reply,
+  .page-node.node-type-snippet {
+    .layout-landing-responsive .secondary-content { 
+      @include col($columns, 'true');
+    
+      .panel-pane {
+        @include col($columns, 'true');
+        margin-right: 0;
+      }
+      
+      .pane-documentation-related-node {
+        margin-top: 0;
+      }
+      
+      .pane-related-qa-small-list {
+        @include col($columns, 'true');
+        margin-right: 0;
+      }
+    }
+    .layout-landing-responsive .main-content { 
+      @include col($columns, 'true');
+      
+      & > .prepend-1 {
+        margin: 0;
+      }
+    }
+    
+    #main-content .layout-node-1 {
+      .pane-node {
+        float: right;
+        width: 100%;
+        margin-right: -100%;
+        
+        // Prevent the node's height from 
+        //  affecting the comment container for now
+        display: none;
+      }
+      h1.page-title {
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
 }
