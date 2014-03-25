@@ -237,4 +237,10 @@
   }
 }
 
+@media screen and (max-width: $tabletw) {
+  #mini-panel-top_menus {
+    padding: ($default_vert_unit / 4) 0;
+  }
+}
+
 
