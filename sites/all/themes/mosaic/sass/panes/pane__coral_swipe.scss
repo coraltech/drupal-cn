@@ -1,0 +1,92 @@
+
+@import 'global/arrows';
+@import 'global/gradients';
+@import 'global/headers';
+@import 'global/site_vars';
+@import 'global/icons';
+
+// Coral swipe scss file
+.pane-coral-swipe {
+  @include h3;
+  margin-top: .35em;
+  display: none;
+  text-align: center;
+  color: $dkgray;
+  background: url('../../assets/images/coral-sep-med.png') top center no-repeat;
+  cursor: pointer;
+  padding-top: 1px;
+  
+  div {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .pane-content {
+    background: url('../../assets/images/coral-sep-med.png') bottom center no-repeat;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+  }
+    
+  .msg {
+    @include reflected-h-gradient(lighten($ltgray, 10%), lighten($ltgray, 5%), lighten($ltgray, 10%));
+    line-height: 1.25em;
+    padding: .25em .5em;
+    display: block;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .icon {
+    display: block;
+    float: left;
+    margin-right: -24px;
+    margin-left: 0;
+    position: relative;
+    top: .27em;
+  }
+  .arrow-left {
+    left: 5%;
+    @include arrow-left(12px, $mdblue);
+  }
+  .arrow-right {
+    right: 5%;
+    float: right;
+    margin-left: -24px;
+    margin-right: 0;
+    @include arrow-right(12px, $mdblue);
+  }
+}
+
+.pane-coral-swipe.search {
+  @include icons-sprite('search-options');
+  position: fixed;
+  top: 6.5em;
+  left: 0;
+  margin: .15em 0 0;
+  .pane-content {
+    background: none;
+    .swipeit {
+      height: 2em;
+      width: 2em;
+    }
+  }
+}
+// Make allowances for admin
+.navbar-administration .pane-coral-swipe.search {
+  top: 9.5em;
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-coral-swipe {
+    display: block;
+  }
+}
