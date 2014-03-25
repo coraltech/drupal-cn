@@ -7,6 +7,7 @@
 @import 'global/site_vars';
 
 @import "compass/utilities/general/clearfix";
+@import "compass/css3";
 
 .page-node.node-type-book .secondary-content {
   position: relative;
@@ -16,7 +17,8 @@
 // General styles
 .pane-coral-wiki-ask-question {
   margin-bottom: $default_vert_unit;
-
+  position: relative;
+  
   .ask-btn {
     position: relative;
     color: lighten($mdgray, 10%);
@@ -42,9 +44,7 @@
     left: 20%;
     top: 10%;
     display: none;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    @include box-sizing(border-box);
   }
   
   .node-question-form {
@@ -113,7 +113,7 @@
   .ask-btn { 
     position: absolute;
     right: 0;
-    top: -1.25em;
+    top: -1.75em;
   }
 }
 
