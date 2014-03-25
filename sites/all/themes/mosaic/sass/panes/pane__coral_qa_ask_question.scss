@@ -10,7 +10,7 @@
 @import 'global/site_vars';
 
 @import 'compass/utilities/general/clearfix';
-@import 'compass/css3/opacity';
+@import 'compass/css3';
 
 .pane-coral-qa-ask-question {
   
@@ -25,16 +25,12 @@
     
   }
   .qa-form.ask {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    @include box-sizing(border-box);
   }
   .qa-msg {
     background: lighten($ltgreen,20%);
     border: 1px solid $ltgreen;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    @include box-sizing(border-box);
     .cont {
       padding: ($default_vert_unit / 2);
     }
@@ -124,9 +120,7 @@
       border: 1px solid lighten($ltgray, 5%);
       background: rgba(255,255,255,.75) url(../../assets/images/diag-tile.png);
       padding: ($default_vert_unit / 2) .5em;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
+      @include box-sizing(border-box);
       min-height: 173px;
       @include pie-clearfix;
     }
