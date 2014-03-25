@@ -5,7 +5,9 @@
 @import 'global/headers';
 @import 'global/fonts';
 @import 'global/grid_mix';
+@import 'global/site_vars';
 
+@import "compass/css3";
 @import "compass/utilities/general/clearfix";
 
 // Ok so this may look like cheating but I need to style the 
@@ -96,6 +98,7 @@
   }
   &.facet-tags {
     border-top: none;
+    background: $white;
     .pane-title {
       border-top: 1px solid $ltorange;
       background: $mdorange;
@@ -107,17 +110,17 @@
 
 // Page layout modifications
 .page-search-node {
-  .main-content {
+  .secondary-content {
     @include col(6);
   }
-  .secondary-content {
-    @include col(18, 'TRUE');
+  .main-content {
+    @include col(18, 'TRUE', right);
   }
 }
 
 
 // Search form in the content area (not the header)
-.secondary-content .pane-search-form {
+.main-content .pane-search-form {
   @include clearfix;
   
   .pane-content {
@@ -125,23 +128,82 @@
     margin-bottom:  .8 * $default_vert_unit;
     padding: .35em 0 .3em .5em;
     min-height: 2em;
-    
+
+    @include box-sizing(content-box);
     @include col(16);
-    
+
     input.form-text {
       font-size: 1em;
       border: 1px solid $ltgray;
-      
-      @include col(18);
+      @include box-sizing(content-box);
+      @include col(16.5);
+      margin-right: 2%;
     }
-    
+
     input.form-submit {
       font-size: 115%;
       margin-top: 1px;
-      @include col(5.5);
-      @include prepend(.5);
+      @include col(6);
+      @include box-sizing(content-box);
     }
   }
 }
 
-
+@media screen and (max-width: $desktopw) {
+  #main-content .main-content {
+    @include col(16, 'TRUE', right);
+    
+    .pane-search-form .pane-content {
+      @include col(20, 'true');
+    }
+  }
+  #main-content .secondary-content {
+    @include col(8);
+  }
+}
+@media screen and (max-width: $tabletw) {
+  #main-content .layout-landing-responsive {
+    & > .site-width { // container for sliding items
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-content {
+      @include col($columns, 'true');
+      
+      .pane-search-form .pane-content {
+        @include col($columns, 'true');
+      }
+      
+      & > .prepend-1 {
+        margin-left: 0;
+      }
+    }
+    .secondary-content {
+      @include col(12, 'true');
+      //margin-left: -100%;
+      position: absolute;
+      top: 0;
+      left: -50%;
+      //display: none;
+      
+      .facet-pane {
+        margin-bottom: 0;
+      }
+    } 
+  }
+}
+@media screen and (max-width: $phonew + 100) {
+  #main-content .layout-landing-responsive {
+    .main-content {
+      .pane-search-form .pane-content {
+        @include col(21, 'true');
+        @include prepend(3);
+        
+        .form-submit {
+          padding: 2px;
+        }
+      }
+    }
+  }
+}
