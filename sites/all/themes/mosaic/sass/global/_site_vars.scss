@@ -5,7 +5,7 @@ $site_width: 80%; //962px;
 
 // Responsive breakpoints
 $phonew: 400px;
-$tabletw: 768px;
+$tabletw: 767px;
 $desktopw: 1024px;
 
 @mixin site_width($center:'true') {
