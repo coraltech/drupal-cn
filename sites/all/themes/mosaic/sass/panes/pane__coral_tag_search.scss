@@ -2,7 +2,7 @@
 // Scss file for the Tag search custom pane
 //  as seen on Community page
 
-@import "compass/css3/border-radius";
+@import "compass/css3";
 
 @import 'global/arrows';
 @import 'global/colors';
@@ -50,9 +50,7 @@
     }
     .form-text {
       width: 100%;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
+      @include box-sizing(border-box);
     }
     .form-submit {
       position: absolute;
