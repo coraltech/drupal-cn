@@ -12,15 +12,15 @@
   
   .pane-title {
     color: $white;
-    padding: 0.625em;
-    margin: 0 0 3px;
-    line-height: .8em;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-bottom: .1545em;
     
-    @include linear-v-gradient($mdgray, lighten($mdgray, 7%));
+    @include linear-v-gradient(lighten($mdgray, 10%), lighten($mdgray, 7%));    
   }
-  
   .pane-content {
-    background: lighten($mdgray, 15%);
+    padding-top: .3em;
+    background: lighten($mdgray, 35%);
     
     .view-content {
       color: lighten($mdgray, 10%);
@@ -29,15 +29,20 @@
       background: $ltgray;
 
       .views-row { padding-left: 1em; padding-right: 1em; }
-      .views-row-even { background: darken($ltgray, 7%); }
-    }
-    
-    .views-row {
-      background: $ltgray;
-      padding: .1562em .5em;
-    }
-    .views-row-even {
-      background: lighten($ltgray, 5%);
+      .views-row-even { background: lighten($ltgray, 7%); }
+      
+      .tag-active {
+        &:after {
+          content: "(x)";
+          color: desaturate($mdred, 10%);
+          margin-left: 5px;
+        }
+      }
+      .tag-active:hover {
+        &:after {
+          color: $mdred;
+        }
+      }
     }
     
     .pager-load-more {
