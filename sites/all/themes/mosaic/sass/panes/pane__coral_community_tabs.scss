@@ -8,7 +8,7 @@
 @import 'global/icons';
 @import 'global/site_vars';
 
-@import "compass/css3/box-shadow";
+@import "compass/css3";
 @import "compass/utilities/general/clearfix";
 
 $tab_height_variance: .5em; // variance between active and inactive
@@ -45,10 +45,7 @@ $tab_height_variance: .5em; // variance between active and inactive
         top: 1px;
         line-height: (2 * $default_vert_unit);
         color: $mdgray;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-
+        @include box-sizing(border-box);
         @include box-shadow(rgba(0,0,0,.15) 1px -2px 4px);
         @include linear-v-gradient($ltgray, lighten($ltgray, 7%));
         
