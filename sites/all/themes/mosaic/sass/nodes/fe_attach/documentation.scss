@@ -5,6 +5,8 @@
 @import 'global/grid_mix';
 @import 'global/site_vars';
 
+@import "compass/css3";
+
 // Re-adjust the grid ;-)
 .layout-landing-responsive .secondary-content { @include col(8); }
 .layout-landing-responsive .main-content {
@@ -32,18 +34,16 @@
     .pane-book-explorer-book-explorer {
       @include col(12);
       margin-right: 2%;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
+      
+      @include box-sizing(border-box);
     }
     .pane-tagclouds-1 {
       float: right;
       @include col(12);
       margin-right: 0;
       margin-left: 2%;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
+      
+      @include box-sizing(border-box);
     }
     .pane-coral-tag-search {
       margin-left: 2%;
