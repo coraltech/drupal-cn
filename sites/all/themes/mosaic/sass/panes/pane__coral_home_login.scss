@@ -12,7 +12,7 @@
 
 .pane-coral-home-login {
   position: relative;
-  margin: $default_vert_unit 0;
+  margin: $default_vert_unit 0 0 0;
     
   @include pie-clearfix;  
   //@include reflected-v-gradient(lighten($ltgray, 5%), darken($ltgray, 7%), $ltgray);
@@ -26,6 +26,7 @@
   
   ul, p {
     margin-top: 3px;
+    margin-bottom: 0;
   }
   
   
@@ -46,16 +47,24 @@
       display: inline;
       float: none;
       width: auto;
+      
+      p {
+        position: relative;
+        top: 5px;
+      }
     }
     .grid-5 {
       width: 100%;
       margin: 0;
       
-      ul li {
-        float: left;
-        margin-right: 1em;
-        margin-left: 0;
-      }
+      ul {
+        margin-top: $default_vert_unit / 2;
+        li {
+          float: left;
+          margin-right: 1em;
+          margin-left: 0;
+        }
+      } 
     }
   }
 }
