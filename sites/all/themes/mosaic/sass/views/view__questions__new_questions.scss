@@ -5,6 +5,8 @@
 @import 'global/colors';
 @import 'global/fonts';
 
+@import "compass/utilities/general/clearfix";
+
 // This is kind of cheating.  Im adding this here 
 //  instead of the pane bc I dont need two files here...
 .pane-questions-new-questions > h2 {
@@ -50,6 +52,11 @@
   }
   .views-row {
     //background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;
+    @include pie-clearfix;
+    
+    .follower {
+      background: url('../../assets/images/coral-sep-med.png') top center no-repeat;
+    }
   }
   .views-row-first {}
 
