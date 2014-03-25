@@ -229,7 +229,9 @@ function mosaic_preprocess_panels_pane__node_links(&$vars) {
       }  
       break;
 
+    
     case 'snippet':
+    case 'book':
       // Rem flag link for re-addition via pane.
       if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
         unset($vars['content']['flag']['#links']['flag-abuse_node']);
