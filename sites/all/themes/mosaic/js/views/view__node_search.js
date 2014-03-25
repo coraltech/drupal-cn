@@ -9,28 +9,37 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicNodeSearchInit = {    
     attach : function(context, settings) {
       try { // Use try to prevent systemic failure
-        
-        // Manage the search rows as needed
-        var $view = $('.pane-node-search-node-search-results');
-        if ($view.length > 0) {
-          new Drupal.mosaic.nodeSearchManager($view);
-        }
-        
-        // See: https://drupal.org/comment/8432125#comment-8432125
-        var $facetLists = $('.facet-pane ul');
-        if ($facetLists.length > 0) {
-          $facetLists.each(function() {
-            new Drupal.mosaic.facetManager($(this));  
-          });
-        }
-        
-        // Current search block 
-        // Note: The limited functionality and the relatedness to
-        // search itself is why I am putting this here instead
-        // of it's own pane js file. (eg. pane_block__current_search...)
-        var $currentSearch = $('.pane-current-search-standard');
-        if ($currentSearch.length > 0) {
-          new Drupal.mosaic.currentSearchManager($currentSearch);
+        if (context != '#search-swipe') {
+          // Manage the search rows as needed
+	        var $view = $('.pane-node-search-node-search-results');
+	        if ($view.length > 0) {
+	          new Drupal.mosaic.nodeSearchManager($view);
+	        }
+	        
+	        // See: https://drupal.org/comment/8432125#comment-8432125
+	        var $facetLists = $('.facet-pane ul');
+	        if ($facetLists.length > 0) {
+	          $facetLists.each(function() {
+	            new Drupal.mosaic.facetManager($(this));  
+	          });
+	          
+	          // Load the swipe script
+	        	Drupal.mosaic.core.loadScript('/sites/all/themes/mosaic/js/load/search_swipe.js', true,
+      				function(script, textStatus, jqXHR) { 
+      					Drupal.attachBehaviors('#search-swipe'); // fire it up
+							}
+      			);
+	        }
+
+
+	        // Current search block 
+	        // Note: The limited functionality and the relatedness to
+	        // search itself is why I am putting this here instead
+	        // of it's own pane js file. (eg. pane_block__current_search...)
+	        var $currentSearch = $('.pane-current-search-standard');
+	        if ($currentSearch.length > 0) {
+	          new Drupal.mosaic.currentSearchManager($currentSearch);
+	        }
         }
       }
       catch(err) {
