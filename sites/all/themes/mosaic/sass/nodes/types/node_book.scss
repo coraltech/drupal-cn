@@ -4,40 +4,42 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/grid_mix';
+@import 'global/headers';
 @import 'global/icons';
+@import 'global/site_vars';
 
 @import "compass/utilities/general/clearfix";
 
 // Re-adjust the grid ;-)
 // Actual book node styles
-.layout-landing-1 .main-content      { @include col(8); }
-.layout-landing-1 .secondary-content { 
+.layout-landing-responsive .secondary-content { @include col(8); }
+.layout-landing-responsive .main-content { 
   .limiter.prepend-1 {
     margin-left: $default_vert_unit / 2;
   }
   
-  @include col(16, true); 
+  @include col(16, true);
+  float: right; 
 }
 
-.page-comment-reply .pane-node-title,
+.page-comment-reply .book-node-pane-title,
+.node-type-book .book-node-pane-title,
 .node-type-book .pane-node-title {
-  h1 { 
+  h1 { // main page title
     margin: -.15em 0 .65em 0;
     line-height: 16px;
   }
-    
+
   .icon {
     display: block;
     float: left;
     margin-right: .4em;
     margin-top: -3px;
-    
     @include icons-sprite('coral-book');
   }
-  ul.links li {
-    float: left;
-    margin: 0 5px 5px 0;
-  }
+}
+.node-type-book .book-node-pane-title {
+  display: none;
 }
 
 .node-type-book {
@@ -106,28 +108,25 @@
 .page-comment-reply .layout-node-1 .main-content,
 .node-type-book.node-talk .layout-node-1 .main-content { 
   position: relative;
+  //overflow: hidden;
   
   h1.page-title {
     margin-bottom: 0;
   }
 
-  .pane-node-title {
-     background: lighten($mdgray, 7%);
-     position: absolute;
-     top: 0;
-     right: 0px;
-     .icon {
-       margin-top: 0;
-     }
-     a {
-       color: $white;
-     }
-     
-     .pane-content {
-       padding: $default_vert_unit / 2;
-     }
-      
-    @include col(10, false, right);
+  .book-node-pane-title {
+    @include h0;
+    display: block;
+    background: lighten($mdgray, 7%);
+    margin: -1em -1em $default_vert_unit;
+    padding: $default_vert_unit / 2;
+    .icon {
+      margin-top: 0;
+    }
+    a {
+      color: $white;
+    }
+    //@include col(10, false, right);
   }
   
   //pane-entity-view pane-node
@@ -143,8 +142,8 @@
     
     & > .pane-content {
       border: 1px solid $mdgray;
-      padding: (2 * $default_vert_unit) 16px 16px;
-      .node-book { margin-top: $default_vert_unit; }
+      padding: 1em;
+      //.node-book { margin-top: $default_vert_unit; }
     }
     ul.links.inline {
       margin: 0;
@@ -162,4 +161,52 @@
   }
   
   @include col(24, true, none); 
+}
+
+
+@media screen and (max-width: $tabletw) {
+  .page-comment.page-comment-reply,
+  .page-node.node-type-book {
+    .layout-landing-responsive .secondary-content { 
+      @include col($columns, 'true');
+    
+      .panel-pane {
+        @include col($columns, 'true');
+        margin-right: 0;
+      }
+      
+      .pane-documentation-related-node {
+        margin-top: 0;
+      }
+      
+      .pane-related-qa-small-list {
+        @include col($columns, 'true');
+        margin-right: 0;
+      }
+    }
+    .layout-landing-responsive .main-content { 
+      @include col($columns, 'true');
+      
+      & > .prepend-1 {
+        margin: 0;
+      }
+    }
+    
+    #main-content .layout-node-1 {
+      .pane-node {
+        float: right;
+        width: 100%;
+        margin-right: -100%;
+        
+        // Prevent the node's height from 
+        //  affecting the comment container for now
+        display: none;
+      }
+      h1.page-title {
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
 }
