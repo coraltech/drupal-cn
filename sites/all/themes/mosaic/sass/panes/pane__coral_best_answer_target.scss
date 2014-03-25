@@ -6,8 +6,11 @@
 @import 'global/fonts';
 
 @import 'compass/css3/opacity';
+@import "compass/utilities/general/clearfix";
 
 #main-content .pane-coral-best-answer-target {
+  @include pie-clearfix;
+  
   .selected-title {
     background: $mdgreen;
     color: white;
