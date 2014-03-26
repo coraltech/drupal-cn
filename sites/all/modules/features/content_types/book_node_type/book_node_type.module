@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Book node type feature.
+ */
+
+include_once 'book_node_type.features.inc';
