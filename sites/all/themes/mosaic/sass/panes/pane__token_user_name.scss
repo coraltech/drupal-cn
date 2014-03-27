@@ -4,6 +4,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/headers';
+@import 'global/site_vars';
 
 .pane-token.pane-user-name {
   margin-right: 1em;
@@ -15,5 +16,17 @@
     line-height: 3em; // 96px total
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-token.pane-user-name {
+    .pane-content {
+      @include h2;
+      font-weight: bold;
+      line-height: 2em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }  
   }
 }
