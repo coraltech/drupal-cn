@@ -1,9 +1,9 @@
-/* line 8, ../../sass/panes/pane__token_user_name.scss */
+/* line 9, ../../sass/panes/pane__token_user_name.scss */
 .pane-token.pane-user-name {
   margin-right: 1em;
   color: #cc6b1d;
 }
-/* line 12, ../../sass/panes/pane__token_user_name.scss */
+/* line 13, ../../sass/panes/pane__token_user_name.scss */
 .pane-token.pane-user-name .pane-content {
   font-size: 2em;
   line-height: 1.4em;
@@ -13,4 +13,18 @@
   line-height: 3em;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 24, ../../sass/panes/pane__token_user_name.scss */
+  .pane-token.pane-user-name .pane-content {
+    font-size: 1.375em;
+    line-height: 1.8182em;
+    margin-top: 0.4545em;
+    margin-bottom: 0.4545em;
+    font-weight: bold;
+    line-height: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

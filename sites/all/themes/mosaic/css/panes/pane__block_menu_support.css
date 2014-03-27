@@ -289,25 +289,7 @@
     font-size: 1em;
   }
 }
-@media screen and (max-width: 400px) {
-  /* line 213, ../../sass/panes/pane__block_menu_support.scss */
-  .html .pane-getting-help {
-    margin: 10px 3%;
-    width: 94%;
-  }
-  /* line 217, ../../sass/panes/pane__block_menu_support.scss */
-  .html .pane-getting-help .panel-col-top {
-    background: #f1f1f1;
-    display: block;
-  }
-  /* line 221, ../../sass/panes/pane__block_menu_support.scss */
-  .html .pane-getting-help .panel-col-top h2.grid-6 {
-    display: block;
-    float: none;
-    width: 100%;
-  }
-}
-/* line 238, ../../sass/panes/pane__block_menu_support.scss */
+/* line 222, ../../sass/panes/pane__block_menu_support.scss */
 .pane-coral-ask-question .field-name-field-answer,
 .pane-coral-ask-question .field-name-field-comment-count,
 .pane-coral-ask-question .field-name-field-answer-count,

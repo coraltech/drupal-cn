@@ -252,7 +252,7 @@
     width: 50%;
     position: absolute;
     top: 0;
-    left: -50%;
+    left: -51%;
   }
   /* line 190, ../../sass/views/view__node_search.scss */
   #main-content .layout-landing-responsive .secondary-content .facet-pane {

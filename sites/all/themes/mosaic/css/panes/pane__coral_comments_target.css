@@ -249,38 +249,38 @@
   background: #dddddd;
 }
 
-/* line 187, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 185, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-node-body,
 .view-comments.view-display-id-this_comment .views-row .pane-node-body {
   padding-right: 1em;
 }
-/* line 190, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 188, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment,
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment {
   float: right;
 }
-/* line 193, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 191, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment .anon,
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment .anon {
   margin-right: 1em;
 }
-/* line 198, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 196, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row-first,
 .view-comments.view-display-id-this_comment .views-row-first {
   margin-top: 0;
 }
-/* line 201, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 199, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .pager,
 .view-comments.view-display-id-this_comment .pager {
   display: none;
 }
 
-/* line 208, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 206, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment,
 .html div.node-teaser.node-comment {
   padding: 0.625em 5px 0 0;
 }
-/* line 210, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 208, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .row,
 .html .node-type-comment .leader,
 .html div.node-teaser.node-comment .row,
@@ -288,14 +288,14 @@
   padding-left: 1em;
   margin: 0;
 }
-/* line 218, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 216, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-page-title h2,
 .html div.node-teaser.node-comment .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 227, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 225, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html .node-type-comment .pane-coral-add-comment,
 .html .node-type-comment .pane-coral-add-answer,
@@ -307,7 +307,7 @@
   float: right;
   height: 1.4em;
 }
-/* line 230, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 228, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links,
 .html .node-type-comment .pane-coral-add-comment .links,
 .html .node-type-comment .pane-coral-add-answer .links,
@@ -319,7 +319,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 234, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 232, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links li,
 .html .node-type-comment .pane-coral-add-comment .links li,
 .html .node-type-comment .pane-coral-add-answer .links li,
@@ -331,17 +331,17 @@
   margin: 0 5px 0 0;
   padding: 1px 6px 1px;
 }
-/* line 240, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 238, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html div.node-teaser.node-comment .pane-coral-flag-abuse-node {
   margin-right: 1em;
 }
-/* line 244, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 242, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-node-field-tags,
 .html div.node-teaser.node-comment .pane-node-field-tags {
   clear: left;
 }
-/* line 251, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 249, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .field-name-field-content,
 .html .node-type-comment .field-name-field-comment-count,
 .html .node-type-comment .field-type-file legend,

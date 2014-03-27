@@ -1,0 +1,46 @@
+/* line 8, ../../sass/layouts/mosaic_landing_responsive.scss */
+.layout-landing-responsive .secondary-content {
+  float: left;
+  width: 31.33333%;
+}
+
+/* line 11, ../../sass/layouts/mosaic_landing_responsive.scss */
+.layout-landing-responsive .main-content {
+  float: left;
+  width: 66.66667%;
+  float: right;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 16, ../../sass/layouts/mosaic_landing_responsive.scss */
+  .layout-landing-responsive .secondary-content {
+    width: 100%;
+  }
+  /* line 19, ../../sass/layouts/mosaic_landing_responsive.scss */
+  .layout-landing-responsive .secondary-content .panel-pane {
+    width: 100%;
+  }
+  /* line 23, ../../sass/layouts/mosaic_landing_responsive.scss */
+  .layout-landing-responsive .secondary-content .pane-documentation-related-view {
+    margin-top: 0;
+  }
+  /* line 27, ../../sass/layouts/mosaic_landing_responsive.scss */
+  .layout-landing-responsive .secondary-content .pane-related-qa-related-view {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* line 32, ../../sass/layouts/mosaic_landing_responsive.scss */
+  .layout-landing-responsive .main-content {
+    width: 100%;
+  }
+  /* line 35, ../../sass/layouts/mosaic_landing_responsive.scss */
+  .layout-landing-responsive .main-content > .prepend-1 {
+    margin: 0;
+  }
+}
+/* line 45, ../../sass/layouts/mosaic_landing_responsive.scss */
+.layout-node-1 .main-content {
+  width: 99.9%;
+  float: none;
+}

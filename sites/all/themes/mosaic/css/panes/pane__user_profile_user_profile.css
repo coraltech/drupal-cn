@@ -1,8 +1,8 @@
-/* line 8, ../../sass/panes/pane__user_profile_user_profile.scss */
+/* line 11, ../../sass/panes/pane__user_profile_user_profile.scss */
 .pane-user-profile {
   margin-bottom: 2.5em;
 }
-/* line 11, ../../sass/panes/pane__user_profile_user_profile.scss */
+/* line 14, ../../sass/panes/pane__user_profile_user_profile.scss */
 .pane-user-profile h3 {
   font-size: 1.5em;
   line-height: 1.6667em;
@@ -10,19 +10,61 @@
   margin-bottom: 0.4167em;
   border-bottom: 1px solid #dddddd;
 }
-/* line 16, ../../sass/panes/pane__user_profile_user_profile.scss */
+/* line 19, ../../sass/panes/pane__user_profile_user_profile.scss */
 .pane-user-profile .profile {
   margin: 0;
 }
-/* line 18, ../../sass/panes/pane__user_profile_user_profile.scss */
+/* line 21, ../../sass/panes/pane__user_profile_user_profile.scss */
 .pane-user-profile .profile dt {
   margin: 0;
 }
-/* line 19, ../../sass/panes/pane__user_profile_user_profile.scss */
+/* line 22, ../../sass/panes/pane__user_profile_user_profile.scss */
 .pane-user-profile .profile dd {
   margin: 0;
 }
-/* line 20, ../../sass/panes/pane__user_profile_user_profile.scss */
+/* line 23, ../../sass/panes/pane__user_profile_user_profile.scss */
 .pane-user-profile .profile dl {
   margin: 1.25em 0;
+}
+
+/* line 28, ../../sass/panes/pane__user_profile_user_profile.scss */
+#main-content .layout-landing-responsive .secondary-content {
+  float: left;
+  width: 56.33333%;
+}
+
+/* line 31, ../../sass/panes/pane__user_profile_user_profile.scss */
+#main-content .layout-landing-responsive .main-content {
+  float: left;
+  width: 41.66667%;
+}
+
+@media screen and (max-width: 967px) {
+  /* line 38, ../../sass/panes/pane__user_profile_user_profile.scss */
+  #main-content .layout-landing-responsive .secondary-content .panel-pane {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 667px) {
+  /* line 44, ../../sass/panes/pane__user_profile_user_profile.scss */
+  #main-content .layout-landing-responsive .secondary-content {
+    width: 100%;
+  }
+  /* line 46, ../../sass/panes/pane__user_profile_user_profile.scss */
+  #main-content .layout-landing-responsive .secondary-content .pane-menu-general {
+    display: none;
+  }
+  /* line 49, ../../sass/panes/pane__user_profile_user_profile.scss */
+  #main-content .layout-landing-responsive .secondary-content .pane-user-signature {
+    margin-bottom: 2.5em;
+  }
+  /* line 52, ../../sass/panes/pane__user_profile_user_profile.scss */
+  #main-content .layout-landing-responsive .secondary-content .limiter > .prepend-2 {
+    margin-left: 0;
+  }
+
+  /* line 56, ../../sass/panes/pane__user_profile_user_profile.scss */
+  #main-content .layout-landing-responsive .main-content {
+    width: 100%;
+  }
 }

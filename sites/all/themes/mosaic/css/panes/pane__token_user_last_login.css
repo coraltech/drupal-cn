@@ -1,12 +1,11 @@
-/* line 9, ../../sass/panes/pane__token_user_last_login.scss */
+/* line 10, ../../sass/panes/pane__token_user_last_login.scss */
 .pane-token.pane-user-last-login {
   margin-right: 1em;
-  min-width: 17em;
   white-space: nowrap;
   color: #b7b7b7;
   height: 50px;
 }
-/* line 15, ../../sass/panes/pane__token_user_last_login.scss */
+/* line 16, ../../sass/panes/pane__token_user_last_login.scss */
 .pane-token.pane-user-last-login:before {
   float: left;
   content: "Last login: ";
@@ -19,7 +18,7 @@
   margin-bottom: 0;
   line-height: 5.8em;
 }
-/* line 27, ../../sass/panes/pane__token_user_last_login.scss */
+/* line 26, ../../sass/panes/pane__token_user_last_login.scss */
 .pane-token.pane-user-last-login .pane-content {
   font-size: 1.125em;
   line-height: 1.1111em;
@@ -28,4 +27,15 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 5.8em;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 38, ../../sass/panes/pane__token_user_last_login.scss */
+  .pane-token.pane-user-last-login:before,
+  .pane-token.pane-user-last-login .pane-content {
+    font-size: 1em;
+    line-height: 1.25em;
+    margin: 0;
+    line-height: 3em;
+  }
 }

@@ -4,24 +4,14 @@
 }
 
 /* line 19, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
-.page-node.node-type-comment .main-global .grid-11 {
-  float: left;
-  width: 31.33333%;
-}
-/* line 22, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
-.page-node.node-type-comment .main-global .grid-13-last {
-  float: left;
-  width: 66.66667%;
-}
-/* line 27, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .node-teaser.node-comment {
   padding-top: 0.71429em;
 }
-/* line 31, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 23, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-comments-target.loose {
   margin-top: 0;
 }
-/* line 34, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 26, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-comments-target.loose .node-comment.node-teaser {
   *zoom: 1;
 }
@@ -31,7 +21,7 @@
   display: table;
   clear: both;
 }
-/* line 39, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 31, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser {
   *zoom: 1;
   border-top: 1px solid #dddddd;
@@ -49,29 +39,29 @@
   display: table;
   clear: both;
 }
-/* line 62, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 54, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser > h2.comment-node-pane-title {
   height: 1px;
   line-height: 1px;
 }
-/* line 67, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 59, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser.odd {
   background-color: #efefef;
 }
-/* line 70, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 62, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser.even {
   background-color: white;
 }
-/* line 74, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 66, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .views-row > .node-teaser.node-comment {
   padding-top: 0.71429em;
 }
-/* line 78, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 70, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .load-more {
   position: absolute;
   bottom: -2.5em;
 }
-/* line 81, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 73, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .load-more .ajax-progress {
   display: block;
   width: 20px;
@@ -80,11 +70,11 @@
   right: -25px;
   top: 8%;
 }
-/* line 90, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 82, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .load-more.hide {
   display: none;
 }
-/* line 94, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 86, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .comment-node-pane-title {
   clear: none;
   float: left;
@@ -99,7 +89,7 @@
   display: table;
   clear: both;
 }
-/* line 100, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 92, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .comment-node-pane-title .icon {
   display: block;
   float: left;
@@ -110,21 +100,21 @@
   height: 12px;
   width: 19px;
 }
-/* line 110, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 102, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .comment-node-pane-title > a {
   color: #919191;
   float: left;
   max-width: 94.85%;
 }
-/* line 114, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 106, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .comment-node-pane-title > a:hover {
   color: #446eac;
 }
-/* line 117, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 109, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .comment-node-pane-title > .top {
   display: none;
 }
-/* line 121, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 113, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .node-teaser {
   *zoom: 1;
 }
@@ -134,7 +124,7 @@
   display: table;
   clear: both;
 }
-/* line 125, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 117, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser.odd .comment-node-pane-title > .top {
   border: 1px solid #efefef;
   background: #c4c4c4;
@@ -149,7 +139,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #c4c4c4 0%, #efefef 100%);
   /* Opera (13?) */
 }
-/* line 129, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 121, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser.odd .comment-node-pane-title > .top:hover {
   border: 1px solid #969696;
   background: #9d9d9d;
@@ -164,34 +154,34 @@
   background-image: -o-radial-gradient(center center, circle contain, #9d9d9d 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 136, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 128, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .pane-coral-comments-target {
   margin-bottom: -1px;
   margin-right: -5px;
   margin-left: 0.625em;
 }
-/* line 141, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 133, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .comments-tgt.empty {
   padding-top: 1.25em;
 }
-/* line 145, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 137, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .pane-coral-node-stats {
   margin-top: -.2em;
 }
-/* line 148, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 140, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .pane-coral-node-stats .stat-comments {
   line-height: 2.05em;
 }
-/* line 152, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 144, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .pane-coral-node-stats .stat-editor .user-picture {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 156, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 148, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .pane-coral-parent-content > .pane-content > .node-comment.node-teaser .pane-coral-node-stats .stat-editor .username {
   margin-top: .2em;
 }
-/* line 163, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
+/* line 155, ../../../sass/nodes/view_modes/node_comment__page_manager.scss */
 .page-node.node-type-comment .main-global .html .pane-coral-comments-target.comments-more {
   margin-bottom: 3.75em;
 }

@@ -24,13 +24,13 @@
 
 @media screen and (max-width: 924px) {
   /* line 29, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content {
+  #main-content .layout-landing-responsive .secondary-content {
     width: 100%;
     margin-top: 2.5em;
   }
   /* line 34, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content .pane-coral-tag-search,
-  .layout-landing-responsive .secondary-content .pane-book-explorer-book-explorer {
+  #main-content .layout-landing-responsive .secondary-content .pane-coral-tag-search,
+  #main-content .layout-landing-responsive .secondary-content .pane-book-explorer-book-explorer {
     float: left;
     width: 48%;
     margin-right: 2%;
@@ -39,7 +39,7 @@
     box-sizing: border-box;
   }
   /* line 40, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content .pane-tagclouds-1 {
+  #main-content .layout-landing-responsive .secondary-content .pane-tagclouds-1 {
     float: right;
     float: left;
     width: 48%;
@@ -50,51 +50,51 @@
     box-sizing: border-box;
   }
   /* line 48, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content .pane-coral-tag-search {
+  #main-content .layout-landing-responsive .secondary-content .pane-coral-tag-search {
     margin-left: 2%;
     margin-right: 0;
   }
 
   /* line 54, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .main-content {
+  #main-content .layout-landing-responsive .main-content {
     width: 100%;
   }
   /* line 57, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .main-content .prepend-1 {
+  #main-content .layout-landing-responsive .main-content .prepend-1 {
     margin-left: 0 !important;
   }
 }
 @media screen and (max-width: 767px) {
   /* line 64, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content {
+  #main-content .layout-landing-responsive .secondary-content {
     width: 100%;
   }
 
   /* line 67, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .main-content {
+  #main-content .layout-landing-responsive .main-content {
     width: 100%;
   }
   /* line 70, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .main-content .pane-coral-puppet-overview ul {
+  #main-content .layout-landing-responsive .main-content .pane-coral-puppet-overview ul {
     margin-bottom: 0;
   }
 }
 @media screen and (max-width: 667px) {
   /* line 78, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content,
-  .layout-landing-responsive .main-content {
+  #main-content .layout-landing-responsive .secondary-content,
+  #main-content .layout-landing-responsive .main-content {
     margin-top: 0;
   }
   /* line 80, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content .panel-pane,
-  .layout-landing-responsive .main-content .panel-pane {
+  #main-content .layout-landing-responsive .secondary-content .panel-pane,
+  #main-content .layout-landing-responsive .main-content .panel-pane {
     width: 100%;
     margin-left: 0;
     margin-bottom: 1.25em;
   }
   /* line 81, ../../../sass/nodes/fe_attach/documentation.scss */
-  .layout-landing-responsive .secondary-content .sep-long,
-  .layout-landing-responsive .main-content .sep-long {
+  #main-content .layout-landing-responsive .secondary-content .sep-long,
+  #main-content .layout-landing-responsive .main-content .sep-long {
     display: none;
   }
 }

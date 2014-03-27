@@ -1,9 +1,9 @@
-/* line 7, ../../sass/panes/pane__coral_user_edit_link.scss */
+/* line 8, ../../sass/panes/pane__coral_user_edit_link.scss */
 .pane-coral-user-edit-link {
   float: right;
   line-height: 6em;
 }
-/* line 11, ../../sass/panes/pane__coral_user_edit_link.scss */
+/* line 12, ../../sass/panes/pane__coral_user_edit_link.scss */
 .pane-coral-user-edit-link .pane-content a {
   font-size: 16px;
   padding: 0.5em 1.5em;
@@ -70,4 +70,11 @@
 .pane-coral-user-edit-link .pane-content a::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 19, ../../sass/panes/pane__coral_user_edit_link.scss */
+  .pane-coral-user-edit-link {
+    line-height: 3em;
+  }
 }
