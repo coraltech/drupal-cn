@@ -30,7 +30,7 @@ function wiki_documents_feature_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'mosaic_landing_1';
+  $display->layout = 'mosaic_landing_responsive';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -96,73 +96,6 @@ function wiki_documents_feature_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'main';
-    $pane->type = 'block';
-    $pane->subtype = 'book_explorer-book_explorer';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Topics',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['main'][0] = 'new-3';
-    $pane = new stdClass();
-    $pane->pid = 'new-4';
-    $pane->panel = 'main';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'related_qa-small_list';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'panelizer',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['main'][1] = 'new-4';
-    $pane = new stdClass();
-    $pane->pid = 'new-5';
-    $pane->panel = 'main';
-    $pane->type = 'coral_authors';
-    $pane->subtype = 'coral_authors';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'panelizer',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['main'][2] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'secondary';
     $pane->type = 'coral_wiki_ask_question';
     $pane->subtype = 'coral_wiki_ask_question';
     $pane->shown = TRUE;
@@ -185,11 +118,11 @@ function wiki_documents_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['secondary'][0] = 'new-6';
+    $display->content['new-3'] = $pane;
+    $display->panels['main'][0] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-7';
-    $pane->panel = 'secondary';
+    $pane->pid = 'new-4';
+    $pane->panel = 'main';
     $pane->type = 'node_title';
     $pane->subtype = 'node_title';
     $pane->shown = TRUE;
@@ -211,11 +144,11 @@ function wiki_documents_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['secondary'][1] = 'new-7';
+    $display->content['new-4'] = $pane;
+    $display->panels['main'][1] = 'new-4';
     $pane = new stdClass();
-    $pane->pid = 'new-8';
-    $pane->panel = 'secondary';
+    $pane->pid = 'new-5';
+    $pane->panel = 'main';
     $pane->type = 'coral_node_stats';
     $pane->subtype = 'coral_node_stats';
     $pane->shown = TRUE;
@@ -247,17 +180,17 @@ function wiki_documents_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['secondary'][2] = 'new-8';
+    $display->content['new-5'] = $pane;
+    $display->panels['main'][2] = 'new-5';
     $pane = new stdClass();
-    $pane->pid = 'new-9';
-    $pane->panel = 'secondary';
+    $pane->pid = 'new-6';
+    $pane->panel = 'main';
     $pane->type = 'entity_view';
     $pane->subtype = 'node';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'full',
+      'view_mode' => 'full_node',
       'context' => 'panelizer',
       'override_title' => 0,
       'override_title_text' => '',
@@ -270,11 +203,11 @@ function wiki_documents_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['secondary'][3] = 'new-9';
+    $display->content['new-6'] = $pane;
+    $display->panels['main'][3] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
-    $pane->panel = 'secondary';
+    $pane->pid = 'new-7';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'sharethis-sharethis_block';
     $pane->shown = TRUE;
@@ -291,8 +224,75 @@ function wiki_documents_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
+    $display->content['new-7'] = $pane;
+    $display->panels['main'][4] = 'new-7';
+    $pane = new stdClass();
+    $pane->pid = 'new-8';
+    $pane->panel = 'secondary';
+    $pane->type = 'block';
+    $pane->subtype = 'book_explorer-book_explorer';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Topics',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-8'] = $pane;
+    $display->panels['secondary'][0] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'secondary';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'related_qa-small_list';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'panelizer',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['secondary'][1] = 'new-9';
+    $pane = new stdClass();
+    $pane->pid = 'new-10';
+    $pane->panel = 'secondary';
+    $pane->type = 'coral_authors';
+    $pane->subtype = 'coral_authors';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'panelizer',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
     $display->content['new-10'] = $pane;
-    $display->panels['secondary'][4] = 'new-10';
+    $display->panels['secondary'][2] = 'new-10';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;

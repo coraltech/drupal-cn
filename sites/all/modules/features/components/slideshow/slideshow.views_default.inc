@@ -31,7 +31,69 @@ function slideshow_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'slideshow';
-  $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
+  $handler->display->display_options['style_options']['bxslider_views_slideshow']['general'] = array(
+    'mode' => 'horizontal',
+    'speed' => '500',
+    'slideMargin' => '0',
+    'startSlide' => '0',
+    'randomStart' => 0,
+    'infiniteLoop' => 0,
+    'hideControlOnEnd' => 0,
+    'captions' => 0,
+    'ticker' => 0,
+    'tickerHover' => 0,
+    'adaptiveHeight' => 0,
+    'adaptiveHeightSpeed' => '500',
+    'video' => 0,
+    'touchEnabled' => 1,
+    'preloadImages' => 'all',
+    'disable_standard_css' => 0,
+    'useCSS' => 1,
+    'align_image' => 'left',
+    'align_caption' => 'left',
+    'swipeThreshold' => '50',
+    'oneToOneTouch' => 1,
+    'preventDefaultSwipeX' => 1,
+    'preventDefaultSwipeY' => 0,
+    'color_caption' => '80, 80, 80, 0.75',
+  );
+  $handler->display->display_options['style_options']['bxslider_views_slideshow']['controlsfieldset'] = array(
+    'controls' => 1,
+    'nextText' => 'Next',
+    'prevText' => 'Previous',
+    'startText' => '',
+    'stopText' => '',
+    'autoControls' => 1,
+    'autoControlsCombine' => 1,
+  );
+  $handler->display->display_options['style_options']['bxslider_views_slideshow']['pagerfieldset'] = array(
+    'pager' => 1,
+    'pagerType' => 'full',
+    'pagerShortSeparator' => ' / ',
+    'pagerCustom' => '',
+  );
+  $handler->display->display_options['style_options']['bxslider_views_slideshow']['autofieldset'] = array(
+    'pause' => '4000',
+    'autoStart' => 1,
+    'auto' => 1,
+    'autoHover' => '0',
+    'autoDelay' => '0',
+    'autoDirection' => 'next',
+  );
+  $handler->display->display_options['style_options']['bxslider_views_slideshow']['carousel'] = array(
+    'minSlides' => '1',
+    'maxSlides' => '1',
+    'moveSlides' => '0',
+    'slideWidth' => '0',
+  );
+  $handler->display->display_options['style_options']['bxslider_views_slideshow']['callback'] = array(
+    'onSliderLoad' => '',
+    'onSlideBefore' => '',
+    'onSlideAfter' => '',
+    'onSlideNext' => '',
+    'onSlidePrev' => '',
+  );
+  $handler->display->display_options['style_options']['slideshow_type'] = 'bxslider_views_slideshow';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
     'class' => 'default',
@@ -44,13 +106,11 @@ function slideshow_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['enable'] = 1;
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '3';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['effect'] = 'scrollHorz';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['transition_advanced'] = 1;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';

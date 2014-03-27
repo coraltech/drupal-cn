@@ -30,7 +30,7 @@ function search_feature_default_page_manager_handlers() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'mosaic_landing_1';
+  $display->layout = 'mosaic_landing_responsive';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -50,54 +50,6 @@ function search_feature_default_page_manager_handlers() {
     $pane->pid = 'new-1';
     $pane->panel = 'main';
     $pane->type = 'block';
-    $pane->subtype = 'facetapi-zIH8EsYFkvWKeMtTZTGLEm1GrYlAarmk';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Content type',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'facet-pane facet-types',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['main'][0] = 'new-1';
-    $pane = new stdClass();
-    $pane->pid = 'new-2';
-    $pane->panel = 'main';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-R2AEH1rq0GDt4tPXW5YJy8gBEbPVTgPU';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Tags',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'facet-pane facet-tags',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['main'][1] = 'new-2';
-    $pane = new stdClass();
-    $pane->pid = 'new-3';
-    $pane->panel = 'secondary';
-    $pane->type = 'block';
     $pane->subtype = 'search-form';
     $pane->shown = TRUE;
     $pane->access = array();
@@ -113,11 +65,11 @@ function search_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['secondary'][0] = 'new-3';
+    $display->content['new-1'] = $pane;
+    $display->panels['main'][0] = 'new-1';
     $pane = new stdClass();
-    $pane->pid = 'new-4';
-    $pane->panel = 'secondary';
+    $pane->pid = 'new-2';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'current_search-standard';
     $pane->shown = TRUE;
@@ -134,11 +86,11 @@ function search_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['secondary'][1] = 'new-4';
+    $display->content['new-2'] = $pane;
+    $display->panels['main'][1] = 'new-2';
     $pane = new stdClass();
-    $pane->pid = 'new-5';
-    $pane->panel = 'secondary';
+    $pane->pid = 'new-3';
+    $pane->panel = 'main';
     $pane->type = 'views_panes';
     $pane->subtype = 'node_search-node_search_results';
     $pane->shown = TRUE;
@@ -170,8 +122,82 @@ function search_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['main'][2] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
+    $pane->panel = 'secondary';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-zIH8EsYFkvWKeMtTZTGLEm1GrYlAarmk';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Content type',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'facet-pane facet-types',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-4'] = $pane;
+    $display->panels['secondary'][0] = 'new-4';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
+    $pane->panel = 'secondary';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-R2AEH1rq0GDt4tPXW5YJy8gBEbPVTgPU';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Tags',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'facet-pane facet-tags',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $display->content['new-5'] = $pane;
-    $display->panels['secondary'][2] = 'new-5';
+    $display->panels['secondary'][1] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'secondary';
+    $pane->type = 'coral_swipe';
+    $pane->subtype = 'coral_swipe';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'message' => 'Swipe to view facets',
+      'layout' => '1',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'search',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['secondary'][2] = 'new-6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
