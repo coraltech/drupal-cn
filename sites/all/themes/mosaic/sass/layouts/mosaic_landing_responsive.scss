@@ -1,0 +1,48 @@
+
+// Scss file customizi1ng (tweaking) the about page
+
+@import 'global/grid_mix';
+@import 'global/site_vars';
+
+// Re-adjust the grid to our needs ;-)
+.layout-landing-responsive .secondary-content { 
+  @include col(8);
+}
+.layout-landing-responsive .main-content {
+  @include col(16, 'true'); float: right; 
+}
+
+@media screen and (max-width: $tabletw) {
+  .layout-landing-responsive .secondary-content { 
+    @include col($columns, 'true');
+    
+    .panel-pane {
+      @include col(24, 'true');
+    }
+
+    .pane-documentation-related-view {
+      margin-top: 0;
+    }
+
+    .pane-related-qa-related-view {
+      @include col($columns, 'true');
+      margin-right: 0;
+    }
+  }
+  .layout-landing-responsive .main-content { 
+    @include col($columns, 'true');
+    
+    & > .prepend-1 {
+      margin: 0;
+    }
+  }
+}
+
+
+// For comments (node) inside the layout
+//  overrides the above -_- in cases where 
+//  one is within the other...
+.layout-node-1 .main-content {
+  width: 99.9%;
+  float: none;
+}
