@@ -5,12 +5,13 @@
 @import 'global/fonts';
 @import 'global/headers';
 @import 'global/grid_mix';
+@import 'global/site_vars';
 
 .pane-token.pane-user-last-login {
   margin-right: 1em;
-  min-width: 17em;
   white-space: nowrap;
   color: darken($ltgray, 15%);
+  height: 50px;
   
   &:before { 
     float: left;
@@ -21,8 +22,6 @@
     margin-bottom: 0;
     line-height: 5.8em;
   }
-  
-  height: 50px;
 
   .pane-content {
     @include h4;
@@ -31,3 +30,15 @@
     line-height: 5.8em;  
   }
 }
+
+@media screen and (max-width: $tabletw) {
+  .pane-token.pane-user-last-login {
+    
+    &:before,
+    .pane-content {
+      @include h0;
+      line-height: 3em;
+    }
+  }
+}
+
