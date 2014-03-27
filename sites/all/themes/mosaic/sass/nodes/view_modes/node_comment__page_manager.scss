@@ -15,14 +15,6 @@
 
 // full node
 .page-node.node-type-comment .main-global {
-  // Layout...
-  .grid-11 {
-    @include col(8);
-  };
-  .grid-13-last {
-    @include col(16, true);
-  };
-  
   // Overrides
   .node-teaser.node-comment {
     padding-top: $default_vert_unit / 1.75;
