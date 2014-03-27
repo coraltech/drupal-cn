@@ -4,6 +4,9 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/headers';
+@import 'global/grid_mix';
+@import 'global/site_vars';
+
 
 .pane-user-profile {
   margin-bottom: (2 * $default_vert_unit);
@@ -18,5 +21,41 @@
     dt { margin: 0; }
     dd { margin: 0; }
     dl { margin: 1.25em 0; }
+  }
+}
+
+// Re-adjust the grid to our needs ;-)
+#main-content .layout-landing-responsive .secondary-content { 
+  @include col(14);
+}
+#main-content .layout-landing-responsive .main-content {
+  @include col(10, 'true'); 
+}
+@media screen and (max-width: $tabletw + 200) { 
+  #main-content .layout-landing-responsive .secondary-content { 
+    //@include col($columns, 'true');
+    
+    .panel-pane {
+      @include col(24, 'true');
+    }
+  }
+}
+@media screen and (max-width: $tabletw - 100) {
+  #main-content .layout-landing-responsive .secondary-content { 
+    @include col($columns, 'true');
+    .pane-menu-general {
+      display:none;
+    }
+    .pane-user-signature {
+      margin-bottom: 2 * $default_vert_unit;
+    }
+    .limiter > .prepend-2 {
+      margin-left: 0;
+    }
+  }
+  #main-content .layout-landing-responsive .main-content { 
+    @include col($columns, 'true');
+    
+    
   }
 }
