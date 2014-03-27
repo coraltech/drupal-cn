@@ -26,7 +26,7 @@
 }
 
 @media screen and (max-width: $desktopw - 100px) {
-  .layout-landing-responsive .secondary-content { 
+  #main-content .layout-landing-responsive .secondary-content { 
     @include col($columns, true);
     margin-top: 2 * $default_vert_unit;
 
@@ -51,7 +51,7 @@
     }
     
   }
-  .layout-landing-responsive .main-content { 
+  #main-content .layout-landing-responsive .main-content { 
     @include col($columns, true);
     
     .prepend-1 {
@@ -61,10 +61,10 @@
 }
 
 @media screen and (max-width: $tabletw) {
-  .layout-landing-responsive .secondary-content { 
+  #main-content .layout-landing-responsive .secondary-content { 
     @include col($columns, true); 
   }
-  .layout-landing-responsive .main-content { 
+  #main-content .layout-landing-responsive .main-content { 
     @include col($columns, true);
     
     .pane-coral-puppet-overview ul {
@@ -74,8 +74,8 @@
 }
 
 @media screen and (max-width: $tabletw - 100px) {
-  .layout-landing-responsive .secondary-content,
-  .layout-landing-responsive .main-content {
+  #main-content .layout-landing-responsive .secondary-content,
+  #main-content .layout-landing-responsive .main-content {
     margin-top: 0;
     .panel-pane { @include col($columns, true); margin-left: 0; margin-bottom: $default_vert_unit; } 
     .sep-long { display: none; }
