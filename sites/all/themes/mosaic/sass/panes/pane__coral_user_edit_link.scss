@@ -3,6 +3,7 @@
 
 @import 'global/headers';
 @import 'global/buttons';
+@import 'global/site_vars';
 
 .pane-coral-user-edit-link {
   float: right;
@@ -11,5 +12,11 @@
   .pane-content a {
     @include btn-matte-inset;
     @include btn-structure;
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-coral-user-edit-link {
+    line-height: 3em;
   }
 }
