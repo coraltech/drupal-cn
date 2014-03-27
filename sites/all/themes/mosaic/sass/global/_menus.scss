@@ -91,10 +91,10 @@
     }
   }
 }
-@media screen and (max-width: $tabletw){
+@media screen and (max-width: $tabletw) {
   .pane-menu-support {
     ul.menu {
-      right: 22%;
+      right: 33%;
       li.leaf {
         width: 70px;
         a {
@@ -104,6 +104,12 @@
     }
   }
 }
+@media screen and (max-width: $phonew + 200) {
+  .pane-menu-support {
+    display: none;
+  }
+}
+
 
 // Main -- bg coloration
 .pane-top-menus { 
