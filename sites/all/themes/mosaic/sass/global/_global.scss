@@ -454,11 +454,9 @@ h3 .toc-top {
   }
   ul.primary {
     border: none;
-    line-height: .9 * $default_vert_unit;
-    height: .9 * $default_vert_unit;
+    white-space: normal;
     
     li {
-      margin: 0 0 0 .25em;
       a {
         font-size: 90%;
         border-style: none solid solid solid;
@@ -466,6 +464,7 @@ h3 .toc-top {
         border-color: transparent darken($mdorange, 5%) darken($ltorange, 14%) $ltorange;
         background: $ltorange;
         color: $white;
+        margin: 0 0 0 .25em;
         
         @include box-shadow(rgba(0, 0, 0, 0.35) 2px 0px 3px);
         @include linear-v-gradient(desaturate(darken($ltorange, 20%), 7%), saturate(darken($ltorange, 25%), 15%));
@@ -492,6 +491,7 @@ h3 .toc-top {
     clear: both;
     float: none;
     padding: 0 0 ($default_vert_unit / 2) 0;
+    white-space: normal;
 
     li { 
       border-right: none;
@@ -518,6 +518,32 @@ h3 .toc-top {
     }
   }
 }
+
+@media screen and (max-width: $desktopw) {
+  .pane-page-tabs {
+    margin-top: -.75em;
+       
+    ul.primary {
+      margin-bottom: .5em;
+      li {
+        a {
+          margin: 0;
+          line-height: 1.75em;
+          @include border-radius(5px);
+        }
+      }
+    }
+    ul.secondary {
+      li {
+        a {
+          margin: 0;
+          @include border-radius(5px);
+        }
+      }
+    }
+  }
+}
+
 
 // TinyMCE related styles
 .form-textarea-wrapper { clear: both; }
