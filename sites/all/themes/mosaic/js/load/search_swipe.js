@@ -22,9 +22,9 @@ Drupal.mosaic = Drupal.mosaic || {};
 	// The primary object that handles search swipe features	
 	Drupal.mosaic.searchSwipe = function() {
 		try {
-			this.init();
-			this.updatePositions();
-			this.setEvents();
+			this.init();            // gather data
+			this.updatePositions(); // set elem positioning
+			this.setEvents();       // cycle events
 		}
 		catch (err) { console.log('searchSwipe errored: '+err); }
 	};
@@ -109,8 +109,8 @@ Drupal.mosaic = Drupal.mosaic || {};
 					else { // header in view
 						this.$facets.css('top', 0 + 'px');
 					}
-
-					this.$swipe.css('top', Math.max(this.headerHeight + 16 - scrl, 16)+'px');
+					var val = (this.isAdmin) ? 65 : 16;
+					this.$swipe.css('top', Math.max(this.headerHeight + val - scrl, val)+'px');
 				}
 			}
 			
@@ -158,7 +158,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 		try {
 			sObj = this;
 			
-			this.$facets.animate({ 'left': '-50%' }, 150);
+			this.$facets.animate({ 'left': '-51%' }, 150); // 51 to make sure its out of view
     	if (this.contOrigH > 0) {
     		this.$content.animate({'height': this.contOrigH }, 150);
     	}
