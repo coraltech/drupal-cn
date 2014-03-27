@@ -1,10 +1,26 @@
 
+@import 'global/site_vars';
+
 // User picture token pane
 .pane-token.pane-user-picture {
   margin-right: 1em;
 }
 
 .page-user .leader {
-  height: 140px;
+  min-height: 9em;
   background: url('../../assets/images/coral-sep-long.png') bottom center no-repeat;
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-token.pane-user-picture {
+    img {
+      width: 50px;
+      height: 50px;
+    }  
+  }
+  
+  .page-user .leader {
+    min-height: 6em;
+    background: url('../../assets/images/coral-sep-med.png') bottom center no-repeat;
+  }
 }
