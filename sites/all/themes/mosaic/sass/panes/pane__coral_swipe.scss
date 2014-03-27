@@ -69,7 +69,7 @@
 .pane-coral-swipe.search {
   @include icons-sprite('search-options');
   position: fixed;
-  top: 6.5em;
+  //top: 6.5em;
   left: 0;
   margin: .15em 0 0;
   .pane-content {
@@ -82,7 +82,7 @@
 }
 // Make allowances for admin
 .navbar-administration .pane-coral-swipe.search {
-  top: 9.5em;
+  //top: 9.5em;
 }
 
 @media screen and (max-width: $tabletw) {
