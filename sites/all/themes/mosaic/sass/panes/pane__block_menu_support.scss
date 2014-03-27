@@ -209,23 +209,7 @@
     }
   }
 }
-@media screen and (max-width: $phonew) {
-  .html .pane-getting-help {
-    margin: 10px 3%;
-    width: 94%;
-    
-    .panel-col-top {
-      background: lighten($ltgray, 8%);
-      display: block;
 
-      h2.grid-6 {
-        display: block;
-        float: none;
-        width: 100%;
-      }
-    }
-  }
-}
 
 // This is here so that when we are
 // looking at a node edit page, and panels
