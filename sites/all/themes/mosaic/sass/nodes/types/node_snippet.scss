@@ -10,16 +10,6 @@
 @import 'global/site_vars';
 
 .page-node.node-type-snippet {
-  .layout-landing-responsive {
-    .secondary-content {
-      @include col(8);
-    };
-    .main-content {
-      @include col(16, true);
-      float: right;
-    };
-  }
-  
   // Only apply to full-node display
   .snippet-node-pane-title {
     a {
