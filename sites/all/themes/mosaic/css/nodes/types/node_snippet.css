@@ -3,16 +3,17 @@
   background: url('/images/icons-s03a4934389.png') no-repeat;
 }
 
-/* line 14, ../../../sass/nodes/types/node_snippet.scss */
-.page-node.node-type-snippet .layout-landing-responsive .secondary-content {
-  float: left;
-  width: 31.33333%;
-}
-/* line 17, ../../../sass/nodes/types/node_snippet.scss */
-.page-node.node-type-snippet .layout-landing-responsive .main-content {
-  float: left;
-  width: 66.66667%;
-  float: right;
+/* line 12, ../../../sass/nodes/types/node_snippet.scss */
+.page-node.node-type-snippet {
+  /*  .layout-landing-responsive {
+      .secondary-content {
+        @include col(8);
+      };
+      .main-content {
+        @include col(16, true);
+        float: right;
+      };
+  }*/
 }
 /* line 24, ../../../sass/nodes/types/node_snippet.scss */
 .page-node.node-type-snippet .snippet-node-pane-title {

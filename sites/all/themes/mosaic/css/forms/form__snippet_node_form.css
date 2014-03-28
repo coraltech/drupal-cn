@@ -1,90 +1,104 @@
-/* line 8, ../../sass/forms/form__snippet_node_form.scss */
+/* line 9, ../../sass/forms/form__snippet_node_form.scss */
 .page-title {
   color: #b02e1c;
 }
 
-/* line 14, ../../sass/forms/form__snippet_node_form.scss */
+/* line 15, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form textarea,
 .pane-page-content .node-snippet-form input.form-text {
   border: 1px solid #898989;
   margin: 0;
 }
-/* line 19, ../../sass/forms/form__snippet_node_form.scss */
+/* line 20, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .ta-help {
   display: none;
 }
-/* line 30, ../../sass/forms/form__snippet_node_form.scss */
-.pane-page-content .node-snippet-form .field-name-field-snippet-components table {
-  width: 99.98%;
-}
-/* line 33, ../../sass/forms/form__snippet_node_form.scss */
+/* line 32, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components table .form-item {
   margin: 1.25em 0;
 }
-/* line 36, ../../sass/forms/form__snippet_node_form.scss */
+/* line 35, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components table .form-item .description {
   width: 95.5%;
 }
-/* line 41, ../../sass/forms/form__snippet_node_form.scss */
+/* line 40, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components input.form-text {
   width: 95%;
 }
-/* line 44, ../../sass/forms/form__snippet_node_form.scss */
+/* line 43, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components label {
   margin-bottom: .25em;
 }
-/* line 48, ../../sass/forms/form__snippet_node_form.scss */
+/* line 47, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components .grippie,
 .pane-page-content .node-snippet-form .field-name-field-snippet-components textarea.form-textarea {
   width: 96.5%;
 }
-/* line 51, ../../sass/forms/form__snippet_node_form.scss */
+/* line 50, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components .tabledrag-toggle-weight {
   display: block;
   float: right;
   margin-bottom: -1.25em;
 }
-/* line 56, ../../sass/forms/form__snippet_node_form.scss */
+/* line 55, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components th.tabledrag-hide {
   display: none;
 }
-/* line 59, ../../sass/forms/form__snippet_node_form.scss */
+/* line 58, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components tr.draggable td {
   border-bottom: 16px solid white;
 }
-/* line 62, ../../sass/forms/form__snippet_node_form.scss */
+/* line 61, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components tr.draggable.last td {
   border-bottom: none;
 }
-/* line 65, ../../sass/forms/form__snippet_node_form.scss */
+/* line 64, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components input.form-submit {
   margin-bottom: 1.25em;
 }
-/* line 68, ../../sass/forms/form__snippet_node_form.scss */
+/* line 67, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components input.field-add-more-submit {
   margin-top: 1.25em;
   margin-bottom: 0;
 }
-/* line 72, ../../sass/forms/form__snippet_node_form.scss */
+/* line 71, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components .field-name-field-component-language {
   margin-left: 12em;
   margin-bottom: -2.6em;
 }
-/* line 76, ../../sass/forms/form__snippet_node_form.scss */
+/* line 75, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .field-name-field-snippet-components .field-name-field-component-language label {
   display: inline;
   color: #7f700f;
   font-size: 85%;
 }
-/* line 84, ../../sass/forms/form__snippet_node_form.scss */
+/* line 88, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .panel-2col-stacked .panel-col-top .inside {
   margin-bottom: 0;
 }
-/* line 88, ../../sass/forms/form__snippet_node_form.scss */
+/* line 92, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .form-actions {
   margin-bottom: 1.25em;
 }
-/* line 90, ../../sass/forms/form__snippet_node_form.scss */
+/* line 94, ../../sass/forms/form__snippet_node_form.scss */
 .pane-page-content .node-snippet-form .form-actions .form-submit {
   margin-right: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 103, ../../sass/forms/form__snippet_node_form.scss */
+  #main-content .pane-page-content .node-snippet-form .panel-col-first,
+  #main-content .pane-page-content .node-snippet-form .panel-col-last {
+    width: 100%;
+  }
+  /* line 106, ../../sass/forms/form__snippet_node_form.scss */
+  #main-content .pane-page-content .node-snippet-form .panel-col-first .inside,
+  #main-content .pane-page-content .node-snippet-form .panel-col-last .inside {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 112, ../../sass/forms/form__snippet_node_form.scss */
+  #main-content .pane-page-content .node-snippet-form .field-name-field-snippet-components .form-text {
+    width: 93%;
+  }
 }

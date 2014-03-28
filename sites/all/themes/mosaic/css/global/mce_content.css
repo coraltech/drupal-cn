@@ -490,28 +490,37 @@ a.btn::-moz-focus-inner {
   margin: -1px !important;
 }
 
-/* line 284, ../../sass/global/_dom.scss */
+/* line 283, ../../sass/global/_dom.scss */
+table {
+  width: 99.85%;
+}
+/* line 285, ../../sass/global/_dom.scss */
 table th {
   color: #777777;
   padding: 0 2px;
 }
-/* line 288, ../../sass/global/_dom.scss */
+/* line 289, ../../sass/global/_dom.scss */
 table tr.even {
   background: #e7e7e7;
   border: none;
 }
-/* line 292, ../../sass/global/_dom.scss */
+/* line 293, ../../sass/global/_dom.scss */
 table tr.odd {
   background: #f1f1f1;
   border: none;
 }
-/* line 296, ../../sass/global/_dom.scss */
+/* line 297, ../../sass/global/_dom.scss */
 table a.tabledrag-handle .handle {
   margin: 0em .25em 0 1em;
   padding: 0.5em 0.2em;
 }
+/* line 302, ../../sass/global/_dom.scss */
+table tr.odd .form-item,
+table tr.even .form-item {
+  white-space: normal;
+}
 
-/* line 316, ../../sass/global/_dom.scss */
+/* line 321, ../../sass/global/_dom.scss */
 article,
 aside,
 details,
@@ -526,7 +535,7 @@ summary {
   display: block;
 }
 
-/* line 323, ../../sass/global/_dom.scss */
+/* line 328, ../../sass/global/_dom.scss */
 audio,
 canvas,
 video {
@@ -535,13 +544,13 @@ video {
   *zoom: 1;
 }
 
-/* line 331, ../../sass/global/_dom.scss */
+/* line 336, ../../sass/global/_dom.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 338, ../../sass/global/_dom.scss */
+/* line 343, ../../sass/global/_dom.scss */
 [hidden] {
   display: none;
 }
