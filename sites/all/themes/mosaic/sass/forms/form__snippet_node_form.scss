@@ -4,6 +4,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/grid_mix';
+@import 'global/site_vars';
 
 .page-title {
   color: $mdred;
@@ -28,8 +29,6 @@
   
   .field-name-field-snippet-components {
     table {
-      width: 99.98%;
-      
       .form-item {
         margin: 1.25em 0;
       
@@ -89,6 +88,24 @@
     margin-bottom: $default_vert_unit;
     .form-submit {
       margin-right: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  #main-content .pane-page-content .node-snippet-form {
+    .panel-col-first, 
+    .panel-col-last {
+      width: 100%;
+      
+      .inside {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    
+    .field-name-field-snippet-components .form-text {
+      width: 93%;
     }
   }
 }
