@@ -281,6 +281,7 @@ a.btn {
 
 // Tables
 table {
+  width: 99.85%;
   th {
     color: $mdgray;
     padding: 0 2px;
@@ -296,6 +297,10 @@ table {
   a.tabledrag-handle .handle {
     margin: 0em .25em 0 1em;
     padding: 0.5em 0.2em;
+  }
+  tr.odd .form-item,
+  tr.even .form-item {
+    white-space: normal;
   }
 }
 
