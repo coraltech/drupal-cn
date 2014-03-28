@@ -36,7 +36,6 @@
       display: block;
       float: left;
       margin-right: 10px;
-      margin-top: 10px;
       @include icons-sprite('info-sm');
     }
     
@@ -47,7 +46,6 @@
       @include btn-glass-ltn;
       @include btn-structure;
       
-      margin-top: 16px;
       font-size: 1.15em;
       min-height: 2em;
       line-height: 2em;
