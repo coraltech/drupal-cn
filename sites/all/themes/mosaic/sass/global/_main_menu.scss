@@ -1,0 +1,171 @@
+
+// Superfish definitions
+//  Only superfish related styles should be here!
+
+@import 'global/arrows';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+//@import 'global/icons';
+
+// external imports
+@import 'compass/css3/opacity';
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/box-shadow';
+
+
+#mini-panel-top_menus {
+  .panel-col-first {
+    width: 65%;
+  }
+  .panel-col-last {
+    width: 35%;
+  }
+}
+
+@mixin plink() {
+  color: $white;
+  line-height: 37px;
+  padding: .45em .25em;
+  @include text-shadow(1.5px 1px 2px #222);
+  
+  &:hover,
+  &:active,
+  &.active {
+    color: $ltyellow;
+  }
+}
+
+.pane-menu-main,
+.pane-menu-service {
+  position: relative;
+  z-index: 10;
+
+  .pane-content {
+    .respond {
+      @include plink;
+      display: none;
+      cursor: pointer;
+      float: left;
+      padding: 0;
+    }
+    ul.menu {
+      margin: 0;
+      
+      li {
+        display: inline;
+      }
+      
+      a {
+        @include plink;
+      }
+    }
+  }
+}
+
+
+.pane-menu-main {
+  .pane-content {
+    ul.menu {
+      letter-spacing: 2px;
+      a {
+        @include font(105%, bold);
+      }
+    }
+    .respond {
+      @include font(105%, bold);
+      .icon {
+        float: left;
+        margin-right: .5em;
+        @include icons-sprite('menu-main');
+      }
+    }
+  }
+}
+
+.pane-menu-service {
+  .pane-content {
+    ul.menu {
+      text-align: right;
+      letter-spacing: 1px;
+      
+      a {
+        @include font(100%, normal);
+      }
+    }
+    
+    .respond {
+      .icon {
+        display: block;
+        float: right;
+        margin-left: .5em;
+        @include icons-sprite('user-menu');
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: $desktopw) {
+  
+  #mini-panel-top_menus .pane-menu-main,
+  #mini-panel-top_menus .pane-menu-service {
+    a {
+      font-size: .85em;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  #mini-panel-top_menus {
+    .panel-col-first {
+      width: 50%;
+    }
+    .panel-col-last {
+      width: 50%;
+    }
+  }
+
+  #mini-panel-top_menus .pane-menu-main,
+  #mini-panel-top_menus .pane-menu-service {
+    position: relative;
+
+    .pane-content {
+      ul.menu{
+        display: none;
+        margin-top: 39px;
+        border-left: 1px solid $mdgray;
+        border-right: 1px solid $mdgray;
+        min-width: 10em;
+
+        li {
+          padding: 0;
+          display: block;
+          background: lighten($ltgray, 5%);
+          @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+          
+          a {
+            padding: 0 1em;
+            color: $mdblue;
+            border-bottom: 1px solid $mdgray;
+            display: block;
+            @include text-shadow(1.5px 1px 2px $ltyellow);
+          }
+        }
+      }
+      .respond {
+        display: block;
+      }
+    }
+  }
+  #mini-panel-top_menus .pane-menu-service {
+    .pane-content {
+      .respond {
+        float: right;
+      }
+    }   
+  }
+}
+
+
