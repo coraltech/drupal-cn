@@ -52,6 +52,7 @@ body.page-references-dialog {
 header,
 .mosaic-cont {
   background: $white;
+  min-width: $phonew;
 }
 .mosaic-cont {
   padding: 1em 0 0;
@@ -60,6 +61,10 @@ header,
 #mini-panel-header {
   .panel-col-first { width: 60%; }
   .panel-col-last { width: 40%; } 
+}
+
+#navbar-administration.navbar-oriented .navbar-bar {
+  min-width: $phonew;
 }
 
 // -- Search form -- added here bc it is on every page
