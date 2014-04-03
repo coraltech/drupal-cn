@@ -37,7 +37,7 @@
       .tag-active {
         &:after {
           content: "(x)";
-          color: desaturate($mdred, 10%);
+          color: lighten(desaturate($mdred, 50%), 5%);
           margin-left: 5px;
         }
       }
