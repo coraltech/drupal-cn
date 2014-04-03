@@ -30,7 +30,8 @@ div.node-teaser.node-answer {
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
     float: left;
-
+    line-height: $default_vert_unit;
+    
     .links { // standardize 
       padding: 0; 
       margin: 0; 
@@ -42,8 +43,13 @@ div.node-teaser.node-answer {
     }
   }
   
+  .pane-answer-links-container {
+    margin-bottom: $default_vert_unit;
+  }
+  
   .answer-node-pane-title {
     @include h3;
+    margin-top: 1em;
   }
   
   // Inner question node + answers form and view
