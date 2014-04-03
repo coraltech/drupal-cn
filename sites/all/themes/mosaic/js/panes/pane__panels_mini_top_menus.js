@@ -29,6 +29,9 @@ Drupal.mosaic = Drupal.mosaic || {};
   	try {
   		// Start up
       this.initMenus();
+      
+      // Add overlay
+      this.addOverlay();
       	
       // add events (tap / click)
 			this.addEvents();
@@ -45,8 +48,6 @@ Drupal.mosaic = Drupal.mosaic || {};
 			var TM = this;
 
       this.$menus = $('#mini-panel-top_menus .panel-pane'); // Get menus
-			this.overlay = false; // will store overlay
-
   		this.$menus.each(function() {
 	  		var $ul = $(this).find('.pane-content > ul'); // only get the top lvl...
 	     	if (!$(this).find('.respond').length) {       // already added?
@@ -84,10 +85,12 @@ Drupal.mosaic = Drupal.mosaic || {};
   			// Set main menu click handler
   			this.$mainIcon.off('click').click(function() {
   				if (!TM.$mainMenu.hasClass('open')) {
+  					TM.showOverlay();
   					TM.hideMenu(TM.$serviceMenu, 'right');
   					TM.showMenu(TM.$mainMenu);
   				}
   				else {
+  					TM.hideOverlay();
   					TM.hideMenu(TM.$mainMenu);
   				}
   			});
@@ -96,10 +99,12 @@ Drupal.mosaic = Drupal.mosaic || {};
 				// Set service menu click handler
   			this.$serviceIcon.off('click').click(function() {
   				if (!TM.$serviceMenu.hasClass('open')) {
+  					TM.showOverlay();
   					TM.hideMenu(TM.$mainMenu);
   					TM.showMenu(TM.$serviceMenu, 'right');
   				}
   				else {
+  					TM.hideOverlay();
   					TM.hideMenu(TM.$serviceMenu, 'right');
   				}
   			});
@@ -110,7 +115,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   		$(window).resize(function() {
   			var winW = $(window).width();
   			if (winW > 768) {
-					TM.hideOverlay();
+  				TM.hideOverlay();
   				TM.$mainMenu.attr('style', '').removeClass('open');
   				TM.$serviceMenu.attr('style', '').removeClass('open');
   			}
@@ -118,14 +123,12 @@ Drupal.mosaic = Drupal.mosaic || {};
 
 
   		// Overlay is not ready for 1/2 second after page is loaded
-  		setTimeout(function() {
-  			this.overlay = Drupal.mosaic.core.objects.mboverlay;
-  			this.overlay.$overlay.off('click').click(function() {
-  				TM.hideOverlay();
-  				TM.hideMenu(TM.$mainMenu);
-  				TM.hideMenu(TM.$serviceMenu, 'right');
-  			});	
-  		}, 500);
+  		this.$overlay.off('click').click(function() {
+  			TM.hideOverlay();
+  			TM.hideMenu(TM.$mainMenu);
+  			TM.hideMenu(TM.$serviceMenu, 'right');
+  		});	
+  		
   	}
   	catch (err) {
   		console.log('addEvents errored: '+err);
@@ -171,13 +174,60 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
 
 
+	// Add an(other) overlay to page (cant use mboverlay as we get some event mixing)
+	Drupal.mosaic.mosaicTopMenus.prototype.addOverlay = function() {
+		try {
+			var $overlay = $('.tm-over'); 
+			if (!$overlay.length) {
+				$('body').append('<div class="tm-over hidden"></div>');
+        $overlay = $('body').children('.tm-over');
+        
+        var height = $(document).height();
+        $overlay.css({
+		      'height': height+'px',
+		      'width': '100%',
+		      'background': '#000000',
+		      'position': 'absolute',
+		      'top': 0,
+		      'left': 0,
+		      'z-index': 7,
+		      'display': 'none'
+		    });
+      }
+      
+      this.$overlay = $overlay; // set the overlay in the object
+		}
+		catch (err) {
+			console.log('addOverlay errored: '+err);
+		}
+	};
+
+
+	// Update overlay
+	Drupal.mosaic.mosaicTopMenus.prototype.updateOverlay = function(display) {
+		try {
+			if (this.$overlay.length) {
+				if (display == 'show') {
+					this.$overlay.fadeTo(0, .35);
+				}
+				else {
+					this.$overlay.fadeTo(0, 0).hide();
+				}
+			}
+			this.$overlay.css({'height': $(document).height()+'px'});
+		}
+		catch (err) {
+			console.log('updateOverlay errored: '+err);
+		}
+	};
+
+
 	// Show overlay
   Drupal.mosaic.mosaicTopMenus.prototype.showOverlay = function() {
   	try {
-  		var overlay = Drupal.mosaic.core.objects.mboverlay;
   		$('header').css({'position': 'relative', 'z-index': '9'});
   		$('.pane-top-menus').css({'z-index': '9'});
-  		overlay.$overlay.fadeTo(0, .25);
+  		this.updateOverlay('show');
   	}
   	catch (err) {
   		console.log('showOverlay errored: '+err);
@@ -188,10 +238,9 @@ Drupal.mosaic = Drupal.mosaic || {};
 	// Hide overlay
  	Drupal.mosaic.mosaicTopMenus.prototype.hideOverlay = function() {
   	try {
-  		var overlay = Drupal.mosaic.core.objects.mboverlay;
   		$('header').attr('style', '');
   		$('.pane-top-menus').attr('style', '');
-  		overlay.$overlay.fadeTo(0, 0).hide();
+  		this.updateOverlay('hide');
   	}
   	catch (err) {
   		console.log('hideOverlay errored: '+err);
