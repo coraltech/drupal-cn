@@ -31,8 +31,9 @@ div.node-teaser.node-answer .pane-coral-add-comment,
 div.node-teaser.node-answer .pane-coral-add-answer,
 div.node-teaser.node-answer .pane-node-links {
   float: left;
+  line-height: 1.25em;
 }
-/* line 34, ../../../sass/nodes/types/node_answer.scss */
+/* line 35, ../../../sass/nodes/types/node_answer.scss */
 div.node-type-answer .pane-coral-add-comment .links,
 div.node-type-answer .pane-coral-add-answer .links,
 div.node-type-answer .pane-node-links .links,
@@ -42,7 +43,7 @@ div.node-teaser.node-answer .pane-node-links .links {
   padding: 0;
   margin: 0;
 }
-/* line 38, ../../../sass/nodes/types/node_answer.scss */
+/* line 39, ../../../sass/nodes/types/node_answer.scss */
 div.node-type-answer .pane-coral-add-comment .links li,
 div.node-type-answer .pane-coral-add-answer .links li,
 div.node-type-answer .pane-node-links .links li,
@@ -52,15 +53,21 @@ div.node-teaser.node-answer .pane-node-links .links li {
   margin: 0 6px 0 0;
   padding: 1px 3px 0 0;
 }
-/* line 45, ../../../sass/nodes/types/node_answer.scss */
+/* line 46, ../../../sass/nodes/types/node_answer.scss */
+div.node-type-answer .pane-answer-links-container,
+div.node-teaser.node-answer .pane-answer-links-container {
+  margin-bottom: 1.25em;
+}
+/* line 50, ../../../sass/nodes/types/node_answer.scss */
 div.node-type-answer .answer-node-pane-title,
 div.node-teaser.node-answer .answer-node-pane-title {
   font-size: 1.25em;
   line-height: 1em;
   margin-top: .5em;
   margin-bottom: .5em;
+  margin-top: 1em;
 }
-/* line 51, ../../../sass/nodes/types/node_answer.scss */
+/* line 57, ../../../sass/nodes/types/node_answer.scss */
 div.node-type-answer .layout-node-1 .site-width,
 div.node-teaser.node-answer .layout-node-1 .site-width {
   *zoom: 1;
@@ -72,7 +79,7 @@ div.node-teaser.node-answer .layout-node-1 .site-width:after {
   display: table;
   clear: both;
 }
-/* line 59, ../../../sass/nodes/types/node_answer.scss */
+/* line 65, ../../../sass/nodes/types/node_answer.scss */
 div.node-type-answer .field-name-field-content,
 div.node-type-answer .field-name-field-comment-count,
 div.node-type-answer .field-type-file legend,

@@ -1,5 +1,5 @@
 /* line 658, icons/*.png */
-.icons-sprite, .pane-coral-add-answer .btn.answer .icon, .pane-coral-add-answer .btn.answers-hidden .icon, .pane-coral-add-answer .btn.answers-hidden:hover .icon {
+.icons-sprite, .pane-coral-add-answer .btn.answer .icon, .pane-coral-add-answer .btn.answer .best, .pane-coral-add-answer .btn.answer:hover .best, .pane-coral-add-answer .btn.answers-hidden .icon, .pane-coral-add-answer .btn.answers-hidden:hover .icon {
   background: url('/images/icons-sab53ba634c.png') no-repeat;
 }
 
@@ -27,7 +27,7 @@
   cursor: pointer;
   display: block;
   position: absolute;
-  top: 14%;
+  top: 20%;
   right: -4px;
   height: 16px;
   width: 16px;
@@ -64,32 +64,47 @@
   width: 15px;
 }
 /* line 58, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer .best {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  background-position: 0 -6109px;
+  height: 15px;
+  width: 18px;
+}
+/* line 66, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer:hover {
   color: #919191;
 }
-/* line 63, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 68, ../../sass/panes/pane__coral_add_answer.scss */
+.pane-coral-add-answer .btn.answer:hover .best {
+  background-position: 0 -5026px;
+  height: 15px;
+  width: 18px;
+}
+/* line 74, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answer .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-/* line 68, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 79, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden .icon {
   background-position: 0 -4757px;
   height: 15px;
   width: 15px;
 }
-/* line 72, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 83, ../../sass/panes/pane__coral_add_answer.scss */
 .pane-coral-add-answer .btn.answers-hidden:hover .icon {
   background-position: 0 -4822px;
   height: 15px;
   width: 15px;
 }
 
-/* line 84, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 95, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .pager,
 .view-answers.view-display-id-new_answers .pager {
   display: none;
 }
-/* line 86, ../../sass/panes/pane__coral_add_answer.scss */
+/* line 97, ../../sass/panes/pane__coral_add_answer.scss */
 .view-answers.view-display-id-this_answer .views-row,
 .view-answers.view-display-id-new_answers .views-row {
   background: url(../../assets/images/coral-sep-med-simple.png) bottom center no-repeat;

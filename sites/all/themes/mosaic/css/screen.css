@@ -103,7 +103,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .site-width {
   width: 80%;
   max-width: 1024px;
-  min-width: 400px;
+  min-width: 320px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1202,7 +1202,7 @@ audio:not([controls]) {
 .mosaic-cont > .container {
   width: 80%;
   max-width: 1024px;
-  min-width: 400px;
+  min-width: 320px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1237,7 +1237,7 @@ body.page-references-dialog {
 header,
 .mosaic-cont {
   background: white;
-  min-width: 400px;
+  min-width: 320px;
 }
 
 /* line 57, ../sass/global/_global.scss */
@@ -1256,7 +1256,7 @@ header,
 
 /* line 66, ../sass/global/_global.scss */
 #navbar-administration.navbar-oriented .navbar-bar {
-  min-width: 400px;
+  min-width: 320px;
 }
 
 /* line 71, ../sass/global/_global.scss */
@@ -1462,7 +1462,7 @@ header .coral-cloud .icon {
   content: "Social login | ";
   font-weight: bold;
   float: left;
-  margin: .5em .25em 0 0;
+  margin: .25em .25em 0 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1683,7 +1683,7 @@ h3 .toc-top {
   float: left;
   display: inline-block;
   padding: 1px 0px 1px 4px;
-  margin: 0 0 0 -2px;
+  margin: 1px 0 0 -2px;
   border-left: 1px solid #dddddd;
 }
 
@@ -2409,6 +2409,77 @@ form .field-type-file table .description {
 /* line 852, ../sass/global/_global.scss */
 .item-list ul.pager-mini li .ajax-progress {
   position: absolute;
+}
+
+/* line 862, ../sass/global/_global.scss */
+.sf-vertical {
+  width: 12em;
+  min-width: 12em;
+}
+/* line 866, ../sass/global/_global.scss */
+.sf-vertical li {
+  background: #dddddd;
+  border-bottom: 1px solid #c4c4c4;
+}
+/* line 870, ../sass/global/_global.scss */
+.sf-vertical li a {
+  padding: 0.625em;
+}
+/* line 874, ../sass/global/_global.scss */
+.sf-vertical li ul {
+  border-left: 1px solid #cbcbcb;
+  min-width: 12em;
+  width: 12em !important;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 1px 6px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=97);
+  opacity: 0.97;
+}
+/* line 888, ../sass/global/_global.scss */
+.sf-vertical a:hover, .sf-vertical a:active, .sf-vertical a.active, .sf-vertical > .sfHover > a.menuparent {
+  color: #2b486b;
+}
+/* line 892, ../sass/global/_global.scss */
+.sf-vertical > li {
+  float: left;
+}
+/* line 896, ../sass/global/_global.scss */
+.sf-vertical > li:hover > ul, .sf-vertical > li.sfHover > ul {
+  display: block;
+}
+/* line 902, ../sass/global/_global.scss */
+.sf-vertical a.menuparent > .arrow {
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 3px;
+  width: 0;
+  height: 0;
+  border-right: 7px solid transparent;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #7496c8;
+}
+/* line 910, ../sass/global/_global.scss */
+.sf-vertical .sfHover.sf-depth-1 > a.menuparent > .arrow {
+  top: 15px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #7496c8;
+}
+/* line 916, ../sass/global/_global.scss */
+.sf-vertical .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+  width: 0;
+  height: 0;
+  border-right: 7px solid transparent;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid black;
 }
 
 /* line 12, ../sass/global/grid.scss */
@@ -3137,7 +3208,7 @@ div.append-24 {
     width: 70px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 520px) {
   /* line 108, ../sass/global/_menus.scss */
   .pane-menu-support {
     display: none;

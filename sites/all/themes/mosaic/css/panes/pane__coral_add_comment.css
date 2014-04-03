@@ -6,7 +6,7 @@
 /* line 15, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment {
   float: left;
-  margin: 0 5px 0 0;
+  margin: 1px 5px 0 0;
 }
 /* line 19, ../../sass/panes/pane__coral_add_comment.scss */
 .pane-coral-add-comment .btn.comment {
@@ -31,7 +31,7 @@
   cursor: pointer;
   display: block;
   position: absolute;
-  top: 14%;
+  top: 20%;
   right: -4px;
   height: 16px;
   width: 16px;

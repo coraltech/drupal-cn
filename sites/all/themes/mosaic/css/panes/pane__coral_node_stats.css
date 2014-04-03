@@ -1,78 +1,93 @@
 /* line 658, icons/*.png */
-.icons-sprite, .pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
+.icons-sprite, .pane-coral-node-stats .stat-answers .best-ans-ico, .pane-coral-node-stats .stat-edit .icon, .pane-coral-node-stats .stat-edit:hover .icon {
   background: url('/images/icons-sab53ba634c.png') no-repeat;
 }
 
-/* line 13, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap {
-  font-size: 95%;
-  margin: 0 1em 1.25em 0;
-  padding: 0 0.3125em 0.3125em;
-  color: #515151;
-}
-/* line 19, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap .stat-editor {
+/* line 11, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats {
+  margin: 0 0 0.625em 0;
+  font-size: 90%;
+  overflow: hidden;
   *zoom: 1;
 }
-/* line 20, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap .stat-editor .user-picture {
+/* line 32, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .coral-stat {
   float: left;
+  line-height: 2.2em;
   margin-right: .5em;
-  margin-top: 5px;
-}
-/* line 25, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap .stat-editor .user-picture img {
-  display: block;
-  border: 1px solid #c4c4c4;
-}
-/* line 30, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap .stat-editor .username {
-  font-size: 125%;
-  float: left;
-  clear: right;
-  margin-top: 0.5em;
-}
-/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.pane-coral-node-stats .statset-wrap .stat-editor:after {
-  content: "";
-  display: table;
-  clear: both;
+  color: #898989;
 }
 /* line 39, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap .stat-edit {
-  margin-top: 0.15625em;
-}
-/* line 43, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-wrap .stat-answers .best-ans-ico {
+.pane-coral-node-stats .stat-answers .best-ans-ico {
   padding: 0 14px;
   margin: 0 0 0 5px;
   background-position: 0 -5026px;
   height: 15px;
   width: 18px;
 }
-/* line 52, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .coral-stat .statid {
-  font-weight: bold;
-  font-size: 95%;
-  color: #848484;
+/* line 46, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-editor {
+  *zoom: 1;
 }
-/* line 60, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-style-unstyled {
-  padding: 0;
-}
-/* line 64, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-style-yellow {
-  border: 1px solid #c4c4c4;
-  background: #fff6b6;
-  clear: left;
-  width: 12em;
+/* line 47, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-editor .user-picture {
   float: left;
+  margin-right: .5em;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+/* line 52, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-editor .user-picture img {
+  display: block;
+  border: 1px solid #c4c4c4;
+  width: 24px;
+  height: 24px;
+}
+/* line 59, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-editor .username {
+  font-size: 115%;
+  float: left;
+  clear: right;
+  margin-top: .35em;
+}
+/* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.pane-coral-node-stats .stat-editor:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 68, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-edit {
+  margin-left: 3px;
+}
+/* line 70, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-edit .statid {
+  display: none;
 }
 /* line 73, ../../sass/panes/pane__coral_node_stats.scss */
-.pane-coral-node-stats .statset-style-gray {
-  border: 1px solid #d0d0d0;
-  background: #eaeaea;
-  clear: left;
-  width: 12em;
+.pane-coral-node-stats .stat-edit .icon {
+  display: inline-block;
   float: left;
+  margin-top: .6em;
+  background-position: 0 -5914px;
+  height: 15px;
+  width: 15px;
+}
+/* line 80, ../../sass/panes/pane__coral_node_stats.scss */
+.pane-coral-node-stats .stat-edit:hover .icon {
+  background-position: 0 -4692px;
+  height: 15px;
+  width: 15px;
+}
+
+/* line 88, ../../sass/panes/pane__coral_node_stats.scss */
+.node-answer .pane-coral-node-stats .statset-style-gray,
+.node-question .pane-coral-node-stats .statset-style-gray {
+  background: url("../../assets/images/diag-tile-lt.png");
+  border-style: solid;
+  border-width: 1px;
+  border-color: #eaeaea;
+  float: right;
+  overflow: hidden;
+  *zoom: 1;
 }

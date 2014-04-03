@@ -259,7 +259,7 @@
     margin-bottom: 0;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 420px) {
   /* line 199, ../../sass/views/view__node_search.scss */
   #main-content .layout-landing-responsive .main-content .pane-search-form .pane-content {
     float: left;

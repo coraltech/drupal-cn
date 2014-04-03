@@ -88,10 +88,11 @@
 /* line 85, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title {
   clear: none;
-  float: left;
+  position: relative;
   font-size: 1em;
   line-height: 1.25em;
   margin: 0;
+  margin-bottom: 0.3125em;
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -100,7 +101,7 @@
   display: table;
   clear: both;
 }
-/* line 91, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 93, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title .icon {
   display: block;
   float: left;
@@ -111,25 +112,26 @@
   height: 12px;
   width: 19px;
 }
-/* line 101, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 103, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > a {
   color: #919191;
   float: left;
-  max-width: 90.85%;
+  max-width: 88%;
 }
-/* line 105, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 107, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > a:hover {
   color: #446eac;
 }
-/* line 107, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 109, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top {
   border: 1px solid white;
   cursor: pointer;
   display: block;
-  float: left;
   width: 20px;
   height: 20px;
-  margin: -2px 0 0 5px;
+  position: absolute;
+  top: 0;
+  right: .5em;
   background: #c4c4c4;
   /* fallback for non-supporting browsers */
   background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#c4c4c4), to(white));
@@ -147,7 +149,7 @@
   -o-border-radius: 11px;
   border-radius: 11px;
 }
-/* line 119, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 122, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top .arrow-up {
   display: block;
   margin: 2px 0 0 5px;
@@ -158,7 +160,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #5e5e5e;
 }
-/* line 125, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 128, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top:hover {
   border: 1px solid #9d9d9d;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
@@ -176,7 +178,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #9d9d9d 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 130, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 133, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comment-node-pane-title > .top:hover .arrow-up {
   width: 0;
   height: 0;
@@ -185,7 +187,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid white;
 }
-/* line 136, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 139, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target.odd .comment-node-pane-title > .top {
   border: 1px solid #efefef;
   background: #c4c4c4;
@@ -200,7 +202,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #c4c4c4 0%, #efefef 100%);
   /* Opera (13?) */
 }
-/* line 140, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 143, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target.odd .comment-node-pane-title > .top:hover {
   border: 1px solid #969696;
   background: #9d9d9d;
@@ -215,72 +217,55 @@
   background-image: -o-radial-gradient(center center, circle contain, #9d9d9d 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 147, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 150, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .pane-coral-comments-target {
   margin-bottom: -1px;
   margin-right: -1px;
   margin-left: 0.625em;
 }
-/* line 152, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 155, ../../sass/panes/pane__coral_comments_target.scss */
 .html div.pane-coral-comments-target .comments-tgt.empty {
   padding-top: 1.25em;
   padding-left: 1em;
 }
-/* line 158, ../../sass/panes/pane__coral_comments_target.scss */
-.html div.pane-coral-comments-target .pane-coral-node-stats {
-  margin-top: -.2em;
-}
-/* line 161, ../../sass/panes/pane__coral_comments_target.scss */
-.html div.pane-coral-comments-target .pane-coral-node-stats .stat-comments {
-  line-height: 2em;
-}
-/* line 165, ../../sass/panes/pane__coral_comments_target.scss */
-.html div.pane-coral-comments-target .pane-coral-node-stats .stat-editor .user-picture {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-/* line 169, ../../sass/panes/pane__coral_comments_target.scss */
-.html div.pane-coral-comments-target .pane-coral-node-stats .stat-editor .username {
-  margin-top: .2em;
-}
 
-/* line 175, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 165, ../../sass/panes/pane__coral_comments_target.scss */
 .html .pane-coral-comments-target.comments-more {
   background: #dddddd;
 }
 
-/* line 185, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 175, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-node-body,
 .view-comments.view-display-id-this_comment .views-row .pane-node-body {
   padding-right: 1em;
 }
-/* line 188, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 178, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment,
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment {
   float: right;
 }
-/* line 191, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 181, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row .pane-coral-add-comment .anon,
 .view-comments.view-display-id-this_comment .views-row .pane-coral-add-comment .anon {
   margin-right: 1em;
 }
-/* line 196, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 186, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .views-row-first,
 .view-comments.view-display-id-this_comment .views-row-first {
   margin-top: 0;
 }
-/* line 199, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 189, ../../sass/panes/pane__coral_comments_target.scss */
 .view-comments.view-display-id-new_comments .pager,
 .view-comments.view-display-id-this_comment .pager {
   display: none;
 }
 
-/* line 206, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 196, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment,
 .html div.node-teaser.node-comment {
   padding: 0.625em 5px 0 0;
 }
-/* line 208, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 198, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .row,
 .html .node-type-comment .leader,
 .html div.node-teaser.node-comment .row,
@@ -288,14 +273,14 @@
   padding-left: 1em;
   margin: 0;
 }
-/* line 216, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 206, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-page-title h2,
 .html div.node-teaser.node-comment .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 225, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 215, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html .node-type-comment .pane-coral-add-comment,
 .html .node-type-comment .pane-coral-add-answer,
@@ -307,7 +292,7 @@
   float: right;
   height: 1.4em;
 }
-/* line 228, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 218, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links,
 .html .node-type-comment .pane-coral-add-comment .links,
 .html .node-type-comment .pane-coral-add-answer .links,
@@ -319,7 +304,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 232, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 222, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node .links li,
 .html .node-type-comment .pane-coral-add-comment .links li,
 .html .node-type-comment .pane-coral-add-answer .links li,
@@ -331,17 +316,17 @@
   margin: 0 5px 0 0;
   padding: 1px 6px 1px;
 }
-/* line 238, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 228, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-coral-flag-abuse-node,
 .html div.node-teaser.node-comment .pane-coral-flag-abuse-node {
   margin-right: 1em;
 }
-/* line 242, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 232, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .pane-node-field-tags,
 .html div.node-teaser.node-comment .pane-node-field-tags {
   clear: left;
 }
-/* line 249, ../../sass/panes/pane__coral_comments_target.scss */
+/* line 239, ../../sass/panes/pane__coral_comments_target.scss */
 .html .node-type-comment .field-name-field-content,
 .html .node-type-comment .field-name-field-comment-count,
 .html .node-type-comment .field-type-file legend,

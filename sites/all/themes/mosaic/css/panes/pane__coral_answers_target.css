@@ -1,17 +1,18 @@
-/* line 15, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 16, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target {
   position: relative;
   margin-bottom: 1.25em;
 }
-/* line 18, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 19, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target > h2.pane-title {
   background: #777777;
   color: white;
   font-weight: normal;
   padding-left: .5em;
   padding-right: .5em;
+  margin-top: 0;
 }
-/* line 29, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 31, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions {
   position: relative;
   *zoom: 1;
@@ -22,7 +23,7 @@
   display: table;
   clear: both;
 }
-/* line 34, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 36, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more {
   background: #dddddd;
   border: 1px solid #cbcbcb;
@@ -32,23 +33,23 @@
   font-size: .85em;
   display: block;
 }
-/* line 43, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 45, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more:hover {
   color: black;
 }
-/* line 47, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 49, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more .btn {
   margin-right: .5em;
 }
-/* line 52, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 54, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more .ajax-progress .throbber {
   margin: 1px -2px -1px 6px;
 }
-/* line 56, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 58, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .load-more.hide {
   display: none;
 }
-/* line 60, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 62, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .actions .cls-answers {
   position: absolute;
   bottom: -7px;
@@ -72,9 +73,10 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px;
 }
-/* line 80, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 82, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title {
   clear: none;
+  position: relative;
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -83,20 +85,21 @@
   display: table;
   clear: both;
 }
-/* line 84, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 87, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > a {
   float: left;
   max-width: 88%;
 }
-/* line 88, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 91, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top {
   border: 1px solid #f1f1f1;
   cursor: pointer;
   display: block;
-  float: left;
   width: 20px;
   height: 20px;
-  margin: 1px 0 0 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
   background: #bebebe;
   /* fallback for non-supporting browsers */
   background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#bebebe), to(#f1f1f1));
@@ -114,7 +117,7 @@
   -o-border-radius: 11px;
   border-radius: 11px;
 }
-/* line 100, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 103, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top .arrow-up {
   display: block;
   margin: 2px 0 0 5px;
@@ -125,7 +128,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #5e5e5e;
 }
-/* line 106, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 109, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top:hover {
   border: 1px solid #919191;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px inset;
@@ -143,7 +146,7 @@
   background-image: -o-radial-gradient(center center, circle contain, #969696 0%, #dddddd 100%);
   /* Opera (13?) */
 }
-/* line 111, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 114, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answer-node-pane-title > .top:hover .arrow-up {
   width: 0;
   height: 0;
@@ -152,26 +155,33 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid white;
 }
-/* line 122, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 125, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.odd {
   background-color: #efefef;
 }
-/* line 125, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 128, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target.even {
   background-color: white;
 }
-/* line 128, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 131, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target .node .comment-node-pane-title {
   font-size: 1em;
   line-height: 1.25em;
   margin: 0;
-  float: left;
+  margin-bottom: 0.3125em;
 }
-/* line 132, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 135, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .pane-coral-comments-target .actions .load-more {
   background: transparent;
 }
-/* line 139, ../../sass/panes/pane__coral_answers_target.scss */
+/* line 142, ../../sass/panes/pane__coral_answers_target.scss */
 .html .pane-coral-answers-target .answers-tgt.empty {
   padding: 1.25em 10px;
+}
+
+@media screen and (max-width: 967px) {
+  /* line 150, ../../sass/panes/pane__coral_answers_target.scss */
+  .html .pane-coral-answers-target .answer-node-pane-title > a {
+    max-width: 85%;
+  }
 }

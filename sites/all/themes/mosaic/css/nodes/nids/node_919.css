@@ -81,7 +81,7 @@
     font-size: .85em;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 370px) {
   /* line 90, ../../../sass/nodes/nids/node_919.scss */
   .coral-slide.coral-diagram h2 {
     font-size: .85em;

@@ -98,7 +98,7 @@
     font-size: .9em;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 320px) {
   /* line 102, ../../sass/panes/pane__coral_wiki_ask_question.scss */
   .pane-coral-wiki-ask-question .wiki-ask-question {
     top: 2%;

@@ -28,7 +28,7 @@
     margin-top: -23%;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 320px) {
   /* line 34, ../../../sass/nodes/nids/node_917.scss */
   .coral-slide.cloud-handle h2 {
     font-size: 1.5em;

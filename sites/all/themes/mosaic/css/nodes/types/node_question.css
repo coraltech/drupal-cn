@@ -12,8 +12,9 @@
 .html .node-teaser.node-question .pane-coral-page-title,
 .html .node-teaser.node-question .question-node-teaser-pane-title {
   line-height: 1.125em;
+  margin-top: .75em;
 }
-/* line 19, ../../../sass/nodes/types/node_question.scss */
+/* line 20, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .pane-coral-page-title .icon,
 .html .node-type-question .question-node-teaser-pane-title .icon,
 .html .node-teaser.node-question .pane-coral-page-title .icon,
@@ -25,14 +26,14 @@
   height: 27px;
   width: 24px;
 }
-/* line 27, ../../../sass/nodes/types/node_question.scss */
+/* line 28, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .pane-coral-page-title h2,
 .html .node-teaser.node-question .pane-coral-page-title h2 {
   color: #3a5e92;
   font-weight: bold;
   margin-top: .15em;
 }
-/* line 35, ../../../sass/nodes/types/node_question.scss */
+/* line 36, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .pane-coral-add-comment,
 .html .node-type-question .pane-coral-add-answer,
 .html .node-type-question .pane-node-links,
@@ -40,8 +41,9 @@
 .html .node-teaser.node-question .pane-coral-add-answer,
 .html .node-teaser.node-question .pane-node-links {
   float: left;
+  line-height: 1.25em;
 }
-/* line 38, ../../../sass/nodes/types/node_question.scss */
+/* line 40, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .pane-coral-add-comment .links,
 .html .node-type-question .pane-coral-add-answer .links,
 .html .node-type-question .pane-node-links .links,
@@ -51,7 +53,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 42, ../../../sass/nodes/types/node_question.scss */
+/* line 44, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .pane-coral-add-comment .links li,
 .html .node-type-question .pane-coral-add-answer .links li,
 .html .node-type-question .pane-node-links .links li,
@@ -61,7 +63,12 @@
   margin: 0 6px 0 0;
   padding: 1px 3px 1px 0;
 }
-/* line 53, ../../../sass/nodes/types/node_question.scss */
+/* line 51, ../../../sass/nodes/types/node_question.scss */
+.html .node-type-question .pane-question-links-container,
+.html .node-teaser.node-question .pane-question-links-container {
+  margin-bottom: 1.25em;
+}
+/* line 59, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .field-name-field-answer,
 .html .node-type-question .field-name-field-comment-count,
 .html .node-type-question .field-name-field-answer-count,
@@ -72,7 +79,7 @@
 .html .node-teaser.node-question .field-type-file legend {
   display: none;
 }
-/* line 59, ../../../sass/nodes/types/node_question.scss */
+/* line 65, ../../../sass/nodes/types/node_question.scss */
 .html .node-type-question .layout-node-1 .site-width,
 .html .node-teaser.node-question .layout-node-1 .site-width {
   *zoom: 1;
@@ -85,7 +92,7 @@
   clear: both;
 }
 
-/* line 65, ../../../sass/nodes/types/node_question.scss */
+/* line 74, ../../../sass/nodes/types/node_question.scss */
 .html .node-question.boxopen {
   position: relative;
   z-index: 8;

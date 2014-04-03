@@ -1,11 +1,29 @@
 /* line 7, ../../../sass/nodes/fe_attach/about.scss */
-.layout-landing-1 .main-content {
+#main-content .main-content.grid-13-last {
   float: left;
-  width: 39.66667%;
+  width: 72.91667%;
+  float: right;
 }
 
-/* line 8, ../../../sass/nodes/fe_attach/about.scss */
-.layout-landing-1 .secondary-content {
+/* line 11, ../../../sass/nodes/fe_attach/about.scss */
+#main-content .secondary-content.grid-11 {
   float: left;
-  width: 58.33333%;
+  width: 25.08333%;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 17, ../../../sass/nodes/fe_attach/about.scss */
+  #main-content .main-content.grid-13-last {
+    width: 100%;
+    float: none;
+  }
+  /* line 20, ../../../sass/nodes/fe_attach/about.scss */
+  #main-content .main-content.grid-13-last .prepend-1 {
+    margin-left: 0;
+  }
+
+  /* line 24, ../../../sass/nodes/fe_attach/about.scss */
+  #main-content .secondary-content.grid-11 {
+    width: 100%;
+  }
 }
