@@ -15,6 +15,7 @@
   .pane-coral-page-title,
   .question-node-teaser-pane-title {
     line-height: .9 * $default_vert_unit;
+    margin-top: .75em;
     
     .icon { // apply question mark icon
       display: block;
@@ -34,7 +35,8 @@
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
     float: left;
-
+    line-height: $default_vert_unit;
+    
     .links { // standardize 
       padding: 0; 
       margin: 0; 
@@ -44,6 +46,10 @@
         padding: 1px 3px 1px 0;
       }
     }
+  }
+  
+  .pane-question-links-container {
+    margin-bottom: $default_vert_unit;
   }
   
   // Hide some things
@@ -58,6 +64,9 @@
   .layout-node-1 {
     .site-width {
       @include pie-clearfix;
+    }
+    .follower {
+      //padding-top: .05em;
     }
   }
 }
