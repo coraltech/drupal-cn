@@ -51,7 +51,7 @@
     }
     .node .comment-node-pane-title {
       @include h0;
-      float: left;
+      margin-bottom: ($default_vert_unit / 4);
     }
   }
   .pane-coral-comments-target.comments-more { }
