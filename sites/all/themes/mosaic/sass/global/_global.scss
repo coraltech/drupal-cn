@@ -196,7 +196,7 @@ header .coral-cloud {
     content: "Social login | ";
     font-weight: bold;
     float: left;
-    margin: .5em .25em 0 0;
+    margin: .25em .25em 0 0;
   }
 }
 @media screen and (max-width: $desktopw) {
@@ -375,7 +375,7 @@ h3 .toc-top {
   float: left;
   display: inline-block;
   padding: 1px 0px 1px 4px;
-  margin: 0 0 0 -2px;
+  margin: 1px 0 0 -2px;
   border-left: 1px solid $ltgray;
 }
 .flag-abuse-node {
@@ -745,7 +745,7 @@ form .field-type-file {
   }
 }
 
-
+// Pager styles
 .item-list ul.pager {
   margin: ($default_vert_unit / 2) 0 $default_vert_unit;
 
@@ -853,4 +853,67 @@ form .field-type-file {
       position: absolute;
     }
   }  
+}
+
+
+// --------------------------------------------
+//  Vertical menu (from help pane)
+// --------------------------------------------
+.sf-vertical {
+  width: 12em;
+  min-width: 12em;
+  
+  li {
+    background: $ltgray;
+    border-bottom: 1px solid darken($ltgray, 10%);
+    
+    a {
+      padding: (.5 * $default_vert_unit);
+    }
+    
+    ul {
+      border-left: 1px solid darken($ltgray, 7%);
+      min-width: 12em;
+      width: 12em !important;
+      
+      @include box-shadow(rgba(0,0,0,.3) 2px 1px 6px);
+      @include opacity(.97);
+    }
+  }
+  
+  // self referencing
+  & a:hover,
+  & a:active,
+  & a.active,
+  & > .sfHover > a.menuparent {
+   color: $dkblue;
+  }
+  
+  & > li {
+    float: left;
+    
+    &:hover > ul,
+    &.sfHover > ul { // second level ul's need to be 37px from the top
+      display: block;
+    }    
+  }
+  
+  // Arrows
+  & a.menuparent > .arrow {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 3px;
+    
+    @include arrow-right(7px, lighten($mdblue, 15%));
+  }
+  & .sfHover.sf-depth-1 > a.menuparent > .arrow {
+    top: 15px;
+    right: 5px;
+    
+    @include arrow-down(7px, lighten($mdblue, 15%));
+  }
+  & .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {
+    @include arrow-right(7px, $black);
+  }
 }
