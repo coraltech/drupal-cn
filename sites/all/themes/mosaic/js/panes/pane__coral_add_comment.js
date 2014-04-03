@@ -973,7 +973,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (Number(this.settings.total_items) <= Number(this.settings.limit)) tot = cur;
       
       var btn = '<span class="btn">More comments</span>';
-      var pgtot = '<span class="pgtot">(<span class="cur">'+cur+'</span>/<span class="tot">'+tot+'</span>)</span>';
+      var pgtot = ' <span class="pgtot">(<span class="cur">'+cur+'</span>/<span class="tot">'+tot+'</span>)</span>';
       return '<a href="#" class="load-more more-comments-'+this.refID+' page-'+page+' '+hide+'"><span class="icon"></span>'+btn+pgtot+'<span class="no-js"><span></span></a>';
     }
     catch (err) {
