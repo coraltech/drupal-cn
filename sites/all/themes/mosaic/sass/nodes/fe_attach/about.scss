@@ -1,10 +1,27 @@
 
-// Scss file customizi1ng (tweaking) the about page
+// About page presets
 
 @import 'global/grid_mix';
+@import 'global/site_vars';
 
-// Re-adjust the grid ;-)
-.layout-landing-1 .main-content      { @include col(10); }
-.layout-landing-1 .secondary-content { @include col(14, true); }
+#main-content .main-content.grid-13-last {
+  @include col(17.5, 'true');
+  float: right;
+}
+#main-content .secondary-content.grid-11 {
+  @include col(6.5);
+}
 
 
+@media screen and (max-width: $desktopw) {
+  #main-content .main-content.grid-13-last {
+    width: 100%;
+    float: none;
+    .prepend-1 {
+      margin-left: 0;
+    }
+  }
+  #main-content .secondary-content.grid-11 {
+    @include col($columns, 'true');
+  }
+}
