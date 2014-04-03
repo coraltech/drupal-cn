@@ -13,7 +13,8 @@
 .pane-coral-home-login {
   position: relative;
   margin: $default_vert_unit 0 0 0;
-    
+  padding-top: $default_vert_unit;
+  
   @include pie-clearfix;  
   //@include reflected-v-gradient(lighten($ltgray, 5%), darken($ltgray, 7%), $ltgray);
   
