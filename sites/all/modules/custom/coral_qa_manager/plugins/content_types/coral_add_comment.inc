@@ -32,7 +32,15 @@ function coral_comment_button_form_content_type_render($subtype, $conf, $args, $
   if (isset($node->nid) && isset($node->type)) {
     $types = array('question', 'answer', 'comment');
     if (in_array($node->type, $types)) {
-      $content = '<a href="/node/add/comment/'.$node->nid.'?field_content='.$node->nid.'" title="View and add comments" class="btn comment comment-'.$node->nid.' comments-hidden '.coral_comment_btn_get_class().'"><span class="icon"></span>Comments<span class="circle"><span class="arrow"></span></span></a>';
+      $num_com = field_get_items('node', $node, 'field_comment_count');
+      if (isset($num_com[0]['value'])) {
+        $num_com = $num_com[0]['value'];
+      }
+      else {
+        $num_com = '0';
+      }
+      $content = '<a href="/node/add/comment/'.$node->nid.'?field_content='.$node->nid.'" title="View and add comments" class="btn comment comment-'.$node->nid.' comments-hidden '.coral_comment_btn_get_class().'">';
+      $content .= '<span class="icon"></span><span class="text">Comments</span> <span class="ans-count">('.$num_com.')</span><span class="circle"><span class="arrow"></span></span></a>';
     }
   }  
     
