@@ -84,8 +84,10 @@
   
   .comment-node-pane-title {
     clear: none;
-    float: left;
+    position: relative;
     @include h0;
+    margin-bottom: ($default_vert_unit / 4);
+    
     @include pie-clearfix;
     
     .icon {
@@ -101,17 +103,18 @@
   .comment-node-pane-title > a {
     color: lighten($mdgray, 10%);
     float: left;
-    max-width: 90.85%;
+    max-width: 88%;
     &:hover { color: $mdblue; }
   }
   .comment-node-pane-title > .top {
     border: 1px solid $white;
     cursor: pointer;
     display: block;
-    float: left;
     width: 20px;
     height: 20px;
-    margin: -2px 0 0 5px;
+    position: absolute;
+    top: 0;
+    right: .5em;
     
     @include radial-gradient($white, darken($ltgray, 10%));
     @include border-radius(11px);
@@ -156,20 +159,7 @@
   
   
   .pane-coral-node-stats {
-    margin-top: -.2em;
     
-    .stat-comments {
-      line-height: 2em;
-    }
-    .stat-editor {
-      .user-picture {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      .username {
-        margin-top: .2em;
-      }
-    }
   }
 }
 .html .pane-coral-comments-target.comments-more {
