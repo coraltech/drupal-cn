@@ -25,7 +25,25 @@ function coral_answer_button_form_content_type_render($subtype, $conf, $args, $c
   $content = '';
   if (isset($node->nid) && isset($node->type)) {
     if ($node->type == 'question') {
-      $content = '<a href="/node/add/answer/'.$node->nid.'?field_question='.$node->nid.'" title="View and submit answers to this question" class="btn answer answer-'.$node->nid.' answers-hidden"><span class="icon"></span>Answers<span class="circle"><span class="arrow"></span></span></a>';
+      $num_ans = field_get_items('node', $node, 'field_answer_count');
+      $best_ans = field_get_items('node', $node, 'field_answer');
+
+      if (isset($num_ans[0]['value'])) {
+        $num_ans = $num_ans[0]['value'];
+      }
+      else {
+        $num_ans = '0';
+      }
+      
+      if (isset($best_ans[0]['target_id'])) {
+        $best_ans = '<span class="best"></span>';
+      }
+      else {
+        $best_ans = '';
+      }
+      
+      $content = '<a href="/node/add/answer/'.$node->nid.'?field_question='.$node->nid.'" title="View and submit answers to this question" class="btn answer answer-'.$node->nid.' answers-hidden">';
+      $content .= '<span class="icon"></span><span class="text">Answers</span> '.$best_ans.' <span class="ans-count">('.$num_ans.')</span><span class="circle"><span class="arrow"></span></span></a>';
     }
   }  
     
