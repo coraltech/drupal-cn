@@ -50,22 +50,24 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.$menus = $('#mini-panel-top_menus .panel-pane'); // Get menus
   		this.$menus.each(function() {
 	  		var $ul = $(this).find('.pane-content > ul'); // only get the top lvl...
-	     	if (!$(this).find('.respond').length) {       // already added?
-	       	if ($(this).hasClass('pane-menu-main')) {   // main menu
-	       		var msg = Drupal.t('Menu');
-	       		$ul.before('<span class="respond"><span class="icon"></span>'+msg+'</span>');
-	       		
-	       		TM.$mainMenu = $ul;
-	       		TM.$mainIcon = $(this).find('.respond');
-	       	}
-	       	else {                                      // service menu
-	       		var msg = Drupal.t('Account');
-	       		$ul.after('<span class="respond">'+msg+'<span class="icon"></span></span>');
 
-	       		TM.$serviceMenu = $ul;
-	       		TM.$serviceIcon = $(this).find('.respond');
-	      	}
-	     	}
+       	if ($(this).hasClass('pane-menu-main')) {   // main menu
+       		if (!$(this).find('.respond').length) {       // already added?
+       			var msg = Drupal.t('Menu');
+       			$ul.before('<span class="respond"><span class="icon"></span>'+msg+'</span>');
+       		}
+       		TM.$mainMenu = $ul;
+       		TM.$mainIcon = $(this).find('.respond');
+       	}
+       	else {                                      // service menu
+       		if (!$(this).find('.respond').length) {       // already added?
+       			var msg = Drupal.t('Account');
+       			$ul.after('<span class="respond">'+msg+'<span class="icon"></span></span>');
+					}	
+       		TM.$serviceMenu = $ul;
+       		TM.$serviceIcon = $(this).find('.respond');
+      	}
+
     	});
    	}
   	catch (err) {
@@ -78,7 +80,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicTopMenus.prototype.addEvents = function() {
   	try {
   		var TM = this;
-
+console.log(this);
 			if (this.$mainIcon.length && this.$serviceIcon.length) {
 
 
