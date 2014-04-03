@@ -30,7 +30,7 @@
       cursor: pointer;
       display: block;
       position: absolute;
-      top: 14%;
+      top: 20%;
       right: -4px;
       height: 16px;
       width: 16px;
@@ -55,8 +55,19 @@
       @include icons-sprite('coral-light-on');
     }
     
+    .best {
+      display: inline-block;
+      position: relative;
+      top: 3px;
+      //margin-left: 2px;
+      @include icons-sprite('check-sml-off');
+    }
+    
     &:hover {
       color: lighten($mdgray, 10%);
+      .best {
+        @include icons-sprite('check-sml');
+      }
     }
 
     // Set up the throbber position in the button
