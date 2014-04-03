@@ -9,73 +9,87 @@
 @import "compass/utilities/general/clearfix";
 
 .pane-coral-node-stats {
+  margin: 0 0 ($default_vert_unit / 2) 0;
+  font-size: 90%;
+  @include clearfix;
+  
+  .pane-content {
+    //background: url('../../assets/images/diag-tile-lt.png');
+    //border-style: solid;
+    //border-width: 1px;
+    //border-color: lighten($ltgray, 5%);
+    //float: right;
+
+  }
   
   .statset-wrap {
-    font-size: 95%;
-    margin: 0 1em $default_vert_unit 0;
-    padding: 0 ($default_vert_unit / 4) ($default_vert_unit / 4);
-    color: darken($mdgray, 15%);
-    
-    .stat-editor {
-      .user-picture {
-        float: left;
-        margin-right: .5em;
-        margin-top: 5px;
-        
-        img { 
-          display: block;
-          border: 1px solid darken($ltgray, 10%);  
-        }
-      }
-      .username {
-        font-size: 125%;
-        float: left;
-        clear: right;
-        margin-top: $default_vert_unit / 2.5;
-      }
-      @include pie-clearfix;
-    }
-    
-    .stat-edit {
-      margin-top: $default_vert_unit / 8;
-    }
-    
-    .stat-answers .best-ans-ico {
-      padding: 0 14px;
-      margin: 0 0 0 5px;
-      
-      @include icons-sprite('check-sml');
-    }
+    //background: url('../../assets/images/coral-sep-med-2.png') top center no-repeat;
+    //padding: 0 3px;
+    //padding: 2px;
+    //@include clearfix;
   }
   
   .coral-stat {
+    float: left;
+    line-height: 2.2em;
+    margin-right: .5em;
+    color: lighten($mdgray, 7%);
+  }
+  
+  .stat-answers .best-ans-ico {
+    padding: 0 14px;
+    margin: 0 0 0 5px;
+    
+    @include icons-sprite('check-sml');
+  }
+  
+  .stat-editor {
+    .user-picture {
+      float: left;
+      margin-right: .5em;
+      margin-top: 3px;
+      margin-left: 3px;
+      img { 
+        display: block;
+        border: 1px solid darken($ltgray, 10%);
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .username {
+      font-size: 115%;
+      float: left;
+      clear: right;
+      margin-top: .35em;
+    }
+    @include pie-clearfix;
+  }
+  
+  .stat-edit {
+    margin-left: 3px;
     .statid {
-      font-weight: bold;
-      font-size: 95%;
-      color: lighten($mdgray, 5%);
+      display: none;
+    }
+    .icon {
+      display: inline-block;
+      float: left;
+      margin-top: .6em;
+      @include icons-sprite('edit-off');
+    }
+    &:hover {
+      .icon {
+        @include icons-sprite('edit');
+      }
     }
   }
-  
-  // Styles for configurations
-  .statset-style-unstyled {
-    padding: 0;
-  }
-  
-  .statset-style-yellow {
-    border: 1px solid darken($ltgray, 10%);
-    background: $ltyellow;
-    clear: left;
-    width: 12em;
-    float: left;
-    //margin-bottom: ($default_vert_unit / 2);
-  }
-  
-  .statset-style-gray {
-    border: 1px solid darken($ltgray, 5%);
-    background: lighten($ltgray, 5%);
-    clear: left;
-    width: 12em;
-    float: left;
-    //margin-bottom: ($default_vert_unit / 2);
-  }
+}
+
+.node-answer .pane-coral-node-stats .statset-style-gray,
+.node-question .pane-coral-node-stats .statset-style-gray {
+  background: url('../../assets/images/diag-tile-lt.png');
+  border-style: solid;
+  border-width: 1px;
+  border-color: lighten($ltgray, 5%);
+  float: right;
+  @include clearfix;
 }
