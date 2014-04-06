@@ -11,7 +11,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.behaviors.coralParentContentInit = {
     attach : function(context, settings) {
       try {
-        $content = $('.pane-coral-parent-content:not(".parent-content-proc")');
+        var $content = $('.pane-coral-parent-content:not(".parent-content-proc")');
         if ($content.length) {
           new Drupal.coralQA.coralParentContent($content);
         }
@@ -82,8 +82,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       
       this.refID = key; // save the key
       this.$title.addClass(key); // add class
-      
-      $addAnswer = this.$node.find('.pane-coral-add-answer').eq(0);
       
       var classes = this.$node.attr('class');
       classes = classes.split(' ');
