@@ -89,24 +89,38 @@
   height: 15px;
   width: 15px;
 }
+/* line 93, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .pane-coral-node-stats {
+  margin: .525em 0 1.25em;
+}
+/* line 96, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .pane-coral-node-stats .coral-stat {
+  float: right;
+  line-height: inherit;
+  font-size: 90%;
+}
+/* line 100, ../../../sass/nodes/types/node_book.scss */
+.node-type-book .pane-coral-node-stats .coral-stat .icon {
+  margin: 0;
+}
 
-/* line 99, ../../../sass/nodes/types/node_book.scss */
+/* line 112, ../../../sass/nodes/types/node_book.scss */
 .page-node.node-type-book .pane-node .links li.first {
   border-right: none;
 }
 
-/* line 107, ../../../sass/nodes/types/node_book.scss */
+/* line 120, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content,
 .node-type-book.node-talk .layout-node-1 .main-content {
   position: relative;
   width: 100%;
 }
-/* line 111, ../../../sass/nodes/types/node_book.scss */
+/* line 124, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content h1.page-title,
 .node-type-book.node-talk .layout-node-1 .main-content h1.page-title {
   margin-bottom: 0;
 }
-/* line 115, ../../../sass/nodes/types/node_book.scss */
+/* line 128, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .book-node-pane-title,
 .node-type-book.node-talk .layout-node-1 .main-content .book-node-pane-title {
   font-size: 1em;
@@ -117,17 +131,17 @@
   margin: -1em -1em 1.25em;
   padding: 0.625em;
 }
-/* line 121, ../../../sass/nodes/types/node_book.scss */
+/* line 134, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .book-node-pane-title .icon,
 .node-type-book.node-talk .layout-node-1 .main-content .book-node-pane-title .icon {
   margin-top: 0;
 }
-/* line 124, ../../../sass/nodes/types/node_book.scss */
+/* line 137, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .book-node-pane-title a,
 .node-type-book.node-talk .layout-node-1 .main-content .book-node-pane-title a {
   color: white;
 }
-/* line 132, ../../../sass/nodes/types/node_book.scss */
+/* line 145, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node {
   background: #f7f7f7;
@@ -136,67 +150,67 @@
   float: right;
   width: 41.66667%;
 }
-/* line 137, ../../../sass/nodes/types/node_book.scss */
+/* line 150, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node h2.node-title {
   display: none;
 }
-/* line 141, ../../../sass/nodes/types/node_book.scss */
+/* line 154, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node > .pane-content {
   border: 1px solid #777777;
   padding: 1em;
 }
-/* line 146, ../../../sass/nodes/types/node_book.scss */
+/* line 159, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline {
   margin: 0;
 }
-/* line 149, ../../../sass/nodes/types/node_book.scss */
+/* line 162, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline:after {
   display: none;
 }
-/* line 153, ../../../sass/nodes/types/node_book.scss */
+/* line 166, ../../../sass/nodes/types/node_book.scss */
 .page-comment-reply .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li.first,
 .node-type-book.node-talk .layout-node-1 .main-content .pane-entity-view.pane-node ul.links.inline li.first {
   border-right: none;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 168, ../../../sass/nodes/types/node_book.scss */
+  /* line 185, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply .layout-landing-responsive .secondary-content,
   .page-node.node-type-book .layout-landing-responsive .secondary-content {
     width: 100%;
   }
-  /* line 171, ../../../sass/nodes/types/node_book.scss */
+  /* line 188, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply .layout-landing-responsive .secondary-content .panel-pane,
   .page-node.node-type-book .layout-landing-responsive .secondary-content .panel-pane {
     width: 100%;
     margin-right: 0;
   }
-  /* line 176, ../../../sass/nodes/types/node_book.scss */
+  /* line 193, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply .layout-landing-responsive .secondary-content .pane-documentation-related-node,
   .page-node.node-type-book .layout-landing-responsive .secondary-content .pane-documentation-related-node {
     margin-top: 0;
   }
-  /* line 180, ../../../sass/nodes/types/node_book.scss */
+  /* line 197, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply .layout-landing-responsive .secondary-content .pane-related-qa-small-list,
   .page-node.node-type-book .layout-landing-responsive .secondary-content .pane-related-qa-small-list {
     width: 100%;
     margin-right: 0;
   }
-  /* line 185, ../../../sass/nodes/types/node_book.scss */
+  /* line 202, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply .layout-landing-responsive .main-content,
   .page-node.node-type-book .layout-landing-responsive .main-content {
     width: 100%;
   }
-  /* line 188, ../../../sass/nodes/types/node_book.scss */
+  /* line 205, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply .layout-landing-responsive .main-content > .prepend-1,
   .page-node.node-type-book .layout-landing-responsive .main-content > .prepend-1 {
     margin: 0;
   }
-  /* line 194, ../../../sass/nodes/types/node_book.scss */
+  /* line 211, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply #main-content .layout-node-1 .pane-node,
   .page-node.node-type-book #main-content .layout-node-1 .pane-node {
     float: right;
@@ -204,9 +218,17 @@
     margin-right: -100%;
     display: none;
   }
-  /* line 204, ../../../sass/nodes/types/node_book.scss */
+  /* line 221, ../../../sass/nodes/types/node_book.scss */
   .page-comment.page-comment-reply #main-content .layout-node-1 h1.page-title:after,
   .page-node.node-type-book #main-content .layout-node-1 h1.page-title:after {
     display: block;
+  }
+  /* line 229, ../../../sass/nodes/types/node_book.scss */
+  .page-comment.page-comment-reply .pane-node-field-tags,
+  .page-comment.page-comment-reply .pane-coral-node-stats,
+  .page-node.node-type-book .pane-node-field-tags,
+  .page-node.node-type-book .pane-coral-node-stats {
+    width: 100%;
+    float: none;
   }
 }

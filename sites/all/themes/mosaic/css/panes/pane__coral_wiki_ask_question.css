@@ -110,8 +110,8 @@
 /* line 113, ../../sass/panes/pane__coral_wiki_ask_question.scss */
 .pane-coral-wiki-ask-question.top .ask-btn {
   position: absolute;
-  right: 0;
-  top: -1.75em;
+  right: 5px;
+  top: -2.5em;
 }
 
 /* line 120, ../../sass/panes/pane__coral_wiki_ask_question.scss */

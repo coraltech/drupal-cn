@@ -12,3 +12,8 @@
   margin-right: .25em;
   color: #446eac;
 }
+
+/* line 22, ../../sass/panes/pane__block_sharethis_sharethis_block.scss */
+.node-type-book .pane-sharethis-sharethis-block {
+  margin: 2.5em 0;
+}
