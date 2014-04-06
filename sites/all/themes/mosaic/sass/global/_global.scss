@@ -254,7 +254,7 @@ header .coral-cloud {
 .toc-wrapper {
   border: 1px solid darken($ltblue, 5%);
   clear: left;
-  width: 12em;
+  min-width: 12em;
   float: left;
   
   margin: 0 1em 0 0;
@@ -287,7 +287,7 @@ header .coral-cloud {
 }
 // Override the toc margin in a few places
 .node-book .toc-wrapper { 
-  margin-top: -1 * $default_vert_unit; 
+  margin-top: .15em; 
   margin-bottom: $default_vert_unit;  
 }
 .node-talk .toc-wrapper { margin-top: 0; }
