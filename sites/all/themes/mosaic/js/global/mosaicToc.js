@@ -11,7 +11,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         // Toc options
-        var settings = {
+        var tocSettings = {
           startLevel     : 2,
           depth          : 6,
           topLinks       : true,
@@ -24,15 +24,15 @@ Drupal.mosaic = Drupal.mosaic || {};
             hide:'[<span>show</span>]'  //  when hidden, show "show" else show "hide"...
           }
         };
-        
+
         // Selectors we apply this to
-        var selectors = ['.node .content:not(".toc-proc")', '.comment .content:not(".toc-proc")'];
+        var selectors = ['.node .pane-node-body:not(".toc-proc")', '.comment .content:not(".toc-proc")'];
         for (ind in selectors) {
           var $items = $(selectors[ind]);
           $items.each(function(i) {
             if (!$(this).hasClass('toc-proc')) {
               $(this).addClass('toc-proc'); // no re-processing
-              new Drupal.mosaic.mosaicToc(this, settings);
+              new Drupal.mosaic.mosaicToc(this, tocSettings);
             }
           });
         }
