@@ -94,7 +94,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   
   // Process each textfield
   Drupal.mosaic.mosaicToc.prototype.process = function($container, settings) {
-    var seed = Math.floor(Math.random() * 1000);
+    var seed = Math.floor(Math.random() * 100000);
     this.addToc($container, settings, seed);
   };
 
@@ -142,7 +142,14 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       // Add some spans in the top links for arrows
       $headers.each(function(i) {
-        $(this).find('.toc-top').prepend('<span class="arrow"></span>');
+				var $tocLink = $(this).find('.toc-top');
+				$tocLink.prepend('<span class="arrow"></span>');
+				$tocLink.attr('href', '#'+tocContID);
+
+				// For some reason, I now have to do this manually <-_->        
+        $tocLink.click(function(ev) {
+        	window.location.hash = $(ev.currentTarget).attr('href');
+        });
       });
     }
   };
