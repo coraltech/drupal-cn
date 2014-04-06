@@ -239,6 +239,8 @@ function mosaic_preprocess_panels_pane__node_links(&$vars) {
 
       case 'snippet':
       case 'book':
+        $links = array();
+        
         // Rem flag link for re-addition via pane.
         if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
           unset($vars['content']['flag']['#links']['flag-abuse_node']);
@@ -430,6 +432,28 @@ function mosaic_preprocess_field_locked(&$vars) {
   }
 }
 
+
+function mosaic_preprocess_book_navigation(&$vars) {
+  if ($vars['tree'] && $vars['has_links']) {
+    $vars['tree_class'] = 'grid-16-last';
+  }
+  if ($vars['tree'] && !$vars['has_links']) {
+    $vars['tree_class'] = 'grid-24-last';
+  }
+  
+  if ($vars['tree'] && $vars['prev_url'] && $vars['next_url']) {
+    $vars['btn_class'] = 'grid-4-last'; 
+  }
+  elseif ($vars['tree'] && ($vars['prev_url'] || $vars['next_url'])) {
+    $vars['btn_class'] = 'grid-8-last';
+  }
+  elseif (!$vars['tree'] && $vars['prev_url'] && $vars['next_url']) {
+    $vars['btn_class'] = 'grid-12-last';
+  }
+  else {
+    $vars['btn_class'] = 'grid-24-last';
+  }
+} 
 
 // Compile a default user picture and link
 function mosaic_preprocess_user_picture(&$vars) {
