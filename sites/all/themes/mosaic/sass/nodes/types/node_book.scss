@@ -1,14 +1,19 @@
 
 // Some scss customizations for the book node type.
 //  adjusts a few layout parameters
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/grid_mix';
 @import 'global/headers';
 @import 'global/icons';
 @import 'global/site_vars';
+@import 'global/gradients';
 
-@import "compass/utilities/general/clearfix";
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/border-radius';
 
 // Re-adjust the grid ;-)
 // Actual book node styles
@@ -43,6 +48,7 @@
 }
 
 .node-type-book {
+  
   // Add icons and so on
   .links {
     .icon {
@@ -83,20 +89,12 @@
       }
     }
   }
-  
-  .book-navigation {
-    clear: both;
-    .menu {
-      padding: .3125em 1em;
-      margin: 0;
-    }
-  }
 }
 
 
 // Full node display
 .page-node.node-type-book .pane-node .links {
-  padding: ($default_vert_unit / 2) 0;
+  //padding: ($default_vert_unit / 2) 0;
   
   li.first {
     border-right: none;
