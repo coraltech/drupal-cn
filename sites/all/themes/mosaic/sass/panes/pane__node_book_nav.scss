@@ -17,7 +17,7 @@
 
 // Book navigation components
 .pane-node-book-nav {
-  margin-top: $default_vert_unit;
+  margin: $default_vert_unit 0 0;
   
   .pane-title {
     @include h0;

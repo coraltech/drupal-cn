@@ -89,6 +89,19 @@
       }
     }
   }
+  
+  .pane-coral-node-stats {
+    margin: .525em 0 1.25em; // same as fields here...
+    
+    .coral-stat {
+      float: right;
+      line-height: inherit;
+      font-size: 90%;
+      .icon {
+        margin: 0;
+      }
+    }
+  }
 }
 
 
@@ -161,7 +174,11 @@
   @include col(24, true, none); 
 }
 
-
+@media screen and (max-width: $tabletw) {
+  .node-type-book .pane-coral-node-stats {
+    
+  }
+}
 @media screen and (max-width: $tabletw) {
   .page-comment.page-comment-reply,
   .page-node.node-type-book {
@@ -205,6 +222,13 @@
           display: block;
         }
       }
+    }
+    
+    // tags and stats will sit atop one another
+    .pane-node-field-tags,
+    .pane-coral-node-stats {
+      width: 100%;
+      float: none;
     }
   }
 }
