@@ -1,0 +1,125 @@
+
+// Some scss customizations for the book node type.
+//  adjusts a few layout parameters
+@import 'global/arrows';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/headers';
+@import 'global/icons';
+@import 'global/site_vars';
+@import 'global/gradients';
+
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/border-radius';
+
+// Book navigation components
+.pane-node-book-nav {
+  margin-top: $default_vert_unit;
+  
+  .pane-title {
+    @include h0;
+    color: $mdgray;
+    font-weight: bold;
+  }
+  
+  .book-navigation {
+    clear: both;
+    width: 100%;
+    position: relative;
+    
+    .tree,
+    .btn {
+      @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px, inset 0 1px 0 rgba(255, 255, 255, 0.5));
+      @include box-sizing('border-box');
+      .page-next {
+        float: none;
+      }
+    }
+    .btn {
+      text-align: center;
+    }
+    .tree {
+      li.leaf {
+        margin-left: 1em;
+        list-style-position: outside;
+      } 
+      @include linear-v-gradient(lighten($ltgray, 7%), $ltgray);
+    }
+    
+    // Override book css -_-
+    .btn.grid-4-last {
+      @include col(4, 'true');
+    }
+    .btn.grid-8-last {
+      @include col(8, 'true');
+    }
+    .btn.grid-12-last {
+      @include col(12, 'true');
+    }
+    .btn.grid-24-last {
+      @include col(24, 'true');
+    }
+    
+    .book-parent {
+      position: absolute;
+      top: -11px;
+      right: 0;
+      border: 2px solid $mdblue;
+      background: $ltgray;
+      @include border-radius(15px);
+      
+      a.page-up {
+        border: 2px solid $ltorange;
+        line-height: 1em;
+        display: block;
+        height: 21px;
+        width: 21px;
+        float: none;
+        margin: 0;
+        @include border-radius(15px);
+        @include radial-gradient($silver, $white);
+        @include box-shadow(rgba(0,0,0,.5) 3px 3px 6px);
+        
+        &:hover {
+          @include radial-gradient($white, $white);
+        }
+         
+        .arrow-up {
+          display: block;
+          margin: 0 0 0 4px;
+          @include arrow-up(6px, $mdgray);
+        }
+      }  
+    }
+
+    .menu {
+      border: none;
+      padding: .625em 1em;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $desktopw) {
+  .pane-node-book-nav {
+    .book-navigation {
+      font-size: 90%;
+  
+      a.btn {
+        font-size: 90%;
+      }
+    }
+  }
+  @media screen and (max-width: $tabletw) {
+    .book-navigation {
+      font-size: 85%;
+  
+      a.btn {
+        font-size: 85%;
+      }
+    }
+  }
+}
