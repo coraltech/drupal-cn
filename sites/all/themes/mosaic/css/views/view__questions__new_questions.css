@@ -115,12 +115,12 @@
   display: table;
   clear: both;
 }
-/* line 58, ../../sass/views/view__questions__new_questions.scss */
+/* line 56, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .views-row .follower {
   background: url("../../assets/images/coral-sep-med.png") top center no-repeat;
   padding-top: .1px;
 }
-/* line 65, ../../sass/views/view__questions__new_questions.scss */
+/* line 63, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more .btn {
   margin: 0.625em 0.5em 0.625em 0;
   position: relative;
@@ -156,7 +156,7 @@
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 68, ../../sass/views/view__questions__new_questions.scss */
+/* line 66, ../../sass/views/view__questions__new_questions.scss */
 .view-questions.view-display-id-new_questions .questions-more .btn .ajax-progress {
   position: absolute;
   top: 20%;

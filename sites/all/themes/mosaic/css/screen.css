@@ -1522,7 +1522,7 @@ header .coral-cloud .icon {
 .toc-wrapper {
   border: 1px solid #bac8d9;
   clear: left;
-  width: 12em;
+  min-width: 12em;
   float: left;
   margin: 0 1em 0 0;
   background: #ebeff4;
@@ -1566,7 +1566,7 @@ header .coral-cloud .icon {
 
 /* line 289, ../sass/global/_global.scss */
 .node-book .toc-wrapper {
-  margin-top: -1.25em;
+  margin-top: .15em;
   margin-bottom: 1.25em;
 }
 

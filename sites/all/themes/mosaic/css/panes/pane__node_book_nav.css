@@ -1,0 +1,171 @@
+/* line 658, icons/*.png */
+.icons-sprite {
+  background: url('/images/icons-sab53ba634c.png') no-repeat;
+}
+
+/* line 19, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav {
+  margin-top: 1.25em;
+}
+/* line 22, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .pane-title {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0;
+  color: #777777;
+  font-weight: bold;
+}
+/* line 28, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation {
+  clear: both;
+  width: 100%;
+  position: relative;
+}
+/* line 35, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .tree,
+.pane-node-book-nav .book-navigation .btn {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px, inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px, inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 6px, inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 38, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .tree .page-next,
+.pane-node-book-nav .book-navigation .btn .page-next {
+  float: none;
+}
+/* line 42, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .btn {
+  text-align: center;
+}
+/* line 45, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .tree {
+  background: #efefef;
+  background: -moz-linear-gradient(top, #efefef 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #dddddd));
+  background: -webkit-linear-gradient(top, #efefef 0%, #dddddd 100%);
+  background: -o-linear-gradient(top, #efefef 0%, #dddddd 100%);
+  background: -ms-linear-gradient(top, #efefef 0%, #dddddd 100%);
+  background: linear-gradient(to bottom, #efefef 0%, #dddddd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$top, endColorstr=$bot,GradientType=0 );
+}
+/* line 47, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .tree li.leaf {
+  margin-left: 1em;
+  list-style-position: outside;
+}
+/* line 55, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .btn.grid-4-last {
+  float: left;
+  width: 16.66667%;
+}
+/* line 58, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .btn.grid-8-last {
+  float: left;
+  width: 33.33333%;
+}
+/* line 61, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .btn.grid-12-last {
+  float: left;
+  width: 50%;
+}
+/* line 64, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .btn.grid-24-last {
+  width: 100%;
+}
+/* line 68, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .book-parent {
+  position: absolute;
+  top: -11px;
+  right: 0;
+  border: 2px solid #446eac;
+  background: #dddddd;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+/* line 76, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .book-parent a.page-up {
+  border: 2px solid #fdaa68;
+  line-height: 1em;
+  display: block;
+  height: 21px;
+  width: 21px;
+  float: none;
+  margin: 0;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  background: white;
+  /* fallback for non-supporting browsers */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(white), to(silver));
+  /* old WebKit Syntax */
+  background-image: -webkit-radial-gradient(center center, circle contain, white 0%, silver 100%);
+  /* New WebKit syntax */
+  background-image: -moz-radial-gradient(center center, circle contain, white 0%, silver 100%);
+  background-image: -ms-radial-gradient(center center, circle contain, white 0%, silver 100%);
+  /* IE10+ */
+  background-image: -o-radial-gradient(center center, circle contain, white 0%, silver 100%);
+  /* Opera (13?) */
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 6px;
+}
+/* line 88, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .book-parent a.page-up:hover {
+  background: white;
+  /* fallback for non-supporting browsers */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(white), to(white));
+  /* old WebKit Syntax */
+  background-image: -webkit-radial-gradient(center center, circle contain, white 0%, white 100%);
+  /* New WebKit syntax */
+  background-image: -moz-radial-gradient(center center, circle contain, white 0%, white 100%);
+  background-image: -ms-radial-gradient(center center, circle contain, white 0%, white 100%);
+  /* IE10+ */
+  background-image: -o-radial-gradient(center center, circle contain, white 0%, white 100%);
+  /* Opera (13?) */
+}
+/* line 92, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .book-parent a.page-up .arrow-up {
+  display: block;
+  margin: 0 0 0 4px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #777777;
+}
+/* line 100, ../../sass/panes/pane__node_book_nav.scss */
+.pane-node-book-nav .book-navigation .menu {
+  border: none;
+  padding: .625em 1em;
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 110, ../../sass/panes/pane__node_book_nav.scss */
+  .pane-node-book-nav .book-navigation {
+    font-size: 90%;
+  }
+  /* line 113, ../../sass/panes/pane__node_book_nav.scss */
+  .pane-node-book-nav .book-navigation a.btn {
+    font-size: 90%;
+  }
+}
+@media screen and (max-width: 1024px) and (max-width: 767px) {
+  /* line 119, ../../sass/panes/pane__node_book_nav.scss */
+  .book-navigation {
+    font-size: 85%;
+  }
+  /* line 122, ../../sass/panes/pane__node_book_nav.scss */
+  .book-navigation a.btn {
+    font-size: 85%;
+  }
+}
