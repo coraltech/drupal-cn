@@ -29,8 +29,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   	try {
   		this.$swipe  = $('.pane-coral-swipe');
   		this.$parent = $('.pane-entity-view.pane-node');
-  		this.$parent.parent('div').css('overflow', 'hidden');
-  		
+
   		var MSS = this;
   		
   		this.changeView = function() {
