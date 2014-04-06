@@ -31,6 +31,10 @@ Drupal.mosaic = Drupal.mosaic || {};
 
 			var BN = this;
 			$(window).resize(function() { BN.orientItems(); });
+			
+			// Re-orient on swipe left as the book is hidden until it is swiped
+			//  while hidden, it's width vals are NaN or non-trustworthy
+			$(window).one('swipeleft', function(e, data) { BN.orientItems(); });
 		}
 		catch (err) {
 			console.log('bookNavInit errored: '+err);
