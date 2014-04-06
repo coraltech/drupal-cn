@@ -80,9 +80,8 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicTopMenus.prototype.addEvents = function() {
   	try {
   		var TM = this;
-console.log(this);
-			if (this.$mainIcon.length && this.$serviceIcon.length) {
 
+			if (this.$mainIcon.length && this.$serviceIcon.length) {
 
   			// Set main menu click handler
   			this.$mainIcon.off('click').click(function() {
