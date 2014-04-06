@@ -255,7 +255,12 @@ function mosaic_preprocess_panels_pane__node_links(&$vars) {
         $new_links = array();
         foreach ($links as $i => $link) {
           if ($link['title'] == 'Discussion') {
-            $new_links['discussion'] = $link; 
+            $comment_count = '0';
+            if (isset($node->comment_count)) {
+              $comment_count = $node->comment_count; 
+            }
+            $link['title'] = $link['title'].' ('.$comment_count.')';
+            $new_links['discussion'] = $link;
           }
         }
         $vars['content']['comment']['#links'] = $new_links;
