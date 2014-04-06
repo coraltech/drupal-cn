@@ -86,6 +86,7 @@ function coral_node_stats_pane_content_type_render($subtype, $conf, $args, $cont
     if (isset($conf['display_stats']['8']) && $conf['display_stats']['8']) coral_node_stats_node_link($node, $stats);
   }
   //coral_node_stats_node_type($node, $stats);
+  //dpm($stats);
   
   $block->title = t('Node statistics');
   $block->content = coral_node_stats_process_stats($stats, $node, $style); 
@@ -118,8 +119,7 @@ function coral_node_stats_pane_content_type_edit_form($form, &$form_state) {
     '#options' => $styles,
     '#description' => t('Statistics pane style settings.'),
   );
-  
-  
+
   return $form;
 }
 
@@ -203,7 +203,7 @@ function coral_node_stats_node_edits($node, &$stats) {
     
   $stats['node']['edits'] = array(
     'class' => 'edits',
-    'title' => t('Edits:'),
+    'title' => t('edits'),
     'data'  => count($revs),
   );
 }
