@@ -13,3 +13,7 @@ images/*
 
 # Caches to ignore
 .sass-cache
+
+# Compass css files
+sites/all/themes/mosaic/css
+
