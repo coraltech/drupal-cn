@@ -6,16 +6,20 @@
 // Slide container
 .coral-slide.cloud-handle {
   background: $white;
+  position: relative;
+  img {
+    min-width: 300px;
+  }
   h2 {
     font-size: 3.25em;
     font-weight: bold;
     line-height: 1.35em;
-    margin-top: -22%;
-    margin-left: 38%;
     text-align: center;
-    float: left;
-    position: relative;
+    position: absolute;
     z-index: 3;
+    top: 10%;
+    right: 1em;
+    max-width: 50%;
   }
 }
 
@@ -26,13 +30,24 @@
 }
 @media screen and (max-width: $tabletw) {
   .coral-slide.cloud-handle h2 {
-    font-size: 1.75em;
-    margin-top: -23%;
+    font-size: 2em;
   }
 }
-@media screen and (max-width: $phonew) {
+
+@media screen and (max-width: $tabletw - 200) {
   .coral-slide.cloud-handle h2 {
     font-size: 1.5em;
+    top: 3%;
+    right: .5em;
+    max-width: 55%;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: $phonew) {
+  .coral-slide.cloud-handle h2 {
+    font-size: 1em;
+    top: 0;
   }
 }
 
@@ -42,7 +57,7 @@
 }
 .html .view-slideshow .view-content .bx-viewport {
   background: url('../../../assets/images/coral-sep-long.png') bottom center no-repeat;
-  padding-bottom: 25px;
+  padding-bottom: 26px;
 }
 @media screen and (max-width: $tabletw) {
   .html .view-slideshow .view-content {

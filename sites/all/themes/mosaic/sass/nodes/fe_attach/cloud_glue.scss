@@ -1,0 +1,105 @@
+
+// Cloud playground slide scss
+
+@import 'global/colors';
+@import 'global/site_vars';
+
+.coral-slide.cloud-glue {
+  position: relative;
+  background: $white;
+  img {
+    min-width: 300px;
+  }
+  h2 {
+    position: absolute;
+    top: 0em;
+    right: 1em;
+    font-size: 2.25em;
+    font-weight: bold;
+    line-height: 1.35em;
+    text-align: center;
+    z-index: 3;
+    max-width: 65%;
+  }
+  
+  .use {
+    position: absolute;
+    top: 3.25em;
+    right: 3em;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    color: $mdblue;
+    cursor: pointer;
+  }
+
+  .more {
+    position: absolute;
+    top: 10em;
+    right: 2em;
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (max-width: $desktopw) {
+  .coral-slide.cloud-glue { 
+    h2 {
+      font-size: 2em;
+    }
+    .use {
+      font-size: 1.25em;
+      top: 3.5em;
+      right: 2em;
+    }
+    .more {
+      top: 10em;
+      font-size: 1em;
+    }
+  }
+}
+@media screen and (max-width: $desktopw - 150) {
+  .coral-slide.cloud-glue {
+    h2 {
+      font-size: 1.75em;
+    }
+    .use {
+      font-size: 1em;
+      right: 1em;
+      top: 4em;
+    }
+    .more {
+      top: 9em;
+    }
+  }
+}
+
+
+@media screen and (max-width: $tabletw) {
+  .coral-slide.cloud-glue {
+    h2 {
+      font-size: 1.25em;
+    }
+    .use {
+      top: 3em;
+    }
+    .more {
+      font-size: .85em;
+    }
+  }
+}
+@media screen and (max-width: $tabletw - 150) {
+  .coral-slide.cloud-glue {
+    h2 {
+      font-size: 1.15em;
+      right: .5em;
+      text-align: right;
+    }
+    .use {
+      display: none;
+    }
+    .more {
+      top: 7em;
+      right: .5em;
+    }
+  }
+}
+
