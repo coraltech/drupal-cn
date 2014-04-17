@@ -5,6 +5,7 @@
 @import 'global/fonts';
 @import 'global/headers';
 @import 'global/icons';
+@import 'global/site_vars';
 
 
 h1.page-title {
@@ -24,8 +25,10 @@ h1.page-title {
     @include h2;
     font-weight: bold;
     line-height: $default_vert_unit;
-    margin-bottom: $default_vert_unit;
+    margin-bottom: 2em;
+    margin-top: 1em;
     margin-left: 100px;
+    padding-top: $default_vert_unit / 2;
   }
   
   h4 {
@@ -37,8 +40,16 @@ h1.page-title {
   .cloud-case {
     display: block;
     position: absolute;
-    top: 0;
+    top: -8px;
     left: 0;
     @include icons-sprite('cloud-case'); 
+  }
+}
+
+@media screen and (max-width: $tabletw + 50) {
+  .pane-coral-about-intro {
+    h3 {
+      padding-top: 0;
+    }
   }
 }
