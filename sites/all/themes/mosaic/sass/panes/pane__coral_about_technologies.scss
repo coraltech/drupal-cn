@@ -22,9 +22,8 @@
     @include pie-clearfix;
     
     span {
-      display: block;
-      float: left;
-      margin-right: 1em;
+      display: inline-block;
+      margin-right: .5em;
     }
     
     .vagrant {
@@ -42,6 +41,10 @@
     .git {
       @include icons-sprite('git');
     }
+    .cell {
+      @include icons-sprite('celluloid');
+    }
+    
   }
   
   ul {

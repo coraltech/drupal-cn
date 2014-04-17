@@ -38,31 +38,34 @@ $plugin = array(
 */
 function coral_about_technologies_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   
-  $proj = l('project listings', '<front>');
+  $proj = l('project listings', 'node/923');
+  
   
   $vagrant = l('Vagrant', 'http://www.vagrantup.com/about.html', array('attributes' => array('target' => '_blank')));
   $puppet = l('Puppet', 'http://puppetlabs.com/', array('attributes' => array('target' => '_blank')));
-  $heira = l('Heira', 'http://projects.puppetlabs.com/projects/hiera', array('attributes' => array('target' => '_blank')));
   $ruby = l('Ruby', 'https://www.ruby-lang.org/en/', array('attributes' => array('target' => '_blank')));
+  $heira = l('Heira', 'http://projects.puppetlabs.com/projects/hiera', array('attributes' => array('target' => '_blank')));
   $fog = l('Fog', 'http://fog.io/', array('attributes' => array('target' => '_blank')));
+  $cell = l('Celluloid', 'http://celluloid.io/', array('attributes' => array('target' => '_blank')));
   $git = l('Git', 'http://git-scm.com/', array('attributes' => array('target' => '_blank')));
   
-  
   $output = <<<EOF
-  <p>A few of the most important technologies leveraged in the Coral cloud architecture:</p>
+  <p>A selection of technologies leveraged in the CORL cloud architecture:</p>
   <div class="tico">
     <span class="vagrant"></span>
     <span class="puppet"></span>
     <span class="ruby"></span>
     <span class="fog"></span>
+    <span class="cell"></span>
     <span class="git"></span>
   </div>
   <ul>
     <li>{$vagrant}<span> - for local cluster environments</span></li>
     <li>{$puppet}<span> - for cluster structure and features</span></li>
-    <li>{$heira}<span> - for configuration lookup support</span></li>
-    <li>{$ruby}<span> - for Coral actions and commands</span></li>
+    <li>{$ruby}<span> - for CORL actions and commands</span></li>
     <li>{$fog}<span> - for cloud hosting connectivity</span></li>
+    <li>{$heira}<span> - for configuration lookup support</span></li>
+    <li>{$cell}<span> - for actor based concurrent objects</span></li>
     <li>{$git}<span> - for version control and staging ops</span></li>
   </ul>
 EOF;
