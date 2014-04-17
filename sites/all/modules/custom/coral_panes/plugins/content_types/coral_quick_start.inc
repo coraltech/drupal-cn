@@ -41,7 +41,7 @@ function coral_quick_start_pane_content_type_render($subtype, $conf, $args, $con
   $output = <<<EOF
 <span class='icon'></span>
 <span class='icon-sml'></span>
-<h2 class='pane-title'>Get started with the 5 <span class="nowrap">minute tutorial</span></h2>
+<h2 class='pane-title'>Get started <span class="nowrap">with the 5</span> <span class="nowrap">minute tutorial</span></h2>
 <p class='small'>Try out the 5 minute tutorial and have a working local cluster in minutes</p>
 <div class='tout clearfix'>
   <p>Just minutes from now you could have a functional cluster running locally that you can modify, re-purpose, and re-use however you want.</p> 
