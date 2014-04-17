@@ -42,7 +42,7 @@ function coral_project_status_pane_content_type_render($subtype, $conf, $args, $
   $req = l('Requirements', '<front>', array('attributes' => array('class' => 'more')));
 
   $output = <<<EOF
-<p>Coral is an early stage technology and currently works best on Linux or Mac based OS. Coral can run on Windows however file sharing has not yet been implemented - {$req}</p>
+<p>Coral Nexus projects are early stage technologies, are under active development, and are currently only tested against Ubuntu 12.04&nbsp;-&nbsp;{$req}</p>
 EOF;
 
   $block->title = t('Project status and requirements');
