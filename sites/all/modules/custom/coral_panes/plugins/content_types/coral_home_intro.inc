@@ -41,12 +41,12 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
   $output = <<<EOF
 <div class="home-intro-container">
   <div class="home-intro-content">
-    <h2>Coral is a free and open source cloud <span class="nowrap">development framework.</span></h2>
+    <h2>CORL is a free and open source cloud <span class="nowrap">development framework.</span></h2>
     <div class="clearfix">
       <div class="left grid-12">
         <ul>
-          <li>Pluggable highly configurable architecture.</li>
-          <li>Deploy clusters locally or to the cloud provider of your choice.</li>
+          <li>Unmatched extensibility and modularity for fast prototyping and development.</li>
+          <li>Deploy your clusters locally or to the cloud provider of your choice.</li>
           <li>All cluster stage changes controlled through Git for reliability and accountability.</li>
         </ul>
       </div>
@@ -54,7 +54,7 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
         <ul>
           <li>Configuration states compiled to JSON for ease of use by humans and machines.</li>
           <li>Architecture provides inheritance and cascading configurations support.</li>
-          <li>Built with industry leading technologies: Vagrant, Puppet, Ruby, Git, JSON</li>
+          <li>Built with industry leading technologies: Vagrant, Puppet, Ruby, Git, JSON, and more.</li>
         </ul>
         <a class="more" href="/">Learn more</a>
       </div>
