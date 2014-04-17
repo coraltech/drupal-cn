@@ -38,7 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_puppet_overview_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $output = '<p>Coral Nexus currently integrates with Puppet; an easy to use configuration manager, and an excellent tool for beginners and professionals alike.</p>';
+  $output = '<p>CORL currently integrates with Puppet; an easy to use configuration manager, and an excellent tool for beginners and professionals alike.</p>';
 
   // our little list
   $items['items'] = array(
@@ -56,7 +56,7 @@ function coral_puppet_overview_pane_content_type_render($subtype, $conf, $args, 
     'class' => 'puppet-list', // a string or indexed (string) array with the classes for the list tag
   );
   //$attributes = array();
-  $block->title = t('Puppet and Coral Nexus');
+  $block->title = t('Puppet and CORL');
   $block->content = $output . theme('item_list', array('items' => $items['items'], 'attributes' => $attributes));
   return $block; 
 }
