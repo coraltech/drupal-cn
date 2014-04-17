@@ -40,7 +40,7 @@ function coral_home_community_pane_content_type_render($subtype, $conf, $args, $
   
   $doc = l('documentation wiki', 'node/32');
   $com = l('community Q&A', 'node/55');
-  $git = l('GitHub (CoralTech)', 'https://github.com/coraltech');
+  $git = l('GitHub (CoralNexus)', 'https://github.com/coralnexus');
   
   $output = <<<EOF
   <div class="home-com-cont">
