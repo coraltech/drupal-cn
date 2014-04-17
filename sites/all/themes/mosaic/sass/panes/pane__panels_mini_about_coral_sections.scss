@@ -4,10 +4,10 @@
 
 .pane-about-coral-sections {
   .panel-col-first .inside {
-    margin: 0 1em 0 0;
+    margin: 0 1.25em 0 0;
   }
   .panel-col-last .inside {
-    margin: 0;
+    margin: 0 0 0 1.25em;
   }
 }
 
@@ -21,6 +21,9 @@
       .panel-pane {
         margin-bottom: 2 * $default_vert_unit;
       }
+      .inside {
+        margin: 0;
+      } 
     }
   }
 }
