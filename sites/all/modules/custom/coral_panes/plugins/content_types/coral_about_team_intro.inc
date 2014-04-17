@@ -41,7 +41,7 @@ function coral_about_team_intro_pane_content_type_render($subtype, $conf, $args,
 
   $output = <<<EOF
 <div class="coral-team"></div>
-<p>Adrian Webb began what would become CORL in 2012. The purpose of the project was to create an open source cloud development toolkit. After the first draft was complete, Adrian involved his brother Derek in the project to both test the application as a developer, and to develop a web site where the framework could call home.</p>
+<p>Adrian Webb began what would become CORL and Nucleon in 2012. The purpose of the project was to create a flexible open source cloud development framework. After the first draft was complete, Adrian involved his brother Derek in the project to both test the application as a developer, and to develop a web site where the framework could call home.</p>
 <p>We are dedicated to making cloud development as open and accessible as possible. We hope you will join us in this goal.</p>
 
 EOF;
