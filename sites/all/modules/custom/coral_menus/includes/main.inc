@@ -49,7 +49,7 @@ function coral_menus_main_links_loader() {
       ),
     */
     'project' => array(
-      'link_title' => t('Project'),
+      'link_title' => t('Projects'),
       'link_path'  => 'node/923',
       'weight'     => 2,
     ),
