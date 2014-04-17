@@ -53,7 +53,7 @@ function coral_snippets_intro_pane_content_type_render($subtype, $conf, $args, $
     <div class="grid-24">
       <span class="info"></span>
       {$btn}
-      <p>Snippets are educational code resources that should be helpful in understanding the COR framework. Snippets shave time off adding features to your cloud definitions, modules, profiles, etc. Snippets should be tagged by language(s) and purpose.</p>
+      <p>Snippets&nbsp;are&nbsp;educational&nbsp;code resources that should be helpful in understanding the CORL framework. <span class="smlhd">Snippets shave time off adding features to your cloud definitions, modules, profiles, etc.</span> Snippets should be tagged by language(s) and purpose.</p>
     </div>
   </div>
 EOF;

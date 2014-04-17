@@ -8,6 +8,7 @@
 @import 'global/icons';
 @import 'global/grid_mix';
 @import 'global/gradients';
+@import 'global/site_vars';
 
 @import "compass/css3/box-shadow";
 @import 'compass/utilities/general/clearfix';
@@ -50,6 +51,14 @@
       min-height: 2em;
       line-height: 2em;
       text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-coral-snippets-intro {
+    .smlhd {
+      display: none;
     }
   }
 }
