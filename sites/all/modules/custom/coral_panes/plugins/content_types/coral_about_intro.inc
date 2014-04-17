@@ -44,12 +44,13 @@ function coral_about_intro_pane_content_type_render($subtype, $conf, $args, $con
 <p>Are you ready to simplify the way you work with technology clusters? The Coral Nexus platform provides a free and open source framework that enables you to rapidly spin up and configure sophisticated cluster architectures.</p>
 <p>You can start from scratch or <a href='#'>find</a> an open source <a href='#'>cluster</a>, <a href='#'>module</a>, or <a href='#'>snippet</a>, to help you on your way to cluster bliss.</p>
 EOF;*/
-
+  $projects = l('projects&nbsp;page', 'node/923', array('html' => TRUE)); // main projects page
+  
   $output = <<<EOF
 <div class="cloud-case"></div>
-<h3>The Coral framework is designed to provide a flexible, easy to use, free and open source cloud development and deployment framework.</h3>
-<h4>Coral connects several key technologies, such as Vagrant, Puppet, Heira, and Fog, together to create seamless workflows across all stages of development and deployment.</h4>
-<h4>Coral lets you say goodbuy to vendor lock-in. Using Coral you can build cluster architectures locally, test them out, and then push them to the hosting provider of your choice.</h4>
+<h3>Our mission is to glue the world's technologies together</h3>
+<h4>We build pluggable programming frameworks that everyone can use and extend to build the apps and clouds of tomorrow! Our technologies are <u>free and open source</u> and have concurrency and extensibility in their DNA.</h4>
+<h4>Our primary framework is CORL, a cloud programming framework that extends Nucleon. To learn more visit the {$projects}.</h4> 
 EOF;
 
   $block->content = $output;
