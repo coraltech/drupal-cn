@@ -40,7 +40,7 @@ function coral_home_getting_started_pane_content_type_render($subtype, $conf, $a
    
   $output = <<<EOF
   <span class="clowny"></span>
-  <p>With Coral you can reliably deploy and update whole network architectures to cloud hosting providers, local network assets, as well as virtualized clusters on localhost.</p>
+  <p>With CORL you can reliably deploy and update whole network architectures to cloud hosting providers, local network assets, as well as virtualized clusters on localhost.</p>
   <h4>Check out a basic cluster:</h4>
   <div class="shell">
     <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
