@@ -46,7 +46,7 @@ function coral_home_contribute_pane_content_type_render($subtype, $conf, $args, 
     <div>
       <span class="public-work"></span>
       <h4>Sponsor development</h4>
-      <p>Help make Coral even better by sponsoring development of new cloud framework and application integrations, feature additions, and core improvements.</p>
+      <p>Help make CORL even better by sponsoring development of new cloud framework and application integrations, feature additions, and core improvements.</p>
       <a href="/" class="btn">Become a sponsor</a>
     </div>
     <div>
