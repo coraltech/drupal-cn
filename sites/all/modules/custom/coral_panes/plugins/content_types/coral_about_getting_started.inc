@@ -40,10 +40,10 @@ function coral_about_getting_started_pane_content_type_render($subtype, $conf, $
    
   $output = <<<EOF
   <span class="getting-started"></span>
-  <p>Coral is controlled via command line. The fastest way to get started is to check out our default cluster:</p>
+  <p>CORL is controlled via command line. The fastest way to get started is to check out our default cluster:</p>
   <div class="shell">
-    <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
-    <div class="line"><span class="prompt">$></span> <span class="command">vagrant coral create {repo} {dir}</span></div>
+    <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install corl</span></div>
+    <div class="line"><span class="prompt">$></span> <span class="command">vagrant corl create {repo} {dir}</span></div>
   </div>
   <div class="msg prepend-4 append-2"><span class="up-pointer"></span>You now have a local cluster that includes ssh access. From this point you can make it your own and use it however you like.</div>
   <a href="/" class="more right">Quick start guide</a>
