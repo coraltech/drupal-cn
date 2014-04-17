@@ -38,10 +38,10 @@ $plugin = array(
 */
 function coral_about_resources_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   
-  $proj = l('project listings', '<front>');
+  $proj = l('project listings', 'node/923');
    
   $output = <<<EOF
-  <p>Coral is made up of several components. To browse the Coral projects, visit the {$proj}.</p>
+  <p>CORL is made up of several components. To browse the CORL projects, visit the {$proj}.</p>
 EOF;
   
   $block->title = t('Resources');
