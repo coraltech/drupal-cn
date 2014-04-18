@@ -110,6 +110,14 @@ small {
   line-height: 1.25em;
 }
 
+pre {
+  background: lighten($ltgray, 7%);
+  padding: 1em;
+  margin-bottom: $default_vert_unit;
+  border: 1px solid darken($ltgray, 7%);
+  
+  @include border-radius(3px);
+}
 
 // --- Lists
 ul,
