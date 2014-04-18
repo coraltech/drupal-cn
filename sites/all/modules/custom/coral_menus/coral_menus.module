@@ -27,7 +27,7 @@ function coral_menus_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   global $user;
 
   // Admin sees all links
-  if (user_access('Administer menus and menu items')) { return; }
+  if (user_access('administer menu')) { return; }
     
   $tabs = $data['tabs'];  
   $paths = variable_get('coral_menus_restricted_paths', array('search/user/%'));  
