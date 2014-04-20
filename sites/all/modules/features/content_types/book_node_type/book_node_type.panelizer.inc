@@ -45,10 +45,11 @@ function book_node_type_panelizer_defaults() {
   );
   $display->cache = array();
   $display->title = '%node:title';
+  $display->uuid = '3a772e56-5299-4b4a-9e63-2354db5e8663';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-4607e3ab-d747-4406-bcbf-84d9753952c6';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_locked';
@@ -73,10 +74,11 @@ function book_node_type_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['middle'][0] = 'new-1';
+    $pane->uuid = '4607e3ab-d747-4406-bcbf-84d9753952c6';
+    $display->content['new-4607e3ab-d747-4406-bcbf-84d9753952c6'] = $pane;
+    $display->panels['middle'][0] = 'new-4607e3ab-d747-4406-bcbf-84d9753952c6';
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-409e97c0-92f8-4c5e-9c47-d0d1cf22c3c3';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
@@ -101,37 +103,11 @@ function book_node_type_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['middle'][1] = 'new-2';
+    $pane->uuid = '409e97c0-92f8-4c5e-9c47-d0d1cf22c3c3';
+    $display->content['new-409e97c0-92f8-4c5e-9c47-d0d1cf22c3c3'] = $pane;
+    $display->panels['middle'][1] = 'new-409e97c0-92f8-4c5e-9c47-d0d1cf22c3c3';
     $pane = new stdClass();
-    $pane->pid = 'new-3';
-    $pane->panel = 'middle';
-    $pane->type = 'node_links';
-    $pane->subtype = 'node_links';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'build_mode' => 'full',
-      'identifier' => '',
-      'link' => 1,
-      'context' => 'panelizer',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_class' => 'link-wrapper',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['middle'][2] = 'new-3';
-    $pane = new stdClass();
-    $pane->pid = 'new-4';
+    $pane->pid = 'new-e1756898-28ec-4d3e-80db-17c3cf53c911';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_tags';
@@ -152,14 +128,87 @@ function book_node_type_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-14',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'e1756898-28ec-4d3e-80db-17c3cf53c911';
+    $display->content['new-e1756898-28ec-4d3e-80db-17c3cf53c911'] = $pane;
+    $display->panels['middle'][2] = 'new-e1756898-28ec-4d3e-80db-17c3cf53c911';
+    $pane = new stdClass();
+    $pane->pid = 'new-4ae02015-ad2f-47f7-b6b0-a188e1150eb0';
+    $pane->panel = 'middle';
+    $pane->type = 'coral_node_stats';
+    $pane->subtype = 'coral_node_stats';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'anon_links' => FALSE,
+      'display_stats' => array(
+        2 => '2',
+        3 => '3',
+        1 => 0,
+        4 => 0,
+        5 => 0,
+        6 => 0,
+        7 => 0,
+        8 => 0,
+      ),
+      'display_style' => '1',
+      'context' => array(
+        0 => 'panelizer',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-10-last',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['middle'][3] = 'new-4';
+    $pane->uuid = '4ae02015-ad2f-47f7-b6b0-a188e1150eb0';
+    $display->content['new-4ae02015-ad2f-47f7-b6b0-a188e1150eb0'] = $pane;
+    $display->panels['middle'][3] = 'new-4ae02015-ad2f-47f7-b6b0-a188e1150eb0';
     $pane = new stdClass();
-    $pane->pid = 'new-5';
+    $pane->pid = 'new-94ce3ee6-081b-4c20-98b6-1c19cf434729';
+    $pane->panel = 'middle';
+    $pane->type = 'node_links';
+    $pane->subtype = 'node_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'build_mode' => 'full',
+      'identifier' => '',
+      'link' => 1,
+      'context' => 'panelizer',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_class' => 'link-wrapper clear clearfix',
+      'css_id' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '94ce3ee6-081b-4c20-98b6-1c19cf434729';
+    $display->content['new-94ce3ee6-081b-4c20-98b6-1c19cf434729'] = $pane;
+    $display->panels['middle'][4] = 'new-94ce3ee6-081b-4c20-98b6-1c19cf434729';
+    $pane = new stdClass();
+    $pane->pid = 'new-86ca9e21-81af-4860-95ac-4b10a305cb17';
     $pane->panel = 'middle';
     $pane->type = 'node_book_nav';
     $pane->subtype = 'node_book_nav';
@@ -168,7 +217,7 @@ function book_node_type_panelizer_defaults() {
     $pane->configuration = array(
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Book navigation',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -176,12 +225,13 @@ function book_node_type_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['middle'][4] = 'new-5';
+    $pane->uuid = '86ca9e21-81af-4860-95ac-4b10a305cb17';
+    $display->content['new-86ca9e21-81af-4860-95ac-4b10a305cb17'] = $pane;
+    $display->panels['middle'][5] = 'new-86ca9e21-81af-4860-95ac-4b10a305cb17';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-4607e3ab-d747-4406-bcbf-84d9753952c6';
   $panelizer->display = $display;
   $export['node:book:default:full_node'] = $panelizer;
 

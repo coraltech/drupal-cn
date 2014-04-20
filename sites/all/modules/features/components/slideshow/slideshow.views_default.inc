@@ -53,8 +53,8 @@ function slideshow_views_default_views() {
     'align_caption' => 'left',
     'swipeThreshold' => '50',
     'oneToOneTouch' => 1,
-    'preventDefaultSwipeX' => 1,
-    'preventDefaultSwipeY' => 0,
+    'preventDefaultSwipeX' => 0,
+    'preventDefaultSwipeY' => 1,
     'color_caption' => '80, 80, 80, 0.75',
   );
   $handler->display->display_options['style_options']['bxslider_views_slideshow']['controlsfieldset'] = array(
@@ -73,7 +73,7 @@ function slideshow_views_default_views() {
     'pagerCustom' => '',
   );
   $handler->display->display_options['style_options']['bxslider_views_slideshow']['autofieldset'] = array(
-    'pause' => '4000',
+    'pause' => '6000',
     'autoStart' => 1,
     'auto' => 1,
     'autoHover' => '0',

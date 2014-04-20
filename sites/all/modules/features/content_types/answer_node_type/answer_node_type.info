@@ -39,3 +39,4 @@ features[variable][] = menu_parent_answer
 features[variable][] = node_options_answer
 features[variable][] = node_preview_answer
 features[variable][] = node_submitted_answer
+features[variable][] = panelizer_defaults_node_answer

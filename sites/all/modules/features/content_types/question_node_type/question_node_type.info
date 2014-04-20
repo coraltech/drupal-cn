@@ -48,6 +48,7 @@ features[variable][] = menu_parent_question
 features[variable][] = node_options_question
 features[variable][] = node_preview_question
 features[variable][] = node_submitted_question
+features[variable][] = panelizer_defaults_node_question
 features_exclude[field][node-question-body] = node-question-body
 features_exclude[field][node-question-field_tags] = node-question-field_tags
 features_exclude[field][node-question-file] = node-question-file

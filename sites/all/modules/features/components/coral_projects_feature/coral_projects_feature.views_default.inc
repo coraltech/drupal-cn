@@ -155,14 +155,6 @@ function coral_projects_feature_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_project_group_node']['id'] = 'reverse_field_project_group_node';
   $handler->display->display_options['relationships']['reverse_field_project_group_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_project_group_node']['field'] = 'reverse_field_project_group_node';
-  /* Field: Content: Project home page */
-  $handler->display->display_options['fields']['field_project_home_page']['id'] = 'field_project_home_page';
-  $handler->display->display_options['fields']['field_project_home_page']['table'] = 'field_data_field_project_home_page';
-  $handler->display->display_options['fields']['field_project_home_page']['field'] = 'field_project_home_page';
-  $handler->display->display_options['fields']['field_project_home_page']['label'] = '';
-  $handler->display->display_options['fields']['field_project_home_page']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_project_home_page']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_home_page']['click_sort_column'] = 'url';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -210,6 +202,104 @@ function coral_projects_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'project' => 'project',
+  );
+
+  /* Display: Large project group */
+  $handler = $view->new_display('panel_pane', 'Large project group', 'project_group_lg');
+  $handler->display->display_options['display_description'] = 'A large footprint view of a given project group';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="hbdr"></div>
+<div class="vbdr"><div></div></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href=\'[field_project_home_page]\'>[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Content: Project documentation */
+  $handler->display->display_options['fields']['field_project_documentation']['id'] = 'field_project_documentation';
+  $handler->display->display_options['fields']['field_project_documentation']['table'] = 'field_data_field_project_documentation';
+  $handler->display->display_options['fields']['field_project_documentation']['field'] = 'field_project_documentation';
+  $handler->display->display_options['fields']['field_project_documentation']['label'] = '';
+  $handler->display->display_options['fields']['field_project_documentation']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_documentation']['click_sort_column'] = 'url';
+  /* Field: Content: Project repo */
+  $handler->display->display_options['fields']['field_project_repo']['id'] = 'field_project_repo';
+  $handler->display->display_options['fields']['field_project_repo']['table'] = 'field_data_field_project_repo';
+  $handler->display->display_options['fields']['field_project_repo']['field'] = 'field_project_repo';
+  $handler->display->display_options['fields']['field_project_repo']['label'] = '';
+  $handler->display->display_options['fields']['field_project_repo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_project_repo']['alter']['text'] = '<a class="repo" href="[field_project_repo-url]">Repo</a>';
+  $handler->display->display_options['fields']['field_project_repo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_repo']['click_sort_column'] = 'url';
+  /* Field: Content: Issue queue */
+  $handler->display->display_options['fields']['field_issue_queue']['id'] = 'field_issue_queue';
+  $handler->display->display_options['fields']['field_issue_queue']['table'] = 'field_data_field_issue_queue';
+  $handler->display->display_options['fields']['field_issue_queue']['field'] = 'field_issue_queue';
+  $handler->display->display_options['fields']['field_issue_queue']['label'] = '';
+  $handler->display->display_options['fields']['field_issue_queue']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_issue_queue']['click_sort_column'] = 'url';
+  /* Field: Content: Item featureset */
+  $handler->display->display_options['fields']['field_item_featureset']['id'] = 'field_item_featureset';
+  $handler->display->display_options['fields']['field_item_featureset']['table'] = 'field_data_field_item_featureset';
+  $handler->display->display_options['fields']['field_item_featureset']['field'] = 'field_item_featureset';
+  $handler->display->display_options['fields']['field_item_featureset']['label'] = '';
+  $handler->display->display_options['fields']['field_item_featureset']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_item_featureset']['settings'] = array(
+    'edit' => '',
+    'delete' => '',
+    'add' => '',
+    'description' => 0,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_item_featureset']['delta_offset'] = '0';
+  $handler->display->display_options['pane_title'] = 'Project group large';
+  $handler->display->display_options['pane_description'] = 'Project group large';
+  $handler->display->display_options['pane_category']['name'] = 'Projects';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
   );
 
   /* Display: Project group */

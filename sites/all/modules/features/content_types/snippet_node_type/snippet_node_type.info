@@ -15,6 +15,7 @@ features[page_manager_handlers][] = node_edit_panel_context_3
 features[panelizer_defaults][] = node:snippet:default
 features[panelizer_defaults][] = node:snippet:default:full_node
 features[panelizer_defaults][] = node:snippet:default:teaser
+features[variable][] = panelizer_defaults_node_snippet
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][field_collection] = field_collection
