@@ -194,7 +194,7 @@ function mosaic_preprocess_field(&$variables, $hook) {
 
 // Ensure entity|node.tpl.php is in place: use if needed (e.g: submitted by...)
 function mosaic_preprocess_entity(&$vars) {
-  
+
 }
 
 // Add some stuff to nodes... lots of stuff right?
@@ -363,6 +363,7 @@ function mosaic__preprocess_views_views_field_user_image(&$vars) {
 }
 
 // Handles title field preprocessing
+// @TODO: this can go...
 function mosaic__preprocess_views_views_field_title(&$vars) {
   if ($vars['view']->name == 'projects') {
     if (isset($vars['row']->field_field_project_home_page[0]['raw']['url'])) {
@@ -550,13 +551,30 @@ function mosaic_compile_views_query_data(&$vars) {
 // Add additional classes to the panelizer view mode tpl title classes
 function mosaic_preprocess_panelizer_view_mode(&$vars) {
   if (isset($vars['element']['#entity_view_mode'])) {
-    $data = $vars['element']['#entity_view_mode'];
+    $element = $vars['element'];
+    $node = $element['#node'];
+    $data = $element['#entity_view_mode'];
     $type = $data['entity_type'];
     $bundle = $data['bundle'];
     $mode = $data['view_mode'];
     
     $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-pane-title';
     $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-'.$mode.'-pane-title';
+    
+    if ($bundle == 'project') {
+      $uri = $element['field_logo']['#items'][0]['uri'];
+      $image_style = 'project_logo_lg';
+      $title = $vars['title'];
+      $logo = theme(
+        'image_style', 
+        array(
+          'style_name' => $image_style,
+          'path' => $uri,
+          'title' => $title
+        ));
+ 
+      $vars['title'] = $logo . $vars['title'];
+    }
   }
 }
 
