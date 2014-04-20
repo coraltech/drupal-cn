@@ -1,0 +1,81 @@
+
+// Large footprint projects display
+
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/gradients';
+@import 'global/site_vars';
+
+@import 'compass/utilities/general/clearfix';
+
+.view-display-id-project_group_lg {
+  position: relative;
+  margin-bottom: 3 * $default_vert_unit;
+  //padding-bottom: $default_vert_unit;
+  @include pie-clearfix;
+  //background: url('../../assets/images/coral-sep-long.png') bottom center no-repeat;
+  
+  .view-header {
+    .tcont {
+      display: block;
+      min-height: 200px;
+    }
+    
+    .hbdr {
+      background: url('../../assets/images/coral-sep-long.png') bottom center no-repeat;
+      height: 25px;
+      position: absolute;
+      bottom: -3.5em;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .vbdr {
+      position: absolute;
+      top: 1em;
+      left: 50%;
+      height: 400px;
+      width: 1px;
+
+      @include reflected-v-gradient($white, $dkblue, $white);
+
+      div {
+        position: relative;
+        right: 1px;
+        height: 400px;
+        width: 1px;
+
+        @include reflected-v-gradient($white, $ltblue, $white);
+      }
+    }
+  } 
+  
+  @include pie-clearfix;
+  .views-row {
+    @include col(12);
+    margin-right: $col_margin;  
+  }
+  .views-row-even {
+    @include col(12, TRUE);
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .view-display-id-project_group_lg {
+    margin-bottom: $default_vert_unit;
+
+    .view-header {
+      display: none;
+    }
+    .views-row {
+      @include col(24, TRUE);
+      margin-right: 0;
+      margin-bottom: 2 * $default_vert_unit;
+    }
+    .views-row-even {
+      @include col(24, TRUE);
+    }
+  }
+}
+
