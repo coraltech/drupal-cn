@@ -9,6 +9,7 @@
 
 // Normally this would be constrained to the view level but I need
 //  access to the pane header.
+.pane-tags-popular-popular-project-tags,
 .pane-tags-popular-popular-snippet-tags,
 .pane-tags-popular-popular-question-tags {
   margin-bottom: $default_vert_unit;
