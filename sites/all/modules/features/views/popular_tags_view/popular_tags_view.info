@@ -1,0 +1,12 @@
+name = Popular tags view
+description = A feature tracking the Popular tags view and it's displays
+core = 7.x
+package = Coral views
+version = 7.x-1.0
+project = popular_tags_view
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = tags_popular
+features_exclude[dependencies][views] = views
+features_exclude[dependencies][views_content] = views_content
+features_exclude[dependencies][views_load_more] = views_load_more

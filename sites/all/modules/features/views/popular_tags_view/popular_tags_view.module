@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Popular tags view feature.
+ */
+
+include_once 'popular_tags_view.features.inc';
