@@ -148,13 +148,13 @@ function coral_projects_feature_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
       ),
       'display' => array(),
@@ -262,6 +262,53 @@ function coral_projects_feature_strongarm() {
   $strongarm->name = 'node_submitted_project_group';
   $strongarm->value = 0;
   $export['node_submitted_project_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_defaults_node_project';
+  $strongarm->value = array(
+    'status' => 1,
+    'view modes' => array(
+      'page_manager' => array(
+        'status' => 1,
+        'default' => 1,
+        'choice' => 0,
+      ),
+      'default' => array(
+        'status' => 0,
+        'default' => 0,
+        'choice' => 0,
+        'selection' => 0,
+      ),
+      'teaser' => array(
+        'status' => 1,
+        'default' => 1,
+        'choice' => 0,
+      ),
+      'full_node' => array(
+        'status' => 0,
+        'default' => 0,
+        'choice' => 0,
+        'selection' => 0,
+      ),
+    ),
+  );
+  $export['panelizer_defaults_node_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:project:page_manager_selection';
+  $strongarm->value = 'node:project:default';
+  $export['panelizer_node:project:page_manager_selection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:project:teaser_selection';
+  $strongarm->value = 'node:project:default:teaser';
+  $export['panelizer_node:project:teaser_selection'] = $strongarm;
 
   return $export;
 }
