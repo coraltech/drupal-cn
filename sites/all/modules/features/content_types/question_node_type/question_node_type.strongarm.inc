@@ -166,6 +166,7 @@ function question_node_type_strongarm() {
         'status' => 0,
         'default' => 0,
         'choice' => 0,
+        'selection' => 0,
       ),
       'teaser' => array(
         'status' => 1,
@@ -180,6 +181,27 @@ function question_node_type_strongarm() {
     ),
   );
   $export['panelizer_defaults_node_question'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:question:full_node_selection';
+  $strongarm->value = 'node:question:default:full_node';
+  $export['panelizer_node:question:full_node_selection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:question:page_manager_selection';
+  $strongarm->value = 'node:question:default';
+  $export['panelizer_node:question:page_manager_selection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:question:teaser_selection';
+  $strongarm->value = 'node:question:default:teaser';
+  $export['panelizer_node:question:teaser_selection'] = $strongarm;
 
   return $export;
 }
