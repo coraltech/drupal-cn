@@ -1,0 +1,13 @@
+name = Related snippets view
+description = A feature for tracking related snippets views
+core = 7.x
+package = Coral views
+version = 7.x-1.0
+project = related_snippets_view
+dependencies[] = views
+dependencies[] = views_content
+dependencies[] = views_load_more
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = related_snippets
+features_exclude[dependencies][ctools] = ctools

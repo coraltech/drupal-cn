@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Related snippets view feature.
+ */
+
+include_once 'related_snippets_view.features.inc';
