@@ -44,9 +44,10 @@ function user_view_feature_flag_default_flags() {
       1 => 'comment',
       2 => 'configuration',
       3 => 'format',
-      4 => 'question',
-      5 => 'snippet',
-      6 => 'book',
+      4 => 'project',
+      5 => 'question',
+      6 => 'snippet',
+      7 => 'book',
     ),
     'flag_short' => 'Follow',
     'flag_long' => 'Follow this content',
@@ -79,4 +80,36 @@ function user_view_feature_flag_default_flags() {
   );
   return $flags;
 
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function user_view_feature_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: user_thumb_small.
+  $styles['user_thumb_small'] = array(
+    'name' => 'user_thumb_small',
+    'label' => 'user_thumb_small',
+    'effects' => array(
+      1 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 30,
+          'height' => 30,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
 }

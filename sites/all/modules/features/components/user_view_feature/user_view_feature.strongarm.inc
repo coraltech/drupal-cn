@@ -26,10 +26,18 @@ function user_view_feature_strongarm() {
         'status' => 0,
         'default' => 0,
         'choice' => 0,
+        'selection' => 0,
       ),
     ),
   );
   $export['panelizer_defaults_user_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_user:user:page_manager_selection';
+  $strongarm->value = 'user:user:default';
+  $export['panelizer_user:user:page_manager_selection'] = $strongarm;
 
   return $export;
 }
