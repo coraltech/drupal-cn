@@ -30,7 +30,7 @@
   @include col(8);
 }
 .layout-landing-responsive .main-content {
-  @include col(16, 'true'); float: right; 
+  @include col(16, 'true', right); 
 }
 
 @media screen and (max-width: $tabletw) {
