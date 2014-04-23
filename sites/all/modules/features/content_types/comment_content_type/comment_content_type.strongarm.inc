@@ -141,6 +141,7 @@ function comment_content_type_strongarm() {
         'status' => 0,
         'default' => 0,
         'choice' => 0,
+        'selection' => 0,
       ),
       'teaser' => array(
         'status' => 1,
@@ -151,10 +152,25 @@ function comment_content_type_strongarm() {
         'status' => 0,
         'default' => 0,
         'choice' => 0,
+        'selection' => 0,
       ),
     ),
   );
   $export['panelizer_defaults_node_comment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:comment:page_manager_selection';
+  $strongarm->value = 'node:comment:default';
+  $export['panelizer_node:comment:page_manager_selection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:comment:teaser_selection';
+  $strongarm->value = 'node:comment:default:teaser';
+  $export['panelizer_node:comment:teaser_selection'] = $strongarm;
 
   return $export;
 }

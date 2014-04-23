@@ -38,3 +38,5 @@ features[variable][] = node_options_comment
 features[variable][] = node_preview_comment
 features[variable][] = node_submitted_comment
 features[variable][] = panelizer_defaults_node_comment
+features[variable][] = panelizer_node:comment:page_manager_selection
+features[variable][] = panelizer_node:comment:teaser_selection
