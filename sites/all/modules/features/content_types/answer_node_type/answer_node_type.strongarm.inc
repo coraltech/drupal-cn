@@ -142,6 +142,7 @@ function answer_node_type_strongarm() {
         'status' => 0,
         'default' => 0,
         'choice' => 0,
+        'selection' => 0,
       ),
       'teaser' => array(
         'status' => 1,
@@ -152,10 +153,25 @@ function answer_node_type_strongarm() {
         'status' => 0,
         'default' => 0,
         'choice' => 0,
+        'selection' => 0,
       ),
     ),
   );
   $export['panelizer_defaults_node_answer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:answer:page_manager_selection';
+  $strongarm->value = 'node:answer:default';
+  $export['panelizer_node:answer:page_manager_selection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:answer:teaser_selection';
+  $strongarm->value = 'node:answer:default:teaser';
+  $export['panelizer_node:answer:teaser_selection'] = $strongarm;
 
   return $export;
 }
