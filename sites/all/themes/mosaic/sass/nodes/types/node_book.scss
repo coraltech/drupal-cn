@@ -23,13 +23,13 @@
     margin-left: $default_vert_unit / 2;
   }
   
-  @include col(16, true);
-  float: right; 
+  @include col(16, 'true', right); 
 }
 
 .page-comment-reply .book-node-pane-title,
 .node-type-book .book-node-pane-title,
-.node-type-book .pane-node-title {
+.node-type-book .pane-node-title,
+.node-teaser.node-book .book-node-pane-title {
   h1 { // main page title
     margin: -.15em 0 .65em 0;
     line-height: 16px;
@@ -43,10 +43,18 @@
     @include icons-sprite('coral-book');
   }
 }
+// Override the icon settings on the teaser mode
+.node-teaser.node-book .book-node-pane-title {
+  .icon {
+    margin-top: .35em;
+  }
+}
+
 .node-type-book .book-node-pane-title {
   display: none;
 }
 
+.node-teaser.node-book,
 .node-type-book {
   
   // Add icons and so on
