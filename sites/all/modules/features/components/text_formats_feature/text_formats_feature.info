@@ -1,0 +1,16 @@
+name = Text formats feature
+description = A feature controlling Coral Nexus text formats
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = text_formats_feature
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = flexifilter
+dependencies[] = freelinking
+dependencies[] = markdown
+dependencies[] = typogrify
+features[features_api][] = api:2
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[filter][] = plain_text
