@@ -12,7 +12,7 @@ function coral_projects_view_views_default_views() {
 
   $view = new view();
   $view->name = 'coral_projects';
-  $view->description = '';
+  $view->description = 'This view should be phased out. It is not to be used...';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Coral projects';
@@ -79,7 +79,7 @@ function coral_projects_view_views_default_views() {
   $handler->display->display_options['fields']['field_project_repo']['alter']['text'] = '<a href=\'[field_project_repo-url]\'>Repo</a>';
   $handler->display->display_options['fields']['field_project_repo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_repo']['click_sort_column'] = 'url';
-  /* Field: Content: Project documentation */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_project_documentation']['id'] = 'field_project_documentation';
   $handler->display->display_options['fields']['field_project_documentation']['table'] = 'field_data_field_project_documentation';
   $handler->display->display_options['fields']['field_project_documentation']['field'] = 'field_project_documentation';
@@ -88,7 +88,6 @@ function coral_projects_view_views_default_views() {
   $handler->display->display_options['fields']['field_project_documentation']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_project_documentation']['alter']['text'] = '<a href=\'[field_project_documentation-url]\'>Docs</a>';
   $handler->display->display_options['fields']['field_project_documentation']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_documentation']['click_sort_column'] = 'url';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';

@@ -4,6 +4,7 @@ core = 7.x
 package = Coral views
 version = 7.x-1.0
 project = coral_projects_view
+dependencies[] = ctools
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
