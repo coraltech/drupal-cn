@@ -20,7 +20,11 @@
     padding-right: .5em;
     margin-bottom: .1545em;
     
-    @include linear-v-gradient($mdblue, desaturate(lighten($mdblue, 7%), 10%));    
+    // Blue
+    //@include linear-v-gradient($mdblue, desaturate(lighten($mdblue, 7%), 10%));
+    
+    // yellow
+    @include linear-v-gradient(desaturate(darken($mdyellow, 10%), 30%), desaturate(darken($mdyellow, 5%), 35%));    
   }
   .pane-content {
     padding-top: .3em;
