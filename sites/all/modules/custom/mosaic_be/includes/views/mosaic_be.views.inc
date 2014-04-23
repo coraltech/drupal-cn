@@ -7,9 +7,15 @@
  */
 function mosaic_be_views_query_alter(&$view, &$query) {
   //dpm($view->name);
-  if ($view->name == 'related_qa' || $view->name == 'questions' || $view->name == 'documentation' || $view->name == 'snippets') {
-           
+  if ($view->name == 'related_qa' || 
+      $view->name == 'questions' || 
+      $view->name == 'documentation' || 
+      $view->name == 'snippets' ||
+      $view->name == 'related_projects' ||
+      $view->name == 'related_snippets') {
+
     $tags = '';
+
     if ($view->current_display != 'related_node') {
       // if we have a tag set the view conditions
       if (isset($_GET['tag'])) $tags = $_GET['tag'];
@@ -24,6 +30,7 @@ function mosaic_be_views_query_alter(&$view, &$query) {
             'operator' => 'IN'
           )      
         );
+
         // Set the query (this one is on [0])
         $query->where[0] = array(
           'conditions' => $conditions,
@@ -32,21 +39,22 @@ function mosaic_be_views_query_alter(&$view, &$query) {
         );
       }
     }
-    
-    
+
+
     else {
       // This view display should always have the node context
       $nid = arg(1);
       if (arg(0) == 'node' && is_numeric($nid)) {
         $node = node_load($nid);
         $tags = field_get_items('node', $node, 'field_tags');
-        if (count($tags)) {        
+        if (!empty($tags)) {
+
           $names = array();
           foreach ($tags as $id => $tag) {
             $tag = taxonomy_term_load($tag['tid']);
             $names[] = $tag->name;
           }
-          
+
           if (count($names)) { // get the node's tags
             $conditions = array(); 
             $conditions[0] = array(
