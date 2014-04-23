@@ -1,0 +1,15 @@
+name = Documentation references views
+description = A feature tracking documentation references views
+core = 7.x
+package = Coral views
+version = 7.x-1.0
+project = documentation_references_views
+dependencies[] = entity
+dependencies[] = references_dialog
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = doc_ref_node
+features[views_view][] = documentation_references
+features_exclude[dependencies][ctools] = ctools

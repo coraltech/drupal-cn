@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Documentation references views feature.
+ */
+
+include_once 'documentation_references_views.features.inc';
