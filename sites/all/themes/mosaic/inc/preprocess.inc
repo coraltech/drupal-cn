@@ -343,9 +343,9 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
 // See coral_solr_fields module.
 function mosaic__preprocess_views_views_field_user_image(&$vars) {
   $data = $vars['row']->_entity_properties;
-  
+
   $allowed_types = array('answer', 'comment', 'question');
-  
+
   if (in_array($data['type'], $allowed_types)) {
     $user = user_load($data['author']);
 
@@ -378,7 +378,9 @@ function mosaic__preprocess_views_views_field_title(&$vars) {
 function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   $tags = '';
   $found = FALSE;
+  $use_search = FALSE; // use actual search page as target?
 
+  //dpm($vars);
   if (isset($_GET['tag'])) {
     $tags = $_GET['tag'];
     if ($tags && $tags != '') {
@@ -414,11 +416,24 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
     $path = 'content/snippets';
   }
 
+  if ($vars['view']->name == 'tags_popular' && 
+    $vars['view']->current_display == 'popular_project_tags') {
+    $use_search = TRUE;
+    $path = 'search/node/all';
+  }
+
+
+  // see also mosaic_tagclouds_weighted(&$vars) for info on encoding solr fields
   $class = 'tag-term';
   if ($found) $class = 'tag-active';
 
   if ($tags) {
-    $vars['output'] = l($vars['output'], $path, array('query' => array('tag' => $tags), 'attributes' => array('class' => array($class))));
+    if ($use_search) {
+      $vars['output'] = l($vars['output'], $path, array('query' => array('f' => array('type:project', rawurlencode('field_tags:name') . ":" . $tags)), 'attributes' => array('class' => array($class))));
+    }
+    else {
+      $vars['output'] = l($vars['output'], $path, array('query' => array('tag' => $tags), 'attributes' => array('class' => array($class))));
+    }
   }
   else {
     $vars['output'] = l($vars['output'], $path, array('attributes' => array('class' => array($class))));
@@ -435,6 +450,19 @@ function mosaic_preprocess_field_locked(&$vars) {
   }
   else {
     $vars['items'][0]['#markup'] = ''; // show nothing if unlocked...
+  }
+}
+
+
+// The documentation reference is basically a link from a 
+//  project page to a related documentation page that
+//  talks about the project.
+function mosaic_preprocess_field_documentation_reference(&$vars) {
+  $node = $vars['element']['#object'];
+  $doc_ref = field_get_items('node', $node, 'field_documentation_reference');
+
+  if (isset($doc_ref[0]) && isset($doc_ref[0]['target_id'])) {
+    $vars['items'][0]['#markup'] = '<span class="more">'.l('Learn more', 'node/'.$doc_ref[0]['target_id']).'</span><span class="hide">'.$vars['items'][0]['#markup'].'</span>';
   }
 }
 
