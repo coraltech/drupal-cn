@@ -2,22 +2,27 @@
 @import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/gradients';
 @import 'global/headers';
 @import 'global/site_vars';
 
-.node-project.node-teaser {
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/border-radius';
+
+.node-project {
   
   .project-node-pane-title {
     @include huge;
     a {
       color: $mdorange;
-      margin-left: -.65em;
+      margin-left: -.5em;
     }    
     
     img { // floats beside title
       float: left;
-      margin-right: .5em;
+      margin-right: .75em;
       margin-left: .25em;
+      margin-bottom: $default_vert_unit / 2;
       position: relative;
       z-index: 1;
     }
@@ -30,8 +35,6 @@
   }
   
   .pane-node-field-item-featureset {
-    margin-top: 2 * $default_vert_unit;
-    clear: both;
 
     .field-collection-container {
       border-bottom: none;
@@ -47,9 +50,9 @@
       
       .entity-field-collection-item {
         width: auto;
-        padding: 0 1em 0 3em;
-        margin-bottom: .625em;
-        background: url('../../../assets/images/li-red.png') 1.75em .25em no-repeat;
+        padding: 0 1em 0 4em;
+        margin-bottom: ($default_vert_unit / 2);
+        background: url('../../../assets/images/li-red.png') 2.75em .25em no-repeat;
         div {
           display: inline;
         }
@@ -68,10 +71,11 @@
     
   }
   
-  .pane-node-field-project-documentation {
+  .pane-node-field-documentation-reference {
     float: left;
     margin-left: .5em;
     margin-right: -.5em;
+    margin-bottom: $default_vert_unit;
     background: url('../../../assets/images/line-divider.png') right center no-repeat;
     padding-right: 1em;
     a {
@@ -82,39 +86,121 @@
   
   .pane-node-field-project-repo {
     float: left;
-    margin: 0;
+    margin: 0 0 $default_vert_unit;
     padding: 0 .5em;
     position: relative;
     top: .25em;
     
     a {
-      color: darken($mdgreen, 10%);
+      //color: darken($mdgreen, 10%);
       
-      &:hover { color: lighten($dkgreen, 10%); } 
+      //&:hover { color: lighten($dkgreen, 10%); } 
     }
   }
   .pane-node-field-issue-queue {
     float: left;
-    margin: 0;
+    margin: 0 0 $default_vert_unit;
     padding: 0 .5em;
     position: relative;
     top: .25em;
     border-left: 1px solid $ltgray;
 
     a {
-      color: $dkred;
+      //color: $dkred;
       
-      &:hover { color: lighten($dkred, 10%); }  
+      //&:hover { color: lighten($dkred, 10%); }  
+    }
+  }
+  
+  .pane-node-links {
+    position: relative;
+    top: .25em;
+    float: right;
+
+    .first {
+      border-right: none;
     }
   }
 }
 .node-project.node-924 {
-  .pane-node-field-project-documentation {
+  .pane-node-field-documentation-reference {
     a {
       @include btn-matte-inset(3px, 18px, darken($mdyellow,10%), darken($mdyellow, 15%), $white);
       @include btn-structure(2px .5em, 18px, 3px);
     }
   }
+}
+
+// Main node page... override above and whatnot
+.page-node.node-type-project {
+  .node-project.node-teaser {
+    .project-node-pane-title {
+      @include huge;
+      a {
+        color: $mdorange;
+        margin-left: 0;
+      }    
+      
+      img { // floats beside title
+        float: left;
+        margin-right: .5em;
+        margin-bottom: $default_vert_unit / 2;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    
+    .pane-node-field-item-featureset {
+
+    }
+    
+    .pane-node-field-documentation-reference {
+      display: none;  
+    }
+  }
+  
+  .pane-doc-ref-node-teaser-view {
+
+    & > .pane-title {
+      color: darken($mdred, 10%);
+    }
+
+    & > .pane-content {
+      padding: 0 $default_vert_unit 1em;
+      background: desaturate(lighten($ltyellow, 12%), 10%);
+      border: 1px solid $mdyellow;
+      margin: 0 0 ($default_vert_unit / 2);
+      
+      .pane-node-links .first {
+        border-right: none;
+      }
+      
+      @include linear-v-gradient(desaturate(lighten($ltyellow, 12%), 10%), $white);
+    }
+  }
+  
+  .pane-coral-wiki-ask-question {
+    margin-bottom: 2em;
+    margin-top: .625em;
+  }
+
+  /*
+  .layout-landing-responsive {
+    .main-content {
+      float: left;
+      width: 66.66667%;
+      
+      & > .prepend-1 {
+        margin-left: 0;
+        margin-right: $default_vert_unit / 2;
+      }
+    }
+    .secondary-content {
+      margin-right: 0;
+      margin-left: 2%;
+    }
+  }
+  */
 }
 
 
