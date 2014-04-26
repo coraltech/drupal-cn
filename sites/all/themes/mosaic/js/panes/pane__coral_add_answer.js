@@ -213,7 +213,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // The full text is longer than trimmed
       if (fullText.length > trimmedText.length) {
         if (this.context == 'teaser') {
-          this.$full.hide(); // hide it
+          this.$full.hide().removeClass('hide'); // hide it
           this.hasTrimmed = true;
         }
         else {
