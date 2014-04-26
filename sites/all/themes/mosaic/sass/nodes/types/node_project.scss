@@ -157,6 +157,15 @@
     .pane-node-field-documentation-reference {
       display: none;  
     }
+    
+    .pane-node-field-project-repo a {
+      @include btn-matte-inset(3px, 16px, $mdgreen, darken($mdgreen, 3%), $white);
+      @include btn-structure(2px .5em, 16px, 3px);
+    }
+    .pane-node-field-issue-queue a {
+      @include btn-matte-inset(3px, 16px, $mdred, darken($mdred, 3%), $white);
+      @include btn-structure(2px .5em, 16px, 3px);
+    }
   }
   
   .pane-doc-ref-node-teaser-view {
