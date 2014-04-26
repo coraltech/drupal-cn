@@ -462,7 +462,7 @@ function mosaic_preprocess_field_documentation_reference(&$vars) {
   $doc_ref = field_get_items('node', $node, 'field_documentation_reference');
 
   if (isset($doc_ref[0]) && isset($doc_ref[0]['target_id'])) {
-    $vars['items'][0]['#markup'] = '<span class="more">'.l('Learn more', 'node/'.$doc_ref[0]['target_id']).'</span><span class="hide">'.$vars['items'][0]['#markup'].'</span>';
+    $vars['items'][0]['#markup'] = '<span class="more">'.l('Learn more', 'node/'.$node->nid).'</span><span class="hide">'.$vars['items'][0]['#markup'].'</span>';
   }
 }
 
