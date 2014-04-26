@@ -18,7 +18,7 @@ function field_defaults_textfield_validate($form, &$form_state) {
 // Determine if we need to do any submit handling of this form
 //  You must send in custom submit handlers.  None are provided by default.
 function field_defaults_textfield_submission($matrix, $form_id, &$form) {
-  field_defaults_submission($matrix, $form_id, &$form);
+  field_defaults_submission($matrix, $form_id, $form);
 }
 
 
