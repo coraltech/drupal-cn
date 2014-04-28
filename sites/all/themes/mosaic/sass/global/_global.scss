@@ -662,6 +662,23 @@ div.ui-tabs {
     border-color: darken($ltblue, 12%);
   } 
 }
+@media screen and (max-width: $desktopw) { 
+  div.ui-tabs {
+    .ui-tabs-nav {
+      li.ui-corner-top {
+        margin-bottom: .5em;
+        @include border-radius(4px);
+        a {
+          padding: ($default_vert_unit / 4) ($default_vert_unit / 2);  
+        }
+      }
+      li.ui-tabs-selected {
+        padding-bottom: 0px;
+        margin-bottom: .5em;
+      }
+    }
+  }
+}
 
 
 // Vertically aligned panels_tabs
