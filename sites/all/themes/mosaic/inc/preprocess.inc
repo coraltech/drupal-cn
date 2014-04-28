@@ -139,13 +139,13 @@ function mosaic_preprocess_views_view_fields(&$vars) {
 function mosaic_preprocess_views_view_field(&$vars) {
   // By alias
   $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->field_alias;
-//dpm($func);
+
   if (function_exists($func)) $func($vars);
   
   // By real field name
   if ($vars['field']->real_field != $vars['field']->field_alias) {
     $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field;
-
+//dpm($func);
     if (function_exists($func)) $func($vars);
   }
 }
@@ -440,6 +440,13 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   }
   
   return;
+}
+
+
+// Preprocess snippet component count field
+function mosaic__preprocess_views_views_field_field_component_count_value(&$vars) {
+  // Add component(s) text as necc.
+  $vars['output'] = format_plural($vars['output'], '<span class="cnt">1</span> component', '<span class="cnt">@count</span> components');
 }
 
 
