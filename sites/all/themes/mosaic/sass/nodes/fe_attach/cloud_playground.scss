@@ -30,7 +30,11 @@
     line-height: 1.25em;
     color: $mdblue;
     cursor: pointer;
-    clear: both;
+
+
+    li a {
+      white-space: nowrap;
+    }
   }
   .use-sml {
     display: none;
