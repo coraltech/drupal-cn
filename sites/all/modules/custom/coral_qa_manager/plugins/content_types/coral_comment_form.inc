@@ -51,7 +51,8 @@ function coral_comment_form_pane_content_type_render($subtype, $conf, $args, $co
     $comment_end = '</div>';
     
     if (!$user->uid) {
-      $user_login = render(drupal_get_form('user_login'));
+      $login = drupal_get_form('user_login');
+      $user_login = render($login);
       $comment_form = '<h3>Please login or '.l('register', 'user/register')." to post comments.</h3>";
       $comment_form .= $user_login;
     }

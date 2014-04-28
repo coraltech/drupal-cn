@@ -36,7 +36,8 @@ function coral_parent_content_pane_content_type_render($subtype, $conf, $args, $
     }
   }
   if (is_array($ref)) {
-    $node = drupal_render(node_view(node_load($ref[0]['target_id']), 'teaser'));
+    $node = node_view(node_load($ref[0]['target_id']), 'teaser');
+    $node = drupal_render($node);
     $content = $node;
   }
   $block = new stdClass();

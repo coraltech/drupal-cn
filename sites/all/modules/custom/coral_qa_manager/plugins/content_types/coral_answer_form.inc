@@ -50,7 +50,8 @@ function coral_answer_form_pane_content_type_render($subtype, $conf, $args, $con
     $answer_end = '</div>';
     
     if (!$user->uid) {
-      $user_login = render(drupal_get_form('user_login'));
+      $login = drupal_get_form('user_login');
+      $user_login = render($login);
       $answer_form = '<h3>Please login or '.l('register', 'user/register')." to answer questions.</h3>";
       $answer_form .= $user_login;
     }
