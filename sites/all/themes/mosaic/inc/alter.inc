@@ -1,7 +1,8 @@
 <?php
 
 
-// --- Hooks ---
+// Alters
+// ------
 
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Lets see if this is a node type edit form.
@@ -9,6 +10,8 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
   if (str_replace('_node_form', '', $form_id) != $form_id) {
     // Load type related styles and js  
     _mosiac_be_node_load_by_type($form['#node']);
+    
+    //dpm($form_id);
     
     // Load default node form and css styles
     $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__node_form';
@@ -26,8 +29,6 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
   if (file_exists($js_path.'.js'))  drupal_add_js($js_path.'.js', array('group' => JS_THEME));
 }
 
-
-// --- Helpers ---
 
 // Stabilize the form action on the comment node book form
 //  for some reason the action is not steady after the reply
@@ -61,13 +62,14 @@ function mosaic_form_book_node_form_alter(&$form, &$form_state) {
 }
 
 
-// Hide the wiki reference. I wish there was a better way
-//  however I need to be able to add a value into that form
-//  via call-ups of the form itself (see coral_wiki_ask_question).
-//  So I can't use the value type. I just have to hide it...
-//  This is better than nothing.
-function mosaic_form_question_node_form_alter(&$form, &$form_state) {
-   
+// Hide the component count field from the snippet node form
+function mosaic_form_snippet_node_form_alter(&$form, &$form_state) {
+  $form['field_component_count'] = array(
+    '#access' => FALSE // no need to see this.
+  );
+  
+  // Add custom submit hadler to add component count on submission
+  $form['#submit'][] = 'mosaic_snippet_node_submit';
 }
 
 
@@ -97,5 +99,23 @@ function mosaic_form_contact_site_form_alter(&$form, &$form_state) {
   $form['subject']['#required'] = FALSE;
   $form['name']['#title'] = t('Name');
   $form['mail']['#title'] = t('Email');
+}
+
+
+// Handlers
+// --------
+
+function mosaic_snippet_node_submit($form, &$form_state) {
+  $node = $form_state['node'];
+  $comps = $form_state['values']['field_snippet_components'][$node->language];
+  $cnt = 0;
+  foreach ($comps as $i => $comp) {
+    if (is_array($comp)) {
+      $cnt++;
+    }
+  }
+  
+  // Save the number of components
+  $form_state['values']['field_component_count'][$node->language][0] = (string)$cnt;
 }
 
