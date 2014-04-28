@@ -677,47 +677,6 @@ function user_view_feature_views_default_views() {
     ),
   );
 
-  /* Display: User snippets */
-  $handler = $view->new_display('panel_pane', 'User snippets', 'user_snippet_teasers');
-  $handler->display->display_options['display_description'] = 'A listing of this user\'s snippets.';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'snippet' => 'snippet',
-  );
-  $handler->display->display_options['pane_title'] = 'User snippets';
-  $handler->display->display_options['pane_description'] = 'User snippets';
-  $handler->display->display_options['pane_category']['name'] = 'Snippets';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-  $handler->display->display_options['argument_input'] = array(
-    'uid' => array(
-      'type' => 'panel',
-      'context' => 'entity:comment.author',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Author uid',
-    ),
-  );
-
   /* Display: User snippets fields */
   $handler = $view->new_display('panel_pane', 'User snippets fields', 'user_snippets_fields');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -748,12 +707,16 @@ function user_view_feature_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['label'] = '';
   $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
-  /* Field: Content: Snippet components (field_snippet_components:delta) */
-  $handler->display->display_options['fields']['delta']['id'] = 'delta';
-  $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_snippet_components';
-  $handler->display->display_options['fields']['delta']['field'] = 'delta';
-  $handler->display->display_options['fields']['delta']['label'] = '';
-  $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
+  /* Field: Content: Component count */
+  $handler->display->display_options['fields']['field_component_count']['id'] = 'field_component_count';
+  $handler->display->display_options['fields']['field_component_count']['table'] = 'field_data_field_component_count';
+  $handler->display->display_options['fields']['field_component_count']['field'] = 'field_component_count';
+  $handler->display->display_options['fields']['field_component_count']['label'] = '';
+  $handler->display->display_options['fields']['field_component_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_component_count']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 1,
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';

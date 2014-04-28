@@ -38,6 +38,12 @@ function snippet_node_type_strongarm() {
         'default' => 1,
         'choice' => 0,
       ),
+      'sub_teaser' => array(
+        'status' => 0,
+        'default' => 0,
+        'choice' => 0,
+        'selection' => 0,
+      ),
     ),
   );
   $export['panelizer_defaults_node_snippet'] = $strongarm;

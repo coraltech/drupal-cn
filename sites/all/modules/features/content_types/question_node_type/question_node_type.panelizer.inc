@@ -46,11 +46,11 @@ function question_node_type_panelizer_defaults() {
   );
   $display->cache = array();
   $display->title = '%node:title';
-  $display->uuid = 'cc9c20a3-08b1-454c-a8ec-67be42c35a64';
+  $display->uuid = 'a747b8fe-9506-486c-8a30-6b68386cf85d';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-e80d778b-a574-4604-93a2-02c90b6ed9d7';
+    $pane->pid = 'new-d31a7dae-93e2-4e03-ba07-9052d90df68d';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'questions-panel_pane_1';
@@ -69,9 +69,9 @@ function question_node_type_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e80d778b-a574-4604-93a2-02c90b6ed9d7';
-    $display->content['new-e80d778b-a574-4604-93a2-02c90b6ed9d7'] = $pane;
-    $display->panels['middle'][0] = 'new-e80d778b-a574-4604-93a2-02c90b6ed9d7';
+    $pane->uuid = 'd31a7dae-93e2-4e03-ba07-9052d90df68d';
+    $display->content['new-d31a7dae-93e2-4e03-ba07-9052d90df68d'] = $pane;
+    $display->panels['middle'][0] = 'new-d31a7dae-93e2-4e03-ba07-9052d90df68d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
