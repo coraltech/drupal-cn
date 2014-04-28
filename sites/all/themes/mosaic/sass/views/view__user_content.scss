@@ -35,7 +35,7 @@
     margin: ($default_vert_unit / 2) 0;
   }
   .views-field-field-answer-count,
-  .views-field-delta {
+  .views-field-field-component-count {
     color: $mdgray;
     float: right;
     .cnt {
@@ -100,6 +100,7 @@
     }
   }
 }
+
 .pane-user-content-user-snippets-fields {
   
   .pane-title {
@@ -114,3 +115,33 @@
     }
   }
 }
+/**
+// Sub teaser snippet display styles
+.pane-user-content-user-snippet-sub-teasers {
+  h2.snippet-node-pane-title {
+    @include h0;
+    .icon {
+      display: none;
+    }
+
+    a {
+      color: $mdblue;
+      &:active, &.active { color: lighten($dkblue, 5%); }
+      &:hover { color: $dkblue; }
+    }
+  }
+  
+  .field-type-text-with-summary {
+    color: darken($mdgray, 7%);
+    margin: ($default_vert_unit / 2) 0;
+    
+    * {
+      margin: 0;
+    }
+  }
+  
+  .pane-node-field-tags {
+    margin: ($default_vert_unit / 2) 0 0;
+  }
+}
+*/
