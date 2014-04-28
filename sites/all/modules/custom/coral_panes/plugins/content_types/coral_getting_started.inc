@@ -69,7 +69,7 @@ function coral_getting_started_pane_content_type_render($subtype, $conf, $args, 
   <span class="pricing left">{$pricing}</span>
   <span class="more right">{$more}</span>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Getting started');
   $block->content = $output;
   return $block; 

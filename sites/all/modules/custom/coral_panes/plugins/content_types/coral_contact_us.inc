@@ -40,16 +40,18 @@ $plugin = array(
 function coral_contact_us_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   global $user;
   $contact_form = '';
+  $block = new stdClass;
   if (user_access('access site-wide contact form')) { 
-    module_load_include('inc', 'contact', 'contact.pages'); 
-    $contact_form = render(drupal_get_form('contact_site_form'));
+    module_load_include('inc', 'contact', 'contact.pages');
+    $form = drupal_get_form('contact_site_form');
+    $contact_form = render($form);
   }
   if ($contact_form != '') {
     $block->title = t('Contact us');
     $block->content = $contact_form; //render($contact_form);
     return $block;
   } 
-  return new stdClass();
+  return new stdClass;
 }
 
 

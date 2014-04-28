@@ -56,7 +56,7 @@ function coral_home_contribute_pane_content_type_render($subtype, $conf, $args, 
     </div>
   </div>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Contribute');
   $block->content = $output;
   return $block; 

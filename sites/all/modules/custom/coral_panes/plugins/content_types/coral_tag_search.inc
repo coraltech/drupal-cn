@@ -18,8 +18,10 @@ $plugin = array(
  * See ctools_plugin_examples for more advanced info
  */
 function coral_tag_search_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  $block = new stdClass;
   $block->title = t('Tag search');
-  $block->content = drupal_render(drupal_get_form('coral_tag_search_form'));
+  $form = drupal_get_form('coral_tag_search_form');
+  $block->content = drupal_render($form);
   return $block; 
 }
 

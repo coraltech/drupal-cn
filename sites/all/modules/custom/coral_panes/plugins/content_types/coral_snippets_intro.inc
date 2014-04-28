@@ -57,6 +57,7 @@ function coral_snippets_intro_pane_content_type_render($subtype, $conf, $args, $
     </div>
   </div>
 EOF;
+  $block = new stdClass;
   $block->title = t('Snippet intro');
   $block->content = $output;
   return $block; 

@@ -50,7 +50,7 @@ function coral_about_ecosystem_pane_content_type_render($subtype, $conf, $args, 
     <li>{$qa} <span> - for community assistance</span></li>
   </ul>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Ecosystem');
   $block->content = $output;
   return $block; 

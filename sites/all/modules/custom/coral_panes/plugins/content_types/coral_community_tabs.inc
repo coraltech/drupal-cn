@@ -43,7 +43,7 @@ function coral_community_tabs_pane_content_type_render($subtype, $conf, $args, $
   $attributes = array(
     'class' => 'com-tabs-ul', // a string or indexed (string) array with the classes for the list tag
   );
-  
+  $block = new stdClass;
   $block->content = theme('item_list', array('items' => $items['items'], 'attributes' => $attributes));
   return $block;
 }

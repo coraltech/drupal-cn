@@ -46,6 +46,7 @@ function coral_user_bookmarks_intro_pane_content_type_render($subtype, $conf, $a
     $output = '<div class="star"></div>';
     $output .= '<h3>'.mosaic_possessive($context->data->name).' '.t('followed content').'</h3>';
 
+    $block = new stdClass;
     $block->content = $output;
     return $block;
   } 

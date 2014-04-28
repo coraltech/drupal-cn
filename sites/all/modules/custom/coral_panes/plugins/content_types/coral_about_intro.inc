@@ -52,7 +52,7 @@ EOF;*/
 <h4>We build pluggable programming frameworks that everyone can use and extend to build the apps and clouds of tomorrow! Our technologies are <u>free and open source</u> and have concurrency and extensibility in their DNA.</h4>
 <h4>Our primary framework is CORL, a cloud programming framework that extends Nucleon. To learn more visit the {$projects}.</h4> 
 EOF;
-
+  $block = new stdClass;
   $block->content = $output;
   return $block; 
 }

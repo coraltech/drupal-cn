@@ -38,6 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_logo_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  $block = new stdClass;
   $block->content = l('<img src="/sites/all/themes/mosaic/assets/images/coral-nexus-logo-reg.jpg" alt="Coral Nexus" title="Coral Nexus Home">', '<front>', array('html' => TRUE)); 
   return $block; 
 }

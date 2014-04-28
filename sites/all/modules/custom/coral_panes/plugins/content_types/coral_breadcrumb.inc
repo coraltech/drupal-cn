@@ -40,7 +40,7 @@ function coral_breadcrumb_pane_content_type_render($subtype, $conf, $args, $cont
   if (isset($conf['prefix']) && $conf['prefix']) {
     $prefix = '<span class="bcprefix">'.$conf['prefix'].'</span>';
   }
-  
+  $block = new stdClass;
   $block->title = t('Breadcrumb');
   $block->content = $prefix.theme('breadcrumb', array('breadcrumb' => $current_breadcrumb));
   return $block; 

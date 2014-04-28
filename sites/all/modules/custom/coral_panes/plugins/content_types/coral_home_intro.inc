@@ -64,7 +64,7 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
   <div class="home-intro-right"><span class="top"></span><span class="bottom"></span><span class="angle"></span></div>
 </div>
 EOF;
-
+  $block = new stdClass;
   $block->content = $output;
   return $block; 
 }

@@ -73,7 +73,7 @@ EOF;
   );
   $privacy = '<div class="set"><h4>Privacy manangement</h4>';
   $privacy .= theme('item_list', array('items' => $privacy_list['items'], 'attributes' => $privacy_attr)).'</div>';
-  
+  $block = new stdClass;
   $block->content = $output . $accnt . $privacy;
   return $block; 
 }

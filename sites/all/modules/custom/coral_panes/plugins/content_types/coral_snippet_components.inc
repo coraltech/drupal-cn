@@ -42,7 +42,7 @@ function coral_snippet_components_pane_content_type_render($subtype, $conf, $arg
     'links' => $links,
     'attributes' => array('class' => array('links', 'inline')),
   )); 
-
+  $block = new stdClass;
   $block->title = t('Snippet components');
   $block->content = '<div class="snippet-comp">'.$ul.'</div>';
   return $block; 

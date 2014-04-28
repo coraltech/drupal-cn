@@ -38,6 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_support_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  $block = new stdClass;
   if (!isset($conf['support_type']) || $conf['support_type'] == 'support') {
     $block->title = t('Community support');
     $block->content = coral_about_support_community_support();

@@ -27,7 +27,7 @@ function coral_user_edit_link_content_type_render($subtype, $conf, $panel_args, 
   if ($user->uid == $account->uid) {
     $link = l('Edit profile', 'user/'.$account->uid.'/edit');
   }
-
+  $block = new stdClass;
   $block->content = $link;
   return $block;
 }

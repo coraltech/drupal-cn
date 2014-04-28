@@ -45,7 +45,7 @@ function coral_about_team_intro_pane_content_type_render($subtype, $conf, $args,
 <p>We are dedicated to making cloud development as open and accessible as possible. We hope you will join us in this goal.</p>
 
 EOF;
-
+  $block = new stdClass;
   $block->content = $output;
   return $block; 
 }

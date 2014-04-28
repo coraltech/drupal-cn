@@ -87,7 +87,7 @@ function coral_node_stats_pane_content_type_render($subtype, $conf, $args, $cont
   }
   //coral_node_stats_node_type($node, $stats);
   //dpm($stats);
-  
+  $block = new stdClass;
   $block->title = t('Node statistics');
   $block->content = coral_node_stats_process_stats($stats, $node, $style); 
   return $block;

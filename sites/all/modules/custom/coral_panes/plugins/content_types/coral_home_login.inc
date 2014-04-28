@@ -31,6 +31,8 @@ function coral_home_login_pane_content_type_render($subtype, $conf, $args, $cont
   
   $output = '';
   
+  $block = new stdClass;
+  
   if (!$user->uid) {
     $block->title = t('Sign up');
     

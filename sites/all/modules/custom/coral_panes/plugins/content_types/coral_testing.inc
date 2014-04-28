@@ -49,7 +49,8 @@ EOF;
   $output .= '<li>'.l('Sponsor the project', '<front>').'</li>';
   $output .= '<li>'.l('Spread the word', '<front>').'</li>';
   $output .= '</ul>';
-  
+
+  $block = new stdClass;
   $block->title = t('Testing');
   $block->content = $output;
   return $block; 

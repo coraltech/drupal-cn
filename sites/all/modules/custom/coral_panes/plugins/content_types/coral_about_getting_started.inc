@@ -48,7 +48,7 @@ function coral_about_getting_started_pane_content_type_render($subtype, $conf, $
   <div class="msg prepend-4 append-2"><span class="up-pointer"></span>You now have a local cluster that includes ssh access. From this point you can make it your own and use it however you like.</div>
   <a href="/" class="more right">Quick start guide</a>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Getting started');
   $block->content = $output;
   return $block; 

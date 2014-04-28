@@ -39,6 +39,7 @@ $plugin = array(
 function coral_break_line_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $block = new stdClass();
   $line_height = ($conf['line_height']) ? $conf['line_height'] . 'em' : '1.25em';
+  $block = new stdClass;
   $block->title = t('Break line');
   $block->content = '<br style="line-height: '.$line_height.'" />';
   return $block; 

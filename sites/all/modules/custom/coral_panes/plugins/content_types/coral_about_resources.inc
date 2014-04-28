@@ -43,7 +43,7 @@ function coral_about_resources_pane_content_type_render($subtype, $conf, $args, 
   $output = <<<EOF
   <p>CORL is made up of several components. To browse the CORL projects, visit the {$proj}.</p>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Resources');
   $block->content = $output;
   return $block; 

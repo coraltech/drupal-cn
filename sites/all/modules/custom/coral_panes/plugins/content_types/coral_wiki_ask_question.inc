@@ -28,7 +28,8 @@ function coral_wiki_questions_pane_content_type_render($subtype, $conf, $args, $
   $button = '<span class="ask-btn">Have a question<span class="icon"></span></span>';
   
   if (!$user->uid) {
-    $user_login = render(drupal_get_form('user_login'));
+    $login = drupal_get_form('user_login');
+    $user_login = render($login);
     $question_form = '<h3>Please login or '.l('register', 'user/register')." to ask questions.</h3>";
     $question_form .= $user_login;
   }
@@ -56,6 +57,7 @@ function coral_wiki_questions_pane_content_type_render($subtype, $conf, $args, $
       }
     }
   }
+  $block = new stdClass;
   $block->title = t('Wiki questions');
   $block->content = $button . '<div class="wiki-ask-question hide">'.render($question_form).'</div>';
   return $block; 

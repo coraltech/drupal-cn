@@ -69,7 +69,7 @@ function coral_about_technologies_pane_content_type_render($subtype, $conf, $arg
     <li>{$git}<span> - for version control and staging ops</span></li>
   </ul>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Integrated technologies');
   $block->content = $output;
   return $block; 

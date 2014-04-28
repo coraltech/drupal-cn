@@ -45,7 +45,7 @@ function coral_project_intro_pane_content_type_render($subtype, $conf, $args, $c
 <div class="divider"></div>
 </div>
 EOF;
-
+  $block = new stdClass;
   $block->title = t('Project intro');
   $block->content = $output;
   return $block; 

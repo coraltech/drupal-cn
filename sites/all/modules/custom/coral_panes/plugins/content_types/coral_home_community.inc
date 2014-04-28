@@ -57,7 +57,7 @@ function coral_home_community_pane_content_type_render($subtype, $conf, $args, $
     <div class="bgr-gl"></div>
   </div>
 EOF;
-  
+  $block = new stdClass;
   $block->title = t('Community');
   $block->content = $output;
   return $block; 

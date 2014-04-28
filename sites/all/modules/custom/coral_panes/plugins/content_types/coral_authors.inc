@@ -39,7 +39,7 @@ function coral_authors_pane_content_type_render($subtype, $conf, $args, $context
       $revision_hist[$uid] = coral_authors_compile_default_user_image($user, 'user_thumb_small', 'View profile of '.$name);
     }
   } 
-  
+  $block = new stdClass;
   $block->title = t('Authors');
   $block->content = implode('', $revision_hist);
   return $block;

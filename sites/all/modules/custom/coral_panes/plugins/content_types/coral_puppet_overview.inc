@@ -56,6 +56,7 @@ function coral_puppet_overview_pane_content_type_render($subtype, $conf, $args, 
     'class' => 'puppet-list', // a string or indexed (string) array with the classes for the list tag
   );
   //$attributes = array();
+  $block = new stdClass;
   $block->title = t('Puppet and CORL');
   $block->content = $output . theme('item_list', array('items' => $items['items'], 'attributes' => $attributes));
   return $block; 

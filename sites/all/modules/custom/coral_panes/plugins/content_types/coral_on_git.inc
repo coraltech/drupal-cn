@@ -51,7 +51,7 @@ EOF;*/
 <div class="find-us">Find us on <strong>GitHub</strong></div>
 <div class="git-link">{$git}</div>
 EOF;
-
+  $block = new stdClass;
   $block->content = $output;
   return $block; 
 }

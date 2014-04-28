@@ -51,6 +51,7 @@ function coral_back_to_pane_content_type_render($subtype, $conf, $args, $context
     );
     
     $items = theme('item_list', $items);
+    $block = new stdClass;
     $block->content = $inline_ttl . $items;
     return $block;
   }

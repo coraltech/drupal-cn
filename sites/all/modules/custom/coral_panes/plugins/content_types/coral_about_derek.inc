@@ -42,7 +42,7 @@ function coral_about_derek_pane_content_type_render($subtype, $conf, $args, $con
 <div class="teammate derek">?</div>
 <p>Derek Webb has been designing and developing web applications for over 7 years. Derek's experience spans entrepreneurial pursuits as well as agency level to corporate level development. Drupal is Derek's tool of choice for building web applications as it has a good balance of ease of use and capability.</p> 
 EOF;
-
+  $block = new stdClass;
   $block->title = t('Derek Webb');
   $block->content = $output;
   return $block; 

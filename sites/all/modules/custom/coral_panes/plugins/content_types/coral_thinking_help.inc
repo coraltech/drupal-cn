@@ -47,6 +47,8 @@ function coral_thinking_help_pane_content_type_render($subtype, $conf, $args, $c
     l('Community Q&A', '<front>'),
     l('Contact us', 'contact'),
   );
+
+  $block = new stdClass;
   $block->title = t('Need help?');
   $block->content = $think.theme('item_list', $items);
   return $block; 

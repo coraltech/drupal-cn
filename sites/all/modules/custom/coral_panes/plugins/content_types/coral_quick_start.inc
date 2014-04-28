@@ -51,6 +51,7 @@ function coral_quick_start_pane_content_type_render($subtype, $conf, $args, $con
 EOF;
   
   //$attributes = array();
+  $block = new stdClass;
   $block->content = $output;
   return $block; 
 }

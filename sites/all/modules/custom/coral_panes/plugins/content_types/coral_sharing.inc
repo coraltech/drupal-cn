@@ -45,7 +45,7 @@ function coral_sharing_pane_content_type_render($subtype, $conf, $args, $context
     <li class="public-projects"><span class="icon"></span><span class="label">Public projects</span> - Can be cloned and forked at anytime by anyone. Project owner grants SSH access to project team members as usual.</li>
   <ul>
 EOF;
-
+  $block = new stdClass;
   $block->title = t('Sharing options');
   $block->content = $output;
   return $block; 

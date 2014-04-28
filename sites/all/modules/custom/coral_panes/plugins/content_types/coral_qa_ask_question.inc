@@ -71,7 +71,8 @@ function coral_qa_ask_question_pane_content_type_render($subtype, $conf, $args, 
     $question_form['#attributes']['class'][] = 'hide';
   }
   $form .= render($question_form).'</div>'; // end form
-
+  
+  $block = new stdClass;
   $block->title = '';
   $block->content = $message.$form;
   return $block; 

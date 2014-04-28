@@ -49,6 +49,7 @@ function coral_build_options_pane_content_type_render($subtype, $conf, $args, $c
   </div>
 EOF;
   // sometimes it's nice to have the pane title inside the content area
+  $block = new stdClass;
   $block->content = $output;
   return $block; 
 }

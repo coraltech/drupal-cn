@@ -39,7 +39,8 @@ $plugin = array(
 */
 function coral_footer_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $server_time = '<div class="fde server-time">Generated: '.date('F j, g:i:sa').'</div>';
-  $copyright   = '<div class="fde copyright">&copy; 2013-2014 Coral Technology Group LLC</div>'; 
+  $copyright   = '<div class="fde copyright">&copy; 2013-2014 Coral Technology Group LLC</div>';
+  $block = new stdClass; 
   $block->content = $server_time.$copyright;
   return $block; 
 }

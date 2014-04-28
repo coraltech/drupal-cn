@@ -42,7 +42,8 @@ function coral_ask_question_pane_content_type_render($subtype, $conf, $args, $co
   global $user;
   
   if (!$user->uid) {
-    $user_login = render(drupal_get_form('user_login'));
+    $login = drupal_get_form('user_login');
+    $user_login = render($login);
     $question_form = '<h3>Please login or '.l('register', 'user/register')." to ask questions.</h3>";
     $question_form .= $user_login;
   }
@@ -52,6 +53,7 @@ function coral_ask_question_pane_content_type_render($subtype, $conf, $args, $co
     form_load_include($form_state, 'inc', 'node', 'node.pages');
     $question_form = drupal_build_form('question_node_form', $form_state);
   }
+  $block = new stdClass;
   $block->title = t('Ask a question');
   $block->content = render($question_form);
   return $block; 

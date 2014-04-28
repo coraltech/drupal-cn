@@ -31,7 +31,7 @@ function coral_documentation_welcome_pane_content_type_render($subtype, $conf, $
   Welcome to the documentation wiki! This wiki is made by people just like you <span class="nowrap">so {$be_bold}</span>.
 </div>
 EOF;
-
+  $block = new stdClass;
   $block->content = $output;
   return $block;
 }

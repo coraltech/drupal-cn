@@ -47,7 +47,7 @@ function coral_swipe_pane_content_type_render($subtype, $conf, $args, $context, 
   else {
     $output = '<div class="swipeit search" title="'.$conf['message'].'"><div><span class="icon"></span></div></div>';
   }
-
+  $block = new stdClass;
   $block->title = t('Swipeit');
   $block->content = $output;
   return $block; 

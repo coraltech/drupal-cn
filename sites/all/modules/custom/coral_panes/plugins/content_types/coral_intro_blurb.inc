@@ -38,7 +38,8 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_intro_blurb_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $output = '<h1 class="blurb intro-blurb about-coral-nexus prepend-2">'.$conf['blurb_message'].'</h1>'; 
+  $output = '<h1 class="blurb intro-blurb about-coral-nexus prepend-2">'.$conf['blurb_message'].'</h1>';
+  $block = new stdClass; 
   $block->content = $output;
   return $block; 
 }
