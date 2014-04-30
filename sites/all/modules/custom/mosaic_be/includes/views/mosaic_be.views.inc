@@ -52,7 +52,9 @@ function mosaic_be_views_query_alter(&$view, &$query) {
           $names = array();
           foreach ($tags as $id => $tag) {
             $tag = taxonomy_term_load($tag['tid']);
-            $names[] = $tag->name;
+            if (isset($tag->name)) {
+              $names[] = $tag->name;
+            }
           }
 
           if (count($names)) { // get the node's tags
