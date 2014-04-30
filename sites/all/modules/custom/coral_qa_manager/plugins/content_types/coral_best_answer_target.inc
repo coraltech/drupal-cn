@@ -30,8 +30,8 @@ function coral_best_answer_target_content_type_render($subtype, $conf, $args, $c
     if ($node->type == 'question') {
       $answer = field_get_items('node', $node, 'field_answer');
       if (isset($answer[0]) && isset($answer[0]['target_id']) && is_numeric($answer[0]['target_id'])) {
-        $node = node_view(node_load($answer[0]['target_id']), 'teaser');
-        $answer = drupal_render($node);
+        $n = node_view(node_load($answer[0]['target_id']), 'teaser');
+        $answer = drupal_render($n);
         $content = '<div class="best-ans-tgt best-ans-tgt-'.$node->nid.'"><h2 class="selected-title">Selected answer</h2>'.$answer.'</div>';
       }
     }
