@@ -50,7 +50,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$bestAnswer = $(this.$question).find('.best-ans-tgt-'+this.refID);
       this.$loadMore = $(this.$question).find('.more-answers-'+this.refID);
       this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
-      this.$full = $(this.$question).find('.body-full.body-'+this.refID);       // full text body pane
+      this.$full = $(this.$question).find('.body-full.body-'+this.refID).removeClass('hide'); // full text body pane - get rid of panels added hide class
       
       this.speed = 250; // ms transistion speed
       
@@ -213,7 +213,8 @@ Drupal.coralQA = Drupal.coralQA || {};
       // The full text is longer than trimmed
       if (fullText.length > trimmedText.length) {
         if (this.context == 'teaser') {
-          this.$full.hide().removeClass('hide'); // hide it
+          this.$full.hide(); // hide it - clear a class added via panels css settings
+          this.$trimmed.show();
           this.hasTrimmed = true;
         }
         else {
@@ -223,8 +224,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         }
       }
       else {
-        this.$trimmed.hide();
-        this.$full.find('.trimmed-'+this.refID).remove();
+        this.$trimmed.find('.trimmed-'+this.refID).remove();
+        this.$full.hide();
       }
     }
     catch (err) {

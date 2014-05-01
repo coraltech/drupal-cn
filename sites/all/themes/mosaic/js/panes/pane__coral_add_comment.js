@@ -49,7 +49,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$commentsTgt = $(this.$content).find('.comments-tgt-'+this.refID);
       this.$loadMore = $(this.$content).find('.more-comments-'+this.refID);
       this.$trimmed = $(this.$content).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
-      this.$full = $(this.$content).find('.body-full.body-'+this.refID);       // full text body pane
+      this.$full = $(this.$content).find('.body-full.body-'+this.refID).removeClass('hide'); // full text body pane - clear panels added hide class
       
       this.$commentForm.parents('.panel-pane').eq(0).hide(); // hide the form
       this.$commentsTgt.parents('.panel-pane').eq(0).hide(); // hide comments
@@ -193,6 +193,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (fullText.length > trimmedText.length) {
         if (context == 'teaser') {
           this.$full.hide(); // hide it
+          this.$trimmed.show();
           this.hasTrimmed = true;
         }
         else {
@@ -202,8 +203,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         }
       }
       else {
-        this.$trimmed.hide();
-        this.$full.find('.trimmed-'+this.refID).remove();
+        this.$trimmed.find('.trimmed-'+this.refID).remove();
+        this.$full.hide();
       }
     }
     catch (err) {
