@@ -32,8 +32,11 @@
     cursor: pointer;
 
 
-    li a {
+    li {
       white-space: nowrap;
+      a {
+        white-space: nowrap;
+      }
     }
   }
   .use-sml {
