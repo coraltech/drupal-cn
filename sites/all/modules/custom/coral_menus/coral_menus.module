@@ -4,13 +4,8 @@
  *  it will keep your menus, as defined in the coral_menu includes folder, synced
  *  with actual system menus. 
  */
-// Get the menus defined by this module 
-//  @TODO make this hookable - reach into other modules to get definitions!
-coral_include('includes', 'inc', 'coral_menus');
-
 // Prefix that will be appended to Coral menu's menus - see menu admin page.
 define('CORAL_MENUS_PREFIX', 'Coral menus: ');
-
 
 /**
  * Implementation of hook_init()
@@ -31,7 +26,7 @@ function coral_menus_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     
   $tabs = $data['tabs'];  
   $paths = variable_get('coral_menus_restricted_paths', array('search/user/%'));  
-  
+
   $item = menu_get_object();
   if (is_object($item) && $item->nid) {
     $edit_locked = field_get_items('node', $item, 'field_locked');
@@ -53,6 +48,35 @@ function coral_menus_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   }
 }
 
+// Implementation of hook_menu_configure_alter()
+//
+//  Adds environment settings for the menu form
+//   Allows mutliple environments to have different 
+//   nodes listed in the same type of structured files.
+function coral_menus_form_menu_configure_alter(&$form, &$form_state) {
+  //dpm($form);
+  $path = drupal_get_path('module', 'coral_menus');  // This module path
+  $env = coral_menus_read_dir($path.'/environments'); // read available environments
+  $environments = array(); // store the available environments: @TODO: make this stuff hookable
+
+  foreach ($env as $e => $i) {
+    if (is_array($i)) {
+      $environments[$e] = $e;
+    }
+  }
+
+  $form['coral_menus_environment'] = array(
+    '#type' => 'radios',
+    '#title' => t('Menu environment'),
+    '#default_value' => variable_get('coral_menus_environment', 'staging'),
+    '#options' => $environments,
+    '#description' => t('What menu environment should this site be run in?'),
+  );
+
+  $form['#submit'][] = 'coral_menus_menu_settings_submit';
+}
+
+
 
 /**
  * Core menu initialization! zaap!
@@ -67,7 +91,14 @@ function coral_menus_run_updates() {
   $orig_state = $current_state = variable_get('coral_menus_menu_state', array());
 
   $path = drupal_get_path('module', 'coral_menus');  // This module path 
-  $menus = coral_menus_read_dir($path.'/includes');  // Read menu structure
+  
+  $environment = variable_get('coral_menus_environment', 'staging');
+  
+  // Get the menus defined by this module 
+  //  @TODO make this hookable - reach into other modules to get definitions!
+  coral_include('environments/'.$environment, 'inc', 'coral_menus'); // include environment related inc files
+  
+  $menus = coral_menus_read_dir($path.'/environments/'.$environment);  // Read menu structure
   
   // Are these menus in the db?
   foreach ($menus as $i => $menu) {
@@ -154,6 +185,10 @@ function coral_menus_run_updates() {
  * Helper functions
  */
 
+// Save the environment variable
+function coral_menus_menu_settings_submit($form, &$form_state) {
+  variable_set('coral_menus_environment', $form_state['values']['coral_menus_environment']);
+}
 
 // --- Manages updating already created link sets
 //  Needs to loop through all the links in this menu
