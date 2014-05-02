@@ -211,6 +211,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         }, 25);
       });
       
+      // @TODO: bind to the scroll event instead of a timer -_-
       this.closeInterval = setInterval(function() {
         var docTop = $(window).scrollTop();
         var qTop = mbo.$question.offset().top;
