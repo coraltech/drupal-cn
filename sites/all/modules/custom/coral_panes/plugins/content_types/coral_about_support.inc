@@ -53,15 +53,15 @@ function coral_about_support_pane_content_type_render($subtype, $conf, $args, $c
 
 // Community support output
 function coral_about_support_community_support() {
-  $output = '<p>'.l('Wiki documentation', 'node/32').'</p>';
-  $output .= '<p>If you are wanting to learn more about Coral, then head over to the '.l('wiki documentation', 'node/32').'. ';
+  $output = '<p>'.l('Wiki documentation', 'content/community-documentation').'</p>';
+  $output .= '<p>If you are wanting to learn more about Coral, then head over to the '.l('wiki documentation', 'content/community-documentation').'. ';
   $output .= 'Each wiki page has a discussion thread (must be logged in to see) so if you have questions or comments about something ';
   $output .= ' relating to the documents, you can bring them up there.</p>';
   
-  $question = l('new question', 'node/55', array('fragment' => 'ask-question'));
+  $question = l('new question', 'content/questions-and-answers', array('fragment' => 'ask-question'));
   
-  $output .= '<p>'.l('Community Q&A', 'node/55').'</p>';
-  $output .= '<p>If you have a question, check out the '.l('community Q&A', 'node/32').'; ';
+  $output .= '<p>'.l('Community Q&A', 'content/questions-and-answers').'</p>';
+  $output .= '<p>If you have a question, check out the '.l('community Q&A', 'content/questions-and-answers').'; ';
   $output .= 'Someone may have already gotten an answer to that same question. If not, then simply add a '.$question.'.';
   $output .= '  Be as specific as you can. to help others help you diagnose the issue(s).</p>';
   
@@ -78,17 +78,22 @@ function coral_about_support_support_services() {
   $output = '<p>We also offer personalized support packages that are tailor made for your requirements. Please contact us for more information on any of the following:</p>';
   $output .= '<h4>Personalized services</h4>';
   
-  $app   = l('Application integration', '<front>');
-  $cloud = l('Cloud architecture migration', '<front>');
-  $train = l('Training and consulting', '<front>');
-  $sys   = l('Systems analysis', '<front>');
+  //$app   = l('Application integration', '<front>');
+  //$cloud = l('Cloud architecture migration', '<front>');
+  //$train = l('Training and consulting', '<front>');
+  //$sys   = l('Systems analysis', '<front>');
 
+  $app   = t('Application integration');
+  $cloud = t('Cloud architecture migration');
+  $train = t('Training and consulting');
+  $sys   = t('Systems analysis');
+  
   $list = <<<EOF
   <ul>
-    <li>{$app}</li>
-    <li>{$cloud}</li>
-    <li>{$train}</li>
-    <li>{$sys}</li>
+    <li class="dkblue"><strong>{$app}</strong></li>
+    <li class="dkblue"><strong>{$cloud}</strong></li>
+    <li class="dkblue"><strong>{$train}</strong></li>
+    <li class="dkblue"><strong>{$sys}</strong></li>
   </ul>
 EOF;
   return $output.$list;
