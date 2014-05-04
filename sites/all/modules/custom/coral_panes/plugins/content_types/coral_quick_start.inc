@@ -38,7 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_quick_start_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $start = l('Get started', 'docs/requirements', array('attributes' => array('class' => array('btn'))));
+  $start = l('Get started', 'docs/getting-started', array('attributes' => array('class' => array('btn'))));
   $output = <<<EOF
 <span class='icon'></span>
 <span class='icon-sml'></span>

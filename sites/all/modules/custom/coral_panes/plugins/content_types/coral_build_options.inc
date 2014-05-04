@@ -98,7 +98,7 @@ function coral_build_options_list() {
   $cmd_guide = l('using the command line tools', '<front>');
   $arch_over = l('architecture overview', 'docs/architecture-guide');
   $int_guide = l('Application integration', '<front>');
-  $requireme = l('requirements', '<front>');
+  $requireme = l('requirements', 'docs/requirements');
   
   $output = <<<EOF
 <ul class="build-options">

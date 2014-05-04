@@ -38,7 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_puppet_overview_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $output = '<p>CoralNexus frameworks are built to be <strong class="mdgreen">open</strong>, <strong class="mdgreen">easy</strong>, <strong class="mdgreen">portable</strong>, <strong class="mdgreen">extensible</strong>, <strong class="mdgreen">economical</strong>, and <strong class="mdgreen">personalizable</strong>. Get your head in the clouds.</p>';
+  $output = '<p>CoralNexus frameworks are built to be <strong class="dkgray">open</strong>, <strong class="dkgray">easy</strong>, <strong class="dkgray">portable</strong>, <strong class="dkgray">extensible</strong>, <strong class="dkgray">economical</strong>, and <strong class="dkgray">personalizable</strong>. Learn to keep your head in the&nbsp;clouds.</p>';
 
   // our little list
   $items['items'] = array(
