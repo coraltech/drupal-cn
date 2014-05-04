@@ -26,7 +26,7 @@ $plugin = array(
   'category' => array(t('Coral'), -9), // We can change this category at will
 
   //NOTE--->> Un-comment the next line to add configs.  Talk to me if this is not clear ;-) (DW)
-  //'edit form' => 'coral_quick_start_pane_content_type_edit_form',    // Edit form callback
+  'edit form' => 'coral_quick_start_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
   'render callback' => 'coral_quick_start_pane_content_type_render'  // Render callback
@@ -38,6 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_quick_start_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  $start = l('Get started', 'docs/requirements', array('attributes' => array('class' => array('btn'))));
   $output = <<<EOF
 <span class='icon'></span>
 <span class='icon-sml'></span>
@@ -45,7 +46,7 @@ function coral_quick_start_pane_content_type_render($subtype, $conf, $args, $con
 <p class='small'>Try out the 5 minute tutorial and have a working local cluster in minutes</p>
 <div class='tout clearfix'>
   <p>Just minutes from now you could have a functional cluster running locally that you can modify, re-purpose, and re-use however you want.</p> 
-  <a class='btn' href='/'>Get started</a>
+  {$start}
 </div>
   
 EOF;
