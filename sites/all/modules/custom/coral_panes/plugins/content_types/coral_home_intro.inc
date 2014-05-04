@@ -29,7 +29,9 @@ $plugin = array(
   //'edit form' => 'coral_about_intro_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_home_intro_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_home_intro_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -38,6 +40,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  $more = l('Learn more', 'docs/projects', array('attributes' => array('class' => array('more')))); //, array('fragment' => 'ask-question'));
   $output = <<<EOF
 <div class="home-intro-container">
   <div class="home-intro-content">
@@ -56,7 +59,7 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
           <li>Architecture provides inheritance and cascading configurations support.</li>
           <li>Built with industry leading technologies: Vagrant, Puppet, Ruby, Git, JSON, and more.</li>
         </ul>
-        <a class="more" href="/">Learn more</a>
+        {$more}
       </div>
     </div>
   </div>
@@ -95,4 +98,9 @@ function coral_home_intro_pane_content_type_edit_form($form, &$form_state) {
 function coral_home_intro_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
