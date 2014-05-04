@@ -42,10 +42,10 @@ function coral_thinking_help_pane_content_type_render($subtype, $conf, $args, $c
   $path = drupal_get_path('theme', 'mosaic');
   $think = '<img src="/'.$path.'/assets/images/coral-think.png">';
   $items['items'] = array(
-    l('Getting started guide', 'node/33'),
-    l('Documentation', 'node/32'),
-    l('Community Q&A', '<front>'),
-    l('Contact us', 'contact'),
+    l('Getting started guide', 'docs/getting-started'),
+    l('Documentation', 'content/community-documentation'),
+    l('Community Q&A', 'content/questions-and-answers'),
+    l('Contact us', 'content/about-support', array('fragment' => 'contact-site-form')),
   );
 
   $block = new stdClass;
