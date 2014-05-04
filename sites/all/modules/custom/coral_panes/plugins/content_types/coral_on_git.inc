@@ -38,13 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_on_github_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  /*$output = <<<EOF
-<h1>About Coral Nexus</h1>
-<h2>Coral Nexus tools allow your technology clusters to be portable and pluggable.</h2>
-<p>Are you ready to simplify the way you work with technology clusters? The Coral Nexus platform provides a free and open source framework that enables you to rapidly spin up and configure sophisticated cluster architectures.</p>
-<p>You can start from scratch or <a href='#'>find</a> an open source <a href='#'>cluster</a>, <a href='#'>module</a>, or <a href='#'>snippet</a>, to help you on your way to cluster bliss.</p>
-EOF;*/
-  
+
   $git = l('https://github.com/coralnexus', 'https://github.com/coralnexus');
 
   $output = <<<EOF
@@ -63,13 +57,9 @@ EOF;
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_on_github_pane_content_type_edit_form($form, &$form_state) {
-  //dpm($conf);  
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
   // Add your Form API (FAPI) additions here:
-  
-  
   return $form;
 }
 
