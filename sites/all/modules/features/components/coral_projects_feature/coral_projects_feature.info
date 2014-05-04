@@ -4,6 +4,7 @@ core = 7.x
 package = Features
 version = 7.x-1.1
 project = coral_projects_feature
+dependencies[] = entity
 dependencies[] = field_collection
 dependencies[] = link
 dependencies[] = question_node_type
