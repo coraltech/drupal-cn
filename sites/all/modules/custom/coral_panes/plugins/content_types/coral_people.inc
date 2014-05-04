@@ -94,4 +94,5 @@ function coral_people_pane_content_type_edit_form_submit($form, &$form_state) {
     if (isset($form_state['values'][$key])) {
       $form_state['conf'][$key] = $form_state['values'][$key];
     }
+  }
 }
