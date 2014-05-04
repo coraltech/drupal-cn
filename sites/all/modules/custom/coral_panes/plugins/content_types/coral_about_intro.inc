@@ -29,7 +29,9 @@ $plugin = array(
   'edit form' => 'coral_about_intro_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_about_intro_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_about_intro_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -38,13 +40,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  /*$output = <<<EOF
-<h1>About Coral Nexus</h1>
-<h2>Coral Nexus tools allow your technology clusters to be portable and pluggable.</h2>
-<p>Are you ready to simplify the way you work with technology clusters? The Coral Nexus platform provides a free and open source framework that enables you to rapidly spin up and configure sophisticated cluster architectures.</p>
-<p>You can start from scratch or <a href='#'>find</a> an open source <a href='#'>cluster</a>, <a href='#'>module</a>, or <a href='#'>snippet</a>, to help you on your way to cluster bliss.</p>
-EOF;*/
-  $projects = l('projects&nbsp;page', 'node/923', array('html' => TRUE)); // main projects page
+  $projects = l('projects&nbsp;page', 'content/coral-nexus-projects', array('html' => TRUE)); // main projects page
   
   $output = <<<EOF
 <div class="cloud-case"></div>
@@ -83,5 +79,10 @@ function coral_about_intro_pane_content_type_edit_form($form, &$form_state) {
 function coral_about_intro_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
 
