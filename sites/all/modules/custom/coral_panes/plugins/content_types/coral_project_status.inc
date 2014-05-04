@@ -39,7 +39,7 @@ $plugin = array(
 */
 function coral_project_status_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
  
-  $req = l('Requirements', '<front>', array('attributes' => array('class' => 'more')));
+  $req = l('Requirements', 'docs/requirements', array('attributes' => array('class' => 'more')));
 
   $output = <<<EOF
 <p>Coral Nexus projects are early stage technologies, are under active development, and are currently only tested against Ubuntu 12.04&nbsp;-&nbsp;{$req}</p>
