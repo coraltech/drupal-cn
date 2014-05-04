@@ -25,10 +25,12 @@ $plugin = array(
   'category' => array(t('Coral'), -9), // We can change this category at will
 
   //NOTE--->> Un-comment the next line to add configs.  Talk to me if this is not clear ;-) (DW)
-  //'edit form' => 'coral_home_getting_started_pane_content_type_edit_form',    // Edit form callback
+  'edit form' => 'coral_home_getting_started_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_home_getting_started_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_home_getting_started_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -37,7 +39,8 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_home_getting_started_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-   
+  $qstart = l('Quick start guide', 'docs/getting-started', array('attributes' => array('class' => array('more', 'right'))));
+  
   $output = <<<EOF
   <span class="clowny"></span>
   <p>With CORL you can reliably deploy and update whole network architectures to cloud hosting providers, local network assets, as well as virtualized clusters on localhost.</p>
@@ -46,8 +49,8 @@ function coral_home_getting_started_pane_content_type_render($subtype, $conf, $a
     <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
     <div class="line"><span class="prompt">$></span> <span class="command">vagrant coral create {repo} {dir}</span></div>
   </div>
-  <div class="msg prepend-4 append-2"><span class="up-pointer"></span>You now have a local cluster that includes ssh access and an online dashboard!</div>
-  <a href="/" class="more right">Quick start guide</a>
+  <div class="msg prepend-4 append-2"><span class="up-pointer"></span>You now have a local cluster that you can build and deploy to suit any need.</div>
+  {$qstart}
 EOF;
   $block = new stdClass;
   $block->title = t('Getting started');
@@ -81,4 +84,9 @@ function coral_home_getting_started_pane_content_type_edit_form($form, &$form_st
 function coral_home_getting_started_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
