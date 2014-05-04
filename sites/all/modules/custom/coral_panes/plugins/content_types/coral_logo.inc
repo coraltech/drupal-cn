@@ -19,7 +19,7 @@
 */
 $plugin = array(
   // the title in the admin
-  'title' => t('Coral Nexus logo'),
+  'title' => t('CoralNexus logo'),
   // no one knows if "single" defaults to FALSE...
   'single' => TRUE,
   // oh joy, I get my own section of panel panes
@@ -39,7 +39,7 @@ $plugin = array(
 */
 function coral_logo_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $block = new stdClass;
-  $block->content = l('<img src="/sites/all/themes/mosaic/assets/images/coral-nexus-logo-reg.jpg" alt="Coral Nexus" title="Coral Nexus Home">', '<front>', array('html' => TRUE)); 
+  $block->content = l('<img src="/sites/all/themes/mosaic/assets/images/coral-nexus-logo-reg.jpg" alt="CoralNexus" title="CoralNexus Home">', '<front>', array('html' => TRUE)); 
   return $block; 
 }
 

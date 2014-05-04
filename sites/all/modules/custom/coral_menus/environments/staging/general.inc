@@ -4,7 +4,7 @@ function coral_menus_general_menu_loader() {
   return array(
     'menu_name' => 'general',
     'title' => CORAL_MENUS_PREFIX . t('General'),
-    'description' => t('General navigation menu for Coral Nexus. Typically appears in the footer.'),
+    'description' => t('General navigation menu for CoralNexus. Typically appears in the footer.'),
   );
 }
 

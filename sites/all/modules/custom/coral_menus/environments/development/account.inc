@@ -4,7 +4,7 @@ function coral_menus_account_menu_loader() {
   return array(
     'menu_name' => 'account',
     'title' => CORAL_MENUS_PREFIX . t('Account'),
-    'description' => t('Account management menu for Coral Nexus. Typically found in footer.'),
+    'description' => t('Account management menu for CoralNexus. Typically found in footer.'),
   );
 }
 

@@ -1,5 +1,5 @@
 name = Text formats feature
-description = A feature controlling Coral Nexus text formats
+description = A feature controlling CoralNexus text formats
 core = 7.x
 package = Features
 version = 7.x-1.0

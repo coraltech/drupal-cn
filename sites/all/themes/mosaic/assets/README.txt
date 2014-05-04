@@ -1,4 +1,4 @@
-The assets folder contains media assets used by the Coral Nexus Mosaic theme.
+The assets folder contains media assets used by the CoralNexus Mosaic theme.
 
 Current folders:
 

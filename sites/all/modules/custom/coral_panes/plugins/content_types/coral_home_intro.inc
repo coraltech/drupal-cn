@@ -19,7 +19,7 @@
 */
 $plugin = array(
   // the title in the admin
-  'title' => t('Coral Nexus Intro'), 
+  'title' => t('CoralNexus Intro'), 
   // no one knows if "single" defaults to FALSE...
   'single' => TRUE,
   // oh joy, I get my own section of panel panes

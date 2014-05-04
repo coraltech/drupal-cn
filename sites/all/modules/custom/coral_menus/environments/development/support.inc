@@ -4,7 +4,7 @@ function coral_menus_support_menu_loader() {
   return array(
     'menu_name' => 'support',
     'title' => CORAL_MENUS_PREFIX . t('Support'),
-    'description' => t('Support menu for Coral Nexus. Typically found at top of the site.'),
+    'description' => t('Support menu for CoralNexus. Typically found at top of the site.'),
   );
 }
 

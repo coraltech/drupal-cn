@@ -43,7 +43,7 @@ function coral_about_ecosystem_pane_content_type_render($subtype, $conf, $args, 
   $qa   = l('Q<span class="sml">&</span>A', 'content/questions-and-answers', array('html'=>TRUE));
     
   $output = <<<EOF
-  <p>The Coral Nexus ecosystem is here to help you get around the cloud even faster!</p>
+  <p>The CoralNexus ecosystem is here to help you get around the cloud even faster!</p>
   <ul>
     <li>{$proj} <span> - for frameworks & packages</span></li>
     <li>{$doc} <span> - for guides & howtos</span></li>

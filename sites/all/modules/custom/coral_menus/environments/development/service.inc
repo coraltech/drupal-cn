@@ -4,7 +4,7 @@ function coral_menus_service_menu_loader() {
   return array(
     'menu_name' => 'service',
     'title' => CORAL_MENUS_PREFIX . t('Service'),
-    'description' => t('Service management menu for Coral Nexus. Typically beside the primary links.'),
+    'description' => t('Service management menu for CoralNexus. Typically beside the primary links.'),
   );
 }
 

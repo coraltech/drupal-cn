@@ -4,7 +4,7 @@ function coral_menus_help_menu_loader() {
   return array(
     'menu_name' => 'help',
     'title' => CORAL_MENUS_PREFIX . t('Help'),
-    'description' => t('Help navigation menu for Coral Nexus. Typically appears in the "Getting help" popout.'),
+    'description' => t('Help navigation menu for CoralNexus. Typically appears in the "Getting help" popout.'),
   );
 }
 

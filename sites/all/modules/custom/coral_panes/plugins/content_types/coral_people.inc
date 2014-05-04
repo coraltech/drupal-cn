@@ -49,7 +49,7 @@ function coral_people_pane_content_type_render($subtype, $conf, $args, $context,
   $output .= '<div class="team-mbr left" style="background:#c0c0c0; height: 85px; width: 85px; margin: 0 .5em .5em 0;"></div>';
   $output .= "<p>We're just getting started! If you care to join the team ".$contact;
   $block = new stdClass; 
-  $block->title = t('Coral Nexus Team');
+  $block->title = t('CoralNexus Team');
   $block->content = $output;
   return $block; 
 }

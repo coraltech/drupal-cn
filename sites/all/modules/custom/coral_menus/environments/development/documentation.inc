@@ -4,7 +4,7 @@ function coral_menus_documentation_menu_loader() {
   return array(
     'menu_name' => 'documentation',
     'title' => CORAL_MENUS_PREFIX . t('Documentation'),
-    'description' => t('Document navigation menu for Coral Nexus. Typically seen in footer.'),
+    'description' => t('Document navigation menu for CoralNexus. Typically seen in footer.'),
   );
 }
 

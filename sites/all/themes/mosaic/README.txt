@@ -1,4 +1,4 @@
-The Mosaic theme is the main user facing theme of Coral Nexus.
+The Mosaic theme is the main user facing theme of CoralNexus.
 
 It is a fluid grid panels everywhere theme with a (typically) fixed width.
 The theme uses SASS for compiling css. See the config.rb file in the drupal-cn

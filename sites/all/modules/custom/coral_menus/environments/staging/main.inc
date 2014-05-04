@@ -4,7 +4,7 @@ function coral_menus_main_menu_loader() {
   return array(
     'menu_name' => 'main',
     'title' => CORAL_MENUS_PREFIX . t('Main'),
-    'description' => t('Primary navigation menu for Coral Nexus'),
+    'description' => t('Primary navigation menu for CoralNexus'),
   );
 }
 

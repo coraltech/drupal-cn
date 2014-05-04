@@ -42,7 +42,7 @@ function coral_project_status_pane_content_type_render($subtype, $conf, $args, $
   $req = l('Requirements', 'docs/requirements', array('attributes' => array('class' => 'more')));
 
   $output = <<<EOF
-<p>Coral Nexus projects are early stage technologies, are under active development, and are currently only tested against Ubuntu 12.04&nbsp;-&nbsp;{$req}</p>
+<p>CoralNexus projects are early stage technologies, are under active development, and are currently only tested against Ubuntu 12.04 and 14.04&nbsp;-&nbsp;{$req}</p>
 EOF;
 
   $block = new stdClass;

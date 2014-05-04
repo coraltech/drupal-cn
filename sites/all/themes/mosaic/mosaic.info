@@ -1,6 +1,6 @@
 
 name        = Mosaic
-description = A fluid grid based theme for Coral Nexus.
+description = A fluid grid based theme for CoralNexus.
 package     = Coral
 version     = VERSION
 core        = 7.x

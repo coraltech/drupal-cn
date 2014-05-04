@@ -1,5 +1,5 @@
 name = Dependencies
-description = Provides a centralized source of dependencies for Coral Nexus.
+description = Provides a centralized source of dependencies for CoralNexus.
 core = 7.x
 package = Features
 version = 7.x-1.0
