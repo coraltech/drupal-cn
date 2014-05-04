@@ -68,7 +68,7 @@ EOF;
   
   $privacy_list['items'] = array(
     l('Privacy policy', 'docs/privacy-policy'),
-    l('Posting guidelines', '<front>')
+    l('Posting guidelines', 'docs/posting-guidelines')
   );
   $privacy_attr = array(
     'class' => 'privacy-list', // a string or indexed (string) array with the classes for the list tag
