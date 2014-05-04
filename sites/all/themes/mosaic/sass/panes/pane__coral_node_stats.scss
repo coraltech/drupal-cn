@@ -18,7 +18,7 @@
   
   .coral-stat {
     float: left;
-    line-height: 2.2em;
+    line-height: 2em;
     margin-right: .5em;
     color: lighten($mdgray, 7%);
   }
@@ -47,7 +47,7 @@
       font-size: 115%;
       float: left;
       clear: right;
-      margin-top: .35em;
+      line-height: 1.75em;
     }
     @include pie-clearfix;
   }
