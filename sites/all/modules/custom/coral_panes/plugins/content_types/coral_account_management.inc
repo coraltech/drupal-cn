@@ -26,10 +26,12 @@ $plugin = array(
   'category' => array(t('Coral'), -9), // We can change this category at will
 
   //NOTE--->> Un-comment the next line to add configs.  Talk to me if this is not clear ;-) (DW)
-  //'edit form' => 'coral_account_management_pane_content_type_edit_form',    // Edit form callback
+  'edit form' => 'coral_account_management_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_account_management_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_account_management_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -65,7 +67,7 @@ EOF;
   $accnt .= theme('item_list', array('items' => $accnt_list['items'], 'attributes' => $accnt_attr)).'</div>';
   
   $privacy_list['items'] = array(
-    l('Privacy policy', '<front>'),
+    l('Privacy policy', 'docs/privacy-policy'),
     l('Posting guidelines', '<front>')
   );
   $privacy_attr = array(
@@ -104,4 +106,9 @@ function coral_account_management_pane_content_type_edit_form($form, &$form_stat
 function coral_account_management_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
