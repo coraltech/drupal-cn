@@ -19,7 +19,7 @@
 */
 $plugin = array(
   // the title in the admin
-  'title' => t('Coral Puppet overview'),                // ** default pane title **
+  'title' => t('Coral concepts'),                // ** default pane title **
   // no one knows if "single" defaults to FALSE...
   'single' => TRUE,
   // oh joy, I get my own section of panel panes
@@ -38,18 +38,16 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_puppet_overview_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $output = '<p>CORL currently integrates with Puppet; an easy to use configuration manager, and an excellent tool for beginners and professionals alike.</p>';
+  $output = '<p>Everthing is a plugin! CoralNexus frameworks are built to be <strong class="dkyellow">easy</strong>, <strong class="dkyellow">portable</strong>, <strong class="dkyellow">extensible</strong>, <strong class="dkyellow">economical</strong>, and <strong class="dkyellow">personalizable</strong>. Get your head in the clouds.</p>';
 
   // our little list
   $items['items'] = array(
-    l('Overview', '<front>'),
-    l('Clusters', '<front>'),
-    l('Modules', '<front>'),
-    l('Profiles', '<front>'),
-    l('Cores', '<front>'),
-    l('Templates', '<front>'),
-    l('Configurations', '<front>'),
-    l('Files', '<front>'),
+    l('Overview', 'docs/architecture-guide'),
+    l('Networks', 'docs/corl-network-plugin'),
+    l('Packages', 'docs/packages'),
+    l('Profiles', 'docs/corl-provisioner-plugin'),
+    l('Plugins', 'docs/extending-frameworks'),
+    l('Configurations', 'docs/corl-configuration-plugin'),
     l('Snippets', '<front>'),
   );
   $attributes = array(
@@ -57,7 +55,7 @@ function coral_puppet_overview_pane_content_type_render($subtype, $conf, $args, 
   );
   //$attributes = array();
   $block = new stdClass;
-  $block->title = t('Puppet and CORL');
+  $block->title = t('Concepts');
   $block->content = $output . theme('item_list', array('items' => $items['items'], 'attributes' => $attributes));
   return $block; 
 }
