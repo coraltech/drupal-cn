@@ -16,7 +16,9 @@ $plugin = array(
   'edit form' => 'coral_community_tabs_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_community_tabs_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_community_tabs_pane_content_type_render',  // Render callback
+  
+  'defaults' => array('active_tab' => '0')
 );
 
 
@@ -36,8 +38,8 @@ function coral_community_tabs_pane_content_type_render($subtype, $conf, $args, $
   }
   
   $items['items'] = array(
-    l('<span class="icon"></span><span class="icon-sml"></span>Community documentation', 'node/32', array('html' => true, 'attributes' => array('class' => $com_class))),
-    l('<span class="icon"></span><span class="icon-sml"></span>Questions and answers', 'node/55', array('html' => true, 'attributes' => array('class' => $lqa_class)))
+    l('<span class="icon"></span><span class="icon-sml"></span>Community documentation', 'content/community-documentation', array('html' => true, 'attributes' => array('class' => $com_class))),
+    l('<span class="icon"></span><span class="icon-sml"></span>Questions and answers', 'content/questions-and-answers', array('html' => true, 'attributes' => array('class' => $lqa_class)))
   );
   
   $attributes = array(
