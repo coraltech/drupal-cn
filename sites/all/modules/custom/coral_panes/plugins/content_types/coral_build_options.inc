@@ -41,7 +41,7 @@ function coral_build_options_pane_content_type_render($subtype, $conf, $args, $c
 
   $build_options = coral_build_options_list();
   
-  $title = t('CORL overview');
+  $title = t('Overview');
   $output = <<<EOF
   <div class='format-usage'>
     <h2 class="pane-title">{$title}</h2>
@@ -96,7 +96,7 @@ function coral_build_options_pane_content_type_edit_form_submit($form, &$form_st
 
 function coral_build_options_list() {
   $cmd_guide = l('using the command line tools', '<front>');
-  $arch_over = l('architecture overview', '<front>');
+  $arch_over = l('architecture overview', 'docs/architecture-guide');
   $int_guide = l('Application integration', '<front>');
   $requireme = l('requirements', '<front>');
   
