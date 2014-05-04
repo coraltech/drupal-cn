@@ -28,7 +28,11 @@ $plugin = array(
   'edit form' => 'coral_about_getting_started_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_about_getting_started_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_about_getting_started_pane_content_type_render',  // Render callback
+  
+  'defaults' => array(
+    'quick_start' => 'docs/getting-started'
+  )
 );
 
 
@@ -37,7 +41,8 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_getting_started_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-   
+  $qstart = l('Projects', $conf['quick_start'], array('attributes' => array('class' => array('more', 'right'))));
+  
   $output = <<<EOF
   <span class="getting-started"></span>
   <p>CORL is controlled via command line. The fastest way to get started is to check out our default cluster:</p>
@@ -46,7 +51,7 @@ function coral_about_getting_started_pane_content_type_render($subtype, $conf, $
     <div class="line"><span class="prompt">$></span> <span class="command">vagrant corl create {repo} {dir}</span></div>
   </div>
   <div class="msg prepend-4 append-2"><span class="up-pointer"></span>You now have a local cluster that includes ssh access. From this point you can make it your own and use it however you like.</div>
-  <a href="/" class="more right">Quick start guide</a>
+  {$qstart}
 EOF;
   $block = new stdClass;
   $block->title = t('Getting started');
@@ -66,7 +71,13 @@ function coral_about_getting_started_pane_content_type_edit_form($form, &$form_s
   $conf = $form_state['conf'];
   
   // Add your Form API (FAPI) additions here:
-  
+  $form['quick_start'] = array(
+    '#type' => 'textfield', 
+    '#title' => t('Projects path'), 
+    '#default_value' => $conf['quick_start'], 
+    '#size' => 60, 
+    '#maxlength' => 128, 
+  );
   
   return $form;
 }
@@ -80,4 +91,9 @@ function coral_about_getting_started_pane_content_type_edit_form($form, &$form_s
 function coral_about_getting_started_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }

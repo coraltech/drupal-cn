@@ -30,22 +30,17 @@ $plugin = array(
   // Renderer function
   'render callback' => 'coral_about_ecosystem_pane_content_type_render',  // Render callback
   
-  'defaults' => array(
-    'project_link' => 'content/coral-nexus-projects',
-    'wiki_link' => 'content/community-documentation',
-    'qa_link' => 'content/questions-and-answers'
-  )
+  'defaults' => array()
 );
-
 
 /**
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_ecosystem_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $proj = l('Projects', $conf['project_link']);
-  $doc  = l('Wiki docs', $conf['wiki_link']);
-  $qa   = l('Q<span class="sml">&</span>A', $conf['qa_link'], array('html'=>TRUE));
+  $proj = l('Projects', 'content/coral-nexus-projects');
+  $doc  = l('Wiki docs', 'content/community-documentation');
+  $qa   = l('Q<span class="sml">&</span>A', 'content/questions-and-answers', array('html'=>TRUE));
     
   $output = <<<EOF
   <p>The Coral Nexus ecosystem is here to help you get around the cloud even faster!</p>
@@ -72,29 +67,7 @@ function coral_about_ecosystem_pane_content_type_edit_form($form, &$form_state) 
   $conf = $form_state['conf'];
   
   // Add your Form API (FAPI) additions here:
-  $form['project_link'] = array(
-    '#type' => 'textfield', 
-    '#title' => t('Projects path'), 
-    '#default_value' => $conf['project_link'], 
-    '#size' => 60, 
-    '#maxlength' => 128, 
-  );
-
-  $form['wiki_link'] = array(
-    '#type' => 'textfield', 
-    '#title' => t('Wiki path'), 
-    '#default_value' => $conf['wiki_link'], 
-    '#size' => 60, 
-    '#maxlength' => 128, 
-  );
-
-  $form['qa_link'] = array(
-    '#type' => 'textfield', 
-    '#title' => t('Q&A path'), 
-    '#default_value' => $conf['qa_link'], 
-    '#size' => 60, 
-    '#maxlength' => 128, 
-  );
+  
 
   return $form;
 }
