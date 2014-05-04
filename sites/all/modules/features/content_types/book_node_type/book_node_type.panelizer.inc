@@ -211,7 +211,7 @@ function book_node_type_panelizer_defaults() {
     $pane->configuration = array(
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => 'Book navigation',
+      'override_title_text' => 'Navigation',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -398,7 +398,7 @@ function book_node_type_panelizer_defaults() {
     $pane->configuration = array(
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => 'Book navigation',
+      'override_title_text' => 'Navigation',
     );
     $pane->cache = array();
     $pane->style = array(
