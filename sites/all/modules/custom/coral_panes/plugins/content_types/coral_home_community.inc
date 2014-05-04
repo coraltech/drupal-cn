@@ -28,7 +28,9 @@ $plugin = array(
   //'edit form' => 'coral_home_community_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_home_community_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_home_community_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -38,9 +40,9 @@ $plugin = array(
 */
 function coral_home_community_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   
-  $doc = l('documentation wiki', 'node/32');
-  $com = l('community Q&A', 'node/55');
-  $git = l('GitHub (CoralNexus)', 'https://github.com/coralnexus');
+  $doc = l('documentation wiki', 'content/community-documentation');
+  $com = l('community Q&A', 'content/questions-and-answers');
+  $git = l('GitHub', 'https://github.com/coralnexus');
   
   $output = <<<EOF
   <div class="home-com-cont">
@@ -50,7 +52,7 @@ function coral_home_community_pane_content_type_render($subtype, $conf, $args, $
     <h4>Community Q&A</h4>
     <p>Check out the {$com} for help with troubleshooting issues. If you can't find a solution, ask about it.</p>
     <h4>GitHub</h4>
-    <p>Follow us, fork us, and report project issues via {$git}.</p>
+    <p>Follow, fork, and explore our open source projects us at {$git}.</p>
     <div class="bgr-wr"></div>
     <div class="bgr-gr"></div>
     <div class="bgr-wl"></div>
