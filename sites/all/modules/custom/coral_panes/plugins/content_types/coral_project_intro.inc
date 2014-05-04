@@ -29,7 +29,9 @@ $plugin = array(
   'edit form' => 'coral_project_intro_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_project_intro_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_project_intro_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -38,7 +40,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_project_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $start = l('getting started', '<front>');  
+  $start = l('getting started', 'docs/getting-started');  
   $output = <<<EOF
 <div class="project-intro">
 <p>The Coral Framework is made up of several interconnecting components. Clusters are the primary components and are made up of other cluster definitions (see Cluster Template), or from the inclusion of Puppet modules. For full details on how to Create your own clusters, add new Puppet modules, or integrate other applications, see the {$start} guides.</p>
@@ -77,5 +79,10 @@ function coral_project_intro_pane_content_type_edit_form($form, &$form_state) {
 function coral_project_intro_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   //$form_state['conf']['field'] = $form_state['values']['field'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
 
