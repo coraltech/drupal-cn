@@ -26,8 +26,8 @@ function coral_home_login_pane_content_type_render($subtype, $conf, $args, $cont
   $log = l('Login', 'user/login');
   $fog = l('Forgot password', 'user/password');
   $reg = l('Register', 'user/register');
-  $wik = l('wiki docs', 'node/32');
-  $com = l('community Q&A', 'node/55');
+  $wik = l('wiki docs', 'content/community-documentation');
+  $com = l('community Q&A', 'content/questions-and-answers');
   
   $output = '';
   
