@@ -28,7 +28,9 @@ $plugin = array(
   'edit form' => 'coral_about_technologies_pane_content_type_edit_form',    // Edit form callback
 
   // Renderer function
-  'render callback' => 'coral_about_technologies_pane_content_type_render'  // Render callback
+  'render callback' => 'coral_about_technologies_pane_content_type_render',  // Render callback
+  
+  'defaults' => array()
 );
 
 
@@ -37,9 +39,6 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_technologies_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  
-  $proj = l('project listings', 'node/923');
-  
   
   $vagrant = l('Vagrant', 'http://www.vagrantup.com/about.html', array('attributes' => array('target' => '_blank')));
   $puppet = l('Puppet', 'http://puppetlabs.com/', array('attributes' => array('target' => '_blank')));
