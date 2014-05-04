@@ -30,9 +30,7 @@ $plugin = array(
   // Renderer function
   'render callback' => 'coral_about_getting_started_pane_content_type_render',  // Render callback
   
-  'defaults' => array(
-    'quick_start' => 'docs/getting-started'
-  )
+  'defaults' => array()
 );
 
 
@@ -41,7 +39,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_getting_started_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $qstart = l('Projects', $conf['quick_start'], array('attributes' => array('class' => array('more', 'right'))));
+  $qstart = l('Quick start guide', 'docs/getting-started', array('attributes' => array('class' => array('more', 'right'))));
   
   $output = <<<EOF
   <span class="getting-started"></span>
@@ -71,13 +69,7 @@ function coral_about_getting_started_pane_content_type_edit_form($form, &$form_s
   $conf = $form_state['conf'];
   
   // Add your Form API (FAPI) additions here:
-  $form['quick_start'] = array(
-    '#type' => 'textfield', 
-    '#title' => t('Projects path'), 
-    '#default_value' => $conf['quick_start'], 
-    '#size' => 60, 
-    '#maxlength' => 128, 
-  );
+  
   
   return $form;
 }
