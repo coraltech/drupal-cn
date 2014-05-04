@@ -38,7 +38,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_ecosystem_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $proj = l('Projects', 'content/coral-nexus-projects');
+  $proj = l('Projects', 'content/coralnexus-projects');
   $doc  = l('Wiki docs', 'content/community-documentation');
   $qa   = l('Q<span class="sml">&</span>A', 'content/questions-and-answers', array('html'=>TRUE));
     

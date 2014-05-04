@@ -40,7 +40,7 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $projects = l('projects&nbsp;page', 'content/coral-nexus-projects', array('html' => TRUE)); // main projects page
+  $projects = l('projects&nbsp;page', 'content/coralnexus-projects', array('html' => TRUE)); // main projects page
   
   $output = <<<EOF
 <div class="cloud-case"></div>

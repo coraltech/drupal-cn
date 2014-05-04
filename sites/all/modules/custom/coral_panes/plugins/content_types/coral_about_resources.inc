@@ -40,7 +40,7 @@ $plugin = array(
 */
 function coral_about_resources_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   
-  $proj = l('project listings', 'content/coral-nexus-projects');
+  $proj = l('project listings', 'content/coralnexus-projects');
    
   $output = <<<EOF
   <p>CORL is made up of several components. To browse the CORL projects, visit the {$proj}.</p>
