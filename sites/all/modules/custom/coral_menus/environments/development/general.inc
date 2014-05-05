@@ -24,32 +24,32 @@ function coral_menus_general_links_loader() {
   return array(
     'about_us'=> array(
       'link_title' => t('About us'),
-      'link_path'  => 'content/about-coralnexus',
+      'link_path'  => 'node/920',
       'weight'     => 1,
     ),
     'contact_us' => array(
       'link_title' => t('Contact us'),
-      'link_path'  => 'content/about-support',
+      'link_path'  => 'node/922',
       'weight'     => 2,
     ),
     'privacy' => array(
       'link_title' => t('Privacy policy'),
-      'link_path'  => 'docs/privacy-policy',
+      'link_path'  => 'node/1165',
       'weight'     => 3
     ),
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => 'docs/getting-started',
+      'link_path'  => 'node/35',
       'weight'     => 4,
     ),
     'sponsors' => array(
       'link_title' => t('Sponsors'),
-      'link_path'  => 'docs/getting-involved',
+      'link_path'  => 'node/43',
       'weight'     => 5,
     ),
     'qa' => array(
       'link_title' => t('Q&A'),
-      'link_path'  => 'content/questions-and-answers',
+      'link_path'  => 'node/55',
       'weight'     => 6,
     ),
     'sitemap' => array(
@@ -59,7 +59,7 @@ function coral_menus_general_links_loader() {
     ),
     'getting_help' => array(
       'link_title' => t('Getting help'),
-      'link_path'  => 'content/about-support',
+      'link_path'  => 'node/922',
       'weight'     => 8,
     )
   );

@@ -29,28 +29,28 @@ function coral_menus_documentation_links_loader() {
     ),
     'architecture' => array(
       'link_title' => t('Architecture'),
-      'link_path'  => 'docs/architectural-goals',
+      'link_path'  => 'node/37',
       'weight'     => 2,
     ),
     'requirements' => array(
       'link_title' => t('Requirements'),
-      'link_path'  => 'docs/requirements',
+      'link_path'  => 'node/1168',
       'weight'     => 3,
     ),
     'cluster' => array(
       'link_title' => t('Creating your first cloud'),
-      'link_path'  => 'docs/tutorials',
+      'link_path'  => 'node/40',
       'weight'     => 4,
     ),
     'plugins' => array(
       'link_title' => t('Developing plugins'),
-      'link_path'  => 'docs/extending-frameworks',
+      'link_path'  => '<front>',
       'weight'     => 5,
     ),
     'api_ref' => array(
       'link_title' => t('API References'),
-      'link_path'  => 'docs/api-references',
-      'weight'     => 5,
+      'link_path'  => 'node/39',
+      'weight'     => 6,
     )
   );
 }

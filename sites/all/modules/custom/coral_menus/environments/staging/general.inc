@@ -39,12 +39,12 @@ function coral_menus_general_links_loader() {
     ),
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/35',
       'weight'     => 4,
     ),
     'sponsors' => array(
       'link_title' => t('Sponsors'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/43',
       'weight'     => 5,
     ),
     'qa' => array(
@@ -54,12 +54,12 @@ function coral_menus_general_links_loader() {
     ),
     'sitemap' => array(
       'link_title' => t('Sitemap'),
-      'link_path'  => '<front>',
+      'link_path'  => 'sitemap',
       'weight'     => 7,
     ),
     'getting_help' => array(
       'link_title' => t('Getting help'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/922',
       'weight'     => 8,
     )
   );
