@@ -19,8 +19,28 @@ $plugin = array(
 */
 function coral_breadcrumb_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $item = menu_get_item();
-  $current_breadcrumb = drupal_get_breadcrumb();
   
+  // NOTE: this only works for nodes not in a menu!
+  $current_breadcrumb = drupal_get_breadcrumb();
+
+  if (isset($item['map'][1])) { // get the item
+    $node = $item['map'][1]; // node that is 
+
+    if ($node->type == 'book') { // book nodes can sometimes exist in a menu - this messes up breadcrumbs
+      $current_breadcrumb = array($current_breadcrumb[0]); // reset the breadcrumb - since books can be in menus and book
+      $book_data = $node->book; // save the node book info
+      $i = 1; // incrementer for book parents 
+      $p = $book_data['p'.$i]; // p1 - p9
+      
+      // While we have a parent and it is not the same as the node
+      while($p != '0' && $p != $book_data['mlid']) {
+        $parent = menu_link_load($p); // get the parent
+        $current_breadcrumb[] = l($parent['link_title'], $parent['link_path']); // make the link
+        $i++; $p = $book_data['p'.$i]; // increment and move to next
+      }
+    }
+  }
+
   if (isset($conf['remove_home']) && $conf['remove_home']) {
     array_shift($current_breadcrumb);
   }
