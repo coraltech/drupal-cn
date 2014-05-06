@@ -43,6 +43,10 @@
   white-space: nowrap;
 }
 
+.center {
+  text-align: center;
+}
+
 // Simulated (override-able ;-) break tags
 .br {
   display: block;
@@ -70,3 +74,12 @@
 .ltyellow { color: $ltyellow; }
 .mdyellow { color: $mdyellow; }
 .dkyellow { color: $dkyellow; }
+
+hlite,
+.hlite {
+  background: lighten($ltyellow, 5%);
+  color: darken($mdgray, 7%);
+  margin-bottom: $default_vert_unit;
+  padding: $default_vert_unit / 2;
+  text-align: center;
+}
