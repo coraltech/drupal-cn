@@ -3,6 +3,7 @@
 //  It should contain only helper type class definitions.
 
 @import 'global/colors';
+@import 'global/fonts';
 @import 'global/site_vars';
 
 // hides
@@ -77,6 +78,7 @@
 
 hlite,
 .hlite {
+  display: block;
   background: lighten($ltyellow, 5%);
   color: darken($mdgray, 7%);
   margin-bottom: $default_vert_unit;
