@@ -64,9 +64,8 @@ function mosaic_form_book_node_form_alter(&$form, &$form_state) {
 
 // Hide the component count field from the snippet node form
 function mosaic_form_snippet_node_form_alter(&$form, &$form_state) {
-  $form['field_component_count'] = array(
-    '#access' => FALSE // no need to see this.
-  );
+  $form['field_component_count']['#access'] = FALSE; // no need to see this.
+  
   
   // Add custom submit hadler to add component count on submission
   $form['#submit'][] = 'mosaic_snippet_node_submit';
@@ -106,9 +105,10 @@ function mosaic_form_contact_site_form_alter(&$form, &$form_state) {
 // --------
 
 function mosaic_snippet_node_submit($form, &$form_state) {
-  $node = $form_state['node'];
+  $node  = $form_state['node'];
   $comps = $form_state['values']['field_snippet_components'][$node->language];
-  $cnt = 0;
+  $cnt   = 0;
+  
   foreach ($comps as $i => $comp) {
     if (is_array($comp)) {
       $cnt++;
@@ -116,6 +116,6 @@ function mosaic_snippet_node_submit($form, &$form_state) {
   }
   
   // Save the number of components
-  $form_state['values']['field_component_count'][$node->language][0] = (string)$cnt;
+  $form_state['values']['field_component_count'][$node->language][0]['value'] = (string)$cnt;
 }
 
