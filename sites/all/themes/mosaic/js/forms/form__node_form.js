@@ -40,7 +40,6 @@ Drupal.mosaic = Drupal.mosaic || {};
 				this.$form = $form.addClass('nfproc');
 				this.$filterLink  = this.$form.find('.filter-help a[href="/filter/tips"]').addClass(this.id+'-filter-tips');
 				this.$filterGuide = this.$form.find('.filter-guidelines').addClass('hidden').append('<a href="/filter/tips" class="more btn">Even more information</a>').hide();
-				
 				this.events = {};
 				this.events['click .'+this.id+'-filter-tips'] = 'filterClick';
 
@@ -104,7 +103,8 @@ Drupal.mosaic = Drupal.mosaic || {};
 					NFMan.initClose();
 				});
 
-				this.$filterGuide.removeClass('hidden').show();
+        // .eq(0) because we only need to show one, if more than one exist
+				this.$filterGuide.eq(0).removeClass('hidden').show(); 
 			}
 		}
 		catch (err) {
