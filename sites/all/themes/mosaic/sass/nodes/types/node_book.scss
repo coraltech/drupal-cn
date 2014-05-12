@@ -240,3 +240,102 @@
     }
   }
 }
+
+.node-full-node.node-book, // full node
+.node-teaser.node-book {   // and teaser
+  .pane-node-field-book-timeline {
+    .tline {
+      height: 100%;
+      position: absolute; 
+      left: 50%;
+      width: 2px;
+      background: $ltblue;
+      bottom: 10px;
+      margin-left: -1px;
+      z-index: 5;
+    }
+    .field-name-field-book-timeline > .field-items {
+      width: 100%;
+      position: relative;
+      list-style: none;
+      overflow: hidden; 
+      padding: 0px;
+      margin: 0;
+    
+      & > .field-item {
+        width: 48%;
+        background: desaturate(lighten($ltblue, 10%), 20%);
+        color: $dkgray;
+        position: relative;
+        margin-bottom: 10px;
+  
+        &:before{
+          border: 7px solid;
+          content: '';
+          display: block;
+          position: absolute;
+        }
+        
+        .field-collection-view {
+          border-bottom: none;
+          padding: 0;
+          margin: 0;
+        }
+      }
+      & > .field-item.even {
+        float:left;
+        clear:left;
+        
+        &:before{
+          border-color: $white $white $white lighten($ltblue, 5%);
+          right: -14px;
+          top: 14px;
+        }
+      }
+      & > .field-item.odd {
+        float:right;
+        clear:right;
+        
+        &:before{
+          border-color: $white lighten($ltblue, 5%) $white $white;
+          left: -14px;
+          top: 14px;
+        }
+      }
+      .field-item.spacer {
+        background: none;
+  
+        &:before {
+          display: none;
+        }
+      }
+    }
+    
+    .field-name-field-timeline-item-label  {
+      font-weight: bold;
+      color: $mdgray;
+      float: left;
+      margin: ($default_vert_unit / 2) .5em ($default_vert_unit / 2) 1em;
+    }
+    
+    .field-name-field-timeline-item-date {
+      float: right;
+      color: $mdblue;
+      margin: ($default_vert_unit / 2) 1em ($default_vert_unit / 2) .5em;
+    }
+    
+    .field-name-field-timeline-item-body {
+      padding: ($default_vert_unit / 2) 1em;
+      border-top: 1px solid $silver;
+      clear: both;
+      background: rgba(255,255,255,.35);
+    }
+  }
+  .field-name-field-timeline-title {
+    @include h4;
+    color: $dkorange;
+  }
+  .btn.tl { // timeline view/hide button
+    margin-bottom: $default_vert_unit / 2;
+  }
+}
