@@ -1,8 +1,10 @@
 
 // Scss file for the node answer form
 
-@import 'global/fonts';
 @import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/gradients';
 
 .page-title {
   color: $mdred;  
@@ -11,7 +13,70 @@
 .node-book-form {
   margin-bottom: $default_vert_unit;
   
+  .tl.btn {
+    margin: $default_vert_unit 0 0;
+  }
+  
   .form-item-book-bid {
     display: none;
+  }
+  .field-name-body {
+    margin: $default_vert_unit 0;
+  }
+  .field-name-field-timeline-item-label,
+  .field-name-field-timeline-item-date {
+    @include col(12);
+    
+    input.form-text {
+      width: 85%;
+    }
+  }
+  .field-name-field-timeline-item-date {
+    label {
+      display: none;
+    }
+    legend {
+      font-weight: bold;
+      color: $mdgray;
+    }
+    .container-inline-date .date-padding {
+      padding: 0;
+    }
+  }
+  
+  .field-name-field-book-timeline {
+    padding: 0 .5em .5em;
+    //background: url('../../assets/images/diag-tile-lt.png');
+    @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+    border-top: 1px solid lighten($silver, 10%);
+
+    tr.draggable td {
+      padding: ($default_vert_unit / 2) 0;
+       
+    }
+    input.field-add-more-submit {
+      margin-top: 1.25em;
+      margin-bottom: 0;
+    }
+    .grippie,
+    textarea {
+      width: 98%;
+    }
+  }
+  
+  .field-name-field-timeline-title {
+    padding: .5em;
+    margin-bottom: ($default_vert_unit / 4);
+    border-bottom: 1px solid $silver;
+    //background: url('../../assets/images/diag-tile-ltr.png');
+    @include linear-v-gradient(lighten($ltgray, 2%), lighten($ltgray, 5%));
+    .form-item {
+      margin: 0;
+    }
+  }
+  
+  .field-name-field-locked {
+    margin-top: $default_vert_unit / 2;
+    border-top: 1px solid $silver;
   }
 }
