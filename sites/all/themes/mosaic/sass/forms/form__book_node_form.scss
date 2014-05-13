@@ -75,8 +75,28 @@
     }
   }
   
+  .field-name-file,
   .field-name-field-locked {
-    margin-top: $default_vert_unit / 2;
+    margin: $default_vert_unit 0;
     border-top: 1px solid $silver;
+    legend { display: none; }
   }
+  .field-name-file {
+    background: url('../../assets/images/diag-tile-ltr.png');
+    padding: .25em;
+
+    & > div {
+      padding: .25em;
+      margin: 0;
+      background: rgba(255,255,255,.5);
+    }
+    .form-type-managed-file {
+      margin-top: 0;
+    }
+    .description {
+      margin-bottom: 0;
+    }
+  }
+  
+  
 }
