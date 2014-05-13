@@ -13,6 +13,4 @@ dependencies[] = typogrify
 features[features_api][] = api:2
 features[filter][] = filtered_html
 features[filter][] = full_html
-features[filter][] = markdown_filter
-features[filter][] = media_wiki_filter
 features[filter][] = plain_text
