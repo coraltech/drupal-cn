@@ -34,6 +34,23 @@ $plugin = array(
   'defaults' => array()
 );
 
+/*
+ * <div class="left grid-12">
+      <ul>
+        <li>Unmatched extensibility and modularity for fast prototyping and development.</li>
+        <li>Deploy your clusters locally or to the cloud provider of your choice.</li>
+        <li>All cluster stage changes controlled through Git for reliability and accountability.</li>
+      </ul>
+    </div>
+    <div class="left grid-12-last">
+      <ul>
+        <li>Configuration states compiled to JSON for ease of use by humans and machines.</li>
+        <li>Architecture provides inheritance and cascading configurations support.</li>
+        <li>Built with industry leading technologies: Vagrant, Puppet, Ruby, Git, JSON, and more.</li>
+      </ul>
+      {$more}
+    </div>
+ */
 
 /**
 * Run-time rendering of the body of the block (content type)
@@ -48,16 +65,16 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
     <div class="clearfix">
       <div class="left grid-12">
         <ul>
-          <li>Unmatched extensibility and modularity for fast prototyping and development.</li>
-          <li>Deploy your clusters locally or to the cloud provider of your choice.</li>
-          <li>All cluster stage changes controlled through Git for reliability and accountability.</li>
+          <li>Plugin based architecture for fast prototyping and&nbsp;development.</li>
+          <li>Deploy locally or to the cloud provider of your&nbsp;choice.</li>
+          <li>Effortlessly build concurrent and parallel cloud&nbsp;applications.</li>
         </ul>
       </div>
       <div class="left grid-12-last">
         <ul>
-          <li>Configuration states compiled to JSON for ease of use by humans and machines.</li>
-          <li>Architecture provides inheritance and cascading configurations support.</li>
-          <li>Built with industry leading technologies: Vagrant, Puppet, Ruby, Git, JSON, and more.</li>
+          <li>Cloud configuration states managed by humans and/or&nbsp;machines.</li>
+          <li>Architecture enables cascading configuration for easy&nbsp;overrides.</li>
+          <li>No vendor lock in; no black boxes; and no&nbsp;restrictions.</li>
         </ul>
         {$more}
       </div>
