@@ -61,7 +61,7 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
   $output = <<<EOF
 <div class="home-intro-container">
   <div class="home-intro-content">
-    <h2>CORL is a free and open source cloud <span class="nowrap">development framework.</span></h2>
+    <h2>CORL is a free and open source cloud <span class="nowrap">application framework.</span></h2>
     <div class="clearfix">
       <div class="left grid-12">
         <ul>
