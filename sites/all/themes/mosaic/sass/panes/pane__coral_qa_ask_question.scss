@@ -47,7 +47,8 @@
     .description { display: none; }
     .form-text { width: 94.8%; }
   }
-  .node-form .form-type-textfield {
+  .node-form .form-item-title,
+  .node-form .field-name-field-tags .form-type-textfield {
     margin-top: -3.75em;
   }
   .field-name-field-tags {
@@ -79,6 +80,12 @@
       top: 14px;
       height: 1.5em;
       overflow: auto;
+    }
+    .file {
+      line-height: 2.15em;
+    }
+    table td .form-submit {
+      margin: 0;
     }
   }
   .description{
