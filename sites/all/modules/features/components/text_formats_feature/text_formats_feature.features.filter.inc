@@ -19,7 +19,7 @@ function text_formats_feature_filter_default_formats() {
     'weight' => -10,
     'filters' => array(
       'filter_html' => array(
-        'weight' => -48,
+        'weight' => -50,
         'status' => 1,
         'settings' => array(
           'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <pre> <ul> <ol> <li> <dl> <dt> <dd> <h2> <h3> <h4> <span> <p> <box> <br> <sub> <sup> <hlite> <img>',
@@ -27,33 +27,28 @@ function text_formats_feature_filter_default_formats() {
           'filter_html_nofollow' => 0,
         ),
       ),
-      'freelinking' => array(
-        'weight' => -47,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'filter_markdown' => array(
-        'weight' => -46,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(),
       ),
       'Mediawiki Format' => array(
-        'weight' => -45,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'typogrify' => array(
-        'weight' => -44,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
-          'smartypants_enabled' => 1,
+          'smartypants_enabled' => 0,
           'smartypants_hyphens' => 2,
-          'wrap_ampersand' => 1,
-          'widont_enabled' => 1,
+          'wrap_ampersand' => 0,
+          'widont_enabled' => 0,
           'hyphenate_shy' => 0,
           'wrap_abbr' => 0,
-          'wrap_caps' => 1,
-          'wrap_initial_quotes' => 1,
+          'wrap_caps' => 0,
+          'wrap_initial_quotes' => 0,
           'wrap_numbers' => 0,
           'ligatures' => array(
             'ffi' => 0,
@@ -96,21 +91,26 @@ function text_formats_feature_filter_default_formats() {
             '7/8' => 0,
           ),
           'quotes' => array(
-            ',,' => ',,',
-            '\'\'' => '\'\'',
-            '&lt;&lt;' => '&lt;&lt;',
-            '&gt;&gt;' => '&gt;&gt;',
+            ',,' => 0,
+            '\'\'' => 0,
+            '&lt;&lt;' => 0,
+            '&gt;&gt;' => 0,
           ),
           'space_to_nbsp' => 0,
         ),
       ),
+      'freelinking' => array(
+        'weight' => -46,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'filter_autop' => array(
-        'weight' => -40,
+        'weight' => -45,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -39,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(),
       ),
