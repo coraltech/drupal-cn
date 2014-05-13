@@ -34,6 +34,7 @@ features[field_instance][] = node-book-field_book_timeline
 features[field_instance][] = node-book-field_locked
 features[field_instance][] = node-book-field_tags
 features[field_instance][] = node-book-field_timeline_title
+features[field_instance][] = node-book-file
 features[node][] = book
 features[panelizer_defaults][] = node:book:default
 features[panels_mini][] = book_timeline

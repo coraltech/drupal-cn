@@ -99,13 +99,13 @@ function wiki_documents_feature_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(),

@@ -34,7 +34,9 @@ function wiki_documents_feature_field_default_field_instances() {
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
-          'plain_text' => 0,
+          'markdown_filter' => 'markdown_filter',
+          'media_wiki_filter' => 'media_wiki_filter',
+          'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -45,6 +47,12 @@ function wiki_documents_feature_field_default_field_instances() {
             ),
             'full_html' => array(
               'weight' => -9,
+            ),
+            'markdown_filter' => array(
+              'weight' => 0,
+            ),
+            'media_wiki_filter' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => -8,
@@ -325,7 +333,7 @@ function wiki_documents_feature_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -448,10 +456,77 @@ function wiki_documents_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-book-file'
+  $field_instances['node-book-file'] = array(
+    'bundle' => 'book',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+      'full_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'file',
+    'label' => 'File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'book',
+      'file_extensions' => 'txt rb json pp yaml doc pdf ppt jpeg jpg png',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_large' => 0,
+          'image_linkit_thumb' => 0,
+          'image_medium' => 0,
+          'image_project_logo_lg' => 0,
+          'image_square_thumbnail' => 0,
+          'image_thumbnail' => 0,
+          'image_user_thumb_small' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'progress_indicator' => 'bar',
+      ),
+      'type' => 'file_generic',
+      'weight' => 6,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Book timeline');
+  t('File');
   t('Lock or unlock this node from public editing.');
   t('Locked');
   t('Optional date that this timeline event happened');
