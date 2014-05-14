@@ -302,3 +302,7 @@
 [submodule "sites/all/modules/contrib/bxslider_views_slideshow"]
 	path = sites/all/modules/contrib/bxslider_views_slideshow
 	url = http://git.drupal.org/project/bxslider_views_slideshow
+[submodule "sites/all/modules/contrib/legal"]
+	path = sites/all/modules/contrib/legal
+	url = http://git.drupal.org/project/legal
+	branch = 7.x-1.x
