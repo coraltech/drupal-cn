@@ -306,3 +306,7 @@
 	path = sites/all/modules/contrib/legal
 	url = http://git.drupal.org/project/legal
 	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/legal_gen"]
+	path = sites/all/modules/contrib/legal_gen
+	url = http://git.drupal.org/project/legal_gen
+	branch = 7.x-1.x
