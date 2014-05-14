@@ -4,6 +4,7 @@
 
 @import 'global/colors';
 @import 'global/fonts';
+@import 'global/headers';
 @import 'global/site_vars';
 
 // hides
@@ -17,6 +18,10 @@
 .clear       { clear: both;  }
 .clear-right { clear: right; }
 .clear-left  { clear: left;  }
+
+.block {
+  display: block;
+}
 
 // forms
 .field-default {
@@ -39,6 +44,12 @@
   font-size: 80%;
   line-height: 1.25em;
 }
+
+.huge { @include huge; }
+.h1 { @include h1; }
+.h2 { @include h2; }
+.h3 { @include h3; }
+.h4 { @include h4; } 
 
 .nowrap {
   white-space: nowrap;
@@ -85,3 +96,67 @@ hlite,
   padding: $default_vert_unit / 2;
   text-align: center;
 }
+
+
+// borders
+// -- lights
+.b-top { border-top: 1px solid $ltgray; }
+.b-bot { border-bottom: 1px solid $ltgray; }
+.b-left { border-left: 1px solid $ltgray; }
+.b-right { border-right: 1px solid $ltgray; }
+.borders { border: 1px solid $ltgray; }
+
+/*
+.b-top-ltblu { border-top: 1px solid $ltblue; }
+.b-bot-ltblu { border-bottom: 1px solid $ltblue; }
+.b-left-ltblu { border-left: 1px solid $ltblue; }
+.b-right-ltblu { border-right: 1px solid $ltblue; }
+.borders-ltblu { border: 1px solid $ltblue; }
+
+.b-top-ltred { border-top: 1px solid $ltred; }
+.b-bot-ltred { border-bottom: 1px solid $ltred; }
+.b-left-ltred { border-left: 1px solid $ltred; }
+.b-right-ltred { border-right: 1px solid $ltred; }
+.borders-ltred { border: 1px solid $ltred; }
+
+.b-top-ltyel { border-top: 1px solid $ltyellow; }
+.b-bot-ltyel { border-bottom: 1px solid $ltyellow; }
+.b-left-ltyel { border-left: 1px solid $ltyellow; }
+.b-right-ltyel { border-right: 1px solid $ltyellow; }
+.borders-ltyel { border: 1px solid $ltyellow; }
+
+.b-top-ltgrn { border-top: 1px solid $ltgreen; }
+.b-bot-ltgrn { border-bottom: 1px solid $ltgreen; }
+.b-left-ltgrn { border-left: 1px solid $ltgreen; }
+.b-right-ltgrn { border-right: 1px solid $ltgreen; }
+.borders-ltgrn { border: 1px solid $ltgreen; }
+*/
+
+// margins
+.ml-1 {
+  margin-left: 1em;
+}
+.mr-1 {
+  margin-right: 1em;
+}
+.mt-1 {
+  margin-top: 1em;
+}
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mt-125 {
+  margin-top: $default_vert_unit;
+}
+.mb-125 {
+  margin-bottom: $default_vert_unit;
+}
+
+.mt-25 {
+  margin-top: 2 * $default_vert_unit;
+}
+.mb-25 {
+  margin-bottom: 2 * $default_vert_unit;
+}
+
