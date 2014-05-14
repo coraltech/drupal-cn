@@ -1,6 +1,7 @@
 
 // Main scss file for the home page intro info pane
 
+@import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
@@ -46,7 +47,10 @@
     color: lighten($ltgreen, 10%);
     font-size: .8em;
     float: right;
-    margin: 0 .5em .5em 0;
+    margin: 0 1em 1em 0;
+    
+    @include btn-matte-inset(0px, 14px, darken($ltblue, 10%), darken($ltblue, 30%), $white);
+    @include btn-structure(2px 5px, 14px, 0px);
   }
   
   .home-intro-left,
@@ -159,13 +163,6 @@
       li {
         margin-bottom: $default_vert_unit / 2;
         list-style-position: outside;
-      }
-    }
-    .more {
-      color: $mdblue;
-      
-      &:hover {
-        color: darken($mdblue, 7%);
       }
     }
     .clearfix:after {
