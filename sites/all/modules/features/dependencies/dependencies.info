@@ -150,5 +150,4 @@ dependencies[] = views_slideshow_cycle
 dependencies[] = views_ui
 dependencies[] = wiki_documents_feature
 dependencies[] = wikitools
-dependencies[] = wysiwyg_filter
 features[features_api][] = api:2
