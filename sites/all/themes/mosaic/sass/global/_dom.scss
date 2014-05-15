@@ -222,7 +222,6 @@ input#edit-delete {
 .form-textarea {
   font-size: 1em;
   border: 1px inset darken($ltgray, 5%);
-  background: lighten($ltgray, 10%);
 }
 .filter-wrapper {
   padding: 0;
@@ -262,7 +261,6 @@ input.form-text {
   width: 98.45%;
   padding: .25em;
   border: 1px inset darken($ltgray, 5%);
-  background: lighten($ltgray, 10%);
 }
 
 html.js input.form-autocomplete {
