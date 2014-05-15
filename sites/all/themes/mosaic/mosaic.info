@@ -19,7 +19,8 @@ scripts[] = js/lib/tocca/Tocca.min.js
 
 ; -- Custom
 scripts[] = js/global/mosaicCore.js
-scripts[] = js/global/mosaicMce.js
+scripts[] = js/global/mosaicTextarea.js
+; scripts[] = js/global/mosaicMce.js
 ; scripts[] = js/global/mosaicMenu.js
 ; scripts[] = js/global/mosaicSlideshow.js
 scripts[] = js/global/mosaicToc.js
