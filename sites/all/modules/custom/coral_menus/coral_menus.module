@@ -14,6 +14,15 @@ function coral_menus_init() {
   coral_menus_run_updates();  
 }
 
+
+/**
+ * Implementation of hook_menu_alter()
+ */
+function coral_menus_menu_alter(&$items) {
+  $items['user/%user/hybridauth']['title'] = 'Social login'; // rename hybrid auth link
+}
+
+
 /**
  * Implemenation of hook_menu_local_tasks_alter();
  */
