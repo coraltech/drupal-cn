@@ -1,0 +1,18 @@
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/site_vars';
+
+.node-type-book .use-cases {
+  .btn{
+    display: block;
+    clear: both;
+    //text-align: center;
+    margin: $default_vert_unit 0;
+
+    a {
+      @include btn-matte-inset(20px, 16px, $mdblue, lighten($mdblue, 10%), $white);
+      @include btn-structure(2px 15px, 16px, 20px);    }
+  }
+}
