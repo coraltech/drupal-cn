@@ -27,18 +27,23 @@ function text_formats_feature_filter_default_formats() {
           'filter_html_nofollow' => 0,
         ),
       ),
-      'filter_markdown' => array(
+      'freelinking' => array(
         'weight' => -49,
         'status' => 1,
         'settings' => array(),
       ),
-      'Mediawiki Format' => array(
+      'filter_markdown' => array(
         'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
-      'typogrify' => array(
+      'Mediawiki Format' => array(
         'weight' => -47,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'typogrify' => array(
+        'weight' => -46,
         'status' => 1,
         'settings' => array(
           'smartypants_enabled' => 0,
@@ -99,11 +104,6 @@ function text_formats_feature_filter_default_formats() {
           'space_to_nbsp' => 0,
         ),
       ),
-      'freelinking' => array(
-        'weight' => -46,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'filter_autop' => array(
         'weight' => -45,
         'status' => 1,
@@ -125,23 +125,23 @@ function text_formats_feature_filter_default_formats() {
     'status' => 1,
     'weight' => -9,
     'filters' => array(
+      'freelinking' => array(
+        'weight' => -50,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'Mediawiki Format' => array(
-        'weight' => -48,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_markdown' => array(
-        'weight' => -47,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'freelinking' => array(
-        'weight' => -44,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'typogrify' => array(
-        'weight' => -43,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'smartypants_enabled' => 1,
@@ -203,7 +203,7 @@ function text_formats_feature_filter_default_formats() {
         ),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -39,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
       ),
