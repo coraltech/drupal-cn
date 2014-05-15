@@ -19,7 +19,7 @@ function coral_menus_init() {
  * Implementation of hook_menu_alter()
  */
 function coral_menus_menu_alter(&$items) {
-  $items['user/%user/hybridauth']['title'] = 'Social login'; // rename hybrid auth link
+  $items['user/%user/hybridauth']['title'] = t('Social login'); // rename hybrid auth link
 }
 
 
