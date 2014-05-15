@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Hybridauth feature feature.
+ */
+
+include_once 'hybridauth_feature.features.inc';
