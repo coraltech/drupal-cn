@@ -122,6 +122,14 @@ pre {
   @include border-radius(3px);
 }
 
+hr {
+  height: 0px;
+  border-color: $ltgray;
+  border-width: 1px 0 0;
+  border-style: solid none none;
+  
+}
+
 // --- Lists
 ul,
 .item-list ul {
