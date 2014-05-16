@@ -16,3 +16,4 @@ images/*
 
 # Compass css files
 sites/all/themes/mosaic/css
+.project_cache
