@@ -48,6 +48,8 @@ h1, h2, h3, h4, h5, h6 {
   color: $dkgray;
   clear: left;
 }
+
+
 // See _headers.scss for mixins
 h1 { 
   @include h1;
@@ -60,6 +62,12 @@ h3 {
 }
 h4 { 
   @include h4;
+}
+
+.field-name-body .field-items .field-item {
+  & > h1, & > h2, & > h3, & > h4, & > h5 {
+    color: darken($dkorange, 7%);
+  }
 }
 
 
@@ -111,15 +119,27 @@ small {
   line-height: 1.25em;
 }
 
-box, .box
+hlite,
+.hlite {
+  display: block;
+  background: lighten($ltyellow, 5%);
+  color: darken($mdgray, 7%);
+  margin-bottom: $default_vert_unit;
+  padding: $default_vert_unit / 2;
+  text-align: center;
+}
+
+box, .box,
 pre {
   display: block; // for box
   background: lighten($ltgray, 7%);
   padding: 1em;
   margin-bottom: $default_vert_unit;
   border: 1px solid darken($ltgray, 7%);
-  
+  color: $dkgray;
+
   @include border-radius(3px);
+  
 }
 
 hr {
@@ -141,7 +161,7 @@ ul,
     list-style-image: url('/sites/all/themes/mosaic/assets/images/li-red.png');
     margin: 0 0 0 1em;
     padding-top: 0;
-    list-style-position: inside;
+    list-style-position: outside;
   }
   li.collapsed {
     margin: 0 0 0 1em;

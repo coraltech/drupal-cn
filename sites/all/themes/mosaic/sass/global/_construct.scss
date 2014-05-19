@@ -87,16 +87,6 @@
 .mdyellow { color: $mdyellow; }
 .dkyellow { color: $dkyellow; }
 
-hlite,
-.hlite {
-  display: block;
-  background: lighten($ltyellow, 5%);
-  color: darken($mdgray, 7%);
-  margin-bottom: $default_vert_unit;
-  padding: $default_vert_unit / 2;
-  text-align: center;
-}
-
 
 // borders
 // -- lights
