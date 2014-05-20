@@ -19,6 +19,12 @@
 .clear-right { clear: right; }
 .clear-left  { clear: left;  }
 
+clear {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
 .block {
   display: block;
 }
