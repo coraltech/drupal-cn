@@ -104,7 +104,7 @@ function coral_build_options_list() {
 <ul class="build-options">
   <li class="command-line"><span class="icon"></span><span class="label">Commands</span> - See our guide on {$cmd_guide}.</li>
   <li class="coral-arch"><span class="icon"></span><span class="label">Architecture</span> - Read over the {$arch_over}.</li>
-  <li class="integration"><span class="icon"></span><span class="label">Integration guide</span> - {$int_guide} best practices.</li>
+  <li class="integration"><span class="icon"></span><span class="label">Integration guide</span> - {$int_guide} best&nbsp;practices.</li>
   <li class="installation"><span class="icon"></span><span class="label">Installation</span> - Application and system {$install}.</li>
 </ul>
 EOF;

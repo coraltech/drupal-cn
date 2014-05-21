@@ -31,10 +31,10 @@
       left: -44px;
       @include icons-sprite('integration');
     }
-    .requirements .icon {
-      left: -38px;
+    .installation .icon {
+      left: -41px;
       top: 4px;
-      @include icons-sprite('requirements');
+      @include icons-sprite('green-plus');
     }
   }
   
