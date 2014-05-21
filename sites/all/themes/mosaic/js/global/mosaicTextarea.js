@@ -18,6 +18,8 @@ Drupal.mosaic = Drupal.mosaic || {};
         $nodeForms.each(function() {
           new Drupal.mosaic.mosaicTextarea($(this));
         });
+        
+        $('textarea').autosize();
       }
       catch (err) {
         console.log('mosaicTextareaInit() reported errors. Error: '+err);
