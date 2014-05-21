@@ -29,7 +29,7 @@ function coral_menus_help_links_loader() {
     ),
     'contact_us' => array(
       'link_title' => t('Contact us'),
-      'link_path'  => 'contact',
+      'link_path'  => 'node/922',
       'options' => array('attributes' => array('class'=>array('contact-us'))),
       'weight'     => 2,
     ),
@@ -69,23 +69,23 @@ function coral_menus_help_links_loader() {
       ), */
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/35',
       'weight'     => 4,
+    ),
+    'getting_involved' => array(
+      'link_title' => t('Getting involved'),
+      'link_path'  => 'node/43',
+      'weight'     => 5,
     ),
     'bug_report' => array(
       'link_title' => t('Issues and bugs!'),
-      'link_path'  => '<front>',
+      'link_path'  => '<front>', // js handles this one
       'options' => array('attributes' => array('class'=>array('bug-report'))),
-      'weight'     => 5,
-    ),
-    'sitemap' => array(
-      'link_title' => t('Using SSH keys'),
-      'link_path'  => '<front>',
       'weight'     => 6,
     ),
-    'upgrading_account' => array(
-      'link_title' => t('Upgrading account'),
-      'link_path'  => '<front>',
+    'sshkeys' => array(
+      'link_title' => t('Using SSH keys'),
+      'link_path'  => 'node/1262', // does not exist on staging
       'weight'     => 7,
     )
   );
