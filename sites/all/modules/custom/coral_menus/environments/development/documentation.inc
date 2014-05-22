@@ -33,8 +33,8 @@ function coral_menus_documentation_links_loader() {
       'weight'     => 2,
     ),
     'requirements' => array(
-      'link_title' => t('Requirements'),
-      'link_path'  => 'node/1168',
+      'link_title' => t('Installation'),
+      'link_path'  => 'node/35',
       'weight'     => 3,
     ),
     'cluster' => array(
@@ -44,7 +44,7 @@ function coral_menus_documentation_links_loader() {
     ),
     'plugins' => array(
       'link_title' => t('Developing plugins'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/1172',
       'weight'     => 5,
     ),
     'api_ref' => array(

@@ -24,7 +24,7 @@ function coral_menus_documentation_links_loader() {
   return array(
     'commands'=> array(
       'link_title' => t('Commands'),
-      'link_path'  => '<front>',
+      'link_path'  => 'node/1335',
       'weight'     => 1,
     ),
     'architecture' => array(
@@ -33,7 +33,7 @@ function coral_menus_documentation_links_loader() {
       'weight'     => 2,
     ),
     'requirements' => array(
-      'link_title' => t('Requirements'),
+      'link_title' => t('Installation'),
       'link_path'  => 'node/1329',
       'weight'     => 3,
     ),
