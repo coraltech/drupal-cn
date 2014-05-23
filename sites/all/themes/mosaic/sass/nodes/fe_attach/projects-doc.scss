@@ -1,0 +1,36 @@
+
+// Projects documentation styles
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+@import 'global/gradients';
+@import 'global/buttons';
+
+.projects-doc {
+  .grid-8,
+  .grid-8-last,
+  .grid-12,
+  .grid-12-last {
+    .cont {
+      @include reflected-v-gradient($white, lighten($ltgray, 8%), darken($white, 3%));
+    }
+    a.box {
+      background: none;
+    }
+    a.btn {
+      @include btn-matte-inset(20px, 20px, $mdblue, darken($mdblue, 3%), $white);
+      @include btn-structure(3px 20px, 20px, 20px);
+      .caps { font-size: 1em; }
+    }
+  }
+  
+  .grid-8,
+  .grid-8-last {
+    a.btn {
+      @include btn-matte-inset(20px, 16px, $mdblue, darken($mdblue, 3%), $white);
+      @include btn-structure(3px 10px, 16px, 20px);
+      .caps { font-size: 1em; }
+    }
+  }
+}
