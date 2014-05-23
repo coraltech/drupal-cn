@@ -32,5 +32,8 @@
       @include btn-structure(3px 10px, 16px, 20px);
       .caps { font-size: 1em; }
     }
+    img {
+      max-width: 150px;
+    }
   }
 }
