@@ -95,9 +95,9 @@ function coral_build_options_pane_content_type_edit_form_submit($form, &$form_st
 
 
 function coral_build_options_list() {
-  $cmd_guide = l('using the command line tools', '<front>');
+  $cmd_guide = l('using the command line tools', 'docs/commands');
   $arch_over = l('architecture overview', 'docs/architecture-guide');
-  $int_guide = l('Application integration', '<front>');
+  $int_guide = l('Application integration', 'docs/extending-frameworks');
   $install   = l('Installation', 'docs/installation');
   
   $output = <<<EOF
