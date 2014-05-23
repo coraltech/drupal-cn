@@ -164,7 +164,8 @@ ul,
     list-style-position: outside;
   }
   li.collapsed {
-    margin: 0 0 0 1em;
+    list-style-image: url('/sites/all/themes/mosaic/assets/images/li-collapse-red.png');
+    margin: 0 0 0 1em !important;
     padding-top: 0;
   }
 }
