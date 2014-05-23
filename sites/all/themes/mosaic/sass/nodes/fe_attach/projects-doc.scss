@@ -7,6 +7,10 @@
 @import 'global/gradients';
 @import 'global/buttons';
 
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+
+
 .projects-doc {
   .grid-8,
   .grid-8-last,
@@ -28,7 +32,7 @@
   .grid-8,
   .grid-8-last {
     a.btn {
-      @include btn-matte-inset(20px, 16px, $mdblue, darken($mdblue, 3%), $white);
+      @include btn-matte-inset(20px, 16px, $mdgreen, darken($mdgreen, 3%), $white);
       @include btn-structure(3px 10px, 16px, 20px);
       .caps { font-size: 1em; }
     }
@@ -36,4 +40,31 @@
       max-width: 150px;
     }
   }
+  
+  .proj-intro {
+    @include border-radius(15px);
+    @include reflected-v-gradient(desaturate(lighten($ltblue, 14%), 20%), desaturate(lighten($ltblue, 8%), 20%), desaturate(lighten($ltblue, 10%), 20%));
+    @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
+    border: 1px solid lighten($ltblue, 7%);
+    text-align: center;
+    padding: ($default_vert_unit / 2);
+    color: darken($mdgray, 10%);
+  }
+  
+  .intro-list {
+    //
+    padding: 1em;
+    margin-bottom: $default_vert_unit;
+    //border: 1px solid darken($ltgray, 7%);
+    li {
+      color: darken($mdgray, 7%);
+    }
+  
+    //@include border-bottom-radius(5px);
+  }
+  
+  .diagram {
+    margin-top: -1 * $default_vert_unit;
+  }
+  
 }
