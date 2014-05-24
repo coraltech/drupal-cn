@@ -61,8 +61,8 @@
   
   .intro-list {
     //
-    padding: 1em;
-    margin-bottom: $default_vert_unit;
+    padding: $default_vert_unit 1em 0;
+    //margin-bottom: $default_vert_unit;
     //border: 1px solid darken($ltgray, 7%);
     li {
       color: darken($mdgray, 7%);

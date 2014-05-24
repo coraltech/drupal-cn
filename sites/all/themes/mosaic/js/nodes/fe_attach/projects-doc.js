@@ -53,7 +53,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       // Intro and diagram
       if (this.w < 550) {
-        this.$cont.find('.grid-12-last.diagram, .grid-12.intro').css({ 'width':'100%', 'margin':'0 0 2.5em 0'});
+        this.$cont.find('.grid-12-last.diagram, .grid-12.intro').css({ 'width':'100%', 'margin':'0 0 1.25em 0'});
       }
       else {
         this.$cont.find('.grid-12-last.diagram, .grid-12.intro').attr('style', ''); //reset css
@@ -73,7 +73,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 
       // Frameworks
       if (this.w < 400) {
-        this.$cont.find('.grid-12-last.corl, .grid-12.nucleon').css({ 'width':'100%', 'margin':'0 0 2.5em 0'});
+        this.$cont.find('.grid-12-last.corl, .grid-12.nucleon').css({ 'width':'100%', 'margin':'0 0 1.25em 0'});
       }
       else {
         this.$cont.find('.grid-12-last.corl, .grid-12.nucleon').attr('style', ''); //reset css
