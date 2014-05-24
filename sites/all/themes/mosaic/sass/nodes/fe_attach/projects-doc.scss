@@ -6,6 +6,7 @@
 @import 'global/icons';
 @import 'global/gradients';
 @import 'global/buttons';
+@import "global/site_vars";
 
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
@@ -40,6 +41,13 @@
       max-width: 150px;
     }
   }
+  .grid-8.box,
+  .grid-8-last.box {
+    .h3 {
+      border-bottom: 1px solid darken($ltgray, 5%);
+      padding-bottom: .3125em;
+    }
+  }
   
   .proj-intro {
     @include border-radius(15px);
@@ -68,3 +76,4 @@
   }
   
 }
+
