@@ -21,8 +21,12 @@ Drupal.mosaic = Drupal.mosaic || {};
           
           nodes = $.merge($bookTeaserNodes, $bookFullNodes); // merge list, teasers first
           if ($(nodes).length) {
-            new Drupal.mosaic.bookNodes($(nodes));
+            nodes = new Drupal.mosaic.bookNodes($(nodes));
           }
+          
+          $(window).resize(function(e) { 
+            nodes.adjustTimelines();
+          });
         }
       }
       catch (err) {
@@ -30,13 +34,19 @@ Drupal.mosaic = Drupal.mosaic || {};
       }
     }
   }
-  
+
+
+  // Process nodes
   Drupal.mosaic.bookNodes = function($nodes) {
     try {
+      this.$nodes = $nodes;
+      this.$timelines = {};
+
       var BN = this; // remember this...
-      $nodes.each(function() { // go though each node and do what needs doing
+      this.$nodes.each(function(i) { // go though each node and do what needs doing
 
         var $timeline = $(this).find('.pane-node-field-book-timeline'); // Get the timeline object
+        BN.$timelines[i] = $timeline;
 
         // Teaser node
         if ($(this).hasClass('node-teaser')) {
@@ -52,9 +62,63 @@ Drupal.mosaic = Drupal.mosaic || {};
         // Add processed class
         $(this).addClass('bkproc');
       });
+      
+      return this;
     }
     catch (err) {
       console.log('bookNodes errored: '+err);
+    }
+  };
+
+
+  Drupal.mosaic.bookNodes.prototype.adjustTimelines = function() {
+    try {
+      for (timeline in this.$timelines) {
+        var $timeline = this.$timelines[timeline];
+        var $items = $timeline.find('.field-name-field-book-timeline').children('.field-items').children('.field-item:not(".spacer")');
+        var ATL = this;
+
+        var tlw = $timeline.outerWidth();
+        if (tlw < 450) {
+          $timeline.find('.field-item.spacer').hide(0);
+          $timeline.find('.tline').css({'left':'2px'});
+
+          $items.css({
+            'margin-left': '4%', 
+            'width':'95%', 
+            'float':'none', 
+            'clear':'none'
+          });
+
+          // Update some field item classes
+          $items.each(function() {
+            if ($(this).hasClass('even') && !$(this).hasClass('spacer')) {
+              $(this).removeClass('even').addClass('odd atl'); 
+            }
+          });        
+        }
+        else {
+          // Back to the default
+          $timeline.find('.field-item.spacer').show(0);
+          $timeline.find('.tline').attr('style', '');
+          $items.attr('style', '');
+
+          $items.each(function() {
+            if ($(this).hasClass('atl')) {
+              $(this).removeClass('odd atl').addClass('even');
+            }
+          });
+        }
+      };
+      
+      this.$nodes.each(function(i) {
+        //console.log($(this));
+        //console.log(ATL.$timelines[i]);
+        ATL.alignTimeline($(this), ATL.$timelines[i]);
+      });
+    }
+    catch (err) {
+      console.log('adjustTimelines errored: '+err);
     }
   };
 
@@ -87,25 +151,27 @@ Drupal.mosaic = Drupal.mosaic || {};
     catch (err) {
       console.log('addButton errored: '+err);
     }
-  }
+  };
 
 
   // Align items in the timeline
   Drupal.mosaic.bookNodes.prototype.alignTimeline = function($node, $timeline) {
     try {
       var BN = this; // always remember this...
-      
+
       // prepend central line
-      $('.field-name-field-book-timeline > .field-items').prepend('<div class="tline">');
+      if (!$node.find('.tline').length) {
+        $node.find('.field-name-field-book-timeline > .field-items').prepend('<div class="tline">');
+      }
       
       if ($timeline.length) {
-        // Loop through timeline items and adjust as needed
-        var $items = $('.field-name-field-book-timeline > .field-items > .field-item');
+        // Loop through node timeline items and adjust spacing as needed
+        var $items = $node.find('.field-name-field-book-timeline > .field-items > .field-item:not(".spacer")');
         var $prev  = {}  // storage prev timeline item - for comparison
         var lip    = 40; // px amount that we want the overlap of items to cover (at least)
         var cls    = '';
 
-        $items.each(function() {
+        $items.each(function(i) {
           var $curr = $(this); // the current item
 
           // First item
@@ -115,23 +181,44 @@ Drupal.mosaic = Drupal.mosaic || {};
           }
           else { // we must be past #1
             // Do stuff about heights
-            var ch   = $curr.innerHeight(); 
+            var ch   = $curr.innerHeight();
             var ph   = $prev.innerHeight();
             var cTop = $curr.position().top;
             var pTop = $prev.position().top;
             var cBot = cTop + ch;
             var pBot = pTop + ph;
-
+            var $spc = $curr.prev('.field-item.spacer');
+  
             // get some class - include field-item class!
             cls = ($curr.hasClass('even')) ? 'even' : 'odd';
 
-            // Add spacer
-            $curr.before('<div class="field-item '+cls+' spacer">');
+            // Add spacer if needed
+            if (!$spc.length) {
+              //console.log('test');
+              $curr.before('<div class="field-item '+cls+' spacer">');
+            }
 
+            // check positioning
             if (pBot >= cBot) { // previous reaches down further (or eq.) than the current
+              //console.log($curr.prev('.field-item.spacer').outerHeight());
               $curr.prev('.field-item.spacer').css({
                 'height': (lip + pBot - cBot) + 'px' 
               });
+              //console.log((lip + pBot - cBot));
+            }
+            else {
+              // @TODO: make this capable of sclaing the items back up
+              // requires looking at how far the overlap is, and if we could
+              // consolidate some of that overlap by removing height from
+              // a spacer before.
+
+              //console.log('Diff: '+(cBot - pBot));
+              //if ((cBot - pBot) <= lip) {
+                //console.log((Number($curr.prev('.field-item.spacer').outerHeight()) + ((cBot - pBot) - lip)) + 'px');
+                //$curr.prev('.field-item.spacer').css({
+                //  'height': (Number($curr.prev('.field-item.spacer').outerHeight()) + ((cBot - pBot) - lip)) + 'px'
+                //});
+              //}
             }
 
             // Set the prev to the curr
@@ -144,6 +231,6 @@ Drupal.mosaic = Drupal.mosaic || {};
     catch (err) {
       console.log('alignTimeline errored: '+err);
     }
-  }
+  };
   
 })(jQuery);
