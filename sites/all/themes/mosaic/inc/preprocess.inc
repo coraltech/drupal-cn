@@ -474,6 +474,23 @@ function mosaic_preprocess_field_documentation_reference(&$vars) {
 }
 
 
+// Point tags links to correct location (PORTAL-948)
+function mosaic_preprocess_field_tags(&$vars) {
+  $items = $vars['items'];
+  $node  = $vars['element']['#object'];
+  
+  // Book has no special page, use find
+  if ($node->type == 'book') {
+    foreach ($items as $indx => $item) {
+      $tag = 'use cases';
+      $tag = rawurldecode($item['#title']);
+      $vars['items'][$indx]['#href'] = 'search/node/all';
+      $vars['items'][$indx]['#options']['query'] = array('f' => array('type:book', rawurlencode('field_tags:name') . ":" . $tag));
+    }
+  }
+}
+
+
 function mosaic_preprocess_book_navigation(&$vars) {
   if ($vars['tree'] && $vars['has_links']) {
     $vars['tree_class'] = 'grid-16-last';
@@ -521,6 +538,7 @@ function mosaic_preprocess_user_picture(&$vars) {
     $vars['user_picture'] = mosaic_compile_default_user_image($account->uid, $image_style, $title);
   }
 }
+
 
 // Compiles a user image
 function mosaic_compile_default_user_image($user, $image_style, $title) {
