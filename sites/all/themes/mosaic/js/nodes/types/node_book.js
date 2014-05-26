@@ -23,7 +23,8 @@ Drupal.mosaic = Drupal.mosaic || {};
           if ($(nodes).length) {
             nodes = new Drupal.mosaic.bookNodes($(nodes));
           }
-          
+          nodes.adjustTimelines(); // first run
+
           $(window).resize(function(e) { 
             nodes.adjustTimelines();
           });
@@ -199,7 +200,7 @@ Drupal.mosaic = Drupal.mosaic || {};
             }
 
             // check positioning
-            if (pBot >= cBot) { // previous reaches down further (or eq.) than the current
+            if (pBot + lip >= cBot) { // previous reaches down further (or eq.) than the current
               //console.log($curr.prev('.field-item.spacer').outerHeight());
               $curr.prev('.field-item.spacer').css({
                 'height': (lip + pBot - cBot) + 'px' 
