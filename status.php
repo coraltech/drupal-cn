@@ -26,20 +26,22 @@ $account = db_select('users', 'u', array('target' => 'default'))
     ->condition('uid', 1,'=')
     ->execute()
     ->fetchAssoc();
-    
+
 if (!$account || !$account['uid'] == 1) {
   $errors[] = 'Master database not responding.';
 }
 
 // Check that the slave database is active.
-$account = db_select('users', 'u', array('target' => 'slave'))
+if (variable_get('use_db_slave', false)) {
+	$account = db_select('users', 'u', array('target' => 'slave'))
     ->fields('u')
     ->condition('uid', 1,'=')
     ->execute()
     ->fetchAssoc();
-    
-if (!$account || !$account['uid'] == 1) {
-  $errors[] = 'Slave database not responding.';
+
+	if (!$account || !$account['uid'] == 1) {
+		$errors[] = 'Slave database not responding.';
+	}
 }
 
 // Check that all memcache instances are running on this server.
