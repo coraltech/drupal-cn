@@ -476,9 +476,20 @@ function mosaic_preprocess_field_documentation_reference(&$vars) {
 
 // Point tags links to correct location (PORTAL-948)
 function mosaic_preprocess_field_tags(&$vars) {
-  /*$items = $vars['items'];
+  $items = $vars['items'];
   $node  = $vars['element']['#object'];
-  
+
+  $tags = array();
+
+  if (isset($_GET['tag'])) {
+    $tags = $_GET['tag'];
+    //dpm('486: '.$tags);
+    if ($tags && $tags != '') {
+      $tags = filter_xss_admin(rawurldecode($tags));
+      $tags = explode('+', $tags); // note: this has to come in as %2B from the url!
+    }
+  }
+
   // Book has no special page, use find
   if ($node->type == 'book') {
     foreach ($items as $indx => $item) {
@@ -492,11 +503,12 @@ function mosaic_preprocess_field_tags(&$vars) {
   if ($node->type == 'question') {
     foreach ($items as $indx => $item) {
       $tag = $item['#title'];
+      $t = implode('+', array_merge($tags, array($tag)));
       $vars['items'][$indx]['#href'] = 'content/questions-and-answers';
-      $vars['items'][$indx]['#options']['query'] = array('tag' => $tag);
+      $vars['items'][$indx]['#options']['query'] = array('tag' => $t);
     }
   }
-  
+
   // Answers does not
   if ($node->type == 'answer') {
     foreach ($items as $indx => $item) {
@@ -506,7 +518,7 @@ function mosaic_preprocess_field_tags(&$vars) {
     }
   }
 
-  // Comments does not
+  // Comments does not - indeed comments do not show their tags though they are tagged
   if ($node->type == 'comment') {
     foreach ($items as $indx => $item) {
       $tag = rawurldecode($item['#title']);
@@ -514,8 +526,16 @@ function mosaic_preprocess_field_tags(&$vars) {
       $vars['items'][$indx]['#options']['query'] = array('f' => array('type:comment', rawurlencode('field_tags:name') . ":" . $tag));
     }
   }
-  */
+
   // Snippets does
+  if ($node->type == 'snippet') {
+    foreach ($items as $indx => $item) {
+      $tag = $item['#title'];
+      $t = implode('+', array_merge($tags, array($tag)));
+      $vars['items'][$indx]['#href'] = 'content/snippets';
+      $vars['items'][$indx]['#options']['query'] = array('tag' => $t);
+    }
+  }
 }
 
 
