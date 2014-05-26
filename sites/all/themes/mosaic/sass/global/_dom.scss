@@ -164,7 +164,12 @@ ul,
     list-style-position: outside;
   }
   li.collapsed {
-    list-style-image: url('/sites/all/themes/mosaic/assets/images/li-collapse-red.png');
+    list-style-image: url('/sites/all/themes/mosaic/assets/images/li-collapse-green.png');
+    margin: 0 0 0 1em !important;
+    padding-top: 0;
+  }
+  li.expanded {
+    list-style-image: url('/sites/all/themes/mosaic/assets/images/li-open-blue.png');
     margin: 0 0 0 1em !important;
     padding-top: 0;
   }
