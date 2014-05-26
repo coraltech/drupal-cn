@@ -476,18 +476,46 @@ function mosaic_preprocess_field_documentation_reference(&$vars) {
 
 // Point tags links to correct location (PORTAL-948)
 function mosaic_preprocess_field_tags(&$vars) {
-  $items = $vars['items'];
+  /*$items = $vars['items'];
   $node  = $vars['element']['#object'];
   
   // Book has no special page, use find
   if ($node->type == 'book') {
     foreach ($items as $indx => $item) {
-      $tag = 'use cases';
-      $tag = rawurldecode($item['#title']);
+      $tag = $item['#title'];
       $vars['items'][$indx]['#href'] = 'search/node/all';
       $vars['items'][$indx]['#options']['query'] = array('f' => array('type:book', rawurlencode('field_tags:name') . ":" . $tag));
     }
   }
+
+  // Questions has its own page
+  if ($node->type == 'question') {
+    foreach ($items as $indx => $item) {
+      $tag = $item['#title'];
+      $vars['items'][$indx]['#href'] = 'content/questions-and-answers';
+      $vars['items'][$indx]['#options']['query'] = array('tag' => $tag);
+    }
+  }
+  
+  // Answers does not
+  if ($node->type == 'answer') {
+    foreach ($items as $indx => $item) {
+      $tag = rawurldecode($item['#title']);
+      $vars['items'][$indx]['#href'] = 'search/node/all';
+      $vars['items'][$indx]['#options']['query'] = array('f' => array('type:answer', rawurlencode('field_tags:name') . ":" . $tag));
+    }
+  }
+
+  // Comments does not
+  if ($node->type == 'comment') {
+    foreach ($items as $indx => $item) {
+      $tag = rawurldecode($item['#title']);
+      $vars['items'][$indx]['#href'] = 'search/node/all';
+      $vars['items'][$indx]['#options']['query'] = array('f' => array('type:comment', rawurlencode('field_tags:name') . ":" . $tag));
+    }
+  }
+  */
+  // Snippets does
 }
 
 
