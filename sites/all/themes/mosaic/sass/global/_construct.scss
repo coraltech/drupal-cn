@@ -143,6 +143,19 @@ clear {
   margin-right: 0 !important;
 }
 
+.mt-0625 {
+  margin-top: ($default_vert_unit / 2) !important;
+}
+.mb-0625 {
+  margin-bottom: ($default_vert_unit / 2) !important;
+}
+.ml-0625 {
+  margin-left: ($default_vert_unit / 2) !important;
+}
+.mr-0625 {
+  margin-right: ($default_vert_unit / 2) !important;
+}
+
 .ml-1 {
   margin-left: 1em;
 }
