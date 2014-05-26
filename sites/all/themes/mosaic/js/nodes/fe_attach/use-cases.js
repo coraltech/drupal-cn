@@ -31,13 +31,12 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicUseCases = function($useCase) {
     try {
       this.$useCase = $useCase;
+      this.resize();
 
       var MUC = this;
       $(window).resize(function() {
         MUC.resize();
       }); 
-      
-      
     }
     catch (err) {
       console.log('mosaicUseCases errored: '+err);
@@ -64,6 +63,4 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('resize errored: '+err);
     }
   };
-  
-
 })(jQuery);
