@@ -480,10 +480,9 @@ function mosaic_preprocess_field_tags(&$vars) {
   $node  = $vars['element']['#object'];
 
   $tags = array();
-
+  // fetch tags
   if (isset($_GET['tag'])) {
     $tags = $_GET['tag'];
-    //dpm('486: '.$tags);
     if ($tags && $tags != '') {
       $tags = filter_xss_admin(rawurldecode($tags));
       $tags = explode('+', $tags); // note: this has to come in as %2B from the url!
@@ -534,6 +533,16 @@ function mosaic_preprocess_field_tags(&$vars) {
       $t = implode('+', array_merge($tags, array($tag)));
       $vars['items'][$indx]['#href'] = 'content/snippets';
       $vars['items'][$indx]['#options']['query'] = array('tag' => $t);
+    }
+  }
+  
+  
+  // Projects do not
+  if ($node->type == 'project') {
+    foreach ($items as $indx => $item) {
+      $tag = rawurldecode($item['#title']);
+      $vars['items'][$indx]['#href'] = 'search/node/all';
+      $vars['items'][$indx]['#options']['query'] = array('f' => array('type:project', rawurlencode('field_tags:name') . ":" . $tag));
     }
   }
 }
