@@ -9,7 +9,7 @@
   
   .pane-title {
     color: $white;
-    background: lighten($mdblue, 10%);
+    background: lighten($mdblue, 7%);
     padding: ($default_vert_unit / 2);
     margin: 0 0 3px;
     line-height: .8em;
@@ -17,7 +17,7 @@
   
   ul.menu {
     padding: 10px;
-    background: desaturate(lighten($ltblue, 8%), 15%);
+    background: lighten($ltgray, 7%);
     
     li.leaf,
     li.expanded {
