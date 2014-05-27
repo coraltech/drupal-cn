@@ -5,11 +5,11 @@
 @import 'global/fonts';
 
 .pane-book-explorer-book-explorer {
-  margin-bottom: $default_vert_unit;
+  margin-bottom: 2 * $default_vert_unit;
   
   .pane-title {
     color: $white;
-    background: $mdblue;
+    background: lighten($mdblue, 10%);
     padding: ($default_vert_unit / 2);
     margin: 0 0 3px;
     line-height: .8em;
@@ -17,7 +17,7 @@
   
   ul.menu {
     padding: 10px;
-    background: desaturate(lighten($ltblue, 7%), 20%);
+    background: desaturate(lighten($ltblue, 8%), 15%);
     
     li.leaf,
     li.expanded {

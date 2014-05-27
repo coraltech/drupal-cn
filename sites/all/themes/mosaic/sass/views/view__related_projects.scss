@@ -1,6 +1,6 @@
 
 // Scss file for related projects view
-
+@import 'global/arrows';
 @import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
@@ -11,28 +11,38 @@
 //  access to the pane header.
 .pane-related-projects-related-node,
 .pane-related-projects-related-view {
-  margin-bottom: $default_vert_unit;
+  margin-bottom: 2 * $default_vert_unit;
   
   .pane-title {
-    color: $white;
-    padding-left: .5em;
+    color: $mdgray;
+    padding-left: .75em;
     padding-right: .5em;
     margin-bottom: .1545em;
+    position: relative;
     
-    // blue 
-    @include linear-v-gradient($mdblue, desaturate(lighten($mdblue, 7%), 10%));
-    // yellow
-    //@include linear-v-gradient(desaturate(darken($mdyellow, 10%), 30%), desaturate(darken($mdyellow, 5%), 35%));    
+    background: desaturate(lighten($mdblue, 7%), 10%);
+    @include col-gradient(desaturate(lighten($mdblue, 7%), 10%), lighten($ltgray, 7%), lighten($ltgray, 7%), 8px); //desaturate(lighten($ltblue, 8%), 15%), desaturate(lighten($ltblue, 8%), 15%), 8px);
+    border-bottom: 1px dotted desaturate(lighten($mdblue, 7%), 10%);
+    
+    &:after {
+      display: block;
+      position: absolute;
+      top: .75em;
+      left: 8px;
+      content: ' ';
+      
+      
+      @include arrow-right(4px, desaturate(lighten($mdblue, 7%), 10%));
+    }   
   }
   .pane-content {
     padding-top: .3em;
-    background: lighten($mdgray, 35%);
     
     .view-content {
       color: lighten($mdgray, 10%);
       font-weight: bold;
       margin-top: -.3em;
-      background: $ltgray;
+      background: $white;
 
       .views-row { padding-left: 1em; padding-right: 1em; }
       .views-row-even { background: lighten($ltgray, 7%); }
