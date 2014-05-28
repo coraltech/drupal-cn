@@ -39,7 +39,7 @@ $plugin = array(
 */
 function coral_logo_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $block = new stdClass;
-  $block->content = l('<img src="/sites/all/themes/mosaic/assets/images/coral-nexus-logo-reg.jpg" alt="CoralNexus" title="CoralNexus Home">', '<front>', array('html' => TRUE)); 
+  $block->content = l('<img src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Reg.jpg" alt="CoralNexus" title="CoralNexus Home">', '<front>', array('html' => TRUE)); 
   return $block; 
 }
 
