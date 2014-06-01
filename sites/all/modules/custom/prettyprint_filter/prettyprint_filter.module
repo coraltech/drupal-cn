@@ -1,0 +1,78 @@
+<?php
+// $Id$
+/**
+* Implements hook_filter_info().
+*/
+function prettyprint_filter_filter_info() {
+  $filters = array();
+  $filters['prettyprint_filter'] = array(
+    'title' => t('Prettyprint filter formatter'),
+    'description' => t('Converts &lt;pretty&gt; tag to &lt;pre class="prettyprint linenums"&gt;'),
+    'prepare callback' => '_prettyprint_filter_prepare',
+    'process callback' => '_prettyprint_filter_process',
+    'tips callback' => '_prettyprint_filter_tips',
+  );
+  return $filters;
+}
+
+
+/**
+ * Implements hook_help().
+ */
+function prettyprint_filter_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#prettyprint_filter':
+      return t('<p>Use <pretty>{Your code}</pretty> for rendering code via Prettyprint. Also works with [pretty], [code], and <pre><code>.');
+  }
+}
+
+
+/**
+* Implements filter prepare callback.
+*/
+function _prettyprint_filter_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
+  return $text;
+}
+
+/**
+* Implements filter process callback.
+*/
+function _prettyprint_filter_process($text, $filter, $format, $langcode, $cache, $cache_id) {
+    
+  $patterns = array(
+    "/\[pretty\](.*?)\[\/pretty\]/s",
+    "/\[code\](.*?)\[\/code\]/s",
+    "/<pretty>(.*?)<\/pretty>/s"
+  );
+  $replacements = array(
+    "<pre><code>$1</code></pre>",
+    "<pre><code>$1</code></pre>",
+    "<pre><code>$1</code></pre>"
+  ); 
+  $text = preg_replace($patterns, $replacements, $text);  
+ 
+  // Replacement of possible wiki and markdown character combos
+  $text = preg_replace_callback(
+    '/<pre><code>(.+?)<\/code><\/pre>/s',
+    function($matches) {
+      $content = htmlentities(trim($matches[1]), ENT_QUOTES);
+      $content = preg_replace(array('/==/', '/===/'), array('&#61;&#61;', '&#61;&#61;&#61;'), $content);
+      $content = preg_replace(array('/\*/', '/\*\*/'), array('&#42;', '&#42;&#42;'), $content);
+      $content = preg_replace(array('/_/', '/__/'), array('&#95;', '&#95;&#95;'), $content);
+      return '<pre class="prettyprint linenums"><code>'.$content.'</code></pre>';
+    },
+    $text
+  );
+  
+  
+  return $text;
+}
+
+
+/**
+ * Returns the markdown input filter tips.
+ * @TODO: make it easier for translators.
+ */
+function _prettyprint_filter_tips($format, $long = FALSE) {
+  return t('<p>Use <pretty>{Your code}</pretty> for rendering code via Prettyprint. Also works with [pretty], [code], and <pre><code>.');
+}
