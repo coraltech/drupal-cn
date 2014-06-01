@@ -17,24 +17,6 @@ function prettyprint_filter_filter_info() {
 
 
 /**
- * Implements hook_help().
- */
-/*function prettyprint_filter_help($path, $arg) {
-  switch ($path) {
-    case 'admin/help#prettyprint_filter':
-      return t('<p>Use <pretty>{Your code}</pretty> for rendering code via Prettyprint. Also works with [pretty], [code], and <pre><code>.');
-  }
-}*/
-
-
-/**
-* Implements filter prepare callback.
-*/
-//function _prettyprint_filter_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
-//  return $text;
-//}
-
-/**
 * Implements filter process callback.
 */
 function _prettyprint_filter_process($text, $filter, $format, $langcode, $cache, $cache_id) {
@@ -77,5 +59,4 @@ function _prettyprint_filter_process($text, $filter, $format, $langcode, $cache,
  */
 function _prettyprint_filter_tips($format, $long = FALSE) {
   return t('Use &lt;pretty&gt;&#123;Your code&#125;&lt;/pretty&gt; for rendering code via Prettyprint. Also works with &#91;pretty&#93;, &#91;code&#93;, and &lt;pre&gt;&lt;code&gt;.');
-  //return '';
 }
