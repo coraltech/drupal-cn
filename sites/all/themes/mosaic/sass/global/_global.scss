@@ -66,6 +66,9 @@ header,
 #navbar-administration.navbar-oriented .navbar-bar {
   min-width: $phonew;
 }
+#navbar-administration ul.menu li.expanded {
+  margin-left: 0 !important;
+}
 
 // -- Search form -- added here bc it is on every page
 header .pane-search-form {
