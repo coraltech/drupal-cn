@@ -297,6 +297,10 @@ input.form-text {
   border: 1px inset darken($ltgray, 5%);
 }
 
+input[type='password'] {
+  background: lighten($ltyellow, 5%);
+}
+
 html.js input.form-autocomplete {
   background-image: url(../assets/images/coral-throbber-blue-15.gif);
   background-position: 99.5% 10px;
