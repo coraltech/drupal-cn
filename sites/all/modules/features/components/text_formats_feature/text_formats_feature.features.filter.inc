@@ -18,32 +18,37 @@ function text_formats_feature_filter_default_formats() {
     'status' => 1,
     'weight' => -10,
     'filters' => array(
-      'filter_html' => array(
+      'prettyprint_filter' => array(
         'weight' => -50,
         'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_html' => array(
+        'weight' => -49,
+        'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <pre> <ul> <ol> <li> <dl> <dt> <dd> <h2> <h3> <h4> <span> <p> <box> <br> <hr> <sub> <sup> <hlite> <img> <clear> <small>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <pre> <code> <ul> <ol> <li> <dl> <dt> <dd> <h2> <h3> <h4> <span> <p> <br> <hr> <sub> <sup> <img> <hlite> <clear> <small> <box> <pretty>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
       ),
       'freelinking' => array(
-        'weight' => -49,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'filter_markdown' => array(
         'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
-      'Mediawiki Format' => array(
+      'filter_markdown' => array(
         'weight' => -47,
         'status' => 1,
         'settings' => array(),
       ),
-      'typogrify' => array(
+      'Mediawiki Format' => array(
         'weight' => -46,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'typogrify' => array(
+        'weight' => -45,
         'status' => 1,
         'settings' => array(
           'smartypants_enabled' => 0,
@@ -105,12 +110,12 @@ function text_formats_feature_filter_default_formats() {
         ),
       ),
       'filter_autop' => array(
-        'weight' => -45,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -44,
+        'weight' => -43,
         'status' => 1,
         'settings' => array(),
       ),

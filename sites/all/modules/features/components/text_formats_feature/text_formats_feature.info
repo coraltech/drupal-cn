@@ -9,6 +9,7 @@ dependencies[] = filter
 dependencies[] = flexifilter
 dependencies[] = freelinking
 dependencies[] = markdown
+dependencies[] = prettyprint_filter
 dependencies[] = typogrify
 features[features_api][] = api:2
 features[filter][] = filtered_html
