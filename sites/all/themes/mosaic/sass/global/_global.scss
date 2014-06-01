@@ -146,7 +146,7 @@ header .pane-search-form {
   }
 }
 
-@media screen and (max-width: $tabletw - 150) {
+@media screen and (max-width: $tabletw - 200) {
   header .pane-search-form {
     width: 155px;
   
@@ -342,6 +342,15 @@ h2 .toc-top {
 h3 .toc-top {
   margin-top: ($default_vert_unit / 8);
 }
+@media screen and (max-width: $tabletw) {
+  .toc-top {
+    margin-right: -.0625em;
+  }
+  h2 .toc-top {
+    margin-right: -.045em;
+  }
+}
+
 
 .flag-waiting a {
   opacity: 1;
