@@ -8,9 +8,9 @@ function prettyprint_filter_filter_info() {
   $filters['prettyprint_filter'] = array(
     'title' => t('Prettyprint filter formatter'),
     'description' => t('Converts &lt;pretty&gt; tag to &lt;pre class="prettyprint linenums"&gt;'),
-    'prepare callback' => '_prettyprint_filter_prepare',
+    //'prepare callback' => '_prettyprint_filter_prepare',
     'process callback' => '_prettyprint_filter_process',
-    'tips callback' => '_prettyprint_filter_tips',
+    'tips callback' => '_prettyprint_filter_tips'
   );
   return $filters;
 }
@@ -19,31 +19,34 @@ function prettyprint_filter_filter_info() {
 /**
  * Implements hook_help().
  */
-function prettyprint_filter_help($path, $arg) {
+/*function prettyprint_filter_help($path, $arg) {
   switch ($path) {
     case 'admin/help#prettyprint_filter':
       return t('<p>Use <pretty>{Your code}</pretty> for rendering code via Prettyprint. Also works with [pretty], [code], and <pre><code>.');
   }
-}
+}*/
 
 
 /**
 * Implements filter prepare callback.
 */
-function _prettyprint_filter_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
-  return $text;
-}
+//function _prettyprint_filter_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
+//  return $text;
+//}
 
 /**
 * Implements filter process callback.
 */
 function _prettyprint_filter_process($text, $filter, $format, $langcode, $cache, $cache_id) {
-    
+
+  // All pretty print options should be here...
   $patterns = array(
     "/\[pretty\](.*?)\[\/pretty\]/s",
     "/\[code\](.*?)\[\/code\]/s",
     "/<pretty>(.*?)<\/pretty>/s"
   );
+
+  // Standard replacement for ease of searching below
   $replacements = array(
     "<pre><code>$1</code></pre>",
     "<pre><code>$1</code></pre>",
@@ -62,8 +65,7 @@ function _prettyprint_filter_process($text, $filter, $format, $langcode, $cache,
       return '<pre class="prettyprint linenums"><code>'.$content.'</code></pre>';
     },
     $text
-  );
-  
+  );   
   
   return $text;
 }
@@ -74,5 +76,6 @@ function _prettyprint_filter_process($text, $filter, $format, $langcode, $cache,
  * @TODO: make it easier for translators.
  */
 function _prettyprint_filter_tips($format, $long = FALSE) {
-  return t('<p>Use <pretty>{Your code}</pretty> for rendering code via Prettyprint. Also works with [pretty], [code], and <pre><code>.');
+  return t('Use &lt;pretty&gt;&#123;Your code&#125;&lt;/pretty&gt; for rendering code via Prettyprint. Also works with &#91;pretty&#93;, &#91;code&#93;, and &lt;pre&gt;&lt;code&gt;.');
+  //return '';
 }

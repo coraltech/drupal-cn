@@ -1,5 +1,5 @@
-; $Id$
 name = Prettyprint filter formatter
 description = Converts <pretty> tag to <pre class="prettyprint linenums"> 
 core = 7.x
-files[] = prettyprint_filter.module
+package = Filters
+
