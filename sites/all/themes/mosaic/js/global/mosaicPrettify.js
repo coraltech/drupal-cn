@@ -232,16 +232,19 @@ Drupal.mosaic = Drupal.mosaic || {};
       
       var text = 'Expand';
       var adir = 'right';
-      if (this.parentW < this.origWidth) { // codeblock is currently opened!
-        text = 'Close';
-        adir = 'left';
+      console.log(this);
+      //if (this.parentW < this.origWidth) { // codeblock is currently opened!
+     //   text = 'Close';
+      //  adir = 'left';
+      //}
+      
+      if (this.parentW < this.origWidth) {
+        this.$codeblock.attr('id', this.id); // add id to codeblock
+        this.$codeblock.css({'overflow':'hidden'}); // set overflow to hidden
+        this.$codeblock.wrap('<div id="crp-'+this.id+'" class="precrp">'); // add a wrapper; we can't append into the pre tag!
+        $('#crp-'+this.id).prepend('<a href="#" id="exp-'+this.id+'">'+text+'<span class="arrow arrow-'+adir+'"></span></a>');
+        this.$expand = $('#exp-'+this.id).hide(); // capture and hide
       }
-
-      this.$codeblock.attr('id', this.id); // add id to codeblock
-      this.$codeblock.css({'overflow':'hidden'}); // set overflow to hidden
-      this.$codeblock.wrap('<div id="crp-'+this.id+'" class="precrp">'); // add a wrapper; we can't append into the pre tag!
-      $('#crp-'+this.id).prepend('<a href="#" id="exp-'+this.id+'">'+text+'<span class="arrow arrow-'+adir+'"></span></a>');
-      this.$expand = $('#exp-'+this.id).hide(); // capture and hide
     }
     catch (err) {
       console.log('init errored: '+err);
