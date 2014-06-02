@@ -164,6 +164,20 @@ Drupal.mosaic = Drupal.mosaic || {};
 		for (var i in obj) { if (obj.hasOwnProperty(i)) count++; }
 		return count;
   };
-
+  
+  // Checks if the $object is in-view
+  Drupal.mosaic.mosaicCore.prototype.inView = function($obj) {
+    try {
+      var docViewTop = $(window).scrollTop();
+      var elemTop = $obj.offset().top;
+      console.log(docViewTop);
+      console.log(elemTop);
+      if (elemTop <= docViewTop) return true;
+      return false;
+    }
+    catch (err) {
+      console.log('inView errored: '+err);
+    }
+  };
 })(jQuery);
 
