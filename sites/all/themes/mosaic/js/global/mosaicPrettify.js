@@ -116,7 +116,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     try { // update text and then animate
       if (!this.$expand.hasClass('exp-processing')) {
         mp = this;
-        
+
         this.$expand.addClass('exp-processing');
         if (this.$expand.text() == 'Expand') { 
           this.$expand.text('Close'); // update text
@@ -126,6 +126,7 @@ Drupal.mosaic = Drupal.mosaic || {};
           this.$expand.text('Expand'); // and text
           this.$expand.append('<span class="arrow arrow-right"></span>'); // and arrow
         }
+
         // animate
         this.animateCode(ev, function() {
           mp.$expand.removeClass('exp-processing');  
@@ -136,8 +137,8 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('handleCodeExpand errored: '+err);
     }
   };
-  
-  
+
+
   // Hover over codeblock
   Drupal.mosaic.mosaicPrettify.prototype.handleCodeHover = function(ev) {
     try {
@@ -153,13 +154,11 @@ Drupal.mosaic = Drupal.mosaic || {};
   // callback used by handleCodeExpand()
   Drupal.mosaic.mosaicPrettify.prototype.animateCode = function(ev, callback) {
     try {
+      var mp = this;
       var scrWidth = $(this.$codeblock)[0].scrollWidth;
       var callback = (typeof(callback) == 'function') ? callback : function() {};
-      
-      mp = this;
-      
-      if (scrWidth > this.parentW) { // Is expandable?
 
+      if (scrWidth > this.parentW) { // Is expandable?
         if (ev.type == 'mouseenter') {
           if (!this.$codeblock.hasClass('expanded')) {
             this.$codeblock.css({'width':this.parentW+'px'}); // set starting width for animate
@@ -168,10 +167,10 @@ Drupal.mosaic = Drupal.mosaic || {};
           }
           this.$expand.fadeIn(200); // What say?
         }
-
-        else if (ev.type == 'mouseleave') {
+        
+        if (ev.type == 'mouseleave') {
           var cb = function() {
-            if (!mp.$expand.hasClass('hover')) {
+            if (!mp.$expand.hasClass('hover') && !mp.$codeblock.hasClass('expanded-full')) {
               if (mp.$expand.text() != 'Close') {
                 // animate to original width
                 mp.$codeblock.animate({'width':mp.parentW}, 200, 'swing', function() {
@@ -186,7 +185,8 @@ Drupal.mosaic = Drupal.mosaic || {};
           setTimeout(cb, 25);
         }
 
-        else if (ev.type == 'click') {
+        
+        if (ev.type == 'click') {
           if (this.$codeblock.hasClass('expanded-full')) {
             // animate to original width + 25 px
             this.$codeblock.animate({'width':Number(this.parentW)+25}, 200, 'swing', function() {
@@ -224,20 +224,14 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Set the id for the codeblock
   Drupal.mosaic.mosaicPrettify.prototype.init = function() {
     try {
-      this.origWidth = this.$codeblock.width(); // get codeblock width (std)
-      
       // Get the parent width
       var $parent = this.$codeblock.parents('.container').eq(0);
-      this.parentW = $parent.width() - 2; // -2 for the codeblock's borders (1px each side)
-      
       var text = 'Expand';
       var adir = 'right';
-      console.log(this);
-      //if (this.parentW < this.origWidth) { // codeblock is currently opened!
-     //   text = 'Close';
-      //  adir = 'left';
-      //}
-      
+
+      this.origWidth = this.$codeblock.width(); // get codeblock width (std)
+      this.parentW = $parent.width() - 2; // -2 for the codeblock's borders (1px each side)
+
       if (this.parentW < this.origWidth) {
         this.$codeblock.attr('id', this.id); // add id to codeblock
         this.$codeblock.css({'overflow':'hidden'}); // set overflow to hidden
@@ -245,6 +239,13 @@ Drupal.mosaic = Drupal.mosaic || {};
         $('#crp-'+this.id).prepend('<a href="#" id="exp-'+this.id+'">'+text+'<span class="arrow arrow-'+adir+'"></span></a>');
         this.$expand = $('#exp-'+this.id).hide(); // capture and hide
       }
+      
+      //var mp = this;
+      //$(window).scroll(function(ev) {
+      //  if (mp.$expand.length) {
+      //    console.log(Drupal.mosaic.core.inView(mp.$expand));
+      //  }
+      //});
     }
     catch (err) {
       console.log('init errored: '+err);
@@ -252,3 +253,5 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
   
 })(jQuery);
+
+
