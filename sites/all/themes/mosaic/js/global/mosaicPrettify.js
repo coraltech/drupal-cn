@@ -80,10 +80,10 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.origWidth = this.$codeblock.width(); // get codeblock width (std)
       this.parentW = $parent.width() - 2; // -2 for the codeblock's borders (1px each side)
 
-      if (this.parentW < this.origWidth) {
+      //if (this.parentW < this.origWidth) {
         this.$codeblock.attr('id', this.id); // add id to codeblock
         this.$codeblock.css({'overflow-x':'auto'});
-      }
+      //}
     }
     catch (err) {
       console.log('init errored: '+err);
