@@ -19,7 +19,43 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         var $prettify = $('pre.prettyprint:not("prettyprinted")');
-        var pretty = []; // will store all instances of mosaicPrettify
+        var pretty  = []; // will store all instances of mosaicPrettify
+        var $parent = {}; // holds code's parent div
+        var $rows   = {}; // holds rows in this codeblock (li)
+        var p       = {}; // Holds all instances of mosaicPrettify
+
+        var resize = function(pretty) {
+          try {
+            // Correct formatting where needed
+            for (var indx in pretty) {
+              p = pretty[indx]; // li get funky
+              $rows = p.$codeblock.find('ol.linenums > li');
+              $parent = p.$codeblock.parents('.container').eq(0);
+              
+              p.scrollW = p.$codeblock[0].scrollWidth; // get codeblock width (std)
+              p.parentW = $parent.outerWidth() - 2; // -2 for the codeblock's borders (1px each side)
+              
+              
+              // ensure list items are the right width for 
+              // code that overflows.
+              $rows.each(function(i) {
+                if (p.scrollW > p.parentW) {
+                  console.log('---');
+                  console.log(p.scrollW);
+                  console.log(p.parentW);
+                  $(this).css('width', (p.scrollW - 45)+ 'px');
+                }
+                else {
+                  $(this).css('width', '100%');
+                }
+              });
+            }
+          }
+          catch (err) {
+            console.log('resize errored: '+err);
+          }
+        };
+
 
         // Initialize and setup events (hover)
         $prettify.each(function(i) {
@@ -30,23 +66,13 @@ Drupal.mosaic = Drupal.mosaic || {};
         if ($prettify.length) {
           prettyPrint(); // See google-code-prettify!
         }
-        
-        // Correct formatting where needed
-        for (var indx in pretty) {
-          var p = pretty[indx]; // li get funky
-          var $rows = p.$codeblock.find('ol.linenums > li');
 
-          // ensure list items are the right width for 
-          // code that overflows.
-          $rows.each(function(i) {
-            if (p.origWidth > p.parentW) {
-              $(this).css('width', p.origWidth + 'px');
-            }
-            else {
-              $(this).css('width', (p.origWidth - 45) + 'px');
-            }
-          });
-        }
+
+        // Init resize and set resize event
+        resize(pretty);
+        $(window).resize(function() {
+          resize(pretty);
+        });
       }
       catch (err) {
         console.log('mosaicPrettify() reported errors: '+err);
@@ -60,8 +86,8 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       this.$parent = $codeblock.parent('div');
       this.$codeblock = $codeblock;
-      this.origWidth; // will contain pre code width
-      this.parentW;   // Will contain parent width for ref.
+      this.scrollW; // will contain pre code scroll width
+      this.parentW; // Will contain parent width for ref.
       
       this.id = this.getID(); // register an id
       this.init();            // go
@@ -70,8 +96,8 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('mosaicPrettify errored: '+err);
     }
   };
-
-
+  
+  
   // Get the textarea id 
   Drupal.mosaic.mosaicPrettify.prototype.getID = function() {
     try {
@@ -92,8 +118,8 @@ Drupal.mosaic = Drupal.mosaic || {};
       // Get the parent width
       var $parent = this.$codeblock.parents('.container').eq(0);
 
-      this.origWidth = this.$codeblock.width(); // get codeblock width (std)
-      this.parentW = $parent.width() - 2; // -2 for the codeblock's borders (1px each side)
+      this.scrollW = this.$codeblock[0].scrollWidth; // get codeblock width (std)
+      this.parentW = $parent.outerWidth() - 2; // -2 for the codeblock's borders (1px each side)
 
       this.$codeblock.attr('id', this.id); // add id to codeblock
       this.$codeblock.css({'overflow-x':'auto'});     
