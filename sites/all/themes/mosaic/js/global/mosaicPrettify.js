@@ -42,6 +42,9 @@ Drupal.mosaic = Drupal.mosaic || {};
             if (p.origWidth > p.parentW) {
               $(this).css('width', p.origWidth + 'px');
             }
+            else {
+              $(this).css('width', (p.origWidth - 45) + 'px');
+            }
           });
         }
       }
