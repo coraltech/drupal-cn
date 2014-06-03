@@ -19,15 +19,30 @@ Drupal.mosaic = Drupal.mosaic || {};
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         var $prettify = $('pre.prettyprint:not("prettyprinted")');
-        
+        var pretty = []; // will store all instances of mosaicPrettify
+
         // Initialize and setup events (hover)
-        $prettify.each(function() {
-          new Drupal.mosaic.mosaicPrettify($(this));
+        $prettify.each(function(i) {
+           pretty[i] = new Drupal.mosaic.mosaicPrettify($(this));
         });
 
-        // Run prettify - do it last or boink! <- seriously
+        // Run prettify - should happen after init!
         if ($prettify.length) {
           prettyPrint(); // See google-code-prettify!
+        }
+        
+        // Correct formatting where needed
+        for (var indx in pretty) {
+          var p = pretty[indx]; // li get funky
+          var $rows = p.$codeblock.find('ol.linenums > li');
+
+          // ensure list items are the right width for 
+          // code that overflows.
+          $rows.each(function(i) {
+            if (p.origWidth > p.parentW) {
+              $(this).css('width', p.origWidth + 'px');
+            }
+          });
         }
       }
       catch (err) {
@@ -42,12 +57,11 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       this.$parent = $codeblock.parent('div');
       this.$codeblock = $codeblock;
-      this.$expand;   // will contain the (expand / close) codeblock button obj
       this.origWidth; // will contain pre code width
       this.parentW;   // Will contain parent width for ref.
       
       this.id = this.getID(); // register an id
-      this.init();            // kick it off!
+      this.init();            // go
     }
     catch(err) {
       console.log('mosaicPrettify errored: '+err);
@@ -59,7 +73,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicPrettify.prototype.getID = function() {
     try {
       var t = new Date; // we can use date to help uniqify the id
-      var id = t.getTime()+'-'+Math.floor((Math.random()*99)+1); // add ## for extra pom
+      var id = t.getTime()+'-'+Math.floor((Math.random()*999)+1); // add ## for extra pom
       this.$codeblock.attr('id', 'pre-'+id); // force unique id
       return id;
     }
@@ -74,16 +88,12 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       // Get the parent width
       var $parent = this.$codeblock.parents('.container').eq(0);
-      var text = 'Expand';
-      var adir = 'right';
 
       this.origWidth = this.$codeblock.width(); // get codeblock width (std)
       this.parentW = $parent.width() - 2; // -2 for the codeblock's borders (1px each side)
 
-      //if (this.parentW < this.origWidth) {
-        this.$codeblock.attr('id', this.id); // add id to codeblock
-        this.$codeblock.css({'overflow-x':'auto'});
-      //}
+      this.$codeblock.attr('id', this.id); // add id to codeblock
+      this.$codeblock.css({'overflow-x':'auto'});     
     }
     catch (err) {
       console.log('init errored: '+err);
