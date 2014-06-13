@@ -40,9 +40,6 @@ Drupal.mosaic = Drupal.mosaic || {};
               // code that overflows.
               $rows.each(function(i) {
                 if (p.scrollW > p.parentW) {
-                  console.log('---');
-                  console.log(p.scrollW);
-                  console.log(p.parentW);
                   $(this).css('width', (p.scrollW - 45)+ 'px');
                 }
                 else {
