@@ -1,0 +1,55 @@
+
+// Section intro attachment styles.
+// Used for section intros for project types: packages, components, etc.
+
+@import "compass/css3/border-radius";
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+
+.node-section-intro {
+  //background: lighten($ltgray, 6%);
+  border-bottom: 1px solid $mdblue;
+  
+  .content {
+    padding: 0 1em;
+  }
+  
+  .field-name-field-logo {
+    @include col(4.5);
+    margin-right: 2%;
+    margin-top: $default_vert_unit;
+    img {
+    }
+  }
+  .field-name-body {
+    @include col(19.5);
+  }
+  
+  .node-teaser-title {
+    display: none;
+  }
+}
+
+// instance modifications
+//  we know it will need chichlets here.
+div.ui-tabs {
+  .ui-tabs-nav {
+    li.ui-tabs-active {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    li.ui-corner-top {
+      margin-bottom: .5em;
+      @include border-radius(4px);
+      a {
+        padding: ($default_vert_unit / 4) ($default_vert_unit / 2);  
+      }
+    }
+    li.ui-tabs-selected {
+      padding-bottom: 0px;
+      margin-bottom: .5em;
+    }
+  }
+}

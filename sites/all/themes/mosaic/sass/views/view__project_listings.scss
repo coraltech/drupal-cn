@@ -1,0 +1,107 @@
+
+// Project listings view scss file
+//  See also the projects main page.
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+.pane-project-listings-project-listings {
+  background: lighten($ltgray, 7%);
+  @include linear-v-gradient(lighten($ltgray, 9%), $white);
+
+  .view-project-listings {
+    position: relative;
+
+    .q-filtered-tag {
+      color: $mdgray;
+      background: $ltyellow;
+      padding: 3px 5px;
+      
+      .filtered-by {
+        margin-right: .75em;
+        line-height: 1em;
+      }
+      .reset-filter a {
+        @include btn-matte-inset(0px, 12px, $mdblue, darken($mdblue, 3%), $white);
+        @include btn-structure(2px 5px, 12px, $radius: 0px);
+      }
+      .ftag {
+        color: darken($mdgray, 5%);
+        font-weight: bold;
+        
+        small {
+          color: $mdgray;
+          margin-left: 3px;
+          position: relative;
+          top: -1px;
+        }
+        
+        a:hover small {
+          color: $mdred;
+        }
+      }
+    }
+    .view-empty,
+    .views-row {
+      padding: ($default_vert_unit / 2) 1em 0;
+      border-bottom: 1px solid $mdblue;
+    }
+  }
+  
+  
+  .views-field-field-logo {
+    img {
+      float: left;
+      margin: 4px .5em 0 0;
+    }
+  }
+  .views-field-name {
+    a {
+      text-transform: capitalize;
+      &:hover {
+        color: $dkgray;
+      }
+    }
+  }
+  .views-field-title {
+    a {
+      color: $mdblue;
+
+      &:after {
+        content: '|';
+        color: $mdgray;
+        font-weight: normal;
+        margin: 0 .25em ($default_vert_unit / 2) .5em;
+      }   
+      
+      &:hover {
+        color: darken($mdblue, 10%);
+      }
+    }
+  }
+  
+  .views-field-field-project-repo {
+    a {
+      font-size: .9em;
+      margin: 0 .2em 0 0;
+      color: $mdgreen;
+      
+      &:hover {
+        color: darken($mdgreen, 7%);
+      }
+    }
+  }
+  
+  .views-field-field-issue-queue {
+    a {
+      font-size: .9em;
+      color: $dkred;
+      
+      &:hover {
+        color: darken($dkred, 10%);
+      }
+    }
+  }
+}

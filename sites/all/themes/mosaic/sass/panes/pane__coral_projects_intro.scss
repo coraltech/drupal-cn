@@ -1,0 +1,64 @@
+
+// scss file for the coral snippets intro pane
+
+@import 'global/fonts';
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/headers';
+@import 'global/icons';
+@import 'global/grid_mix';
+@import 'global/gradients';
+@import 'global/site_vars';
+
+@import "compass/css3/box-shadow";
+@import 'compass/utilities/general/clearfix';
+ 
+.pane-coral-projects-intro {
+  margin-bottom: $default_vert_unit;
+  color: $mdgray;
+  @include linear-v-gradient($white, lighten($ltgray, 5%));
+  
+  .pane-content {
+    background: url('../../assets/images/diag-tile.png');
+    padding: $default_vert_unit / 2;
+    
+    p {
+      margin-bottom: 0;
+      @include h4;
+    }
+
+    .container {
+      padding: $default_vert_unit / 2;
+      background: rgba(255,255,255,.75);
+      @include pie-clearfix;
+    }
+    
+    .info {
+      display: block;
+      float: left;
+      margin-right: 10px;
+      @include icons-sprite('info-sm');
+    }
+    
+    .add {
+      display: block;
+      float: right;
+      
+      @include btn-glass-ltn;
+      @include btn-structure;
+      
+      font-size: 1.15em;
+      min-height: 2em;
+      line-height: 2em;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  .pane-coral-projects-intro {
+    .smlhd {
+      display: none;
+    }
+  }
+}
