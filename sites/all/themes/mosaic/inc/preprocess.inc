@@ -4,6 +4,10 @@ function mosaic_preprocess(&$vars, $hook) {
 //dpm($hook);
 }
 
+// Include includes - used to ensure mosaic_preprocess_node(&$vars)
+// includes node files for section intros...
+coral_include(array('includes'), 'inc', array('module' => 'mosaic_be'));
+
 /**
  * Preprocess variables for html.tpl.php
  */
@@ -144,8 +148,7 @@ function mosaic_preprocess_views_view_field(&$vars) {
   
   // By real field name
   if ($vars['field']->real_field != $vars['field']->field_alias) {
-    $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field;
-//dpm($func);
+    $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field; //dpm($func);
     if (function_exists($func)) $func($vars);
   }
 }
@@ -162,7 +165,6 @@ function mosaic_preprocess_comment(&$vars) {
   $vars['classes_array'][] = 'comment-thread-'.$count;
   
   // Compile nice "submitted" info
-  //$vars['submitted'] = t('!datetime', array('!username' => $variables['author'], '!datetime' => $variables['created']));
   $au_sub = '<span class="au-sub">'.$vars['author'].'</span>';
   $po_sub = '<span class="po-sub">Posted: '.$vars['created'].'</span>';
   $vars['submitted'] = $au_sub . $po_sub;
@@ -202,6 +204,17 @@ function mosaic_preprocess_node(&$vars) {
   if (!isset($vars['title_attributes_array']['class'])) $vars['title_attributes_array']['class'] = '';
   if (!$vars['page']) $vars['title_attributes_array']['class'] = $vars['title_attributes_array']['class'] . ' node-teaser-title';
   $vars['title_attributes_array']['class'] = $vars['title_attributes_array']['class'] . ' node-title';
+
+  // Nodes
+  $node = $vars['node'];
+  if (!empty($node->nid) && is_numeric($node->nid)) {
+    // Load css and js files as needed by the theme
+    //  note files are loaded w theme level settings._mosiac_be_node_load_by_nid($entity);              // Load by node id
+    _mosiac_be_node_load_by_nid($node);              // Load by node id
+    _mosiac_be_node_load_by_type($node);             // Load by node type
+    _mosaic_be_node_load_by_mode($node, $vars['view_mode']); // Load by view modes
+    _mosaic_be_node_load_by_fe_attach($node);        // Load by fe_attach field (added on node create form)
+  }
 }
 
 
@@ -378,7 +391,6 @@ function mosaic__preprocess_views_views_field_title(&$vars) {
 function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   $tags = '';
   $found = FALSE;
-  $use_search = FALSE; // use actual search page as target?
 
   //dpm($vars);
   if (isset($_GET['tag'])) {
@@ -418,22 +430,15 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
 
   if ($vars['view']->name == 'tags_popular' && 
     $vars['view']->current_display == 'popular_project_tags') {
-    $use_search = TRUE;
-    $path = 'search/node/all';
+    $path = 'content/coralnexus-projects';
   }
-
 
   // see also mosaic_tagclouds_weighted(&$vars) for info on encoding solr fields
   $class = 'tag-term';
   if ($found) $class = 'tag-active';
 
   if ($tags) {
-    if ($use_search) {
-      $vars['output'] = l($vars['output'], $path, array('query' => array('f' => array('type:project', rawurlencode('field_tags:name') . ":" . $tags)), 'attributes' => array('class' => array($class))));
-    }
-    else {
-      $vars['output'] = l($vars['output'], $path, array('query' => array('tag' => $tags), 'attributes' => array('class' => array($class))));
-    }
+    $vars['output'] = l($vars['output'], $path, array('query' => array('tag' => $tags), 'attributes' => array('class' => array($class))));
   }
   else {
     $vars['output'] = l($vars['output'], $path, array('attributes' => array('class' => array($class))));
@@ -537,12 +542,13 @@ function mosaic_preprocess_field_tags(&$vars) {
   }
   
   
-  // Projects do not
+  // Projects does
   if ($node->type == 'project') {
     foreach ($items as $indx => $item) {
-      $tag = rawurldecode($item['#title']);
-      $vars['items'][$indx]['#href'] = 'search/node/all';
-      $vars['items'][$indx]['#options']['query'] = array('f' => array('type:project', rawurlencode('field_tags:name') . ":" . $tag));
+      $tag = $item['#title'];
+      $t = implode('+', array_merge($tags, array($tag)));
+      $vars['items'][$indx]['#href'] = 'content/coralnexus-projects';
+      $vars['items'][$indx]['#options']['query'] = array('tag' => $t);
     }
   }
 }
@@ -743,6 +749,11 @@ function _preprocess_view__snippets__new_snippets(&$vars) {
 }
 
 
+// Main projects view display
+function _preprocess_view__project_listings__project_listings(&$vars) {
+  _preprocess_view__questions__new_questions($vars);
+}
+
 /**
  * Process variables for user-profile.tpl.php.
  *
@@ -780,5 +791,13 @@ function mosaic_possessive($name) {
   }
   else {
     return $name."'s";
+  }
+}
+
+
+// Remove explicite height and width paramters on images
+function mosaic_preprocess_image(&$variables) {
+  foreach (array('width', 'height') as $key) {
+    unset($variables[$key]);
   }
 }
