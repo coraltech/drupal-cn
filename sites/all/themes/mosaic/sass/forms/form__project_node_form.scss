@@ -1,0 +1,59 @@
+
+// Styles for project node form
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/gradients';
+
+.node-project-form {
+  .layout-landing-responsive {
+    .main-content {
+      float: left;
+      margin-bottom: $default_vert_unit;
+      & > .prepend-1 {
+        @include prepend(0);
+        @include append(1);
+        padding: .5em;
+        background: lighten($ltgray, 5%);
+        @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
+      }
+    }
+  }
+  .form-item {
+    //margin: 0;
+  }
+
+  .field-name-body {
+    margin-bottom: 1.5 * $default_vert_unit;
+  }
+  
+  .field-name-field-item-featureset {
+    label {
+      margin-top: $default_vert_unit / 2;
+    }
+    .field-add-more-submit {
+      margin-top: $default_vert_unit / 2;
+    }
+  }
+  
+  .field-name-field-tags,
+  .field-name-field-project-repo,
+  .field-name-field-issue-queue {
+    margin: $default_vert_unit 0;
+    
+    .form-type-textfield {
+      margin-top: 0;
+    }
+  }
+  
+  .field-name-field-logo {
+    margin: 2 * $default_vert_unit 0;
+    background: lighten($ltgray, 5%);
+    padding: .5em;
+  }
+  
+  .field-name-field-documentation-reference .references-dialog-links {
+    margin-top: 0;
+  }
+}
