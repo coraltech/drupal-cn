@@ -6,6 +6,48 @@
  * @param type $query 
  */
 function mosaic_be_views_query_alter(&$view, &$query) {
+  mosaic_query_alter_single_taxon($view, $query);
+  mosaic_query_alter_multi_taxon($view, $query);
+}
+
+
+// Multi taxonomy term queries...
+function mosaic_query_alter_multi_taxon($view, &$query) {
+  if ($view->name == 'project_listings') {
+    //dpm($view);
+    //dpm($query);
+    
+    $tags = '';
+
+    if (isset($_GET['tag'])) $tags = $_GET['tag'];
+
+    if ($tags && $tags != '') {
+      $tags = filter_xss_admin(rawurldecode($tags));
+      $tags = explode('+', $tags);
+
+      $conditions = array(
+        1 => array(
+          'field' => 'taxonomy_term_data_field_data_field_tags.name',
+          'value' => $tags,
+          'operator' => 'IN'
+        )      
+      );
+
+      // Set the query (this one is on [0])
+      $query->where[0] = array(
+        'conditions' => array_merge($query->where[0]['conditions'], $conditions),
+        'args' => array(),
+        'type' => 'AND'
+      );
+    }
+    //dpm(array_merge($query->where[0]['conditions'], $conditions));
+    //dpm($query);
+  }
+}
+
+
+// Single term query alterations
+function mosaic_query_alter_single_taxon($view, &$query) {
   //dpm($view->name);
   if ($view->name == 'related_qa' || 
       $view->name == 'questions' || 
