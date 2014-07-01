@@ -42,6 +42,9 @@
 body.html {
   background: $dkgray; 
 }
+body.html #references-dialog-page {
+  background: $white;
+}
 
 body.page-references-dialog {
   background: transparent;
@@ -641,13 +644,16 @@ div.ui-tabs {
   font-family: $sans_fonts;
   margin: 0 0 (2 * $default_vert_unit);
   border: none;
-  
+  //@include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
   @include border-radius(0);
-  @include box-shadow(rgba(0, 0, 0, 0.125) 5px 3px 5px);
-  
+
   .ui-tabs-nav {
     margin: 0;
     padding: .5em .5em 0;
+    
+    li a {
+      padding: .5em 1em;
+    }
   }
   
   .ui-corner-all {
@@ -678,16 +684,25 @@ div.ui-tabs {
     border-color: darken($ltblue, 12%);
     border-width: 1px;
     padding: 0;
+    //@include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
     @include border-radius(0);
   }
   
   .ui-state-default {
     border-color: darken($ltblue, 12%);
-  } 
+  }
+  
+  .panel-separator {
+    display: none;
+  }
 }
 @media screen and (max-width: $desktopw) { 
   div.ui-tabs {
     .ui-tabs-nav {
+      li.ui-tabs-active {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+      }
       li.ui-corner-top {
         margin-bottom: .5em;
         @include border-radius(4px);
@@ -957,3 +972,6 @@ form .field-type-file {
     @include arrow-right(7px, $black);
   }
 }
+
+
+
