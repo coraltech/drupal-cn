@@ -1,0 +1,15 @@
+name = Node edit panels
+description = Edit panel feature definition
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = node_edit_panels
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_edit_panel_context
+features[page_manager_handlers][] = node_edit_panel_context_2
+features[page_manager_handlers][] = node_edit_panel_context_4
+features[page_manager_handlers][] = node_view_panelizer_node
+features[page_manager_handlers][] = node_view_panelizer_node_2

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Node edit panels feature.
+ */
+
+include_once 'node_edit_panels.features.inc';

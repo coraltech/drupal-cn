@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Section intro node type feature.
+ */
+
+include_once 'section_intro_node_type.features.inc';

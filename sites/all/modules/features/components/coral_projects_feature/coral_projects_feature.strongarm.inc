@@ -223,6 +223,7 @@ function coral_projects_feature_strongarm() {
   $strongarm->name = 'node_options_project';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_project'] = $strongarm;
 
@@ -278,8 +279,8 @@ function coral_projects_feature_strongarm() {
       'default' => array(
         'status' => 0,
         'default' => 0,
+        'default display' => 0,
         'choice' => 0,
-        'selection' => 0,
       ),
       'teaser' => array(
         'status' => 1,
@@ -289,8 +290,8 @@ function coral_projects_feature_strongarm() {
       'full_node' => array(
         'status' => 0,
         'default' => 0,
+        'default display' => 0,
         'choice' => 0,
-        'selection' => 0,
       ),
     ),
   );

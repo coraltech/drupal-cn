@@ -164,16 +164,39 @@ function coral_projects_feature_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -214,7 +237,7 @@ function coral_projects_feature_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_documentation_reference',
     'label' => 'Documentation reference',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
@@ -373,7 +396,7 @@ function coral_projects_feature_field_default_field_instances() {
   $field_instances['node-project-field_logo'] = array(
     'bundle' => 'project',
     'deleted' => 0,
-    'description' => 'Optional logo image for the project.',
+    'description' => 'Optional logo image for the project',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -408,7 +431,7 @@ function coral_projects_feature_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 119,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '50KB',
@@ -443,7 +466,7 @@ function coral_projects_feature_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Link to project repository',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -484,8 +507,9 @@ function coral_projects_feature_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'linkit' => array(
+        'button_text' => 'Search',
         'enable' => 0,
-        'insert_plugin' => '',
+        'profile' => '',
       ),
       'rel_remove' => 'default',
       'title' => 'value',
@@ -712,11 +736,12 @@ function coral_projects_feature_field_default_field_instances() {
   t('Item feature label');
   t('Item feature text');
   t('Item featureset');
+  t('Link to project repository');
   t('Logo');
   t('One or more comma separated tags');
   t('Optional feature sets for this project. Only displayed in larger footprint formats.');
   t('Optional link to the issue queue');
-  t('Optional logo image for the project.');
+  t('Optional logo image for the project');
   t('Project group');
   t('Project repo');
   t('Project type');
