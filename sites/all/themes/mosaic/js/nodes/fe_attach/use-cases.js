@@ -47,7 +47,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicUseCases.prototype.resize = function() {
     try {
       var w = this.$useCase.outerWidth();
-      console.log(w);
+
       if (w < 500) {
         this.$useCase.find('.left.center, .right.center').css({
           'width':'100%',
