@@ -591,7 +591,6 @@ function mosaic_preprocess_user_picture(&$vars) {
     $image_style = $vars['image_style'];
   }
 
-  //dpm($a0);dpm($a1);dpm($a2);
   if ($a0 == 'user') { // thumbnail (larger than normal)
     $image_style = (!isset($image_style)) ? 'thumbnail' : $image_style;
     $vars['user_picture'] = mosaic_compile_default_user_image($account->uid, $image_style, $title);
