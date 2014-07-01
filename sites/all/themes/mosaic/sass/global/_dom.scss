@@ -295,6 +295,7 @@ input.form-text {
   width: 98.45%;
   padding: .25em;
   border: 1px inset darken($ltgray, 5%);
+  box-sizing: border-box;
 }
 
 input[type='password'] {
