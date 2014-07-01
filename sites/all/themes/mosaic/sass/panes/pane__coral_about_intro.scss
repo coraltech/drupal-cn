@@ -22,7 +22,7 @@ h1.page-title {
   position: relative;
   
   h3 {
-    @include h2;
+    //@include h2;
     font-weight: bold;
     line-height: $default_vert_unit;
     margin-bottom: 2em;
@@ -40,7 +40,7 @@ h1.page-title {
   .cloud-case {
     display: block;
     position: absolute;
-    top: -8px;
+    top: -4px;
     left: 0;
     @include icons-sprite('cloud-case'); 
   }

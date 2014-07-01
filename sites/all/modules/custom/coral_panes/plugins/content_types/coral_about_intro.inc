@@ -44,7 +44,7 @@ function coral_about_intro_pane_content_type_render($subtype, $conf, $args, $con
   
   $output = <<<EOF
 <div class="cloud-case"></div>
-<h3>Our mission is to glue the world's technologies together</h3>
+<h3>Our mission is to help people connect essential data, applications, and services to make the cloud accessible to all.</h3>
 <h4>We build pluggable programming frameworks that everyone can use and extend to build the apps and clouds of tomorrow! Our technologies are <u>free and open source</u> and have concurrency and extensibility in their DNA.</h4>
 <h4>Our primary framework is CORL, a cloud programming framework that extends Nucleon. To learn more visit the {$projects}.</h4> 
 EOF;
