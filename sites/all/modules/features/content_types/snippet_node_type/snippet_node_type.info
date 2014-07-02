@@ -4,6 +4,7 @@ core = 7.x
 package = Node types
 version = 7.x-1.2
 project = snippet_node_type
+dependencies[] = entityreference
 dependencies[] = number
 dependencies[] = options
 dependencies[] = page_manager
