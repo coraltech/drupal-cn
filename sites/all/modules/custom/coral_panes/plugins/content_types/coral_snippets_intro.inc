@@ -48,12 +48,13 @@ function coral_snippets_intro_pane_content_type_render($subtype, $conf, $args, $
     $btn = l('Add a snippet', 'user/login', array('attributes' => array('class' => array('add', 'nowrap'))));  
   }
 
+  $lm = l('submitting snippets', 'docs/submitting-projects');
   $output = <<<EOF
   <div class="container">
     <div class="grid-24">
       <span class="info"></span>
       {$btn}
-      <p>Snippets&nbsp;are&nbsp;educational&nbsp;code resources that should be helpful in understanding the CORL framework. <span class="smlhd">Snippets shave time off adding features to your cloud definitions, modules, profiles, etc.</span> Snippets should be tagged by language(s) and purpose.</p>
+      <p>Snippets are educational code resources that you can drop into your CORL or Nucleon based projects to get started quickly. See {$lm} to get started.</p>
     </div>
   </div>
 EOF;
