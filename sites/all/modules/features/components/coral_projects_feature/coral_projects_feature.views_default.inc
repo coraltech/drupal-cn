@@ -284,6 +284,16 @@ function coral_projects_feature_views_default_views() {
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_project_group:project_group',
   );
+
+  /* Display: Reference dialog project search */
+  $handler = $view->new_display('references_dialog', 'Reference dialog project search', 'references_dialog_2');
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['attach'] = array(
+    0 => 'node:field_project_reference:snippet',
+  );
   $export['project_references'] = $view;
 
   $view = new view();
