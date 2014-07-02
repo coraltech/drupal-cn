@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the projects_sections_minipanels feature.
+ */
+
+include_once 'projects_sections_minipanels.features.inc';
