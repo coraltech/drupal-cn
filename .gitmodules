@@ -72,7 +72,7 @@
 	url = http://git.drupal.org/project/book_explorer
 [submodule "sites/all/modules/contrib/references_dialog"]
 	path = sites/all/modules/contrib/references_dialog
-	url = http://git.drupal.org/project/references_dialog
+	url = http://github.com/coraltech/references_dialog
 [submodule "sites/all/modules/contrib/views_autocomplete_filters"]
 	path = sites/all/modules/contrib/views_autocomplete_filters
 	url = http://git.drupal.org/project/views_autocomplete_filters
