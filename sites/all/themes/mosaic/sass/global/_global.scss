@@ -45,6 +45,17 @@ body.html {
 body.html #references-dialog-page {
   background: $white;
 }
+/**
+ * Styling for the references view rows
+ */
+#references-dialog-page .view-content .views-row {
+  border: 1px solid $mdgray;
+  background: lighten($ltgray, 6%) url('../assets/images/hlite-radial.png') top center no-repeat;
+  background-size: cover;
+  width: 32%;
+  height: 150px;
+  box-sizing: border-box;
+}
 
 body.page-references-dialog {
   background: transparent;
