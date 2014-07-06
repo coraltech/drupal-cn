@@ -7,12 +7,10 @@
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Lets see if this is a node type edit form.
   //  if so, lets add the type's css  
+  //dpm($form_id);
   if (str_replace('_node_form', '', $form_id) != $form_id) {
     // Load type related styles and js  
     _mosiac_be_node_load_by_type($form['#node']);
-    
-    //dpm($form_id);
-    
     // Load default node form and css styles
     $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__node_form';
     $js_path = drupal_get_path('theme', 'mosaic').'/js/forms/form__node_form';
@@ -43,8 +41,59 @@ function mosaic_form_comment_node_snippet_form_alter(&$form, &$form_state) {
 }
 
 
+// Set destination for the login form - the page you are presently on
 function mosaic_form_user_login_alter(&$form, &$form_state) {
+  $menu = menu_get_item();  
   $form['#attributes']['class'][] = 'user-login';
+
+  $form['logo'] = array(
+    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><p class="right h3"><span class="mdorange">Login</span> - Welcome back</p>',
+    '#weight' => -20
+  );
+  // @TODO: make sure there is no destination or other Query info attached already.
+  //  Could be an issue...
+  if ($menu['href'] != 'user/login' && $menu['href'] != 'user/register') {
+    $form['#action'] .= '?destination='.$menu['href'];
+  }
+}
+
+function mosaic_form_user_pass_alter(&$form, &$form_state) {
+  $menu = menu_get_item();  
+  $form['#attributes']['class'][] = 'user-pass';
+
+  $form['logo'] = array(
+    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><p class="right h3"><span class="mdorange">Reset password</span> - Welcome back</p>',
+    '#weight' => -20
+  );
+  // @TODO: make sure there is no destination or other Query info attached already.
+  //  Could be an issue...
+  if ($menu['href'] != 'user/login' && $menu['href'] != 'user/register') {
+    $form['#action'] .= '?destination='.$menu['href'];
+  }
+  
+  $form['name']['#description'] = t('Enter your username or email address to recieve a password reset link.');
+}
+
+function mosaic_form_user_register_form_alter(&$form, &$form_state) {
+  $menu = menu_get_item();  
+  $form['#attributes']['class'][] = 'user-register';
+
+  $form['logo'] = array(
+    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><p class="right h3"><span class="mdorange">Register</span> - Cloud pioneering ahead</p>',
+    '#weight' => -20
+  );
+
+  // Update a few descriptions (make em smaller)'
+  $form['account']['name']['#description'] = t('Spaces, periods, hyphens, apostrophes, and underscores are allowed.');
+  $form['account']['mail']['#description'] = t('Valid email address required. Email addresses are not shared publicly.');
+  
+  // @TODO: make sure there is no destination or other Query info attached already.
+  //  Could be an issue...
+  if ($menu['href'] != 'user/login' && $menu['href'] != 'user/register') {
+    $form['#action'] .= '?destination='.$menu['href'];
+  }
+  
+  $form['actions']['submit']['#value'] = t('Register');
 }
 
 
