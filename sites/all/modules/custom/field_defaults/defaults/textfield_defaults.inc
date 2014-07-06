@@ -96,13 +96,27 @@ function field_defaults_comment_node_form__textfield_defaults($form, &$matrix) {
 }
 
 
-// Node question creation form
+// Login form
 function field_defaults_user_login__textfield_defaults($form, &$matrix) {
     
   //print_r($matrix);
   $matrix['user_login']['selectors'] = array(
     '.qa-form .user-login input[name="name"]' => t('User name'),
     '.user-login input[name="name"]' => t('User name | Email')
+  );
+}
+
+// Register form
+function field_defaults_user_register_form__textfield_defaults($form, &$matrix) {
+  $matrix['user_register']['selectors'] = array(
+    '.user-register input[name="name"]' => t('Preferred user name')
+  );
+}
+
+// Password reset form
+function field_defaults_user_pass__textfield_defaults($form, &$matrix) {
+  $matrix['user_pass']['selectors'] = array(
+    '.user-pass input[name="name"]' => t('User name | Email')
   );
 }
 
