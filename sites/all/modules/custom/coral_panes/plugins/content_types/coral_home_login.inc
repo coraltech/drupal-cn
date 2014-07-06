@@ -22,22 +22,34 @@ $plugin = array(
 */
 function coral_home_login_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   global $user;
-      
-  $log = l('Login', 'user/login');
+  $menu = menu_get_item();  
+  $log = l('Login', 'user/login', array(
+    'query' => array(
+      'destination' => $menu['href']
+     )
+  ));
   $fog = l('Forgot password', 'user/password');
   $reg = l('Register', 'user/register');
   $wik = l('wiki docs', 'content/community-documentation');
   $com = l('community Q&A', 'content/questions-and-answers');
   
-  $output = '';
+  $signup = l('Sign up', 'user/register', array(
+    'attributes' => array(
+      'class' => array('btn', 'nowrap')
+    ),
+    'query' => array(
+      'destination' => $menu['href']
+    )
+  )); 
   
+  $output = '';
   $block = new stdClass;
   
   if (!$user->uid) {
     $block->title = t('Sign up');
     
     $output = '<div class="login-sep grid-24-last"></div>';
-    $output .= '<div class="grid-4">'.l('Sign up', 'user/login', array('attributes' => array('class' => array('btn', 'nowrap')))).'</div>';
+    $output .= '<div class="grid-4">'.$signup.'</div>';
     $output .= '<div class="grid-15-last"><p>Signup to recieve updates, edit and discuss '.$wik.', and post to the '.$com.'. No registration required to use CORL.</p></div>';
     $output .= '<div class="grid-5"><ul><li>'.$log.'</li><li>'.$fog.'</li></ul></div>';
   }
