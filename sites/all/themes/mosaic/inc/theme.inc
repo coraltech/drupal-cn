@@ -12,11 +12,18 @@
 function mosaic_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
+  $menu = menu_get_item();
 
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
   }
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  $query = array();
+  if ($element['href'] == 'user/login' || $element['href'] = 'user/register') {
+    $query = array('query' => array(
+      'destination' => $menu['href']
+    ));
+  }
+  $output = l($element['#title'], $element['#href'], array_merge($element['#localized_options'], $query));
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
