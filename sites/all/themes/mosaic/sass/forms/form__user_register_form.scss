@@ -1,0 +1,67 @@
+
+@import "compass/css3/border-radius";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/box-shadow";
+@import 'compass/css3/opacity';
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/gradients';
+
+form.user-register {
+  background: url('../../assets/images/yellowrays-3.jpg') top center no-repeat;
+  background-size: cover;
+  padding: 5em 0;
+  margin-top: -2em;
+  
+  & > div {
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    border: 2px solid $mdblue;
+    padding: 4em 1em .5em;
+    @include border-radius(15px);
+    @include pie-clearfix;
+    @include box-shadow(rgba(0,0,0,.25) 3px 3px 5px);
+    @include reflected-v-gradient($white, $white, lighten($ltgray, 7%));
+    
+    input.form-text {
+      width: 100%;
+    }
+    
+    .login-logo {
+      position: absolute;
+      top: -24px;
+      left: -15px;
+    }
+    
+    .hybridauth-widget-wrapper .hybridauth-widget {
+      margin-top: 6px;
+      float: none;
+      
+      .hybridauth-icon-hybridauth-24 {
+        @include opacity(.85);
+        
+        &:hover {
+          @include opacity(1);
+        }
+      } 
+    }
+    .hybridauth-widget-wrapper {
+      float: right;
+      min-width: 80%;
+    }
+    p.right {
+      margin-top: -2.25em;
+      color: lighten($mdgray, 10%);
+    }
+    .form-item-name {
+      label {
+        display: none;
+      }
+    }
+    .form-actions {
+      float: left;
+    }
+  }
+}

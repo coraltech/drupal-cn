@@ -18,7 +18,7 @@ function mosaic_menu_link(array $variables) {
     $sub_menu = drupal_render($element['#below']);
   }
   $query = array();
-  if ($element['href'] == 'user/login' || $element['href'] = 'user/register') {
+  if ($element['href'] == 'user/login' || $element['href'] == 'user/register') {
     $query = array('query' => array(
       'destination' => $menu['href']
     ));

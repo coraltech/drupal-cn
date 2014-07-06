@@ -39,13 +39,21 @@ $plugin = array(
 */
 function coral_projects_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   global $user;
-  
+  $menu = menu_get_item();
   $btn = FALSE;
+  
   if (node_access('create', 'project', $user)) {
     $btn = l('Add a project', 'node/add/project', array('attributes' => array('class' => array('add', 'nowrap'))));
   }
   else {
-    $btn = l('Add a project', 'user/login', array('attributes' => array('class' => array('add', 'nowrap'))));  
+    $btn = l('Add a project', 'user/login', 
+      array(
+        'attributes' => array('class' => array('add', 'nowrap')),
+        'query' => array(
+          'destination' => $menu['href']
+        )
+      )
+    );
   }
 
   $lm = l('submitting projects', 'docs/submitting-projects');
