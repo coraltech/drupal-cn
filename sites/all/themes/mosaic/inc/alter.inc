@@ -175,21 +175,23 @@ function mosaic_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   $menu = menu_get_item();
   $dest = drupal_get_destination();
 
-  foreach ($tabs as $indx => $tab) {
-    // Ensure login link points to user/login not just user
-    if ($tab['#link']['path'] == 'user/login') {
-      $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/login';
-      mosaic_menu_local_tasks_user_links($data, $dest, $indx);
-    }
-    
-    if ($tab['#link']['path'] == 'user/register') {
-      $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/register';
-      mosaic_menu_local_tasks_user_links($data, $dest, $indx);
-    }
-    
-    if ($tab['#link']['path'] == 'user/password') {
-      $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/password';
-      mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+  if (is_array($tabs)) {
+    foreach ($tabs as $indx => $tab) {
+      // Ensure login link points to user/login not just user
+      if ($tab['#link']['path'] == 'user/login') {
+        $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/login';
+        mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+      }
+      
+      if ($tab['#link']['path'] == 'user/register') {
+        $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/register';
+        mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+      }
+      
+      if ($tab['#link']['path'] == 'user/password') {
+        $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/password';
+        mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+      }
     }
   }
 }
