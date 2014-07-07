@@ -8,12 +8,32 @@
 @import 'global/fonts';
 @import 'global/gradients';
 
-form.user-login {
+
+// Basic styles
+form.user-pass {
+  .login-logo {
+    display:none;
+  }
+  .form-item-name {
+    label {
+      display: none;
+    }
+  }
+  p.right {
+    margin-top: -1.625em;
+    color: lighten($mdgray, 10%);
+  }
+}
+
+body.page-user-password .mosaic-cont > .main-global {
   background: url('../../assets/images/yellowrays-3.jpg') top center no-repeat;
   background-size: cover;
+}
+
+// Advanced display
+body.page-user-password .pane-page-content form.user-pass {
   padding: 5em 0;
-  margin-top: -2em;
-  
+      
   & > div {
     position: relative;
     margin: 0 auto;
@@ -30,11 +50,14 @@ form.user-login {
     }
     
     .login-logo {
+      display: block;
       position: absolute;
       top: -24px;
       left: -15px;
     }
-    
+    p.right {
+      margin-top: -2.25em;
+    }
     .hybridauth-widget-wrapper .hybridauth-widget {
       margin-top: 6px;
       float: none;
@@ -51,17 +74,10 @@ form.user-login {
       float: right;
       min-width: 80%;
     }
-    p.right {
-      margin-top: -2.25em;
-      color: lighten($mdgray, 10%);
-    }
-    .form-item-name {
-      label {
-        display: none;
-      }
-    }
     .form-actions {
       float: left;
     }
   }
 }
+
+
