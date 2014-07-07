@@ -168,3 +168,44 @@ function mosaic_snippet_node_submit($form, &$form_state) {
   $form_state['values']['field_component_count'][$node->language][0]['value'] = (string)$cnt;
 }
 
+
+// Update login link from local tasks
+function mosaic_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  $tabs = $data['tabs'][0]['output'];
+  $menu = menu_get_item();
+  $dest = drupal_get_destination();
+
+  foreach ($tabs as $indx => $tab) {
+    // Ensure login link points to user/login not just user
+    if ($tab['#link']['path'] == 'user/login') {
+      $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/login';
+      mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+    }
+    
+    if ($tab['#link']['path'] == 'user/register') {
+      $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/register';
+      mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+    }
+    
+    if ($tab['#link']['path'] == 'user/password') {
+      $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/password';
+      mosaic_menu_local_tasks_user_links($data, $dest, $indx);
+    }
+  }
+}
+
+
+// Update query destinations
+function mosaic_menu_local_tasks_user_links(&$data, $dest, $indx) {
+  $query = array();  
+  if ($dest) {
+    $query = array('query' => array(
+      'destination' => $dest['destination'] // set query to the current destination
+    ));
+  }
+  if (!is_array($data['tabs'][0]['output'][$indx]['#link']['localized_options'])) {
+    $data['tabs'][0]['output'][$indx]['#link']['localized_options'] = array();
+  }
+  $data['tabs'][0]['output'][$indx]['#link']['localized_options'] = array_merge($data['tabs'][0]['output'][$indx]['#link']['localized_options'], $query);
+}
+
