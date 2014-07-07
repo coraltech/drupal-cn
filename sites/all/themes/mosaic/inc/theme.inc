@@ -10,18 +10,38 @@
  * @ingroup themeable
  */
 function mosaic_menu_link(array $variables) {
+  global $user;
+
   $element = $variables['element'];
   $sub_menu = '';
   $menu = menu_get_item();
+  $dest = array(); // will contain the present destination
+  
+  if ($element['#href'] == 'user' && !$user->uid) {
+    $element['#href'] = 'user/login';    
+  }
 
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
   }
+
   $query = array();
-  if ($element['href'] == 'user/login' || $element['href'] == 'user/register') {
-    $query = array('query' => array(
-      'destination' => $menu['href']
-    ));
+  
+  // Operate on user links
+  if ($element['#href'] == 'user/login' || $element['#href'] == 'user/register' || $element['#href'] == 'user/password') {
+    if (!preg_match('/user/', $menu['href'])) { // dont add destination if we are at one of the user paths
+      $query = array('query' => array(
+        'destination' => $menu['href'] // set query to the currently viewed page
+      ));
+    }
+    else {
+      $dest = drupal_get_destination();
+      if ($dest) {
+        $query = array('query' => array(
+          'destination' => $dest['destination'] // set query to the current destination
+        ));
+      }
+    }
   }
   $output = l($element['#title'], $element['#href'], array_merge($element['#localized_options'], $query));
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
