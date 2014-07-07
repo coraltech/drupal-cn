@@ -283,7 +283,7 @@ function snippet_node_type_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Project references allow you to link your snippets to projects that are required for the proper functioning of the snippet components. This makes it easier for others to use the snippets successfully.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -345,6 +345,7 @@ function snippet_node_type_field_default_field_instances() {
   t('Component resources');
   t('Language');
   t('Project reference');
+  t('Project references allow you to link your snippets to projects that are required for the proper functioning of the snippet components. This makes it easier for others to use the snippets successfully.');
   t('The code resources for this snippet component');
   t('The title of this snippet component');
 
