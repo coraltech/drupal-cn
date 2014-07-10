@@ -41,6 +41,11 @@ function coral_wiki_questions_pane_content_type_render($subtype, $conf, $args, $
     $question_form = drupal_build_form('question_node_form', $form_state);
     $node = $context[0]->data; // get node from context
     
+    $question_form['intro'] = array(
+      '#markup' => '<h3>'.t('Ask a question').'</h3>',
+      '#weight' => -10
+    );
+    
     if (isset($node->field_tags) && count($node->field_tags) > 0) { // has tags?
       $wiki_tags = field_get_items('node', $node, 'field_tags', LANGUAGE_NONE);
       $tids = array(); // holds wiki doc tids for lookup later
