@@ -154,10 +154,6 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Apply basic css styles for the window
   Drupal.mosaic.helpManager.prototype.addCss = function() {
     try {
-      var w = $(window).width();
-      var h = $('body')[0].scrollHeight;
-      var ha = $(window).height();
-
       // default css
       this.$wrap.css({ // wrapper
         'position': 'absolute',
