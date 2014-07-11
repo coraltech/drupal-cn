@@ -44,16 +44,20 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       
       // jQuery objects of note
-      this.$panel  = $panel.addClass('wa-processed');
-      this.$askBtn = $panel.find('.ask-btn');
-      this.id      = '';
+      this.$panel   = $panel.addClass('wa-processed');
+      this.$form    = this.$panel.find('.wiki-ask-question');
+      this.$askBtn  = this.$panel.find('.ask-btn');
+      this.$addFile = this.$panel.find('.field-type-file label');
+      this.id       = '';
       this.initID(this.$askBtn);
       
+      // Set a few ids
       this.$askBtn.prop('id', 'ask-btn-'+this.id); // initialize an id
+      this.$addFile.prop('id', 'add-file-'+this.id);
 
-      this.$form  = {}; // will hold the question form jQ obj.
       this.events = {};
       this.events['click #ask-btn-'+this.id] = 'askClick';
+      this.events['click #add-file-'+this.id] = 'addClick';
       this.overlay = {}; // Reference to the overlay
       
       // Identification and settings
@@ -70,12 +74,16 @@ Drupal.mosaic = Drupal.mosaic || {};
         
         // Init
         initialize: function() {
-          WAManager.initializePane(); // initialize pane
-           _.bindAll(this, 'askClick');      // attach event handlers
+          _.bindAll(this, 'askClick', 'addClick');      // attach event handlers
         },
         
         askClick: function(ev) { 
           WAManager.handleClick(ev);
+        },
+        
+        addClick: function(ev) {
+          setTimeout(WAManager.resizeWindow(), 25);
+          //console.log('clickey');
         }
        
       });
@@ -97,12 +105,6 @@ Drupal.mosaic = Drupal.mosaic || {};
     else {
       this.id = Drupal.mosaic.core.createID($obj);
     }
-  };
-
-
-  // Gather data
-  Drupal.mosaic.mosaicWAManager.prototype.initializePane = function() {
-    this.$form = this.$panel.find('.wiki-ask-question');
   };
 
 
@@ -242,6 +244,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       var formTop    = Number(this.$form.position().top);
       var formHeight = Number(this.$form.outerHeight());
       var formHInner = this.$form.find('form').eq(0).outerHeight();
+      var formWInner = this.$form.find('form').eq(0).outerWidth();
       var winTop     = Number($('body').scrollTop());
       var winHeight  = Number($(window).height());
       var topSpace   = Number(this.$form.position().top) - Number($('body').scrollTop());
@@ -258,6 +261,14 @@ Drupal.mosaic = Drupal.mosaic || {};
         this.$form.css({'height': '', 'overflow': ''}).removeClass('compressed');
         this.$form.css('top', ((winHeight - formHeight) / 2)+'px');
         this.$form.find('.mbclose').css({'top': '-14px', 'right': '-14px'});
+      }
+      
+      // Compress textfield labels when necc.
+      if (formWInner < 520) { // make labels go above textboxes
+        this.$form.find('.form-item-title, .field-name-field-tags').addClass('compressed');
+      }
+      else {
+        this.$form.find('.form-item-title, .field-name-field-tags').removeClass('compressed');
       }
       
     }
