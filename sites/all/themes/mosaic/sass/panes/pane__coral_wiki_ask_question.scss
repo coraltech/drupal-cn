@@ -20,11 +20,9 @@
   position: relative;
   
   h3 { // Ask a question (title)
-    //margin-top: -.825em;
+    margin-top: 0;
     background: lighten($ltgray, 6%);
-    //margin-left: -1.2em;
-    //margin-right: -1.2em;
-    //padding: .625em;
+    padding: .625em;
     border-bottom: 3px solid darken($ltgray, 3%);
     color: $dkblue;
   }
@@ -60,8 +58,8 @@
     overflow: auto;
     
     & > div > div {
-      margin-left: 1em;
-      margin-right: 1em;
+      margin-left: 1em !important;
+      margin-right: 1em !important;
     }
 
     .form-item-title,
@@ -88,6 +86,23 @@
         clear: both;
       }
     }
+    
+    .form-item-title.compressed,
+    .field-name-field-tags.compressed {
+      label {
+        width: 100%;
+        float: none;
+        line-height: 1.5em;
+      }
+      .form-text {
+        width: 100%;
+        float: none;
+      }
+      .description {
+        width: 100%;
+        float: none;
+      }
+    }    
     
     .form-textarea {
       min-height: 5em !important; 
