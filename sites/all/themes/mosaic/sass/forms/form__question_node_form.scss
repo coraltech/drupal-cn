@@ -1,11 +1,34 @@
 
 // Scss file for the node answer form
 
+@import 'global/colors';
+
 .node-question-form {
   .field-name-field-answer,
   .field-name-field-comment-count,
-  .field-name-field-answer-count,
-  .field-type-file legend {
+  .field-name-field-answer-count {
     display: none;
+  }
+  .field-type-file {
+    .form-type-managed-file {
+      label {
+        color: $mdblue;
+        cursor: pointer;
+      }
+      
+      .form-managed-file {
+        display: none;
+        border: 1px solid darken($ltgray, 8%);
+        background: $ltgray;
+      }
+      
+      .description {
+        display: none;
+      }
+    }
+  
+    legend {
+      display: none;
+    }
   } 
 }
