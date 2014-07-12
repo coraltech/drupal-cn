@@ -239,6 +239,12 @@ header .coral-cloud {
     margin-top: (-1 * $default_vert_unit / 2);
   }
 }
+@media screen and (max-width: $tabletw - 200) {
+  .pane-header .hybridauth-widget-wrapper {
+    margin: ($default_vert_unit / 3) 0 ($default_vert_unit / 2);
+    height: 24px;
+  }
+}
 
 
 
