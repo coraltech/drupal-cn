@@ -7,7 +7,7 @@
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
-
+@import 'global/site_vars';
 
 // Basic styles
 form.user-register {
@@ -57,6 +57,9 @@ body.page-user-register .pane-page-content form.user-register {
     }
     p.right {
       margin-top: -2.25em;
+      br {
+        display: none;
+      }
     }
     .hybridauth-widget-wrapper .hybridauth-widget {
       margin-top: 6px;
@@ -81,3 +84,53 @@ body.page-user-register .pane-page-content form.user-register {
 }
 
 
+@media screen and (max-width: $tabletw) {
+  body.page-user-register .mosaic-cont > .main-global {
+    background: none;
+  }
+  body.page-user-register .mosaic-cont {
+    background: url('../../assets/images/yellowrays-3.jpg') top center no-repeat;
+    background-size: cover;
+  }
+  
+  body.page-user-register .pane-page-content form.user-register {
+    & > div {
+      .login-logo {
+        display: none;  
+      }
+      .login-logo-comp {
+        display: block;
+        position: absolute;
+        top: -24px;
+        left: -2px;
+      }
+      
+      p.right {
+        margin-top: -3.25em;
+        font-size: 1em;
+        text-align: right;
+        br {
+          display: block;
+        }
+        span {
+          display: block;
+        }
+        strong {
+          display: none;
+        }
+      }
+      
+      .hybridauth-widget-wrapper {
+        float: none;
+        min-width: 100%;
+        
+        h3 {
+          float: none;
+        }
+      }
+      .form-actions {
+        float: none;
+      }
+    }
+  }
+}

@@ -4,9 +4,11 @@
 @import "compass/css3/box-shadow";
 @import 'compass/css3/opacity';
 
+
 @import 'global/colors';
 @import 'global/fonts';
 @import 'global/gradients';
+@import 'global/site_vars';
 
 
 // Basic styles
@@ -80,4 +82,52 @@ body.page-user-login .pane-page-content form.user-login {
   }
 }
 
+@media screen and (max-width: $tabletw) {
+  body.page-user-login .mosaic-cont > .main-global {
+    background: none;
+  }
+  body.page-user-login .mosaic-cont {
+    background: url('../../assets/images/yellowrays-3.jpg') top center no-repeat;
+    background-size: cover;
+  }
+
+  body.page-user-login .pane-page-content form.user-login {
+    & > div {
+      .login-logo {
+        display: none;  
+      }
+      .login-logo-comp {
+        display: block;
+        position: absolute;
+        top: -24px;
+        left: -2px;
+      }
+      
+      p.right {
+        margin-top: -3.25em;
+        font-size: 1em;
+        text-align: right;
+
+        span {
+          display: block;
+        }
+        strong {
+          display: none;
+        }
+      }
+      
+      .hybridauth-widget-wrapper {
+        float: none;
+        min-width: 100%;
+        
+        h3 {
+          float: none;
+        }
+      }
+      .form-actions {
+        float: none;
+      }
+    }
+  }
+}
 

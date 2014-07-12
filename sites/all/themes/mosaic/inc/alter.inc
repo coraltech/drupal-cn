@@ -47,9 +47,10 @@ function mosaic_form_user_login_alter(&$form, &$form_state) {
   $form['#attributes']['class'][] = 'user-login';
 
   $form['logo'] = array(
-    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><p class="right h3"><span class="mdorange">Login</span> - Welcome back</p>',
+    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><img class="login-logo-comp hide" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login-comp.jpg" /><p class="right h3"><span class="mdorange">Login</span> <strong>-</strong> <span>Welcome back</span></p>',
     '#weight' => -20
   );
+
   // @TODO: make sure there is no destination or other Query info attached already.
   //  Could be an issue...
   if ($menu['href'] != 'user/login' && $menu['href'] != 'user/register') {
@@ -62,7 +63,7 @@ function mosaic_form_user_pass_alter(&$form, &$form_state) {
   $form['#attributes']['class'][] = 'user-pass';
 
   $form['logo'] = array(
-    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><p class="right h3"><span class="mdorange">Reset password</span> - Welcome back</p>',
+    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><img class="login-logo-comp hide" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login-comp.jpg" /><p class="right h3"><span class="mdorange">Reset password</span> <strong>-</strong> <span>Welcome back</span></p>',
     '#weight' => -20
   );
   // @TODO: make sure there is no destination or other Query info attached already.
@@ -79,7 +80,7 @@ function mosaic_form_user_register_form_alter(&$form, &$form_state) {
   $form['#attributes']['class'][] = 'user-register';
 
   $form['logo'] = array(
-    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><p class="right h3"><span class="mdorange">Register</span> - Cloud pioneering ahead</p>',
+    '#markup' => '<img class="login-logo" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login.jpg" /><img class="login-logo-comp hide" src="/sites/all/themes/mosaic/assets/images/Coral-Nexus-Logo-Login-comp.jpg" /><p class="right h3"><span class="mdorange">Register</span> <strong>-</strong> <span>Cloud pioneering<br> ahead</span></p>',
     '#weight' => -20
   );
 
