@@ -24,11 +24,11 @@
     &:after {
       display: block;
       position: absolute;
-      top: .75em;
-      left: 8px;
+      top: .6em;
+      left: 4px;
       content: ' ';
       
-      @include arrow-right(4px, lighten($mdgray, 10%));
+      @include arrow-right(8px, lighten($mdgray, 10%));
     }  
   }
   .pane-content {

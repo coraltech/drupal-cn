@@ -28,11 +28,11 @@
     &:after {
       display: block;
       position: absolute;
-      top: .75em;
-      left: 8px;
+      top: .6em;
+      left: 4px;
       content: ' ';
 
-      @include arrow-right(4px, desaturate(lighten($dkred, 7%), 30%));
+      @include arrow-right(8px, desaturate(lighten($dkred, 7%), 30%));
     }
   }
   .pane-content {
