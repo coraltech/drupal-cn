@@ -1,0 +1,35 @@
+
+// Field project reference styles
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/headers';
+@import 'global/icons';
+
+.pane-node-field-project-reference {
+  @include col(10, TRUE, right);
+  margin-left: 1em;
+  border: 1px solid $ltgray;
+  
+  .pane-title {
+    @include h0;
+    background: lighten($ltgray, 3%);
+    font-weight: bold;
+    padding: 0 .25em;
+    border-bottom: 1px solid darken($ltgray, 3%);
+  }
+  
+  .pane-content {
+    background: lighten($ltgray, 8%);
+    
+    .even,
+    .odd {
+      padding: 0 .25em;
+    }
+    
+    .even {
+      background: lighten($ltgray, 5%);
+    }
+  }
+}
