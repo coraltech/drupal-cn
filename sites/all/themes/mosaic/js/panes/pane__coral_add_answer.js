@@ -52,8 +52,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$trimmed = $(this.$question).find('.body-trimmed.body-'+this.refID); // trimmed text body pane
       this.$full = $(this.$question).find('.body-full.body-'+this.refID).removeClass('hide'); // full text body pane - get rid of panels added hide class
       
-      this.speed = 250; // ms transistion speed
-      
       // Comment comps - needed to close the comments when answers is clicked
       // See: hideComments()
       this.$cmtBtn   = $question.find('.btn.comment-'+this.refID);
@@ -61,6 +59,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       this.$cmtsTgt  = $(this.$question).find('.comments-tgt-'+this.refID);
       // end comment tie-in
       
+      this.speed = 250; // ms transistion speed
 
       // Initialize the content context (teaser|full)
       this.initContext();
@@ -82,9 +81,10 @@ Drupal.coralQA = Drupal.coralQA || {};
         // Identification and settings
         this.settingsID;
         this.settings;
-        this.currentPage = 1; 
-        this.addedNew = 0;
-        this.hasTrimmed = false;
+        this.currentPage = 0; 
+        this.addedNew    = 0;
+        this.hasTrimmed  = false;
+        this.initialLoad = false;
         
         this.$actions; // will provide a parent container for the close and more buttons for each answers target
                 
@@ -237,8 +237,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Initialize the settings
   Drupal.coralQA.coralAnswer.prototype.initSettings = function(cb) {
     try {
-      // go ahead and set the settings id.
-      this.settingsID = 'answers_new_answers_'+this.refID;
+      this.settingsID = 'answers_new_answers_'+this.refID; // main id
       
       var ca = this;
       
@@ -406,13 +405,29 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       if (!this.$btn.hasClass('ajax-processing')) {
         this.$btn.addClass('ajax-processing'); // no dupes
-        ca = this;
+        
+        var ca = this;
         
         if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
           Drupal.settings.mosaicViews = {};
         }
     
-        this.manageAnswers();
+        // If we don't have settings for this, it's the first time we've looked at it
+        if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
+          var callback = function() {
+            ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
+            ca.initMore();
+            ca.manageAnswers();
+          };
+          ca.setLoadStatus('loading'); // Set the loading status
+          ca.getSettings(callback);    // Get the new settings and then process callback
+        }
+        
+        // No settings loading! We have already loaded these answers
+        else {
+          ca.settings = Drupal.settings.mosaicViews[ca.settingsID];
+          ca.manageAnswers(); // manage them like never before
+        }
       }
     }
     catch (err) {
@@ -463,12 +478,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           if (classes[i] != '') {
             // find what page we are on.
             if (classes[i].match(/page-\d+/)) {
-              try {
-                this.currentPage = classes[i].replace('page-', '');
-              }
-              catch (err) {
-                console.log('handleMoreClick errored: '+err);
-              }
+              this.currentPage = classes[i].replace('page-', '');
             }
           }
         }
@@ -495,7 +505,6 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Show's this question's answers
-  //  Also will hide the comments if they are open
   Drupal.coralQA.coralAnswer.prototype.showAnswers = function() {
     try {
       var ca = this;
@@ -509,26 +518,41 @@ Drupal.coralQA = Drupal.coralQA || {};
         }
       };
       
-      // PS: Comment the following line to forgoe throbber on Answer click! 
-      if (this.context != 'full') ca.setLoadStatus('loading'); // Set the loading status
-
       this.$answerForm.parents('.panel-pane').eq(0).slideDown(this.speed); // show the form
-      this.$answersTgt.parents('.panel-pane').eq(0).slideDown(this.speed, callback); // show answers 
+      this.$answersTgt.parents('.panel-pane').eq(0).slideDown(this.speed, callback); // show comments
       this.$bestAnswer.slideDown(this.speed); // show best answer
       this.$btn.find('.arrow').addClass('arrow-down'); // change the arrow to down
       this.$btn.removeClass('answers-hidden'); // update the btn status
+
+      var $view = $(this.$answersTgt).children('.view-comments');  // must only return children!
+      var $cont = $view.children('.view-content');  // so we can't use find
+      var $answers = $cont.children('.views-row'); // so be it. 
+      var numAnswers = $answers.length;
         
-      // Clicking on the answer btn opens the full content
-      if (this.hasTrimmed) {
-        this.$trimmed.hide();
-        this.$full.show();
-      }
+      // @TODO: I bet addedNew should be in here too
+      if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
+        if (Number(numAnswers) < Number(this.settings.total_items)) {
+          this.$answersTgt.parents('.panel-pane').eq(0).addClass('answers-more');
+          if (!this.initialLoad) { // load the first set only on the first click - after that use "more"
+            this.loadViewResults('answers', 'new_answers', this.refID);
+            this.initialLoad = true;
+          }
+        }
+
+        // Clicking on the answer btn opens the full content
+        if (this.hasTrimmed) {
+          this.$trimmed.hide();
+          this.$full.show();
+        }
           
-      this.$btn.removeClass('ajax-processing'); // no dupe events
-      
-      this.hideComments(); // hide comments
+        this.$btn.removeClass('ajax-processing'); // no dupes
+        this.hideComments(); // hide comments
+      }
+      else {
+        // @TODO: is it possible that we could be missing the settings?
+      }
     }
-    catch (err) {
+    catch(err) {
       console.log('showAnswers errored: '+err);
     }
   };
@@ -690,8 +714,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.getSettings = function(callback) {
     try {
       var ca = this;
-      ca.settingsID = 'answers_new_answers_'+ca.refID;
-        
+              
       if (Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+ca.refID)) {
         // return the current object
         return Drupal.settings.mosaicViews[ca.settingsID]
@@ -707,7 +730,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (typeof(callback) == 'function') callback();
         return data;
       },
-      function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
+      function(data) { // failure @TODO: get a real error handler;
+        console.log('error recieved: '+data.responseText); 
+      }); 
     }
     catch (err) {
       console.log('getSettings errored: '+err);
