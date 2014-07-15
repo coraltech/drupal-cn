@@ -29,7 +29,6 @@ function coral_comments_target_pane_content_type_render($subtype, $conf, $args, 
   if (isset($node->nid) && isset($node->type)) {
     $types = array('question', 'answer', 'comment');
     if (in_array($node->type, $types)) {
-      $items = field_get_items('node', $node, 'field_comment_count');
       $content = '<div class="comments-tgt comments-tgt-'.$node->nid.' clearfix empty"><p class="tgt-load">Comments are loading.</p></div>';
     }
   }  
