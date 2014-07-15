@@ -350,7 +350,6 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Initialize more link
   Drupal.coralQA.coralAnswer.prototype.initMore = function() {
     try {
-      this.initSettings();
       
       var $view = $(this.$answersTgt).children('.view-answers');  // must only return children!
       var $cont = $view.children('.view-content');  // so we can't use find
@@ -405,13 +404,14 @@ Drupal.coralQA = Drupal.coralQA || {};
     try {
       if (!this.$btn.hasClass('ajax-processing')) {
         this.$btn.addClass('ajax-processing'); // no dupes
+        this.settingsID = 'answers_new_answers_'+this.refID;
         
         var ca = this;
         
         if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
           Drupal.settings.mosaicViews = {};
         }
-    
+
         // If we don't have settings for this, it's the first time we've looked at it
         if (!Drupal.settings.mosaicViews.hasOwnProperty('answers_new_answers_'+this.refID)) {
           var callback = function() {
@@ -419,6 +419,7 @@ Drupal.coralQA = Drupal.coralQA || {};
             ca.initMore();
             ca.manageAnswers();
           };
+
           ca.setLoadStatus('loading'); // Set the loading status
           ca.getSettings(callback);    // Get the new settings and then process callback
         }
