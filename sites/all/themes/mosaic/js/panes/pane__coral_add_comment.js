@@ -40,7 +40,7 @@ Drupal.coralQA = Drupal.coralQA || {};
       // jQuery objects of note
       this.$content = $content; // everything centers around the content
       
-      //console.log(this.$question);
+      //console.log(this.$content);
       this.initID(this.$content, { pat: /node-\d+/, cls: 'node-'});
  
       // Tertiary jQuery objects
@@ -72,8 +72,8 @@ Drupal.coralQA = Drupal.coralQA || {};
         this.settingsID;
         this.settings;
         this.currentPage = 0; 
-        this.addedNew = 0;
-        this.hasTrimmed = false;
+        this.addedNew    = 0;
+        this.hasTrimmed  = false;
         this.initialLoad = false;
         
         // we only want 5 cols - then we hide the form
@@ -216,8 +216,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Initialize the settings
   Drupal.coralQA.coralComment.prototype.initSettings = function(cb) {
     try {
-      // go ahead and set the settings id.
-      this.settingsID = 'comments_new_comments_'+this.refID;
+      this.settingsID = 'comments_new_comments_'+this.refID; // main id
       
       var cc = this;
       
@@ -359,6 +358,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Initialize more link
   Drupal.coralQA.coralComment.prototype.initMore = function() {
     try {
+
       var $view = $(this.$commentsTgt).children('.view-answers');  // must only return children!
       var $cont = $view.children('.view-content');  // so we can't use find
       var $comments = $cont.children('.views-row'); // so be it. 
@@ -444,9 +444,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       if (!this.$btn.hasClass('ajax-processing')) {
         this.$btn.addClass('ajax-processing'); // no dupes
         this.settingsID = 'comments_new_comments_'+this.refID;
-        
+
         var cc = this;
-        
+
         if (!Drupal.settings.hasOwnProperty('mosaicViews')) {
           Drupal.settings.mosaicViews = {};
         }
@@ -766,9 +766,8 @@ Drupal.coralQA = Drupal.coralQA || {};
   // Get the settings for this item and add to the associated theme settings
   Drupal.coralQA.coralComment.prototype.getSettings = function(callback) {
     try {
-      cc = this;
-      cc.settingsID = 'comments_new_comments_'+cc.refID;
-        
+      var cc = this;
+
       if (Drupal.settings.mosaicViews.hasOwnProperty('comments_new_comments_'+cc.refID)) {
         // return the current object
         return Drupal.settings.mosaicViews[cc.settingsID]
@@ -784,7 +783,9 @@ Drupal.coralQA = Drupal.coralQA || {};
         if (typeof(callback) == 'function') callback();
         return data;
       },
-      function(data) { console.log('err'); }); // failure @TODO: get a real error handler;
+      function(data) { // failure @TODO: get a real error handler;
+        console.log('error recieved: '+data.responseText); 
+      });
     }
     catch (err) {
       console.log('getSettings errored: '+err);
@@ -914,8 +915,8 @@ Drupal.coralQA = Drupal.coralQA || {};
             },
             // @TODO: process errors (missing fields etc)
             function (jqXHR, status, err) {
-							console.log('Comment creation errored: '+err);
-						}
+              console.log('Comment creation errored: '+err);
+            }
           );
         };
         
