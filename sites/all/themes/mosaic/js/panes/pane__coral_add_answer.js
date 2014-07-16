@@ -67,9 +67,9 @@ Drupal.coralQA = Drupal.coralQA || {};
       // dont hide the answers data on the full node view
       if (this.context == 'teaser') {
         this.$answerForm.parents('.panel-pane').eq(0).hide(); // hide the form
-        this.$answersTgt.parents('.panel-pane').eq(0).hide(); // hide answers
-        this.$bestAnswer.hide();
-      }      
+        this.$answersTgt.parents('.panel-pane').eq(0).hide(); // hide answers target
+        this.$bestAnswer.hide(); // hide best answer
+      }
 
       // Setup and more
       // ----
@@ -128,7 +128,7 @@ Drupal.coralQA = Drupal.coralQA || {};
         initialize: function() {
           coralAnswer.initForm(); // initialize the form
           coralAnswer.initAnswer(); // initialize the answer
-          coralAnswer.initQuestionText(); // check for summary and hide full text if avail.
+          coralAnswer.initQuestion(); // check for summary and hide full text if avail.
           _.bindAll(this, 'answerClick', 'commentClick', 'closeClick', 'moreClick', 'formSubmit', 'trimmedClick', 'formClick', 'titleHover');
         },
        
@@ -205,7 +205,8 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 
   // Ensure the full node text is hidden if the trimmed is different
-  Drupal.coralQA.coralAnswer.prototype.initQuestionText = function() {
+  // Also load first results if we are on full node
+  Drupal.coralQA.coralAnswer.prototype.initQuestion = function() {
     try {
       var trimmedText = $.trim(this.$trimmed.text()); // get trimmed text
       var fullText = $.trim(this.$full.text());
@@ -226,6 +227,11 @@ Drupal.coralQA = Drupal.coralQA || {};
       else {
         this.$trimmed.find('.trimmed-'+this.refID).remove();
         this.$full.hide();
+      }
+
+      if (this.context != 'teaser') {
+        // Simulate first click if we are not looking at a teaser
+        this.handleAnswerClick(); // load first page of results.
       }
     }
     catch (err) {
@@ -269,7 +275,7 @@ Drupal.coralQA = Drupal.coralQA || {};
   Drupal.coralQA.coralAnswer.prototype.initAnswer = function() {
     try {
       var ca = this;
-      
+
       var $view = $(this.$answersTgt).children('.view-answers');  // must only return children!
       var $cont = $view.children('.view-content');  // so we can't use find
       var $answers = $cont.children('.views-row'); // so be it.
@@ -337,7 +343,6 @@ Drupal.coralQA = Drupal.coralQA || {};
       var $questionContext = this.$question.parents('.node-full-node');
       
       if ($questionContext.length) {
-        this.$btn.removeClass('answers-hidden').find('.arrow').addClass('arrow-down');
         this.context = 'full';
       }
     }
