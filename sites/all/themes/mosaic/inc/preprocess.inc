@@ -315,6 +315,42 @@ function mosaic_preprocess_panels_pane__views_panes___user_content_user_snippets
 }
 
 
+// Preprocess login block.
+function mosaic_preprocess_panels_pane__block___user_login(&$vars) {
+  $menu = menu_get_item();
+  
+  $links = array();
+  $links['register'] = array(
+    'href' => 'user/register',
+    'title' => t("Register, it's free!"),
+    'attributes' => array(
+      'title' => 'Sign up and have fun'
+    ),
+    'query' => array(
+      'destination' => $menu['href']
+    )
+  );
+  $links['pass'] = array(
+    'href' => 'user/password',
+    'title' => t("Request new password"),
+    'attributes' => array(
+      'title' => 'New passwords are also free!'
+    ),
+    'query' => array(
+      'destination' => $menu['href']
+    )
+  );
+
+  //$links = array($comp_count_link);
+  $ul = theme('links', array(
+    'links' => $links,
+    'attributes' => array('class' => array('login-links', 'links', 'inline')),
+  ));
+  
+  $vars['content']['links']['#markup'] = $ul;
+}
+
+
 // Answer count output manipulation - add prefix
 function mosaic__preprocess_views_views_field_field_answer_count_value(&$vars) {
   $vars['output'] = '<span class="cnt">'.$vars['output'].'</span><span class="txt">'.format_plural($vars['output'], ' answer', ' answers').'</span>';
