@@ -10,7 +10,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicCommentsSnippetInit = {    
     attach : function(context, settings) {
       try { // Update the form layout
-        $('.pane-node-comment-form, .pane-coral-comment-reply').each(function(i) {
+        $('.pane-node-comment-form, .pane-coral-comment-reply, .pane-user-login').each(function(i) {
           new Drupal.mosaic.manageCommentSnippetForm($(this));
         })
       }
@@ -37,14 +37,14 @@ Drupal.mosaic = Drupal.mosaic || {};
 	  		if (winW < 768) {
 	  			// Show parent content
 	  			$('body').off('swipeleft').on('swipeleft',function(e,data){
-	      		MSS.$parent.show().animate({ 'margin-right': '0' }, 250);
+	      		MSS.$parent.show().animate({ 'margin-right': '0' }, 150);
 	      		MSS.$swipe.find('.icon').removeClass('arrow-left').addClass('arrow-right');
 	      		MSS.$swipe.find('.msg').text(MSS.$swipe.find('.msg').text().replace('view', 'hide'));
 	      	});
 	      	
 	      	// Hide parent content
 	      	$('body').off('swiperight').on('swiperight',function(e,data){
-	      		MSS.$parent.animate({ 'margin-right': '-100%' }, 400, function() {
+	      		MSS.$parent.animate({ 'margin-right': '-100%' }, 150, function() {
 	      			MSS.$parent.hide();
 	      		});
 	      		MSS.$swipe.find('.icon').removeClass('arrow-right').addClass('arrow-left');
