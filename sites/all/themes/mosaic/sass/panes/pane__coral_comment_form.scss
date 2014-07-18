@@ -107,6 +107,11 @@
     .form-item {
       margin: 0;
     }
+
+    .form-item-name label {
+      display: inherit !important;
+    }
+
     .form-type-textfield,
     .form-type-password {
       margin-bottom: $default_vert_unit;
@@ -117,7 +122,7 @@
         @include col(6);
       }
       .form-text {
-        @include col(17.5, 'true');
+        @include col(18, 'true');
       }
       .description {
         @include col(18, 'true');
@@ -127,6 +132,12 @@
     }
     .form-actions {
       float: right;
+    }
+    .hybridauth-widget {
+      margin-top: .3em;
+    }
+    p.h3 {
+      display: none;
     }
   }
 }

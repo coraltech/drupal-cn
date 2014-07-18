@@ -19,14 +19,6 @@
   margin-bottom: $default_vert_unit;
   position: relative;
   
-  h3 { // Ask a question (title)
-    margin-top: 0;
-    background: lighten($ltgray, 6%);
-    padding: .625em;
-    border-bottom: 3px solid darken($ltgray, 3%);
-    color: $dkblue;
-  }
-  
   .ask-btn {
     position: relative;
     color: lighten($mdgray, 10%);
@@ -52,10 +44,26 @@
     top: 80px;
     display: none;
     @include box-sizing(border-box);
+    
+    & > h3 { // box title)
+      margin-top: 0;
+      background: lighten($ltgray, 6%);
+      padding: .625em;
+      border-bottom: 3px solid darken($ltgray, 3%);
+      color: $dkblue;
+    }
   }
   
   .node-question-form {
     overflow: auto;
+    
+    & > div > h3 { // Ask a question (title)
+      margin-top: 0;
+      background: lighten($ltgray, 6%);
+      padding: .625em;
+      border-bottom: 3px solid darken($ltgray, 3%);
+      color: $dkblue;
+    }
     
     & > div > div {
       margin-left: 1em !important;
@@ -113,6 +121,25 @@
     .filter-wrapper,
     .filter-guidelines {
       display: none;
+    }
+  }
+  
+  .user-login {
+    p.h3 {
+      display: none;
+    }
+    
+    & > div {
+      margin-left: 1em !important;
+      margin-right: 1em !important;
+    }
+    .hybridauth-widget-wrapper {
+      margin-left: 1em !important;
+      margin-right: 1em !important;
+    }
+    .form-actions {
+      float: right;
+      margin: 0 0 $default_vert_unit;
     }
   }
 }

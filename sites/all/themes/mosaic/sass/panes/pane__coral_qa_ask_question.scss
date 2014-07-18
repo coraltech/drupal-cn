@@ -18,7 +18,7 @@
   margin: $default_vert_unit 0;
   padding: ($default_vert_unit / 2);
   border: 1px solid $mdgray;
-  //min-height: 250px;
+
   @include pie-clearfix;
   
   & > .pane-content {
@@ -39,11 +39,15 @@
   .form-item {
     margin: 0 0 ($default_vert_unit / 2) 0;
   }
+  .form-item-name label {
+    display: inherit !important;
+  }
   .form-type-password,
   .form-type-textfield {
     width: 48%;
     float: left;
     clear: right;
+    margin: ($default_vert_unit / 2) 0;
     .description { display: none; }
     .form-text { width: 94.8%; }
   }
@@ -156,7 +160,12 @@
     
     .hybridauth-widget {
       float: left;
+      margin-top: .3em;
     }
+  }
+  
+  p.h3 {
+    display: none;
   }
 }
 @media screen and (max-width: $tabletw + 150px) {

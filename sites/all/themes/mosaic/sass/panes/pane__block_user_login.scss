@@ -1,0 +1,98 @@
+
+// Comment form scss definitions
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/gradients';
+@import "compass/css3/box-shadow";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/opacity";
+
+.page-node-talk .pane-user-login {
+  @include col(13, true);
+  
+  float: none;
+  margin: $default_vert_unit auto;
+  
+  @include box-shadow(rgba(0,0,0,.4) 5px 5px 6px);
+    
+  .pane-title {
+    background: $dkgray;
+    border-bottom: 3px double $ltgray;
+    color: $white;
+    padding: 0 (.7 * $default_vert_unit) 0 (.7 * $default_vert_unit);
+    margin: 0;
+  }
+  .pane-content {
+    padding: 1em $default_vert_unit;
+    @include clearfix;
+    @include linear-v-gradient(lighten($ltblue, 7%), $ltgray);
+  }
+  .form-item {
+    margin: 0;
+    padding: 0 0 .5em;
+  }
+  ul.login-links {
+    margin: ($default_vert_unit / 2) 0 $default_vert_unit 0;
+    @include clearfix;
+    
+    li {
+      float: left;
+      width: 49%;
+      margin: 0 1% 0 0;
+      list-style: none;
+      box-sizing: border-box;
+      border-color: $mdblue $mdblue $mdblue $ltblue;
+      border-style: solid;
+      border-width: 1px;
+      padding: 0;
+      
+      a {
+        display: block;
+        color: $white;
+        @include linear-v-gradient(darken($mdblue, 10%), darken($mdblue, 15%));
+        text-align: center;
+        padding: ($default_vert_unit / 4);
+        border-color: $ltblue $dkblue $dkblue $mdblue;
+        border-style: solid;
+        border-width: 1px;
+
+        &:hover {
+          @include linear-v-gradient(darken($mdblue, 1%), darken($mdblue, 6%));
+        }
+      }
+    }
+  }
+  
+  input.form-text {
+    font-size: 130%;
+    width: 98.8%;
+  }
+  .hybridauth-widget {
+    margin-top: 4px;
+    .hybridauth-icon-hybridauth-24 {
+      @include opacity(.75);
+      
+      &:hover {
+        @include opacity(1);
+      }
+    } 
+  }
+  .form-actions {
+    float: right;
+    margin: 0;
+  }
+}
+// Controls form layout style
+// js added class
+.page-node-talk .form-left {
+  margin-left: 0;
+  margin-right: 0;
+  float: left;
+}
+.page-node-talk .form-center {
+  float: left;
+  margin-left: .2%;
+  width: 99.5%;
+}
