@@ -269,18 +269,20 @@ function snippet_node_type_panelizer_defaults() {
     $pane->pid = 'new-10';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:body';
+    $pane->subtype = 'node:field_project_reference';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '0',
       'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 1,
+      ),
       'context' => 'panelizer',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -297,20 +299,18 @@ function snippet_node_type_panelizer_defaults() {
     $pane->pid = 'new-11';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_project_reference';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'entityreference_label',
-      'delta_limit' => '0',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
       'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'link' => 1,
-      ),
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
       'context' => 'panelizer',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();

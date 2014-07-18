@@ -536,7 +536,20 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'anon_links' => 0,
       'context' => 'argument_entity_id:node_1',
@@ -558,6 +571,40 @@ function discussion_pages_default_page_manager_handlers() {
     $display->panels['main'][2] = 'new-18';
     $pane = new stdClass();
     $pane->pid = 'new-19';
+    $pane->panel = 'main';
+    $pane->type = 'block';
+    $pane->subtype = 'user-login';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Log in to join discussion',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $display->content['new-19'] = $pane;
+    $display->panels['main'][3] = 'new-19';
+    $pane = new stdClass();
+    $pane->pid = 'new-20';
     $pane->panel = 'secondary';
     $pane->type = 'entity_view';
     $pane->subtype = 'node';
@@ -577,8 +624,8 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['secondary'][0] = 'new-19';
+    $display->content['new-20'] = $pane;
+    $display->panels['secondary'][0] = 'new-20';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -636,7 +683,7 @@ function discussion_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'leader';
     $pane->type = 'coral_swipe';
     $pane->subtype = 'coral_swipe';
@@ -654,10 +701,10 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['leader'][0] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['leader'][0] = 'new-21';
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'main';
     $pane->type = 'coral_page_title';
     $pane->subtype = 'coral_page_title';
@@ -678,10 +725,10 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['main'][0] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['main'][0] = 'new-22';
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-23';
     $pane->panel = 'main';
     $pane->type = 'views_panes';
     $pane->subtype = 'discussion_comments-talk';
@@ -699,15 +746,28 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['main'][1] = 'new-22';
+    $display->content['new-23'] = $pane;
+    $display->panels['main'][1] = 'new-23';
     $pane = new stdClass();
-    $pane->pid = 'new-23';
+    $pane->pid = 'new-24';
     $pane->panel = 'main';
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'anon_links' => 0,
       'context' => 'argument_entity_id:node_1',
@@ -722,10 +782,44 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['main'][2] = 'new-23';
+    $display->content['new-24'] = $pane;
+    $display->panels['main'][2] = 'new-24';
     $pane = new stdClass();
-    $pane->pid = 'new-24';
+    $pane->pid = 'new-25';
+    $pane->panel = 'main';
+    $pane->type = 'block';
+    $pane->subtype = 'user-login';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Log in to join discussion',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $display->content['new-25'] = $pane;
+    $display->panels['main'][3] = 'new-25';
+    $pane = new stdClass();
+    $pane->pid = 'new-26';
     $pane->panel = 'secondary';
     $pane->type = 'entity_view';
     $pane->subtype = 'node';
@@ -745,8 +839,8 @@ function discussion_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-24'] = $pane;
-    $display->panels['secondary'][0] = 'new-24';
+    $display->content['new-26'] = $pane;
+    $display->panels['secondary'][0] = 'new-26';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
