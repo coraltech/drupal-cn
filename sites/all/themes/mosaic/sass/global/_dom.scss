@@ -319,13 +319,21 @@ html.js input.throbbing {
   list-style: none;
 }
 
-
+.btn,
 a.btn {
   &:hover {
     color: $white;
   }
   
   @include btn-matte-inset;
+  @include btn-structure;
+}
+
+.btn-grn,
+a.btn-grn {
+  @extend .btn;
+  
+  @include btn-matte-inset(0px, 16px, $mdgreen, darken($mdgreen, 3%), $white);
   @include btn-structure;
 }
 

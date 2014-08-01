@@ -70,6 +70,9 @@
   .more {
     margin-top: $default_vert_unit / 8;
   }
+  p {
+    margin: $default_vert_unit 0 ($default_vert_unit / 2) 0;
+  }
 }
 
 @media screen and (max-width: $desktopw) {

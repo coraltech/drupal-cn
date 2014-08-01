@@ -39,18 +39,23 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_home_getting_started_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $qstart = l('Quick start guide', 'docs/getting-started', array('attributes' => array('class' => array('more', 'right'))));
+  $qstart = l('Quick start guide', 'docs/getting-started', array('attributes' => array('class' => array('btn-grn'))));
+  $install = l('Installation', 'docs/installation', array('attributes' => array('class' => array('btn'))));
   
   $output = <<<EOF
   <span class="clowny"></span>
-  <p>With CORL you can reliably deploy and update whole network architectures to cloud hosting providers, local network assets, as well as virtualized clusters on localhost.</p>
-  <h4>Check out a basic cluster:</h4>
+  <p class="mdorange strong h4 mt-0625"># Install as a gem:</p>
   <div class="shell">
-    <div class="line"><span class="prompt">$></span> <span class="command">sudo gem install coral</span></div>
-    <div class="line"><span class="prompt">$></span> <span class="command">vagrant coral create {repo} {dir}</span></div>
+    <div class="line"><span class="prompt">$></span> <span class="command">gem install corl</span></div>
+    <div class="line"><span class="prompt">$></span> <span class="mdgray"># run 'corl -h' for help</span></div>
   </div>
-  <div class="msg prepend-4 append-2"><span class="up-pointer"></span>You now have a local cluster that you can build and deploy to suit any need.</div>
-  {$qstart}
+  <p class="mdorange strong h4"># Install in vagrant:</p>
+  <div class="shell">
+    <div class="line"><span class="prompt">$></span> <span class="command">vagrant plugin install corl</div>
+    <div class="line"><span class="prompt">$></span> <span class="mdgray"># run 'vagrant corl -h' for help</span></div>
+  </div>
+  <div class="msg prepend-4 append-2"><span class="up-pointer"></span>Next, simply plug in one or more provider api key files and you are set to start building!</div>
+  <div class="center mt-125">{$install} <span class="mdgray">|</span> {$qstart}</div>
 EOF;
   $block = new stdClass;
   $block->title = t('Getting started');
