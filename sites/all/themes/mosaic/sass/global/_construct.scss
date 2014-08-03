@@ -97,6 +97,31 @@ strong, b,
 .ltyellow { color: $ltyellow; }
 .mdyellow { color: $mdyellow; }
 .dkyellow { color: $dkyellow; }
+//-----
+.bg-white { background: $white; }
+.bg-black { background: $black; }
+.bg-ltgray { background: $ltgray; }
+.bg-mdgray { background: $mdgray; }
+.bg-dkgray { background: $dkgray; }
+.bg-silver { background: $silver; }
+.bg-ltred { background: $ltred; }
+.bg-mdred { background: $mdred; }
+.bg-dkred { background: $dkred; }
+.bg-ltgreen { background: $ltgreen; }
+.bg-ltrgreen { background: lighten($ltgreen, 20%); }
+.bg-mdgreen { background: $mdgreen; }
+.bg-dkgreen { background: $dkgreen; }
+.bg-ltblue { background: $ltblue; }
+.bg-ltrblue { background: lighten($ltblue, 10%); }
+.bg-mdblue { background: $mdblue; }
+.bg-dkblue { background: $dkblue; }
+.bg-ltorange { background: $ltorange; }
+.bg-mdorange { background: $mdorange; }
+.bg-dkorange { background: $dkorange; }
+.bg-ltyellow { background: $ltyellow; }
+.bg-mdyellow { background: $mdyellow; }
+.bg-dkyellow { background: $dkyellow; }
+
 // See also site_colors partial
 
 
@@ -187,7 +212,12 @@ strong, b,
 .mb-25 {
   margin-bottom: 2 * $default_vert_unit !important;
 }
-
+.ml-25 {
+  margin-left: 2 * $default_vert_unit !important;
+}
+.mr-25 {
+  margin-right: 2 * $default_vert_unit !important;
+}
 
 .mt-375 {
   margin-top: 3 * $default_vert_unit !important;
