@@ -54,7 +54,7 @@ function coral_home_getting_started_pane_content_type_render($subtype, $conf, $a
     <div class="line"><span class="prompt">$></span> <span class="command">vagrant plugin install corl</div>
     <div class="line"><span class="prompt">$></span> <span class="mdgray"># run 'vagrant corl -h' for help</span></div>
   </div>
-  <div class="msg prepend-4 append-2"><span class="up-pointer"></span>Next, simply plug in one or more provider api key files and you are set to start building!</div>
+  <div class="msg center prepend-1 append-1 sml strong"><p>Next, simply plug in one or more provider api key files and you are set to start building!</p></div>
   <div class="center mt-125">{$install} <span class="mdgray">|</span> {$qstart}</div>
 EOF;
   $block = new stdClass;
