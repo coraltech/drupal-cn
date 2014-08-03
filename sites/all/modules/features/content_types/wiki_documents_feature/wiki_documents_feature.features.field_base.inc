@@ -13,7 +13,7 @@ function wiki_documents_feature_field_default_field_bases() {
   // Exported field_base: 'fe_attach'
   $field_bases['fe_attach'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'fe_attach',
