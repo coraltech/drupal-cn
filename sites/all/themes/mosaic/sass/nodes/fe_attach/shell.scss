@@ -1,0 +1,33 @@
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+@import "global/gradients";
+@import "global/site_vars";
+
+@import "compass/css3/box-shadow";
+
+
+.shell {
+  border-width: 1px;
+  border-color: $mdgray;
+  border-style: solid;
+  padding: ($default_vert_unit / 4);
+  
+  @include box-shadow(rgba(0,0,0,.2) 2px 2px 6px);
+  @include linear-v-gradient(darken($dkgray, 10%), darken($dkgray, 17%));
+      
+  .line {
+    padding: 0;
+    font-size: .8em;
+    font-weight: bold;
+    font-family: $mono_fonts;
+    
+    .prompt { 
+      color: $mdgreen; 
+    }
+    .command { 
+      color: $white; 
+    }
+  }
+}

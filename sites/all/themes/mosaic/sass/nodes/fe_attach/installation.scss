@@ -1,0 +1,16 @@
+
+@import "global/colors";
+@import "global/fonts";
+@import "global/icons";
+@import "global/gradients";
+@import "global/site_vars";
+
+.install {
+  padding: 0 ($default_vert_unit / 2) ($default_vert_unit / 2);
+}
+
+.hdr {
+  font-weight: bold;
+  color: $mdgray;
+  margin: ($default_vert_unit / 2) 0 0;
+}
