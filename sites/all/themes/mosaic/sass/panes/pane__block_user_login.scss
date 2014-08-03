@@ -5,9 +5,11 @@
 @import 'global/fonts';
 @import 'global/grid_mix';
 @import 'global/gradients';
+
 @import "compass/css3/box-shadow";
 @import "compass/utilities/general/clearfix";
 @import "compass/css3/opacity";
+@import "compass/css3/box-sizing";
 
 .page-node-talk .pane-user-login {
   @include col(13, true);
@@ -42,11 +44,17 @@
       width: 49%;
       margin: 0 1% 0 0;
       list-style: none;
-      box-sizing: border-box;
       border-color: $mdblue $mdblue $mdblue $ltblue;
       border-style: solid;
       border-width: 1px;
       padding: 0;
+      
+      @include box-sizing(border-box);
+      
+      &.last {
+        margin-right: 0;
+        width: 50%;
+      }
       
       a {
         display: block;
@@ -57,6 +65,7 @@
         border-color: $ltblue $dkblue $dkblue $mdblue;
         border-style: solid;
         border-width: 1px;
+        font-weight: normal;
 
         &:hover {
           @include linear-v-gradient(darken($mdblue, 1%), darken($mdblue, 6%));
@@ -67,7 +76,9 @@
   
   input.form-text {
     font-size: 130%;
-    width: 98.8%;
+    width: 100%;
+    
+    @include box-sizing(border-box);
   }
   .hybridauth-widget {
     margin-top: 4px;
