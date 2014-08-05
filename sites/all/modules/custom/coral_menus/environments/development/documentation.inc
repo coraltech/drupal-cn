@@ -34,12 +34,12 @@ function coral_menus_documentation_links_loader() {
     ),
     'requirements' => array(
       'link_title' => t('Installation'),
-      'link_path'  => 'node/35',
+      'link_path'  => 'node/1329',
       'weight'     => 3,
     ),
-    'cluster' => array(
-      'link_title' => t('Creating your first cloud'),
-      'link_path'  => 'node/40',
+    'getting_started' => array(
+      'link_title' => t('Getting started'),
+      'link_path'  => 'node/35',
       'weight'     => 4,
     ),
     'plugins' => array(
