@@ -33,7 +33,7 @@ function coral_menus_documentation_links_loader() {
       'weight'     => 2,
     ),
     'requirements' => array(
-      'link_title' => t('Installation'),
+      'link_title' => t('Requirements'),
       'link_path'  => 'node/1329',
       'weight'     => 3,
     ),

@@ -22,35 +22,45 @@ function coral_menus_documentation_menu_loader() {
  **/
 function coral_menus_documentation_links_loader() {
   return array(
+    'Installation' => array(
+      'link_title' => t('Installation'),
+      'link_path'  => 'node/1329',
+      'weight'     => 1,
+    ),
+    'getting_started' => array(
+      'link_title' => t('Getting started'),
+      'link_path'  => 'node/35',
+      'weight'     => 2,
+    ),
+    'requirements' => array(
+      'link_title' => t('Requirements'),
+      'link_path'  => 'node/1356',
+      'weight'     => 3,
+    ),
     'commands'=> array(
       'link_title' => t('Commands'),
       'link_path'  => 'node/1335',
-      'weight'     => 1,
+      'weight'     => 4,
     ),
     'architecture' => array(
       'link_title' => t('Architecture'),
       'link_path'  => 'node/37',
-      'weight'     => 2,
-    ),
-    'requirements' => array(
-      'link_title' => t('Installation'),
-      'link_path'  => 'node/1329',
-      'weight'     => 3,
+      'weight'     => 5,
     ),
     'cluster' => array(
       'link_title' => t('Creating your first cloud'),
       'link_path'  => 'node/40',
-      'weight'     => 4,
+      'weight'     => 6,
     ),
     'plugins' => array(
       'link_title' => t('Developing plugins'),
       'link_path'  => 'node/1172',
-      'weight'     => 5,
+      'weight'     => 7,
     ),
     'api_ref' => array(
       'link_title' => t('API References'),
       'link_path'  => 'node/39',
-      'weight'     => 5,
+      'weight'     => 8,
     )
   );
 }
