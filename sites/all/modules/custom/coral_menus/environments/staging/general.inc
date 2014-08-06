@@ -37,11 +37,6 @@ function coral_menus_general_links_loader() {
       'link_path'  => 'node/1328',
       'weight'     => 3
     ),
-    'getting_started' => array(
-      'link_title' => t('Getting started'),
-      'link_path'  => 'node/35',
-      'weight'     => 4,
-    ),
     'sponsors' => array(
       'link_title' => t('Sponsors'),
       'link_path'  => 'node/43',
