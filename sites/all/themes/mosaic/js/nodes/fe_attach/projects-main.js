@@ -41,7 +41,6 @@ Drupal.mosaic = Drupal.mosaic || {};
         'Frameworks',
         'Networks',
         'Packages',
-        'Plugins',
         'Tools'
       ];
 
