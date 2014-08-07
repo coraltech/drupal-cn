@@ -10,7 +10,7 @@
 
 .node-section-intro {
   //background: lighten($ltgray, 6%);
-  border-bottom: 1px solid $mdblue;
+  //border-bottom: 1px solid $mdblue;
   
   .content {
     padding: 0 1em;
@@ -35,6 +35,9 @@
 // instance modifications
 //  we know it will need chichlets here.
 div.ui-tabs {
+  .ui-tabs-panel {
+    border: none;
+  }
   .ui-tabs-nav {
     li.ui-tabs-active {
       margin-bottom: 0px;

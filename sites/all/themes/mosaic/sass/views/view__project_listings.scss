@@ -7,9 +7,11 @@
 @import 'global/fonts';
 @import 'global/gradients';
 
+@import "compass/utilities/general/clearfix";
+
 .pane-project-listings-project-listings {
-  background: lighten($ltgray, 7%);
-  @include linear-v-gradient(lighten($ltgray, 9%), $white);
+  //background: lighten($ltgray, 7%);
+  //@include linear-v-gradient(lighten($ltgray, 9%), $white);
 
   .view-project-listings {
     position: relative;
@@ -46,7 +48,12 @@
     .view-empty,
     .views-row {
       padding: ($default_vert_unit / 2) 1em 0;
-      border-bottom: 1px solid $mdblue;
+      margin-bottom: $default_vert_unit;
+      @include pie-clearfix;
+      
+      &.views-row-odd {
+        background: lighten($ltgray, 5%);
+      }
     }
   }
   
@@ -103,5 +110,9 @@
         color: darken($dkred, 10%);
       }
     }
+  }
+  
+  .views-field-body {
+    margin-bottom: $default_vert_unit / 2;
   }
 }
