@@ -13,6 +13,8 @@
 .node-section-intro {
   //background: lighten($ltgray, 6%);
   //border-bottom: 1px solid $mdblue;
+  margin-bottom: (1.25 * $default_vert_unit) !important;
+  
   
   .content {
     padding: 0 1em;
@@ -62,7 +64,7 @@ div.ui-tabs {
         text-shadow: none;
 
         a {
-          color: $black;
+          color: $dkgray;
           
           .ltyellow {
             color: $dkyellow;
