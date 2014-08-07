@@ -54,9 +54,10 @@ function mosaic_be_init() {
 
 // Set a message about software state  
 function mosaic_be_state_message() {
+  $m = t("CoralNexus software is currently in Alpha release state. It's not a good idea to use this software in mission critical situations just yet.");
   $msgs = drupal_get_messages(NULL, FALSE);
   if (!$msgs['warning']) {
-    drupal_set_message("CoralNexus software is currently in Alpha release state. It may not be a good idea to use this software in mission critical situations just yet.", 'warning');
+    drupal_set_message($m, 'warning');
   }
   else {
     $matched = false;
@@ -66,7 +67,7 @@ function mosaic_be_state_message() {
       }
     }
     if (!$matched) {
-      drupal_set_message("CoralNexus software is currently in Alpha release state. It may not be a good idea to use this software in mission critical situations just yet.", 'warning');
+      drupal_set_message($m, 'warning');
     }
   }
 }
