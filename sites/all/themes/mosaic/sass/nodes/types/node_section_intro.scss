@@ -11,10 +11,7 @@
 @import 'global/grid_mix';
 
 .node-section-intro {
-  //background: lighten($ltgray, 6%);
-  //border-bottom: 1px solid $mdblue;
   margin-bottom: (1.25 * $default_vert_unit) !important;
-  
   
   .content {
     padding: 0 1em;
@@ -91,5 +88,6 @@ div.ui-tabs {
   .ui-widget-header {
     background: none;
     border: none;
+    padding: .25em 0 0 0;
   }
 }
