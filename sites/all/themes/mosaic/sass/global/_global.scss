@@ -24,7 +24,8 @@
 .pane-header,
 .pane-footer,
 .pane-top-menus #mini-panel-top_menus,
-.mosaic-cont > .container {
+.mosaic-cont > .container,
+.pane-page-messages .cont {
   @include site_width;
 }
 
@@ -591,6 +592,48 @@ h3 .toc-top {
       }
     }
   }
+}
+
+
+// Messages pane
+.pane-page-messages {
+  
+  .cont {
+    
+  }
+  div.messages {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+  div.messages .cont {
+    background-position: 8px 8px; /* LTR */
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 50px; /* LTR */
+  }
+  
+  div.status {
+    background-image: none;
+  }
+  div.status .cont {
+    background-image: url(../../../../../misc/message-24-ok.png);
+  }
+  
+  div.warning {
+    background-image: none;
+  }
+  div.warning .cont {
+    background-image: url(../../../../../misc/message-24-warning.png);
+  }
+  
+  div.error {
+    background-image: none;
+  }
+  div.error .cont {
+    background-image: url(../../../../../misc/message-24-error.png);
+  }
+  
+  
 }
 
 

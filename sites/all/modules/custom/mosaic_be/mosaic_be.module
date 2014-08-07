@@ -27,14 +27,14 @@ function mosaic_be_panelizer_pre_render_alter($panelizer, $display, $entity) {
     _mosiac_be_node_load_by_type($entity);             // Load by node type
     _mosaic_be_node_load_by_mode($entity, $view_mode); // Load by view modes
     _mosaic_be_node_load_by_fe_attach($entity);        // Load by fe_attach field (added on node create form)
-  
-  
   }
 }
 
 
 // Some stuff doesnt go through panelizer that could be caught here.
 function mosaic_be_init() {
+  mosaic_be_state_message(); // state message - see below
+  
   $item = menu_get_item();
   if (isset($item['page_arguments']) && is_array($item['page_arguments'])) {
     $obj = array_shift($item['page_arguments']);
@@ -47,6 +47,26 @@ function mosaic_be_init() {
       _mosiac_be_node_load_by_type($obj);             // Load by node type
       _mosaic_be_node_load_by_fe_attach($obj);        // Load by fe_attach field (added on node create form)
       _mosaic_be_comment_load_by_node($obj);
+    }
+  }
+}
+
+
+// Set a message about software state  
+function mosaic_be_state_message() {
+  $msgs = drupal_get_messages(NULL, FALSE);
+  if (!$msgs['warning']) {
+    drupal_set_message("CoralNexus software is currently in Alpha release state. It may not be a good idea to use this software in mission critical situations just yet.", 'warning');
+  }
+  else {
+    $matched = false;
+    foreach($msgs['warning'] as $indx => $msg) {
+      if (preg_match('/^CoralNexus software is currently/', $msg)) {
+        $matched = true;
+      }
+    }
+    if (!$matched) {
+      drupal_set_message("CoralNexus software is currently in Alpha release state. It may not be a good idea to use this software in mission critical situations just yet.", 'warning');
     }
   }
 }
