@@ -51,7 +51,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 
       $tabs.each(function() {
         if ($.inArray($(this).text(), projTypes) > -1) { // we have a winner!
-          $(this).html($(this).text() + ' (<span class="mdblue">'+projCount[$(this).text()]+'</span>)');
+          $(this).html($(this).text() + ' (<span class="ltyellow">'+projCount[$(this).text()]+'</span>)');
         }
       });
     }
