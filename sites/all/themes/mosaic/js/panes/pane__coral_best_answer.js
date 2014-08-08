@@ -195,7 +195,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           if ($cover.length) $cover.remove();
           
           // Target empty? - add the pane title
-          if (!$bestAnswer.length) $bestAnswerTgt.append('<h2 class="selected-title">Selected answer</h2>');
+          if (!$bestAnswer.length) $bestAnswerTgt.append('<h2 class="selected-title"><span>Selected answer</span></h2>');
           
           // The answer that will live in the best answer target
           $newAnswer.find('.pane-coral-best-answer').hide();
@@ -204,7 +204,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           $answersTgt = cba.$question.find('.pane-coral-answers-target');
           
           // Add additional answers title
-          if (!$bestAnswer.length) $answersTgt.prepend('<h2 class="pane-title">Additional answers</h2>')
+          if (!$bestAnswer.length) $answersTgt.prepend('<h2 class="pane-title"><span>Additional answers</span></h2>')
           
           $answers = $answersTgt.find('.node-answer');
           $answers.each(function() { // un-hide the best answer button
