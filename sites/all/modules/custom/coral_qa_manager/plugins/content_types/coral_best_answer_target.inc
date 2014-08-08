@@ -32,7 +32,7 @@ function coral_best_answer_target_content_type_render($subtype, $conf, $args, $c
       if (isset($answer[0]) && isset($answer[0]['target_id']) && is_numeric($answer[0]['target_id'])) {
         $n = node_view(node_load($answer[0]['target_id']), 'teaser');
         $answer = drupal_render($n);
-        $content = '<div class="best-ans-tgt best-ans-tgt-'.$node->nid.'"><h2 class="selected-title"><span class="text">Selected answer</span><span class="arrow-up"></span></h2>'.$answer.'</div>';
+        $content = '<div class="best-ans-tgt best-ans-tgt-'.$node->nid.'"><h2 class="selected-title"><span>Selected answer</span></h2>'.$answer.'</div>';
       }
     }
   }  
