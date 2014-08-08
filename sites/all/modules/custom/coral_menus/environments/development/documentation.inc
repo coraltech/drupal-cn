@@ -39,7 +39,7 @@ function coral_menus_documentation_links_loader() {
     ),
     'getting_started' => array(
       'link_title' => t('Getting started'),
-      'link_path'  => 'node/35',
+      'link_path'  => 'node/1167',
       'weight'     => 4,
     ),
     'plugins' => array(
