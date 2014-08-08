@@ -1,4 +1,4 @@
-
+@import 'global/arrows';
 @import 'global/buttons';
 @import 'global/colors';
 @import 'global/fonts';
@@ -8,6 +8,7 @@
 
 @import 'compass/css3/box-shadow';
 @import 'compass/css3/border-radius';
+@import "compass/utilities/general/clearfix";
 
 .node-project {
   
@@ -171,20 +172,41 @@
   .pane-doc-ref-node-teaser-view {
 
     & > .pane-title {
-      color: darken($mdred, 10%);
+      color: $dkgray;
+      background: lighten($ltgray, 6%);
+      font-weight: normal;
+      padding-left: .5em;
+      padding-right: .5em;
+      border-top: 2px solid $dkyellow;
+      margin-top: 1.65 * $default_vert_unit;
+  
+      @include pie-clearfix;
+      
+      span {
+        display: block;
+        float: left;
+        border-top: 3px solid $dkyellow;
+        position: relative;
+        
+        &:after {
+          content: ' ';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 45%;
+          @include arrow-down(5px, $dkyellow);
+          
+        }
+      }
     }
 
     & > .pane-content {
-      padding: 0 $default_vert_unit 1em;
-      background: desaturate(lighten($ltyellow, 12%), 10%);
-      border: 1px solid $mdyellow;
-      margin: 0 0 ($default_vert_unit / 2);
+      padding: 0 ($default_vert_unit / 2) 1em;
+      margin: 0 0 $default_vert_unit;
       
       .pane-node-links .first {
         border-right: none;
       }
-      
-      @include linear-v-gradient(desaturate(lighten($ltyellow, 12%), 10%), $white);
     }
   }
   
