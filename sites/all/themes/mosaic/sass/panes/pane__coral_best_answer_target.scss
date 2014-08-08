@@ -1,6 +1,6 @@
 
 // Scss file for the best answer target pane
-
+@import 'global/arrows';
 @import 'global/colors';
 @import 'global/headers';
 @import 'global/fonts';
@@ -12,11 +12,32 @@
   @include pie-clearfix;
   
   .selected-title {
-    background: $mdgreen;
-    color: white;
+    color: $dkgray;
+    background: lighten($ltgray, 6%);
     font-weight: normal;
     padding-left: .5em;
     padding-right: .5em;
+    border-top: 2px solid $mdgreen;
+    margin-top: 1.5 * $default_vert_unit;
+
+    @include pie-clearfix;
+
+    span.text {
+      display: block;
+      float: left;
+      border-top: 3px solid $mdgreen;
+      position: relative;
+      
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 45%;
+        @include arrow-down(5px, $mdgreen);
+        
+      }
+    }
   }
   .best-ans-tgt {
     margin-top: $default_vert_unit / 2;

@@ -23,7 +23,7 @@ function coral_answers_target_pane_content_type_render($subtype, $conf, $args, $
   // NOTE: CSS (scss) and js applied via mosaic theme as it's nice and handy   
   $node = $context[0]->data;
   $block = new stdClass();
-  $block->title = t('Additional answers');
+  $block->title = '<span>'.t('Additional answers').'</span>';
   $content = '<div class="answers-tgt answers-tgt-'.$node->nid.' clearfix empty"><p>No answers have been found!</p></div>'; // default
   
   if (isset($node->nid) && isset($node->type)) {

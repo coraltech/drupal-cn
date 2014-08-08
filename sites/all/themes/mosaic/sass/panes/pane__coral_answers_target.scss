@@ -17,12 +17,31 @@
   //padding-bottom: $default_vert_unit;
   
   & > h2.pane-title {
-    background: $mdgray;
-    color: $white;
+    color: $dkgray;
+    background: lighten($ltgray, 6%);
     font-weight: normal;
     padding-left: .5em;
     padding-right: .5em;
-    margin-top: 0;
+    border-top: 2px solid $mdgray;
+    margin-top: 1.5 * $default_vert_unit;
+
+    @include pie-clearfix;
+
+    span {
+      display: block;
+      float: left;
+      border-top: 3px solid $mdgray;
+      position: relative;
+      
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 45%;
+        @include arrow-down(5px, $mdgray);
+      }
+    }
   }
   
   position: relative;
