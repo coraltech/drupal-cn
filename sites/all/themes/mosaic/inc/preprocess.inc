@@ -315,6 +315,11 @@ function mosaic_preprocess_panels_pane__views_panes___user_content_user_snippets
 }
 
 
+// Add a span for additional styling of the pane title
+function mosaic_preprocess_panels_pane__views_panes___doc_ref_node_teaser_view(&$vars) {
+  $vars['title'] = '<span>'.$vars['title'].'</span>';
+}
+
 // Preprocess login block.
 function mosaic_preprocess_panels_pane__block___user_login(&$vars) {
   $menu = menu_get_item();
