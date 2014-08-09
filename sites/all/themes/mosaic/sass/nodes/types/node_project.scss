@@ -179,6 +179,7 @@
       padding-right: .5em;
       border-top: 2px solid $dkyellow;
       margin-top: 1.65 * $default_vert_unit;
+      margin-bottom: 1 * $default_vert_unit;
   
       @include pie-clearfix;
       
