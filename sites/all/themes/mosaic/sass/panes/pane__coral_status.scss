@@ -1,0 +1,37 @@
+
+@import 'global/colors';
+
+// Messages pane
+.pane-coral-status {
+  
+  div.messages {
+    margin: 0;
+    padding: 0;
+  }
+  div.messages .cont {
+    background-position: 8px 8px; /* LTR */
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 50px; /* LTR */
+  }
+  
+  div.status {
+    background-image: none;
+  }
+  div.status .cont {
+    background-image: url(../../../../../../misc/message-24-ok.png);
+  }
+  
+  div.warning {
+    background-image: none;
+  }
+  div.warning .cont {
+    background-image: url(../../../../../../misc/message-24-warning.png);
+  }
+  
+  div.error {
+    background-image: none;
+  }
+  div.error .cont {
+    background-image: url(../../../../../../misc/message-24-error.png);
+  }
+}
