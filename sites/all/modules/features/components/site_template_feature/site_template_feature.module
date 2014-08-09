@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Site template feature feature.
+ */
+
+include_once 'site_template_feature.features.inc';
