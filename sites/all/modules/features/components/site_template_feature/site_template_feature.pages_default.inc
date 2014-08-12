@@ -38,6 +38,7 @@ function site_template_feature_default_page_manager_handlers() {
       'header' => NULL,
       'main' => NULL,
       'footer' => NULL,
+      'sub_header' => NULL,
     ),
   );
   $display->cache = array();
@@ -133,47 +134,6 @@ function site_template_feature_default_page_manager_handlers() {
     $display->panels['header'][2] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
-    $pane->panel = 'header';
-    $pane->type = 'coral_status';
-    $pane->subtype = 'coral_status';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'message' => 'CoralNexus software is currently in Alpha release state. It\'s not a good idea to use this software in mission critical situations just yet.',
-      'status' => '1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['header'][3] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'header';
-    $pane->type = 'page_messages';
-    $pane->subtype = 'page_messages';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['header'][4] = 'new-6';
-    $pane = new stdClass();
-    $pane->pid = 'new-7';
     $pane->panel = 'main';
     $pane->type = 'page_tabs';
     $pane->subtype = 'page_tabs';
@@ -193,10 +153,10 @@ function site_template_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['main'][0] = 'new-7';
+    $display->content['new-5'] = $pane;
+    $display->panels['main'][0] = 'new-5';
     $pane = new stdClass();
-    $pane->pid = 'new-8';
+    $pane->pid = 'new-6';
     $pane->panel = 'main';
     $pane->type = 'page_help';
     $pane->subtype = 'page_help';
@@ -211,10 +171,10 @@ function site_template_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['main'][1] = 'new-8';
+    $display->content['new-6'] = $pane;
+    $display->panels['main'][1] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-7';
     $pane->panel = 'main';
     $pane->type = 'page_content';
     $pane->subtype = 'page_content';
@@ -233,8 +193,49 @@ function site_template_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
+    $display->content['new-7'] = $pane;
+    $display->panels['main'][2] = 'new-7';
+    $pane = new stdClass();
+    $pane->pid = 'new-8';
+    $pane->panel = 'sub_header';
+    $pane->type = 'coral_status';
+    $pane->subtype = 'coral_status';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'message' => 'CoralNexus software is currently in Alpha release state. It\'s not a good idea to use this software in mission critical situations just yet.',
+      'status' => '1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-8'] = $pane;
+    $display->panels['sub_header'][0] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'sub_header';
+    $pane->type = 'page_messages';
+    $pane->subtype = 'page_messages';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $display->content['new-9'] = $pane;
-    $display->panels['main'][2] = 'new-9';
+    $display->panels['sub_header'][1] = 'new-9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
