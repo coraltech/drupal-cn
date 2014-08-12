@@ -68,6 +68,8 @@
 
 .pane-coral-swipe.search {
   @include icons-sprite('search-options');
+  width: 2em !important;
+  height: 2em !important;
   position: fixed;
   //top: 6.5em;
   left: 0;
