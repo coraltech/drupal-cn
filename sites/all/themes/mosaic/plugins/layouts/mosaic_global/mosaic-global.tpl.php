@@ -7,6 +7,11 @@
       </div>
     </header>
     <?php endif; ?>
+    <?php if (!empty($content['sub_header'])): ?>
+      <div class="container sub-header" role="banner">
+        <?php print render($content['sub_header']); ?>
+      </div>
+    <?php endif; ?>
     <div class="mosaic-cont">
       <?php if (!empty($content['main'])): ?>
       <div class="container main-global site-width clearfix" id="main-content">

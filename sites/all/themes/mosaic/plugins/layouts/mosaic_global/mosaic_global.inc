@@ -11,6 +11,7 @@ $plugin = array(
   'icon' => 'screenshot.png',
   'regions' => array(
     'header' => t('Header'),
+    'sub_header' => t('Sub-header'),
     'main' => t('Main'),
     'footer' => t('Footer'),
   ),
