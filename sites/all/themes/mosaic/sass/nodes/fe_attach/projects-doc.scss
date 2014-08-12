@@ -50,13 +50,8 @@
   }
   
   .proj-intro {
-    @include border-radius(15px);
-    @include reflected-v-gradient(desaturate(lighten($ltblue, 14%), 20%), desaturate(lighten($ltblue, 8%), 20%), desaturate(lighten($ltblue, 10%), 20%));
-    @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
-    border: 1px solid lighten($ltblue, 7%);
-    text-align: center;
-    padding: ($default_vert_unit / 2);
-    color: darken($mdgray, 10%);
+    padding: ($default_vert_unit / 2) 0;
+    color: darken($mdblue, 10%);
   }
   
   .intro-list {
