@@ -62,12 +62,12 @@ Drupal.mosaic = Drupal.mosaic || {};
       // Tools and utils
       if (this.w < 520) {
         this.$cont.find('.grid-8-last, .grid-8').css({ 'width':'auto', 'margin':'1.25em 0', 'padding-top': '0'}).addClass('box');
-        this.$cont.find('.grid-8-last .center.btn, .grid-8 .center.btn').removeClass('hide');
+        this.$cont.find('.grid-8-last .center.btn-cont, .grid-8 .center.btn-cont').removeClass('hide');
         this.$cont.find('.row').hide(0);
       }
       else {
         this.$cont.find('.grid-8-last, .grid-8').attr('style', '').removeClass('box'); //reset css
-        this.$cont.find('.grid-8-last .center.btn, .grid-8 .center.btn').addClass('hide');
+        this.$cont.find('.grid-8-last .center.btn-cont, .grid-8 .center.btn-cont').addClass('hide');
         this.$cont.find('.row').show(0);
       }
 
