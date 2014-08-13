@@ -11,7 +11,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicQAInit = {
     attach : function(context, settings) {
       try {
-      	var winW = $(window).width();
+        var winW = $(window).width();
       	
       	// Any part of this that gets a mouse down we want
         //  to focus the user on the textfield 
@@ -51,19 +51,21 @@ Drupal.mosaic = Drupal.mosaic || {};
    				}
   				else {
   					$submit.attr('value', Drupal.t('Submit question'));
-  					$btn.removeClass('hide');
-  					$form.addClass('hide');
+  					if (!$form.hasClass('open')) {
+  					  $btn.removeClass('hide');
+  					  $form.addClass('hide');
+  					}
   				}
 				});
 				
 				// Show and hide the form
-				$('.pane-coral-qa-ask-question .ask.btn').click(function(ev) {
+				$('.pane-coral-qa-ask-question .ask.btn').off('click').click(function(ev) {
 					ev.preventDefault();
 					if ($form.hasClass('hide')) { 
-						$form.removeClass('hide');
+						$form.removeClass('hide').addClass('open');
 					}
 					else {
-						$form.addClass('hide');
+						$form.addClass('hide').removeClass('open');
 					}
 				});
 				
