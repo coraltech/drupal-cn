@@ -7,6 +7,7 @@
 @import 'compass/css3/opacity';
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
 @import "compass/utilities/general/clearfix";
 
 @import 'global/arrows';
@@ -610,6 +611,8 @@ h3 .toc-top {
     background-position: 8px 8px; /* LTR */
     background-repeat: no-repeat;
     padding: 10px 10px 10px 50px; /* LTR */
+   
+    @include box-sizing(border-box);
   }
   
   div.status {
