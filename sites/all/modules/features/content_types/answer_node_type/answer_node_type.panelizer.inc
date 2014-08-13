@@ -476,7 +476,7 @@ function answer_node_type_panelizer_defaults() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'right grid-12-last',
+      'css_class' => 'right',
     );
     $pane->extras = array();
     $pane->position = 3;
@@ -488,7 +488,7 @@ function answer_node_type_panelizer_defaults() {
     $pane->panel = 'main';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'Clearing div',
