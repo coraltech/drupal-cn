@@ -486,37 +486,6 @@ function answer_node_type_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-18';
     $pane->panel = 'main';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_tags';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'above',
-      'formatter' => 'taxonomy_term_reference_link',
-      'delta_limit' => '5',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(),
-      'context' => 'panelizer',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-12',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['main'][4] = 'new-18';
-    $pane = new stdClass();
-    $pane->pid = 'new-19';
-    $pane->panel = 'main';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -534,12 +503,12 @@ function answer_node_type_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['main'][5] = 'new-19';
+    $display->content['new-18'] = $pane;
+    $display->panels['main'][4] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-19';
     $pane->panel = 'main';
     $pane->type = 'panels_mini';
     $pane->subtype = 'answer_links_container';
@@ -558,93 +527,12 @@ function answer_node_type_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 5;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['main'][6] = 'new-20';
-    $pane = new stdClass();
-    $pane->pid = 'new-21';
-    $pane->panel = 'main';
-    $pane->type = 'node_links';
-    $pane->subtype = 'node_links';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => FALSE,
-      'override_title_text' => '',
-      'build_mode' => 'teaser',
-      'identifier' => '',
-      'link' => TRUE,
-      'context' => 'panelizer',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_class' => 'link-wrapper',
-    );
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['main'][7] = 'new-21';
-    $pane = new stdClass();
-    $pane->pid = 'new-22';
-    $pane->panel = 'main';
-    $pane->type = 'coral_best_answer';
-    $pane->subtype = 'coral_best_answer';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 8;
-    $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['main'][8] = 'new-22';
-    $pane = new stdClass();
-    $pane->pid = 'new-23';
-    $pane->panel = 'main';
-    $pane->type = 'coral_add_comment';
-    $pane->subtype = 'coral_add_comment';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 9;
-    $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['main'][9] = 'new-23';
-    $pane = new stdClass();
-    $pane->pid = 'new-24';
-    $pane->panel = 'main';
-    $pane->type = 'coral_flag_abuse_node';
-    $pane->subtype = 'coral_flag_abuse_node';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 10;
-    $pane->locks = array();
-    $display->content['new-24'] = $pane;
-    $display->panels['main'][10] = 'new-24';
+    $display->content['new-19'] = $pane;
+    $display->panels['main'][5] = 'new-19';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-18';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:answer:default:teaser'] = $panelizer;
 
