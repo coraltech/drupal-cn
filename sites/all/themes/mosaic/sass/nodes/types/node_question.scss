@@ -35,7 +35,7 @@
   .pane-coral-add-answer,
   .pane-node-links { // float links beside each other
     float: left;
-    line-height: $default_vert_unit;
+    line-height: 1em;
     
     .links { // standardize 
       padding: 0; 
