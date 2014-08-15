@@ -40,7 +40,7 @@ $plugin = array(
 function coral_about_adrian_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $output = <<<EOF
 <div class="teammate adrian">?</div>
-<p>Nam rutrum, libero vel pharetra tempor, enim ante congue mi, sed accumsan dolor nisl eget lectus. Ut non orci convallis, tempor felis vitae, condimentum sem. Proin commodo hendrerit viverra. Pellentesque iaculis blandit iaculis. Etiam auctor, libero sit amet accumsan molestie, elit mauris luctus arcu, at dapibus purus elit sed lectus. Duis eget condimentum ante.</p>
+<p>Adrian Webb co-founded CoralNexus and is the framework architect for the Nucleon and CORL systems.  He was previously a lead developer / software architect at NBCUniversal, a previous columnist with PHPArchitect, worked as a consultant for large and small companies, and contributed to some pretty cool Drupal technologies.  He is passionate about free and open source software and the positive change is can bring in all parts of the world.</p>
 EOF;
   $block = new stdClass;
   $block->title = t('Adrian Webb');
