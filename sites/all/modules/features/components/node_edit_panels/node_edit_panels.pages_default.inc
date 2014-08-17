@@ -504,13 +504,13 @@ function node_edit_panels_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-16';
     $pane->panel = 'sub_footer';
-    $pane->type = 'node_form_publishing';
-    $pane->subtype = 'node_form_publishing';
+    $pane->type = 'node_form_path';
+    $pane->subtype = 'node_form_path';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_node_edit_1',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -526,8 +526,8 @@ function node_edit_panels_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-17';
     $pane->panel = 'sub_footer';
-    $pane->type = 'node_form_comment';
-    $pane->subtype = 'node_form_comment';
+    $pane->type = 'node_form_publishing';
+    $pane->subtype = 'node_form_publishing';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -548,8 +548,8 @@ function node_edit_panels_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-18';
     $pane->panel = 'sub_footer';
-    $pane->type = 'node_form_buttons';
-    $pane->subtype = 'node_form_buttons';
+    $pane->type = 'node_form_comment';
+    $pane->subtype = 'node_form_comment';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -567,6 +567,28 @@ function node_edit_panels_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-18'] = $pane;
     $display->panels['sub_footer'][3] = 'new-18';
+    $pane = new stdClass();
+    $pane->pid = 'new-19';
+    $pane->panel = 'sub_footer';
+    $pane->type = 'node_form_buttons';
+    $pane->subtype = 'node_form_buttons';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_node_edit_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-19'] = $pane;
+    $display->panels['sub_footer'][4] = 'new-19';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

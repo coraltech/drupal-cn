@@ -116,6 +116,7 @@ function search_feature_default_search_api_index() {
         "is_new" : { "type" : "boolean" },
         "type" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" },
+        "status" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
         "sticky" : { "type" : "boolean" },
         "created" : { "type" : "date" },
