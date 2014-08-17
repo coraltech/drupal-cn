@@ -222,12 +222,12 @@ function user_view_feature_panelizer_defaults() {
     $pane->pid = 'new-8';
     $pane->panel = 'secondary';
     $pane->type = 'block';
-    $pane->subtype = 'menu-general';
+    $pane->subtype = 'menu-create';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'General',
+      'override_title_text' => 'Add content',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -244,6 +244,30 @@ function user_view_feature_panelizer_defaults() {
     $display->panels['secondary'][0] = 'new-8';
     $pane = new stdClass();
     $pane->pid = 'new-9';
+    $pane->panel = 'secondary';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-general';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'General',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'prepend-2 grid-8',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['secondary'][1] = 'new-9';
+    $pane = new stdClass();
+    $pane->pid = 'new-10';
     $pane->panel = 'secondary';
     $pane->type = 'user_signature';
     $pane->subtype = 'user_signature';
@@ -263,12 +287,12 @@ function user_view_feature_panelizer_defaults() {
       'css_class' => 'prepend-2 grid-12',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['secondary'][1] = 'new-9';
+    $display->content['new-10'] = $pane;
+    $display->panels['secondary'][2] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-11';
     $pane->panel = 'sub_footer';
     $pane->type = 'views_panes';
     $pane->subtype = 'user_bookmarks-panel_pane_1';
@@ -286,10 +310,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['sub_footer'][0] = 'new-10';
+    $display->content['new-11'] = $pane;
+    $display->panels['sub_footer'][0] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-12';
     $pane->panel = 'sub_footer';
     $pane->type = 'views_panes';
     $pane->subtype = 'user_bookmarks-user_bookmarked_snippets';
@@ -307,10 +331,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['sub_footer'][1] = 'new-11';
+    $display->content['new-12'] = $pane;
+    $display->panels['sub_footer'][1] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-13';
     $pane->panel = 'sub_footer';
     $pane->type = 'views_panes';
     $pane->subtype = 'user_bookmarks-user_bookmarked_wiki';
@@ -328,10 +352,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['sub_footer'][2] = 'new-12';
+    $display->content['new-13'] = $pane;
+    $display->panels['sub_footer'][2] = 'new-13';
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-14';
     $pane->panel = 'sub_footer';
     $pane->type = 'views_panes';
     $pane->subtype = 'user_bookmarks-user_bookmarked_questions';
@@ -352,10 +376,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['sub_footer'][3] = 'new-13';
+    $display->content['new-14'] = $pane;
+    $display->panels['sub_footer'][3] = 'new-14';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-15';
     $pane->panel = 'sub_footer';
     $pane->type = 'views_panes';
     $pane->subtype = 'user_bookmarks-user_bookmarked_answers';
@@ -373,10 +397,10 @@ function user_view_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['sub_footer'][4] = 'new-14';
+    $display->content['new-15'] = $pane;
+    $display->panels['sub_footer'][4] = 'new-15';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-16';
     $pane->panel = 'sub_footer';
     $pane->type = 'views_panes';
     $pane->subtype = 'user_bookmarks-user_bookmarked_comments';
@@ -394,8 +418,8 @@ function user_view_feature_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['sub_footer'][5] = 'new-15';
+    $display->content['new-16'] = $pane;
+    $display->panels['sub_footer'][5] = 'new-16';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
