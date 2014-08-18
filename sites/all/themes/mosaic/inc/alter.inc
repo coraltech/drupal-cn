@@ -212,3 +212,17 @@ function mosaic_menu_local_tasks_user_links(&$data, $dest, $indx) {
   $data['tabs'][0]['output'][$indx]['#link']['localized_options'] = array_merge($data['tabs'][0]['output'][$indx]['#link']['localized_options'], $query);
 }
 
+
+function mosaic_user_view_alter(&$build) {
+  
+  $account = $build['#account'];
+  
+  if ($account->uid == 271) {
+    dpm($build);
+  }
+  
+  $ha = $build['hybridauth_identities'];
+  $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
+  $build['hybridauth_identities']['#description'] = t('Use social login for one click login.') . '<br>' . $add_provider;
+}
+
