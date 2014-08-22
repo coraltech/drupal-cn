@@ -224,10 +224,16 @@ function mosaic_user_view_alter(&$build) {
   
   $items = array();
   $pattern = '/>(.*)<\//';
-  foreach ($build['hybridauth_identities']['#rows'] as $indx => $row) {
-    $i = '<img src="/'.$hybrid_icons['path'].'/icons/'.strtolower($row[0]).'.png" class="icon">';
-    $row[1] = preg_replace($pattern, '>'. $i . ' ' . $row[0] . '</', $row[1]);
-    $items[] = $row[1];
+  if (isset($build['hybridauth_identities']['#rows']) && count($build['hybridauth_identities']['#rows'])) {
+    foreach ($build['hybridauth_identities']['#rows'] as $indx => $row) {
+      $i = '<img src="/'.$hybrid_icons['path'].'/icons/'.strtolower($row[0]).'.png" class="icon">';
+      $row[1] = preg_replace($pattern, '>'. $i . ' ' . $row[0] . '</', $row[1]);
+      $items[] = $row[1];
+    }
+  }
+  else {
+    $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
+    $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
   }
 
   $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
