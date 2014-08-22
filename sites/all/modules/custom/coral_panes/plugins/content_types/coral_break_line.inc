@@ -85,6 +85,6 @@ function coral_break_line_get_heights() {
   do {
     $heights[(string)$height] = (string)$height;
     $height = $height + .15;
-  } while($height < 3);
+  } while($height < 5);
   return $heights;  
 }
