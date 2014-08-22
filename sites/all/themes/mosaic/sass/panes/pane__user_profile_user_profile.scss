@@ -33,12 +33,11 @@
     dl { 
       margin: 1.25em 1em; 
     }
+
     .flags,
     .summary {
-      //background: lighten($ltyellow, 10%);
       margin-bottom: $default_vert_unit;
       padding-bottom: $default_vert_unit / 2;
-      //border: 1px solid $ltgray;
       @include pie-clearfix;
       h3 {
         padding-left: .5em;
@@ -46,9 +45,7 @@
         color: $mdred;
       }
     }
-    .summary {
-      //background: lighten($ltblue, 10%);
-    }
+    .summary {}
     
     .item-list {
       background: lighten($ltgray, 9%);
@@ -86,6 +83,12 @@
 
             @include col(24, 'true');
           }
+        }
+        
+        &.empty {
+          li {
+            @include col(24, 'true');
+          }    
         }
       }
     }
