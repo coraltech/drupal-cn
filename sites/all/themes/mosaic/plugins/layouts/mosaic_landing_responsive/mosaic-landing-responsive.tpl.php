@@ -12,7 +12,7 @@
     <div class='row'>
     <?php if (!empty($content['main'])): ?>
     <div class="container main-content grid-13-last right">
-      <div class="limiter prepend-1">
+      <div class="limiter">
         <?php print render($content['main']); ?>
       </div>
     </div>

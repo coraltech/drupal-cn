@@ -1,13 +1,14 @@
 
 // User edit link scss
 
+@import 'global/fonts';
 @import 'global/headers';
 @import 'global/buttons';
 @import 'global/site_vars';
 
 .pane-coral-user-edit-link {
   float: right;
-  line-height: 6em;
+  margin-top : 2 * $default_vert_unit;
   
   .pane-content a {
     @include btn-matte-inset;
@@ -17,6 +18,6 @@
 
 @media screen and (max-width: $tabletw) {
   .pane-coral-user-edit-link {
-    line-height: 3em;
+    
   }
 }

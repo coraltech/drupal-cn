@@ -1029,3 +1029,26 @@ function mosaic_views_mini_pager($vars) {
     );
   }
 }
+
+
+/**
+ * Returns HTML for a user signature.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - signature: The user's signature.
+ *
+ * @ingroup themeable
+ */
+function mosaic_user_signature($variables) {
+  $signature = $variables['signature'];
+  $output = '';
+
+  if ($signature) {
+    $output .= '<div class="clearfix hlite">';
+    $output .= $signature;
+    $output .= '</div>';
+  }
+
+  return $output;
+}

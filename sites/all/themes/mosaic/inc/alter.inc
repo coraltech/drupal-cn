@@ -214,15 +214,35 @@ function mosaic_menu_local_tasks_user_links(&$data, $dest, $indx) {
 
 
 function mosaic_user_view_alter(&$build) {
-  
   $account = $build['#account'];
+  $hybrid_icons = hybridauth_get_icon_pack('hybridauth_24');
+  $build['hybridauth_identities']['#title'] = t('Social identities');
+
+  $build['hybridauth_identities']['#type']  = 'ul';
+  $build['hybridauth_identities']['#theme'] = 'item_list';
+  $build['hybridauth_identities']['#attributes'] = array('class' => array('identities'));
   
-  if ($account->uid == 271) {
-    dpm($build);
+  $items = array();
+  $pattern = '/>(.*)<\//';
+  foreach ($build['hybridauth_identities']['#rows'] as $indx => $row) {
+    $i = '<img src="/'.$hybrid_icons['path'].'/icons/'.strtolower($row[0]).'.png" class="icon">';
+    $row[1] = preg_replace($pattern, '>'. $i . ' ' . $row[0] . '</', $row[1]);
+    $items[] = $row[1];
   }
-  
-  $ha = $build['hybridauth_identities'];
+
   $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
-  $build['hybridauth_identities']['#description'] = t('Use social login for one click login.') . '<br>' . $add_provider;
+  $items[] = t('Use social login for one click login.') . '<br>' . $add_provider;
+  $build['hybridauth_identities']['#items'] = $items;
+  
+  $build['flags']['#prefix'] = '<div class="flags">';
+  $build['flags']['#suffix'] = '</div>';
+  
+  $build['summary']['#prefix'] = '<div class="summary">';
+  $build['summary']['#suffix'] = '</div>';
 }
+
+
+
+
+
 

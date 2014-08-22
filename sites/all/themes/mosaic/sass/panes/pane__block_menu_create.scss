@@ -1,0 +1,45 @@
+
+@import 'global/site_vars';
+@import 'global/fonts';
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/gradients';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
+
+
+// Create menu styles
+.page-user {
+  .pane-menu-create {
+    
+    h2 {
+      color: $mdred;
+      border-bottom: 1px solid $ltgray;
+    }
+    
+    padding: 0 .5em;
+    @include box-sizing(border-box);
+
+    ul {
+      margin: 0 0 .5em;
+
+      li {
+        list-style-image: none;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 ($default_vert_unit / 4);
+        a {
+          @include btn-glass(0px, 16px, desaturate($mdblue, 30%), desaturate(darken($mdblue, 7%), 40%), $white);
+          @include btn-structure(3px 5px, 16px, 0px);
+          @include border-radius(15px);
+          @include box-shadow(rgba(0, 0, 0, 0.25) 1px 1px 2px);
+          
+          text-align: center;
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -6,25 +6,24 @@
 @import 'global/headers';
 @import 'global/site_vars';
 
-.pane-token.pane-user-name {
+.pane-user-field-display-name {
   margin-right: 1em;
-  color: darken($ltgray, 10%);
+  color: darken($mdorange, 7%);
   
   .pane-content {
-    //@include huge; // 2em/32px
-    @include h4;
+    @include huge; // 2em/32px
     font-weight: bold;
-    line-height: 2em; // 96px total
-    margin-top: 0;
+    line-height: 1em; // 96px total
+    margin-top: 1em;
     margin-bottom: 0;
   }
 }
 
 @media screen and (max-width: $tabletw) {
-  .pane-token.pane-user-name {
+  .pane-user-field-display-name {
     .pane-content {
+      @include h2;
       font-weight: bold;
-      line-height: 2em;
       margin-top: 0;
       margin-bottom: 0;
     }  

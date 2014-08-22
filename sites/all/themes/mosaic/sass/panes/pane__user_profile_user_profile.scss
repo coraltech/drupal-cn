@@ -7,6 +7,8 @@
 @import 'global/grid_mix';
 @import 'global/site_vars';
 
+@import "compass/css3/box-sizing";
+@import "compass/utilities/general/clearfix";
 
 .pane-user-profile {
   margin-bottom: (2 * $default_vert_unit);
@@ -18,9 +20,75 @@
   
   .profile {
     margin: 0;
-    dt { margin: 0; }
-    dd { margin: 0; }
-    dl { margin: 1.25em 0; }
+    dt { 
+      margin: 0 .25em 0 0; 
+      float: left; 
+      clear: left;
+      color: $mdgray; 
+    }
+    dd { 
+      margin: 0 .25em ($default_vert_unit / 2); 
+      float: left; 
+    }
+    dl { 
+      margin: 1.25em 1em; 
+    }
+    .flags,
+    .summary {
+      //background: lighten($ltyellow, 10%);
+      margin-bottom: $default_vert_unit;
+      padding-bottom: $default_vert_unit / 2;
+      //border: 1px solid $ltgray;
+      @include pie-clearfix;
+      h3 {
+        padding-left: .5em;
+        padding-right: .5em;
+        color: $mdred;
+      }
+    }
+    .summary {
+      //background: lighten($ltblue, 10%);
+    }
+    
+    .item-list {
+      background: lighten($ltgray, 9%);
+      border: 1px solid $ltgray;
+      @include pie-clearfix;
+      
+      h3 {
+        padding-left: .5em;
+        padding-right: .5em;
+        color: $mdred;
+      }
+      ul {
+        li {
+          list-style-image: none;
+          list-style-type: none;
+          padding: 0 1em;
+          margin: 0;
+          a {
+            vertical-align: top;
+            line-height: 1.625em;
+          }
+
+          @include box-sizing(border-box);
+          @include col(12);
+          &.last {
+            margin-top: $default_vert_unit;
+            background: lighten($ltgreen, 22%);
+            border-top: 1px solid $mdgreen;
+            padding: ($default_vert_unit / 2) 1em;
+
+            a {
+              vertical-align: baseline;
+              line-height: 1.25em;
+            }
+
+            @include col(24, 'true');
+          }
+        }
+      }
+    }
   }
 }
 
