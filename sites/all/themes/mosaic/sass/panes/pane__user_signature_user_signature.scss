@@ -1,0 +1,22 @@
+
+// User signature
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/site_vars';
+
+.pane-user-signature {
+  
+  .pane-title {
+    color: $mdred;
+    border-bottom: 1px solid $ltgray;
+  }  
+  .pane-content {
+    
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  
+}
