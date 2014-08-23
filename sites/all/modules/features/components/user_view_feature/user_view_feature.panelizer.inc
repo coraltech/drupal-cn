@@ -223,19 +223,7 @@ function user_view_feature_panelizer_defaults() {
     $pane->subtype = 'user:field_biography';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'compare_users',
-          'settings' => array(
-            'equality' => '1',
-          ),
-          'context' => array(
-            0 => 'logged-in-user',
-            1 => 'panelizer',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'label' => 'title',
