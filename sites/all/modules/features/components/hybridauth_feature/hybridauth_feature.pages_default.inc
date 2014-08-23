@@ -40,10 +40,11 @@ function hybridauth_feature_default_page_manager_handlers() {
   );
   $display->cache = array();
   $display->title = 'Social identities';
+  $display->uuid = 'de8820ca-567b-4541-8d6e-e26c45c26285';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-b51a4959-7b33-4251-85cb-9646c76700d2';
     $pane->panel = 'middle';
     $pane->type = 'coral_page_title';
     $pane->subtype = 'coral_page_title';
@@ -64,10 +65,11 @@ function hybridauth_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['middle'][0] = 'new-1';
+    $pane->uuid = 'b51a4959-7b33-4251-85cb-9646c76700d2';
+    $display->content['new-b51a4959-7b33-4251-85cb-9646c76700d2'] = $pane;
+    $display->panels['middle'][0] = 'new-b51a4959-7b33-4251-85cb-9646c76700d2';
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-42982848-c266-4f72-bc2d-085417a6a788';
     $pane->panel = 'middle';
     $pane->type = 'pm_existing_pages';
     $pane->subtype = 'pm_existing_pages';
@@ -89,10 +91,11 @@ function hybridauth_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['middle'][1] = 'new-2';
+    $pane->uuid = '42982848-c266-4f72-bc2d-085417a6a788';
+    $display->content['new-42982848-c266-4f72-bc2d-085417a6a788'] = $pane;
+    $display->panels['middle'][1] = 'new-42982848-c266-4f72-bc2d-085417a6a788';
     $pane = new stdClass();
-    $pane->pid = 'new-3';
+    $pane->pid = 'new-ee733ab6-6c9d-4464-9151-3638e16bd67c';
     $pane->panel = 'middle';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -113,10 +116,11 @@ function hybridauth_feature_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['middle'][2] = 'new-3';
+    $pane->uuid = 'ee733ab6-6c9d-4464-9151-3638e16bd67c';
+    $display->content['new-ee733ab6-6c9d-4464-9151-3638e16bd67c'] = $pane;
+    $display->panels['middle'][2] = 'new-ee733ab6-6c9d-4464-9151-3638e16bd67c';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-b51a4959-7b33-4251-85cb-9646c76700d2';
   $handler->conf['display'] = $display;
   $export['pm_existing_pages_hybridauth_panel_context'] = $handler;
 

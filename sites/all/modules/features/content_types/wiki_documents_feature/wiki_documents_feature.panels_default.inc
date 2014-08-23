@@ -39,10 +39,11 @@ function wiki_documents_feature_default_panels_mini() {
   );
   $display->cache = array();
   $display->title = '';
+  $display->uuid = 'e92bb372-613d-4835-9b15-17abc0607d8f';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-676c1138-cada-44e8-a35a-ab09720c575b';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_timeline_title';
@@ -67,10 +68,11 @@ function wiki_documents_feature_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['middle'][0] = 'new-1';
+    $pane->uuid = '676c1138-cada-44e8-a35a-ab09720c575b';
+    $display->content['new-676c1138-cada-44e8-a35a-ab09720c575b'] = $pane;
+    $display->panels['middle'][0] = 'new-676c1138-cada-44e8-a35a-ab09720c575b';
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-f30b2d85-70e5-4a3d-86bb-c077b205f264';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_book_timeline';
@@ -101,10 +103,11 @@ function wiki_documents_feature_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['middle'][1] = 'new-2';
+    $pane->uuid = 'f30b2d85-70e5-4a3d-86bb-c077b205f264';
+    $display->content['new-f30b2d85-70e5-4a3d-86bb-c077b205f264'] = $pane;
+    $display->panels['middle'][1] = 'new-f30b2d85-70e5-4a3d-86bb-c077b205f264';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-676c1138-cada-44e8-a35a-ab09720c575b';
   $mini->display = $display;
   $export['book_timeline'] = $mini;
 
