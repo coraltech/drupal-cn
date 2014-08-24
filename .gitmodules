@@ -315,3 +315,7 @@
 	path = sites/all/modules/contrib/empty_fields
 	url = http://git.drupal.org/project/empty_fields
 	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/field_formatter_settings"]
+	path = sites/all/modules/contrib/field_formatter_settings
+	url = http://git.drupal.org/project/field_formatter_settings
+	branch = 7.x-1.x
