@@ -307,3 +307,11 @@
 	path = sites/all/modules/contrib/legal_gen
 	url = http://git.drupal.org/project/legal_gen
 	branch = 7.x-1.x
+[submodule "empty_fields"]
+	path = empty_fields
+	url = http://git.drupal.org/project/empty_fields
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/empty_fields"]
+	path = sites/all/modules/contrib/empty_fields
+	url = http://git.drupal.org/project/empty_fields
+	branch = 7.x-2.x
