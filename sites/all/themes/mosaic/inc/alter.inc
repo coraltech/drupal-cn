@@ -236,10 +236,13 @@ function mosaic_user_view_alter(&$build) {
     }
   }
 
+  if (!count($items)) {
+    $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
+  }
+
   if ($user->uid == $account->uid) {
     if (!count($items)) {
       $items[] = t('You have not added any social identities.');
-      $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
     }
     $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
     $items[] = t('Use social login for one click login.') . '<br>' . $add_provider;
@@ -247,9 +250,10 @@ function mosaic_user_view_alter(&$build) {
   else {
     if (!count($items)) {
       $items[] = t('No social identities have been added.');
+      $items[] = '<span class="hide"></span>';
     }
     else {
-      $items[] = '&nbsp;';
+      $items[] = '<span class="hide"></span>';
     }
   }
 
