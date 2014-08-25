@@ -236,8 +236,6 @@ function mosaic_user_view_alter(&$build) {
     }
   }
 
-  dpm($user);
-  dpm($account);
   if ($user->uid == $account->uid) {
     $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
 
