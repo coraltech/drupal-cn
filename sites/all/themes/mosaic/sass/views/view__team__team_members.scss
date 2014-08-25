@@ -1,0 +1,47 @@
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/site_vars';
+@import 'global/grid_mix';
+@import 'global/headers';
+
+@import "compass/utilities/general/clearfix";
+
+.view-team {
+  @include pie-clearfix;
+  margin-bottom: 2 * $default_vert_unit;
+
+  .views-row {
+    @include col(12);
+    margin-right: $col_margin;
+  }
+  .views-row.even {
+    @include col(12, 'true');
+  }
+
+  .views-field-field-display-name {
+    .field-content {
+      @include h2;
+      a {
+        color: darken($mdorange, 7%);
+        &:hover {
+          color: $mdorange;
+        }
+      }
+    }
+  }
+
+  .views-field-picture {
+    float: left;
+    margin-top: $default_vert_unit / 6;
+    margin-right: .5em;
+  }
+
+  .views-more-link {
+    @include btn-shine(15px);
+    @include btn-structure(2px 9px, 16px, 15px);
+
+    margin-top: $default_vert_unit / 2;
+    float: right;
+  }
+}
