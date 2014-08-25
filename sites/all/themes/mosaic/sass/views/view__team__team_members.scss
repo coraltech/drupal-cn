@@ -45,3 +45,9 @@
     float: right;
   }
 }
+
+@media screen and (max-width: $tabletw) {
+  .view-team .views-row {
+    @include col($columns, 'true'); // full w
+  }
+}
