@@ -12,26 +12,26 @@
 
 .pane-user-profile {
   margin-bottom: (2 * $default_vert_unit);
-  
+
   h3 {
     @include h1;
     border-bottom: 1px solid $ltgray;
   }
-  
+
   .profile {
     margin: 0;
-    dt { 
-      margin: 0 .25em 0 0; 
-      float: left; 
+    dt {
+      margin: 0 .25em 0 0;
+      float: left;
       clear: left;
-      color: $mdgray; 
+      color: $mdgray;
     }
-    dd { 
-      margin: 0 .25em ($default_vert_unit / 2); 
-      float: left; 
+    dd {
+      margin: 0 .25em ($default_vert_unit / 2);
+      float: left;
     }
-    dl { 
-      margin: 1.25em 1em; 
+    dl {
+      margin: 1.25em 1em;
     }
 
     .flags,
@@ -46,12 +46,12 @@
       }
     }
     .summary {}
-    
+
     .item-list {
       background: lighten($ltgray, 9%);
       border: 1px solid $ltgray;
       @include pie-clearfix;
-      
+
       h3 {
         padding-left: .5em;
         padding-right: .5em;
@@ -84,11 +84,11 @@
             @include col(24, 'true');
           }
         }
-        
+
         &.empty {
           li {
             @include col(24, 'true');
-          }    
+          }
         }
       }
     }
@@ -96,37 +96,31 @@
 }
 
 // Re-adjust the grid to our needs ;-)
-#main-content .layout-landing-responsive .secondary-content { 
-  @include col(14);
+#main-content .layout-landing-responsive .secondary-content {
+  @include col(14, 'false', right);
+  margin-right: 0;
+  margin-left: 2%;
 }
 #main-content .layout-landing-responsive .main-content {
-  @include col(10, 'true'); 
+  @include col(10, 'true');
 }
-@media screen and (max-width: $tabletw + 200) { 
-  #main-content .layout-landing-responsive .secondary-content { 
-    //@include col($columns, 'true');
-    
+@media screen and (max-width: $tabletw + 200) {
+  #main-content .layout-landing-responsive .secondary-content {
     .panel-pane {
-      @include col(24, 'true');
+      @include col($columns);
     }
   }
 }
+
 @media screen and (max-width: $tabletw - 100) {
-  #main-content .layout-landing-responsive .secondary-content { 
+  #main-content .layout-landing-responsive .secondary-content {
     @include col($columns, 'true');
-    .pane-menu-general {
-      display:none;
-    }
-    .pane-user-signature {
-      margin-bottom: 2 * $default_vert_unit;
-    }
-    .limiter > .prepend-2 {
+    .prepend-1 {
       margin-left: 0;
+      @include col($columns, 'true');
     }
   }
-  #main-content .layout-landing-responsive .main-content { 
+  #main-content .layout-landing-responsive .main-content {
     @include col($columns, 'true');
-    
-    
   }
 }

@@ -13,12 +13,12 @@
 // Create menu styles
 .page-user {
   .pane-menu-create {
-    
+
     h2 {
       color: $mdred;
       border-bottom: 1px solid $ltgray;
     }
-    
+
     padding: 0 .5em;
     @include box-sizing(border-box);
 
@@ -35,7 +35,7 @@
           @include btn-structure(3px 5px, 16px, 0px);
           @include border-radius(15px);
           @include box-shadow(rgba(0, 0, 0, 0.25) 1px 1px 2px);
-          
+
           text-align: center;
           display: block;
         }
@@ -43,3 +43,12 @@
     }
   }
 }
+
+@media screen and (max-width: $tabletw + 200) {
+  .page-user {
+    .pane-menu-create {
+      margin-bottom: $default_vert_unit;
+    }
+  }
+}
+

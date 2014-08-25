@@ -12,8 +12,8 @@
   white-space: nowrap;
   color: darken($ltgray, 15%);
   //height: 50px;
-  
-  &:before { 
+
+  &:before {
     float: left;
     content:"Last login: ";
     margin-right: .5em;
@@ -27,16 +27,17 @@
     @include h4;
     margin-top: 1.9 * $default_vert_unit;
     margin-bottom: 0;
-    //line-height: 5.8em;  
+    //line-height: 5.8em;
   }
 }
 
 @media screen and (max-width: $tabletw) {
   .pane-token.pane-user-last-login {
-    
+    width: 60%;
     &:before,
     .pane-content {
       @include h0;
+      margin-top: $default_vert_unit / 8;
       //line-height: 3em;
     }
   }

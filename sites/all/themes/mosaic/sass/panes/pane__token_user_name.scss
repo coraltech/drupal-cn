@@ -9,7 +9,7 @@
 .pane-token.pane-user-name {
   margin-right: 1em;
   color: darken($ltgray, 10%);
-  
+
   .pane-content {
     //@include huge; // 2em/32px
     @include h4;
@@ -22,11 +22,13 @@
 
 @media screen and (max-width: $tabletw) {
   .pane-token.pane-user-name {
+    width: 60%;
+
     .pane-content {
       font-weight: bold;
       line-height: 2em;
       margin-top: 0;
       margin-bottom: 0;
-    }  
+    }
   }
 }

@@ -7,16 +7,29 @@
 @import 'global/site_vars';
 
 .pane-user-signature {
-  
+
   .pane-title {
     color: $mdred;
     border-bottom: 1px solid $ltgray;
-  }  
+  }
   .pane-content {
-    
+
+  }
+}
+
+// Tag-along: we do not always have the biography pane on the page at first load
+//  this is hackish but it will have to do at the moment.
+.pane-user-field-biography {
+
+  .pane-title {
+    color: $mdred;
+    border-bottom: 1px solid $ltgray;
+  }
+  .pane-content {
+
   }
 }
 
 @media screen and (max-width: $tabletw) {
-  
+
 }

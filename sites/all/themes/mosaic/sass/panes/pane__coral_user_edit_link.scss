@@ -8,16 +8,22 @@
 
 .pane-coral-user-edit-link {
   float: right;
-  margin-top : 2 * $default_vert_unit;
-  
+  margin-top : -1 * $default_vert_unit;
+
   .pane-content a {
     @include btn-matte-inset;
     @include btn-structure;
   }
 }
 
-@media screen and (max-width: $tabletw) {
+@media screen and (max-width: $tabletw + 200) {
   .pane-coral-user-edit-link {
-    
+    margin-top: $default_vert_unit;
+  }
+}
+
+@media screen and (max-width: $tabletw - 100) {
+  .pane-coral-user-edit-link {
+    display: none;
   }
 }
