@@ -6,15 +6,15 @@
 
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Lets see if this is a node type edit form.
-  //  if so, lets add the type's css  
+  //  if so, lets add the type's css
   //dpm($form_id);
   if (str_replace('_node_form', '', $form_id) != $form_id) {
-    // Load type related styles and js  
+    // Load type related styles and js
     _mosiac_be_node_load_by_type($form['#node']);
     // Load default node form and css styles
     $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__node_form';
     $js_path = drupal_get_path('theme', 'mosaic').'/js/forms/form__node_form';
-    
+
     if (file_exists($css_path.'.css')) drupal_add_css($css_path.'.css', array('group' => CSS_THEME)); // - targeted type
     if (file_exists($js_path.'.js'))  drupal_add_js($js_path.'.js', array('group' => JS_THEME));
   }
@@ -22,7 +22,7 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Add the js - basic type
   $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__'.$form_id;
   $js_path = drupal_get_path('theme', 'mosaic').'/js/forms/form__'.$form_id;
-  
+
   if (file_exists($css_path.'.css')) drupal_add_css($css_path.'.css', array('group' => CSS_THEME)); // - targeted type
   if (file_exists($js_path.'.js'))  drupal_add_js($js_path.'.js', array('group' => JS_THEME));
 }
@@ -33,7 +33,7 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
 //  page is set up in panels... Maybe that might be worth looking
 //  into, but for now this is fine.
 function mosaic_form_comment_node_book_form_alter(&$form, &$form_state) {
-  $form['#action'] = '/'.current_path();  
+  $form['#action'] = '/'.current_path();
   $form['author']['_author']['#type'] = 'hidden';
 }
 function mosaic_form_comment_node_snippet_form_alter(&$form, &$form_state) {
@@ -43,7 +43,7 @@ function mosaic_form_comment_node_snippet_form_alter(&$form, &$form_state) {
 
 // Set destination for the login form - the page you are presently on
 function mosaic_form_user_login_alter(&$form, &$form_state) {
-  $menu = menu_get_item();  
+  $menu = menu_get_item();
   $form['#attributes']['class'][] = 'user-login';
 
   $form['logo'] = array(
@@ -59,7 +59,7 @@ function mosaic_form_user_login_alter(&$form, &$form_state) {
 }
 
 function mosaic_form_user_pass_alter(&$form, &$form_state) {
-  $menu = menu_get_item();  
+  $menu = menu_get_item();
   $form['#attributes']['class'][] = 'user-pass';
 
   $form['logo'] = array(
@@ -71,12 +71,12 @@ function mosaic_form_user_pass_alter(&$form, &$form_state) {
   if ($menu['href'] != 'user/login' && $menu['href'] != 'user/register') {
     $form['#action'] .= '?destination='.$menu['href'];
   }
-  
+
   $form['name']['#description'] = t('Enter your username or email address to recieve a password reset link.');
 }
 
 function mosaic_form_user_register_form_alter(&$form, &$form_state) {
-  $menu = menu_get_item();  
+  $menu = menu_get_item();
   $form['#attributes']['class'][] = 'user-register';
 
   $form['logo'] = array(
@@ -87,13 +87,13 @@ function mosaic_form_user_register_form_alter(&$form, &$form_state) {
   // Update a few descriptions (make em smaller)'
   $form['account']['name']['#description'] = t('Spaces, periods, hyphens, apostrophes, and underscores are allowed.');
   $form['account']['mail']['#description'] = t('Valid email address required. Email addresses are not shared publicly.');
-  
+
   // @TODO: make sure there is no destination or other Query info attached already.
   //  Could be an issue...
   if ($menu['href'] != 'user/login' && $menu['href'] != 'user/register') {
     $form['#action'] .= '?destination='.$menu['href'];
   }
-  
+
   $form['actions']['submit']['#value'] = t('Register');
 }
 
@@ -115,8 +115,8 @@ function mosaic_form_book_node_form_alter(&$form, &$form_state) {
 // Hide the component count field from the snippet node form
 function mosaic_form_snippet_node_form_alter(&$form, &$form_state) {
   $form['field_component_count']['#access'] = FALSE; // no need to see this.
-  
-  
+
+
   // Add custom submit hadler to add component count on submission
   $form['#submit'][] = 'mosaic_snippet_node_submit';
 }
@@ -128,14 +128,14 @@ function mosaic_node_view_alter(&$build) {
   // panelized nodes, see function mosaic_preprocess_panels_pane__node_links(&$vars)
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'book') {
     $node = $build['#node'];
-    
+
     if (isset($build['links']['comment']) && $build['links']['comment']['#links']) {
       $links = $build['links']['comment']['#links'];
       unset($build['links']['comment']['#links']);
       $new_links = array();
       foreach ($links as $i => $link) {
         if ($link['title'] == 'Discussion') {
-          $new_links['discussion'] = $link; 
+          $new_links['discussion'] = $link;
         }
       }
       $build['links']['comment']['#links'] = $new_links;
@@ -158,13 +158,13 @@ function mosaic_snippet_node_submit($form, &$form_state) {
   $node  = $form_state['node'];
   $comps = $form_state['values']['field_snippet_components'][$node->language];
   $cnt   = 0;
-  
+
   foreach ($comps as $i => $comp) {
     if (is_array($comp)) {
       $cnt++;
     }
   }
-  
+
   // Save the number of components
   $form_state['values']['field_component_count'][$node->language][0]['value'] = (string)$cnt;
 }
@@ -183,12 +183,12 @@ function mosaic_menu_local_tasks_alter(&$data, $router_item, $root_path) {
         $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/login';
         mosaic_menu_local_tasks_user_links($data, $dest, $indx);
       }
-      
+
       if ($tab['#link']['path'] == 'user/register') {
         $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/register';
         mosaic_menu_local_tasks_user_links($data, $dest, $indx);
       }
-      
+
       if ($tab['#link']['path'] == 'user/password') {
         $data['tabs'][0]['output'][$indx]['#link']['href'] = 'user/password';
         mosaic_menu_local_tasks_user_links($data, $dest, $indx);
@@ -200,7 +200,7 @@ function mosaic_menu_local_tasks_alter(&$data, $router_item, $root_path) {
 
 // Update query destinations
 function mosaic_menu_local_tasks_user_links(&$data, $dest, $indx) {
-  $query = array();  
+  $query = array();
   if ($dest) {
     $query = array('query' => array(
       'destination' => $dest['destination'] // set query to the current destination
@@ -214,35 +214,45 @@ function mosaic_menu_local_tasks_user_links(&$data, $dest, $indx) {
 
 
 function mosaic_user_view_alter(&$build) {
-  $account = $build['#account'];
+  global $user; // the viewing user
+  $account = $build['#account']; // the account being viewed
+
   $hybrid_icons = hybridauth_get_icon_pack('hybridauth_24');
   $build['hybridauth_identities']['#title'] = t('Social identities');
 
   $build['hybridauth_identities']['#type']  = 'ul';
   $build['hybridauth_identities']['#theme'] = 'item_list';
   $build['hybridauth_identities']['#attributes'] = array('class' => array('identities'));
-  
+
   $items = array();
   $pattern = '/>(.*)<\//';
   if (isset($build['hybridauth_identities']['#rows']) && count($build['hybridauth_identities']['#rows'])) {
     foreach ($build['hybridauth_identities']['#rows'] as $indx => $row) {
-      $i = '<img src="/'.$hybrid_icons['path'].'/icons/'.strtolower($row[0]).'.png" class="icon">';
-      $row[1] = preg_replace($pattern, '>'. $i . ' ' . $row[0] . '</', $row[1]);
-      $items[] = $row[1];
+      if (strtolower($row[0]) != 'openid') {
+        $i = '<img src="/'.$hybrid_icons['path'].'/icons/'.strtolower($row[0]).'.png" class="icon">';
+        $row[1] = preg_replace($pattern, '>'. $i . ' ' . $row[0] . '</', $row[1]);
+        $items[] = $row[1];
+      }
     }
   }
   else {
-    $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
+    if ($user->uid == $account->uid) {
+      $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
+
+      $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
+      $items[] = t('Use social login for one click login.') . '<br>' . $add_provider;
+    }
+    else {
+      $items[] = t('No social identities have been added.');
+    }
     $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
   }
 
-  $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
-  $items[] = t('Use social login for one click login.') . '<br>' . $add_provider;
   $build['hybridauth_identities']['#items'] = $items;
-  
+
   $build['flags']['#prefix'] = '<div class="flags">';
   $build['flags']['#suffix'] = '</div>';
-  
+
   $build['summary']['#prefix'] = '<div class="summary">';
   $build['summary']['#suffix'] = '</div>';
 }
