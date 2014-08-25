@@ -223,25 +223,6 @@ function user_view_feature_default_panels_mini() {
     $display->content['new-b9d08eee-22b1-4b3a-851c-217e710749ce'] = $pane;
     $display->panels['top'][2] = 'new-b9d08eee-22b1-4b3a-851c-217e710749ce';
     $pane = new stdClass();
-    $pane->pid = 'new-c31203c7-82ce-4575-8a87-44d089868540';
-    $pane->panel = 'top';
-    $pane->type = 'coral_user_edit_link';
-    $pane->subtype = 'coral_user_edit_link';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'c31203c7-82ce-4575-8a87-44d089868540';
-    $display->content['new-c31203c7-82ce-4575-8a87-44d089868540'] = $pane;
-    $display->panels['top'][3] = 'new-c31203c7-82ce-4575-8a87-44d089868540';
-    $pane = new stdClass();
     $pane->pid = 'new-e154c00a-dcaa-4822-b4b4-34fa1347403d';
     $pane->panel = 'top';
     $pane->type = 'coral_break_line';
@@ -259,11 +240,11 @@ function user_view_feature_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'e154c00a-dcaa-4822-b4b4-34fa1347403d';
     $display->content['new-e154c00a-dcaa-4822-b4b4-34fa1347403d'] = $pane;
-    $display->panels['top'][4] = 'new-e154c00a-dcaa-4822-b4b4-34fa1347403d';
+    $display->panels['top'][3] = 'new-e154c00a-dcaa-4822-b4b4-34fa1347403d';
     $pane = new stdClass();
     $pane->pid = 'new-c9927c2d-215b-4d1a-8dd3-2b4cae602e79';
     $pane->panel = 'top';
@@ -286,11 +267,30 @@ function user_view_feature_default_panels_mini() {
       'css_class' => 'left',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'c9927c2d-215b-4d1a-8dd3-2b4cae602e79';
     $display->content['new-c9927c2d-215b-4d1a-8dd3-2b4cae602e79'] = $pane;
-    $display->panels['top'][5] = 'new-c9927c2d-215b-4d1a-8dd3-2b4cae602e79';
+    $display->panels['top'][4] = 'new-c9927c2d-215b-4d1a-8dd3-2b4cae602e79';
+    $pane = new stdClass();
+    $pane->pid = 'new-c31203c7-82ce-4575-8a87-44d089868540';
+    $pane->panel = 'top';
+    $pane->type = 'coral_user_edit_link';
+    $pane->subtype = 'coral_user_edit_link';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = 'c31203c7-82ce-4575-8a87-44d089868540';
+    $display->content['new-c31203c7-82ce-4575-8a87-44d089868540'] = $pane;
+    $display->panels['top'][5] = 'new-c31203c7-82ce-4575-8a87-44d089868540';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-3ebd1c5d-084d-452c-952e-29473a3100ae';
   $mini->display = $display;

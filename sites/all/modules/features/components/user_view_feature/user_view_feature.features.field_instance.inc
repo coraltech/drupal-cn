@@ -13,11 +13,23 @@ function user_view_feature_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_biography'
   $field_instances['user-user-field_biography'] = array(
     'bundle' => 'user',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => 'No biography found.',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Add your mini-bio (optional) ',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
@@ -75,6 +87,12 @@ function user_view_feature_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',

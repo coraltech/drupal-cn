@@ -208,7 +208,7 @@ function user_view_feature_panelizer_defaults() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'prepend-1 grid-11',
+      'css_class' => 'prepend-1 grid-11-last',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -242,7 +242,7 @@ function user_view_feature_panelizer_defaults() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'left prepend-1 mb-25',
+      'css_class' => 'prepend-1 mb-25',
     );
     $pane->extras = array();
     $pane->position = 2;
