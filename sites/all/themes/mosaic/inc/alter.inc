@@ -237,12 +237,11 @@ function mosaic_user_view_alter(&$build) {
   }
 
   if (!count($items)) {
+    $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
     $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
   }
 
   if ($user->uid == $account->uid) {
-    $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
-
     $add_provider = l('Add social login providers', 'user/'.$account->uid.'/hybridauth');
     $items[] = t('Use social login for one click login.') . '<br>' . $add_provider;
   }
