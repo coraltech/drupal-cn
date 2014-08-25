@@ -44,7 +44,7 @@ function mosaic_preprocess_html(&$vars) {
   // Attributes for html element.
   $vars['html_attributes'] = 'lang="' . $language->language . '" dir="' . $language->dir . '"';
 }
-  
+
 // Add form id theme hook suggestions.
 function mosaic_preprocess_form(&$vars) {
   $vars['theme_hook_suggestions'][] = 'form_'.$vars['element']['#form_id'];
@@ -52,28 +52,28 @@ function mosaic_preprocess_form(&$vars) {
 
 /**
  * Pane css and js file attachment:
- * 
- * All panes must run through this function 
+ *
+ * All panes must run through this function
  *  so it should be able to capture the lions
  *  share of the attachment workload.
- * 
- * All css and js added by this function will 
+ *
+ * All css and js added by this function will
  *  be seeking files in the following format:
- * 
+ *
  * pane__{pane_type}.(css|js)  * or *
  * pane__{pane_type}_{pane_subtype}.(css|js)
- * 
+ *
  * eg. pane__block_superfish_1.css
- * 
+ *
  * All files must exist within the "panes"
  *  folder (w/in css|js) to be included here.
- *  
+ *
  */
 function mosaic_preprocess_panels_pane(&$vars) {
   global $base_path;
-  
-  $path     = drupal_get_path('theme', 'mosaic');  
-  $join     = '_';  
+
+  $path     = drupal_get_path('theme', 'mosaic');
+  $join     = '_';
   $root     = 'pane__';
   $type     = str_replace('-', $join, $vars['pane']->type);            // dpm($type);
   $subtype  = $join.str_replace(array('-', ':'), $join, $vars['pane']->subtype);   // dpm($subtype);
@@ -83,20 +83,20 @@ function mosaic_preprocess_panels_pane(&$vars) {
   $js_file  = $root.$type.$subtype.'.js';
 
 //dpm($css_file);
-  
+
   // Add the css - basic type
   if (file_exists($path.'/css/panes/'.$base_css_file)) drupal_add_css($path.'/css/panes/'.$base_css_file, array('group' => CSS_THEME)); // - targeted type
   if (file_exists($path.'/css/panes/'.$css_file))      drupal_add_css($path.'/css/panes/'.$css_file, array('group' => CSS_THEME));
-  
+
   // Add the js - basic type
   if (file_exists($path.'/js/panes/'.$base_js_file)) drupal_add_js($path.'/js/panes/'.$base_js_file, array('group' => JS_THEME)); // - targeted type
   if (file_exists($path.'/js/panes/'.$js_file))      drupal_add_js($path.'/js/panes/'.$js_file, array('group' => JS_THEME));
-  
+
   // Add layout types
   $layout = $vars['display']->layout;
   if (file_exists($path.'/css/layouts/'.$layout.'.css')) drupal_add_css($path.'/css/layouts/'.$layout.'.css', array('group' => CSS_THEME)); // - targeted layout
   if (file_exists($path.'/js/layouts/'.$layout.'.js'))   drupal_add_css($path.'/js/layouts/'.$layout.'.js', array('group' => JS_THEME));
-  
+
   // Call potential preprocessors
   $base_func = 'mosaic_preprocess_panels_pane__'.$type; //dpm($base_func);
   $full_func = 'mosaic_preprocess_panels_pane__'.$type.'__'.$subtype; //dpm($full_func);
@@ -109,7 +109,7 @@ function mosaic_preprocess_panels_pane(&$vars) {
  * Implements hook_preprocess_views_view().
  */
 function mosaic_preprocess_views_view(&$vars) {
-  $path = drupal_get_path('theme', 'mosaic');  
+  $path = drupal_get_path('theme', 'mosaic');
   if(isset($vars['view']->name)) {
     $files = array(
       'view__' . $vars['view']->name . '__' . $vars['view']->current_display,
@@ -120,15 +120,15 @@ function mosaic_preprocess_views_view(&$vars) {
       $func = '_preprocess_'.$file;
 //dpm($func);
       if (function_exists($func)) $func($vars);
-      if (file_exists($path.'/css/views/'.$file.'.css')) drupal_add_css($path.'/css/views/'.$file.'.css', array('group' => CSS_THEME));  
+      if (file_exists($path.'/css/views/'.$file.'.css')) drupal_add_css($path.'/css/views/'.$file.'.css', array('group' => CSS_THEME));
       if (file_exists($path.'/js/views/'.$file.'.js'))   drupal_add_js($path.'/js/views/'.$file.'.js', array('group' => JS_THEME));
     }
   }
-  
+
   if (isset($vars['view']->exposed_raw_input['sort_by'])) {
-    $vars['classes_array'][] = 'view-sortby-'.$vars['view']->exposed_raw_input['sort_by']; 
+    $vars['classes_array'][] = 'view-sortby-'.$vars['view']->exposed_raw_input['sort_by'];
   }
-  
+
   // Put any view query info to the settings array for use by other js
   mosaic_compile_views_query_data($vars);
 }
@@ -145,7 +145,7 @@ function mosaic_preprocess_views_view_field(&$vars) {
   $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->field_alias;
 
   if (function_exists($func)) $func($vars);
-  
+
   // By real field name
   if ($vars['field']->real_field != $vars['field']->field_alias) {
     $func = 'mosaic__preprocess_views_views_field_'.$vars['field']->real_field; //dpm($func);
@@ -163,7 +163,7 @@ function mosaic_preprocess_comment(&$vars) {
   $count  = count(explode('.', $vars['comment']->thread));
   if ($count > 10) $count = 10; // no need to go deeper than 10 lvls
   $vars['classes_array'][] = 'comment-thread-'.$count;
-  
+
   // Compile nice "submitted" info
   $au_sub = '<span class="au-sub">'.$vars['author'].'</span>';
   $po_sub = '<span class="po-sub">Posted: '.$vars['created'].'</span>';
@@ -173,7 +173,7 @@ function mosaic_preprocess_comment(&$vars) {
 
 // Preprocess field - add css and js where applicable
 function mosaic_preprocess_field(&$variables, $hook) {
-  $path = drupal_get_path('theme', 'mosaic'); 
+  $path = drupal_get_path('theme', 'mosaic');
   $element = $variables['element'];
 
   $files = array(
@@ -218,7 +218,7 @@ function mosaic_preprocess_node(&$vars) {
 }
 
 
-// Preprocess node-title panes - add icon span 
+// Preprocess node-title panes - add icon span
 function mosaic_preprocess_panels_pane__node_title(&$vars) {
   $content  = $vars['content'];
   $position = strpos($content, '>');
@@ -228,49 +228,49 @@ function mosaic_preprocess_panels_pane__node_title(&$vars) {
 
 // Ugh, more links!
 function mosaic_preprocess_panels_pane__node_links(&$vars) {
-  
+
   $context = $vars['display']->context;
   $context = array_pop($context);
 
   if (isset($context) && isset($context->data)) {
     $node = $context->data;
   }
-  
+
   if (isset($node)) {
     switch ($node->type) {
-      case 'question': 
-      case 'answer': 
+      case 'question':
+      case 'answer':
       case 'comment':
         if (isset($vars['content']['node']['#links']['node-readmore'])) {
           unset($vars['content']['node']['#links']['node-readmore']);
         }
         if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
           unset($vars['content']['flag']['#links']['flag-abuse_node']);
-        }  
+        }
         break;
 
 
       case 'snippet':
       case 'book':
         $links = array();
-        
+
         // Rem flag link for re-addition via pane.
         if (isset($vars['content']['flag']['#links']['flag-abuse_node'])) {
           unset($vars['content']['flag']['#links']['flag-abuse_node']);
-        } 
-        
+        }
+
         //Modify comment links - rem Add comment
         if (isset($vars['content']['comment']['#links'])) {
           $links = $vars['content']['comment']['#links'];
         }
-        
+
         unset($vars['content']['comment']['#links']);
         $new_links = array();
         foreach ($links as $i => $link) {
           if ($link['title'] == 'Discussion') {
             $comment_count = '0';
             if (isset($node->comment_count)) {
-              $comment_count = $node->comment_count; 
+              $comment_count = $node->comment_count;
             }
             $link['title'] = $link['title'].' ('.$comment_count.')';
             $new_links['discussion'] = $link;
@@ -294,13 +294,12 @@ function mosaic_preprocess_panels_pane__entity_field___node_body(&$vars) {
 }
 
 
-
 // Update user questions pane title to be possessive.
 function mosaic_preprocess_panels_pane__views_panes___user_content_user_questions_fields(&$vars) {
   // Build a nicer pane title than say, Questions...
   $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
-  
-  // Add icon holder for the cloud Q's and get a decent prefix to the name  
+
+  // Add icon holder for the cloud Q's and get a decent prefix to the name
   $title = '<span class="icon"></span>'.mosaic_possessive($user_name)." questions";
   $vars['title'] = $title;
 }
@@ -308,8 +307,8 @@ function mosaic_preprocess_panels_pane__views_panes___user_content_user_question
 function mosaic_preprocess_panels_pane__views_panes___user_content_user_snippets_fields(&$vars) {
     // Build a nicer pane title than say, Questions...
   $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
-  
-  // Add icon holder for the cloud Q's and get a decent prefix to the name  
+
+  // Add icon holder for the cloud Q's and get a decent prefix to the name
   $title = '<span class="icon"></span>'.mosaic_possessive($user_name)." snippets";
   $vars['title'] = $title;
 }
@@ -323,7 +322,7 @@ function mosaic_preprocess_panels_pane__views_panes___doc_ref_node_teaser_view(&
 // Preprocess login block.
 function mosaic_preprocess_panels_pane__block___user_login(&$vars) {
   $menu = menu_get_item();
-  
+
   $links = array();
   $links['register'] = array(
     'href' => 'user/register',
@@ -351,8 +350,30 @@ function mosaic_preprocess_panels_pane__block___user_login(&$vars) {
     'links' => $links,
     'attributes' => array('class' => array('login-links', 'links', 'inline')),
   ));
-  
+
   $vars['content']['links']['#markup'] = $ul;
+}
+
+
+function mosaic_preprocess_panels_pane__user_signature(&$vars) {
+  if (isset($vars['user'])) {
+    $user = $vars['user']->uid; // the user looking
+    $accnt = $vars['display']->args[0];
+
+    // The user viewing and the signature author
+    //  are the same.
+    if ($user === $accnt) {
+      if (!$vars['content']['user_signature']['#signature']) {
+        $vars['content']['user_signature']['#signature'] = t('You have not added a signature.').' '.l('Edit your profile', 'user/'.$user.'/edit').' '.t('to update your account.');
+      }
+    }
+    // else they are not
+    else {
+      if (!$vars['content']['user_signature']['#signature']) {
+        $vars['content']['user_signature']['#signature'] = 'No signature found.';
+      }
+    }
+  }
 }
 
 
@@ -386,7 +407,7 @@ function mosaic__preprocess_views_views_field_users_node_revision_picture(&$vars
       if (isset($row->users_node_revision_name)) {
         $title = t('View profile of '.$row->users_node_revision_name);
       }
-      
+
       $vars['output'] = mosaic_compile_default_user_image($row->users_node_revision_uid, $image_style, $title);
     }
   }
@@ -405,15 +426,15 @@ function mosaic__preprocess_views_views_field_user_image(&$vars) {
 
     if (isset($user->name)) {
       $title = 'View '.mosaic_possessive($user->name).' profile';
-      $image_style = 'user_thumb_small';  
-      $vars['output'] = mosaic_compile_default_user_image($user, $image_style, $title);  
+      $image_style = 'user_thumb_small';
+      $vars['output'] = mosaic_compile_default_user_image($user, $image_style, $title);
     }
-    
+
   }
   else {
     $vars['output'] = '';
   }
-  
+
 }
 
 // Handles title field preprocessing
@@ -422,7 +443,7 @@ function mosaic__preprocess_views_views_field_title(&$vars) {
   if ($vars['view']->name == 'projects') {
     if (isset($vars['row']->field_field_project_home_page[0]['raw']['url'])) {
       $proj_home = $vars['row']->field_field_project_home_page[0]['raw']['url'];
-      $vars['output'] = l($vars['field']->last_render_text, $proj_home, array('attributes' => array('target'=>'_blank'))); 
+      $vars['output'] = l($vars['field']->last_render_text, $proj_home, array('attributes' => array('target'=>'_blank')));
     }
   }
 }
@@ -456,20 +477,20 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   else {
     $tags = $vars['output'];
   }
-    
+
   // Popular question tags should point to the questions page
-  $path = drupal_get_path_alias(); 
-  if ($vars['view']->name == 'tags_popular' && 
+  $path = drupal_get_path_alias();
+  if ($vars['view']->name == 'tags_popular' &&
       $vars['view']->current_display == 'popular_question_tags') {
     $path = 'content/questions-and-answers';
   }
 
-  if ($vars['view']->name == 'tags_popular' && 
+  if ($vars['view']->name == 'tags_popular' &&
     $vars['view']->current_display == 'popular_snippet_tags') {
     $path = 'content/snippets';
   }
 
-  if ($vars['view']->name == 'tags_popular' && 
+  if ($vars['view']->name == 'tags_popular' &&
     $vars['view']->current_display == 'popular_project_tags') {
     $path = 'content/coralnexus-projects';
   }
@@ -484,7 +505,7 @@ function mosaic__preprocess_views_views_field_taxonomy_term_data_name(&$vars) {
   else {
     $vars['output'] = l($vars['output'], $path, array('attributes' => array('class' => array($class))));
   }
-  
+
   return;
 }
 
@@ -507,7 +528,7 @@ function mosaic_preprocess_field_locked(&$vars) {
 }
 
 
-// The documentation reference is basically a link from a 
+// The documentation reference is basically a link from a
 //  project page to a related documentation page that
 //  talks about the project.
 function mosaic_preprocess_field_documentation_reference(&$vars) {
@@ -581,8 +602,8 @@ function mosaic_preprocess_field_tags(&$vars) {
       $vars['items'][$indx]['#options']['query'] = array('tag' => $t);
     }
   }
-  
-  
+
+
   // Projects does
   if ($node->type == 'project') {
     foreach ($items as $indx => $item) {
@@ -602,9 +623,9 @@ function mosaic_preprocess_book_navigation(&$vars) {
   if ($vars['tree'] && !$vars['has_links']) {
     $vars['tree_class'] = 'grid-24-last';
   }
-  
+
   if ($vars['tree'] && $vars['prev_url'] && $vars['next_url']) {
-    $vars['btn_class'] = 'grid-4-last'; 
+    $vars['btn_class'] = 'grid-4-last';
   }
   elseif ($vars['tree'] && ($vars['prev_url'] || $vars['next_url'])) {
     $vars['btn_class'] = 'grid-8-last';
@@ -615,7 +636,7 @@ function mosaic_preprocess_book_navigation(&$vars) {
   else {
     $vars['btn_class'] = 'grid-24-last';
   }
-} 
+}
 
 // Compile a default user picture and link
 function mosaic_preprocess_user_picture(&$vars) {
@@ -626,7 +647,7 @@ function mosaic_preprocess_user_picture(&$vars) {
   if (isset($account->name)) {
     $title = t('View profile of '.$account->name);
   }
-  
+
   $styles = image_styles();
   if (isset($vars['image_style']) && array_key_exists($vars['image_style'], $styles)) {
     $image_style = $vars['image_style'];
@@ -646,23 +667,23 @@ function mosaic_preprocess_user_picture(&$vars) {
 // Compiles a user image
 function mosaic_compile_default_user_image($user, $image_style, $title) {
   $uri = 'public://coraltechiconlg.png'; // default image
-  
+
   if (is_numeric($user)) $user = user_load($user);
   if (is_object($user) && $user->uid) {
     if (isset($user->picture->uri)) {
       $uri = $user->picture->uri;
     }
-  } 
-    
+  }
+
   return l(
     theme(
-      'image_style', 
+      'image_style',
       array(
         'style_name' => $image_style,
         'path' => $uri,
         'title' => $title
       )
-    ), 
+    ),
     'user/'.$user->uid, // link path
     array('html' => 'true') // we have a pic
   );
@@ -671,17 +692,17 @@ function mosaic_compile_default_user_image($user, $image_style, $title) {
 // Compiles data about this view's query and puts it to the settings array
 //  Settings key is [view_name]_[view_display]_[[view_arg]_[view_arg]...]
 function mosaic_compile_views_query_data(&$vars) {
-  
+
   // Views to exclude:
   //  Some views have a query alter running on them
-  //  that impedes this feature's usefulness. For 
+  //  that impedes this feature's usefulness. For
   //  this reason lets exclude those views when we can.
   $exclude = array(); //array('questions');
 
   // Got views? - with queries!
   if (isset($vars['view']) && isset($vars['view']->query) && !in_array($vars['view']->name, $exclude)) {
     $view  = $vars['view'];
-        
+
     $query = $vars['view']->query;
 
     $settings = array(); // empty settings for now
@@ -691,14 +712,14 @@ function mosaic_compile_views_query_data(&$vars) {
     if (isset($query->pager->options['items_per_page'])) {
       $settings['limit'] = $query->pager->options['items_per_page'];
     }
-    
+
     // Compile settings key
     $args = implode('_', $view->args);
     if ($args) $args = '_'.$args;     // key by passed argument
     else $args = '_'.$vars['dom_id']; //  or use the view dom id to differentiate instances when necc.
-    
+
     $key = $view->name.'_'.$view->current_display.$args;
-    
+
     // Add da settings
     drupal_add_js(array('mosaicViews' => array($key => $settings)), 'setting');
   }
@@ -713,22 +734,22 @@ function mosaic_preprocess_panelizer_view_mode(&$vars) {
     $type = $data['entity_type'];
     $bundle = $data['bundle'];
     $mode = $data['view_mode'];
-    
+
     $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-pane-title';
     $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-'.$mode.'-pane-title';
-    
+
     if ($bundle == 'project') {
       $uri = $element['field_logo']['#items'][0]['uri'];
       $image_style = 'project_logo_lg';
       $title = $vars['title'];
       $logo = theme(
-        'image_style', 
+        'image_style',
         array(
           'style_name' => $image_style,
           'path' => $uri,
           'title' => $title
         ));
- 
+
       $vars['title'] = $logo . $vars['title'];
     }
   }
@@ -759,7 +780,7 @@ function _preprocess_view__questions__new_questions(&$vars) {
       }
       if (count($tags) == 1) {
         $reset[] = '';
-      }  
+      }
       if (count($reset)) {
         // compile the link for this tag
         $r = implode('+', $reset);
@@ -772,7 +793,7 @@ function _preprocess_view__questions__new_questions(&$vars) {
       }
     }
     $tag_links = implode(', ', $tag_links);
-    
+
     // add a way for the user to see and reset the filtered tag
     $output .= '<div class="q-filtered-tag">';
     $output .= '<span class="filtered-by">'.t('filtered by: ').'<span class="ftag">'.$tag_links.'</span></span>';
@@ -812,10 +833,10 @@ function mosaic_preprocess_user_profile(&$variables) {
 
   // Hide the user picture since we output it separately.
   hide($variables['user_profile']['user_picture']);
-  
+
   // Hide the useless gigya site profile info...
   hide($variables['user_profile']['gigya']['site']);
-  
+
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }
@@ -824,8 +845,8 @@ function mosaic_preprocess_user_profile(&$variables) {
 // Determine possessiveness
 function mosaic_possessive($name) {
   $last = substr($name, -1);
-  
-  // Add icon holder for the cloud Q's and get a decent prefix to the name  
+
+  // Add icon holder for the cloud Q's and get a decent prefix to the name
   if ($last === 's') {
     return $name."'";
   }
