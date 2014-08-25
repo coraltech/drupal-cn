@@ -236,6 +236,10 @@ function mosaic_user_view_alter(&$build) {
     }
   }
 
+  if (!count($items)) {
+    $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
+  }
+
   if ($user->uid == $account->uid) {
     $items[] = t('You have not added any social identities. Add one or more identities for one click login.');
 
@@ -245,7 +249,6 @@ function mosaic_user_view_alter(&$build) {
   else {
     $items[] = t('No social identities have been added.');
   }
-  $build['hybridauth_identities']['#attributes']['class'][] = 'empty'; // add an empty class
 
   $build['hybridauth_identities']['#items'] = $items;
 
