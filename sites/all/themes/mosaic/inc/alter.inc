@@ -248,6 +248,9 @@ function mosaic_user_view_alter(&$build) {
     if (!count($items)) {
       $items[] = t('No social identities have been added.');
     }
+    else {
+      $items[] = '&nbsp;';
+    }
   }
 
   $build['hybridauth_identities']['#items'] = $items;
