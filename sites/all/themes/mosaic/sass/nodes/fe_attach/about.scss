@@ -1,8 +1,39 @@
 
 // About page presets
 
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
 @import 'global/grid_mix';
 @import 'global/site_vars';
+@import 'global/icons';
+
+
+h1.page-title {
+  color: $mdorange;
+
+  @include huge;
+
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.pane-node-body {
+  p {
+    @include h3;
+    margin-bottom: $default_vert_unit;
+    line-height: 1.25em;
+    color: lighten($dkgray, 7%);
+  }
+
+  .team {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    @include icons-sprite('coral-team');
+  }
+}
 
 #main-content .main-content.grid-13-last {
   @include col(17.5, 'true');
