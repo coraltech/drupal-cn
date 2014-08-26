@@ -258,9 +258,11 @@ function mosaic_user_view_alter(&$build) {
 
   $flags = $build['flags'];
   $flagcnt = 0;
-  foreach ($flags as $name => $flag) { // hide abuse flag for own account
-    if (is_array($flags[$name]) && isset($flags[$name]['#type'])) {
-      $flagcnt++;
+  if (isset($flags) && count($flags)) {
+    foreach ($flags as $name => $flag) { // hide abuse flag for own account
+      if (is_array($flags[$name]) && isset($flags[$name]['#type'])) {
+        $flagcnt++;
+      }
     }
   }
   // Hide the abuse flag for own self
