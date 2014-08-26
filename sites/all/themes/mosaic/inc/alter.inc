@@ -7,7 +7,6 @@
 function mosaic_form_alter(&$form, &$form_state, $form_id) {
   // Lets see if this is a node type edit form.
   //  if so, lets add the type's css
-  //dpm($form_id);
   if (str_replace('_node_form', '', $form_id) != $form_id) {
     // Load type related styles and js
     _mosiac_be_node_load_by_type($form['#node']);
@@ -213,13 +212,13 @@ function mosaic_menu_local_tasks_user_links(&$data, $dest, $indx) {
 }
 
 
+// User profile really... You cant edit fields on the user here
 function mosaic_user_view_alter(&$build) {
   global $user; // the viewing user
   $account = $build['#account']; // the account being viewed
 
   $hybrid_icons = hybridauth_get_icon_pack('hybridauth_24');
   $build['hybridauth_identities']['#title'] = t('Social identities');
-
   $build['hybridauth_identities']['#type']  = 'ul';
   $build['hybridauth_identities']['#theme'] = 'item_list';
   $build['hybridauth_identities']['#attributes'] = array('class' => array('identities'));
@@ -257,13 +256,25 @@ function mosaic_user_view_alter(&$build) {
     }
   }
 
-  $build['hybridauth_identities']['#items'] = $items;
-
-  $build['flags']['#prefix'] = '<div class="flags">';
-  $build['flags']['#suffix'] = '</div>';
+  $flags = $build['flags'];
+  $flagcnt = 0;
+  foreach ($flags as $name => $flag) { // hide abuse flag for own account
+    if (is_array($flags[$name]) && isset($flags[$name]['#type'])) {
+      $flagcnt++;
+    }
+  }
+  // Hide the abuse flag for own self
+  if ($flagcnt < 2 && $user->uid == $account->uid) {
+    $build['flags']['#type'] = 'hidden';
+  }
+  else {
+    $build['flags']['#prefix'] = '<div class="flags">';
+    $build['flags']['#suffix'] = '</div>';
+  }
 
   $build['summary']['#prefix'] = '<div class="summary">';
   $build['summary']['#suffix'] = '</div>';
+  $build['hybridauth_identities']['#items'] = $items;
 }
 
 
