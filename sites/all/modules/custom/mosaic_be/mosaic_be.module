@@ -18,7 +18,7 @@ coral_include(array('includes'), 'inc', array('module' => 'mosaic_be'));
 function mosaic_be_panelizer_pre_render_alter($panelizer, $display, $entity) {
 
   $view_mode = $panelizer->view_mode;
-  
+
   // Nodes
   if (!empty($entity->nid) && is_numeric($entity->nid)) {
     // Load css and js files as needed by the theme
@@ -36,7 +36,7 @@ function mosaic_be_init() {
   $item = menu_get_item();
   if (isset($item['page_arguments']) && is_array($item['page_arguments'])) {
     $obj = array_shift($item['page_arguments']);
-  
+
     // It's a node! Congratulations!
     if (is_object($obj) && isset($obj->nid) && $obj->nid > 0) {
       // Load css and js files as needed by the theme
@@ -49,3 +49,18 @@ function mosaic_be_init() {
   }
 }
 
+
+function mosaic_be_form_alter(&$form, &$form_state, $form_id) {
+  //dpm($form_id);
+}
+
+function mosaic_be_form_user_profile_form_alter(&$form, &$form_state) {
+  global $user;
+  if ($user->uid == '271') {
+    dpm($form);
+    //dpm($form_state);
+
+    $form['field_biography'][LANGUAGE_NONE][0]['#default_value'] = 'Testing here';
+
+  }
+}
