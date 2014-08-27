@@ -332,6 +332,37 @@ function coral_projects_feature_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-e3ab757c-8729-4fdd-bb74-aca2893f1046';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_project_reference';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 1,
+      ),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e3ab757c-8729-4fdd-bb74-aca2893f1046';
+    $display->content['new-e3ab757c-8729-4fdd-bb74-aca2893f1046'] = $pane;
+    $display->panels['middle'][0] = 'new-e3ab757c-8729-4fdd-bb74-aca2893f1046';
+    $pane = new stdClass();
     $pane->pid = 'new-fd936b31-6afb-4c91-b57a-0d0ba884263a';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
@@ -355,11 +386,11 @@ function coral_projects_feature_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'fd936b31-6afb-4c91-b57a-0d0ba884263a';
     $display->content['new-fd936b31-6afb-4c91-b57a-0d0ba884263a'] = $pane;
-    $display->panels['middle'][0] = 'new-fd936b31-6afb-4c91-b57a-0d0ba884263a';
+    $display->panels['middle'][1] = 'new-fd936b31-6afb-4c91-b57a-0d0ba884263a';
     $pane = new stdClass();
     $pane->pid = 'new-3e3a58cf-65d3-47aa-8de5-a790336b291f';
     $pane->panel = 'middle';
@@ -390,11 +421,11 @@ function coral_projects_feature_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '3e3a58cf-65d3-47aa-8de5-a790336b291f';
     $display->content['new-3e3a58cf-65d3-47aa-8de5-a790336b291f'] = $pane;
-    $display->panels['middle'][1] = 'new-3e3a58cf-65d3-47aa-8de5-a790336b291f';
+    $display->panels['middle'][2] = 'new-3e3a58cf-65d3-47aa-8de5-a790336b291f';
     $pane = new stdClass();
     $pane->pid = 'new-d8e6f8a2-cd5b-4648-8ce3-04591faad613';
     $pane->panel = 'middle';
@@ -421,11 +452,11 @@ function coral_projects_feature_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'd8e6f8a2-cd5b-4648-8ce3-04591faad613';
     $display->content['new-d8e6f8a2-cd5b-4648-8ce3-04591faad613'] = $pane;
-    $display->panels['middle'][2] = 'new-d8e6f8a2-cd5b-4648-8ce3-04591faad613';
+    $display->panels['middle'][3] = 'new-d8e6f8a2-cd5b-4648-8ce3-04591faad613';
     $pane = new stdClass();
     $pane->pid = 'new-da740f8e-94ab-41f1-ac1f-a52817813cdc';
     $pane->panel = 'middle';
@@ -450,11 +481,11 @@ function coral_projects_feature_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'da740f8e-94ab-41f1-ac1f-a52817813cdc';
     $display->content['new-da740f8e-94ab-41f1-ac1f-a52817813cdc'] = $pane;
-    $display->panels['middle'][3] = 'new-da740f8e-94ab-41f1-ac1f-a52817813cdc';
+    $display->panels['middle'][4] = 'new-da740f8e-94ab-41f1-ac1f-a52817813cdc';
     $pane = new stdClass();
     $pane->pid = 'new-33e36352-d529-4183-8b2e-3d3c01f9e74f';
     $pane->panel = 'middle';
@@ -479,11 +510,11 @@ function coral_projects_feature_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '33e36352-d529-4183-8b2e-3d3c01f9e74f';
     $display->content['new-33e36352-d529-4183-8b2e-3d3c01f9e74f'] = $pane;
-    $display->panels['middle'][4] = 'new-33e36352-d529-4183-8b2e-3d3c01f9e74f';
+    $display->panels['middle'][5] = 'new-33e36352-d529-4183-8b2e-3d3c01f9e74f';
     $pane = new stdClass();
     $pane->pid = 'new-ce053424-1790-4485-b8d1-1e97fd78a05d';
     $pane->panel = 'middle';
@@ -505,11 +536,11 @@ function coral_projects_feature_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = 'ce053424-1790-4485-b8d1-1e97fd78a05d';
     $display->content['new-ce053424-1790-4485-b8d1-1e97fd78a05d'] = $pane;
-    $display->panels['middle'][5] = 'new-ce053424-1790-4485-b8d1-1e97fd78a05d';
+    $display->panels['middle'][6] = 'new-ce053424-1790-4485-b8d1-1e97fd78a05d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;

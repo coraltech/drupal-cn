@@ -297,6 +297,7 @@ function coral_projects_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_project_reference:snippet',
+    1 => 'node:field_project_reference:project',
   );
   $export['project_references'] = $view;
 
