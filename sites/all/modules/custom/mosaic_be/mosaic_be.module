@@ -49,18 +49,3 @@ function mosaic_be_init() {
   }
 }
 
-
-function mosaic_be_form_alter(&$form, &$form_state, $form_id) {
-  //dpm($form_id);
-}
-
-function mosaic_be_form_user_profile_form_alter(&$form, &$form_state) {
-  global $user;
-  if ($user->uid == '271') {
-    dpm($form);
-    //dpm($form_state);
-
-    $form['field_biography'][LANGUAGE_NONE][0]['#default_value'] = 'Testing here';
-
-  }
-}
