@@ -63,7 +63,7 @@ EOF;
     'class' => 'account-list', // a string or indexed (string) array with the classes for the list tag
   );
   
-  $accnt = '<div class="set"><h4>Account manangement</h4>';
+  $accnt = '<div class="set"><h4>Account management</h4>';
   $accnt .= theme('item_list', array('items' => $accnt_list['items'], 'attributes' => $accnt_attr)).'</div>';
   
   $privacy_list['items'] = array(
