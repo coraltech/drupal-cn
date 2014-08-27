@@ -11,14 +11,14 @@
 @import "compass/utilities/general/clearfix";
 
 .node-project {
-  
+
   .project-node-pane-title {
     @include huge;
     a {
       color: $mdorange;
       margin-left: -.5em;
-    }    
-    
+    }
+
     img { // floats beside title
       float: left;
       margin-right: .75em;
@@ -28,27 +28,29 @@
       z-index: 1;
     }
   }
-  
+
   .pane-node-body {
     padding-left: 2em;
     margin-top: $default_vert_unit;
     color: darken($mdgray, 10%);
   }
-  
+  .pane-node-field-project-reference {
+    display: none;
+  }
   .pane-node-field-item-featureset {
 
     .field-collection-container {
       border-bottom: none;
     }
-    
+
     .field-name-field-item-featureset {
-    
+
       .field-collection-view {
         border: none;
         padding: 0;
         margin: 0;
       }
-      
+
       .entity-field-collection-item {
         width: auto;
         padding: 0 1em 0 4em;
@@ -58,7 +60,7 @@
           display: inline;
         }
       }
-      
+
       .field-name-field-item-feature-label {
         margin-right: .25em;
         font-size: 115%;
@@ -69,9 +71,9 @@
         color: $dkgray;
       }
     }
-    
+
   }
-  
+
   .pane-node-field-documentation-reference {
     float: left;
     margin-left: .5em;
@@ -84,18 +86,18 @@
       @include btn-structure(2px .5em, 18px, 3px);
     }
   }
-  
+
   .pane-node-field-project-repo {
     float: left;
     margin: 0 0 $default_vert_unit;
     padding: 0 .5em;
     position: relative;
     top: .25em;
-    
+
     a {
       //color: darken($mdgreen, 10%);
-      
-      //&:hover { color: lighten($dkgreen, 10%); } 
+
+      //&:hover { color: lighten($dkgreen, 10%); }
     }
   }
   .pane-node-field-issue-queue {
@@ -108,11 +110,11 @@
 
     a {
       //color: $dkred;
-      
-      //&:hover { color: lighten($dkred, 10%); }  
+
+      //&:hover { color: lighten($dkred, 10%); }
     }
   }
-  
+
   .pane-node-links {
     position: relative;
     top: .25em;
@@ -140,8 +142,8 @@
       a {
         color: $mdorange;
         margin-left: 0;
-      }    
-      
+      }
+
       img { // floats beside title
         float: left;
         margin-right: .5em;
@@ -150,15 +152,19 @@
         z-index: 1;
       }
     }
-    
+
     .pane-node-field-item-featureset {
 
     }
-    
+
     .pane-node-field-documentation-reference {
-      display: none;  
+      display: none;
     }
-    
+
+    .pane-node-field-project-reference {
+      display: block;
+    }
+
     .pane-node-field-project-repo a {
       @include btn-matte-inset(3px, 16px, $mdgreen, darken($mdgreen, 3%), $white);
       @include btn-structure(2px .5em, 16px, 3px);
@@ -168,7 +174,7 @@
       @include btn-structure(2px .5em, 16px, 3px);
     }
   }
-  
+
   .pane-doc-ref-node-teaser-view {
 
     & > .pane-title {
@@ -180,15 +186,15 @@
       border-top: 2px solid $dkyellow;
       margin-top: 1.65 * $default_vert_unit;
       margin-bottom: 1 * $default_vert_unit;
-  
+
       @include pie-clearfix;
-      
+
       span {
         display: block;
         float: left;
         border-top: 3px solid $dkyellow;
         position: relative;
-        
+
         &:after {
           content: ' ';
           display: block;
@@ -196,7 +202,7 @@
           top: 0;
           left: 45%;
           @include arrow-down(5px, $dkyellow);
-          
+
         }
       }
     }
@@ -204,13 +210,13 @@
     & > .pane-content {
       padding: 0 ($default_vert_unit / 2) 1em;
       margin: 0 0 $default_vert_unit;
-      
+
       .pane-node-links .first {
         border-right: none;
       }
     }
   }
-  
+
   .pane-coral-wiki-ask-question {
     margin-bottom: 2em;
     margin-top: .625em;
@@ -221,7 +227,7 @@
     .main-content {
       float: left;
       width: 66.66667%;
-      
+
       & > .prepend-1 {
         margin-left: 0;
         margin-right: $default_vert_unit / 2;
@@ -248,7 +254,7 @@
         max-height: 100px;
       }
     }
-    
+
     .pane-node-body {
       margin-top: 0;
       padding-left: 1em;
