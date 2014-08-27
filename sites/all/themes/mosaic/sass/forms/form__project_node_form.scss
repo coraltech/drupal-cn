@@ -19,6 +19,10 @@
         @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
       }
     }
+    .secondary-content {
+      margin-right: 0;
+      margin-left: 2%;
+    }
   }
   .form-item {
     //margin: 0;
@@ -27,7 +31,7 @@
   .field-name-body {
     margin-bottom: 1.5 * $default_vert_unit;
   }
-  
+
   .field-name-field-item-featureset {
     label {
       margin-top: $default_vert_unit / 2;
@@ -36,23 +40,23 @@
       margin-top: $default_vert_unit / 2;
     }
   }
-  
+
   .field-name-field-tags,
   .field-name-field-project-repo,
   .field-name-field-issue-queue {
     margin: $default_vert_unit 0;
-    
+
     .form-type-textfield {
       margin-top: 0;
     }
   }
-  
+
   .field-name-field-logo {
     margin: 2 * $default_vert_unit 0;
     background: lighten($ltgray, 5%);
     padding: .5em;
   }
-  
+
   .field-name-field-documentation-reference .references-dialog-links {
     margin-top: 0;
   }
