@@ -148,13 +148,13 @@ function coral_projects_feature_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
