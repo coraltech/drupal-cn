@@ -41,7 +41,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         'Framework',
         'Network',
         'Package',
-        'Tool'
+        'Tools'
       ];
 
       var names = [
