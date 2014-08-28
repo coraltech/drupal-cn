@@ -11,7 +11,7 @@
 * 
 * 3: And update the render function to use your content for $block->content
 * 
-* 4: Save this plugin in the ivillage_components > plugins > content_types folder
+* 4: Save this plugin in the components > plugins > content_types folder
 * 
 * 5: Add your new plugin to a panel
 * 

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Plugin definition for iVillage global site layout.
+ * Plugin definition for 1 column stacked layout.
  */
 
 $plugin = array(

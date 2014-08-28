@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Plugin definition for iVillage global site layout.
+ * Plugin definition for responsive landing page layout.
  */
 
 $plugin = array(

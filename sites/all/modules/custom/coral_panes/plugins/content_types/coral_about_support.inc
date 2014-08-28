@@ -2,20 +2,20 @@
 
 /**
 * This plugin array is more or less self documenting
-* 
+*
 * To use:
-* 
-* 1: Simply rename the functions. Removing "generic" and adding some other 
+*
+* 1: Simply rename the functions. Removing "generic" and adding some other
 *    useful name for this plugin, eg: SSO.
-* 
+*
 * 2: Fill in the $plugin title and category below.
-* 
+*
 * 3: And update the render function to use your content for $block->content
-* 
-* 4: Save this plugin in the ivillage_components > plugins > content_types folder
-* 
+*
+* 4: Save this plugin in the components > plugins > content_types folder
+*
 * 5: Add your new plugin to a panel
-* 
+*
 */
 $plugin = array(
   // the title in the admin
@@ -47,7 +47,7 @@ function coral_about_support_pane_content_type_render($subtype, $conf, $args, $c
     $block->title = t('Support services');
     $block->content = coral_about_support_support_services();
   }
-  return $block; 
+  return $block;
 }
 
 
@@ -57,14 +57,14 @@ function coral_about_support_community_support() {
   $output .= '<p>If you are wanting to learn more about Coral, then head over to the '.l('wiki documentation', 'content/community-documentation').'. ';
   $output .= 'Each wiki page has a discussion thread (must be logged in to see) so if you have questions or comments about something ';
   $output .= ' relating to the documents, you can bring them up there.</p>';
-  
+
   $question = l('new question', 'content/questions-and-answers', array('fragment' => 'ask-question'));
-  
+
   $output .= '<p>'.l('Community Q&A', 'content/questions-and-answers').'</p>';
   $output .= '<p>If you have a question, check out the '.l('community Q&A', 'content/questions-and-answers').'; ';
   $output .= 'Someone may have already gotten an answer to that same question. If not, then simply add a '.$question.'.';
   $output .= '  Be as specific as you can. to help others help you diagnose the issue(s).</p>';
-  
+
   $bugz = l('CoralNexus GitHub account', 'https://github.com/coralnexus');
   $output .= '<p>'.l('Bug reporting', 'https://github.com/coralnexus').'</p>';
   $output .= '<p>If you think you have found a bug, please report that by clicking the issues tab above, or by navigating to the ';
@@ -77,7 +77,7 @@ function coral_about_support_community_support() {
 function coral_about_support_support_services() {
   $output = '<p>We also offer personalized support packages that are tailor made for your requirements. Please contact us for more information on any of the following:</p>';
   $output .= '<h4>Personalized services</h4>';
-  
+
   //$app   = l('Application integration', '<front>');
   //$cloud = l('Cloud architecture migration', '<front>');
   //$train = l('Training and consulting', '<front>');
@@ -87,7 +87,7 @@ function coral_about_support_support_services() {
   $cloud = t('Cloud architecture migration');
   $train = t('Training and consulting');
   $sys   = t('Systems analysis');
-  
+
   $list = <<<EOF
   <ul>
     <li class="dkblue"><strong>{$app}</strong></li>
@@ -97,19 +97,19 @@ function coral_about_support_support_services() {
   </ul>
 EOF;
   return $output.$list;
-  
+
 }
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_about_support_pane_content_type_edit_form($form, &$form_state) {
-  //dpm($conf);  
+  //dpm($conf);
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
+
   // Add your Form API (FAPI) additions here:
   $form['support_type'] = array(
     '#type' => 'select',
@@ -121,14 +121,14 @@ function coral_about_support_pane_content_type_edit_form($form, &$form_state) {
     '#default_value' => ($conf['support_type']) ? $conf['support_type'] : 'support',
     '#description' => t('Determine the support type (Community or Services)'),
   );
-  
+
   return $form;
 }
 
 
 /**
 * Submit function, note anything in the formstate[conf] automatically gets saved
-* 
+*
 * You prob. don't need this for a static content pane.
 */
 function coral_about_support_pane_content_type_edit_form_submit($form, &$form_state) {

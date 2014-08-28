@@ -1,20 +1,20 @@
 <?php
 /**
 * This plugin array is more or less self documenting
-* 
+*
 * To use:
-* 
-* 1: Simply rename the functions. Removing "generic" and adding some other 
+*
+* 1: Simply rename the functions. Removing "generic" and adding some other
 *    useful name for this plugin, eg: SSO.
-* 
+*
 * 2: Fill in the $plugin title and category below.
-* 
+*
 * 3: And update the render function to use your content for $block->content
-* 
-* 4: Save this plugin in the ivillage_components > plugins > content_types folder
-* 
+*
+* 4: Save this plugin in the components > plugins > content_types folder
+*
 * 5: Add your new plugin to a panel
-* 
+*
 */
 $plugin = array(
   // the title in the admin
@@ -29,7 +29,7 @@ $plugin = array(
 
   // Renderer function
   'render callback' => 'coral_about_ecosystem_pane_content_type_render',  // Render callback
-  
+
   'defaults' => array()
 );
 
@@ -41,7 +41,7 @@ function coral_about_ecosystem_pane_content_type_render($subtype, $conf, $args, 
   $proj = l('Projects', 'content/coralnexus-projects');
   $doc  = l('Wiki docs', 'content/community-documentation');
   $qa   = l('Q<span class="sml">&</span>A', 'content/questions-and-answers', array('html'=>TRUE));
-    
+
   $output = <<<EOF
   <p>The CoralNexus ecosystem is here to help you get around the cloud even faster!</p>
   <ul>
@@ -53,21 +53,21 @@ EOF;
   $block = new stdClass;
   $block->title = t('Ecosystem');
   $block->content = $output;
-  return $block; 
+  return $block;
 }
 
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_about_ecosystem_pane_content_type_edit_form($form, &$form_state) {
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
+
   // Add your Form API (FAPI) additions here:
-  
+
 
   return $form;
 }

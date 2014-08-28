@@ -18,6 +18,8 @@ function mosaic_form_alter(&$form, &$form_state, $form_id) {
     if (file_exists($js_path.'.js'))  drupal_add_js($js_path.'.js', array('group' => JS_THEME));
   }
 
+  //dpm($form_id);
+
   // Add the js - basic type
   $css_path = drupal_get_path('theme', 'mosaic').'/css/forms/form__'.$form_id;
   $js_path = drupal_get_path('theme', 'mosaic').'/js/forms/form__'.$form_id;
@@ -121,6 +123,12 @@ function mosaic_form_snippet_node_form_alter(&$form, &$form_state) {
 }
 
 
+function mosaic_form_project_node_form_alter(&$form, &$form_state) {
+  // Add custom submit hadler to add component count on submission
+  $form['#validate'][] = 'mosaic_project_node_validate';
+}
+
+
 function mosaic_node_view_alter(&$build) {
   // Change book node links (send add comment to discussion page)
   // Note: this only works on non-panelized displays, for changing links in
@@ -166,6 +174,16 @@ function mosaic_snippet_node_submit($form, &$form_state) {
 
   // Save the number of components
   $form_state['values']['field_component_count'][$node->language][0]['value'] = (string)$cnt;
+}
+
+
+// Ensure system name only gets alphanumeric and underscores
+function mosaic_project_node_validate($form, &$form_state) {
+  $node  = $form_state['node'];
+  $vals = $form_state['values'];
+  if (!preg_match('/^[a-z0-9_]+$/', $vals['field_system_name'][$node->language][0]['value'])) {
+    form_set_error('field_system_name', t('You can only use lowercase alphanumerics and underscore for system names.'));
+  }
 }
 
 

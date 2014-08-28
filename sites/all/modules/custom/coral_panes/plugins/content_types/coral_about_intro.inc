@@ -2,20 +2,20 @@
 
 /**
 * This plugin array is more or less self documenting
-* 
+*
 * To use:
-* 
-* 1: Simply rename the functions. Removing "generic" and adding some other 
+*
+* 1: Simply rename the functions. Removing "generic" and adding some other
 *    useful name for this plugin, eg: SSO.
-* 
+*
 * 2: Fill in the $plugin title and category below.
-* 
+*
 * 3: And update the render function to use your content for $block->content
-* 
-* 4: Save this plugin in the ivillage_components > plugins > content_types folder
-* 
+*
+* 4: Save this plugin in the components > plugins > content_types folder
+*
 * 5: Add your new plugin to a panel
-* 
+*
 */
 $plugin = array(
   // the title in the admin
@@ -30,7 +30,7 @@ $plugin = array(
 
   // Renderer function
   'render callback' => 'coral_about_intro_pane_content_type_render',  // Render callback
-  
+
   'defaults' => array()
 );
 
@@ -41,39 +41,39 @@ $plugin = array(
 */
 function coral_about_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $projects = l('projects&nbsp;page', 'content/coralnexus-projects', array('html' => TRUE)); // main projects page
-  
+
   $output = <<<EOF
 <div class="cloud-case"></div>
 <h3>Our mission is to help people connect essential data, applications, and services to make the cloud accessible to all.</h3>
 <h4>We build pluggable programming frameworks that everyone can use and extend to build the apps and clouds of tomorrow! Our technologies are <u>free and open source</u> and have concurrency and extensibility in their DNA.</h4>
-<h4>Our primary framework is CORL, a cloud programming framework that extends Nucleon. To learn more visit the {$projects}.</h4> 
+<h4>Our primary framework is CORL, a cloud programming framework that extends Nucleon. To learn more visit the {$projects}.</h4>
 EOF;
   $block = new stdClass;
   $block->content = $output;
-  return $block; 
+  return $block;
 }
 
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_about_intro_pane_content_type_edit_form($form, &$form_state) {
-  //dpm($conf);  
+  //dpm($conf);
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
+
   // Add your Form API (FAPI) additions here:
-  
-  
+
+
   return $form;
 }
 
 
 /**
 * Submit function, note anything in the formstate[conf] automatically gets saved
-* 
+*
 * You prob. don't need this for a static content pane.
 */
 function coral_about_intro_pane_content_type_edit_form_submit($form, &$form_state) {

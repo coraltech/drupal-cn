@@ -1,20 +1,20 @@
 <?php
 /**
 * This plugin array is more or less self documenting
-* 
+*
 * To use:
-* 
-* 1: Simply rename the functions. Removing "generic" and adding some other 
+*
+* 1: Simply rename the functions. Removing "generic" and adding some other
 *    useful name for this plugin, eg: SSO.
-* 
+*
 * 2: Fill in the $plugin title and category below.
-* 
+*
 * 3: And update the render function to use your content for $block->content
-* 
-* 4: Save this plugin in the ivillage_components > plugins > content_types folder
-* 
+*
+* 4: Save this plugin in the components > plugins > content_types folder
+*
 * 5: Add your new plugin to a panel
-* 
+*
 */
 $plugin = array(
   // the title in the admin
@@ -29,7 +29,7 @@ $plugin = array(
 
   // Renderer function
   'render callback' => 'coral_about_resources_pane_content_type_render',  // Render callback
-  
+
   'defaults' => array()
 );
 
@@ -39,39 +39,39 @@ $plugin = array(
 * See ctools_plugin_examples for more advanced info
 */
 function coral_about_resources_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  
+
   $proj = l('project listings', 'content/coralnexus-projects');
-   
+
   $output = <<<EOF
   <p>CORL is made up of several components. To browse the CORL projects, visit the {$proj}.</p>
 EOF;
   $block = new stdClass;
   $block->title = t('Resources');
   $block->content = $output;
-  return $block; 
+  return $block;
 }
 
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_about_resources_pane_content_type_edit_form($form, &$form_state) {
-  //dpm($conf);  
+  //dpm($conf);
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
+
   // Add your Form API (FAPI) additions here:
-  
-  
+
+
   return $form;
 }
 
 
 /**
 * Submit function, note anything in the formstate[conf] automatically gets saved
-* 
+*
 * You prob. don't need this for a static content pane.
 */
 function coral_about_resources_pane_content_type_edit_form_submit($form, &$form_state) {

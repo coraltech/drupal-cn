@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Plugin definition for iVillage global site layout.
+ * Plugin definition for CoralNexus global site layout.
  */
 
 $plugin = array(

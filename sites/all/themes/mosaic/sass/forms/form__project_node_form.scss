@@ -60,4 +60,12 @@
   .field-name-field-documentation-reference .references-dialog-links {
     margin-top: 0;
   }
+
+  .field-name-field-system-name {
+    margin: $default_vert_unit 0 (1.5 * $default_vert_unit) 0;
+  }
+
+  .pane-node-field-project-type {
+    height: 3 * $default_vert_unit;
+  }
 }
