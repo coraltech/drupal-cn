@@ -7,7 +7,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 // Document loaded!
 (function($) {
 
-  Drupal.behaviors.mosaicProjMainInit = {    
+  Drupal.behaviors.mosaicProjMainInit = {
     attach : function(context, settings) {
       try {
         // Check context to make sure that we are not un-neccessarily
@@ -37,6 +37,14 @@ Drupal.mosaic = Drupal.mosaic || {};
 
       // Current project types
       var projTypes = [
+        'Component',
+        'Framework',
+        'Network',
+        'Package',
+        'Tool'
+      ];
+
+      var names = [
         'Components',
         'Frameworks',
         'Networks',
@@ -45,13 +53,14 @@ Drupal.mosaic = Drupal.mosaic || {};
       ];
 
       var projCount = [];
-      for (var i in projTypes) {
+      for (var i = 0; i < projTypes.length; i++) {
         projCount[projTypes[i]] = Drupal.settings.mosaicViews['project_listings_project_listings_'+projTypes[i]].total_items;
       }
 
-      $tabs.each(function() {
-        if ($.inArray($(this).text(), projTypes) > -1) { // we have a winner!
-          $(this).html($(this).text() + ' (<span class="ltyellow">'+projCount[$(this).text()]+'</span>)');
+      $tabs.each(function(i) {
+        var indx = $.inArray($(this).text(), names);
+        if (indx > -1) { // we have a winner!
+          $(this).html($(this).text() + ' (<span class="ltyellow">'+projCount[projTypes[indx]]+'</span>)');
         }
       });
     }
