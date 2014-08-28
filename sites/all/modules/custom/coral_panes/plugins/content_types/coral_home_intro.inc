@@ -67,7 +67,7 @@ function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $cont
         <ul>
           <li>Plugin based architecture for fast prototyping and&nbsp;development.</li>
           <li>Deploy locally or to the cloud provider of your&nbsp;choice.</li>
-          <li>Effortlessly build concurrent and parallel cloud&nbsp;applications.</li>
+          <li>Effortlessly build concurrent cloud&nbsp;applications.</li>
         </ul>
       </div>
       <div class="left grid-12-last">
