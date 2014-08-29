@@ -541,6 +541,23 @@ function mosaic_preprocess_field_documentation_reference(&$vars) {
 }
 
 
+// Preprocess project reference to display atomic units of the system path
+function mosaic_preprocess_field_project_reference(&$vars) {
+  $items = $vars['element']['#items'];
+  foreach ($items as $indx => $item) {
+    $node = $item['entity'];
+    $user = user_load($node->uid);
+    $user_link = theme('username', array('account' => $user));
+    $proj_type = field_get_items('node', $node, 'field_project_type');
+    if (isset($proj_type)) {
+      $proj_type = strtolower(token_replace('[node:field_project_type]', array('node' => $node)));
+      $title = l(strtolower(token_replace('[node:field_system_name]', array('node' => $node))), 'node/'.$node->nid);
+    }
+    $vars['items'][$indx]['#markup'] = $user_link.'<span class="mdgray">/</span><span class="strong mdgray">'.$proj_type.'</span><span class="mdgray">/</span>'.$title;
+  }
+}
+
+
 // Point tags links to correct location (PORTAL-948)
 function mosaic_preprocess_field_tags(&$vars) {
   $items = $vars['items'];
