@@ -10,26 +10,27 @@
 .pane-node-field-project-reference {
   @include col(10, TRUE, right);
   margin-left: 1em;
-  border: 1px solid $ltgray;
-  
+
   .pane-title {
     @include h0;
-    background: lighten($ltgray, 3%);
+    color: desaturate($dkgreen, 20%);
     font-weight: bold;
     padding: 0 .25em;
-    border-bottom: 1px solid darken($ltgray, 3%);
   }
-  
+
   .pane-content {
-    background: lighten($ltgray, 8%);
-    
+    background: lighten($ltgray, 9%);
+    border: 1px solid lighten($ltgray, 4%);
+
     .even,
     .odd {
       padding: 0 .25em;
+      border-bottom: 1px solid lighten($ltgray, 4%);
+      margin-bottom: -1px;
     }
-    
+
     .even {
-      background: lighten($ltgray, 5%);
+      background: lighten($ltgray, 7%);
     }
   }
 }
