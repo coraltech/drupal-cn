@@ -307,3 +307,7 @@
 	path = sites/all/modules/contrib/legal_gen
 	url = http://git.drupal.org/project/legal_gen
 	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/botcha"]
+	path = sites/all/modules/contrib/botcha
+	url = http://git.drupal.org/project/botcha
+	branch = 7.x-3.x
