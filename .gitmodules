@@ -311,3 +311,7 @@
 	path = sites/all/modules/contrib/botcha
 	url = http://git.drupal.org/project/botcha
 	branch = 7.x-3.x
+[submodule "sites/all/modules/contrib/moopapi"]
+	path = sites/all/modules/contrib/moopapi
+	url = http://git.drupal.org/project/moopapi
+	branch = 7.x-1.x
