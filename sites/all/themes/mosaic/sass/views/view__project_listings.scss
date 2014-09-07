@@ -20,7 +20,7 @@
       color: $mdgray;
       background: $ltyellow;
       padding: 3px 5px;
-      
+
       .filtered-by {
         margin-right: .75em;
         line-height: 1em;
@@ -32,14 +32,14 @@
       .ftag {
         color: darken($mdgray, 5%);
         font-weight: bold;
-        
+
         small {
           color: $mdgray;
           margin-left: 3px;
           position: relative;
           top: -1px;
         }
-        
+
         a:hover small {
           color: $mdred;
         }
@@ -50,14 +50,14 @@
       padding: ($default_vert_unit / 2) 1em 0;
       margin-bottom: $default_vert_unit;
       @include pie-clearfix;
-      
+
       &.views-row-odd {
         background: lighten($ltgray, 7%);
       }
     }
   }
-  
-  
+
+
   .views-field-field-logo {
     img {
       float: left;
@@ -66,7 +66,6 @@
   }
   .views-field-name {
     a {
-      text-transform: capitalize;
       &:hover {
         color: $dkgray;
       }
@@ -81,37 +80,37 @@
         color: $mdgray;
         font-weight: normal;
         margin: 0 .25em ($default_vert_unit / 2) .5em;
-      }   
-      
+      }
+
       &:hover {
         color: darken($mdblue, 10%);
       }
     }
   }
-  
+
   .views-field-field-project-repo {
     a {
       font-size: .9em;
       margin: 0 .2em 0 0;
       color: $mdgreen;
-      
+
       &:hover {
         color: darken($mdgreen, 7%);
       }
     }
   }
-  
+
   .views-field-field-issue-queue {
     a {
       font-size: .9em;
       color: $dkred;
-      
+
       &:hover {
         color: darken($dkred, 10%);
       }
     }
   }
-  
+
   .views-field-body {
     margin-bottom: $default_vert_unit / 2;
   }
