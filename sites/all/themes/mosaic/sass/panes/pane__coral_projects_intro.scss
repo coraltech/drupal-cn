@@ -12,16 +12,17 @@
 
 @import "compass/css3/box-shadow";
 @import 'compass/utilities/general/clearfix';
- 
+@import 'compass/css3/border-radius';
+
 .pane-coral-projects-intro {
-  margin-bottom: $default_vert_unit;
+  margin: 0 0 (2 * $default_vert_unit);
   color: $mdgray;
   @include linear-v-gradient($white, lighten($ltgray, 5%));
-  
+
   .pane-content {
     background: url('../../assets/images/diag-tile.png');
-    padding: $default_vert_unit / 2;
-    
+    padding: ($default_vert_unit / 2);
+
     p {
       margin-bottom: 0;
       @include h4;
@@ -32,21 +33,21 @@
       background: rgba(255,255,255,.75);
       @include pie-clearfix;
     }
-    
+
     .info {
       display: block;
       float: left;
       margin-right: 10px;
       @include icons-sprite('info-sm');
     }
-    
+
     .add {
       display: block;
       float: right;
-      
+
       @include btn-glass-ltn;
       @include btn-structure;
-      
+
       font-size: 1.15em;
       min-height: 2em;
       line-height: 2em;

@@ -30,7 +30,7 @@
   }
 
   .pane-node-body {
-    padding-left: 2em;
+    padding-left: 1em;
     margin-top: $default_vert_unit;
     color: darken($mdgray, 10%);
   }
@@ -53,9 +53,9 @@
 
       .entity-field-collection-item {
         width: auto;
-        padding: 0 1em 0 4em;
+        padding: 0 1em 0 3em;
         margin-bottom: ($default_vert_unit / 2);
-        background: url('../../../assets/images/li-red.png') 2.75em .25em no-repeat;
+        background: url('../../../assets/images/li-red.png') 1.75em .25em no-repeat;
         div {
           display: inline;
         }

@@ -13,7 +13,8 @@ Drupal.mosaic = Drupal.mosaic || {};
         // Check context to make sure that we are not un-neccessarily
         // resetting and re-building the book nodes.
         if (context.nodeName === '#document') {
-          new Drupal.mosaic.mosaicProjMain();
+          new Drupal.mosaic.mosaicProjTabs(); // Find results per tab and add # to tab text
+          new Drupal.mosaic.mosaicProjZap(); // add pizzaz to section title
         }
       }
       catch (err) {
@@ -23,8 +24,19 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
 
 
+  Drupal.mosaic.mosaicProjZap = function() {
+    try {
+      // wrap title text in a span
+      $('.ui-tabs > h3').html('<span>'+$('.ui-tabs > h3').text()+'</span>');
+    }
+    catch (err) {
+      console.log('mosaicProjZap errored: '+ err);
+    }
+  };
+
+
   // Run baby run!
-  Drupal.mosaic.mosaicProjMain = function() {
+  Drupal.mosaic.mosaicProjTabs = function() {
     try {
       // Get main project tabs
       var $tabs = $('.ui-tabs-nav li a');

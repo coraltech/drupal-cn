@@ -36,14 +36,14 @@
 .pane-footer { margin: 0 auto $default_vert_unit; }
 
 // Unset margin in the header
-#mini-panel-header { 
+#mini-panel-header {
   .inside, .panel-separator { margin: 0; }
 }
 
 // -- Coloration globals
 // Site body
 body.html {
-  background: $dkgray; 
+  background: $dkgray;
 }
 body.html #references-dialog-page {
   background: $white;
@@ -64,7 +64,7 @@ body.page-references-dialog {
   background: transparent;
 }
 
-// See _menus.scss for primary (main) menu 
+// See _menus.scss for primary (main) menu
 //  coloration settings.
 header,
 .mosaic-cont {
@@ -78,7 +78,7 @@ header,
 
 #mini-panel-header {
   .panel-col-first { width: 60%; }
-  .panel-col-last { width: 40%; } 
+  .panel-col-last { width: 40%; }
 }
 
 #navbar-administration.navbar-oriented .navbar-bar {
@@ -96,7 +96,7 @@ header .pane-search-form {
   padding: 10px 0 0 18px;
   position: relative;
   width: 275px;
-  
+
   .form-text {
     background: none;
     border: 1px solid $mdgray;
@@ -109,15 +109,15 @@ header .pane-search-form {
   }
   .form-wrapper {
     @include icons-sprite('search');
-    
+
     border: 1px solid $dkblue;
     position: absolute;
     right: 4px;
     top: 1px;
-    
+
     height: 27px;
     width: 65px;
-    
+
     .form-submit {
       color: $white;
       height: 27px;
@@ -135,7 +135,7 @@ header .pane-search-form {
   header .pane-search-form {
     width: 175px;
     margin-right: -175px; // keep it from dropping down
-    
+
     .form-text {
       width: 120px;
       float: left;
@@ -146,7 +146,7 @@ header .pane-search-form {
       height: 27px;
       width: 27px;
       margin: 1px 0 0 2px;
-      
+
       .form-submit {
         text-shadow: none;
         color: transparent;
@@ -154,19 +154,19 @@ header .pane-search-form {
         width: 27px;
         height: 27px;
         float: left;
-        
+
         &:hover {
           background: rgba(255, 255, 255, .2);
         }
       }
-    } 
+    }
   }
 }
 
 @media screen and (max-width: $tabletw - 200) {
   header .pane-search-form {
     width: 155px;
-  
+
     .form-text {
       width: 100px;
     }
@@ -179,7 +179,7 @@ header .coral-cloud {
   display: block;
   width: 85px;
   margin: 0 0 0 54.5%;
-  
+
   .icon {
     position: absolute;
     display: block;
@@ -218,7 +218,7 @@ header .coral-cloud {
 }
 .pane-header .hybridauth-widget-wrapper {
   margin-top: -3em;
-  
+
   h3 {
     display: none;
   }
@@ -255,7 +255,7 @@ header .coral-cloud {
 .pane-coral-user {
   float: right;
   margin-top: $default_vert_unit;
-  
+
   .welcome {
     float: left;
     color: $ltgray;
@@ -271,7 +271,7 @@ header .coral-cloud {
   }
 }
 @media screen and (max-width: $desktopw) {
-  //.pane-coral-user 
+  //.pane-coral-user
 }
 @media screen and (max-width: $tabletw) {
   .pane-coral-user {
@@ -293,11 +293,11 @@ header .coral-cloud {
   clear: left;
   min-width: 12em;
   float: left;
-  
+
   margin: 0 1em 0 0;
-    
+
   @include linear-v-gradient(lighten($ltblue, 10%), lighten($ltblue, 5%));
-  
+
   .toc-title {
     text-align: left;
     font-size: 90%;
@@ -316,16 +316,16 @@ header .coral-cloud {
   }
   .toc-screen {
     padding: 0 ($default_vert_unit / 4) ($default_vert_unit / 4) ($default_vert_unit / 2);
-    
+
     .toc {
       font-size: 95%;
     }
-  }  
+  }
 }
 // Override the toc margin in a few places
-.node-book .toc-wrapper { 
-  margin-top: .15em; 
-  margin-bottom: $default_vert_unit;  
+.node-book .toc-wrapper {
+  margin-top: .15em;
+  margin-bottom: $default_vert_unit;
 }
 .node-talk .toc-wrapper { margin-top: 0; }
 
@@ -345,16 +345,16 @@ header .coral-cloud {
   font-size: 1em;
   position: relative;
   z-index: 1;
-  
+
   @include border-radius(8px);
   @include linear-v-gradient($ltgray, lighten($ltgray, 7%));
-  
+
   .arrow {
     display: block;
     position: relative;
     top: -1px;
     left: 2px;
-    
+
     @include arrow-up(5px, $mdblue);
   }
 }
@@ -394,7 +394,7 @@ h3 .toc-top {
   top: 1.85em;
   width: 140px;
   z-index: 3;
-      
+
   @include border-radius(8px);
   @include box-shadow(rgba(0,0,0,.35) 3px 3px 6px);
 }
@@ -407,10 +407,10 @@ h3 .toc-top {
     float: left;
     margin-top: 1px;
     margin-right: 2px;
-    
+
     @include icons-sprite('coral-add');
   }
-  
+
   &:hover .icon {
     @include icons-sprite('coral-add-on');
   }
@@ -431,14 +431,14 @@ h3 .toc-top {
     margin: 0;
     padding: 0 0 0 3px;
     font-size: .9em;
-            
+
     .icon {
       display: block;
       float: left;
       margin: 3px 0 0 0;
       @include icons-sprite('coral-flag-red-off');
-    }    
-      
+    }
+
     &:hover {
       color: lighten($mdgray, 10%);
       .icon {
@@ -468,7 +468,7 @@ h3 .toc-top {
   font-size: 90%;
   text-align: right;
   margin: 0;
-  
+
   .fde { // footer data element
     margin: 0 0 ($default_vert_unit / 2);
   }
@@ -479,24 +479,24 @@ h3 .toc-top {
 .pane-page-tabs {
   padding: 0;
   margin-top: -1.1em;
-  
+
   @include pie-clearfix;
-  
+
   //.icoprim {
   //  display: block;
   //  float: right;
   //  margin: 5px -.75em 0 0;
   //  @include opacity(.5);
-  //  @include icons-sprite('road-cone');  
+  //  @include icons-sprite('road-cone');
   //}
-    
-  ul { 
+
+  ul {
     float: right;
-    margin: 0 0 1em; 
+    margin: 0 0 1em;
     li {
       //line-height: 1em;
       margin: 0 .15em 0 0;
-      
+
       a {
         padding: 0 .5em;
         margin: 0;
@@ -507,7 +507,7 @@ h3 .toc-top {
   ul.primary {
     border: none;
     white-space: normal;
-    
+
     li {
       a {
         font-size: 90%;
@@ -517,24 +517,24 @@ h3 .toc-top {
         background: $ltorange;
         color: $white;
         margin: 0;
-        
+
         @include box-shadow(rgba(0, 0, 0, 0.35) 2px 0px 3px);
         @include linear-v-gradient(desaturate(darken($ltorange, 20%), 7%), saturate(darken($ltorange, 25%), 15%));
         @include opacity(.75);
         @include border-bottom-radius(5px);
-        
+
         &:hover {
           border-color: transparent lighten($mdorange, 5%) lighten($ltorange, 5%) $ltorange;
           @include opacity(1);
         }
-        
+
         &:active,
         &.active {
           @include linear-v-gradient(desaturate(darken($ltorange, 25%), 7%), saturate(darken($ltorange, 30%), 15%));
           @include box-shadow(rgba(0, 0, 0, 0.5) 2px 0px 2px);
           @include opacity(.85);
         }
-        
+
       }
     }
   }
@@ -545,19 +545,19 @@ h3 .toc-top {
     padding: 0 0 ($default_vert_unit / 2) 0;
     white-space: normal;
 
-    li { 
+    li {
       border-right: none;
-      float: right; 
+      float: right;
       margin-right: 0;
       padding: 0 0 0 5px;
-      
+
       a {
         @include btn-matte-inset(3px, 12px, darken($silver, 5%), darken($silver, 15%), $white);
         @include btn-structure(2px 5px, 12px, 3px);
         @include box-shadow(rgba(0, 0, 0, 0.25) 2px 1px 3px);
-        
+
         &:hover {}
-        
+
         &:active,
         &.active {
           @include btn-matte-inset(3px, 12px, lighten($silver, 10%), darken($silver, 1%), $white);
@@ -574,7 +574,7 @@ h3 .toc-top {
 @media screen and (max-width: $desktopw) {
   .pane-page-tabs {
     margin-top: -.75em;
-       
+
     ul.primary {
       margin-bottom: .5em;
       li {
@@ -599,9 +599,9 @@ h3 .toc-top {
 
 // Messages pane
 .pane-page-messages {
-  
+
   .cont {
-    
+
   }
   div.messages {
     margin: 0;
@@ -611,32 +611,32 @@ h3 .toc-top {
     background-position: 8px 8px; /* LTR */
     background-repeat: no-repeat;
     padding: 10px 10px 10px 50px; /* LTR */
-   
+
     @include box-sizing(border-box);
   }
-  
+
   div.status {
     background-image: none;
   }
   div.status .cont {
     background-image: url(../../../../../misc/message-24-ok.png);
   }
-  
+
   div.warning {
     background-image: none;
   }
   div.warning .cont {
     background-image: url(../../../../../misc/message-24-warning.png);
   }
-  
+
   div.error {
     background-image: none;
   }
   div.error .cont {
     background-image: url(../../../../../misc/message-24-error.png);
   }
-  
-  
+
+
 }
 
 
@@ -652,9 +652,9 @@ h3 .toc-top {
   position: relative;
   color: darken($mdgray, 7%);
   margin-bottom: ($default_vert_unit / 2);
-  
+
   @include box-shadow(rgba(0, 0, 0, 0.15) 2px 2px 2px);
-  
+
   .close-help {
     position: absolute;
     top: -7px;
@@ -669,7 +669,7 @@ h3 .toc-top {
     padding: 3px;
     line-height: 5px;
     height: 7px;
-    
+
     @include border-radius(8px);
     @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
   }
@@ -694,7 +694,7 @@ h3 .toc-top {
   padding: 3px 0 1px 5px;
   height: 0.8em;
   width: 0.8em;
-    
+
   @include border-radius(20px);
   @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
   @include radial-gradient(darken($ltred, 10%), $ltred);
@@ -708,59 +708,48 @@ div.ui-tabs {
   font-family: $sans_fonts;
   margin: 0 0 (2 * $default_vert_unit);
   border: none;
-  //@include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
+
   @include border-radius(0);
 
   .ui-tabs-nav {
     margin: 0;
     padding: .5em .5em 0;
-    
+
     li a {
       padding: .5em 1em;
     }
   }
-  
+
   .ui-corner-all {
     @include border-radius(0);
   }
-  
+
   .ui-widget-header {
     position: relative;
-    background: $ltblue;// url('../assets/images/diag-tile.png');
+    background: $ltblue;
     border-style: none none solid none;
     border-color: darken($ltblue, 12%);
-    
+
     @include reflected-v-gradient(lighten($mdblue, 5%), lighten($mdblue, 7%), lighten($mdblue, 3%));
-    
-    /*&:before {
-      position: absolute;
-      top: -1.75em;
-      left: .25em;
-      content: 'Your followed ';
-      color: $mdgray;
-      
-      @include h3;
-    }*/
   }
-  
+
   .ui-tabs-panel {
     border-style: none solid solid solid;
     border-color: darken($ltblue, 12%);
     border-width: 1px;
     padding: 0;
-    //@include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
     @include border-radius(0);
   }
-  
+
   .ui-state-default {
     border-color: darken($ltblue, 12%);
   }
-  
+
   .panel-separator {
     display: none;
   }
 }
-@media screen and (max-width: $desktopw) { 
+@media screen and (max-width: $desktopw) {
   div.ui-tabs {
     .ui-tabs-nav {
       li.ui-tabs-active {
@@ -771,7 +760,7 @@ div.ui-tabs {
         margin-bottom: .5em;
         @include border-radius(4px);
         a {
-          padding: ($default_vert_unit / 4) ($default_vert_unit / 2);  
+          padding: ($default_vert_unit / 4) ($default_vert_unit / 2);
         }
       }
       li.ui-tabs-selected {
@@ -786,27 +775,27 @@ div.ui-tabs {
 // Vertically aligned panels_tabs
 // Add body class to reqd panelizer to use vertical tabs.
 body.vertical-panels-tabs .ui-tabs {
-  
+
   border: none;
   font-size: 1em;
   margin-bottom: $default_vert_unit;
-  
+
   @include pie-clearfix;
-  
+
   & > .item-list { // the widget tabs
     position: absolute;
     width: 12em;
   }
-  
+
   .ui-tabs-panel { // individual panels in the viewer
     margin-left: 12em;
     padding: 0 1em;
   }
-  
+
   .ui-tabs-nav {
     border: none;
     background: none;
-    
+
     li.ui-corner-top {
       border: none;
       background: none;
@@ -815,8 +804,8 @@ body.vertical-panels-tabs .ui-tabs {
     li a {
       width: 10em;
       line-height: 2 * $default_vert_unit;
-      
-      border: 1px solid $ltgray;      
+
+      border: 1px solid $ltgray;
     }
   }
 }
@@ -883,7 +872,7 @@ form .field-type-file {
       color: $white;
       border: 2px solid $mdblue;
       @include border-radius(15px);
-      
+
       &:hover {
         color: $mdorange;
         background: $white;
@@ -894,7 +883,7 @@ form .field-type-file {
     .icon {
       @include icons-sprite('first');
     }
-    
+
     a:hover {
       .icon {
         @include icons-sprite('first-hover');
@@ -905,13 +894,13 @@ form .field-type-file {
     .icon {
       @include icons-sprite('previous');
     }
-    
+
     a:hover {
       .icon {
         @include icons-sprite('prev-hover');
       }
     }
-    
+
     .ajax-progress {
       top: 5px;
       right: -11px;
@@ -921,13 +910,13 @@ form .field-type-file {
     .icon {
       @include icons-sprite('next');
     }
-    
+
     a:hover {
       .icon {
         @include icons-sprite('next-hover');
       }
     }
-    
+
     .ajax-progress {
       top: 5px;
       left: -10px;
@@ -937,7 +926,7 @@ form .field-type-file {
     .icon {
       @include icons-sprite('last');
     }
-    
+
     a:hover {
       .icon {
         @include icons-sprite('last-hover');
@@ -951,7 +940,7 @@ form .field-type-file {
     padding: 0;
     margin: 0 5px;
     display: inline-block;
-        
+
     .icon {
       display: inline-block;
       position: relative;
@@ -962,15 +951,15 @@ form .field-type-file {
 .item-list ul.pager-mini {
   li {
     position: relative;
-    
+
     .icon {
       margin: 0 .5em;
     }
-    
+
     .ajax-progress {
       position: absolute;
     }
-  }  
+  }
 }
 
 
@@ -980,25 +969,25 @@ form .field-type-file {
 .sf-vertical {
   width: 12em;
   min-width: 12em;
-  
+
   li {
     background: $ltgray;
     border-bottom: 1px solid darken($ltgray, 10%);
-    
+
     a {
       padding: (.5 * $default_vert_unit);
     }
-    
+
     ul {
       border-left: 1px solid darken($ltgray, 7%);
       min-width: 12em;
       width: 12em !important;
-      
+
       @include box-shadow(rgba(0,0,0,.3) 2px 1px 6px);
       @include opacity(.97);
     }
   }
-  
+
   // self referencing
   & a:hover,
   & a:active,
@@ -1006,29 +995,29 @@ form .field-type-file {
   & > .sfHover > a.menuparent {
    color: $dkblue;
   }
-  
+
   & > li {
     float: left;
-    
+
     &:hover > ul,
     &.sfHover > ul { // second level ul's need to be 37px from the top
       display: block;
-    }    
+    }
   }
-  
+
   // Arrows
   & a.menuparent > .arrow {
     display: block;
     position: absolute;
     top: 12px;
     right: 3px;
-    
+
     @include arrow-right(7px, lighten($mdblue, 15%));
   }
   & .sfHover.sf-depth-1 > a.menuparent > .arrow {
     top: 15px;
     right: 5px;
-    
+
     @include arrow-down(7px, lighten($mdblue, 15%));
   }
   & .sfHover.sf-depth-1 .menuparent > a.menuparent > .arrow {

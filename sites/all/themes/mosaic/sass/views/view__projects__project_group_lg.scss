@@ -1,40 +1,35 @@
 
 // Large footprint projects display
 
+@import 'global/buttons';
 @import 'global/fonts';
 @import 'global/grid_mix';
 @import 'global/gradients';
+@import 'global/headers';
 @import 'global/site_vars';
 
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
 @import 'compass/utilities/general/clearfix';
 
 .view-display-id-project_group_lg {
   position: relative;
-  margin-bottom: 3 * $default_vert_unit;
-  //padding-bottom: $default_vert_unit;
   @include pie-clearfix;
-  //background: url('../../assets/images/coral-sep-long.png') bottom center no-repeat;
-  
+
+
   .view-header {
     .tcont {
       display: block;
-      min-height: 200px;
+      min-height: 100px;
     }
-    
-    .hbdr {
-      background: url('../../assets/images/coral-sep-long.png') bottom center no-repeat;
-      height: 25px;
-      position: absolute;
-      bottom: -3.5em;
-      width: 100%;
-      z-index: 1;
-    }
+
+    .hbdr {}
 
     .vbdr {
       position: absolute;
-      top: 1em;
+      top: 1.5em;
       left: 50%;
-      height: 400px;
+      height: 100px;
       width: 1px;
 
       @include reflected-v-gradient($white, $dkblue, $white);
@@ -42,23 +37,70 @@
       div {
         position: relative;
         right: 1px;
-        height: 400px;
+        height: 100px;
         width: 1px;
 
         @include reflected-v-gradient($white, $ltblue, $white);
       }
     }
-  } 
-  
+  }
+
   @include pie-clearfix;
   .views-row {
     @include col(12);
-    margin-right: $col_margin;  
+    margin-right: $col_margin;
   }
   .views-row-even {
     @include col(12, TRUE);
     margin-right: 0;
   }
+
+  .project-node-teaser-pane-title {
+    a {
+      margin-left : 0;
+    }
+    @include h3;
+    margin-bottom: 0;
+    img {
+      width: 60px;
+      margin-left: $default_vert_unit / 2;
+    }
+  }
+
+  .pane-node-field-item-featureset {
+    @include border-radius(15px);
+    @include box-shadow(rgba(0,0,0,.15) 3px 3px 5px);
+    display: none;
+    background: lighten($ltgray, 8%);
+    border: 1px solid darken($ltgray, 5%);
+    margin: $default_vert_unit 1em;
+    .field-collection-container {
+      margin-top: $default_vert_unit;
+      margin-bottom: 0;
+    }
+    .entity-field-collection-item {
+
+    }
+  }
+
+  .pane-coral-system-path {
+    margin: 0.25em 0;
+  }
+
+  .node-project .pane-node-body {
+    margin-top: 0;
+    p {
+      margin-bottom: $default_vert_unit / 2;
+    }
+  }
+
+  .pane-node-field-documentation-reference {
+    margin-left: 1em;
+  }
+}
+
+.pane-projects-project-group-lg {
+  margin: $default_vert_unit 0;
 }
 
 @media screen and (max-width: $tabletw) {

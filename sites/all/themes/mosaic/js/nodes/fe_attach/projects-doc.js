@@ -7,7 +7,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 // Document loaded!
 (function($) {
 
-  Drupal.behaviors.mosaicProjDocInit = {    
+  Drupal.behaviors.mosaicProjDocInit = {
     attach : function(context, settings) {
       try {
         // Check context to make sure that we are not un-neccessarily
@@ -16,7 +16,7 @@ Drupal.mosaic = Drupal.mosaic || {};
           var $projDoc = $('.projects-doc:not(".prdoc-proc")');
           if ($projDoc.length) {
             $projDoc.each(function() {
-              new Drupal.mosaic.mosaicProjDoc($(this));  
+              new Drupal.mosaic.mosaicProjDoc($(this));
             });
           }
         }
@@ -50,7 +50,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.mosaicProjDoc.prototype.orientItems = function() {
     try {
       this.w = this.$cont.outerWidth();
-      
+
       // Intro and diagram
       if (this.w < 550) {
         this.$cont.find('.grid-12-last.diagram, .grid-12.intro').css({ 'width':'100%', 'margin':'0 0 1.25em 0'});
@@ -58,7 +58,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       else {
         this.$cont.find('.grid-12-last.diagram, .grid-12.intro').attr('style', ''); //reset css
       }
-      
+
       // Tools and utils
       if (this.w < 520) {
         this.$cont.find('.grid-8-last, .grid-8').css({ 'width':'auto', 'margin':'1.25em 0', 'padding-top': '0'}).addClass('box');
@@ -77,11 +77,11 @@ Drupal.mosaic = Drupal.mosaic || {};
       }
       else {
         this.$cont.find('.grid-12-last.corl, .grid-12.nucleon').attr('style', ''); //reset css
-      }      
+      }
     }
     catch (err) {
       console.log('orientItems errored: '+err);
     }
-  }
-  
+  };
+
 })(jQuery);

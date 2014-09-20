@@ -13,7 +13,7 @@
 
   .pane-title {
     @include h0;
-    color: desaturate($dkgreen, 20%);
+    color: desaturate($dkgray, 20%);
     font-weight: bold;
     padding: 0 .25em;
   }
