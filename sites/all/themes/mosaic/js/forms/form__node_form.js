@@ -10,22 +10,22 @@ Drupal.mosaic = Drupal.mosaic || {};
 // Snippet form processing
 // ----------------------------------------------------------------------
 (function($) { // doc loaded
-  Drupal.behaviors.mosaicNodeFormInit = {    
+  Drupal.behaviors.mosaicNodeFormInit = {
     attach : function(context, settings) { // play it again Sam...
       try { // Use try to prevent systemic failure
         // Update only on book form and loaded events
         if (context.nodeName === '#document' || $(context).prop('id') == 'book-node-form') {
         	// Disregard node-form instances that are right under
           // the body tag... this is a panels issue: it wraps
-          // the page in a form. -_- 
+          // the page in a form. -_-
           $nodeForm = $('.node-form').filter(function(index) {
             return !$(this).parent('body').length;
           });
-          
+
           $nodeForm.each(function() {
             new Drupal.mosaic.nodeFormFilterManager($(this));
           });
-        } 	
+        }
       }
       catch (err) {
         console.log('mosaicNodeFormInit errored: '+err);
@@ -91,15 +91,15 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.nodeFormFilterManager.prototype.handleFilterClick = function(ev) {
     try {
       ev.preventDefault();
-      
+
       this.Overlay  = Drupal.mosaic.core.objects.mboverlay;
       this.$overlay = Drupal.mosaic.core.objects.mboverlay.$overlay;
-      
+
       var FFM = this;
       this.$overlay.removeClass('hidden').fadeTo(250, .65, function() {
         FFM.Overlay.updateOverlay(false);
       });
-      
+
       var $filter = $(ev.currentTarget);
       var $guide  = $filter.parents('.filter-help').siblings('.filter-guidelines').show();
       this.initClose($guide); // prepare to close it
@@ -117,11 +117,11 @@ Drupal.mosaic = Drupal.mosaic || {};
       var $body  = this.$form.find('.field-name-body');
       var $descr = $body.find('.description').detach();
       $body.find('fieldset.filter-wrapper').before($descr);
-      
+
       var FFM = this;
       this.$filterLinks.each(function(i) {
         $(this).parents('.filter-help').siblings('.filter-guidelines').hide();
-      })
+      });
     }
     catch (err) {
       console.log('Init errored: '+err);
@@ -133,7 +133,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.mosaic.nodeFormFilterManager.prototype.initClose = function($guide) {
     try {
       var FFM = this;
-      
+
       var $cls = $guide.prepend('<div class="mbclose">x</div>').children('.mbclose');
       $cls.css({
         'cursor': 'pointer',
@@ -143,7 +143,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         'right': '-14px',
         'top': '-14px',
       });
-      
+
       // Close click closes!
       $cls.click(function() {
         FFM.closeFilters($guide);
@@ -160,16 +160,16 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('initClose errored: '+err);
     }
   };
-  
-  
+
+
   // Handle closing of the pane
   Drupal.mosaic.nodeFormFilterManager.prototype.closeFilters = function($guide) {
     try {
       var FFM = this;
-      
+
       // hide the box
       $guide.addClass('hidden').slideUp(150);
-      
+
       // update the overlay
       this.$overlay.fadeTo(250, 0, function() {
         FFM.$overlay.addClass('hidden');
