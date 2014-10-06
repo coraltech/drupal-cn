@@ -1,0 +1,44 @@
+
+// Primary style for CoralNexus introduction pane.
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/headers';
+@import 'global/icons';
+
+@import "compass/utilities/general/clearfix";
+
+.pane-coralnexus-intro {
+  margin: (3 * $default_vert_unit) 0 (3 * $default_vert_unit);
+  position: relative;
+  @include pie-clearfix;
+
+  .pane-title {
+    text-align: center;
+    color: darken($mdblue, 5%);
+    font-weight: bold;
+    @include dblhuge;
+    margin-bottom: .5em;
+  }
+
+  .clowny-an {
+    display: block;
+    float: left;
+    @include icons-sprite('anemone-clown');
+    position: absolute;
+    top: 60px;
+    left: 10px;
+  }
+
+  .msg {
+    @include h1;
+    line-height: 1.35em;
+    display: block;
+    color: darken($mdred, 5%);
+    text-align: center;
+    margin-left: 180px;
+    margin-right: 100px;
+  }
+
+}
