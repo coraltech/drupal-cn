@@ -1,32 +1,32 @@
 
 // Mixins for the primary header types
 
-@mixin h1() { 
+@mixin h1() {
   font-size: 1.5em; // 24px
   line-height: 1.6667em; // 40px
   margin-top: 0.4167em;
   margin-bottom: 0.4167em;
 }
-@mixin h2() { 
+@mixin h2() {
   font-size: 1.375em; // 22px
   line-height: 1.8182em; // 40px
   margin-top: 0.4545em;
   margin-bottom: 0.4545em;
 }
-@mixin h3() { 
+@mixin h3() {
   font-size: 1.25em; // 20px
   line-height: 1em; // 20px
   margin-top: .5em;
   margin-bottom: .5em;
 }
-@mixin h4() { 
+@mixin h4() {
   font-size: 1.125em; // 18px
   line-height: 1.1111em; // 20px
   margin-top: 0.5555em;
   margin-bottom: 0.5555em;
 }
 
-@mixin h5() { 
+@mixin h5() {
   font-size: 1.0625em; // 17px
   line-height: 1.1764em; // 20px
   margin-top: 0.5882em;
@@ -42,7 +42,13 @@
 
 @mixin huge() {
   font-size: 2em; // 32px
-  line-height: 1.4em; // 1.4em
+  line-height: 1.25em; // 40px
   margin-top: .3125em;
   margin-bottom: .3125em;
+}
+@mixin dblhuge() {
+  font-size: 3em; // 48px;
+  line-height: 1.33em; // 64px;
+  margin-top: .125em; // 8px
+  margin-bottom: .125em; // 8px
 }
