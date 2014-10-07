@@ -37,8 +37,8 @@ clear {
 // Site width
 .site-width {
   @include site_width;
-  
-  .site-width {  
+
+  .site-width {
     width: 100%; // Reset inner level
   }
 }
@@ -56,11 +56,12 @@ strong, b,
   line-height: 1.25em;
 }
 
+.dblhuge { @include dblhuge; }
 .huge { @include huge; }
 .h1 { @include h1; }
 .h2 { @include h2; }
 .h3 { @include h3; }
-.h4 { @include h4; } 
+.h4 { @include h4; }
 
 .nowrap {
   white-space: nowrap;
@@ -69,6 +70,14 @@ strong, b,
 .center {
   text-align: center;
 }
+
+// Have to specify a width on the
+// element for this to work
+.auto-cntr {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 // Simulated (override-able ;-) break tags
 .br {
@@ -132,6 +141,12 @@ strong, b,
 .b-left { border-left: 1px solid $ltgray; }
 .b-right { border-right: 1px solid $ltgray; }
 .borders { border: 1px solid $ltgray; }
+
+.b-top-2 { border-top: 2px solid $ltgray; }
+.b-bot-2 { border-bottom: 2px solid $ltgray; }
+.b-left-2 { border-left: 2px solid $ltgray; }
+.b-right-2 { border-right: 2px solid $ltgray; }
+.borders-2 { border: 2px solid $ltgray; }
 
 /*
 .b-top-ltblu { border-top: 1px solid $ltblue; }
@@ -224,5 +239,73 @@ strong, b,
 }
 .mb-375 {
   margin-bottom: 3 * $default_vert_unit !important;
+}
+
+
+// paddings
+.pt-0 {
+  padding-top: 0 !important;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+.pl-0 {
+  padding-left: 0 !important;
+}
+.pr-0 {
+  padding-right: 0 !important;
+}
+
+.pt-0625 {
+  padding-top: ($default_vert_unit / 2) !important;
+}
+.pb-0625 {
+  padding-bottom: ($default_vert_unit / 2) !important;
+}
+.pl-0625 {
+  padding-left: ($default_vert_unit / 2) !important;
+}
+.pr-0625 {
+  padding-right: ($default_vert_unit / 2) !important;
+}
+
+.pl-1 {
+  padding-left: 1em !important;
+}
+.pr-1 {
+  padding-right: 1em !important;
+}
+.pt-1 {
+  padding-top: 1em !important;
+}
+.pb-1 {
+  padding-bottom: 1em !important;
+}
+
+.pt-125 {
+  padding-top: $default_vert_unit !important;
+}
+.pb-125 {
+  padding-bottom: $default_vert_unit !important;
+}
+
+.pt-25 {
+  padding-top: 2 * $default_vert_unit !important;
+}
+.pb-25 {
+  padding-bottom: 2 * $default_vert_unit !important;
+}
+.pl-25 {
+  padding-left: 2 * $default_vert_unit !important;
+}
+.pr-25 {
+  padding-right: 2 * $default_vert_unit !important;
+}
+
+.pt-375 {
+  padding-top: 3 * $default_vert_unit !important;
+}
+.pb-375 {
+  padding-bottom: 3 * $default_vert_unit !important;
 }
 

@@ -6,6 +6,7 @@
 @import 'global/grid_mix';
 @import 'global/headers';
 @import 'global/icons';
+@import 'global/site_vars';
 
 @import "compass/utilities/general/clearfix";
 
@@ -24,11 +25,14 @@
 
   .clowny-an {
     display: block;
-    float: left;
     @include icons-sprite('anemone-clown');
     position: absolute;
     top: 60px;
     left: 10px;
+  }
+  .clowny-an-sml {
+    display: none;
+    @include icons-sprite('anemone-clown-sml');
   }
 
   .msg {
@@ -40,5 +44,40 @@
     margin-left: 180px;
     margin-right: 100px;
   }
+}
 
+
+
+
+@media screen and (max-width: $desktopw - 100) {
+  .pane-coralnexus-intro {
+    .pane-title {
+      font-size: 2.5em;
+      line-height: 1.15em;
+    }
+    .msg {
+      @include h3;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw - 50) {
+  .pane-coralnexus-intro {
+    margin: (2 * $default_vert_unit) 0 (2 * $default_vert_unit);
+    .pane-title {
+      font-size: 1.5em;
+      line-height: 1.15em;
+    }
+    .msg {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    .clowny-an {
+      display: none;
+    }
+    .clowny-an-sml {
+      display: block;
+      float: left;
+    }
+  }
 }

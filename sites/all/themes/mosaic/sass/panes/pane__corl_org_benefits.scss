@@ -1,0 +1,30 @@
+
+// Primary style for CORL org benefits pane.
+
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/headers';
+@import 'global/icons';
+@import 'global/site_vars';
+@import "compass/utilities/general/clearfix";
+
+.pane-corl-org-benefits {
+  margin-bottom: (3 * $default_vert_unit);
+
+  .cont {
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: $tabletw) {
+  .pane-corl-org-benefits {
+    margin-bottom: $default_vert_unit;
+
+    &.grid-8 {
+      width: 100%;
+      float: none;
+    }
+  }
+}

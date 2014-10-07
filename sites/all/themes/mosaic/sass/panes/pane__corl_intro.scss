@@ -1,0 +1,25 @@
+
+@import 'global/site_vars';
+
+// Styles for front page corl intro pane
+
+.pane-corl-intro {
+  .pane-content {
+    text-align: center; // Align the CORL is cloud glue image to the center
+  }
+  .img-mob {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: $tabletw + 50) {
+  .pane-corl-intro {
+    .img-mob {
+      display: inline;
+    }
+    .img-full {
+      display: none;
+    }
+  }
+}
