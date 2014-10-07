@@ -1,0 +1,11 @@
+
+@import 'global/fonts';
+
+
+// Styles for the single media slide view display
+.pane-media-media-single-fullsize {
+  .pane-content {
+    text-align: center;
+  }
+  margin-bottom: 2 * $default_vert_unit;
+}
