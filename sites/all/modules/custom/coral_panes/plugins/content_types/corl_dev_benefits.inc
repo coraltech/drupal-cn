@@ -28,7 +28,7 @@ function corl_dev_benes_pane_content_type_render($subtype, $conf, $args, $contex
   $content .= '<ul class="mb-0"><li class="mb-0625"><strong>'.t('Play on the cloud.').'</strong> '.t('Quickly try out applications and application bundles. Save, stop and re-start anytime.').'</li></ul>';
   $content .= '<ul class="mb-0"><li class="mb-0625"><strong>'.t('Extend and override anything.').'</strong> '.t('Pluggable object model ensures you can build whatever you need, faster.').'</li></ul>';
   $content .= '<ul class="mb-0"><li class="mb-0625"><strong>'.t('Enjoy standardized environments').'</strong> '.t('across teams and across providers. Works great with vagrant too!').'</li></ul>';
-  $content .= '<ul class="mb-0"><li class="mb-0 pb-0625"><strong>'.t('Use it how you want.').'</strong> '.t('Software can be used as an IT management application or as a feature rich development library.').'</li></ul>';
+  $content .= '<ul class="mb-0"><li class="mb-0 pb-0625"><strong>'.t('Use it how you want.').'</strong> '.t('CORL is useful as an IT management application and as a feature rich development library.').'</li></ul>';
   $block->content = $content;
   return $block;
 }

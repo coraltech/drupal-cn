@@ -14,7 +14,7 @@
 .pane-corl-dev-benefits {
   margin-bottom: (3 * $default_vert_unit);
   padding-bottom: 1px;
-  @include linear-v-gradient($white, lighten($mdgray, 8%));
+  @include linear-v-gradient($white, darken($ltgray, 10%));
   @include box-sizing(border-box);
 
   .pane-content {
