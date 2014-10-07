@@ -2,20 +2,20 @@
 
 /**
 * This plugin array is more or less self documenting
-* 
+*
 * To use:
-* 
-* 1: Simply rename the functions. Removing "generic" and adding some other 
+*
+* 1: Simply rename the functions. Removing "generic" and adding some other
 *    useful name for this plugin, eg: SSO.
-* 
+*
 * 2: Fill in the $plugin title and category below.
-* 
+*
 * 3: And update the render function to use your content for $block->content
-* 
+*
 * 4: Save this plugin in the components > plugins > content_types folder
-* 
+*
 * 5: Add your new plugin to a panel
-* 
+*
 */
 $plugin = array(
   // the title in the admin
@@ -40,15 +40,16 @@ $plugin = array(
 function coral_footer_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   $server_time = '<div class="fde server-time">Generated: '.date('F j, g:i:sa').'</div>';
   $copyright   = '<div class="fde copyright">&copy; 2013-2014 Coral Technology Group LLC</div>';
-  $block = new stdClass; 
-  $block->content = $server_time.$copyright;
-  return $block; 
+  $location   = '<div class="fde location">Cincinnati, Ohio</div>';
+  $block = new stdClass;
+  $block->content = $server_time.$copyright.$location;
+  return $block;
 }
 
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_footer_pane_content_type_edit_form($form, &$form_state) {
@@ -62,7 +63,7 @@ function coral_footer_pane_content_type_edit_form($form, &$form_state) {
 
 /**
 * Submit function, note anything in the formstate[conf] automatically gets saved
-* 
+*
 * You prob. don't need this for a static content pane.
 */
 function coral_footer_pane_content_type_edit_form_submit($form, &$form_state) {
