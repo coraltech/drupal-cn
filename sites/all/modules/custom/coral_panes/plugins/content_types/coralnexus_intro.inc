@@ -20,9 +20,8 @@ $plugin = array(
 function coralnexus_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   // Get the args ready for inspection... Achtung baby!
   $block = new stdClass;
-  $block->title = (isset($conf['title']) && $conf['title']) ? $conf['title'] : t('What is CoralNexus?');
-  $block->content = '<span class="clowny-an"></span>';
-  $block->content .= '<span class="msg">'.t('CoralNexus is an ecosystem for developing, sharing, and documenting distributed applications and cloud architectures.').'</span>';
+  $block->title = (isset($conf['title']) && $conf['title']) ? '<span class="clowny-an"></span><span class="clowny-an-sml"></span>'.$conf['title'] : '<span class="clowny-an"></span><span class="clowny-an-sml"></span>'.t('What is CoralNexus?');
+  $block->content = '<span class="msg">'.t('CoralNexus is an ecosystem for developing, sharing, and documenting distributed applications and cloud architectures.').'</span>';
   return $block;
 }
 
