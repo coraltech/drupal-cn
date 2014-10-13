@@ -51,17 +51,17 @@
             display: block;
             position: absolute;
             top: -1px;
-            right: -43px;
+            right: -40px;
 
-            @include arrow-right(21px, $ltgray);
+            @include arrow-right(20px, $ltgray);
 
             .ar-in {
               display: block;
               position: absolute;
-              top: -20px;
+              top: -19px;
               right: -18px;
 
-              @include arrow-right(20px, $white);
+              @include arrow-right(19px, $white);
             }
           }
         }
@@ -102,7 +102,7 @@
           &:active {
             width: auto;
             .ar-out {
-              top: 40px;
+              top: 39px;
               right: 44%;
 
               @include arrow-down(15px, $ltgray);
