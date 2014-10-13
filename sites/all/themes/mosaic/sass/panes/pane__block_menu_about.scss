@@ -37,6 +37,7 @@
         line-height: 40px;
         padding: 0 .5em;
         font-size: 1.5em;
+        @include box-sizing(border-box);
 
         &:hover,
         &.active,
@@ -45,7 +46,7 @@
           border: 1px solid $ltgray;
           width: 102%;
           color: darken($dkgray, 7%);
-          @include box-sizing(border-box);
+
           .ar-out {
             display: block;
             position: absolute;
