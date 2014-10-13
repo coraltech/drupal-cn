@@ -6,27 +6,28 @@
 @import 'global/site_vars';
 
 @import "compass/utilities/general/clearfix";
+@import "compass/css3/box-sizing";
 
 .pane-menu-about {
   border: 1px solid $ltblue;
   background: lighten($ltgray, 5%) url('../../assets/images/diag-tile.png');
   margin-bottom: 2 * $default_vert_unit;
-  
+
   .pane-content {
     padding: 5px;
   }
-  
+
   ul {
     margin: 0;
     padding: 5px;
     background: rgba(255, 255, 255, 0.75);
-      
+
     li {
       margin: 0;
       padding: 0;
       list-style: none;
       list-style-image: none;
-      
+
       a {
         border: 1px solid lighten($ltgray, 10%);
         position: relative;
@@ -36,29 +37,29 @@
         line-height: 40px;
         padding: 0 .5em;
         font-size: 1.5em;
-          
+
         &:hover,
         &.active,
         &:active {
           background: $white;
           border: 1px solid $ltgray;
-          width: 95%;
-          color: darken($dkgray, 7%); 
-          
+          width: 102%;
+          color: darken($dkgray, 7%);
+          @include box-sizing(border-box);
           .ar-out {
             display: block;
             position: absolute;
             top: -1px;
             right: -43px;
-            
+
             @include arrow-right(21px, $ltgray);
-            
+
             .ar-in {
               display: block;
               position: absolute;
               top: -20px;
               right: -18px;
-              
+
               @include arrow-right(20px, $white);
             }
           }
@@ -72,26 +73,26 @@
   .layout-landing-responsive {
     .row {
       position: relative; // ready for menu placement
-      
+
       .main-content.grid-13-last {
         margin-top: 4 * $default_vert_unit; // make some room
-      }  
-    }  
+      }
+    }
   }
-  
-    
+
+
   .pane-menu-about {
     position: absolute;
     top: 0;
     width: 100%;
-    
+
     ul {
       @include pie-clearfix;
       padding: 5px 0px 5px 5px;
       li {
         float: left;
         width: 33.3%;
-      
+
         a {
           text-align: center;
           margin: 0 5px 0 0;
@@ -102,13 +103,13 @@
             .ar-out {
               top: 40px;
               right: 44%;
-              
+
               @include arrow-down(15px, $ltgray);
-              
+
               .ar-in {
                 top: -16px;
                 right: -14px;
-                
+
                 @include arrow-down(14px, $white);
               }
             }
@@ -116,7 +117,7 @@
         }
       }
     }
-  } 
+  }
 }
 
 @media screen and (max-width: $tabletw) {
