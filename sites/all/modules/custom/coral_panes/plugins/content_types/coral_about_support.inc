@@ -55,8 +55,7 @@ function coral_about_support_pane_content_type_render($subtype, $conf, $args, $c
 function coral_about_support_community_support() {
   $output = '<p>'.l('Wiki documentation', 'content/community-documentation').'</p>';
   $output .= '<p>If you are wanting to learn more about Coral, then head over to the '.l('wiki documentation', 'content/community-documentation').'. ';
-  $output .= 'Each wiki page has a discussion thread (must be logged in to see) so if you have questions or comments about something ';
-  $output .= ' relating to the documents, you can bring them up there.</p>';
+  $output .= 'Each wiki page has a discussion thread for questions or comments relating to the documents.</p>';
 
   $question = l('new question', 'content/questions-and-answers', array('fragment' => 'ask-question'));
 
