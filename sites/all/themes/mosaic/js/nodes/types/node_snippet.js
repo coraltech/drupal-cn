@@ -8,7 +8,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 // Document loaded!
 (function($) {
 
-  Drupal.behaviors.mosaicSnippetInit = {    
+  Drupal.behaviors.mosaicSnippetInit = {
     attach : function(context, settings) {
     	try {
  				// Get the id of the context element
@@ -17,7 +17,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 				//var keys = Object.keys(context); for (key in keys) { console.log(keys[key]+': '+context[keys[key]]); }
 
  				// Check context to make sure that we are not
- 				// un-neccessarily resetting and re-building 
+ 				// un-neccessarily resetting and re-building
  				// the snippetNodes.
  				if (context.nodeName === '#document' || contextID === 'snippet-node-form') {
 
@@ -66,7 +66,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   	try { return this; }
   	catch (err) { console.log('snippetNodes errored: '+err); }
   };
- 
+
 
   // Backbone structure of the snippet node
   Drupal.mosaic.snippetNode = function($node) {
@@ -106,7 +106,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         },
 
         // Update the ace editor with new language settings
-        updateLanguage: function(ev) { 
+        updateLanguage: function(ev) {
           snippetNode.setLanguage(ev);
         },
 
@@ -129,9 +129,9 @@ Drupal.mosaic = Drupal.mosaic || {};
 	// Prototypes
 	//-------------
 
-	// Snippet Node(s) 
+	// Snippet Node(s)
 	// ----------------
-	
+
 	// Kickstart the snippetNode processing
 	Drupal.mosaic.snippetNodes.prototype.initNodes = function($snippetNodes) {
 		try {
@@ -151,7 +151,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     	// compile snippet node obj
 			$nodes.each(function() {
 				var node = new Drupal.mosaic.snippetNode($(this));
-				Drupal.mosaic.core.objects.snippetNodes[node.id] = node;	
+				Drupal.mosaic.core.objects.snippetNodes[node.id] = node;
 			});
 		}
 		catch (err) {
@@ -171,8 +171,8 @@ Drupal.mosaic = Drupal.mosaic || {};
 	Drupal.mosaic.snippetNodes.prototype.loadZeroClip = function($nodes) {
 		try {
 			// Load up the snippet copy functionality
-			Drupal.mosaic.core.loadScript('/sites/all/themes/mosaic/js/load/snippet_copy.js', true, 
-				function(script, textStatus, jqXHR) { 
+			Drupal.mosaic.core.loadScript('/sites/all/themes/mosaic/js/load/snippet_copy.js', true,
+				function(script, textStatus, jqXHR) {
 					Drupal.attachBehaviors('#snippet-copy');
 				}
 			);
@@ -180,10 +180,10 @@ Drupal.mosaic = Drupal.mosaic || {};
 		catch (err) {
 			console.log("startZeroClip errored: "+err);
 		}
-	} 
+	};
 
 
-	// Snippet Node 
+	// Snippet Node
 	// --------------
 
 	// Start editor
@@ -192,7 +192,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 			// Cycle through resources and compile ace settings
 			for (resource in this.resources) {
 				var rObj = this.resources[resource];
-				
+
 				var textarea = (this.mode === 'edit') ? rObj.$resources.find('textarea') : rObj.$resources.find('.field-item');
 				var textareaValue = (this.mode === 'edit') ? textarea.val() : textarea.text();
 				var mode = this.getLanguage(rObj);
@@ -206,10 +206,10 @@ Drupal.mosaic = Drupal.mosaic || {};
 
 				// Start the editor
 				var editor = ace.edit(editDiv[0]);
-				editor.setOptions({ 
+				editor.setOptions({
 					maxLines: 500,
 					minLines: 10
-				})
+				});
 				editor.renderer.setShowGutter(true);
         editor.setReadOnly(readOnly);
         editor.setFontSize(16);
@@ -252,9 +252,9 @@ Drupal.mosaic = Drupal.mosaic || {};
 	Drupal.mosaic.snippetNode.prototype.getLanguage = function(rObj) {
 		try { // mode is the ace langauge mode - not to be confused with the snippetNode.mode
 			var mode = '_none';
-			if (this.mode === 'edit') { 
+			if (this.mode === 'edit') {
 				mode = rObj.$language.find('select').val();
-				if (mode === '_none') mode = "ace/mode/text"; 
+				if (mode === '_none') mode = "ace/mode/text";
 			}
 			else {
 				mode = rObj.$language.find('.field-item').text();
@@ -277,7 +277,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 			// The currentTarget is a select within the language field.
 			var tgtResource = $(ev.currentTarget).parents('.field-name-field-component-language').siblings('.field-name-field-component-resources').prop('id');
 			var mode = $(ev.currentTarget).val();
-			
+
 			// default to text not _none
 			mode = (mode === '_none') ? 'ace/mode/text' : mode;
 			this.resources[tgtResource].editor.getSession().setMode(mode);
@@ -292,16 +292,16 @@ Drupal.mosaic = Drupal.mosaic || {};
 	Drupal.mosaic.snippetNode.prototype.updateResource = function(ev) {
 		try {
 			// False alarm, begin saving again
-			if (ev && ev.type === 'mouseleave') { 
-				this.autoSave(); 
+			if (ev && ev.type === 'mouseleave') {
+				this.autoSave();
 				return;
 			}
-			
+
 			// stop auto saving
-			if (ev && ev.type === 'mouseenter') { 
+			if (ev && ev.type === 'mouseenter') {
 				clearInterval(this.interval);
 			}
-			
+
 			// Update resource textareas with editor session data
 			for (resources in this.resources) {
 				var val = this.resources[resources].editor.getSession().getValue();
@@ -313,7 +313,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 		}
 	};
 
-	
+
 	// Get all resources for this node
 	Drupal.mosaic.snippetNode.prototype.getResources = function() {
 		try {
@@ -329,7 +329,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 					editor: {}
 				};
 			});
-			return resources;			
+			return resources;
 		}
 		catch (err) {
 			console.log('getResources errored: '+err);
@@ -375,8 +375,8 @@ Drupal.mosaic = Drupal.mosaic || {};
   		console.log('initNode errored: '+err);
   	}
   };
-  
-  
+
+
   Drupal.mosaic.snippetNode.prototype.getModePath = function(label) {
   	try {
   		// Languages we support editing of.
@@ -387,7 +387,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 				'JSON':'ace/mode/json',
 				'Text':'ace/mode/text'
 			};
-			
+
 			// return path
 			if (label) {
 				var keys = Object.keys(paths);

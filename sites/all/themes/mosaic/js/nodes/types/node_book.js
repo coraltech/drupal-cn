@@ -8,24 +8,24 @@ Drupal.mosaic = Drupal.mosaic || {};
 // Document loaded!
 (function($) {
 
-  Drupal.behaviors.mosaicBookInit = {    
+  Drupal.behaviors.mosaicBookInit = {
     attach : function(context, settings) {
       try {
         // Check context to make sure that we are not un-neccessarily
         // resetting and re-building the book nodes.
         if (context.nodeName === '#document') {
-          
+
           var nodes = $node = {}; // Containers for the nodes and node
           var $bookTeaserNodes = $('.node-teaser.node-book').not('.bkproc');
           var $bookFullNodes   = $('.node-full-node.node-book').not('.bkproc');
-          
+
           nodes = $.merge($bookTeaserNodes, $bookFullNodes); // merge list, teasers first
           if ($(nodes).length) {
             nodes = new Drupal.mosaic.bookNodes($(nodes));
           }
           nodes.adjustTimelines(); // first run
 
-          $(window).resize(function(e) { 
+          $(window).resize(function(e) {
             nodes.adjustTimelines();
           });
         }
@@ -34,7 +34,7 @@ Drupal.mosaic = Drupal.mosaic || {};
         console.log('Book Init errored: '+err);
       }
     }
-  }
+  };
 
 
   // Process nodes
@@ -59,11 +59,11 @@ Drupal.mosaic = Drupal.mosaic || {};
         if ($(this).hasClass('node-full-node')) {
           BN.alignTimeline($(this), $timeline); // Align timeline items
         }
-        
+
         // Add processed class
         $(this).addClass('bkproc');
       });
-      
+
       return this;
     }
     catch (err) {
@@ -85,18 +85,18 @@ Drupal.mosaic = Drupal.mosaic || {};
           $timeline.find('.tline').css({'left':'2px'});
 
           $items.css({
-            'margin-left': '4%', 
-            'width':'95%', 
-            'float':'none', 
+            'margin-left': '4%',
+            'width':'95%',
+            'float':'none',
             'clear':'none'
           });
 
           // Update some field item classes
           $items.each(function() {
             if ($(this).hasClass('even') && !$(this).hasClass('spacer')) {
-              $(this).removeClass('even').addClass('odd atl'); 
+              $(this).removeClass('even').addClass('odd atl');
             }
-          });        
+          });
         }
         else {
           // Back to the default
@@ -111,7 +111,7 @@ Drupal.mosaic = Drupal.mosaic || {};
           });
         }
       };
-      
+
       this.$nodes.each(function(i) {
         //console.log($(this));
         //console.log(ATL.$timelines[i]);
@@ -164,7 +164,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       if (!$node.find('.tline').length) {
         $node.find('.field-name-field-book-timeline > .field-items').prepend('<div class="tline">');
       }
-      
+
       if ($timeline.length) {
         // Loop through node timeline items and adjust spacing as needed
         var $items = $node.find('.field-name-field-book-timeline > .field-items > .field-item:not(".spacer")');
@@ -189,7 +189,7 @@ Drupal.mosaic = Drupal.mosaic || {};
             var cBot = cTop + ch;
             var pBot = pTop + ph;
             var $spc = $curr.prev('.field-item.spacer');
-  
+
             // get some class - include field-item class!
             cls = ($curr.hasClass('even')) ? 'even' : 'odd';
 
@@ -203,7 +203,7 @@ Drupal.mosaic = Drupal.mosaic || {};
             if (pBot + lip >= cBot) { // previous reaches down further (or eq.) than the current
               //console.log($curr.prev('.field-item.spacer').outerHeight());
               $curr.prev('.field-item.spacer').css({
-                'height': (lip + pBot - cBot) + 'px' 
+                'height': (lip + pBot - cBot) + 'px'
               });
               //console.log((lip + pBot - cBot));
             }
@@ -233,5 +233,5 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('alignTimeline errored: '+err);
     }
   };
-  
+
 })(jQuery);

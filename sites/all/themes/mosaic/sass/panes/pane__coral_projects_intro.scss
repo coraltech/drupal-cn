@@ -15,7 +15,7 @@
 @import 'compass/css3/border-radius';
 
 .pane-coral-projects-intro {
-  margin: 0 0 (2 * $default_vert_unit);
+  margin: 0 0 $default_vert_unit;
   color: $mdgray;
   @include linear-v-gradient($white, lighten($ltgray, 5%));
 
