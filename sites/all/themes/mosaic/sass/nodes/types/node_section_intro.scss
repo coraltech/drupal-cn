@@ -13,6 +13,7 @@
 @import 'global/fonts';
 @import 'global/grid_mix';
 @import 'global/headers';
+@import 'global/site_vars';
 
 .node-section-intro {
   margin-bottom: (1.25 * $default_vert_unit) !important;
@@ -124,5 +125,13 @@ div.ui-tabs.project-library {
     background: none;
     border: none;
     padding: .25em 0 0 0;
+  }
+}
+
+@media screen and (max-width: $tabletw) {
+  div.ui-tabs.project-library {
+    & > h3 {
+      margin-right: -25em;
+    }
   }
 }
