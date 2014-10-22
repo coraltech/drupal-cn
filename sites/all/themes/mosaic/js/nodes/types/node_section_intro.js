@@ -12,9 +12,7 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicSectionIntroInit = {
     attach : function(context, settings) {
       try {
-        //var keys = Object.keys(context); for (key in keys) { console.log(keys[key]+': '+context[keys[key]]); }
-
-       // Ensure context
+        // Ensure context
         if (context.nodeName === '#document') {
           new Drupal.mosaic.sectionIntro();
         }
@@ -64,6 +62,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 
   Drupal.mosaic.sectionIntro.prototype.compute = function() {
     try {
+      // a touch-o-algebra
       var width = this.$row.outerWidth();
       this.ems = (15.5 * width) / 1024;
       this.$h3.css({'padding-left': this.ems+'em', 'margin-left': '-'+this.ems+'em'});
