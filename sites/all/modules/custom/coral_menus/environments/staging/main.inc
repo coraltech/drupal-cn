@@ -10,44 +10,34 @@ function coral_menus_main_menu_loader() {
 
 /**
  * Links should be defined in the format:
- * 
+ *
  * 'about'=> array(
  *   'link_title' => t('About'),
  *   'link_path'  => '<front>',
  *   'weight'     => 1,
  *   'plid'       => [parent name] // must be in this menu obviously
  *  )
- * 
+ *
  * NOTE: the attribute "id" must be set!
- * 
+ *
  **/
 function coral_menus_main_links_loader() {
   return array(
-    
-    'project' => array(
-      'link_title' => t('Projects'),
-      'link_path'  => 'node/923',
+
+    'explore' => array(
+      'link_title' => t('Explore'),
+      'link_path'  => 'node/1403',
       'weight'     => 1,
     ),
-    'snippets' => array(
-      'link_title' => t('Snippets'),
-      'link_path'  => 'node/1037',
-      'weight'     => 2, 
-    ), 
-    'find' => array(
-      'link_title' => t('Find'),
-      'link_path'  => 'search/node/all',  
-      'weight'     => 3,
+    'solution' => array(
+      'link_title' => t('Solution'),
+      'link_path'  => 'node/1404',
+      'weight'     => 2,
     ),
     'community' => array(
       'link_title' => t('Community'),
       'link_path'  => 'node/32',
-      'weight'     => 4,
-    ),
-    'about'=> array(
-      'link_title' => t('About'),
-      'link_path'  => 'node/920',
-      'weight'     => 5,
+      'weight'     => 3,
     )
     /*
       'about_project'=> array(
