@@ -14,158 +14,144 @@
 @import 'compass/css3/box-shadow';
 
 
-#mini-panel-top_menus {
-  .panel-col-first {
-    width: 65%;
-  }
-  .panel-col-last {
-    width: 35%;
-  }
-}
-
 @mixin plink() {
-  color: $white;
-  line-height: 37px;
-  padding: .45em .25em;
-  @include text-shadow(1.5px 1px 2px #222);
-  
+  color: $mdblue;
+  line-height: 80px;
+  padding: 0 .5em;
+  @include text-shadow(1px 1px 2px lighten($ltblue, 7%));
+
   &:hover,
   &:active,
   &.active {
-    color: $ltyellow;
+    color: $dkblue;
   }
 }
-
-.pane-menu-main,
-.pane-menu-service {
-  position: relative;
-  z-index: 10;
-
-  .pane-content {
-    .respond {
-      @include plink;
-      display: none;
-      cursor: pointer;
-      float: left;
-      padding: 0;
-    }
-    ul.menu {
-      margin: 0;
-      
-      li {
-        display: inline;
-      }
-      
-      a {
-        @include plink;
-      }
-    }
-  }
-}
-
 
 .pane-menu-main {
   .pane-content {
     ul.menu {
-      letter-spacing: 2px;
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        list-style-type: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0;
+      }
       a {
-        @include font(105%, bold);
+        display: block;
+        float: left;
+        height: 80px;
+
+        @include plink;
+        @include font(115%, normal);
+
+        &:hover,
+        &:active,
+        &.active {
+          background: lighten($ltgray, 5%);
+        }
       }
     }
     .respond {
-      @include font(105%, bold);
+      display: none;
+      color: darken($ltgray, 7%);
+      @include font(95%, normal);
       .icon {
         float: left;
-        margin-right: .5em;
+        margin-right: .25em;
         @include icons-sprite('menu-main');
       }
     }
   }
 }
 
-.pane-menu-service {
-  .pane-content {
-    ul.menu {
-      text-align: right;
-      letter-spacing: 1px;
-      
-      a {
-        @include font(100%, normal);
-      }
-    }
-    
-    .respond {
-      .icon {
-        display: block;
-        float: right;
-        margin-left: .5em;
-        @include icons-sprite('user-menu');
+header.collapsed {
+  .pane-menu-main {
+    .pane-content {
+      ul.menu {
+        li {
+        }
+        a {
+          height: 50px;
+          line-height: 50px;
+        }
       }
     }
   }
 }
-
 
 
 @media screen and (max-width: $desktopw) {
-  
-  #mini-panel-top_menus .pane-menu-main,
-  #mini-panel-top_menus .pane-menu-service {
-    a {
-      font-size: .85em;
+  .pane-menu-main {
+    .pane-content {
+      ul.menu {
+        a {
+          font-size: 100%;
+        }
+      }
     }
   }
 }
 
-@media screen and (max-width: $tabletw) {
-  #mini-panel-top_menus {
-    .panel-col-first {
-      width: 50%;
-    }
-    .panel-col-last {
-      width: 50%;
-    }
-  }
-
-  #mini-panel-top_menus .pane-menu-main,
-  #mini-panel-top_menus .pane-menu-service {
-    position: relative;
-
+@media screen and (max-width: $tabletw - 100) {
+  .pane-menu-main {
     .pane-content {
-      ul.menu{
-        display: none;
-        margin-top: 39px;
-        border-left: 1px solid $mdgray;
-        border-right: 1px solid $mdgray;
-        min-width: 10em;
+      position: relative;
 
+      ul.menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
         li {
           padding: 0;
           display: block;
-          background: lighten($ltgray, 5%);
-          @include linear-v-gradient(lighten($ltgray, 5%), $ltgray);
-          
+          float: none;
+          background: lighten($ltgray, 7%);
+          border-bottom: 1px solid darken($ltgray, 3%);
           a {
             padding: 0 1em;
             color: $mdblue;
-            border-bottom: 1px solid $mdgray;
             display: block;
-            @include text-shadow(1.5px 1px 2px $ltyellow);
+            float: none;
+            height: auto;
+            line-height: 2 * $default_vert_unit;
+
           }
         }
       }
       .respond {
+        cursor: pointer;
         display: block;
+        position: absolute;
+        top: 29px;
+        left: 30%;
+        width: 120px;
       }
     }
   }
-  #mini-panel-top_menus .pane-menu-service {
+
+  header.collapsed .pane-menu-main {
     .pane-content {
       .respond {
-        float: right;
+        top: 16px;
       }
-    }   
+    }
   }
 }
 
 
+@media screen and (max-width: $phonew + 190) {
+  .pane-menu-main {
+    .pane-content {
+      .respond {
+        .txt {
+          display: none;
+        }
+      }
+    }
+  }
+}
