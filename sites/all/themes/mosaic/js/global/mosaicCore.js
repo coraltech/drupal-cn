@@ -9,30 +9,32 @@ Drupal.mosaic = Drupal.mosaic || {};
   Drupal.behaviors.mosaicInit = {
     attach : function(context, settings) {
       try {// Use try to prevent systemic failure
-        if (!Drupal.mosaic.hasOwnProperty('core')) {
-          Drupal.mosaic.core = new Drupal.mosaic.mosaicCore();
-          Drupal.mosaic.core.objects = {}; // other components can add centralized objects here
+        if (context.nodeName === '#document') { // only on doc loaded
+          if (!Drupal.mosaic.hasOwnProperty('core')) {
+            Drupal.mosaic.core = new Drupal.mosaic.mosaicCore();
+            Drupal.mosaic.core.objects = {}; // other components can add centralized objects here
+          }
         }
       } catch (err) {
         console.log('mosaicInit() reported errors. Error: ' + err);
       }
     }
   };
-  
-  
+
+
   // Core core
   Drupal.mosaic.mosaicCore = function() {
     try {
       // Honestly, there is nothing to do here.
-      // This serves as a root for attaching 
-      // functionality to a common object.     
+      // This serves as a root for attaching
+      // functionality to a common object.
     }
     catch (err) {
       console.log('mosaicCore errored: '+err);
     }
   };
-  
-  
+
+
   // Analyze the object and pull ID data
   // Inputs:
   //  pat (string) - a pattern to search for; defaults to /node-\d+/
@@ -41,8 +43,8 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       var objPattern = pat || /node-\d+/;
       var objClass = cls || 'node-';
-  
-      // find this button's nid and ensure the AnswerView's  
+
+      // find this button's nid and ensure the AnswerView's
       var classes = $obj.attr('class');
       classes = classes.split(" ");
       for (cls in classes) {
@@ -56,8 +58,8 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('initID errored: '+err);
     }
   };
-  
-  
+
+
   // Create a unique ID that can be applied to an element
   Drupal.mosaic.mosaicCore.prototype.createID = function($obj, regen) {
     try {
@@ -65,7 +67,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     	if (!$obj.prop('id') || regen) {
 	      var time = $.now();
 	      var rand = Math.floor((Math.random() * 10000) + 1);
-	      var id   = time+"-"+rand; 
+	      var id   = time+"-"+rand;
 	      if ($('#'+id).length) id = this.createID($obj); // already exists - create another
 	      $obj.prop('id', id); // ensure the id is set
 	      return id;
@@ -78,21 +80,21 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('createID errored: '+err);
     }
   };
-  
-  
+
+
   // Get url query params
   Drupal.mosaic.mosaicCore.prototype.getQueryParams = function(url) {
     try {
       var result = {};
       var searchIndex = url.indexOf("?");
-      
+
       if (searchIndex == -1 ) return result;
-      
+
       var pageURL = url.substring(searchIndex +1);
       var URLVariables = pageURL.split('&');
-      
-      for (var i = 0; i < URLVariables.length; i++) {       
-          var parameterName = URLVariables[i].split('=');      
+
+      for (var i = 0; i < URLVariables.length; i++) {
+          var parameterName = URLVariables[i].split('=');
           result[parameterName[0]] = parameterName[1];
       }
       return result;
@@ -101,8 +103,8 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('getQueryParams errored: '+err);
     }
   };
-  
-  
+
+
   Drupal.mosaic.mosaicCore.prototype.ucFirst = function(str) {
     try {
       // From: http://phpjs.org/functions
@@ -119,7 +121,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('ucFirst errored: '+err);
     }
   };
-  
+
   // Adapted from a post: https://gist.github.com/bradvin/2313262
 	Drupal.mosaic.mosaicCore.prototype.loadScript = function (url, arg1, arg2) {
 		var cache = false, callback = null;
@@ -136,7 +138,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 		var load = true;
 		//check all existing script tags in the page for the url we are trying to load
 		jQuery('script[type="text/javascript"]').each(function() { return load = (url != $(this).attr('src')); });
-		
+
 		if (load) {
 			//didn't find it in the page, so load it
 			//equivalent to a jQuery.getScript but with control over cacheing
@@ -147,8 +149,8 @@ Drupal.mosaic = Drupal.mosaic || {};
 				dataType: 'script',
 				cache: cache
 			});
-		} 
-	  
+		}
+
 	  else {
 	  //already loaded so just call the callback
 		if (jQuery.isFunction(callback)) {
@@ -156,22 +158,21 @@ Drupal.mosaic = Drupal.mosaic || {};
 	  	}
 		}
 	};
-  
-  
+
+
   // Fetch the number of items that are native to this object
   Drupal.mosaic.mosaicCore.prototype.objCount = function(obj) {
   	var count = 0;
 		for (var i in obj) { if (obj.hasOwnProperty(i)) count++; }
 		return count;
   };
-  
+
   // Checks if the $object is in-view
   Drupal.mosaic.mosaicCore.prototype.inView = function($obj) {
     try {
       var docViewTop = $(window).scrollTop();
       var elemTop = $obj.offset().top;
-      console.log(docViewTop);
-      console.log(elemTop);
+
       if (elemTop <= docViewTop) return true;
       return false;
     }
@@ -179,5 +180,22 @@ Drupal.mosaic = Drupal.mosaic || {};
       console.log('inView errored: '+err);
     }
   };
+
+  // Checks if the $object is in-view
+  // $obj: a jQuery object
+  Drupal.mosaic.mosaicCore.prototype.visible = function($obj) {
+    try {
+      var docViewTop = $(window).scrollTop();
+      var elemTop = $obj.offset().top;
+      var elemHeight = $obj.outerHeight();
+
+      if (elemTop + docViewTop > elemHeight) return false;
+      return true;
+    }
+    catch (err) {
+      console.log('inView errored: '+err);
+    }
+  };
+
 })(jQuery);
 
