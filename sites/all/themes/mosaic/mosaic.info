@@ -27,6 +27,7 @@ scripts[] = js/global/mosaicTextarea.js
 scripts[] = js/global/mosaicToc.js
 scripts[] = js/global/mosaicPrettify.js
 scripts[] = js/global/mosaicBox.js
+scripts[] = js/global/mosaicHeader.js
 
 ; - Panels
 plugins[panels][layouts]     = plugins/layouts
