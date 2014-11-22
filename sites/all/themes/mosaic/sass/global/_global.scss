@@ -32,7 +32,7 @@
 }
 
 // site margin top and bottom
-.pane-header { margin: 0 auto; padding-top: .5em; }
+.pane-header { margin: 0 auto; position: relative; }
 .pane-footer { margin: 0 auto $default_vert_unit; }
 
 // Unset margin in the header
@@ -66,19 +66,19 @@ body.page-references-dialog {
 
 // See _menus.scss for primary (main) menu
 //  coloration settings.
-header,
+header .limiter {
+  position: relative;
+  z-index: 9;
+}
+
+header .limiter,
 .mosaic-cont {
   background: $white;
   min-width: $phonew;
+  border-bottom: 2px solid $ltgray;
 }
 .mosaic-cont {
-  padding: 1em 0 0;
   overflow: hidden;
-}
-
-#mini-panel-header {
-  .panel-col-first { width: 60%; }
-  .panel-col-last { width: 40%; }
 }
 
 #navbar-administration.navbar-oriented .navbar-bar {
@@ -90,86 +90,75 @@ header,
 
 // -- Search form -- added here bc it is on every page
 header .pane-search-form {
-  background: url('../assets/images/sep-short.png') 2px 4px no-repeat;
-  height: 50px;
-  margin: 10px 0 0 10px;
-  padding: 10px 0 0 18px;
-  position: relative;
-  width: 275px;
+  height: 80px;
+  margin: 0 0 0 15px;
+  padding: 0 0 0 15px;
+  width: 190px;
+  border-left: 2px solid $ltgray;
 
   .form-text {
     background: none;
-    border: 1px solid $mdgray;
+    border: 2px solid $ltgray;
     font-size: 100%;
-    font-weight: bold;
-    margin: 1px 0 0 0;
-    padding: 4px 8px 4px;
-    width: 200px;
-    @include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.35));
+    margin: 23px 0 0 0;
+    padding: 4px 30px 4px 10px;
+    width: 180px;
+    background: lighten($ltgray, 9%);
+    //@include box-shadow(inset 0 2px 3px rgba(0, 0, 0, 0.05));
+    @include border-radius(15px);
   }
   .form-wrapper {
-    @include icons-sprite('search');
-
-    border: 1px solid $dkblue;
-    position: absolute;
-    right: 4px;
-    top: 1px;
-
     height: 27px;
-    width: 65px;
-
+    margin-left: -30px;
+    position: relative;
     .form-submit {
-      color: $white;
-      height: 27px;
-      width: 65px;
-      color: transparent;
-      display: block;
-
-      @include font(80%);
-      @include btn-matte-inset;
-      @include btn-structure;
+      position: absolute;
+      top: -2px;
+      left: 0;
+      text-indent: -9999em;
+      border: none;
+      @include box-shadow(none);
+      @include icons-sprite('search-glass-sm');
     }
   }
 }
-@media screen and (max-width: $desktopw) {
+header.collapsed .pane-search-form {
+  height: 50px;
+
+  .form-text {
+    margin-top: 9px;
+  }
+  .form-wrapper {
+
+  }
+}
+@media screen and (max-width: $desktopw + 115) {
   header .pane-search-form {
-    width: 175px;
-    margin-right: -175px; // keep it from dropping down
+    width: 140px;
 
     .form-text {
-      width: 120px;
-      float: left;
-    }
-    .form-wrapper {
-      float: left;
-      position: inherit;
-      height: 27px;
-      width: 27px;
-      margin: 1px 0 0 2px;
-
-      .form-submit {
-        text-shadow: none;
-        color: transparent;
-        background: transparent;
-        width: 27px;
-        height: 27px;
-        float: left;
-
-        &:hover {
-          background: rgba(255, 255, 255, .2);
-        }
-      }
+      width: 130px;
     }
   }
 }
-
-@media screen and (max-width: $tabletw - 200) {
+@media screen and (max-width: $tabletw) {
   header .pane-search-form {
-    width: 155px;
+    width: 110px;
 
     .form-text {
       width: 100px;
     }
+  }
+}
+
+
+// Logo
+.pane-coral-logo {
+
+}
+header.collapsed .pane-coral-logo {
+  img {
+    height: 40px;
   }
 }
 
@@ -217,35 +206,34 @@ header .coral-cloud {
   }
 }
 .pane-header .hybridauth-widget-wrapper {
-  margin-top: -3em;
+  margin-top: 1.32 * $default_vert_unit;
 
   h3 {
     display: none;
   }
   .item-list:before {
     color: darken($ltgray, 7%);
-    content: "Social login | ";
+    content: "Social login ";
     font-weight: bold;
     float: left;
     margin: .25em .25em 0 0;
   }
 }
-@media screen and (max-width: $desktopw) {
+@media screen and (max-width: $desktopw + 115) {
   .pane-header .hybridauth-widget-wrapper {
     .item-list:before {
-      content: "Login | ";
+      content: "Login ";
     }
   }
 }
 @media screen and (max-width: $tabletw) {
   .pane-header .hybridauth-widget-wrapper {
-    margin-top: (-1 * $default_vert_unit / 2);
+
   }
 }
 @media screen and (max-width: $tabletw - 200) {
   .pane-header .hybridauth-widget-wrapper {
-    margin: ($default_vert_unit / 3) 0 ($default_vert_unit / 2);
-    height: 24px;
+
   }
 }
 
@@ -254,7 +242,7 @@ header .coral-cloud {
 // User welcome in the header
 .pane-coral-user {
   float: right;
-  margin-top: $default_vert_unit;
+  margin-top: 1.55em;
 
   .welcome {
     float: left;
@@ -478,7 +466,7 @@ h3 .toc-top {
 // Primary and secondary tabs
 .pane-page-tabs {
   padding: 0;
-  margin-top: -1.1em;
+  margin-top: -2px;
 
   @include pie-clearfix;
 
@@ -573,8 +561,6 @@ h3 .toc-top {
 
 @media screen and (max-width: $desktopw) {
   .pane-page-tabs {
-    margin-top: -.75em;
-
     ul.primary {
       margin-bottom: .5em;
       li {
