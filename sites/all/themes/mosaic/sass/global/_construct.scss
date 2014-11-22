@@ -188,6 +188,19 @@ strong, b,
   margin-right: 0 !important;
 }
 
+.mt-3125 {
+  margin-top: ($default_vert_unit / 4) !important;
+}
+.mb-3125 {
+  margin-bottom: ($default_vert_unit / 4) !important;
+}
+.ml-3125 {
+  margin-left: ($default_vert_unit / 4) !important;
+}
+.mr-3125 {
+  margin-right: ($default_vert_unit / 4) !important;
+}
+
 .mt-0625 {
   margin-top: ($default_vert_unit / 2) !important;
 }
