@@ -2,7 +2,7 @@
 // Contains styles for menus that are visible just about everywhere
 //  Menus included:
 
-//   Header (region)  
+//   Header (region)
 //    - main menu
 //    - user menu
 
@@ -17,120 +17,13 @@
 
 // -- Header (region)
 
-// -- Utility 
+// -- Utility
 .pane-menu-support {
-  position: relative;
-  z-index: 1;
-  
-  ul.menu {
-    position: absolute; // we put this to the top
-    top: -.5em;         // make up for some padding in the site header (.5em worth)
-    right: 27%;
-    margin-top: 0;
-    
-    li.leaf {
-      display: block;
-      float: left;
-      list-style-image: none;
-      list-style-type: none;
-      padding: 0 5px;
-      height: 15px;
-      width: 95px;
-      position: relative;
-            
-      &.first {
-        background: $mdgreen;
-        
-        &:before {
-          content: ""; display: block; background: #fff; position: absolute;
-          top: 0; left: -5px; width: 10px; height: 25px; border-radius: 20px;
-        }
-        &:after {
-          content: ""; display: block; background: #fff; position: absolute;
-          top: 0; right: -5px; width: 10px; height: 25px; border-radius: 20px;
-        }  
-      } 
-      &.last {
-        background: $mdred;
-        margin: 0;
-        
-        &:before {
-          content: ""; display: block; background: #fff; position: absolute;
-          top: 0; left: -5px; width: 10px; height: 25px; border-radius: 10px;
-        }
-        &:after {
-          content: ""; display: block; background: #fff; position: absolute;
-          top: 0; right: -5px; width: 10px; height: 25px; border-radius: 10px;
-        }
-      }
-      
-      a {
-        border-radius: 0 0 7px 7px;
-        display: block;
-        height: 15px;
-        width: 95px;
-        color: $white;
-        line-height: 8px;
-        text-shadow: 1px 1px 2px #222;
-        text-align: center;
-        position: relative;
-        top: 5px;
-        
-        @include font(75%);
-        
-        &.get-help-tab {
-          @include linear-v-gradient($mdgreen, darken($mdgreen, 10%));  
-          border-bottom: 2px solid $dkgreen;
-        } 
-        &.issues-tab {
-          @include linear-v-gradient($mdred, darken($mdred, 10%));
-          border-bottom: 2px solid $dkred;
-        }
-               
-      }
-    }
-  }
 }
 @media screen and (max-width: $tabletw) {
-  .pane-menu-support {
-    ul.menu {
-      right: 33%;
-      li.leaf {
-        width: 70px;
-        a {
-          width: 70px;  
-        }
-      }
-    }
-  }
 }
-@media screen and (max-width: $phonew + 200) {
-  .pane-menu-support {
-    display: none;
-  }
+@media screen and (max-width: $phonew) {
 }
-
-
-// Main -- bg coloration
-.pane-top-menus { 
-  border-top: 1px solid lighten($mdgray, 10%);
-  border-bottom: 1px solid lighten($mdgray, 10%);
-  padding: 1px 0;
-  position: relative;
-  z-index: 1;
-  
-  & > .pane-content {
-    border-top: 1px solid $mdgray;
-    border-bottom: 1px solid $mdgray;
-    
-    @include linear-v-gradient(darken($dkblue, 10%), $dkblue);    
-  }
-}
-
-
-// Main -- sizing
-#mini-panel-top_menus { }
-#mini-panel-top_menus .inside { margin: 0; }
 
 
 // -- Footer (region)
@@ -141,14 +34,14 @@ footer {
 #mini-panel-footer {
   font-size: 90%;
   padding-top: $default_vert_unit;
-  
+
   .pane-title {
     color: $ltorange;
     font-size: 1em;
     font-weight: bold;
     margin: 0 0 ($default_vert_unit / 2);
   }
-  
+
   ul.menu {
     margin: 0;
 
@@ -157,11 +50,11 @@ footer {
       list-style-image: none;
       list-style-type: none;
       margin: 0;
-      
+
       a {
         color: $white;
-        
-        &:hover, &:active, &.active 
+
+        &:hover, &:active, &.active
         { color: $ltyellow; }
       }
     }
@@ -172,11 +65,11 @@ footer {
   #mini-panel-footer .panel-col-last {
     float: none;
     width: 100%;
-    
+
     .inside {
       margin: 0 0 1em 0;
     }
-    
+
     .pane-panels-mini {
       @include col(11);
     }
