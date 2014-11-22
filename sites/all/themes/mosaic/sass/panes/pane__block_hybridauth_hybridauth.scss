@@ -1,0 +1,118 @@
+
+@import 'global/arrows';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/site_vars';
+
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/box-sizing";
+@import "compass/css3/border-radius";
+
+
+@mixin hlink() {
+  color: lighten($mdblue, 10%);
+  font-size: 85%;
+  font-weight: normal;
+
+  &:hover,
+  &:active,
+  &.active {
+    color: $mdblue;
+  }
+}
+
+.pane-hybridauth-hybridauth {
+  ul.links {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    li {
+      border-right: none;
+      font-size: 1em;
+      padding: 0 0 0 .5em;
+
+      a {
+        @include hlink;
+      }
+    }
+  }
+
+  .resplink {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include hlink;
+  }
+}
+
+.pane-hybridauth-hybridauth.resp {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 100px;
+
+  ul.links {
+    right: 7px;
+    top: 7px;
+  }
+
+  .pane-content {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 220px;
+    background: lighten($ltgray, 9%);
+    padding: 7px;
+    z-index: 9;
+    border: 2px solid darken($ltgray, 3%);
+
+    &:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: -16px;
+      right: 18%;
+      @include arrow-up(8px, darken($ltgray, 3%));
+
+    }
+
+    .hybridauth-widget-wrapper {
+      float: right;
+
+      .item-list:before {
+        color: darken($ltgray, 12%);
+      }
+    }
+
+    .close {
+      display: block;
+      background: $mdred;
+      color: $white;
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      width: 20px;
+      height: 20px;
+      font-size: .9em;
+      font-family: $mono_fonts;
+      line-height: 20px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      @include border-radius(10px);
+    }
+  }
+  .resplink.center {
+    top: 13px;
+  }
+  .pane-content.center {
+    top: 40px;
+    &:before {
+      right: 3%;
+    }
+  }
+}
+
