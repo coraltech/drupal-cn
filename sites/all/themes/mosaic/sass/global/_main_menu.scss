@@ -96,7 +96,7 @@ header.collapsed {
   }
 }
 
-@media screen and (max-width: $tabletw - 100) {
+@media screen and (max-width: $tabletw) {
   .pane-menu-main {
     .pane-content {
       position: relative;
@@ -144,7 +144,7 @@ header.collapsed {
 }
 
 
-@media screen and (max-width: $phonew + 190) {
+@media screen and (max-width: $phonew + 200) {
   .pane-menu-main {
     .pane-content {
       .respond {
