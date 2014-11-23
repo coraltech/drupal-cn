@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Coral custom breadcrumb.  Edit as needed ;-) 
+ * Coral custom breadcrumb.  Edit as needed ;-)
  */
 $plugin = array(
   // the title in the admin
@@ -22,12 +22,21 @@ function coral_user_pane_content_type_render($subtype, $conf, $args, $context, $
   global $user;
   $block = new stdClass();
   if ($user->uid) {
-    $welcome = '';  
+    $welcome = '';
     if (isset($conf['welcome_text'])) {
       $welcome = '<span class="welcome">'.filter_xss_admin($conf['welcome_text']).'</span>';
-    }  
+    }
     $img = theme('user_picture', array('account' => $user, 'image_style' => 'user_thumb_small'));
-    $block->content = $welcome.$img.theme('username', array('account' => $user));  
+
+    $items['items'] = array(
+      l('My account', 'user/'.$user->uid),
+      l('Manage account', 'user/'.$user->uid.'/edit'),
+      l('Logout', 'user/logout')
+    );
+
+    $item_list = '<span class="user-menu resp"><span></span>'.theme('item_list', $items).'</span>';
+
+    $block->content = $welcome.$img.theme('username', array('account' => $user)).$item_list;
   }
   return $block;
 }
@@ -35,21 +44,21 @@ function coral_user_pane_content_type_render($subtype, $conf, $args, $context, $
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_user_pane_content_type_edit_form($form, &$form_state) {
-  //dpm($conf);  
+  //dpm($conf);
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
+
   // Add your Form API (FAPI) additions here:
   $form['welcome_text'] = array(
-    '#type' => 'textfield', 
-    '#title' => t('Welcome text'), 
-    '#default_value' => ($conf['welcome_text']) ? $conf['welcome_text'] : '', 
-    '#size' => 30, 
-    '#maxlength' => 60, 
+    '#type' => 'textfield',
+    '#title' => t('Welcome text'),
+    '#default_value' => ($conf['welcome_text']) ? $conf['welcome_text'] : '',
+    '#size' => 30,
+    '#maxlength' => 60,
   );
 
   return $form;
@@ -58,7 +67,7 @@ function coral_user_pane_content_type_edit_form($form, &$form_state) {
 
 /**
 * Submit function, note anything in the formstate[conf] automatically gets saved
-* 
+*
 * You prob. don't need this for a static content pane.
 */
 function coral_user_pane_content_type_edit_form_submit($form, &$form_state) {
