@@ -25,10 +25,14 @@ Drupal.mosaic = Drupal.mosaic || {};
 
   Drupal.mosaic.mosaicHeader = function() {
     try {
-      this.$header = $('header');
-      this.$limiter = $('header > .limiter');
-      this.collapseWidth = 668;
+      // Set the core object for the header if its not defined
+      Drupal.mosaic.core.objects.mosaicHeader = Drupal.mosaic.core.objects.mosaicHeader || {};
 
+      // Make state known to other systems
+      Drupal.mosaic.core.objects.mosaicHeader['state'] = 'open';
+
+      // Init and first run stuff
+      this.init();
       this.checkDims();
       var MH = this;
 
@@ -48,32 +52,39 @@ Drupal.mosaic = Drupal.mosaic || {};
   };
 
 
+  Drupal.mosaic.mosaicHeader.prototype.init = function() {
+    try {
+      this.$header = $('header');
+      this.$body   = $('.page-inner-wrapper > .mosaic-cont');
+      this.$limiter = $('header > .limiter');
+      this.collapseWidth = 768;
+    }
+    catch (err) {
+      console.log('init errored: '+err);
+    }
+  };
+
+
   Drupal.mosaic.mosaicHeader.prototype.checkScroll = function() {
     try {
-      // Set the core object for the header if its not defined
-      Drupal.mosaic.core.objects.mosaicHeader = Drupal.mosaic.core.objects.mosaicHeader || {};
 
       // Header is out of sight - show miniheader
-      if (!Drupal.mosaic.core.visible($('header'))) {
-        this.$header.css('height', '52px').addClass('collapsed');
-        this.$limiter.css({
-          'position': 'fixed',
-          'width': '100%',
-          'z-index': '9'
-        });
+      if (!Drupal.mosaic.core.visible($('header'), 'true')) {
+        // Dynamic setting of header height here...
+        this.$header.addClass('collapsed');
+        this.$body.addClass('resp');
 
-        // Make state know to other systems
-        Drupal.mosaic.core.objects.mosaicHeader['state'] = 'collapsed';
+        // Make state known to other systems
+        Drupal.mosaic.core.objects.mosaicHeader.state = 'collapsed';
       }
       else {
         if (this.winW > this.collapseWidth) {
           this.$header.removeClass('collapsed');
         }
-        this.$header.attr('style', '');
-        this.$limiter.attr('style', '');
+        this.$body.removeClass('resp');
 
         // Make state know to other systems
-        Drupal.mosaic.core.objects.mosaicHeader['state'] = 'open';
+        Drupal.mosaic.core.objects.mosaicHeader.state = 'open';
       }
     }
     catch (err) {
