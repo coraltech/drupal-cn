@@ -11,8 +11,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       try {// Use try to prevent systemic failure
         if (context.nodeName === '#document') { // only on doc loaded
           if (!Drupal.mosaic.hasOwnProperty('core')) {
-            Drupal.mosaic.core = new Drupal.mosaic.mosaicCore();
-            Drupal.mosaic.core.objects = {}; // other components can add centralized objects here
+            new Drupal.mosaic.mosaicCore();
           }
         }
       } catch (err) {
@@ -25,9 +24,11 @@ Drupal.mosaic = Drupal.mosaic || {};
   // Core core
   Drupal.mosaic.mosaicCore = function() {
     try {
-      // Honestly, there is nothing to do here.
-      // This serves as a root for attaching
-      // functionality to a common object.
+      // Start the core
+      Drupal.mosaic.core = this;
+
+      // Other components can add centralized objects here
+      Drupal.mosaic.core.objects = {};
     }
     catch (err) {
       console.log('mosaicCore errored: '+err);
@@ -167,6 +168,7 @@ Drupal.mosaic = Drupal.mosaic || {};
 		return count;
   };
 
+
   // Checks if the $object is in-view
   Drupal.mosaic.mosaicCore.prototype.inView = function($obj) {
     try {
@@ -181,16 +183,25 @@ Drupal.mosaic = Drupal.mosaic || {};
     }
   };
 
+
   // Checks if the $object is in-view
   // $obj: a jQuery object
-  Drupal.mosaic.mosaicCore.prototype.visible = function($obj) {
+  // top: a boolean value that measures indicates to measure top going
+  //      offscreen (true), or completely left the screen (false)
+  Drupal.mosaic.mosaicCore.prototype.visible = function($obj, top) {
     try {
       var docViewTop = $(window).scrollTop();
       var elemTop = $obj.offset().top;
       var elemHeight = $obj.outerHeight();
-
-      if (elemTop + docViewTop > elemHeight) return false;
-      return true;
+      var top = top || 'false';
+      if (top == 'false') {
+        if (elemTop + docViewTop > elemHeight) return false;
+        return true;
+      }
+      else {
+        if (docViewTop > elemTop) return false;
+        return true;
+      }
     }
     catch (err) {
       console.log('inView errored: '+err);
