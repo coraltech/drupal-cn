@@ -7,7 +7,7 @@ Drupal.coralQA = Drupal.coralQA || {};
 
 // Document loaded!
 (function($) {
-  
+
   Drupal.behaviors.coralParentContentInit = {
     attach : function(context, settings) {
       try {
@@ -21,44 +21,44 @@ Drupal.coralQA = Drupal.coralQA || {};
       }
     }
   };
-  
 
-  // Gather the featured users into the pane.  
+
+  // Gather the featured users into the pane.
   Drupal.coralQA.coralParentContent = function($content) {
     try {
       $content.addClass('parent-content-proc'); // don't process twice
-      
+
       this.$content = $content;
       this.$title = $content.find('.pane-title').eq(0);
       this.$node = $content.find('.node').eq(0);
       this.$nodeTitle = this.$node.children('h2');
-      
+
       this.nodeType = '';
       this.refID = '';
-      
+
       // Get ready for some fun stuff!
       this.initParentContent(); // set the refID et.ct.
-      
+
       this.events = {};
       this.events['click .'+this.refID] = 'parentClick';
-      
+
       var coralParentContent = this;
-      
+
       var ParentContentView = Backbone.View.extend({
         // Home
         el: this.$content,
-        
+
         // Settings and conf
         coralParentContent: coralParentContent,
-        
+
         // events
         events: coralParentContent.events, // keyed events
-             
+
         // Init
         initialize: function() {
           _.bindAll(this, 'parentClick');
         },
-       
+
         // callbacks
         parentClick: function(ev) {
           ev.preventDefault();
@@ -71,18 +71,18 @@ Drupal.coralQA = Drupal.coralQA || {};
     catch(err) {
       console.log('coralFeaturedUsers errored: '+err);
     }
-  }
-  
+  };
+
   Drupal.coralQA.coralParentContent.prototype.initParentContent = function() {
     try {
       // Set up a relatively safe class
       var key = 'parent-content-'+Math.floor((Math.random()*10000)+1);
       var arrow = 'arrow-down';
       var action = 'Hide';
-      
+
       this.refID = key; // save the key
       this.$title.addClass(key); // add class
-      
+
       var classes = this.$node.attr('class');
       classes = classes.split(' ');
       for (cls in classes) {
@@ -90,7 +90,7 @@ Drupal.coralQA = Drupal.coralQA || {};
           this.nodeType = classes[cls].replace('node-', '');
         }
       }
-      
+
       // Add decorative markup
       this.$title.append('<span class="circle"><span class="arrow '+arrow+'"></span></span>');
       this.$title.attr('title', action+' the '+this.nodeType+': '+$.trim(this.$nodeTitle.text()));
@@ -119,5 +119,5 @@ Drupal.coralQA = Drupal.coralQA || {};
       console.log('toggleParent errored: '+err);
     }
   };
-  
+
 })(jQuery);

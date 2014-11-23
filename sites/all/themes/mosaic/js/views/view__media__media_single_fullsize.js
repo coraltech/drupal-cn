@@ -29,7 +29,7 @@ Drupal.mosaic = Drupal.mosaic || {};
       this.size();
       var SV = this;
 
-      $(window).resize(function() { console.log('hey'); SV.size(); });
+      $(window).resize(function() { SV.size(); });
     }
     catch(err) {
       console.log('mediaSingleIntro errored: '+err);
