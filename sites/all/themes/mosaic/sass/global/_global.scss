@@ -66,10 +66,25 @@ body.page-references-dialog {
 
 // See _menus.scss for primary (main) menu
 //  coloration settings.
-header .limiter {
-  position: relative;
-  z-index: 9;
+header {
+  height: 82px;
 }
+header.collapsed {
+  height: 52px;
+}
+
+header .limiter {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  height: 80px;
+
+
+}
+header.collapsed .limiter {
+  height: 50px;
+}
+
 
 header .limiter,
 .mosaic-cont {
@@ -79,6 +94,23 @@ header .limiter,
 }
 .mosaic-cont {
   overflow: hidden;
+}
+
+.page-inner-wrapper > .mosaic-cont.resp {
+  &:before {
+    content: ' ';
+    display: block;
+    background: url('../assets/images/bottom-shade-ltst.png') top repeat-x;
+    height: 13px;
+    width: 100%;
+    margin-bottom: -13px;
+    position: fixed;
+  }
+}
+
+.page-inner-wrapper #main-content {
+  position: relative;
+  z-index: 2;
 }
 
 #navbar-administration.navbar-oriented .navbar-bar {
@@ -132,7 +164,7 @@ header.collapsed .pane-search-form {
 
   }
 }
-@media screen and (max-width: $desktopw + 115) {
+@media screen and (max-width: $desktopw + 175) {
   header .pane-search-form {
     width: 140px;
 
@@ -178,6 +210,7 @@ header .coral-cloud {
   }
 }
 // end not used comp
+
 
 // Hybrid auth
 .hybridauth-widget-wrapper {
@@ -226,54 +259,138 @@ header .coral-cloud {
     }
   }
 }
-@media screen and (max-width: $tabletw) {
-  .pane-header .hybridauth-widget-wrapper {
-
-  }
-}
-@media screen and (max-width: $tabletw - 200) {
-  .pane-header .hybridauth-widget-wrapper {
-
-  }
-}
 
 
-
-// User welcome in the header
+// User welcome / header
 .pane-coral-user {
+  height: 80px;
+  position: relative;
   float: right;
-  margin-top: 1.55em;
+
+  .pane-content {
+    padding-top: 25px;
+  }
+
 
   .welcome {
     float: left;
     color: $ltgray;
     font-weight: bold;
-    margin: ($default_vert_unit / 4) .75em 0 0;
+    margin: ($default_vert_unit / 4) 4px 0 0;
   }
   .user-picture {
     float: left;
+    margin-right: 4px;
   }
   .username {
-    float: right;
-    margin: ($default_vert_unit / 4) .5em 0 .5em;
+    float: left;
+    margin: ($default_vert_unit / 4) 4px 0 0;
+  }
+
+  .user-menu.resp {
+    span {
+      position: relative;
+      display: block;
+      height: 16px;
+      width: 16px;
+      float: right;
+      background: $ltgray;
+      border: 1px solid lighten($mdgray, 7%);
+      cursor: pointer;
+      margin-top: 6px;
+      margin-left: 2px;
+
+      @include border-radius(4px);
+
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 5px;
+
+        @include arrow-right(5px, lighten($mdgray, 7%));
+      }
+    }
+    .item-list {
+      ul {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        margin: 0;
+        min-width: 200px;
+        li {
+          padding: 0;
+          display: block;
+          float: none;
+          background: lighten($ltgray, 7%);
+          border-bottom: 1px solid darken($ltgray, 3%);
+          a {
+            padding: 0 1em;
+            color: $mdblue;
+            display: block;
+            float: none;
+            height: auto;
+            line-height: 2 * $default_vert_unit;
+
+          }
+        }
+      }
+    }
+  }
+}
+header.collapsed .pane-coral-user {
+  height: 50px;
+
+  .pane-content {
+    padding-top: 10px;
+  }
+
+
+
+  .user-menu.resp {
+
+    .item-list {
+      ul {
+        top: 50px;
+
+        li {
+          a {
+
+
+          }
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: $desktopw) {
-  //.pane-coral-user
-}
-@media screen and (max-width: $tabletw) {
   .pane-coral-user {
-    margin-top: -4px;
     .welcome { display: none; }
+  }
+}
+@media screen and (max-width: $desktopw - 125) {
+  .pane-coral-user {
+    //margin-top: -4px;
     .user-picture img {
-      height: 20px;
-      width: 20px;
+      height: 25px;
+      width: 25px;
+      margin-top: 2px;
     }
     .username {
-      margin: 0 0 0 .5em;
+      //margin: 0 0 0 .5em;
     }
   }
 }
+@media screen and (max-width: $tabletw + 100) {
+  .pane-coral-user {
+    .username {
+      display: none;
+    }
+  }
+}
+
 
 // Table of contents as it appears in content
 .toc-wrapper {
