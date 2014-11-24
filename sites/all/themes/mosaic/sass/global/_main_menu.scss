@@ -15,7 +15,7 @@
 
 
 @mixin plink() {
-  color: $mdblue;
+  color: lighten($dkblue, 10%);
   line-height: 80px;
   padding: 0 .5em;
   @include text-shadow(1px 1px 2px lighten($ltblue, 7%));
