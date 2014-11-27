@@ -1,7 +1,7 @@
 <?php
 
 // ----------------------------------------------------------------------------------
-// Implementations of hook_[form_id]__textfield_defaults 
+// Implementations of hook_[form_id]__textfield_defaults
 // ----------------------------------------------------------------------------------
 
 // Search block form defaults (header search)
@@ -40,7 +40,7 @@ function field_defaults_coral_tag_search_form__textfield_defaults($form, &$matri
 
 // Node book comment form
 function field_defaults_comment_node_book_form__textfield_defaults($form, &$matrix) {
-  // Selectors  
+  // Selectors
   $matrix['comment_node_book_form']['selectors'] = array(
     '.node-type-book .pane-node-comment-form .form-item-subject .form-text' => 'Optional title',
     '.page-comment-reply .pane-coral-comment-reply .form-item-subject .form-text' => 'Optional title'
@@ -52,7 +52,7 @@ function field_defaults_comment_node_book_form__textfield_defaults($form, &$matr
 
 // Node snippet comment form
 function field_defaults_comment_node_snippet_form__textfield_defaults($form, &$matrix) {
-  // Selectors 
+  // Selectors
   $matrix['comment_node_snippet_form']['selectors'] = array(
     '.node-type-snippet .pane-node-comment-form .form-item-subject .form-text' => 'Optional title',
     '.page-comment-reply .pane-coral-comment-reply .form-item-subject .form-text' => 'Optional title'
@@ -68,7 +68,7 @@ function field_defaults_question_node_form__textfield_defaults($form, &$matrix) 
     // for cases where we are looking at a node edit form
     '.pane-coral-ask-question .form-item-title .form-text' => t('Question'),
     '.pane-coral-ask-question .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two...'),
-    
+
     // For most other cases
     '.node-question-form .form-item-title .form-text' => t('Question'),
     '.node-question-form .form-item-field-tags-und .form-text' => t('E.g. Tag, Tag two...')
@@ -98,7 +98,7 @@ function field_defaults_comment_node_form__textfield_defaults($form, &$matrix) {
 
 // Login form
 function field_defaults_user_login__textfield_defaults($form, &$matrix) {
-    
+
   //print_r($matrix);
   $matrix['user_login']['selectors'] = array(
     '.qa-form .user-login input[name="name"]' => t('User name'),
@@ -121,26 +121,36 @@ function field_defaults_user_pass__textfield_defaults($form, &$matrix) {
 }
 
 
+// Coral register form
+function field_defaults_coral_register_form__textfield_defaults($form, &$matrix) {
+  $matrix['coral_register_form']['selectors'] = array(
+    '.pane-coral-register .form-item-name .form-text' => t('Select a username'),
+    '.pane-coral-register .form-item-mail .form-text' => t('Your email'),
+    '.pane-coral-register .form-item-passtxt .form-text' => t('Password')
+  );
+}
+
+
 // ----------------------------------------------------------------------------------
 // Implementations of hook__[form_id]__[form_action]__textfield_options
-//  and also potentially hook__[form_id]__textfield_options 
+//  and also potentially hook__[form_id]__textfield_options
 // ----------------------------------------------------------------------------------
 
 // Default options arrays for search node
 function field_defaults_search_form__search_node__textfield_options($form) {
   return array( // @TODO this could be coming from top search terms!
-    t('e.g. Apache2 modules'), 
+    t('e.g. Apache2 modules'),
     t('e.g. Hadoop cluster'),
-    t('e.g. Including snippets'), 
-    t('e.g. Using configurations'), 
+    t('e.g. Including snippets'),
+    t('e.g. Using configurations'),
     t('e.g. Coral cluster tutorial')
   );
 }
 // Defaults options for the search user
 function field_defaults_search_form__search_user__textfield_options($form) {
   return array( // @TODO this could be coming from top search terms!
-    t('e.g. Brian95'), 
-    t('e.g. Username...'), 
+    t('e.g. Brian95'),
+    t('e.g. Username...'),
     t('e.g. user5@example.com')
   );
 }
