@@ -1,0 +1,71 @@
+//------------------------------------------------------------------------------
+// This is the style sheet for the 4th design iteration of
+//  the CoralNexus site front page (not logged in).
+
+@import 'global/site_vars';
+@import 'global/grid_mix';
+@import 'global/colors';
+@import 'global/fonts';
+
+// Override standard configuration of container - we need some stripes!
+.page-inner-wrapper .mosaic-cont > .container {
+  width: 100%;
+  min-width: 100%;
+}
+
+
+// If tabs are there, pull in the content
+.pane-page-tabs {
+  @include site_width;
+  margin-bottom: -2.5em;
+}
+
+
+.pane-page-content .leader {
+  clear: none;
+}
+
+// First of the horizontal divisions
+// Are contains the intro text and a signup form
+.pane-node-body {
+  background: url(../../../assets/images/intro-bg-clouds.jpg) top left repeat-x;
+  height: 385px;
+
+  .pane-content {
+    @include site_width;
+
+    .intro {
+      margin-top: .5em;
+      margin-bottom: .5em;
+    }
+    .desc {
+      line-height: 1.25em;
+      margin-top: 0;
+    }
+    .cloud-case {
+      background: url(../../../assets/images/cloud-case.png) center center no-repeat;
+      width: 187px;
+      height: 112px;
+      margin-left: -2em;
+    }
+  }
+}
+// Register form
+.pane-coral-register {
+  @include site_width;
+  position: relative;
+  .pane-content {
+    position: absolute;
+    top: -335px;
+    right: 5px;
+    @include col(8, true, right);
+    form {
+
+    }
+  }
+}
+
+
+.pane-page-content .main-content {
+  @include site_width;
+}
