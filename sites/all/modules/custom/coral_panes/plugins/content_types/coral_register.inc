@@ -1,0 +1,133 @@
+<?php
+
+/**
+ * Coral custom breadcrumb.  Edit as needed ;-)
+ */
+$plugin = array(
+  // the title in the admin
+  'title' => t('Coral register'),
+  'single' => TRUE,
+  'category' => array(t('Coral'), -9), // We can change this category at will
+  'edit form' => 'coral_register_pane_content_type_edit_form',    // Edit form callback
+  'render callback' => 'coral_register_pane_content_type_render'  // Render callback
+);
+
+
+/**
+ * Run-time rendering of the body of the block (content type)
+ * See ctools_plugin_examples for more advanced info
+ */
+function coral_register_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
+  $block = new stdClass;
+  $block->title = t('User register');
+  $form = drupal_get_form('coral_register_form');
+  $block->content = drupal_render($form);
+  return $block;
+}
+
+function coral_register_form($form, &$form_state) {
+  $tos = l('terms of service', 'docs/terms-service');
+  $priv = l('privacy policy', 'docs/privacy-policy');
+
+  $form['status'] = array(
+    '#markup' => '<div class="reg-status hide"></div>'
+  );
+  $form['name'] = array(
+    '#title' => t('Username'),
+    //'#description' => 'choose a username',
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#attributes' => array('tabindex' => 1)
+  );
+  $form['mail'] = array(
+    '#title' => t('Email'),
+    //'#description' => 'enter a valid email address',
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#attributes' => array('tabindex' => 2)
+  );
+  $form['passtxt'] = array(
+    '#title' => t('Password'),
+    '#type' => 'textfield',
+    '#maxlength' => 64,
+    '#size' => 15,
+    '#description' => t('Password may contain 7-20 alphanumeric and special characters !@#$%^&*_-'),
+    '#attributes' => array('tabindex' => 3)
+  );
+  $form['pass'] = array(
+    '#title' => t('Password'),
+    '#type' => 'password',
+    '#maxlength' => 64,
+    '#size' => 15,
+    '#description' => t('Password may contain 7-20 alphanumeric and special characters !@#$%^&*_-'),
+    '#attributes' => array('tabindex' => 3)
+  );
+  $form['viewpass'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('View password'),
+    '#attributes' => array('checked' => 'checked', 'tabindex' => 4),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Sign up'),
+    '#attributes' => array('tabindex' => 5)
+  );
+  $form['extras'] = array(
+    '#markup' => l('Login', 'user/login', array('attributes'=>array('class'=>array('login'))))
+  );
+  $form['policy'] = array(
+    '#markup' => '<div class="policy">'.t('Use of our service consitutes an exceptance of our ').$tos.t(' and ').$priv.'<div>'
+  );
+  return $form;
+}
+
+/**
+ * Tag search form redirects to the search page!
+ * ----
+ * Be sure to look at the facetapi readme for detail
+ * on using the query parameters.  It's helpfulness cannot
+ * be overstated.
+ */
+function coral_register_form_submit($form, &$form_state) {
+  $pass = '';
+  $edit = array(
+    'name' => $form_state['values']['name'],
+    'pass' => $form_state['values']['pass'],
+    'mail' => $form_state['values']['mail'],
+    'init' => $form_state['values']['mail'],
+    'status' => 1,
+    'access' => REQUEST_TIME,
+  );
+  $user = user_save(drupal_anonymous_user(), $edit);
+  if ($user->uid) { // save successful
+    drupal_set_message('Registration successful.');
+  }
+  else {
+    drupal_set_message('Registration failed.', 'error');
+  }
+}
+
+
+/**
+ * 'Edit form' callback for the content type.
+ *
+ * Currently un-called... no edit form needed most of the time.
+ */
+function coral_register_pane_content_type_edit_form($form, &$form_state) {
+  // The configurations as they were saved
+  $conf = $form_state['conf'];
+
+  // Add your Form API (FAPI) additions here:
+  return $form;
+}
+
+
+/**
+ * Submit function, note anything in the formstate[conf] automatically gets saved
+ *
+ * You prob. don't need this for a static content pane.
+ */
+function coral_register_pane_content_type_edit_form_submit($form, &$form_state) {
+  // Values have to be moved to conf or they won't be there when you get back bon hommie!
+  //$form_state['conf']['remove_home'] = $form_state['values']['remove_home'];
+}
