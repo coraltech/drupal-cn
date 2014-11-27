@@ -1,0 +1,145 @@
+//------------------------------------------------------------------------------
+// This is the styles for the custom coral register pane
+
+@import 'global/buttons';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/icons';
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
+
+.pane-coral-register {
+  .pane-content {
+    background: rgba(5, 34, 70, 0.5);
+    @include border-radius(15px);
+    form {
+      padding: 1em;
+
+      label {
+        display: none;
+      }
+      .form-type-checkbox {
+        float: right;
+        margin: 0.15em 0 0 0;
+        label {
+          display: inline;
+          font-size: .85em;
+          color: darken($ltgray, 5%);
+        }
+      }
+    }
+
+    .form-item {
+      margin: .25em 0 .75em;
+      position: relative;
+      background-color: inherit;
+      background-image: none;
+      border: none;
+      @include box-sizing(border-box);
+      outline: none;
+      .staticon {
+        display: block;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 11px;
+        right: 5px;
+        cursor: pointer;
+        @include icons-sprite('input-status');
+      }
+
+      .form-text {
+        background-color: $white;
+        border: 2px solid $ltgray;
+        @include border-radius(10px);
+        @include box-sizing(border-box);
+        outline: none;
+      }
+
+      &.error {
+        .form-text {
+          color: $mdred;
+          background-color: $white;
+          background-image: none;
+          border: 2px solid $mdred;
+          @include box-sizing(border-box);
+        }
+        .staticon {
+          @include icons-sprite('input-status-declined');
+        }
+      }
+
+      &.ok {
+        .form-text {
+          color: $mdgreen;
+          background-color: $white;
+          background-image: none;
+          border: 2px solid $mdgreen;
+          @include box-sizing(border-box);
+        }
+        .staticon {
+          @include icons-sprite('input-status-ok');
+        }
+      }
+    }
+
+    .description {
+      background: none;
+      color: $white;
+      line-height: 1em;
+      margin: 5px 0 0 0;
+    }
+
+    .form-type-password {
+      display: none;
+    }
+
+    .policy {
+      font-size: .85em;
+      color: $white;
+      line-height: 1em;
+      margin: 8px 0 0 0;
+    }
+
+    .form-submit {
+      @include btn-matte-inset(3px, 16px, darken($mdgreen, 10%), darken($mdgreen, 15%), $white);
+      @include btn-structure(2px 25px, 16px, 3px);
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+
+    .login {
+      font-size: .95em;
+    }
+
+    a {
+      color: $mdblue;
+
+      &:hover {
+        color: lighten($mdblue, 7%);
+      }
+    }
+
+    .reg-status {
+      font-size: .95em;
+      color: white;
+      padding: 2px 5px;
+      margin-top: -1.55em;
+      position: relative;
+      top: -5px;
+      height: 1.35em;
+      overflow: hidden;
+
+      @include border-radius(5px);
+
+      &.error {
+        background: darken($mdred, 10%);
+      }
+      &.ok {
+        background: darken($mdgreen, 10%);
+      }
+    }
+  }
+}
