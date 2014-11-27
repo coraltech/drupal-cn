@@ -84,14 +84,14 @@ video {
 a,
 li a,
 li.leaf a {
-  color: $mdblue;
+  color: lighten($dkblue, 10%);
   font-size: 100%;
   font-weight: bold;
   line-height: $default_vert_unit;
   text-decoration: none;
   outline: none;
 
-  &:active, &.active { color: lighten($dkblue, 5%); }
+  &:active, &.active { color: $dkblue; }
   &:hover { color: $dkblue; }
 }
 a.freelink-createnode {
@@ -303,7 +303,7 @@ input.form-text {
 }
 
 input[type='password'] {
-  background: lighten($ltyellow, 5%);
+  //background: lighten($ltyellow, 5%);
 }
 
 html.js input.form-autocomplete {
