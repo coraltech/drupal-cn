@@ -21,6 +21,11 @@ function coral_panes_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK
   );
+  $items['services/namesearch'] = array( // adds tagsearch ability
+    'page callback' => '_coral_panes_namesearch',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
   return $items;
 }
 
@@ -34,7 +39,7 @@ function coral_panes_theme() {
   return array(
     'coral_stat' => array(
       'variables' => array(
-        'stat_title' => NULL,  // stat title: eg: Comment count: 
+        'stat_title' => NULL,  // stat title: eg: Comment count:
         'data'       => NULL,  // stat data
         'node'       => NULL,  // parent node
         'class'      => NULL,  // stat class
@@ -56,6 +61,8 @@ function coral_panes_theme() {
   );
 }
 
+
+
 // ---
 
 // Helpers
@@ -64,10 +71,10 @@ function coral_panes_theme() {
 //  called on 'services/tagsearch'
 function _coral_panes_tagsearch_autocomplete($string) {
   $matches = array();
- 
+
   // Thankfully this table contains no Alligators, yet
   $query = db_select('taxonomy_term_data', 't');
- 
+
   // Select rows that match the string
   $return = $query
     ->fields('t')
@@ -75,12 +82,31 @@ function _coral_panes_tagsearch_autocomplete($string) {
     ->condition('t.vid', '1', '=')
     ->range(0, 10)
     ->execute();
- 
-  // add matches to $matches  
+
+  // add matches to $matches
   foreach ($return as $row) {
     $matches[$row->name] = check_plain($row->name);
   }
- 
+
   // return for JS
   drupal_json_output($matches);
+}
+
+
+// Autocomplete callback for a tag search
+//  called on 'services/namesearch'
+function _coral_panes_namesearch($string) {
+
+  $user = user_load_by_name(filter_xss_admin($string));
+
+  $status = array();
+  if ($user->uid) {
+    $status = array('accepted' => FALSE);
+  }
+  else {
+    $status = array('accepted' => TRUE);
+  }
+
+  // return for JS
+  drupal_json_output($status);
 }
