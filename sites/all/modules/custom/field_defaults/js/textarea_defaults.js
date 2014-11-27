@@ -9,25 +9,25 @@ Drupal.field_defaults = Drupal.field_defaults || {};
  *  implement it. Only implement on pages where
  *  needed!
  *
- * These defaults are added via modules and 
+ * These defaults are added via modules and
  *  themes via whatever hooks they deem fit.
  *
- * Add new defaults to: 
- * 
+ * Add new defaults to:
+ *
  * Drupal.settings.mosaic.fieldDefaults:
- * 
+ *
  *  - fieldDefaults['.selector']['default'] = 'Default text';
- *  
+ *
 */
 // Document loaded!
 (function($) {
-  
-  Drupal.behaviors.fieldDefaultsTextareaInit = {    
+
+  Drupal.behaviors.fieldDefaultsTextareaInit = {
     attach : function(context, settings) {
       try { // use try to ensure that if this breaks/fails, it won't break other stuff.
         if (Drupal.settings.field_defaults.textareaDefaults) {
           var textareaDefaults = Drupal.settings.field_defaults.textareaDefaults;
-          for (selector in textareaDefaults) {      
+          for (selector in textareaDefaults) {
             var $formElement = $(selector);
             //console.log(selector);
             for (var index = 0; index < $formElement.length; index++) {
@@ -48,45 +48,45 @@ Drupal.field_defaults = Drupal.field_defaults || {};
   Drupal.field_defaults.textareaDefault = function(formElement, fieldDefaults) {
     this.$element = $(formElement);
     var textareaDefault = this;
-    
+
     var FieldList = Backbone.View.extend({
-      
+
       // Home
       el: this.$element,
-      
+
       // Events
       events: {
         'focusin': 'focusField',
         'focusout': 'blurField'
       },
-      
+
       // Init
-      initialize: function() { 
+      initialize: function() {
         textareaDefault.process(fieldDefaults, 'blur', true);
-        _.bindAll(this, 'blurField', 'focusField'); 
+        _.bindAll(this, 'blurField', 'focusField');
       },
-      
+
       // Updates
       blurField:  function() { textareaDefault.process(fieldDefaults, 'blur' ); },
       focusField: function() { textareaDefault.process(fieldDefaults, 'focus'); }
     });
-    
+
     // Kick start!
     new FieldList();
   };
-  
+
   //---
-  
+
   // Process each textfield
   Drupal.field_defaults.textareaDefault.prototype.process = function(settings, op, init) {
-    
+
     // Runtime baby!
     init = init || false;
     var id   = this.$element.attr('id');
     var $elm = this.$element;
     var val  = $elm.val();
-    
-    // Field is blurring  
+
+    // Field is blurring
     if (op == 'blur') {
       if (val == settings['default']) { // value is already ok
         $elm.addClass('field-default'); // add the default class
@@ -103,13 +103,16 @@ Drupal.field_defaults = Drupal.field_defaults || {};
         }
       }
     }
-    
+
     // User is focusing
-    if (op == 'focus') { 
+    if (op == 'focus') {
       if (val == settings['default']) { // we only work on it if its in a default state
         $elm.val('').removeClass('field-default');
-      }      
+      }
+      else {
+        $elm.removeClass('field-default');
+      }
     }
-  }
+  };
 })(jQuery);
 
