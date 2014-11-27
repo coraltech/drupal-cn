@@ -330,19 +330,22 @@ Drupal.mosaic = Drupal.mosaic || {};
         var RM = this;
         this.$regStatus.addClass('rotating');
         this.rotateInterval = setInterval(function() {
+
           // Clear interval if we now have less than 2
-          if (RM.$regStatus.find('div').length < 2) {
+          var $msgs = RM.$regStatus.find('div'); // find them each time for freshness
+          if ($msgs.length < 2) {
+            $msgs.show(); // show the last one
             return clearInterval(RM.rotateInterval);
           }
 
           // Animate the messages
           var $cur = RM.$regStatus.find('.current');
           var $nxt = $cur.next();
-          $cur.fadeOut(750).removeClass('current');
+          $cur.fadeOut(500).removeClass('current');
           if (!$nxt.length) {
             $nxt = RM.$regStatus.find('div').eq(0);
           }
-          $nxt.fadeIn(750).addClass('current');
+          $nxt.fadeIn(500).addClass('current');
         }, 2500);
       }
     }
