@@ -81,6 +81,36 @@ function coral_register_form($form, &$form_state) {
   return $form;
 }
 
+
+// Validate the registration form
+function coral_register_form_validate($form, &$form_state) {
+  // Validate name
+  //print_r($form_state);
+  $nameStatus = _coral_panes_namesearch($form_state['values']['name'], 'text');
+  if (!$nameStatus['accepted']) {
+    form_set_error('name', 'Selected username is not valid');
+  }
+
+  // Validate email
+  $matches = array();
+  $pattern = '/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/';
+  preg_match($pattern, $form_state['values']['mail'], $matches);
+  if (!count($matches)) {
+    form_set_error('mail', 'Email address is not valid');
+  }
+
+  // Validate password
+  $matches = array();
+  $pattern = '/^[a-zA-Z0-9!@#$%^&*\_\-]{7,20}$/';
+  preg_match($pattern, $form_state['values']['pass'], $matches);
+  if (!count($matches)) {
+    form_set_error('pass');
+    form_set_error('passtxt');
+    drupal_set_message('Password is not valid.', 'error');
+  }
+}
+
+
 /**
  * Tag search form redirects to the search page!
  * ----

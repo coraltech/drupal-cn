@@ -95,7 +95,7 @@ function _coral_panes_tagsearch_autocomplete($string) {
 
 // Autocomplete callback for a tag search
 //  called on 'services/namesearch'
-function _coral_panes_namesearch($string) {
+function _coral_panes_namesearch($string, $return = 'json') {
 
   $user = user_load_by_name(filter_xss_admin($string));
 
@@ -108,5 +108,11 @@ function _coral_panes_namesearch($string) {
   }
 
   // return for JS
-  drupal_json_output($status);
+  //if (!$json) return $status;
+  if ($return == 'json') {
+    drupal_json_output($status);
+  }
+  else {
+    return $status;
+  }
 }
