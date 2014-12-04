@@ -1,0 +1,134 @@
+
+// CORL intro scss file - CN design 4 home page
+
+@import 'global/colors';
+@import 'global/headers';
+@import 'global/fonts';
+@import 'global/grid_mix';
+@import 'global/site_vars';
+
+@import "compass/utilities/general/clearfix";
+
+.pane-corl-structure {
+  padding-bottom: 2 * $default_vert_unit;
+  margin-bottom: 3 * $default_vert_unit;
+  border-bottom: 2px solid $ltgray;
+  @include pie-clearfix;
+
+  .pane-title {
+    @include font( 2.5em, 'normal', 'default', $sans_fonts, 'false', $default_vert_unit);
+    @include col(16);
+    @include append(8);
+    text-align: center;
+    color: lighten($mdgray, 7%);
+    margin-bottom: 1em;
+  }
+  .pane-content {
+    .row {
+      position: relative;
+      //display: table;
+
+    }
+    .corl-structure {
+      //display: table-cell;
+      //vertical-align: top;
+    }
+    .scenarios {
+      //display: table-cell;
+      //vertical-align: top;
+      //min-width: 300px;
+      //max-width: 400px;
+      //float: right;
+
+      & > div {
+        border-left: 1px solid $ltgray;
+        background: lighten($ltgray, 8%);
+        padding: .5em 1em;
+
+        .hdr {
+          @include font( 2.5em, 'normal', 'default', $sans_fonts, 'false', $default_vert_unit);
+          color: $dkblue;
+          text-align: center;
+          line-height: 1.25em;
+          margin-top: .4em;
+        }
+
+        h3 {
+          color: darken($mdgray, 10%);
+          font-weight: bold;
+          margin-top: 1em;
+          margin-bottom: .75em;
+        }
+
+        p {
+          margin-bottom: 1.75em;
+        }
+      }
+    }
+  }
+}
+
+
+.pane-corl-structure.csmin {
+  .pane-title {
+    @include font( 2.25em, 'normal', 'default', $sans_fonts, 'false', $default_vert_unit);
+    @include col(22, true);
+    @include append(1);
+    @include prepend(1);
+
+  }
+  .pane-content {
+    .row {
+      .corl-structure {
+        @include col(20, true);
+        @include prepend(2);
+        @include append(2);
+        text-align: center;
+      }
+      .scenarios {
+        @include col(18, true);
+        @include prepend(3);
+        @include append(3);
+        margin-top: 3 * $default_vert_unit;
+
+        & > div {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $tabletw + 100) {
+  .pane-corl-structure.csmin {
+    margin-bottom: 2 * $default_vert_unit;
+    .pane-title {
+      @include font( 2em, 'normal', 'default', $sans_fonts, 'false', $default_vert_unit);
+      @include col(22, true);
+      @include append(1);
+      @include prepend(1);
+
+    }
+    .pane-content {
+      .row {
+        .corl-structure {
+          @include col(22, true);
+          @include prepend(1);
+          @include append(1);
+          text-align: center;
+        }
+        .scenarios {
+          @include col(22, true);
+          @include prepend(1);
+          @include append(1);
+          margin-top: 2 * $default_vert_unit;
+
+          .hdr {
+            @include font(1.75em, 'normal', 'default', $sans_fonts, 'false', $default_vert_unit);
+          }
+        }
+      }
+    }
+  }
+}
