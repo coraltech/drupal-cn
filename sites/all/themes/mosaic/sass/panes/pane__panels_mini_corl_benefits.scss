@@ -1,0 +1,234 @@
+
+// Styles for the colr benefits section
+
+@import 'global/colors';
+@import 'global/site_vars';
+@import 'global/fonts';
+@import 'global/headers';
+@import 'global/icons';
+@import 'global/grid_mix';
+
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
+
+.pane-corl-benefits {
+  .ui-tabs {
+    & > h2 {
+      color: darken($mdgray, 15%);
+      @include dblhuge;
+      text-align: center;
+      font-weight: bold;
+    }
+    .ui-tabs-nav {
+      margin-top: 8 * $default_vert_unit;
+
+      li {
+        min-width: 20%;
+        max-width: 30%;
+        a {
+          display: block;
+          float: none;
+          position: relative;
+          height: 150px;
+          img {
+            position: relative;
+            top: (-7 * $default_vert_unit);
+          }
+        }
+      }
+    }
+    .ui-tabs-panel {
+      padding: (2 * $default_vert_unit) 5em;
+      border-bottom: 2px solid $ltgray;
+
+      ul {
+        li {
+          @include font(1.5em, 'normal', 'default', $sans_fonts, 'true', $default_vert_unit);
+          margin-bottom: 1em;
+          color: $mdgray;
+          strong {
+            color: darken($mdgray, 15%);
+          }
+        }
+      }
+    }
+  }
+  .horiz-acc {
+    position: relative;
+    background: darken($ltgray, 15%);
+    color: $white;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 2px;
+    padding: .5em;
+    padding-left: 75px;
+    @include font(1.5em, 'normal', 'default', $sans_fonts, 'true', (1.85 * $default_vert_unit));
+    @include pie-clearfix;
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 2px;
+      display: block;
+      margin-right: 10px;
+      float: left;
+    }
+    &.benes-organizations {
+      @include border-top-radius(15px);
+      .icon {
+        @include icons-sprite('org-benes-sml');
+        top: 5px;
+      }
+    }
+    &.benes-developers {
+      .icon {
+        @include icons-sprite('dev-benes-sml');
+        top: 6px;
+      }
+    }
+    &.benes-researchers {
+      @include border-bottom-radius(15px);
+      .icon {
+        @include icons-sprite('research-benes-sml');
+        top: 2px;
+      }
+    }
+  }
+}
+
+.pane-corl-benefits.cbmin {
+  .ui-tabs {
+    .ui-tabs-panel {
+      @include col(22, true);
+      @include prepend(1);
+      @include append(1);
+      @include box-sizing(border-box);
+      float: none;
+      background: lighten($ltgray, 8%);
+      border-bottom: none;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: $desktopw + 150) {
+  .pane-corl-benefits {
+    .ui-tabs {
+      .ui-tabs-nav {
+        margin-top: 7 * $default_vert_unit;
+        li {
+          a {
+            height: 130px;
+            img {
+              top: (-6.5 * $default_vert_unit);
+            }
+          }
+        }
+      }
+      .ui-tabs-panel {
+        padding: (2 * $default_vert_unit) 4em;
+        ul {
+          li {
+            @include font(1.25em, 'normal', 'default', $sans_fonts, 'true', $default_vert_unit);
+          }
+        }
+      }
+      // last panel
+      #tabs-corl_benefits-middle-3 {
+        @include border-bottom-radius(15px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktopw) {
+  .pane-corl-benefits {
+    .ui-tabs {
+      & > h2 {
+        @include hugeplus;
+      }
+      .ui-tabs-nav {
+        margin-top: 6 * $default_vert_unit;
+        li {
+          a {
+            height: 110px;
+            img {
+              top: (-5.5 * $default_vert_unit);
+            }
+          }
+        }
+      }
+      .ui-tabs-panel {
+        padding: (2 * $default_vert_unit) 4em;
+        ul {
+          li {
+            @include font(1.15em, 'normal', 'default', $sans_fonts, 'true', $default_vert_unit);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktopw - 75) {
+  .pane-corl-benefits {
+    .ui-tabs {
+      .ui-tabs-nav {
+        margin-top: 5.5 * $default_vert_unit;
+        li {
+          a {
+            height: 100px;
+            img {
+              top: (-5 * $default_vert_unit);
+            }
+          }
+        }
+      }
+      .ui-tabs-panel {
+        padding: (2 * $default_vert_unit) 3em;
+        ul {
+          li {
+            @include font(1.05em, 'normal', 'default', $sans_fonts, 'true', $default_vert_unit);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw + 100) {
+  .pane-corl-benefits {
+    .ui-tabs {
+      & > h2 {
+        @include huge;
+      }
+      .ui-tabs-nav {
+        margin-top: 5 * $default_vert_unit;
+        li {
+          a {
+             img {
+              top: (-4.6 * $default_vert_unit);
+            }
+          }
+        }
+      }
+      .ui-tabs-panel {
+        padding: (1.5 * $default_vert_unit) 3em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletw - 100) {
+  .pane-corl-benefits {
+    .ui-tabs {
+      & > h2 {
+        @include h1;
+      }
+      .ui-tabs-panel {
+        padding: ($default_vert_unit) 1.5em;
+      }
+    }
+  }
+}
