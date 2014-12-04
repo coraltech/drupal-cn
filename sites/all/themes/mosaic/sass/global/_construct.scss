@@ -34,6 +34,12 @@ clear {
   color: $mdgray; // default field text color - class applied in mosaicForms.js
 }
 
+// Cursor
+.pointer {
+  cursor: pointer;
+}
+
+
 // Site width
 .site-width {
   @include site_width;
@@ -58,6 +64,7 @@ strong, b,
 
 .xxhuge { @include xxhuge; }
 .dblhuge { @include dblhuge; }
+.hugeplus { @include hugeplus; }
 .huge { @include huge; }
 .h1 { @include h1; }
 .h2 { @include h2; }
