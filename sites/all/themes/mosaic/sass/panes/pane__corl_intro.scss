@@ -1,25 +1,56 @@
 
 @import 'global/site_vars';
+@import 'global/headers';
+@import 'global/fonts';
+@import 'global/colors';
+@import 'global/grid_mix';
 
 // Styles for front page corl intro pane
 
 .pane-corl-intro {
-  .pane-content {
-    text-align: center; // Align the CORL is cloud glue image to the center
+  .corl-intro {
+    @include hugeplus;
+    @include append(3);
+    @include prepend(3);
+    color: $mdorange;
+    line-height: 1.25em;
+    margin-top: 2em;
+    padding-bottom: .75em;
+    margin-bottom: 2.5em;
+
+    &:after {
+      @include col(12);
+      @include append(6);
+      @include prepend(6);
+
+      content: ' ';
+      display: block;
+      height: 0px;
+      position: relative;
+      top: 1em;
+      border-bottom: 2px solid $ltgray;
+    }
+
   }
-  .img-mob {
-    display: none;
+
+}
+@media screen and (max-width: $tabletw + 100) {
+  .pane-corl-intro {
+    .corl-intro {
+      @include huge;
+      @include append(1);
+      @include prepend(1);
+      line-height: $default_vert_unit;
+      margin: $default_vert_unit 0;
+    }
   }
 }
-
-
-@media screen and (max-width: $tabletw + 50) {
+@media screen and (max-width: $phonew + 200) {
   .pane-corl-intro {
-    .img-mob {
-      display: inline;
-    }
-    .img-full {
-      display: none;
+    .corl-intro {
+      @include h1;
+      line-height: $default_vert_unit;
+      margin: $default_vert_unit 0;
     }
   }
 }

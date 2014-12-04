@@ -20,10 +20,8 @@ $plugin = array(
 function corl_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
   // Get the args ready for inspection... Achtung baby!
   $block = new stdClass;
-  $block->title = (isset($conf['title']) && $conf['title']) ? $conf['title'] : t('What is CoralNexus?');
-  $block->content = '<h2 class="hide">'.t('CORL is a flexible cloud development and management framework').'</h2>';
-  $block->content .= '<img src="/sites/all/themes/mosaic/assets/images/os-cloud-glue.png" title="CORL is cloud glue" alt="CORL is cloud glue" class="mb-25 img-full">';
-  $block->content .= '<img src="/sites/all/themes/mosaic/assets/images/os-cloud-glue-mob.png" title="CORL is cloud glue" alt="CORL is cloud glue" class="mb-125 img-mob">';
+  $block->title = (isset($conf['title']) && $conf['title']) ? $conf['title'] : t('What is CORL?');
+  $block->content = '<h2 class="corl-intro center">CORL is an open source cloud development framework and execution environment.</h2>';
   return $block;
 }
 
