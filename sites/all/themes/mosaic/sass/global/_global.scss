@@ -33,7 +33,7 @@
 
 // site margin top and bottom
 .pane-header { margin: 0 auto; position: relative; }
-.pane-footer { margin: 0 auto $default_vert_unit; }
+.pane-footer { margin: 0 auto 0; }
 
 // Unset margin in the header
 #mini-panel-header {
@@ -584,7 +584,8 @@ h3 .toc-top {
 .pane-page-tabs {
   padding: 0;
   margin-top: -2px;
-
+  position: relative;
+  z-index: 2;
   @include pie-clearfix;
 
   //.icoprim {
@@ -612,6 +613,9 @@ h3 .toc-top {
   ul.primary {
     border: none;
     white-space: normal;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     li {
       a {
@@ -743,50 +747,6 @@ h3 .toc-top {
 }
 
 
-// TinyMCE related styles
-.form-textarea-wrapper { clear: both; }
-.mcetxtwrp > label { float: left; }
-.mcebtn { float: right; }
-
-// Help message for textareas: added via mosaicMce.js
-.ta-help {
-  background: lighten($ltyellow, 7%);
-  border: 1px solid $mdyellow;
-  position: relative;
-  color: darken($mdgray, 7%);
-  margin-bottom: ($default_vert_unit / 2);
-
-  @include box-shadow(rgba(0, 0, 0, 0.15) 2px 2px 2px);
-
-  .close-help {
-    position: absolute;
-    top: -7px;
-    right: -7px;
-    background: $ltred;
-    border: 1px solid $mdred;
-    color: $white;
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: bold;
-    font-family: $mono_fonts;
-    padding: 3px;
-    line-height: 5px;
-    height: 7px;
-
-    @include border-radius(8px);
-    @include box-shadow(rgba(0, 0, 0, 0.35) 2px 2px 3px);
-  }
-  p {
-    margin: ($default_vert_unit / 2) 1em;
-    font-size: 90%;
-  }
-  i {
-    font-weight: bold;
-    font-style: normal;
-  }
-}
-
-
 // mosaicBox close btn
 .mbclose {
   background: $ltred;
@@ -804,6 +764,8 @@ h3 .toc-top {
 }
 
 
+
+
 // Default tabs for panels tabs
 div.ui-tabs {
   padding: 0;
@@ -812,56 +774,63 @@ div.ui-tabs {
   margin: 0 0 (2 * $default_vert_unit);
   border: none;
 
-  @include border-radius(0);
-
   .ui-tabs-nav {
     margin: 0;
     padding: .5em .5em 0;
 
+    li {
+      border-style: solid solid none solid;
+      border-width: 2px;
+      border-color: $ltgray;
+      margin-right: .3em;
+      @include border-top-radius(8px);
+    }
+
     li a {
       padding: .5em 1em;
     }
-  }
 
-  .ui-corner-all {
-    @include border-radius(0);
+    li.ui-tabs-active {
+      margin-bottom: -2px;
+      padding-bottom: 2px;
+    }
   }
 
   .ui-widget-header {
     position: relative;
-    background: $ltblue;
+    background: none;
     border-style: none none solid none;
-    border-color: darken($ltblue, 12%);
-
-    @include reflected-v-gradient(lighten($mdblue, 5%), lighten($mdblue, 7%), lighten($mdblue, 3%));
-  }
-
-  .ui-tabs-panel {
-    border-style: none solid solid solid;
-    border-color: darken($ltblue, 12%);
-    border-width: 1px;
-    padding: 0;
+    border-color: $ltgray;
+    border-width: 2px;
     @include border-radius(0);
   }
 
+  .ui-tabs-panel {
+    border: none;
+  }
+
   .ui-state-default {
-    border-color: darken($ltblue, 12%);
+    border: none;
   }
 
   .panel-separator {
     display: none;
   }
 }
-@media screen and (max-width: $desktopw) {
+@media screen and (max-width: $desktopw - 150) {
   div.ui-tabs {
     .ui-tabs-nav {
+      li {
+        border-style: solid;
+        @include border-radius(8px);
+        margin-bottom: .3em;
+      }
       li.ui-tabs-active {
-        margin-bottom: 0px;
+        margin-bottom: .3em;
         padding-bottom: 0px;
       }
       li.ui-corner-top {
-        margin-bottom: .5em;
-        @include border-radius(4px);
+
         a {
           padding: ($default_vert_unit / 4) ($default_vert_unit / 2);
         }
