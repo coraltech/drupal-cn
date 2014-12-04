@@ -10,9 +10,8 @@
 @import "compass/css3/box-sizing";
 
 .pane-coral-register {
-  .pane-content {
-    background: rgba(5, 34, 70, 0.5);
-    @include border-radius(15px);
+  .pane-content .regthm { // default theme (Naked)
+
     form {
       padding: 1em;
 
@@ -25,7 +24,7 @@
         label {
           display: inline;
           font-size: .85em;
-          color: darken($ltgray, 5%);
+          color: $mdgray;
         }
       }
     }
@@ -51,7 +50,7 @@
 
       .form-text {
         background-color: $white;
-        border: 2px solid $ltgray;
+        border: 2px solid darken($ltgray, 8%);
         @include border-radius(10px);
         @include box-sizing(border-box);
         outline: none;
@@ -86,7 +85,7 @@
 
     .description {
       background: none;
-      color: $white;
+      color: $dkgray;
       line-height: 1em;
       margin: 5px 0 0 0;
     }
@@ -97,7 +96,7 @@
 
     .policy {
       font-size: .85em;
-      color: $white;
+      color: $dkgray;
       line-height: 1em;
       margin: 8px 0 0 0;
     }
@@ -112,14 +111,6 @@
 
     .login {
       font-size: .95em;
-    }
-
-    a {
-      color: $mdblue;
-
-      &:hover {
-        color: lighten($mdblue, 7%);
-      }
     }
 
     .reg-status {
@@ -139,6 +130,36 @@
       }
       &.ok {
         background: darken($mdgreen, 10%);
+      }
+    }
+  }
+
+
+  .pane-content .theme-blue {
+    @include border-radius(15px);
+    background: rgba(5, 34, 70, 0.5);
+
+    form .form-type-checkbox label {
+      color: darken($ltgray, 5%);
+    }
+
+    .form-item .form-text {
+      border: 2px solid $ltgray;
+    }
+
+    .description {
+      color: $white;
+    }
+
+    .policy {
+      color: $white;
+    }
+
+    a {
+      color: $mdblue;
+
+      &:hover {
+        color: lighten($mdblue, 7%);
       }
     }
   }
