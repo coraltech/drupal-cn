@@ -23,12 +23,11 @@ function corl_res_benes_pane_content_type_render($subtype, $conf, $args, $contex
   $block->title = (isset($conf['title']) && $conf['title']) ? $conf['title'] : t('Researcher benefits');
 
   // begin content
-  $content = '<h2 class="hide">'.t('Researcher corl cloud benefits').'</h2>'; // seo
-  $content .= '<div class="cont"><img src="/sites/all/themes/mosaic/assets/images/research-benes.png" class="bene-img res-img"></div>';
-  $content .= '<ul><li><strong>'.t('Keep everything together.').'</strong> '.t('Encapsulated projects let you keep data, research tools, and results, in handly portable packages.').'</li>';
-  $content .= '<ul><li><strong>'.t('Use it however you need.').'</strong> '.t('Spin up large networks for big tasks, or small ones for smaller tasks. Stop and restart anytime.').'</li>';
-  $content .= '<ul><li><strong>'.t('Realize effortless concurrency.').'</strong> '.t('Rapidly launch scripts and other apps across machines and across providers.').'</li>';
-  $content .= '<ul><li><strong>'.t('Collaborate and share').'</strong> '.t('encapsulated research projects with your team for faster analysis and improved accuracy.').'</li>';
+  $content .= '<ul>';
+  $content .= '<li><strong>'.t('Keep everything together.').'</strong> '.t('Encapsulated projects let you keep data, research tools, and results, in handly portable packages.').'</li>';
+  $content .= '<li><strong>'.t('Use it however you need.').'</strong> '.t('Spin up large networks for big tasks, or small ones for smaller tasks. Stop and restart anytime.').'</li>';
+  $content .= '<li><strong>'.t('Realize effortless concurrency.').'</strong> '.t('Rapidly launch scripts and other apps across machines and across providers.').'</li>';
+  $content .= '<li><strong>'.t('Collaborate and share').'</strong> '.t('encapsulated research projects with your team for faster analysis and improved accuracy.').'</li>';
   $content .= '</ul>';
   $block->content = $content;
   return $block;

@@ -10,21 +10,10 @@
 @import "compass/utilities/general/clearfix";
 
 .pane-corl-res-benefits {
-  margin-bottom: (3 * $default_vert_unit);
 
-  .cont {
-    text-align: center;
-  }
 }
 
 
 @media screen and (max-width: $tabletw) {
-  .pane-corl-res-benefits {
-    margin-bottom: $default_vert_unit;
 
-    &.grid-8-last {
-      width: 100%;
-      float: none;
-    }
-  }
 }

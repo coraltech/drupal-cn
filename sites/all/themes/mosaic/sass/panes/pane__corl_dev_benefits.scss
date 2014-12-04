@@ -12,30 +12,12 @@
 @import "compass/css3/box-sizing";
 
 .pane-corl-dev-benefits {
-  margin-bottom: (3 * $default_vert_unit);
-  padding-bottom: 1px;
-  @include linear-v-gradient($white, darken($ltgray, 10%));
-  @include box-sizing(border-box);
 
-  .pane-content {
-    @include linear-v-gradient($white, lighten($ltgray, 5%));
-    margin: 0px 1px 0px 1px;
-    padding: 0 .5em 0;
-  }
-
-  .cont {
-    text-align: center;
-  }
 }
 
 
 @media screen and (max-width: $tabletw) {
   .pane-corl-dev-benefits {
-    margin-bottom: $default_vert_unit;
 
-    &.grid-8 {
-      width: 100%;
-      float: none;
-    }
   }
 }
