@@ -315,3 +315,7 @@
 	path = sites/all/modules/contrib/moopapi
 	url = http://git.drupal.org/project/moopapi
 	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/panels_css_js"]
+	path = sites/all/modules/contrib/panels_css_js
+	url = http://git.drupal.org/project/panels_css_js
+	branch = 7.x-1.x
