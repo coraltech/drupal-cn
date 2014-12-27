@@ -2,24 +2,24 @@
 
 /**
 * This plugin array is more or less self documenting
-* 
+*
 * To use:
-* 
-* 1: Simply rename the functions. Removing "generic" and adding some other 
+*
+* 1: Simply rename the functions. Removing "generic" and adding some other
 *    useful name for this plugin, eg: SSO.
-* 
+*
 * 2: Fill in the $plugin title and category below.
-* 
+*
 * 3: And update the render function to use your content for $block->content
-* 
+*
 * 4: Save this plugin in the components > plugins > content_types folder
-* 
+*
 * 5: Add your new plugin to a panel
-* 
+*
 */
 $plugin = array(
   // the title in the admin
-  'title' => t('CoralNexus Intro'), 
+  'title' => t('CoralNexus Intro'),
   // no one knows if "single" defaults to FALSE...
   'single' => TRUE,
   // oh joy, I get my own section of panel panes
@@ -30,86 +30,49 @@ $plugin = array(
 
   // Renderer function
   'render callback' => 'coral_home_intro_pane_content_type_render',  // Render callback
-  
+
   'defaults' => array()
 );
-
-/*
- * <div class="left grid-12">
-      <ul>
-        <li>Unmatched extensibility and modularity for fast prototyping and development.</li>
-        <li>Deploy your clusters locally or to the cloud provider of your choice.</li>
-        <li>All cluster stage changes controlled through Git for reliability and accountability.</li>
-      </ul>
-    </div>
-    <div class="left grid-12-last">
-      <ul>
-        <li>Configuration states compiled to JSON for ease of use by humans and machines.</li>
-        <li>Architecture provides inheritance and cascading configurations support.</li>
-        <li>Built with industry leading technologies: Vagrant, Puppet, Ruby, Git, JSON, and more.</li>
-      </ul>
-      {$more}
-    </div>
- */
 
 /**
 * Run-time rendering of the body of the block (content type)
 * See ctools_plugin_examples for more advanced info
 */
 function coral_home_intro_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-  $more = l('Learn more', 'docs/projects', array('attributes' => array('class' => array('more')))); //, array('fragment' => 'ask-question'));
+  $start = l('Get started', 'docs/getting-started', array('attributes' => array('class' => array('start')))); //, array('fragment' => 'ask-question'));
   $output = <<<EOF
-<div class="home-intro-container">
-  <div class="home-intro-content">
-    <h2>CORL is a free and open source cloud <span class="nowrap">application framework.</span></h2>
-    <div class="clearfix">
-      <div class="left grid-12">
-        <ul>
-          <li>Plugin based architecture for fast prototyping and&nbsp;development.</li>
-          <li>Deploy locally or to the cloud provider of your&nbsp;choice.</li>
-          <li>Effortlessly build concurrent cloud&nbsp;applications.</li>
-        </ul>
-      </div>
-      <div class="left grid-12-last">
-        <ul>
-          <li>Cloud configuration states managed by humans and/or&nbsp;machines.</li>
-          <li>Architecture enables cascading configuration for easy&nbsp;overrides.</li>
-          <li>No vendor lock in; no black boxes; and no&nbsp;restrictions.</li>
-        </ul>
-        {$more}
-      </div>
-    </div>
-  </div>
-  <div class="home-intro-left"><span class="top"></span><span class="bottom"></span><span class="angle"></span></div>
-  <div class="home-intro-right"><span class="top"></span><span class="bottom"></span><span class="angle"></span></div>
+<div class="row">
+  <h2 class="xxhuge white grid-11 intro">Get a handle on your cloud.</h2>
+  <div class="cloud-case grid-4-last"><img src="/sites/all/themes/mosaic/assets/images/cloud-case.png" alt="Cloud case with handle."></div>
 </div>
+<div class="h2 white grid-15-last desc">Powerful open source tools to help you quickly build and collaborate on cloud enabled applications with your team, or with everyone. {$start} now!</div>
 EOF;
   $block = new stdClass;
   $block->content = $output;
-  return $block; 
+  return $block;
 }
 
 
 /**
 * 'Edit form' callback for the content type.
-* 
+*
 * Currently un-called... no edit form needed most of the time.
 */
 function coral_home_intro_pane_content_type_edit_form($form, &$form_state) {
-  //dpm($conf);  
+  //dpm($conf);
   // The configurations as they were saved
   $conf = $form_state['conf'];
-  
+
   // Add your Form API (FAPI) additions here:
-  
-  
+
+
   return $form;
 }
 
 
 /**
 * Submit function, note anything in the formstate[conf] automatically gets saved
-* 
+*
 * You prob. don't need this for a static content pane.
 */
 function coral_home_intro_pane_content_type_edit_form_submit($form, &$form_state) {
