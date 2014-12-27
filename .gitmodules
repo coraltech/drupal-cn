@@ -319,3 +319,7 @@
 	path = sites/all/modules/contrib/panels_css_js
 	url = http://git.drupal.org/project/panels_css_js
 	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/google_analytics_counter"]
+	path = sites/all/modules/contrib/google_analytics_counter
+	url = http://git.drupal.org/project/google_analytics_counter
+	branch = 7.x-3.x

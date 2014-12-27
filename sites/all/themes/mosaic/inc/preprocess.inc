@@ -305,7 +305,7 @@ function mosaic_preprocess_panels_pane__views_panes___user_content_user_question
 }
 
 function mosaic_preprocess_panels_pane__views_panes___user_content_user_snippets_fields(&$vars) {
-    // Build a nicer pane title than say, Questions...
+  // Build a nicer pane title than say, Questions...
   $user_name = $vars['user']->panelizer['page_manager']->display->context['panelizer']->title;
 
   // Add icon holder for the cloud Q's and get a decent prefix to the name
@@ -318,6 +318,20 @@ function mosaic_preprocess_panels_pane__views_panes___user_content_user_snippets
 function mosaic_preprocess_panels_pane__views_panes___doc_ref_node_teaser_view(&$vars) {
   $vars['title'] = '<span>'.$vars['title'].'</span>';
 }
+
+
+// Convert the user image token pane content to display a usable image
+function mosaic_preprocess_panels_pane__token___node_user_image(&$vars) {
+  $user = $vars['user'];
+  if (isset($user->name)) {
+    $title = t('View profile of '.$user->name);
+  }
+  else {
+    $title = t('View profile');
+  }
+  $vars['content'] = mosaic_compile_default_user_image($user, 'user_thumb_small', $title);
+}
+
 
 // Preprocess login block.
 function mosaic_preprocess_panels_pane__block___user_login(&$vars) {
@@ -751,11 +765,11 @@ function mosaic_preprocess_panelizer_view_mode(&$vars) {
     $type = $data['entity_type'];
     $bundle = $data['bundle'];
     $mode = $data['view_mode'];
-
+//dpm($element);
     $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-pane-title';
     $vars['title_attributes_array']['class'][] = $bundle.'-'.$type.'-'.$mode.'-pane-title';
 
-    if ($bundle == 'project') {
+    /*if ($bundle == 'project') {
       $uri = $element['field_logo']['#items'][0]['uri'];
       $image_style = 'project_logo_lg';
       $title = $vars['title'];
@@ -768,7 +782,7 @@ function mosaic_preprocess_panelizer_view_mode(&$vars) {
         ));
 
       $vars['title'] = $logo . $vars['title'];
-    }
+    }*/
   }
 }
 

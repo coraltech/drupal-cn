@@ -58,8 +58,8 @@ EOF;
   // ttlpos
   $ttl = t("Get started, it's free!");
   $block = new stdClass;
-  $block->title = ($conf['ttlpos'] == '0') ? $ttl : '';
-  $block->content = ($conf['ttlpos'] == '1') ? '<h2 class="pane-title">'.$ttl.'</h2>'.$output : $output;
+  $block->title = ($conf['ttlpos'] == '1') ? $ttl : '';
+  $block->content = ($conf['ttlpos'] == '0') ? '<h2 class="pane-title">'.$ttl.'</h2>'.$output : $output;
   return $block;
 }
 
@@ -75,14 +75,14 @@ function coral_home_getting_started_pane_content_type_edit_form($form, &$form_st
   $conf = $form_state['conf'];
 
   // Add your Form API (FAPI) additions here:
-  $pos = array(0 => t('Inside'), 1 => t('Above'));
+  $pos = array('0' => t('Inside'), '1' => t('Above'));
 
   $form['ttlpos'] = array(
     '#type' => 'radios',
     '#title' => t('Title position'),
-    '#default_value' => $conf['ttlpos'] ? $conf['ttlpos'] : 0,
+    '#default_value' => ($conf['ttlpos']) ? $conf['ttlpos'] : '0',
     '#options' => $pos,
-    '#description' => t('When a poll is closed, visitors can no longer vote for it.'),
+    '#description' => t('Where to place the pane title'),
     '#access' => user_access('administer nodes'),
   );
 
@@ -97,9 +97,9 @@ function coral_home_getting_started_pane_content_type_edit_form($form, &$form_st
 */
 function coral_home_getting_started_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
-  //$form_state['conf']['field'] = $form_state['values']['field'];
+  //$form_state['conf']['ttlpos'] = $form_state['values']['ttlpos'];
   foreach (element_children($form) as $key) {
-    if (!empty($form_state['values'][$key])) {
+    if (!empty($form_state['values'][$key]) || $form_state['values'][$key] === '0') {
       $form_state['conf'][$key] = $form_state['values'][$key];
     }
   }

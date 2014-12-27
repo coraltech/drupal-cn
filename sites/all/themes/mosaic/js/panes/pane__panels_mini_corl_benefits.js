@@ -111,7 +111,7 @@ Drupal.mosaic = Drupal.mosaic || {};
     try {
       // get tabs centered
       //...
-
+      //this.centerTabs();
 
       if (this.winW < 765) { // too narrow for a good tabbed display, lets use accordion
         this.$tabsNav.hide();
