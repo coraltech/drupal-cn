@@ -144,12 +144,12 @@ function coral_register_pane_content_type_edit_form($form, &$form_state) {
   // The configurations as they were saved
   $conf = $form_state['conf'];
 
-  $theme = array(0 => t('Blue'), 1 => t('Naked'));
+  $theme = array('0' => t('Blue'), '1' => t('Naked'));
 
    $form['theme'] = array(
     '#type' => 'radios',
     '#title' => t('Pane theme'),
-    '#default_value' => isset($conf['theme']) ? $conf['theme'] : 1,
+    '#default_value' => isset($conf['theme']) ? $conf['theme'] : '1',
     '#options' => $theme,
     '#description' => t('Select the theme for this display.'),
   );
@@ -177,7 +177,7 @@ function coral_register_pane_content_type_edit_form($form, &$form_state) {
 function coral_register_pane_content_type_edit_form_submit($form, &$form_state) {
   // Values have to be moved to conf or they won't be there when you get back bon hommie!
   foreach (element_children($form) as $key) {
-    if (!empty($form_state['values'][$key])) {
+    if (!empty($form_state['values'][$key]) || $form_state['values'][$key] === '0') {
       $form_state['conf'][$key] = $form_state['values'][$key];
     }
   }

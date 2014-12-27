@@ -1,5 +1,6 @@
-
-// Main scss file for the home page intro info pane
+//------------------------------------------------------------------------------
+// This is the style sheet for the 4th design iteration of
+//  the CoralNexus site front page (not logged in).
 
 @import 'global/site_vars';
 @import 'global/grid_mix';
@@ -10,9 +11,26 @@
 
 @import "compass/utilities/general/clearfix";
 
+// Override standard configuration of container - we need some stripes!
+.page-inner-wrapper .mosaic-cont > .container {
+  width: 100%;
+  min-width: 100%;
+}
+
+
+// If tabs are there, pull in the content
+.pane-page-tabs {
+  @include site_width;
+}
+
+
+.pane-page-content .leader {
+  clear: none;
+}
+
 // First of the horizontal divisions
 // Are contains the intro text and a signup form
-.pane-coral-home-intro {
+.pane-node-body {
   background: $dkblue url(../../../assets/images/intro-bg-clouds.jpg) top left repeat-x;
   height: 385px;
 
@@ -42,7 +60,7 @@
   }
 }
 @media screen and (max-width: $desktopw + 175) {
-  .pane-coral-home-intro {
+  .pane-node-body {
     .pane-content {
       .intro {
         @include dblhuge;
@@ -63,7 +81,7 @@
   }
 }
 @media screen and (max-width: $tabletw + 250) {
-  .pane-coral-home-intro {
+  .pane-node-body {
     .pane-content {
       .intro {
         @include col(9.5);
@@ -78,7 +96,7 @@
   }
 }
 @media screen and (max-width: $tabletw + 100) {
-  .pane-coral-home-intro {
+  .pane-node-body {
     .pane-content {
       position: relative;
 
@@ -103,7 +121,7 @@
   }
 }
 @media screen and (max-width: $tabletw) {
-  .pane-coral-home-intro {
+  .pane-node-body {
     .pane-content {
       .intro {
         @include col(11);
@@ -117,7 +135,7 @@
 }
 // cnfront.js Applied minification class
 div.leader.cnfmin {
-  .pane-coral-home-intro {
+  .pane-node-body {
     .pane-content {
       .intro {
         @include col(20);
@@ -167,7 +185,7 @@ div.leader.cnfmin {
 
 @media screen and (max-width: $phonew + 150) {
   div.leader.cnfmin {
-    .pane-coral-home-intro {
+    .pane-node-body {
       .pane-content {
         .intro {
           @include col(20);
@@ -185,3 +203,158 @@ div.leader.cnfmin {
     }
   }
 }
+
+
+// Message (and btn) that appears when the leader is in cnfmin mode
+.resp-msg {
+  display: none;
+  text-align: center;
+  margin-top: -1em;
+  z-index: 2;
+  position: relative;
+
+  .btn {
+    @include btn-matte-inset(15px, 18px, $mdblue, darken($mdblue, 3%), $white);
+    @include btn-structure(4px 20px, 18px, 15px);
+    font-weight: bold;
+    margin-bottom: $default_vert_unit / 2;
+  }
+  .msg {
+    display: block;
+    text-align: center;
+    color: $mdgray;
+    @include site_width;
+    @include font(1.15em);
+  }
+}
+
+
+// Why use CORL section
+.pane-corl-benefits {
+  .ui-tabs {
+    li {
+      a {
+
+      }
+    }
+  }
+}
+
+
+
+// Register form
+.leader .pane-coral-register {
+  @include site_width;
+  position: relative;
+  .pane-content {
+    position: absolute;
+    top: -335px;
+    right: 5px;
+    @include col(8, true, right);
+    min-width: 300px;
+  }
+}
+
+.sub_footer {
+  border-top: 2px solid darken($ltgray, 3%);
+  background: $ltgray;
+
+  .limiter {
+    @include site_width;
+    @include pie-clearfix;
+    .pane-sharethis-sharethis-block {
+      margin: 0;
+      padding: $default_vert_unit 0;
+    }
+
+    .pane-coral-register {
+      margin-top: 2 * $default_vert_unit;
+
+      .blurb {
+        display: none;
+        color: lighten($dkgray, 15%);
+      }
+    }
+  }
+}
+@media screen and (max-width: $desktopw + 150) {
+  .sub_footer {
+    .limiter {
+      .pane-coral-home-getting-started {
+        @include col(14);
+        margin-left: 0;
+      }
+      .pane-coral-register {
+        @include col(10);
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: $desktopw - 150) {
+  .sub_footer {
+    .limiter {
+      .pane-coral-home-getting-started {
+        @include col(18);
+        @include prepend(3);
+        @include append(3);
+
+        border-right: none;
+        border-bottom: 2px solid darken($ltgray, 7%);
+        margin-bottom: 0;
+
+        .pane-content {
+          border-right: none;
+          padding-right: 0;
+          padding-bottom: 2em;
+        }
+      }
+      .pane-coral-register {
+        @include col(18);
+        @include prepend(3);
+        @include append(3);
+
+        margin-top: $default_vert_unit;
+        margin-bottom: 2 * $default_vert_unit;
+
+        .blurb {
+          text-align: center;
+          display: block;
+          @include h2;
+          line-height: 1.15em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletw - 150) {
+  .sub_footer {
+    .limiter {
+      .pane-coral-home-getting-started {
+        @include col(22);
+        @include prepend(1);
+        @include append(1);
+      }
+      .pane-coral-register {
+        @include col(22);
+        @include prepend(1);
+        @include append(1);
+
+        .blurb {
+          @include h4;
+          line-height: 1.15em;
+        }
+      }
+    }
+  }
+}
+
+
+.pane-page-content .main-content,
+.pane-sharethis-sharethis-block {
+  @include site_width;
+  clear: both;
+}
+
+
+

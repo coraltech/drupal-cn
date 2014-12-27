@@ -24,8 +24,6 @@ $plugin = array(
  * Outputs the page title of the current page.
  */
 function coral_system_path_pane_content_type_render($subtype, $conf, $args, $context, $incoming_content) {
-
-  //dpm($context);
   $block = new stdClass();
   $block->content = '';
 
@@ -38,6 +36,10 @@ function coral_system_path_pane_content_type_render($subtype, $conf, $args, $con
       if (isset($proj_type)) {
         $proj_type = strtolower(token_replace('[node:field_project_type]', array('node' => $node)));
         $title = l(strtolower(token_replace('[node:field_system_name]', array('node' => $node))), 'node/'.$node->nid);
+        $scan = token_scan($title);
+        if (isset($scan['node']['field_system_name'])) {
+          $title = l(preg_replace('/\s+/', '_', strtolower($node->title)), 'node/'.$node->nid);
+        }
       }
       $block->content = $author.'<span class="mdgray">/</span><span class="strong mdgray">'.$proj_type.'</span><span class="mdgray">/</span>'.$title;
     }
