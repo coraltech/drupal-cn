@@ -73,7 +73,7 @@ function site_template_feature_default_page_manager_handlers() {
     $pane->panel = 'header';
     $pane->type = 'panels_mini';
     $pane->subtype = 'getting_help';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
@@ -120,7 +120,7 @@ function site_template_feature_default_page_manager_handlers() {
     $pane->panel = 'header';
     $pane->type = 'panels_mini';
     $pane->subtype = 'top_menus';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
@@ -208,7 +208,7 @@ function site_template_feature_default_page_manager_handlers() {
     $pane->panel = 'sub_header';
     $pane->type = 'coral_status';
     $pane->subtype = 'coral_status';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'message' => 'CoralNexus software is currently in Alpha release state. It\'s not a good idea to use this software in mission critical situations just yet.',
